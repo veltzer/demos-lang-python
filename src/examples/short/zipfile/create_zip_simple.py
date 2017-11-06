@@ -3,6 +3,9 @@
 """
 This example shows how to create a zip file in python using
 the built in python module 'zipfile'
+
+References:
+- https://stackoverflow.com/questions/1855095/how-to-create-a-zip-archive-of-a-directory
 """
 
 import zipfile
