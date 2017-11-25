@@ -20,3 +20,5 @@ plotly
 # gtk
 gcloud
 networkx
+keyring
+dbus-python
