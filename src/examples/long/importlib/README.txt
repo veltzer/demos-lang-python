@@ -8,3 +8,8 @@ Notes:
 - if a is importing b and you re-import a you *do not* import b.
 This is fine for most cases. If you want to re-import b then you
 have to issue a re-import statement for it to, yourself.
+
+How to see that it works?
+run:
+	$ python ./reload.py
+and while it is running change the print statement in a.py.
