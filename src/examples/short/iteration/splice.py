@@ -10,34 +10,31 @@ one producing no more than N pieces of data.
 from itertools import groupby, islice
 import types
 
-def splice_them(data, n):
+def splice_groupby(data, n):
     return ((d for _, d in dd) for (_, dd) in groupby(enumerate(data), key=lambda v: v[0] // n))
 
-
 def splice_simple(data, n):
-    ''' this does not work '''
-    r = islice(data, n)
-    while r:
-        yield r
-        r = islice(data, n)
+    class CancellationToken:
+        def __init__(self):
+            self.is_cancelled = False
+        def cancel(self):
+            self.is_cancelled = True
+    i = iter(data)
+    over = CancellationToken()
+    def return_n():
+        for _ in range(n):
+            try:
+                yield(next(i))
+            except StopIteration as e:
+                over.cancel()
+                raise e
+    while not over.is_cancelled:
+        yield return_n()
 
-def splice_so_simple(data, n):
-    ret = []
-    i = data.__iter__()
-    d = i.next()
-    print(d)
-    x = n
-    while d and x >= 0:
-        ret.append(d)
-        d = next(i)
-        x -= 1
-    yield ret
-
-for d in splice_them(range(100), 10):
+for d in splice_groupby(range(100), 7):
     assert isinstance(d, types.GeneratorType)
     print(list(d))
 
-for d in splice_so_simple(range(100), 10):
-    print(type(d))
-    # assert isinstance(d, types.GeneratorType)
+for d in splice_simple(range(100), 7):
+    assert isinstance(d, types.GeneratorType)
     print(list(d))
