@@ -17,6 +17,8 @@ This is, ofcourse, bad from both a security and performance perspectives.
 which will be called by 'timeit'. This is security and performance wise.
 - you can use the 'timeit' module from the command line like this:
 python -m timeit -s 'text = "sample string"; char = "g"'  'char in text'
+- the 'number' argument must be passed if you are measuring a function.
+otherwise it will be the default 100000.
 
 NOTES:
 - from the 'mysleep' example we learn that timeit times wallclock
@@ -46,6 +48,6 @@ import timeit
 def my_sleep():
     time.sleep(2)
 
-
 print(timeit.timeit('\'-\'.join(str(n) for n in range(100))', number=10000))
 print(timeit.timeit(my_sleep, number=1))
+print(timeit.timeit(my_sleep))
