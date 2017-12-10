@@ -24,14 +24,14 @@ def splice_groupby_closure(data, n):
         return counter[1]
     return (dd for (_, dd) in itertools.groupby(data, key=group_classifier))
 
-def splice_simple(data, n):
-    class CancellationToken:
+def splice_chunk(data, n):
+    class __CancellationToken:
         def __init__(self):
             self.is_cancelled = False
         def cancel(self):
             self.is_cancelled = True
     i = iter(data)
-    over = CancellationToken()
+    over = __CancellationToken()
     def return_n():
         for _ in range(n):
             try:
@@ -46,7 +46,7 @@ for d in splice_groupby(range(100), 7):
     assert isinstance(d, types.GeneratorType)
     print(list(d))
 
-for d in splice_simple(range(100), 7):
+for d in splice_chunk(range(100), 7):
     assert isinstance(d, types.GeneratorType)
     print(list(d))
 
@@ -59,13 +59,13 @@ for d in splice_groupby_closure(range(100), 7):
 def func_splice_groupby():
     for d in splice_groupby(range(1000000), 1000):
         _ = list(d)
-def func_splice_simple():
-    for d in splice_simple(range(1000000), 1000):
+def func_splice_chunk():
+    for d in splice_chunk(range(1000000), 1000):
         _ = list(d)
 def func_splice_groupby_closure():
     for d in splice_groupby_closure(range(1000000), 1000):
         _ = list(d)
 
 print(timeit.timeit(func_splice_groupby, number=10))
-print(timeit.timeit(func_splice_simple, number=10))
+print(timeit.timeit(func_splice_chunk, number=10))
 print(timeit.timeit(func_splice_groupby_closure, number=10))
