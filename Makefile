@@ -1,7 +1,7 @@
 ############
 # includes #
 ############
-include /usr/share/templar/make/Makefile
+# include /usr/share/templar/make/Makefile
 
 ##############
 # parameters #
@@ -9,7 +9,7 @@ include /usr/share/templar/make/Makefile
 # do you want to check python syntax?
 DO_CHECK_SYNTAX:=1
 # do you want to bring in tools?
-DO_TOOLS:=1
+DO_TOOLS:=0
 # what is the tools.stamp file?
 TOOLS:=tools.stamp
 
