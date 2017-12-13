@@ -2,7 +2,11 @@
 
 """
 This is an example of how to do a weighted choice using the
-    numpy.random.choise API.
+    numpy.random.choice API.
+
+NOTES:
+- the weights must sum up to 1.0 otherwise you will get the error:
+    ValueError: probabilities do not sum to 1
 
 References:
 - https://stackoverflow.com/questions/10803135/weighted-choice-short-and-simple
