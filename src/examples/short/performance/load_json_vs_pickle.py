@@ -2,6 +2,9 @@
 
 """
 Compare speed of loading a large dict via json and pickle.
+
+Results:
+- pickle is much faster in python3 (the opposite of python2).
 """
 
 import timeit
