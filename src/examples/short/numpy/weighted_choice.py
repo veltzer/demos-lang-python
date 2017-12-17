@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-This is an example of how to do a weighted choice using the
+This is an example of how to do a weighted choice/sample using the
     numpy.random.choice API.
 
 NOTES:
