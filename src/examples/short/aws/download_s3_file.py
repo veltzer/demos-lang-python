@@ -2,6 +2,8 @@
 
 """
 This is an example of how to download a single file from s3
+
+This is how to download the file to a local file, not to RAM.
 """
 
 import boto3
