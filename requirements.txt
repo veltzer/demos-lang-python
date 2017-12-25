@@ -22,3 +22,4 @@ gcloud
 networkx
 keyring
 dbus-python
+python-jenkins
