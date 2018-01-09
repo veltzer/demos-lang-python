@@ -25,6 +25,10 @@ class BookTest(unittest.TestCase):
         p._Book__price = 60
         self.assertTrue(60 == p.get_price())
 
+    @unittest.skip("demonstrating skipping")
+    def testSkipped(self):
+        print('in testSkipped')
+
     def runTest(self):
         print('in runTest')
         p = Book.Book(50)
