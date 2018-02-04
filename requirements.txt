@@ -1,4 +1,3 @@
-pylogconf
 click
 requests
 tqdm
