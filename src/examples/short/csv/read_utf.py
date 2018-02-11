@@ -5,15 +5,20 @@ This example shows how to read a csv utf file in python3 using the
 built in 'csv' module.
 
 NOTES:
-- it turns out that in python3 it is not imperative to pass the
-'encoding' flag to 'open' in order to have the file open in utf-8.
-- the 'open' function opens with encding 'locale.getpreferredendoing()'
-which is UTF-8 as far as I can tell.
-- this looks independent of the PYTHONIOENCODING environment variable.
+- what enconding does 'open' open a file with if you don't pass an encoding?
+- the answer is 'locale.getpreferredendoing()'
+- and what does that mean?
+- well, on most systems it is utf-8 but sysadmins and even users can override that.
+- for python, users can override this also usingthe PYTHONIOENCODING
+environment variable.
+- so whats the bottom line?
+- if you want to be absolutely sure you are opening a file in utf-8 encoding,
+pass it to 'open' in python3.
 
 References:
 - https://docs.python.org/3/library/locale.html#locale.getpreferredencoding
 - https://docs.python.org/3/library/functions.html#open
+- https://www.python.org/dev/peps/pep-0540/
 """
 
 import csv
