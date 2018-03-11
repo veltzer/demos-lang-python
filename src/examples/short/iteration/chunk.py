@@ -109,4 +109,4 @@ how_much = 10
 print("groupby [{}]".format(timeit.timeit(func_chunk_groupby, number=how_much)))
 print("groupby_closure [{}]".format(timeit.timeit(func_chunk_groupby_closure, number=how_much)))
 print("python [{}]".format(timeit.timeit(func_chunk_python, number=how_much)))
-print("itertoos [{}]".format(timeit.timeit(func_chunk_itertools, number=how_much)))
+print("itertools [{}]".format(timeit.timeit(func_chunk_itertools, number=how_much)))
