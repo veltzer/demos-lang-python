@@ -38,7 +38,7 @@ def chunk_groupby_closure(data, n):
         return counter[1]
     return (dd for (_, dd) in itertools.groupby(data, key=group_classifier))
 
-def chunk(data, n):
+def chunk_python(data, n):
     class __CancellationToken:
         def __init__(self):
             self.is_cancelled = False
@@ -56,6 +56,13 @@ def chunk(data, n):
     while not over.is_cancelled:
         yield return_n()
 
+def chunk_itertools(data, n):
+    i = iter(data)
+    yield itertools.islice(i, n)
+    while True:
+	first = next(i)
+	yield itertools.islice(itertools.chain([first], i), n)
+
 range_limit = 100
 jump = 7
 count = 0
@@ -71,9 +78,15 @@ for d in chunk_groupby_closure(range(range_limit), jump):
     count += jump
 
 count = 0
-for d in chunk(range(range_limit), jump):
+for d in chunk_python(range(range_limit), jump):
     inspect.isgeneratorfunction(d)
     assert list(d) == list(range(count, min(count + jump, range_limit)))
+    count += jump
+
+count = 0
+for d in chunk_itertools(range(range_limit), jump):
+    inspect.isgeneratorfunction(d)
+    assert list(d) == list(range(count, min(count + jump, range_limit))),ld+lb
     count += jump
 
 # lets compare the performance
@@ -85,11 +98,15 @@ def func_chunk_groupby():
 def func_chunk_groupby_closure():
     for d in chunk_groupby_closure(range(range_limit), jump):
         _ = list(d)
-def func_chunk():
-    for d in chunk(range(range_limit), jump):
+def func_chunk_python():
+    for d in chunk_python(range(range_limit), jump):
+        _ = list(d)
+def func_chunk_itertools():
+    for d in chunk_itertools(range(range_limit), jump):
         _ = list(d)
 
 how_much = 10
-print(timeit.timeit(func_chunk_groupby, number=how_much))
-print(timeit.timeit(func_chunk_groupby_closure, number=how_much))
-print(timeit.timeit(func_chunk, number=how_much))
+print("groupby [{}]".format(timeit.timeit(func_chunk_groupby, number=how_much)))
+print("groupby_closure [{}]".format(timeit.timeit(func_chunk_groupby_closure, number=how_much)))
+print("python [{}]".format(timeit.timeit(func_chunk_python, number=how_much)))
+print("itertoos [{}]".format(timeit.timeit(func_chunk_itertools, number=how_much)))
