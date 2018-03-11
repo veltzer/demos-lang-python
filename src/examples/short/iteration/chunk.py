@@ -61,7 +61,9 @@ def chunk_itertools(data, n):
     yield itertools.islice(i, n)
     while True:
 	first = next(i)
-	yield itertools.islice(itertools.chain([first], i), n)
+        # second version is faster...
+	# yield itertools.islice(itertools.chain((first,), i), n)
+	yield itertools.chain((first,), itertools.islice(i, n-1))
 
 range_limit = 100
 jump = 7
