@@ -58,12 +58,15 @@ def chunk_python(data, n):
 
 def chunk_itertools(data, n):
     i = iter(data)
-    yield itertools.islice(i, n)
     while True:
-	first = next(i)
+	# first = next(i)
         # second version is faster...
 	# yield itertools.islice(itertools.chain((first,), i), n)
-	yield itertools.chain((first,), itertools.islice(i, n-1))
+	yield itertools.chain((next(i),), itertools.islice(i, n-1))
+
+def chunk_generator(data, n):
+    it = iter(data)
+    return (itertools.chain((i,), itertools.islice(it, n - 1)) for i in it)
 
 range_limit = 100
 jump = 7
@@ -91,6 +94,12 @@ for d in chunk_itertools(range(range_limit), jump):
     assert list(d) == list(range(count, min(count + jump, range_limit))),ld+lb
     count += jump
 
+count = 0
+for d in chunk_generator(range(range_limit), jump):
+    inspect.isgeneratorfunction(d)
+    assert list(d) == list(range(count, min(count + jump, range_limit))),ld+lb
+    count += jump
+
 # lets compare the performance
 range_limit = 1000000
 jump = 1000
@@ -106,9 +115,13 @@ def func_chunk_python():
 def func_chunk_itertools():
     for d in chunk_itertools(range(range_limit), jump):
         _ = list(d)
+def func_chunk_generator():
+    for d in chunk_generator(range(range_limit), jump):
+        _ = list(d)
 
 how_much = 10
 print("groupby [{}]".format(timeit.timeit(func_chunk_groupby, number=how_much)))
 print("groupby_closure [{}]".format(timeit.timeit(func_chunk_groupby_closure, number=how_much)))
 print("python [{}]".format(timeit.timeit(func_chunk_python, number=how_much)))
 print("itertools [{}]".format(timeit.timeit(func_chunk_itertools, number=how_much)))
+print("generator [{}]".format(timeit.timeit(func_chunk_generator, number=how_much)))
