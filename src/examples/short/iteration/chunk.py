@@ -59,10 +59,10 @@ def chunk_python(data, n):
 def chunk_itertools(data, n):
     i = iter(data)
     while True:
-	# first = next(i)
+        # first = next(i)
         # second version is faster...
-	# yield itertools.islice(itertools.chain((first,), i), n)
-	yield itertools.chain((next(i),), itertools.islice(i, n-1))
+        # yield itertools.islice(itertools.chain((first,), i), n)
+        yield itertools.chain((next(i),), itertools.islice(i, n-1))
 
 def chunk_generator(data, n):
     it = iter(data)
