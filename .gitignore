@@ -9,9 +9,5 @@ __pycache__
 # output files
 *.out
 
-# templar generated
-/.tdefs.config
-/tools
-
 # idea
 /.idea/workspace.xml
