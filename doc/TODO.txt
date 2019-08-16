@@ -13,6 +13,9 @@
 - show how to detect mime types:
 	https://docs.python.org/3/library/mimetypes.html
 
+- fix the demo of the http server which is python2 oriented.
+	https://daanlenaerts.com/blog/2015/06/03/create-a-simple-http-server-with-python-3/
+
 - add some ipython demos
 
 - add demos of the prompt_toolkit:
