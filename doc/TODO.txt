@@ -1,3 +1,18 @@
+- show python3 inheritance:
+	class Foo(Bar):
+	    def baz(self, arg):
+		return super().baz(arg)
+	https://stackoverflow.com/questions/805066/call-a-parent-classs-method-from-child-class-in-python
+
+- show how to make a python daemon:
+	https://pypi.org/project/python-daemon/
+
+- show how to silence pythons http.server
+	https://stackoverflow.com/questions/3389305/how-to-silent-quiet-httpserver-and-basichttprequesthandlers-stderr-output
+
+- show how to detect mime types:
+	https://docs.python.org/3/library/mimetypes.html
+
 - add some ipython demos
 
 - add demos of the prompt_toolkit:
