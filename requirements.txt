@@ -24,3 +24,5 @@ dbus-python
 python-jenkins
 SortedContainers
 PyRSS2Gen
+fire
+PyGithub
