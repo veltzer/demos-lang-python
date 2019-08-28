@@ -7,13 +7,13 @@ A minimal gtk application demo.
 import signal
 
 import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk as gtk
 
-gi.require_version('Gtk', '3.0')
 
 
 def clicked_callback(button):
-    button.set_label('Hello World!' + str(button.num))
+    button.set_label('Hello World! ' + str(button.num))
     button.num += 1
 
 

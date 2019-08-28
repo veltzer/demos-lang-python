@@ -8,7 +8,6 @@ cachetools
 pandas
 dispy
 mako
-# gi
 luigi
 pyinotify
 twisted
@@ -16,7 +15,6 @@ yapsy
 pymysql
 sqlalchemy
 plotly
-# gtk
 gcloud
 networkx
 keyring
@@ -26,3 +24,6 @@ SortedContainers
 PyRSS2Gen
 fire
 PyGithub
+# gtk stuff
+pycairo
+PyGObject
