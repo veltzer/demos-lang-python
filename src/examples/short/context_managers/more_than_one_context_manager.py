@@ -1,14 +1,10 @@
 #!/usr/bin/env python
 
 """
-This is an example of creating your own resource to be used with the 'with'
-python syntax. This is called a 'Context Manager'.
+This is an example of how to use more than one context manager at a time...
 
-You can see the basic flow of code:
-- first the constructor of your context manager is called.
-- then your __enter__ code is called.
-- then the users code block is executed.
-- then your __exit__ code is called.
+References:
+- https://stackoverflow.com/questions/893333/multiple-variables-in-a-with-statement
 """
 
 
