@@ -13,17 +13,17 @@ You can see the basic flow of code:
 
 
 class MyResource:
-    
-    def __init__(self):
-        print("constructor")
+
+    def __init__(self, name):
+        self.name = name
+        print("{} constructor".format(self.name))
 
     def __enter__(self):
-        print("enter")
+        print("{} enter".format(self.name))
 
     def __exit__(self, itype, value, traceback):
-        print("exit")
+        print("{} exit".format(self.name))
 
 
-print("lets see a basic use of the context manager...")
-with MyResource() as r:
+with MyResource("r1") as r1, MyResource("r2") as r2:
     print("block of code")
