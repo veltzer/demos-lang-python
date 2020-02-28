@@ -25,5 +25,5 @@ PyRSS2Gen
 fire
 PyGithub
 # gtk stuff
-pycairo
-PyGObject
+# pycairo
+# PyGObject

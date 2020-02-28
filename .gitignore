@@ -11,3 +11,4 @@ __pycache__
 
 # idea
 /.idea/workspace.xml
+/.myenv.pip.errors
