@@ -13,6 +13,7 @@ pyinotify
 twisted
 yapsy
 pymysql
+mysql-connector
 sqlalchemy
 plotly
 gcloud
