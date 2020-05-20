@@ -1,3 +1,5 @@
+# THIS IS AN AUTO-GENERATED FILE. DO NOT EDIT!
+# production requirements
 click
 requests
 tqdm
@@ -25,6 +27,5 @@ SortedContainers
 PyRSS2Gen
 fire
 PyGithub
-# gtk stuff
-# pycairo
-# PyGObject
+# dev requirements
+pydmt
