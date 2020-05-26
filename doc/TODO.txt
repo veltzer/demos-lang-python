@@ -4,6 +4,9 @@
 		return super().baz(arg)
 	https://stackoverflow.com/questions/805066/call-a-parent-classs-method-from-child-class-in-python
 
+- show how to anotate generators:
+	https://stackoverflow.com/questions/27264250/how-to-annotate-a-generator-in-python3
+
 - show how to make a python daemon:
 	https://pypi.org/project/python-daemon/
 
