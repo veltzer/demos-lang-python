@@ -106,4 +106,4 @@ show_shbang:
 
 .PHONY: todo
 todo:
-	@git grep @TODO -- './*' ':!/Makefile'
+	@git grep @TODO -- ':!/Makefile'
