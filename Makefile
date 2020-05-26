@@ -103,3 +103,7 @@ debug_me:
 .PHONY: show_shbang
 show_shbang:
 	$(Q)find src -name "*.py" -and -executable -exec head -1 {} \; | sort | uniq
+
+.PHONY: todo
+todo:
+	@git grep @TODO -- './*' ':!/Makefile'
