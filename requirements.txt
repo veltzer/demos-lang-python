@@ -27,5 +27,6 @@ SortedContainers
 PyRSS2Gen
 fire
 PyGithub
+prompt-toolkit
 # dev requirements
 pydmt

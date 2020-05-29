@@ -36,6 +36,7 @@ run_requires = [
     'PyRSS2Gen',
     'fire',
     'PyGithub',
+    'prompt-toolkit',
     # gtk stuff
     # 'pycairo',
     # 'PyGObject',
