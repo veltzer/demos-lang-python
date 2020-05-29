@@ -1,3 +1,9 @@
+- chmod 644 all scripts and run them using prun.
+	document all of this in the README.
+	make sure to have a test where all folders under src will have an __init__.py in them
+		(otherwise we could not run them).
+	do all of this for the python2 demos too.
+
 - show python3 inheritance:
 	class Foo(Bar):
 	    def baz(self, arg):
