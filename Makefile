@@ -107,3 +107,7 @@ show_shbang:
 .PHONY: todo
 todo:
 	@git grep @TODO -- ':!/Makefile'
+
+.PHONY: remove_stamp
+remove_stamp:
+	@find . -type f -and -name "*.stamp" -delete

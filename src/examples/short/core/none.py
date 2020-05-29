@@ -56,10 +56,10 @@ h = {
 print(h)
 
 # lets compare None to various things...
-if 0 is None:
+if None==0:
     print('None==0')
 else:
-    print('None!=0')
+    print('!None==0')
 if not None:
     print('not None')
 else:

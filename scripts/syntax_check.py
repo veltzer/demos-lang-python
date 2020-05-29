@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 """
 This script checks the syntax of other python scripts.
@@ -40,9 +40,13 @@ if check_with is None:
     sys.exit(1)
 
 # check the syntax
-subprocess.check_call([
+out=subprocess.check_output([
     check_with,
     '-m',
     'py_compile',
     filename,
-])
+]).decode()
+# check that there is no output
+if out!="":
+    print("out is [{}]".format(out))
+    sys.exit(1)
