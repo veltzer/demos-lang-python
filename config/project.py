@@ -1,5 +1,5 @@
-project_name = 'demos-python'
-project_long_description = 'Demos for the Python programming language'
+project_name = 'demos-python3'
+project_long_description = 'Demos for the Python programming language (version 3)'
 project_year_started = '2010'
 project_description = '''This project explores the python programming language.
 The idea is that when you are programming you may find many examples
