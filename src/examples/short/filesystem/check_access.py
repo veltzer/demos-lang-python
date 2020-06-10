@@ -9,6 +9,9 @@ on all types of access to it and not throw an exception.
 - this means that if os.access returns True it means that
     1. the file exists.
     2. the file is readable.
+
+References:
+- https://www.novixys.com/blog/python-check-file-can-read-write/
 """
 
 import os
