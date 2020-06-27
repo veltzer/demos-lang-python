@@ -28,5 +28,6 @@ PyRSS2Gen
 fire
 PyGithub
 prompt-toolkit
+PyQt5
 # dev requirements
 pydmt

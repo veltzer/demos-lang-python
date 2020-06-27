@@ -37,6 +37,7 @@ run_requires = [
     'fire',
     'PyGithub',
     'prompt-toolkit',
+    'PyQt5',
     # gtk stuff
     # 'pycairo',
     # 'PyGObject',

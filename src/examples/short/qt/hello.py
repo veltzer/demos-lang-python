@@ -2,11 +2,12 @@
 
 import sys
 
-import PyQt4.QtCore
+import PyQt5.QtCore
+import PyQt5.QtWidgets
 
-print('version is', PyQt4.QtCore.QT_VERSION_STR)
-a = PyQt4.QtGui.QApplication(sys.argv)
-w = PyQt4.QtGui.QPushButton('Hello World', None)
+print('version is', PyQt5.QtCore.QT_VERSION_STR)
+a = PyQt5.QtWidgets.QApplication(sys.argv)
+w = PyQt5.QtWidgets.QPushButton('Hello World', None)
 
 # Here the differences to the trivial one above may be seen, using QT's
 # signal and slot features:
