@@ -38,6 +38,7 @@ run_requires = [
     'PyGithub',
     'prompt-toolkit',
     'PyQt5',
+    'azure-cognitiveservices-search-websearch',
     # gtk stuff
     # 'pycairo',
     # 'PyGObject',
