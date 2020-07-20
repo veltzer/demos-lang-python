@@ -31,3 +31,4 @@ prompt-toolkit
 PyQt5
 # dev requirements
 pydmt
+bitmath
