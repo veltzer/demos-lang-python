@@ -9,6 +9,9 @@ for basic usage.
 The problem with this example is that you set your own logging
 level which is contrary to logging philosophy. You shuld not
 set your own logging level.
+
+Another issue is that if you throw an exception it DOES NOT
+get logged with a logger but rather through prints.
 """
 
 import logging
@@ -19,3 +22,5 @@ logger.setLevel(logging.DEBUG)
 
 logger.warning("this is a warning message %d", 1)
 logger.debug("this is a debug message")
+
+raise ValueError("this is an error")
