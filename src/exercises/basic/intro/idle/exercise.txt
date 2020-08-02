@@ -1,7 +1,7 @@
 play around with idle. Use commands like:
-	print "foo"
+	print("foo")
 	x=7
-	print x
+	print(x)
 	x=x/2
-	print x
+	print(x)
 	etc...
