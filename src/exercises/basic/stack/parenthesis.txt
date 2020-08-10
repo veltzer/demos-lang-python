@@ -1,0 +1,12 @@
+Parenthesis checker:
+You are given an expression of ONLY parenthesis and you should check it's validity.
+Here are some examples:
+Legal:
+	()
+	([]())
+	({()}[])
+Illegal:
+	(]
+	)(
+	())(
+	{{)[)}

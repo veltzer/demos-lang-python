@@ -1,0 +1,16 @@
+Reverse Polish notation (RPN) is a notation for methmatical operations.
+Lets see an example:
+	2 3 +
+
+In RPN we don't need parenthesis.
+For example, say we want to express the following, which requires parenthesis:
+	(3+4)*5 ( = 35 )
+In RPN we just write:
+	3 4 + 5 *
+
+Write an RPN evaluator which is a piece of code that receives an RPN expression
+as input and returns the value of the expression.
+
+Assumption: all numbers are non negative integers.
+
+You can check if a string is a positive integer in python by using the 'isdigit' method.
