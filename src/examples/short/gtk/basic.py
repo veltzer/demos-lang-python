@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A minimal gtk application demo.
 """

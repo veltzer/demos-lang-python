@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An Example of the flyweight pattern in python. The idea is to use the scoping rules of python (instance,
 class,module,global) to make the flyweight feel natural. It seems that in python this pattern is much

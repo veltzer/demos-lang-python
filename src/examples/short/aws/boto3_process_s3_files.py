@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example about how to connect to s3 and iterate files
 in some "folder" of s3 using the 'boto3' module.

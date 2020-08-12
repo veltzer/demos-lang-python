@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to compare two orderd lists in python.
 The full description is that we want the lists to be of the same length

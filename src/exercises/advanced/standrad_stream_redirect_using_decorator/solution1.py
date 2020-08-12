@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import functools
 import os
 import sys

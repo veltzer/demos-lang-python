@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 setup.py file for SWIG car
 """

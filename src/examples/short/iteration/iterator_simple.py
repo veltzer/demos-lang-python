@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 this is an example of building your own iterator
 In this example the object returns itself as the iterator

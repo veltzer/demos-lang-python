@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Example of sorting with python.
 Notice the passing of the comparator and it's triped (1,0,-1) return value.

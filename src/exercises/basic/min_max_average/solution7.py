@@ -1,10 +1,10 @@
-#!/usr/bin/env python
-
-# this solution is the 'varargs' type. You can call the min_max_avg function in any
-# of the following ways:
-# (my_max,my_min,my_avg)=min_max_avg(1,2,3)
-# (my_max,my_min,my_avg)=min_max_avg(1,2,3,4,5,6)
-# (my_max,my_min,my_avg)=min_max_avg(*range(100000))
+"""
+this solution is the 'varargs' type. You can call the min_max_avg function in any
+of the following ways:
+(my_max,my_min,my_avg)=min_max_avg(1,2,3)
+(my_max,my_min,my_avg)=min_max_avg(1,2,3,4,5,6)
+(my_max,my_min,my_avg)=min_max_avg(*range(100000))
+"""
 
 
 def min_max_avg(*num_list):

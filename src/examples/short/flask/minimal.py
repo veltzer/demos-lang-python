@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Minimal running flask application
 - It will listen to port 5000

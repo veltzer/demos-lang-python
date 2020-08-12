@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def give_me_little_data():
     yield 'this is little data 1'
     yield 'this is little data 2'

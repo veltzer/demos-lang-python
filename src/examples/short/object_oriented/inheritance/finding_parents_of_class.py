@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to find the parents of a class in python.
 

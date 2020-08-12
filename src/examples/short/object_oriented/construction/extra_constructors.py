@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Example of how to create more than one constructor for a class.
 

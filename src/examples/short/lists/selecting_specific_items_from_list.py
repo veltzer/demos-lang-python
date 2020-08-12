@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to select specific fields from a list
 """

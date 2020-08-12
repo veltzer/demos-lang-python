@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Demo how to create a temp file in python
 

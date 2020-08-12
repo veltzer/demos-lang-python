@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to correctly write a newline charcter
 in python in a way which is operating system portable.

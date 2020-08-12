@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 a more efficient solution to the exercise since we are iterating items
 and getting BOTH the key AND the value immediately without the need to preform

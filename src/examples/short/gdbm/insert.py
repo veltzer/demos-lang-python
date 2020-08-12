@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a simple example of how to use the dbm.gnu module of the
 standard python library

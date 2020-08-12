@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a simple process that can output to any of three destinations:
 - stdout

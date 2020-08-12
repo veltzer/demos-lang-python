@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example demonstrates the use of the 'unittest' module.
 """

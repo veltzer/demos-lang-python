@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A demo of how to load a csv file
 """

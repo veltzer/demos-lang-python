@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an exploration of how to find out if a class has a property.
 There are two ways to do it: cls.__dict__ and hasattr.

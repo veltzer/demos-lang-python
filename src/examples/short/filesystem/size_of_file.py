@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a simple example that shows how to get the size of file in python.
 

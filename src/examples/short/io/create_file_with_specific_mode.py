@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example explores how to create a file with very specific mode bits.
 

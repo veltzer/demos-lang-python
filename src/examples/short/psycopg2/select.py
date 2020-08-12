@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A basic program that connects to a postgresql database using the psycopg2 module
 

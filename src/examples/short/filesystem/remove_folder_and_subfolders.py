@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to remove a folder with all of its subfolders in
 python using the shutil package.

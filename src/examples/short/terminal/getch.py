@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to read just one character from the keyboard in python
 

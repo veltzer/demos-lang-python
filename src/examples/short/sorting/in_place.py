@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This shows sorting lists in place
 Sorting in place is much more memory efficient than using the 'sorted'

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example of an application sending an email. This uses smtplib which is a standard python library.
 

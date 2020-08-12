@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example demonstrates how to show the default value for a paramter
 in click.

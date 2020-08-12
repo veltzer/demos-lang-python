@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 d = {
     'Israel': 'Jerusalem',
     'France': 'Paris',

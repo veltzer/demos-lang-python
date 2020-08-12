@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example of how to extract type hints from a class
 """

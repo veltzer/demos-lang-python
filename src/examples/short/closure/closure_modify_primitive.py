@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example that shows that you cannot change primitives in closures.
 """

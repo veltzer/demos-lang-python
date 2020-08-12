@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to store method pointers and call them
 """

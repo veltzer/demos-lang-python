@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to read a symbolic link in python.
 the API is os.readlink()

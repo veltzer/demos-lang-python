@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example of an 'id generator' using two ways:
 1) simple global variable

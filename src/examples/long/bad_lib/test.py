@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import module_checker
 
 # this works

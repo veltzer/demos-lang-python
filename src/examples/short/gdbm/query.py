@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to query the values in a gdbm file.
 """

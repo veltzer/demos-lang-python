@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A demo for the optparse module.
 This is not the best module for argument parsing in python.

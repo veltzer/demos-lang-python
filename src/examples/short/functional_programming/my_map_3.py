@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 this is an example of implementing the python builtin 'map'
 function in python.

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 places = {
     'Shire': {'leave': 'Bree', 'stay': 'DEATH'},
     'DEATH': {},

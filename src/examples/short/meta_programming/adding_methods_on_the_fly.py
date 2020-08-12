@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is quite an advanced example of doing meta programming in python.
 This exercise shows how to:

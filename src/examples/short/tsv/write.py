@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A simple example of how to write a TSV file using the 'tsv' module
 """

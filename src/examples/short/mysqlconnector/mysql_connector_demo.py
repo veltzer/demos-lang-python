@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example showing how to use the mysql.connector
 module to connect and interact with the mysql database.

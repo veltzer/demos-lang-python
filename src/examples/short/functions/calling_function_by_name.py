@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how you can call a function when all you
 know is it's name. The name may come from the user, database, etc.

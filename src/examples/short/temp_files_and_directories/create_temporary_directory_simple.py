@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to create a temporary directory in python and
 destroy it's content once you are done with it.

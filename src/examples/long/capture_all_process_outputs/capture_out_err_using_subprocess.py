@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a program showing how to redirect both stdout and stderr for a subprocess
 Notice that we get both stdout and stderr data through the same pipe.

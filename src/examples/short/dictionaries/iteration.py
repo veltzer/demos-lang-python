@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example exploring the many ways,right and wrong,to iterate
 a dictionary in python.

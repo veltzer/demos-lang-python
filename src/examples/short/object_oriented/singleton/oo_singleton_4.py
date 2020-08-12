@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a *fast* singleton in that you pay only for the first call.
 All subsequent calls don't even have an 'if' statement in them...

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example demostrates types in python and the use of the 'type' function.
 You can see that there is a difference between an object inheriting from object

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that in python3 map is a generator and does not return a list.
 If you want to turn it's output into a list there are two ways to do it:

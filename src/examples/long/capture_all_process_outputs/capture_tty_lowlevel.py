@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example captures all output of a process: stdout, stderr and tty.
 

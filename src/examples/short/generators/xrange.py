@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of doing our own range
 """

@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def right_align_to(lines, width):
     """Right-align all lines to given width."""
     result = []

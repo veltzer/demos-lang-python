@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of overloading the __getattr__ python method. This allows
 one to pretend to have various attributes or to decide that attributes

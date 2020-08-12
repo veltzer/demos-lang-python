@@ -1,5 +1,6 @@
-#!/usr/bin/env python3
-'''A sample application for cmd2.'''
+"""
+A sample application for cmd2
+"""
 
 from cmd2 import Cmd, make_option, options, set_use_arg_list
 

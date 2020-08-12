@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to quiet flask logging down.
 

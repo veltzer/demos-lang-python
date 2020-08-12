@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example explores whether it is efficient or not to cache os.path.getmtime()
 data in user space in python.

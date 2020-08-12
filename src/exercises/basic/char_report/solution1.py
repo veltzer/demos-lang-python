@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 f = open('input.txt')
 report = {}
 for line in f.readlines():

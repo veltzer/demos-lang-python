@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import moda1
 import modb1
 

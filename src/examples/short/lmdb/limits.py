@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Testing the limits of lmdb
 

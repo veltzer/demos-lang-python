@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 size = int(input('please enter a list size: '))
 l = []
 for number in range(0, size):

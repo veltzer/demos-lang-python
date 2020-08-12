@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 class Range:
     def __init__(self, fr, to):
         self.fr = fr

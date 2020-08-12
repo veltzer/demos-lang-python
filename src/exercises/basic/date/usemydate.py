@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import mydate
 
 for i in mydate.months_name:

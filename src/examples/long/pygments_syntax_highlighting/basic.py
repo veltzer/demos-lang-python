@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Basic coloring with pygments
 """

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from pygraph.algorithms.searching import depth_first_search
 # Import the module and instantiate a graph object
 from pygraph.classes.graph import graph

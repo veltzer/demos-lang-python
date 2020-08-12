@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to remove whitespace elements from an ElementTree based dom.
 

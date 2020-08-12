@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 check which is faster, pandas with chunks or python with
 no module.

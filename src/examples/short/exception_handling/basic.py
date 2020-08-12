@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Example code for raising an exception, catching it and executing finally code in python.
 

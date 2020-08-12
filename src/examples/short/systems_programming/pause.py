@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example demonstrates the use of signal.pause().
 If you already know about UNIX signals then this is no great surprise.

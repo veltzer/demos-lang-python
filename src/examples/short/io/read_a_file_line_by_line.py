@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to read a file line by line.
 This is especially good for very large files.

@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def my_min(lst):
     cur_min = lst[0]
     for x in lst:

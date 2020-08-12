@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Solution but with a variable argument list
 """

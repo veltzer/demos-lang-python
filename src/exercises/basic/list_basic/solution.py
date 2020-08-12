@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def mysum(lst):
     """A function receiving a list of integers and returning the sum
     of the integers on the list"""

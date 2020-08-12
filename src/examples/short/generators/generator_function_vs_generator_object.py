@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows the differece between a generator function and a
 generator object.

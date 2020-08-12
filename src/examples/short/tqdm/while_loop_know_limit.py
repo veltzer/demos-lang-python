@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is how to use tqdm when you know number of iterations.
 

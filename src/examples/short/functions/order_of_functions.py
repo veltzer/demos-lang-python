@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
     This example shows that a function in python can use a 'forward'
     defined function as long as the function in question is defined

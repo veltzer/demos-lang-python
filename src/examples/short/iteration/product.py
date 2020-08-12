@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use the itertools.product function
 to iterate the cartesian product of two iterables.

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from twisted.internet import reactor
 from twisted.internet.protocol import Factory, connectionDone
 from twisted.protocols.basic import LineReceiver

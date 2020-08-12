@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import setuptools
 from pkgutil import walk_packages
 import os

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how you can load a json object in an ordered fashion (deterministic
 across different python runs)

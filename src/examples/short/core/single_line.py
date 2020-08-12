@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that you can put code on the same line as
 a block starter

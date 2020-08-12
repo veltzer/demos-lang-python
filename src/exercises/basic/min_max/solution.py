@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 mymin = 1000000000000000000000
 mymax = -1000000000000000000000
 for x in range(0, 10):

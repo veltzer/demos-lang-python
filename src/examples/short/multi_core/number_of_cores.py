@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Getting the number of cores via python
 

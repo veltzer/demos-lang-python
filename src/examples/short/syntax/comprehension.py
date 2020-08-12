@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Exapmles of various types of comprehensions.
 """

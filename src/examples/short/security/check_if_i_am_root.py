@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to check if you are root in python.
 

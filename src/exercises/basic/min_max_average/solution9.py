@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 this solution is without the varargs type.
 notice that this does prevent us from calling it with the range

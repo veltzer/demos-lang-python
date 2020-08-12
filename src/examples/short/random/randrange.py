@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a simple example of how to get random numbers in python.
 

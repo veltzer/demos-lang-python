@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to list instances using the python boto3 library
 

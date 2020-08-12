@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example is taken from the following talk:
 http://pyvideo.org/video/588/mindblowing-python-gil

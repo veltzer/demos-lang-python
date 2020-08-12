@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def give_me_some_data():
     yield 7
     yield -14

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example demostrates that you can throw exceptions
 in the middle of python "constructors" (which are

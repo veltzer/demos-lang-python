@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of building an iterator. In this case the iterator
 object returned is a different object than the one which is being iterated.

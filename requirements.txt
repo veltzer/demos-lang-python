@@ -30,5 +30,7 @@ PyGithub
 prompt-toolkit
 PyQt5
 azure-cognitiveservices-search-websearch
+pygraph
+music
 # dev requirements
 pydmt

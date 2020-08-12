@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example demonstrates how to analyze the return code of a child process.
 """

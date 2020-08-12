@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A basic exapmle of how to use the 'attrs' framework.
 

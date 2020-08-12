@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that you cannot change the value of a local variable indirectly
 using the locals() or the vars() dictionaries.

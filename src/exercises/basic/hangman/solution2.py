@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Usage: hangman.py <secret_word>
 """

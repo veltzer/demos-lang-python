@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Naive version of a solution, just construct a list...
 No generators here.

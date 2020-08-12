@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import outer.inner.mod
 
 print('hello from [{0}]'.format(__file__))

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of using yapsy to create a lightweight plugin based system.
 

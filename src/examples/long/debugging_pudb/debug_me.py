@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def simple_func(x):
     x += 1
 

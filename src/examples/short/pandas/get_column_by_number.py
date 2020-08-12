@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to get a column by number from a pandas
 DataFrame.

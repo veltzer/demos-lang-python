@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import plugin_mgr
 
 # the easiest way to use

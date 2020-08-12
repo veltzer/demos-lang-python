@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to create a test suite object with dynamically
 created tests.

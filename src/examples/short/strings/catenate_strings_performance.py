@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example explores how best to catenate strings in python.
 

@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 """
 Example for catching all exception types.
 

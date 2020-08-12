@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 the sys.path.append in the next section is needed since we didn't 'properly'
 install the module to /usr/share/python.

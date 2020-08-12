@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Show how to convert using bitmath
 

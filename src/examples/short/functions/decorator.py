@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a simple example of writing a python function decorator
 

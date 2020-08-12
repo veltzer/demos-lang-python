@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Showing how to sort tuples in reverse
 """

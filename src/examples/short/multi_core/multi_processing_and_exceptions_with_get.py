@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to handle the exceptions that happen in a multiprocessing
 python process in the main process that launched that process.

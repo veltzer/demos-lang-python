@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Example of a graph using networkx
 

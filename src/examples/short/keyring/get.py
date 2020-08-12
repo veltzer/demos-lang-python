@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A basic example of how to get a password from the default
 keyring of you environment.

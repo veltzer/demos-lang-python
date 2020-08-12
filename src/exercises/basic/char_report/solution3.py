@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 f = open('ex4.py', 'r')
 report = {}
 lines = f.readlines()

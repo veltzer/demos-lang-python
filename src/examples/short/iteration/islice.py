@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use itertools.islice to cut down on the number
 of iteration that a loop does...

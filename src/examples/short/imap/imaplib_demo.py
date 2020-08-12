@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use the imaplib module.
 In this case I use it to access my gmail account, upload messages, download messages

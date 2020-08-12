@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example explores the None variable and NoneType in python.
 """

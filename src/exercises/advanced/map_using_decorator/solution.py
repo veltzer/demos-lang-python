@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def add1(f):
     def inner(*args, **kw):
         return f(*args, **kw) + 1

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use the apt package from python.
 This shows how to install packages.

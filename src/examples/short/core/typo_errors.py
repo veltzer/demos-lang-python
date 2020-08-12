@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of what typo errors could cause in python.
 This means that testing is more important in python than in

@@ -1,6 +1,6 @@
-#!/usr/bin/env python
-
-# https://google.github.io/python-fire
+"""
+https://google.github.io/python-fire
+"""
 
 import fire
 

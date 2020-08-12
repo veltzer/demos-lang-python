@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example deals with removing a set of characters from a string.
 

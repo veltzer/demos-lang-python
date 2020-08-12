@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Example of generators using generators
 """

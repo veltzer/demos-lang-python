@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example encodes a string using the 'struct' module.
 

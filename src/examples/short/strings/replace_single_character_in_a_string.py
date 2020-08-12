@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 These are examples of replacing a character or characters in strings.
 """

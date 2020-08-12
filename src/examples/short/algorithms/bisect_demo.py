@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use the python bisect module
 This is basically a binary search algorithm.

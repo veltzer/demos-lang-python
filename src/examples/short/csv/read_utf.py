@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to read a csv utf file in python3 using the
 built in 'csv' module.

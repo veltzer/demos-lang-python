@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a demo of using the inject framework for python which is
 a dependency injection framework.

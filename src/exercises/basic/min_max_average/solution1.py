@@ -1,6 +1,6 @@
-#!/usr/bin/env python
-
-# this is an unfair solution
+"""
+this is an unfair solution
+"""
 
 
 def max_min_avg(*num):

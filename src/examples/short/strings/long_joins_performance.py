@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example proves that when you want to catenate many strings 'join' is
 the right way to go.

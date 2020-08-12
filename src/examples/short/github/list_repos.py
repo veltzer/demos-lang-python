@@ -1,5 +1,3 @@
-#!/usr/env/python
-
 from github import Github
 import sys
 import os.path

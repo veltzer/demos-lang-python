@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Example of disassembling a python function using the 'dis' and 'inspect' modules.
 """

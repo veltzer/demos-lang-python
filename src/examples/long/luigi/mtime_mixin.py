@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a mixin solution to the modification time stamps mentioned before.
 """

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that two activations of the gzip library to compress files
 actually produce files with different md5 signatures.

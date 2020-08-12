@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that you can write bad data into TSV files
 using the 'tsv' module

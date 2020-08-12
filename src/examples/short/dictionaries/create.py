@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example showing the different ways to create dicts
 

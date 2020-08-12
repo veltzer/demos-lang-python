@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 example of how to convert the output of date(1) on the command line
 to mysql type dates.

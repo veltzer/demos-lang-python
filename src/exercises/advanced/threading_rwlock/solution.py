@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 class RWL:
     def __init__(self):
         self._writersWaiting = 0

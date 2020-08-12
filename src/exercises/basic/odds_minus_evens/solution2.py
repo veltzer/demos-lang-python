@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def odds_minus_evens(l):
     sum = 0
     for x in l:

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example for how to use a generator directly and get all of it's values
 through the python API and not through the iterator abstraction (for loop).

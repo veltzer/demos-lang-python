@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to list all elements of a gdbm file.
 

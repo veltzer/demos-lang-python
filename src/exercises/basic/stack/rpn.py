@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 class Stack:
     """
     Simple stack implementation using a python list

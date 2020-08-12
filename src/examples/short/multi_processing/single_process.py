@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import fcntl
 import os
 import os.path

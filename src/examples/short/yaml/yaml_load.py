@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A basic example of loading YAML
 Make sure you use the "safe_load" method and not the "load" method

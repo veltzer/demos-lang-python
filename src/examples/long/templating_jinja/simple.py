@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import jinja2
 
 t = jinja2.Template("Hello {{ something }}!")

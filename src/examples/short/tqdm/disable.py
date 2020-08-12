@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 this is how to disable tqdm
 """

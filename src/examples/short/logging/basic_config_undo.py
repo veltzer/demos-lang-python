@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This exmple explores how to undo what basicConfig does
 """

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """ using a regular for loop with yield """
 
 

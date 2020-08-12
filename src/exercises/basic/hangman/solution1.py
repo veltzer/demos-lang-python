@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Simple implementation of a hangman game.
 

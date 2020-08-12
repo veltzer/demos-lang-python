@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A very simple example of python threads
 

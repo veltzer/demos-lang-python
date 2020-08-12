@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to read the full content of a file in python
 

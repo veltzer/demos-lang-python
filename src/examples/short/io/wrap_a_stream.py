@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example will show how to wrap one io object with another.
 

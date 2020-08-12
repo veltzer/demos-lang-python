@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 found = True
 while found:
     input_string = input('Please give me some digits... \n')

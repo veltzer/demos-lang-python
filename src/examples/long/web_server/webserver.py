@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 demo of simple web server in python using HTTPServer
 originally grabbed from 'http://fragments.turtlemeat.com/pythonwebserver.php'.

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This exmple catches all urls via variables.
 

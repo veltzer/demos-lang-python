@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to pretty print json using the 'json' module.
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example of how to validate a YAML document using the jsonschema module.
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Demonstration program for pythondialog.
 

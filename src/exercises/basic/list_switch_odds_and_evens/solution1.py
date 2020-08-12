@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 num = int(input('Please enter number of elements: '))
 my_list = []
 for x in range(num):

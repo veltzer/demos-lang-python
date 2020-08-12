@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that scope of variables in a python function
 is really local

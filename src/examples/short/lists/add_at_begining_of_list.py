@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to add an element at the begining of a list in python.
 

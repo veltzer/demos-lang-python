@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Example of confirmation (yes/no) dialog window.
 """

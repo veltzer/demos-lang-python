@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import json
 import urllib.request
 import xml.etree.cElementTree as ElementTree

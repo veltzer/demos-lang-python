@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a basic demo of how to use the ctypes python library to load
 a library and use it.

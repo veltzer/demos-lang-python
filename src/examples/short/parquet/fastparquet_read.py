@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example of reading parquet files with 'fastparquet'.
 

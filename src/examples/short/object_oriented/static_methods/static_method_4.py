@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This shows that 'staticmethod' can be used by inheriting
 classes as well. It works!

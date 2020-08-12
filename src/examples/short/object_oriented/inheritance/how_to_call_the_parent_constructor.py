@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 This is an example showing how to create object hierarchies in python.
 

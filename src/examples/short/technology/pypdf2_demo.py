@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Make some simple multipage pdf files.
 

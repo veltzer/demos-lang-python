@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a solution using a dictionary
 """

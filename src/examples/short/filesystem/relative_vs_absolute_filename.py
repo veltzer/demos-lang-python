@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to know, in python, whether the file name
 that you get is realtive or absolute

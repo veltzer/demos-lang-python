@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use the 'imp' module to do double importing of content
 into the same namespace. You select the namespace, in this case 'config'.

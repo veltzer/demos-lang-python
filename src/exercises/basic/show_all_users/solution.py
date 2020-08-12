@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This script shows all users on a UNIX system
 """

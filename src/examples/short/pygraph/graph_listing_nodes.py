@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # Import the module and instantiate a graph object
 from pygraph.classes.graph import graph
 

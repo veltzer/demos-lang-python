@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example of how to use python3-progressbar
 

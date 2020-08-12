@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to generically call a function you know nothing about
 and get the arguments for it from the outside

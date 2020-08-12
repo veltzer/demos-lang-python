@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to list all keys/values in an mdb file.
 

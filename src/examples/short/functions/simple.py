@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a simple example of a function in python3
 """

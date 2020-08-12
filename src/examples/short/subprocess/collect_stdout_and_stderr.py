@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to run a subprocess and collect both it's standard
 output and his standard error.

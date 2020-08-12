@@ -39,6 +39,8 @@ run_requires = [
     'prompt-toolkit',
     'PyQt5',
     'azure-cognitiveservices-search-websearch',
+    'pygraph',
+    'music',
     # gtk stuff
     # 'pycairo',
     # 'PyGObject',

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a basic logging example
 

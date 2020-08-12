@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is how to create temporary file names in python.
 

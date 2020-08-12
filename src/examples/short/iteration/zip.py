@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example iterates two or more containers at the same time.
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to use meta classes to change all class methods to lowercase.
 The most important things to remember about writing meta classes:

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import sys
 from azure.cognitiveservices.search.websearch import WebSearchClient
 from azure.cognitiveservices.search.websearch.models import SafeSearch

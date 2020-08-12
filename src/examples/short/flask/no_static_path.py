@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to remove the static path from flasks url map.
 

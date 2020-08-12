@@ -1,8 +1,8 @@
-#!/usr/bin/env python
-
-# this is a function accepting a list of unary functions and an argument
-# the function returns a list where each element is the application of the
-# relevant unary function on the single argument
+"""
+this is a function accepting a list of unary functions and an argument
+the function returns a list where each element is the application of the
+relevant unary function on the single argument
+"""
 
 
 def map_like(func_list, arg):

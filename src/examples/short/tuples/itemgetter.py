@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use operator.itemgetter to avoid writing
 small lambda functions to achieve the same goal.

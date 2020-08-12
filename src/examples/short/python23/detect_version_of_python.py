@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This script shows how to detect which version of python you are running in.
 

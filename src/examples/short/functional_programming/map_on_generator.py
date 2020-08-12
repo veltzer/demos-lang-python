@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that when map is given a generator it DOES NOT create a list
 with all the elements that the generator provides but rather iterates the generator

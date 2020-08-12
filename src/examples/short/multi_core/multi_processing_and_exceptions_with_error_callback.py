@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows what happens when you use multiprocessing
 and throw exceptions from the processes.

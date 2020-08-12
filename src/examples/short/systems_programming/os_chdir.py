@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use the os chdir command.
 Note that an exception is thrown if a directory name which cannot be

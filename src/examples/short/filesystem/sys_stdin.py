@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 example of how to work with standard input in python.
 This program copies data from standard input into standard

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # this example shows a synchronized stack which does not sleep
 # on pop on empty stack...
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that you cannot overload functions in python.
 The second function 'overwrites' the first.

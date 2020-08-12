@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to split a filename into its components.
 

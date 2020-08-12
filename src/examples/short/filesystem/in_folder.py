@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to find if a file is in a certain folder.
 """

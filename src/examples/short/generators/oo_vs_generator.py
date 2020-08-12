@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def fib():
     a = b = 1
     while True:

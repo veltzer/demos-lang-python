@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A basic example for the python built-in 'filter' function
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that python sets are not JSON serializable
 """

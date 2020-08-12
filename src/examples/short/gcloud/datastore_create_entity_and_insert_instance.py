@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 This is a simple example of how to enter data into a google
 cloud store

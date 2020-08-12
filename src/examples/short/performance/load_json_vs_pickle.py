@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Compare speed of loading a large dict via json and pickle.
 

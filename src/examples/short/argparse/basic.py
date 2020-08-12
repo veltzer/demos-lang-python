@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A demo for the argparse module which is arguably the best python
 command line parsing module.

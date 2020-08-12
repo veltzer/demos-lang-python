@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows the various ways to get the host name in python.
 

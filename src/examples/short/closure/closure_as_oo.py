@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example showing how, to some extent closure can be seen as a replacement
 for object oriented programming. The 'Person' function below could

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to writing XML in python using the built in
 xml.etree module

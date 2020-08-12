@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 get_movie.py
 

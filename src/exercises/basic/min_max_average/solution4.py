@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def min_max_avg(list):
     min = list[0]
     max = list[0]

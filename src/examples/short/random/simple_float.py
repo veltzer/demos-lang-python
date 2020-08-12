@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This shows how to create a simple random floating point number.
 

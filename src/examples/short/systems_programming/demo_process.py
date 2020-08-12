@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a demo process that others will run.
 It will send some data and then exit.

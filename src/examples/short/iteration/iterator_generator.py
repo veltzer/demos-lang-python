@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that every generator in python can
 be used as an iterator.

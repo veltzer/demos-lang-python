@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to read from a file descriptor (not a file).
 """

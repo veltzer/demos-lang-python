@@ -1,5 +1,6 @@
-#!/usr/bin/env python
-# lambda and apply again...
+"""
+lambda and apply again...
+"""
 
 
 def my_apply(f, seq):

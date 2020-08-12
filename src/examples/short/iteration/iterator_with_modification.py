@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 The purpose of this example is to show what happens when we modify elements
 while iterating. What is the moral of this example? DONT DO IT. Do not modify

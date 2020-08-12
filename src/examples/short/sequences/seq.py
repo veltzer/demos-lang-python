@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
     this example shows that you can pass any generator/sequence to a function
     that only uses the generator/sequence API and get the right results.

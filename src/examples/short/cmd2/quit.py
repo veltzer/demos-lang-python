@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 An example of how to build a quit command in cmd2.
 The idea is just to "return True" from the command.

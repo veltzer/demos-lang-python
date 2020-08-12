@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Usage: get_person.py 'personID'
 

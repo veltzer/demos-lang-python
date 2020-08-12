@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Here is how to create and use named tuples in python.
 

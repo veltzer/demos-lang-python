@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that if you have a generator
 you can turn it into a real list using several ways:

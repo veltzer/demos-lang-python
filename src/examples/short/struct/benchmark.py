@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example attempts to compre ujson.loads with struct.unpack
 to see which is faster.

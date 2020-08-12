@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Example of an enum in python3
 """

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Excercise: write a function to inverse a dictionary.
 Assume that all values are different.

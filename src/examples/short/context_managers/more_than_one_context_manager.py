@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to use more than one context manager at a time...
 

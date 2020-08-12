@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is how you want to use the logging module in a small script.
 

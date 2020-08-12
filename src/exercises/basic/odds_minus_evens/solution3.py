@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def my_map(x):
     if x % 2 == 0:
         return -x

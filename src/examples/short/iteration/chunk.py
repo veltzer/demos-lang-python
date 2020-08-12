@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to take an iterator and chunk it.
 This means produce iterators that will ultimately cover

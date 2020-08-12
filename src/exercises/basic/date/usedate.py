@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import date
 
 baddate1 = date.Date(37, 4, 5)

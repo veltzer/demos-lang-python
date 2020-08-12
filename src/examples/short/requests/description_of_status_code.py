@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to get the description of various
 http status codes.

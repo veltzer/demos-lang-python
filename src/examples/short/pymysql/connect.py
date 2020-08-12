@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to connect to a mysql database using the
 'pymysql' module.

@@ -1,6 +1,6 @@
-#!/usr/bin/env python
-
-# This solution uses lamba and apply (advanced stuff)
+"""
+This solution uses lamba and apply (advanced stuff)
+"""
 
 
 def my_apply(f, seq):

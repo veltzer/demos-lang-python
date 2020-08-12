@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 How to use infinite in python.
 

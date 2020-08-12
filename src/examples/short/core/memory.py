@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example explores how python allocates memory.
 This example assumes that you are watching the memory

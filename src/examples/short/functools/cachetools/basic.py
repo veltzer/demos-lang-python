@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A basic example for using the 'cachetools' module
 

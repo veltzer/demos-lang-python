@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import gtk
 
 w = gtk.Window()

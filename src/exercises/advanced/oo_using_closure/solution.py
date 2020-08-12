@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-
-
 def Person(name, age):
     def data():
         pass

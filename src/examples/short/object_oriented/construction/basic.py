@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Examples of constructors in python.
 You must accept at least one argument in a constructor in order for it

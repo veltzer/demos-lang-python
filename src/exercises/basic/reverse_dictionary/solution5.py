@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Solution for the reversed dict exercise using dictionary comprehensions...
 """

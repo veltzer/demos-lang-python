@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to remove the last character from a string
 

@@ -1,6 +1,6 @@
-#!/usr/bin/env python
-
-# this is a solution to the word report exercies
+"""
+this is a solution to the word report exercies
+"""
 
 # lets initialize the report dictionary...
 report = {}

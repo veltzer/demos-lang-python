@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # A function for each operation. You'll see below why I do this.
 
 

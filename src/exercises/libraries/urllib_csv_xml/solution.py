@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import csv
 import urllib.request
 import xml.etree.cElementTree as ElementTree

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example demonstrates that an object is just a dictionary and you can access it's
 underlying dictionary via the __dict__ attribute and see all of it's attributes there.

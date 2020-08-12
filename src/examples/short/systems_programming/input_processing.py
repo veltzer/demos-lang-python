@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example is similar to while(<>) in perl which processes input
 both from standard input and from command line arguments.

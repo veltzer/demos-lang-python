@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example investigates which error is raised when a child fails.
 

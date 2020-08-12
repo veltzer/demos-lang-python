@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example demonstrates how to use the python builtin 'struct'
 module.

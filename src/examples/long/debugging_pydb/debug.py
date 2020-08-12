@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of a simple python application
 that you can use to debug with pydb.

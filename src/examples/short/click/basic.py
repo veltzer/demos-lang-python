@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A Demo for click
 

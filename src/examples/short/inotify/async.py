@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 AsyncNotifier example from tutorial
 

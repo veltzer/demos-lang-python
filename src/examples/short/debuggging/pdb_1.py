@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to debug a python application
 just run this application and you will enter debug mode

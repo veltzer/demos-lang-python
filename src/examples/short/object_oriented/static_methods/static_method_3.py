@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is the right way to create a static method in python.
 Decorate it with the builtin 'staticmethod' decorator function.

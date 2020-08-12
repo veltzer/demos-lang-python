@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a piece of python code that loads a library and
 releases it

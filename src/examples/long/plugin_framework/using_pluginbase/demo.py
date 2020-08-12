@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import inspect
 
 from pluginbase import PluginBase

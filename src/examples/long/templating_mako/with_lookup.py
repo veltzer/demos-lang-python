@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of using mako templates with a lookup object
 It seems that this object is neccessary if you wish to include

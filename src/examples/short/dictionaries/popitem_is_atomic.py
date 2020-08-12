@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows d.popitem()
 

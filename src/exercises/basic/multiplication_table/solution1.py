@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 row = 1
 while row <= 10:
     col = 1

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a small example which does not directly use the debugger
 so that you could debug it from the command line like so:

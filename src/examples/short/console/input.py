@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to read data from the user on the console
 using the new python3 'input' function.

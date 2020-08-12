@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that you can pass parameters to the generator
 function...

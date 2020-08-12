@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Example of how to receive signals synchronously via select and signal.set_wakeup_fd
 This is copy of the referenced example which underwent heavy massaging.

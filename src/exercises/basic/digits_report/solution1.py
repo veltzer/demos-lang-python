@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # this is a solution to the digits counting exercise...
 
 s = input('Please enter a line of digits: ')

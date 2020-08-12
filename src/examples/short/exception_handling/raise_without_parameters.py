@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example explores what happens when you just 'raise' without parameters.
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a demo of how to override python builtins.
 In general you can override builtins in python but then the question is

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to catch more than one exception type in python.
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 doing simple arithmetic evaluation in python
 """

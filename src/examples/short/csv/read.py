@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to read a csv file with python
 """

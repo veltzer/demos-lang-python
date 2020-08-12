@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Parse a simple Makefile and execute it.
 Doen't support comments, variables, patterns or anything complex...

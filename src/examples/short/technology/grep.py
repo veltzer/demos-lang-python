@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Implementing grep in python in less than 10 lines of code...
 """

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to create a closure which is 'fat': meaning
 has lots of data and not just primitives. In this case the closure

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of using a property in python.
 - We store the value in the 'real' attribute '__price'.

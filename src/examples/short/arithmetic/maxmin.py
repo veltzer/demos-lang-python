@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows max and min values
 """

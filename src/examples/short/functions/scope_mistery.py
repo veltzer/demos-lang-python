@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Question: what does this function output ?
 

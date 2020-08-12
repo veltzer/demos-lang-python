@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a demo of how to use importlib.reload to reload
 modules in python.

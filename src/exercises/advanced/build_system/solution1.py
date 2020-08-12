@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Parse a simple Makefile (without commands) and output a build plan.
 Doen't support comments, variables, patterns or anything complex...

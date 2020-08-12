@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 d1 = {'Israel': 'Jerusalem', 'France':
     'Paris', 'Italy': 'Rome', 'Egypt': 'Cairo'}
 for key in d1.keys():

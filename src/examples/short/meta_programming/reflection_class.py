@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This shows how to know the class that you are in...
 """

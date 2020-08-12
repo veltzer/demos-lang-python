@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of a weird pattern in OO python
 in which the local attributes of an

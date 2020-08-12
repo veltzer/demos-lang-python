@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to use the python builtin 'hashlib' module
 for calculating hash functions of file content.

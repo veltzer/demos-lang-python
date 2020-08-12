@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to do incremental packing and unpacking
 using the 'struct' module.

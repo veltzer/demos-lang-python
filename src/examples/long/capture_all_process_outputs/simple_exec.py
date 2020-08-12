@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example only does an os.execv
 """

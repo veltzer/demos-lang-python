@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import ftplib
 import os.path
 import sys

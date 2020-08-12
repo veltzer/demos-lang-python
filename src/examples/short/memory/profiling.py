@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 Show the size of a data structure in python
 

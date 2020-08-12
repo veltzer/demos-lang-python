@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of how to convert numbers with commans to ints or floats using
 the 'locale' module.

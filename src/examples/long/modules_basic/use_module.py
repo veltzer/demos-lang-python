@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import mymodule
 
 print('hello from [{0}]'.format(__file__))

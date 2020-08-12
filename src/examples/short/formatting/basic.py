@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This shows some basic formatting.
 """

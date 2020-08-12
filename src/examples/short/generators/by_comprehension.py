@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 g = (x ** 2 for x in range(6))
 
 '''

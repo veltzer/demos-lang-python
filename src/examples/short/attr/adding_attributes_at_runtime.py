@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that you can add attributes at run
 time to an object which is created using the 'attrs'

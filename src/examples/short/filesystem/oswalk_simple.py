@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of the 'os.walk' API that allows one to traverse
 a directory of files recursively.

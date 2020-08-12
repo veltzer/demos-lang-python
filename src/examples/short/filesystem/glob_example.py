@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 An example showing how to quickly iterate all the files
 in a directory.

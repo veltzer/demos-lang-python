@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 A simple example of how to get or set environment variables from python
 """

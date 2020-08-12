@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 x = y = 1
 mycounter = 0
 mysum = 0

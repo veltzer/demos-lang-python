@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an improvement on the previous singleton example.
 This time we make the singleton access method a static method

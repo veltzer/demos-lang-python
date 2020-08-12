@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an exmple of how to get ridd of the "development" message.
 Another way is to run a WSGI server which is not flask (say gevent or something).

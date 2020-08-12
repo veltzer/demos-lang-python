@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is a time sharing example...
 The main code of this example is like an operating system that shares time

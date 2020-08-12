@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 days_in_months_leap_year = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 months_names = ['January', 'February', 'March', 'April', 'May', 'June',

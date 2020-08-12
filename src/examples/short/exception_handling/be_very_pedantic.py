@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to catch all exceptions, and exit the software in any case.
 """

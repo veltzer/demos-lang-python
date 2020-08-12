@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import my_pack.date
 
 print(my_pack.date.get_following_month('January'))

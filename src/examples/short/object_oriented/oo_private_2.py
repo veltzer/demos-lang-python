@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows that private values (values stored in attributes
 whose names is prefixed by one or two underscores) are not really private.

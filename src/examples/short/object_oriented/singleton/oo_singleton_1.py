@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of a singleton pattern in python.
 Notice that since we cannot make the constructor private

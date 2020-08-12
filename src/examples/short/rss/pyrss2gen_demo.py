@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 TBD: demo of how to use the PyRSS2Gen module.
 

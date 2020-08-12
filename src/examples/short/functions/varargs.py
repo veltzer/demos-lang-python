@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to use varargs in python to do useful work.
 In this case, calling a function many times without knowing the function

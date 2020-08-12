@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to create a zip file in python using
 the built in python module 'zipfile'

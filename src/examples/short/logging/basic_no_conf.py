@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example explores how logging behaves if no special
 configuration is performed.

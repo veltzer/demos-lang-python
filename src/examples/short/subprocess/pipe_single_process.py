@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example shows how to call popen and get the return text.
 """

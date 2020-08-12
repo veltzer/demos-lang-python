@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This example how to quickly use key and partial to achieve custom sorting.
 """

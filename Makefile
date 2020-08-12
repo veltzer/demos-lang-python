@@ -111,3 +111,8 @@ todo:
 .PHONY: remove_stamp
 remove_stamp:
 	@find . -type f -and -name "*.stamp" -delete
+
+.PHONY: clean
+clean:
+	find . -name "__pycache__" -type d -exec rm -r {} \;
+	find . -name "*.pyc" -or -name "*.pyo" -delete
