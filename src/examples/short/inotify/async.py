@@ -21,7 +21,6 @@ class EventHandler(pyinotify.ProcessEvent):
 
 wm = pyinotify.WatchManager()  # Watch Manager
 notifier = pyinotify.AsyncNotifier(wm, EventHandler())
-# noinspection PyUnresolvedReferences
 mask = pyinotify.IN_DELETE | pyinotify.IN_CREATE  # watched events
 wdd = wm.add_watch(folder, mask, rec=True)
 print('watching [{0}] for changes...'.format(folder))

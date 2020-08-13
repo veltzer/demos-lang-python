@@ -9,7 +9,7 @@ from pygments.formatters import HtmlFormatter
 from pygments.lexers import PythonLexer
 
 #
-# paramters #
+# parameters #
 #
 css_filename = 'out.css'
 html_filename = 'out.html'

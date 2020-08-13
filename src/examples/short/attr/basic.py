@@ -1,5 +1,5 @@
 """
-A basic exapmle of how to use the 'attrs' framework.
+A basic example of how to use the 'attrs' framework.
 
 Notes:
 - you can construct an 'attrs' based instance with no data at all.

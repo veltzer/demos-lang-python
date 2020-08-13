@@ -3,12 +3,11 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.pydmt" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/templartmpl" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6.3 virtualenv at ~/.virtualenvs/demos-python" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (demos-python3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="TestRunnerService">
-    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
   </component>
 </module>

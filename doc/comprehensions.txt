@@ -27,10 +27,10 @@ set comprehension:
 ==================
 	{ expr code }
 is the same as:
-	newset=set()
+	new_set=set()
 	code:
 		set.add(expr)
-	return newset
+	return new_set
 
 generator comprehensions:
 =========================

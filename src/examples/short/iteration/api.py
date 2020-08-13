@@ -10,7 +10,8 @@ more data be had.
 
 from typing import Iterable
 
-# the following two funtions are the same:
+
+# the following two functions are the same:
 def print_all_values_api(i: Iterable):
     iterator = iter(r)
     while True:
@@ -19,9 +20,11 @@ def print_all_values_api(i: Iterable):
         except StopIteration:
             break
 
+
 def print_all_values_loop(i: Iterable):
     for x in i:
         print(x)
+
 
 r = range(10)
 print_all_values_api(r)

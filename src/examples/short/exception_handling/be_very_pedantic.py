@@ -15,11 +15,13 @@ def excepthook(_type, value, _traceback):
     print("An exception was throw... Refusing to continue...")
     sys.exit(1)
 
+
 sys.excepthook = excepthook
 
 raise ValueError('core')
 
 # simulate a piece of bad code which "swallows" exceptions...
+# noinspection PyBroadException
 try:
     raise ValueError('core')
 except Exception as e:

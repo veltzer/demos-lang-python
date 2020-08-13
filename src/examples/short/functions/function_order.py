@@ -1,10 +1,11 @@
 """
-This example explores corret function order in the source code.
+This example explores correct function order in the source code.
 
 This means that a function cannot be used until after it has been defined.
 """
 
 # this is wrong since foo is not defined
+# noinspection PyBroadException
 try:
     foo()
 except:

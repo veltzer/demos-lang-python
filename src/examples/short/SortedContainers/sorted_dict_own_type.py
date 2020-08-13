@@ -8,6 +8,7 @@ class Range:
         return self.to <= t.fr
     def __eq__(self, t):
         if type(t) == int:
+            # noinspection PyChainedComparisons
             return self.fr <= t and t < self.to
         return self.fr == t.fr and self.to == t.to
     def __ne__(self, t):

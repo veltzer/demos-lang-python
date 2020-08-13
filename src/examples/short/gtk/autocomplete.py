@@ -30,14 +30,14 @@ class EntryMultiCompletion(gtk.Entry):
     def match_func(self, completion, key_string, iterator, data):
         model = self.completion.get_model()
         # get the completion strings
-        modelstr = model[iterator][0]
+        model_str = model[iterator][0]
         # check if the user has typed in a space char,
         # get the last word and check if it matches something
         if ' ' in key_string:
             last_word = key_string.split()[-1]
-            return modelstr.startswith(last_word)
+            return model_str.startswith(last_word)
         # we have only one word typed
-        return modelstr.startswith(key_string)
+        return model_str.startswith(key_string)
 
     def on_completion_match(self, completion, model, iterator):
         current_text = self.get_text()
@@ -63,13 +63,13 @@ class EntryMultiCompletion(gtk.Entry):
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 win = gtk.Window()
 win.connect('delete-event', gtk.main_quit)
-entrycompl = EntryMultiCompletion()
-liststore = gtk.ListStore(gobject.TYPE_STRING)
-entrycompl.completion.set_model(liststore)
-entrycompl.completion.set_text_column(0)
+entry_completion = EntryMultiCompletion()
+list_store = gtk.ListStore(gobject.TYPE_STRING)
+entry_completion.completion.set_model(list_store)
+entry_completion.completion.set_text_column(0)
 for word in ['python', 'perl', 'scala', 'c++', 'ruby', 'c#', 'java', 'assembly', 'PHP']:
-    liststore.append([word])
-win.add(entrycompl)
+    list_store.append([word])
+win.add(entry_completion)
 win.show_all()
 
 gtk.main()

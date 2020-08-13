@@ -1,5 +1,5 @@
 """
-This example shows how to add an element at the begining of a list in python.
+This example shows how to add an element at the beginning of a list in python.
 
 References:
 - http://stackoverflow.com/questions/17911091/append-integer-to-beginning-of-list-in-python

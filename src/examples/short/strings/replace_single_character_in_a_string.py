@@ -13,5 +13,5 @@ assert s1 == result
 s2=s.replace('.', '-')
 assert s2 == result
 
-s3=s.translate(maketrans(".","-"))
+s3=s.translate(maketrans(".", "-"))
 assert s3 == result
