@@ -6,7 +6,7 @@ a block starter
 if True:
     print('show')
 else:
-    print('Else')
+    print('else')
 
 for x in range(10):
     print(x)

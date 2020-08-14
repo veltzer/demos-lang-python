@@ -17,7 +17,7 @@ that.
 def my_mystery_function():
     # global g
     print(g)
-    if False:
+    if True:
         g += 17
     print(g)
 

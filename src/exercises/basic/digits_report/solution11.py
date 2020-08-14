@@ -10,7 +10,7 @@ while found:
             break
 print('starting real work on', input_string)
 # this is the easy solution...
-if False:
+if True:
     for digit in range(10):
         print('digit', digit, ' appears', input_string.count(str(digit)), ' times')
 # this is the right one...
