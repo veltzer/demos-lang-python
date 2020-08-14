@@ -12,12 +12,14 @@ try:
 except RuntimeError as e:
     print('All is ok. you cannot raise without a prior active exception [{}]'.format(e))
 
+
 def traceback_len(tb):
     count = 0
     while tb.tb_next:
         count += 1
         tb = tb.tb_next
     return count
+
 
 # lets try to raise without an exception
 try:
@@ -27,7 +29,7 @@ try:
         raise
 except ValueError as e:
     tb = e.__traceback__
-    assert traceback_len(tb)==0
+    assert traceback_len(tb) == 0
 
 # lets try to raise with an exception
 try:
@@ -37,4 +39,4 @@ try:
         raise e
 except ValueError as e:
     tb = e.__traceback__
-    assert traceback_len(tb)==1
+    assert traceback_len(tb) == 1

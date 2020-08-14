@@ -3,6 +3,7 @@ This is an example of how to use the 'dispy' distribution
 cluster
 """
 
+
 # 'compute' is distributed to each node running 'dispynode'
 def compute(n):
     import time

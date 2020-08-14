@@ -3,19 +3,19 @@ from azure.cognitiveservices.search.websearch import WebSearchClient
 from azure.cognitiveservices.search.websearch.models import SafeSearch
 from msrest.authentication import CognitiveServicesCredentials
 
-search=sys.argv[1]
+search = sys.argv[1]
 
 subscription_key = "KEY_HERE"
 
 client = WebSearchClient(
-        endpoint="https://api.cognitive.microsoft.com",
-        credentials=CognitiveServicesCredentials(subscription_key),
-) 
+    endpoint="https://api.cognitive.microsoft.com",
+    credentials=CognitiveServicesCredentials(subscription_key),
+)
 
 print("searching for [{}]".format(search))
 web_data = client.web.search(
-        query=search,
-        count=20,
+    query=search,
+    count=20,
 )
 
 if web_data.web_pages is None:

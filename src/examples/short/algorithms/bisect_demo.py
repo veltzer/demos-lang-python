@@ -13,6 +13,6 @@ l = [1, 3, 4, 5, 71, 82]
 
 print(bisect.bisect_left(l, 60))
 
-l = [ "a", "aa", "ab", "ba", "bb" ]
+l = ["a", "aa", "ab", "ba", "bb"]
 
 print(bisect.bisect_left(l, "b"))

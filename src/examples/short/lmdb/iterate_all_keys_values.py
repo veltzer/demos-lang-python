@@ -9,8 +9,8 @@ import lmdb
 import os
 
 # first lets create the mdb file
-encoding='utf-8'
-filename="/tmp/sample.mdb"
+encoding = 'utf-8'
+filename = "/tmp/sample.mdb"
 if os.path.isfile(filename):
     os.unlink(filename)
 env = lmdb.open(filename, subdir=False, map_size=1000000000000)
@@ -26,7 +26,7 @@ env.close()
 env = lmdb.open(filename, subdir=False, map_size=1000000000000)
 with env.begin() as txn:
     with txn.cursor() as curs:
-        for key,value in curs:
+        for key, value in curs:
             print('key is: {}'.format(key.decode(encoding)))
             print('value is: {}'.format(value.decode(encoding)))
 

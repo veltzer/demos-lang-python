@@ -19,11 +19,12 @@ for i in islice(range(10), 4, 14, 2):
     print(i)
 
 
-def simple_islice(iterable, size:int):
+def simple_islice(iterable, size: int):
     for i, x in enumerate(iterable):
         if i == size:
             break
         yield x
+
 
 for i in simple_islice(range(10), 5):
     print(i)

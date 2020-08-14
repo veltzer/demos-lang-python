@@ -7,6 +7,7 @@ class A:
     def print_my_class(self):
         print(self.__class__)
 
+
 a = A()
 # this is pretty straight forward
 assert isinstance(a, A)

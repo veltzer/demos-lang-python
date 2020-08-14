@@ -11,7 +11,7 @@ import yaml
 
 with open("data_samples/basic.yaml", 'r') as stream:
     try:
-        data=yaml.safe_load(stream)
+        data = yaml.safe_load(stream)
         assert "concepts" in data
     except yaml.YAMLError as exc:
         print(exc)

@@ -20,6 +20,7 @@ import abc
 class A(metaclass=abc.ABCMeta):
     pass
 
+
 a = A()
 assert isinstance(a, A)
 
@@ -35,6 +36,7 @@ class B(metaclass=abc.ABCMeta):
 class C(B):
     def foo(self):
         pass
+
 
 try:
     b = B()

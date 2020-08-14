@@ -22,13 +22,15 @@ print('range(11, 2, -3)')
 for i in range(11, 2, -3):
     print(i)
 
+
 # lets write our own range function
 def simple_range(stop, start=0, step=1):
-    count = start 
+    count = start
     while count < stop:
         yield count
-        count +=  step
+        count += step
     raise StopIteration()
+
 
 print('simple_range(10)')
 for i in simple_range(10):

@@ -36,7 +36,7 @@ def load_pickle():
         _ = pickle.load(fp)
 
 
-repetitions=10
+repetitions = 10
 print("json time {:.04f}".format(timeit.timeit(load_json, number=repetitions)))
 print("pickle time {:.04f}".format(timeit.timeit(load_pickle, number=repetitions)))
 

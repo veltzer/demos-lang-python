@@ -46,6 +46,7 @@ import timeit
 def my_sleep():
     time.sleep(2)
 
+
 print(timeit.timeit('\'-\'.join(str(n) for n in range(100))', number=10000))
 print(timeit.timeit(my_sleep, number=1))
 print(timeit.timeit(my_sleep))

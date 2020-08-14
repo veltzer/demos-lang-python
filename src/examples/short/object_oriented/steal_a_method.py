@@ -28,7 +28,8 @@ b.print_me()
 
 def myfunc(self):
     print(f"in myfunc {self.price}")
-    
+
+
 """
 when running a function it will not pass the object it is attached to as 'self'
 and so we would not have a "self"
@@ -74,7 +75,7 @@ b.print_me()
 lets see if we can make it a real method
 """
 # TBD
-#print(dir(type(Book.set_price)))
-#print(dir(type(Book.print_me)))
-#Book.more = method(myfunc)
-#print(type(Book.more))
+# print(dir(type(Book.set_price)))
+# print(dir(type(Book.print_me)))
+# Book.more = method(myfunc)
+# print(type(Book.more))

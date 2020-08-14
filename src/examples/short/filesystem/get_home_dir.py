@@ -7,7 +7,9 @@ import os
 print(os.getenv('HOME'))
 
 from os.path import expanduser
+
 print(expanduser("~"))
 
 from pathlib import Path
+
 print(Path.home())

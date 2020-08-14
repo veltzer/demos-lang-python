@@ -15,7 +15,7 @@ root_logger.setLevel(logggin.INFO)
 handler = systemd.journal.JournalHanlder()
 root_logger.addHandler(handler)
 
-logger=logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 logger.debug("Debug")
 logger.info("Info")
 logger.warning("Warning")

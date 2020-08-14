@@ -5,8 +5,10 @@ The syntax is:
     except <tuple of exception types> as e:
 """
 
+
 def raise_it(a_type):
     raise a_type('hello')
+
 
 for x in ValueError, RuntimeError:
     try:

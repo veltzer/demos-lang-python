@@ -16,29 +16,38 @@ class A:
     def __init__(self):
         self.a = 5
 
+
 class B1(A):
     """ most standard and short way """
+
     def __init__(self):
         super().__init__()
+
 
 class B2(A):
     """ If you don't need to do anything in your constructor, you get your fathers """
     pass
 
+
 class B3(A):
     """ This works but hardcodes the parent class yet again """
+
     def __init__(self):
         A.__init__(self)
 
+
 class B4(A):
     """ python2 way """
+
     def __init__(self):
-        super(B4,self).__init__()
+        super(B4, self).__init__()
+
 
 class B5(A):
     """ python2 way but without coding the class name yet again """
+
     def __init__(self):
-        super(self.__class__,self).__init__()
+        super(self.__class__, self).__init__()
 
 
 b1 = B1()
@@ -46,8 +55,8 @@ b2 = B2()
 b3 = B3()
 b4 = B4()
 b5 = B5()
-assert b1.a==5
-assert b2.a==5
-assert b3.a==5
-assert b4.a==5
-assert b5.a==5
+assert b1.a == 5
+assert b2.a == 5
+assert b3.a == 5
+assert b4.a == 5
+assert b5.a == 5

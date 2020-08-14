@@ -8,6 +8,7 @@ References:
 
 import requests
 
+
 def get_http_status_string(code: int):
     """
     This function returns a description of an HTTP status code (404 - not found etc).
@@ -20,6 +21,7 @@ def get_http_status_string(code: int):
     """
     # noinspection PyProtectedMember
     return "http code [{}], [{}]".format(code, requests.status_codes._codes[code][0])
+
 
 url = 'http://www.google.com/doesntexist'
 r = requests.get(url)

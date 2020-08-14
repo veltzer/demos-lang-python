@@ -110,7 +110,7 @@ requirements3 = [
     'paramiko',  # ssh module
 ]
 
-packages=[
+packages = [
     'libdbus-glib-1-dev',
     'libdbus-1-dev',
 ]

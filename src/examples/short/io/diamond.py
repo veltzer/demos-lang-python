@@ -27,5 +27,6 @@ def main():
     for line in diamond_lines():
         print(line, end='')
 
+
 if __name__ == "__main__":
     main()

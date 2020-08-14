@@ -18,12 +18,14 @@ for i in range(len(l)):
 for i, c in enumerate(l):
     print(i, c)
 
+
 # our own 'enumerate'
 def simple_enumerate(l):
     i = 0
     for c in l:
         yield i, c
         i += 1
+
 
 # now let's use our own enumerator
 for i, c in simple_enumerate(l):

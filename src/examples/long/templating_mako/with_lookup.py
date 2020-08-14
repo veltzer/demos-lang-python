@@ -28,8 +28,8 @@ p_output = '/tmp/simple'
 
 mylookup = mako.lookup.TemplateLookup(
     directories=['.'],
-#   input_encoding=input_encoding,
-#    output_encoding=output_encoding,
+    #   input_encoding=input_encoding,
+    #    output_encoding=output_encoding,
 )
 template = mako.template.Template(
     filename=p_input,

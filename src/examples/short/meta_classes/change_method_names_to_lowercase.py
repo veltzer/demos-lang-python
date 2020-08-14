@@ -7,6 +7,8 @@ The most important things to remember about writing meta classes:
 References:
 - https://blog.ionelmc.ro/2015/02/09/understanding-python-metaclasses/
 """
+
+
 class MetaClass(type):
     def __new__(mcs, name, bases, cls_dict):
         new_dict = dict()
@@ -16,10 +18,12 @@ class MetaClass(type):
 
 
 class MyClass(object):
-        __metaclass__ = MetaClass
-        @classmethod
-        def SayHello(cls):
-            print("hello")
+    __metaclass__ = MetaClass
+
+    @classmethod
+    def SayHello(cls):
+        print("hello")
+
 
 # Look! we now call the method in lowercase...
 MyClass.sayhello()

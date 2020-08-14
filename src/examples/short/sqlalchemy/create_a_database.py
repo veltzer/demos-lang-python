@@ -10,17 +10,19 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 from sqlalchemy.engine.url import URL
 import sqlalchemy
- 
+
 Base = declarative_base()
 STRING_LENGTH = 250
- 
+
+
 class Person(Base):
     __tablename__ = 'person'
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
     name = Column(String(STRING_LENGTH), nullable=False)
- 
+
+
 class Address(Base):
     __tablename__ = 'address'
     # Here we define columns for the table address.
@@ -31,7 +33,8 @@ class Address(Base):
     post_code = Column(String(STRING_LENGTH), nullable=False)
     person_id = Column(Integer, ForeignKey('person.id'))
     person = relationship(Person)
- 
+
+
 # Create an engine that stores data in the local directory's
 # sqlalchemy_example.db file.
 # filename = "/tmp/sqlalchemy_example.db"
@@ -43,7 +46,7 @@ myDB = URL(
     drivername='mysql+pymysql',
     host='localhost',
     database='test',
-    query={ 'read_default_file' : os.path.expanduser('~/.my.cnf') },
+    query={'read_default_file': os.path.expanduser('~/.my.cnf')},
 )
 engine = create_engine(name_or_url=myDB)
 # engine = create_engine("mysql+pymysql://localhost/test?charset=utf8") 
