@@ -102,7 +102,7 @@ debug_me:
 
 .PHONY: show_shbang
 show_shbang:
-	$(Q)find src -name "*.py" -and -executable -exec head -1 {} \; | sort | uniq
+	$(Q)find src -name "*.py" -exec head -1 {} \; | grep "#!" | sort | uniq
 
 .PHONY: todo
 todo:
@@ -116,3 +116,7 @@ remove_stamp:
 clean:
 	find . -name "__pycache__" -type d -exec rm -r {} \;
 	find . -name "*.pyc" -or -name "*.pyo" -delete
+
+.PHONY: clean_hard
+clean_hard:
+	git clean -qffxd
