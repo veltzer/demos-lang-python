@@ -14,23 +14,27 @@ import os
 import shutil
 import tempfile
 
+
 @contextlib.contextmanager
-def cd(newdir, cleanup=lambda: True):
-    prevdir = os.getcwd()
-    os.chdir(os.path.expanduser(newdir))
+def cd(new_dir, cleanup=lambda: True):
+    prev_dir = os.getcwd()
+    os.chdir(os.path.expanduser(new_dir))
     try:
         yield
     finally:
-        os.chdir(prevdir)
+        os.chdir(prev_dir)
         cleanup()
+
 
 @contextlib.contextmanager
 def tempdir():
-    dirpath = tempfile.mkdtemp()
+    dir_path = tempfile.mkdtemp()
+
     def cleanup():
-        shutil.rmtree(dirpath)
-    with cd(dirpath, cleanup):
-        yield dirpath
+        shutil.rmtree(dir_path)
+    with cd(dir_path, cleanup):
+        yield dir_path
+
 
 with tempdir():
     shutil.copy("/etc/passwd", "passwd")

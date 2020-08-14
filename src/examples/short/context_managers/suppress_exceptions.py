@@ -16,17 +16,17 @@ class MyResource:
     exitCallsCounter = 0
 
     def __init__(self, suppress=False):
-        ''' this is the constructor (the thing we call at the 'with') '''
+        """ this is the constructor (the thing we call at the 'with') """
         self.suppress = suppress
 
     def __enter__(self):
-        ''' this method will be called at the begining of the 'with' block '''
+        """ this method will be called at the begining of the 'with' block """
         print('doing __enter__')
         MyResource.enterCallsCounter += 1
         return self
 
     def __exit__(self, itype, value, traceback):
-        ''' this method will be called at the end of the 'with' block '''
+        """ this method will be called at the end of the 'with' block """
         print('doing __exit__', itype, value, traceback)
         MyResource.exitCallsCounter += 1
         return self.suppress

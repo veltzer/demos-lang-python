@@ -7,6 +7,7 @@ This means that a function cannot be used until after it has been defined.
 # this is wrong since foo is not defined
 # noinspection PyBroadException
 try:
+    # noinspection PyUnboundLocalVariable
     foo()
 except:
     print('yep, this failed')

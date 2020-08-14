@@ -17,7 +17,7 @@ def work(n):
     # raise ValueError("this is an error")
     for i in range(n):
         pass
-    return i
+    return n
 
 
 def main():
