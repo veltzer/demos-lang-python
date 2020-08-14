@@ -9,6 +9,7 @@
       <w>centos</w>
       <w>dbus</w>
       <w>defaultdict</w>
+      <w>dtype</w>
       <w>emptyline</w>
       <w>errback</w>
       <w>errbacks</w>

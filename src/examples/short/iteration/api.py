@@ -13,7 +13,7 @@ from typing import Iterable
 
 # the following two functions are the same:
 def print_all_values_api(i: Iterable):
-    iterator = iter(r)
+    iterator = iter(i)
     while True:
         try:
             print(next(iterator))

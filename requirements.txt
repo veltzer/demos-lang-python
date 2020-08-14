@@ -32,5 +32,7 @@ PyQt5
 azure-cognitiveservices-search-websearch
 pygraph
 music
+flask
+tsv
 # dev requirements
 pydmt

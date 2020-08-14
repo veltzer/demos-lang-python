@@ -38,19 +38,19 @@ class B:
 
 
 class C:
-    def __init__(self, arg1, arg2):
+    def __init__(self, _arg1, _arg2):
         print('in C constructor')
         print(type(self))
 
 
 class D:
-    def __init__(self, *args):
+    def __init__(self, *_args):
         print('in D constructor')
         print(type(self))
 
 
 class E:
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *_args, **__kwargs):
         print('in E constructor')
         print(type(self))
 

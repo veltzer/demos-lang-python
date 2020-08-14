@@ -12,10 +12,10 @@ import pandas
 
 
 def time_it(f):
-    def inner(*kw, **kset):
+    def inner(*args, **kwargs):
         time1 = time.perf_counter()
         gc.disable()
-        r = f(*kw, **kset)
+        r = f(*args, **kwargs)
         gc.collect()
         time2 = time.perf_counter()
         print(time2 - time1, f.__name__)
@@ -82,7 +82,7 @@ def read_it_with_python_gzip(input_file: str, separator: str):
 
 
 @time_it
-def loop_with_python(input_file: str, separator: str):
+def loop_with_python(_input_file: str, _separator: str):
     for i in range(1000000):
         if i == 2:
             pass

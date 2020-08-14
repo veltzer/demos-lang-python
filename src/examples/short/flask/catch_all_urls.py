@@ -1,5 +1,5 @@
 """
-This exmple catches all urls via variables.
+This example catches all urls via variables.
 
 References:
 - https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules
@@ -10,13 +10,16 @@ import flask
 
 app = flask.Flask(__name__)
 
+
 @app.route('/')
 def empty():
     return flask.redirect('/index.html')
 
+
 @app.route('/<path:path>')
-def all(path):
+def all_routes(path):
     return 'path is [{}]'.format(path)
+
 
 print(app.url_map)
 

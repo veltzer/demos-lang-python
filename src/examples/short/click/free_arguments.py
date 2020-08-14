@@ -1,6 +1,6 @@
 """
 This demo shows how to create a click program that accepts many free
-paramters on the command line.
+parameters on the command line.
 
 Notes:
 - The parameters: show_default, help, type, as NOT allowed for the

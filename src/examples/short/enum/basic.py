@@ -10,6 +10,7 @@ class SampleEnum(enum.Enum):
     two = 2
     three = 3
 
+
 # this is how to get the enum value (which is not the same as the int or the string)
 print(type(SampleEnum.one))
 # this is how to get the int value

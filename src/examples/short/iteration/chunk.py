@@ -47,7 +47,7 @@ def chunk_python(data, n):
     def return_n():
         for _ in range(n):
             try:
-                yield(next(i))
+                yield next(i)
             except StopIteration as e:
                 over.cancel()
                 raise e

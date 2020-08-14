@@ -3,7 +3,7 @@ This is an example of a shared closure. The three functions here share the x
 variable.
 
 - note that in this example the closure is just one element 'x' which is
-the parameter of the function 'make_mult_add_print'
+the parameter of the function 'make_mul_add_print'
 - this means that we cannot change it. Why? because it is a primitive.
 If we try to change it in another function that we add,say f_set,
 then the statement 'x=...' will be taken by python to mean the declaration
@@ -39,7 +39,7 @@ print(func_add5(6))
 # lets see if the closures of the functions returned together are the same...
 if func_mul3.__closure__ is func_add3.__closure__ is func_set3.__closure__:
     print('yes,the three functions have the exact same closure')
-# lets see if diffrent invocations actually created different closures...
+# lets see if different invocations actually created different closures...
 if func_mul3.__closure__ is not func_mul5.__closure__:
     print(
         'yes,the closure object of the 3 family is not the closure object of the 5 family')

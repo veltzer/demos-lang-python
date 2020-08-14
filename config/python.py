@@ -41,6 +41,9 @@ run_requires = [
     'azure-cognitiveservices-search-websearch',
     'pygraph',
     'music',
+    'flask',
+    'tsv',
+    'psycopg2',
     # gtk stuff
     # 'pycairo',
     # 'PyGObject',

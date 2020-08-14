@@ -18,6 +18,7 @@ def foo():
 
 
 # this will call foo but will fail once foo tried to call bar
+# noinspection PyBroadException
 try:
     foo()
 except:

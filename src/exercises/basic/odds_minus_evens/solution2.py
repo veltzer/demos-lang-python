@@ -1,11 +1,11 @@
-def odds_minus_evens(l):
-    sum = 0
-    for x in l:
+def odds_minus_evens(number_list):
+    count = 0
+    for x in number_list:
         if x % 2 == 0:
-            sum -= x
+            count -= x
         else:
-            sum += x
-    return sum
+            count += x
+    return count
 
 
 print(odds_minus_evens(range(2, 6)))

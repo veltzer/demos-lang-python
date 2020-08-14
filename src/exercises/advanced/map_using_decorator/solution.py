@@ -6,7 +6,7 @@ def add1(f):
 
 
 def makeAList(f):
-    def inner(*args, **kw):
+    def inner(*args, **_kw):
         #    return [f(x) for x in args]
         l = []
         for x in args:

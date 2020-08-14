@@ -1,5 +1,5 @@
 """
-This example shows the differece between a generator function and a
+This example shows the difference between a generator function and a
 generator object.
 
 generator function: a function which is a generator (has yields).
@@ -14,10 +14,12 @@ References:
 import inspect
 import types
 
+
 def generator_function():
     yield 1
     yield 2
     yield 3
+
 
 print(type(generator_function))
 assert inspect.isgeneratorfunction(generator_function)

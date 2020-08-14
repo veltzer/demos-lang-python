@@ -9,7 +9,7 @@ def parse_feed(feed_string):
         date = item.findtext('pubDate').strip()
         package, version = item.findtext('title').split()
         description = item.findtext('description')
-        yield (date, package, version, description)
+        yield date, package, version, description
 
 
 def write_csv(filename, parsed_feed_string):

@@ -1,5 +1,5 @@
 """
-This is an exapmle of how to use the closure feature to do some
+This is an example of how to use the closure feature to do some
 oo work.
 Notice:
 - We treat the 'Person' function as a constructor.
@@ -16,20 +16,21 @@ position in some returned tuple.
 """
 
 
-def Person(name, age):
+# noinspection PyPep8Naming
+def Person(initial_name, initial_age):
     data = {
-        'name': name,
-        'age': age,
+        'name': initial_name,
+        'age': initial_age,
     }
 
-    def setName(iname):
-        data['name'] = iname
+    def setName(name):
+        data['name'] = name
 
     def getName():
         return data['name']
 
-    def setAge(iage):
-        data['age'] = iage
+    def setAge(age):
+        data['age'] = age
 
     def getAge():
         return data['age']
@@ -52,6 +53,6 @@ p1 = Person('Bilbo', 111)
 p1['setName']('Sam')
 p1['printMe']()
 p2 = Person('Frodo', 33)
-p2['setName']('Sauron')
+p2['setName']('Mary')
 p2['printMe']()
 p1['printMe']()

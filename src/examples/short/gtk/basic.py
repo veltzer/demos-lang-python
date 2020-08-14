@@ -5,9 +5,9 @@ A minimal gtk application demo.
 import signal
 
 import gi
+
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk as gtk
-
 
 
 def clicked_callback(button):
@@ -15,7 +15,7 @@ def clicked_callback(button):
     button.num += 1
 
 
-def quit_callback(window, event):
+def quit_callback(_window, _event):
     gtk.main_quit()
 
 
