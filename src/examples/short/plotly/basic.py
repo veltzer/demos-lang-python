@@ -18,4 +18,4 @@ trace1 = Scatter(
 )
 data = Data([trace0, trace1])
 
-plot(data, filename = '/tmp/plotly.html', auto_open=False)
+plot(data, filename='/tmp/plotly.html', auto_open=False)

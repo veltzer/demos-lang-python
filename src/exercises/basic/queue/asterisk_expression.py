@@ -1,3 +1,6 @@
+import sys
+
+
 class Queue:
     """
     Simple queue FIFO implementation using a python list
@@ -28,7 +31,5 @@ def evaluate(exp):
         raise ValueError("value {} is not supported".format(c))
     return "".join(q.data)
 
-
-import sys
 
 print(evaluate(sys.argv[1]))

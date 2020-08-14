@@ -8,40 +8,73 @@ class Book(object):
     def __init__(self, price):
         self.price = price
 
-    def printMe(self):
+    def print_me(self):
         print('price is', self.price)
+
+    def set_price(self, price):
+        self.price = price
 
 
 ''' Lets show how we use our object... '''
 b = Book(50)
-b.printMe()
+b.print_me()
 
-m = b.printMe
-m()
+""" apply method without object """
+m = b.set_price
 print(type(m))
+m(55)
+b.print_me()
 
 
 def myfunc(self):
-    print('in myfunc', self)
-
-
-b.newmethod = myfunc
-print(type(b.newmethod))
-b.newmethod()  # -> newmethod(b)
-
-# this fails
+    print(f"in myfunc {self.price}")
+    
+"""
+when running a function it will not pass the object it is attached to as 'self'
+and so we would not have a "self"
+"""
 try:
-    b.newmethod = myfunc
-    print(type(b.newmethod))
-    b.newmethod(b)
-except:
+    b.new_method_1 = myfunc
+    print(type(b.new_method_1))
+    b.new_method_1()
+except TypeError:
     print('all is well, got exception')
 
-Book.newmethod = myfunc
-b.newmethod()
+"""
+You can, however, use it if you pass "self" yourself...
+"""
+b.new_method_2 = myfunc
+print(type(b.new_method_2))
+b.new_method_2(b)
 
-try:
-    b.printMe = myfunc
-    b.printMe()
-except:
-    print('all is well, got exception')
+"""
+Another way is to tie the function directly to the class
+It's type is still a 'function' but now you can call it from
+every instance.
+"""
+Book.new_method_3 = myfunc
+print(type(Book.new_method_3))
+b.new_method_3()
+
+"""
+who about plugging in a method which already exists in the instance?
+The problem with this is that we still need to pass "self" our selves.
+"""
+b2 = Book(60)
+b2.print_me = myfunc
+b2.print_me(b2)
+
+"""
+Replacing methods at the class level works...
+"""
+Book.print_me = myfunc
+b.print_me()
+
+"""
+lets see if we can make it a real method
+"""
+# TBD
+#print(dir(type(Book.set_price)))
+#print(dir(type(Book.print_me)))
+#Book.more = method(myfunc)
+#print(type(Book.more))

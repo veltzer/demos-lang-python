@@ -24,7 +24,7 @@ run_requires = [
     'twisted',
     'yapsy',
     'pymysql',
-    'mysql-connector',
+    'mysql.connector',
     'sqlalchemy',
     'plotly',
     'gcloud',
@@ -44,6 +44,8 @@ run_requires = [
     'flask',
     'tsv',
     'psycopg2',
+    'pygments',
+    'simpleparse',
     # gtk stuff
     # 'pycairo',
     # 'PyGObject',

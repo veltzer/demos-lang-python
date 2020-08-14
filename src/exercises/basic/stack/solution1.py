@@ -95,7 +95,7 @@ class Stack4:
         return self.deque.pop()
 
     def len(self):
-        return self.deque.count()
+        return len(self.deque)
 
     def top(self):
         raise ValueError("no such method")

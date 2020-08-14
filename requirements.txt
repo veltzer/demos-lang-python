@@ -15,7 +15,7 @@ pyinotify
 twisted
 yapsy
 pymysql
-mysql-connector
+mysql.connector
 sqlalchemy
 plotly
 gcloud
@@ -34,5 +34,8 @@ pygraph
 music
 flask
 tsv
+psycopg2
+pygments
+simpleparse
 # dev requirements
 pydmt

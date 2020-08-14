@@ -1,5 +1,5 @@
 """
-This example attempts to compre ujson.loads with struct.unpack
+This example attempts to compare ujson.loads with struct.unpack
 to see which is faster.
 
 Results:
@@ -13,10 +13,9 @@ import struct
 
 
 class DataToPack:
-    def __init__(self, v1, v2, l, s):
+    def __init__(self, v1, v2, s):
         self.v1 = v1
         self.v2 = v2
-        self.l = l
         self.s = s
 
     def pack(self):
@@ -34,5 +33,5 @@ class DataToPack:
         return "DataToPack: {}, {}, {}".format(self.v1, self.v2, self.s)
 
 
-d = DataToPack(2, 3, "hello", "string")
+d = DataToPack(2, 3, "hello")
 print(d)
