@@ -12,3 +12,4 @@ gir1.2-gtk-3.0
 # for pyscopg2 (postgres interface)
 postgresql-common
 libpq-dev 
+python3-gi

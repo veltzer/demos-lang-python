@@ -38,5 +38,7 @@ tsv
 psycopg2
 pygments
 simpleparse
+vext
+vext.gi
 # dev requirements
 pydmt

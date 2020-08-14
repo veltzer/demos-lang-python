@@ -2,7 +2,7 @@ import operator
 
 import gtk
 
-'''
+'''l
 This extended version allow selection of the arithmetic operator by
 radio boxes. Constructing them and tracking which is active is
 somewhat messy, so we want to isolate it from the rest of the

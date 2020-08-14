@@ -48,8 +48,8 @@ run_requires = [
     'pygments',
     'simpleparse',
     # gtk stuff
-    # 'pycairo',
-    # 'PyGObject',
+    'vext',
+    'vext.gi',
 ]
 
 test_requires = [
