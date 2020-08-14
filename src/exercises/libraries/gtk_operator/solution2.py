@@ -60,7 +60,7 @@ for widget in [entry1, operator, entry2, gtk.Label('='), result]:
     hbox.pack_start(widget)
 
 
-def compute(*ignored):
+def compute(*_ignored):
     """Recompute result."""
     try:
         arg1 = float(entry1.get_text())

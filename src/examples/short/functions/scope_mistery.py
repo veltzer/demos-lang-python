@@ -13,7 +13,8 @@ that.
 """
 
 
-def my_mistery_function():
+# noinspection PyUnboundLocalVariable
+def my_mystery_function():
     # global g
     print(g)
     if False:
@@ -22,8 +23,9 @@ def my_mistery_function():
 
 
 g = 4
+# noinspection PyBroadException
 try:
-    my_mistery_function()
+    my_mystery_function()
 except:
     print('yes, got an exception')
 print(g)

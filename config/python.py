@@ -38,6 +38,7 @@ run_requires = [
     'PyGithub',
     'prompt-toolkit',
     'PyQt5',
+    'PyQt5-stubs',
     'azure-cognitiveservices-search-websearch',
     'pygraph',
     'music',

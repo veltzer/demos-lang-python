@@ -13,7 +13,7 @@ for widget in [entry1, gtk.Label('+'), entry2, gtk.Label('='), result]:
     horizontal_box.pack_start(widget)
 
 
-def compute(*ignored):
+def compute(*_ignored):
     """Recompute result."""
     try:
         arg1 = float(entry1.get_text())

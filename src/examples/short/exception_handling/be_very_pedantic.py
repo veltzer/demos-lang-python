@@ -18,8 +18,6 @@ def excepthook(_type, value, _traceback):
 
 sys.excepthook = excepthook
 
-raise ValueError('core')
-
 # simulate a piece of bad code which "swallows" exceptions...
 # noinspection PyBroadException
 try:
@@ -27,3 +25,5 @@ try:
 except Exception as e:
     print("haha, got the exception and continuing anyway...")
 print("after")
+
+raise ValueError('core')

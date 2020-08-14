@@ -45,8 +45,9 @@ class ProduceOrConsume(threading.Thread):
 
     def run(self):
         if self.consume:
-            for i in range(numberOfElems):
-                number = self.stack.pop()
+            for _i in range(numberOfElems):
+                pass
+                # number = self.stack.pop()
                 # time.sleep(1.0/(self.number+1))
         else:
             for i in range(numberOfElems):

@@ -11,7 +11,7 @@ If you want to catch all exceptions then use:
 """
 
 try:
-    raise KeyboardInterrupt()
+    # raise KeyboardInterrupt()
     raise ValueError('hello')
 # this next line catches all exceptions, logs and throws them back...
 except Exception as e:

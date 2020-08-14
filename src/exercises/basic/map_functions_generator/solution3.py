@@ -12,7 +12,7 @@ def map_like(func_list, *extra, **named_extra):
     return result
 
 
-def add(x, y, correction_factor=7):
+def add(x, y, _correction_factor=7):
     return x + y
 
 
@@ -20,7 +20,7 @@ def mul(x, y, correction_factor=7):
     return x * y - correction_factor
 
 
-def sub(x, y, correction_factor=7):
+def sub(x, y, _correction_factor=7):
     return x - y
 
 

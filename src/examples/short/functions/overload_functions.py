@@ -15,6 +15,7 @@ def foo():
     print('hello')
 
 
+# noinspection PyRedeclaration
 def foo(a):
     print('hello', a)
 
