@@ -19,7 +19,11 @@ def get_exitcode_stdout_stderr(args):
     return exitcode, out, err
 
 
-exitcode, out, err = get_exitcode_stdout_stderr(["ls", "-l"])
-print("exitcode is [{}]".format(exitcode))
-print("out is [{}]".format(out.decode()))
-print("err is [{}]".format(err.decode()))
+def main():
+    exitcode, out, err = get_exitcode_stdout_stderr(["ls", "-l"])
+    print("exitcode is [{}]".format(exitcode))
+    print("out is [{}]".format(out.decode()))
+    print("err is [{}]".format(err.decode()))
+
+
+main()

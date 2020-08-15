@@ -1,7 +1,7 @@
 import mydate
 
 '''
-A callender of events, has an entry for every event,
+A calendar of events, has an entry for every event,
 which is a mapping from event name to Date object
 '''
 
@@ -11,11 +11,11 @@ class Calendar:
         self.events = {}
 
     def add_event(self, name, date):
-        """ Add a new entry to the callender"""
+        """ Add a new entry to the calendar"""
         self.events[name] = date
 
     def is_event(self, date):
-        """ Check if the given date appears in the callender"""
+        """ Check if the given date appears in the calendar"""
         return date in self.events.values()
 
     def get_date(self, name):

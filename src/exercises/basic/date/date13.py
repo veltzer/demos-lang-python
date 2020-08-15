@@ -1,9 +1,9 @@
 days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 months_names = ['January', 'February', 'March', 'April', 'May', 'June',
                 'July', 'August', 'September', 'October', 'November', 'December']
-name_to_days_num = {}
-for i in range(12):
-    name_to_days_num[months_names[i]] = days_in_months[i]
+name_to_days_num = {
+    months_names[i]: days_in_months[i] for i in range(12)
+}
 
 
 def get_num_of_days_in_month(month_name):
@@ -31,18 +31,18 @@ def is_leap_year(year):
 
 
 class Calendar:
-    """ A callender of events, has an entry for every event,
+    """ A calendar of events, has an entry for every event,
             which is a mapping from event name to Date o bject"""
 
     def __init__(self):
         self.events = {}
 
     def add_event(self, name, date):
-        """ Add a new entry to the callender"""
+        """ Add a new entry to the calendar"""
         self.events[name] = date
 
     def is_event(self, date):
-        """ Check if the given date appears in the callender"""
+        """ Check if the given date appears in the calendar"""
         return date in self.events.values()
 
     def get_date(self, name):
