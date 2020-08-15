@@ -51,5 +51,7 @@ print(d9)
 d10 = dict(zip(list_of_keys, range(3)))
 print(d10)
 # use enumerate to create a dictionary with the indexes as keys for something iterable
+# there is a type problem here and that's why we override pycharm's type checking
+# noinspection PyTypeChecker
 d11 = dict(enumerate(list_of_values))
 print(d11)
