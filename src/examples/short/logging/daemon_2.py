@@ -10,7 +10,7 @@ import logging.handlers
 from systemd.journal import JournalHandler
 
 root_logger = logging.getLogger()
-root_logger.setLevel(logggin.INFO)
+root_logger.setLevel(logging.INFO)
 handler = systemd.journal.JournalHanlder()
 root_logger.addHandler(handler)
 

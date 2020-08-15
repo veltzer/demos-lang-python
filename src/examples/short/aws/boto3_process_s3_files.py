@@ -16,11 +16,11 @@ import boto3
 import tqdm
 
 do_count_lines = True
-bucket_name = 'twiggle-click-streams'
-folder = 'mft.similarweb.com/'
+bucket_name = 'bucket_name'
+folder = 'folder'
 
 s3 = boto3.resource('s3')
-bucket = s3.Bucket('twiggle-click-streams')
+bucket = s3.Bucket(bucket_name)
 # this will give you all objects in the bucket
 # gen = bucket.objects.all()
 # this will give you only the objects in one folder

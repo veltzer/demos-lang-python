@@ -54,7 +54,11 @@ run_requires = [
     'ConfigParser',
     'unidecode',
     'bitmath',
-    # noinspection DuplicatedCode
+    'paramiko',
+    'systemd-python',
+    'boto',
+    'boto3',
+    'boto3-stubs',
     # my stuff
     'pyapikey',
     'pyfakeuse',

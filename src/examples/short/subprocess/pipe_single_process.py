@@ -21,7 +21,7 @@ def system_check_output(arg):
 
 
 try:
-    system_check_output(['nonexistant', '--nonexist'])
+    system_check_output(['non_exist', '--non_exist'])
 except:
     print('yes, got exception')
 print(system_check_output(['ls', '-l']))

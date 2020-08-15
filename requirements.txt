@@ -45,6 +45,11 @@ scrapy
 ConfigParser
 unidecode
 bitmath
+paramiko
+systemd-python
+boto
+boto3
+boto3-stubs
 pyapikey
 pyfakeuse
 vext
