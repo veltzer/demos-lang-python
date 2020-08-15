@@ -1,10 +1,10 @@
-from github import Github
-
+import github
 import pyapikey
-token = pyapikey.get_key("github")
-g = Github(login_or_token=token)
 
-for repo in g.get_user().get_repos():
+token = pyapikey.get_key("github")
+g = github.Github(login_or_token=token)
+
+for repo in g.get_user(login="veltzer").get_repos():
     print(repo.name)
     if repo.description:
         print(f"\t{repo.description}")
