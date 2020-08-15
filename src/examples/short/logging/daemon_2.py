@@ -6,7 +6,6 @@ References:
 - https://www.loggly.com/blog/new-style-daemons-python/
 """
 
-import logging
 import logging.handlers
 from systemd.journal import JournalHandler
 

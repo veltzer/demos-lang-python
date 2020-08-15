@@ -52,6 +52,9 @@ run_requires = [
     'inject',
     'scrapy',
     'ConfigParser',
+    'unidecode',
+    'bitmath',
+    # noinspection DuplicatedCode
     # my stuff
     'pyapikey',
     'pyfakeuse',

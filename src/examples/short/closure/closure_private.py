@@ -24,8 +24,8 @@ def make_mul_add_print(x):
     return f_mul, f_add, f_print
 
 
-(func_mul3, func_add3, func_print3) = make_mult_add_print(3)
-(func_mul5, func_add5, func_print5) = make_mult_add_print(5)
+(func_mul3, func_add3, func_print3) = make_mul_add_print(3)
+(func_mul5, func_add5, func_print5) = make_mul_add_print(5)
 
 print('the 3 family of functions')
 func_print3()
@@ -37,7 +37,7 @@ print(func_mul5(6))
 print(func_add5(6))
 
 # lets see if the closures of the functions returned together are the same...
-if func_mul3.__closure__ is func_add3.__closure__ is func_set3.__closure__:
+if func_mul3.__closure__ is func_add3.__closure__ is func_print3.__closure__:
     print('yes,the three functions have the exact same closure')
 # lets see if different invocations actually created different closures...
 if func_mul3.__closure__ is not func_mul5.__closure__:
