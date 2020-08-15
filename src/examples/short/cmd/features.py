@@ -52,17 +52,20 @@ class Console(cmd.Cmd):
     def do_a_plus_b(self, args):
         """ add two numbers """
         args = args.split(" ")
-        print(int(args[0])+int(args[1]))
+        print(int(args[0]) + int(args[1]))
         return True
 
+    # noinspection PyMethodMayBeStatic
     def do_return_true(self, args):
         """ return True """
         return True
 
+    # noinspection PyMethodMayBeStatic
     def do_return_false(self, args):
         """ return False """
         return False
 
+    # noinspection PyMethodMayBeStatic
     def do_return(self, args):
         """ return """
         return
@@ -70,7 +73,7 @@ class Console(cmd.Cmd):
     def do_return_m1(self, args):
         """ return -1 """
         return -1
- 
+
     def do_return_none(self, args):
         """ return None """
         return None

@@ -147,11 +147,11 @@ def demo_radiolist(d):
                      ('Doener', 'Huh?', 0),
                      ('Falafel', 'Erm...', 0),
                      ('Bagel', 'Of course!', 0),
-                     ('Big Mac', 'Ah, thats easy!', 1),
+                     ('Big Mac', 'Ah, that\'s easy!', 1),
                      ('Whopper', 'Erm, sorry', 0),
                      ('Quarter Pounder',
                       'called \'le Big Mac\' in France', 0),
-                     ('Peanut Butter and Jelly', 'Well, thats your own '
+                     ('Peanut Butter and Jelly', 'Well, that\'s your own '
                                                  'business...', 0),
                      ('Grilled cheese', 'And nothing more?', 0)])
         if handle_exit_code(d, code):
