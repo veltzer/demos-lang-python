@@ -1,3 +1,7 @@
+- read the following three articles and write examples of them:
+	https://docs.python.org/3/howto/descriptor.html
+	https://docs.python.org/3/howto/functional.html
+	https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html#absolute-vs-relative-import
 
 - check that we don't have a subfolder in src which does not have an __init__.py file.
 - check what suffixes of files we have in the src folder.
