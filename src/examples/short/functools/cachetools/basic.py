@@ -1,5 +1,5 @@
 """
-A basic example for using the 'cachetools' module
+A basic example for using the 'functools' module
 
 References:
 - https://docs.python.org/3/library/functools.html#functools.lru_cache

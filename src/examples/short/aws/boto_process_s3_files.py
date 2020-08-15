@@ -1,6 +1,6 @@
 """
 An example about how to connect to s3 and iterate files
-in some "subfolder" of s3.
+in some "sub folder" of s3.
 
 The credentials for this are NOT stored in this script
 but rather are in ~/.aws/credentials.
@@ -15,9 +15,12 @@ import boto
 do_count_lines = True
 do_print = True
 
+bucket_name = "bucket_name"
+folder = "folder"
+
 conn = boto.connect_s3()
-bucket = conn.get_bucket('twiggle-click-streams')
-key_list = bucket.list('mft.similarweb.com')
+bucket = conn.get_bucket(bucket_name)
+key_list = bucket.list(folder)
 file_num = 0
 for key in key_list:
     print('doing [{0}]'.format(key.name))

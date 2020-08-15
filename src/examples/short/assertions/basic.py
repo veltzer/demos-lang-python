@@ -8,7 +8,7 @@ Notes:
     assert 2 + 2 == 5, "this should always raise exceptions"
 - when an assert fails you get an 'AssertionError' exception.
 - if you add an informative message to your assertion than
-    the user will get that messsage as the first element of the
+    the user will get that message as the first element of the
     e.args tuple when he gets an assertion.
 """
 
@@ -20,4 +20,4 @@ except AssertionError as e:
     print("yes, 2+2 != 5")
     print(e.args)
 # assert with text
-assert 2 + 5 == 6, "nope, thats wrong"
+assert 2 + 5 == 6, "nope, that's wrong"
