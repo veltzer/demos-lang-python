@@ -1,3 +1,3 @@
-import my_module.b
+from . import b
 
 print("this is a4")

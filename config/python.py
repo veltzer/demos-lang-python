@@ -47,9 +47,17 @@ run_requires = [
     'psycopg2',
     'pygments',
     'simpleparse',
+    'progressbar',
+    'numpy',
+    'inject',
+    'scrapy',
+    # my stuff
+    'pyapikey',
     # gtk stuff
     'vext',
     'vext.gi',
+    'PyGObject',
+    'PyGObject-stubs',
 ]
 
 test_requires = [

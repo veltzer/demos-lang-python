@@ -13,3 +13,4 @@ gir1.2-gtk-3.0
 postgresql-common
 libpq-dev 
 python3-gi
+libcairo2-dev

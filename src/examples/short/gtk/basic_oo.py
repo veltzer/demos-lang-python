@@ -5,8 +5,7 @@ A pygtk hello world application
 import signal
 
 import gi
-# noinspection PyUnresolvedReferences
-from gi.repository import Gtk as gtk
+from gi.repository import Gtk
 
 gi.require_version('Gtk', '3.0')
 
@@ -40,11 +39,11 @@ class HelloWorld:
     # noinspection PyMethodMayBeStatic
     def destroy(self, _widget, _data=None):
         print('destroy signal occurred')
-        gtk.main_quit()
+        Gtk.main_quit()
 
     def __init__(self):
         """ create a new window """
-        self.window = gtk.Window()
+        self.window = Gtk.Window()
 
         '''
         When the window is given the 'delete_event' signal (this is given
@@ -70,7 +69,7 @@ class HelloWorld:
         '''
         Creates a new button with the label 'Hello World'.
         '''
-        self.button = gtk.Button('Hello World')
+        self.button = Gtk.Button('Hello World')
 
         '''
         When the button receives the 'clicked' signal,it will call the
@@ -107,7 +106,7 @@ class HelloWorld:
         All PyGTK applications must have a gtk.main(). Control ends here
         and waits for an event to occur (like a key press or mouse event).
         """
-        gtk.main()
+        Gtk.main()
 
 
 """

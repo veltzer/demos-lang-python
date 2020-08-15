@@ -38,7 +38,14 @@ tsv
 psycopg2
 pygments
 simpleparse
+progressbar
+numpy
+inject
+scrapy
+pyapikey
 vext
 vext.gi
+PyGObject
+PyGObject-stubs
 # dev requirements
 pydmt
