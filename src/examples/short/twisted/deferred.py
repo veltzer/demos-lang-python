@@ -1,5 +1,5 @@
 """
-A more complex example involving deferreds.
+A more complex example involving defers.
 """
 
 import time
@@ -33,15 +33,15 @@ def printNumber(number):
 
 
 def main():
-    timeBefore = time.time()
+    time_before = time.time()
 
     # call the function and get our Deferred
     d = largeFibonnaciNumber()
 
-    timeAfter = time.time()
+    time_after = time.time()
 
     print(
-        'Total time taken for largeFibonnaciNumber call: {0:.3f} seconds'.format(timeAfter - timeBefore))
+        'Total time taken for largeFibonnaciNumber call: {0:.3f} seconds'.format(time_after - time_before))
 
     # add a callback to it to output the number
     print('Adding the callback now.')

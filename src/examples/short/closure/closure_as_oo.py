@@ -5,23 +5,23 @@ be seen as a sort of a constructor
 """
 
 
-def Person(name, age):
+def Person(initial_name, initial_age):
     o = {
-        'name': name,
-        'age': age,
+        'name': initial_name,
+        'age': initial_age,
     }
 
     def getName():
         return o['name']
 
-    def setName(iname):
-        o['name'] = iname
+    def setName(name):
+        o['name'] = name
 
     def getAge():
         return o['age']
 
-    def setAge(iage):
-        o['age'] = iage
+    def setAge(age):
+        o['age'] = age
 
     return {
         'getName': getName,

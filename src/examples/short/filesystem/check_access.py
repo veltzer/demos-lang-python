@@ -14,9 +14,9 @@ References:
 
 import os
 
-assert os.access('/etc/passwd', os.W_OK) == False
-assert os.access('/etc/passwd', os.R_OK) == True
-assert os.access('/etc/passwd', os.X_OK) == False
-assert os.access('/tmp/doesnt_exist', os.R_OK) == False
-assert os.access('/tmp/doesnt_exist', os.W_OK) == False
-assert os.access('/tmp/doesnt_exist', os.X_OK) == False
+assert os.access('/etc/passwd', os.W_OK) is False
+assert os.access('/etc/passwd', os.R_OK) is True
+assert os.access('/etc/passwd', os.X_OK) is False
+assert os.access('/tmp/doesnt_exist', os.R_OK) is False
+assert os.access('/tmp/doesnt_exist', os.W_OK) is False
+assert os.access('/tmp/doesnt_exist', os.X_OK) is False

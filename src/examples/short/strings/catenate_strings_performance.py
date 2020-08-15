@@ -1,5 +1,5 @@
 """
-This example explores how best to catenate strings in python.
+This example explores how best to concatenate strings in python.
 
 The results are surprising.
 - It seems the + operator is the quickest

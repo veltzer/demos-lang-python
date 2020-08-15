@@ -9,8 +9,8 @@ void Car::printSelf() {
 	std::cout << "This is car number " << number << std::endl;
 }
 
-void Car::setNumber(int inumber) {
-	number=inumber;
+void Car::setNumber(int number) {
+	number=number;
 }
 
 int Car::getNumber(void) {

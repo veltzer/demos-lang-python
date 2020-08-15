@@ -16,26 +16,26 @@ the data through that.
 """
 
 
-def make_funcs(l):
+def make_funcs(number_list):
     def func_max():
         current_max = 0
-        for x in l:
+        for x in number_list:
             if x > current_max:
                 current_max = x
         return current_max
 
     def func_min():
         current_min = 10000
-        for x in l:
+        for x in number_list:
             if x < current_min:
                 current_min = x
         return current_min
 
     def func_set(index, val):
-        l[index] = val
+        number_list[index] = val
 
     def func_int():
-        return l
+        return number_list
 
     return func_max, func_min, func_set, func_int
 

@@ -1,5 +1,5 @@
 """
-This example shows how to compare two orderd lists in python.
+This example shows how to compare two ordered lists in python.
 The full description is that we want the lists to be of the same length
 and that every element in position x in the first list should be equal
 to element in position x in the second list.

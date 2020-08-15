@@ -6,7 +6,7 @@ class Car {
 		int number;
 	public:
 		Car(void);
-		void setNumber(int inumber);
+		void setNumber(int number);
 		int getNumber(void);
 		void printSelf(void);
 		int add(int a,int b);

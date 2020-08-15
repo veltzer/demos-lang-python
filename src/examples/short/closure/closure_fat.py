@@ -1,14 +1,14 @@
 """
 This is an example of how to create a closure which is 'fat': meaning
 has lots of data and not just primitives. In this case the closure
-contains the list 'l' which can be very long indeed.
+contains the list 'function_list' which can be very long indeed.
 """
 
 
-def create_func(l):
+def create_func(function_list):
     def inner_func(x):
-        l.append(x)
-        print(sum(l))
+        function_list.append(x)
+        print(sum(function_list))
 
     return inner_func
 

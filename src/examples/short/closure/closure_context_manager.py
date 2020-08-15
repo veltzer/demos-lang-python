@@ -1,6 +1,7 @@
 """
 This is a basic closure example.
 """
+from typing import List
 
 
 def iterate_it(filename):
@@ -9,15 +10,15 @@ def iterate_it(filename):
 
 
 def iter_through_files(filenames: List[str]):
-    l = []
+    filename_list = []
     for filename in filenames:
-        l.append(iterate_it(filename))
-    return l
+        filename_list.append(iterate_it(filename))
+    return filename_list
 
 
 def main():
-    iters = iter_through_files(['/etc/passwd', '/etc/group'])
-    for i in iters:
+    iterators = iter_through_files(['/etc/passwd', '/etc/group'])
+    for i in iterators:
         for j in i:
             print(j, end='')
 
