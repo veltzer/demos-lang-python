@@ -16,7 +16,7 @@ if len(sys.argv) < 2:
     print('{0}: {0} ./write_to_any.py stdout stderr tty'.format(sys.argv[0]))
     sys.exit(1)
 
-(pid, fd) = pty.fork()
+pid, fd = pty.fork()
 if pid == 0:
     os.execv(sys.argv[1], sys.argv[1:])
     print('execv didnt work', file=sys.stderr)
@@ -31,7 +31,7 @@ else:
     except OSError as e:
         # print(e)
         pass
-    (pid, ret) = os.wait()
+    pid, ret = os.wait()
     if os.WIFEXITED(ret):
         print('proc exited and status was [{}]'.format(os.WEXITSTATUS(ret)))
     if os.WIFSTOPPED(ret):

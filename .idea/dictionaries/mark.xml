@@ -49,6 +49,7 @@
       <w>signalfd</w>
       <w>sigusr</w>
       <w>sphinxcontrib</w>
+      <w>stopsig</w>
       <w>textiowrapper</w>
       <w>tqdm</w>
       <w>unidecode</w>
