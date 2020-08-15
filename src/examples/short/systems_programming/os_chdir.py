@@ -6,10 +6,10 @@ changed to is supplied (bad name, access problem and more).
 
 import os
 
-# a wrong directory on purpose...
 try:
-    os.chdir('/tmpi')
-except:
+    # a wrong directory on purpose...
+    os.chdir('/no_such_folder')
+except FileNotFoundError:
     print('yes, got an exception for a bad directory')
 os.chdir('/tmp')
 os.system('ls')

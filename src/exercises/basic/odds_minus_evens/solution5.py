@@ -1,12 +1,12 @@
-def odds_minus_evens(l):
+def odds_minus_evens(number_list):
     """ Returns the sum of odd numbers in the list minus the sum of evns """
-    sum = 0
-    for x in l:
+    sum_value = 0
+    for x in number_list:
         if x % 2 == 0:
-            sum -= x
+            sum_value -= x
         else:
-            sum += x
-    return sum
+            sum_value += x
+    return sum_value
 
 
 print(odds_minus_evens(range(10)))

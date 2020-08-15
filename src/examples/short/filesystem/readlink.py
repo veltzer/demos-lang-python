@@ -27,8 +27,10 @@ def find_link_target(link):
     link_target = os.readlink(link)
     if not os.path.isabs(link_target):
         real_link_target = os.path.join(link_folder, link_target)
-    # fix the path so that it doesn't contain superfluous parts like ../ etc
-    real_link_target = os.path.abspath(real_link_target)
+        # fix the path so that it doesn't contain superfluous parts like ../ etc
+        real_link_target = os.path.abspath(real_link_target)
+    else:
+        real_link_target = link_target
     return real_link_target
 
 
@@ -45,14 +47,18 @@ def find_link_target_better(link):
     return real
 
 
-'''
-this is a file name which is a symbolic name on most linux
-systems
-'''
-link = '/tmp/foo'
-link = '/etc/resolv.conf'
-real_link_target = find_link_target_rec(link)
-assert os.path.exists(real_link_target) and not os.path.islink(real_link_target)
+def main():
+    """
+    this is a file name which is a symbolic name on most linux
+    systems
+    """
+    # link = '/tmp/foo'
+    link = '/etc/resolv.conf'
+    real_link_target = find_link_target_rec(link)
+    assert os.path.exists(real_link_target) and not os.path.islink(real_link_target)
 
-print(os.path.realpath(link))
-print(find_link_target_better(link))
+    print(os.path.realpath(link))
+    print(find_link_target_better(link))
+
+
+main()
