@@ -50,6 +50,7 @@ systemd-python
 boto
 boto3
 boto3-stubs
+attr
 pyapikey
 pyfakeuse
 vext
