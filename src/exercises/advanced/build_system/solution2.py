@@ -27,6 +27,7 @@ def parse_makefile(fname):
     """
     rules = {}
     commands = {}
+    target = None
     for line in open(fname):
         if not line[0].isspace():
             # dep line (parse, set `target`)

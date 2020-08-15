@@ -1,4 +1,5 @@
 found = True
+input_string = None
 while found:
     input_string = input('Please give me some digits... \n')
     found = False
