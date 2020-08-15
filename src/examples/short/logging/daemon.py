@@ -6,10 +6,9 @@ References:
 - https://www.loggly.com/blog/new-style-daemons-python/
 """
 
-import logging
 import logging.handlers
 
-name = "foobar"
+name = "daemon"
 root_logger = logging.getLogger()
 root_logger.setLevel(logging.INFO)
 handler = logging.handlers.SysLogHandler(address='/dev/log')

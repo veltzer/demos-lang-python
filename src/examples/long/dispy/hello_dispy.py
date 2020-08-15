@@ -13,7 +13,7 @@ def compute(n):
     return host, n
 
 
-if __name__ == '__main__':
+def main():
     import dispy
     import random
 
@@ -32,3 +32,7 @@ if __name__ == '__main__':
         # other fields of 'job' that may be useful:
         # print(job.stdout, job.stderr, job.exception, job.ip_addr, job.start_time, job.end_time)
     cluster.print_status()
+
+
+if __name__ == '__main__':
+    main()

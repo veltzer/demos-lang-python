@@ -6,8 +6,8 @@ class Date:
 
     def __add__(self, days=0, months=0, years=0):
         if isinstance(years, int):
-            self.years -= years
+            self.year += years
         if isinstance(months, int):
-            self.months -= months
+            self.month += months
         if isinstance(days, int):
-            self.days -= days
+            self.day += days

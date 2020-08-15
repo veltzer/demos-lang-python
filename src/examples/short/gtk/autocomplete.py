@@ -11,14 +11,14 @@ import signal
 import gi
 
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk as gtk
-from gi.repository import GObject as gobject
+from gi.repository import Gtk
+from gi.repository import GObject
 
 
-class EntryMultiCompletion(gtk.Entry):
+class EntryMultiCompletion(Gtk.Entry):
     def __init__(self):
-        gtk.Entry.__init__(self)
-        self.completion = gtk.EntryCompletion()
+        Gtk.Entry.__init__(self)
+        self.completion = Gtk.EntryCompletion()
         # customize the matching function to match multiple space
         # separated words
         self.completion.set_match_func(self.match_func, None)
@@ -61,10 +61,10 @@ class EntryMultiCompletion(gtk.Entry):
 
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
-win = gtk.Window()
-win.connect('delete-event', gtk.main_quit)
+win = Gtk.Window()
+win.connect('delete-event', Gtk.main_quit)
 entry_completion = EntryMultiCompletion()
-list_store = gtk.ListStore(gobject.TYPE_STRING)
+list_store = Gtk.ListStore(GObject.TYPE_STRING)
 entry_completion.completion.set_model(list_store)
 entry_completion.completion.set_text_column(0)
 for word in ['python', 'perl', 'scala', 'c++', 'ruby', 'c#', 'java', 'assembly', 'PHP']:
@@ -72,4 +72,4 @@ for word in ['python', 'perl', 'scala', 'c++', 'ruby', 'c#', 'java', 'assembly',
 win.add(entry_completion)
 win.show_all()
 
-gtk.main()
+Gtk.main()

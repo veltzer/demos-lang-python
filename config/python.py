@@ -51,8 +51,10 @@ run_requires = [
     'numpy',
     'inject',
     'scrapy',
+    'ConfigParser',
     # my stuff
     'pyapikey',
+    'pyfakeuse',
     # gtk stuff
     'vext',
     'vext.gi',

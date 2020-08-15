@@ -10,7 +10,7 @@ def get_num_of_days_in_month(month_name):
     """ Given a month name,
     return the number of days in this month"""
     if month_name in name_to_days_num:
-        return name_to_days_num[months_name]
+        return name_to_days_num[months_names]
     else:
         raise DateException(month_name + ' is not a valid month')
 

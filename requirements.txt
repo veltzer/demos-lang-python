@@ -42,7 +42,9 @@ progressbar
 numpy
 inject
 scrapy
+ConfigParser
 pyapikey
+pyfakeuse
 vext
 vext.gi
 PyGObject

@@ -1,14 +1,14 @@
-def min_max_avg(list):
-    min = list[0]
-    max = list[0]
-    sum = list[0]
-    for x in list[1:]:
-        if x < min:
-            min = x
-        if x > max:
-            max = x
-        sum += x
-    return min, max, sum / len(list)
+def min_max_avg(num_list):
+    min_value = num_list[0]
+    max_value = num_list[0]
+    sum_value = num_list[0]
+    for x in num_list[1:]:
+        if x < min_value:
+            min_value = x
+        if x > max_value:
+            max_value = x
+        sum_value += x
+    return min_value, max_value, sum_value / len(num_list)
 
 
 print(min_max_avg(range(0, 100000)))

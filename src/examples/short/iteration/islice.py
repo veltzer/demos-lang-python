@@ -8,7 +8,7 @@ It also shows how to write your own islice implementation....
 from itertools import islice
 
 # This is the most basic example: getting only the first n elements
-# from an interable. When islice gets one argument it's meaning is 'stop'.
+# from an iterable. When islice gets one argument it's meaning is 'stop'.
 for i in islice(range(10), 5):
     print(i)
 # start and stop
