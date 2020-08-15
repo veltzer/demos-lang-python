@@ -23,6 +23,10 @@ import itertools
 import timeit
 import inspect
 
+# lets compare the performance
+range_limit = 1000000
+jump = 7
+
 
 def chunk_groupby(data, n):
     return ((d for _, d in dd) for (_, dd) in itertools.groupby(enumerate(data), key=lambda v: v[0] // n))
@@ -78,43 +82,6 @@ def chunk_generator(data, n):
     return (itertools.chain((i,), itertools.islice(it, n - 1)) for i in it)
 
 
-range_limit = 100
-jump = 7
-count = 0
-for d in chunk_groupby(range(range_limit), jump):
-    inspect.isgeneratorfunction(d)
-    assert list(d) == list(range(count, min(count + jump, range_limit)))
-    count += jump
-
-count = 0
-for d in chunk_groupby_closure(range(range_limit), jump):
-    inspect.isgeneratorfunction(d)
-    assert list(d) == list(range(count, min(count + jump, range_limit)))
-    count += jump
-
-count = 0
-for d in chunk_python(range(range_limit), jump):
-    inspect.isgeneratorfunction(d)
-    assert list(d) == list(range(count, min(count + jump, range_limit)))
-    count += jump
-
-count = 0
-for d in chunk_itertools(range(range_limit), jump):
-    inspect.isgeneratorfunction(d)
-    assert list(d) == list(range(count, min(count + jump, range_limit))), ld + lb
-    count += jump
-
-count = 0
-for d in chunk_generator(range(range_limit), jump):
-    inspect.isgeneratorfunction(d)
-    assert list(d) == list(range(count, min(count + jump, range_limit))), ld + lb
-    count += jump
-
-# lets compare the performance
-range_limit = 1000000
-jump = 1000
-
-
 def func_chunk_groupby():
     for d in chunk_groupby(range(range_limit), jump):
         _ = list(d)
@@ -140,9 +107,40 @@ def func_chunk_generator():
         _ = list(d)
 
 
-how_much = 10
-print("groupby [{}]".format(timeit.timeit(func_chunk_groupby, number=how_much)))
-print("groupby_closure [{}]".format(timeit.timeit(func_chunk_groupby_closure, number=how_much)))
-print("python [{}]".format(timeit.timeit(func_chunk_python, number=how_much)))
-print("itertools [{}]".format(timeit.timeit(func_chunk_itertools, number=how_much)))
-print("generator [{}]".format(timeit.timeit(func_chunk_generator, number=how_much)))
+def main():
+    count = 0
+    for d in chunk_groupby(range(range_limit), jump):
+        inspect.isgeneratorfunction(d)
+        assert list(d) == list(range(count, min(count + jump, range_limit)))
+        count += jump
+
+    count = 0
+    for d in chunk_groupby_closure(range(range_limit), jump):
+        inspect.isgeneratorfunction(d)
+        assert list(d) == list(range(count, min(count + jump, range_limit)))
+        count += jump
+
+    count = 0
+    for d in chunk_python(range(range_limit), jump):
+        inspect.isgeneratorfunction(d)
+        assert list(d) == list(range(count, min(count + jump, range_limit)))
+        count += jump
+
+    count = 0
+    for d in chunk_itertools(range(range_limit), jump):
+        inspect.isgeneratorfunction(d)
+        assert list(d) == list(range(count, min(count + jump, range_limit))), "ld + lb"
+        count += jump
+
+    count = 0
+    for d in chunk_generator(range(range_limit), jump):
+        inspect.isgeneratorfunction(d)
+        assert list(d) == list(range(count, min(count + jump, range_limit))), "ld + lb"
+        count += jump
+
+    how_much = 10
+    print("groupby [{}]".format(timeit.timeit(func_chunk_groupby, number=how_much)))
+    print("groupby_closure [{}]".format(timeit.timeit(func_chunk_groupby_closure, number=how_much)))
+    print("python [{}]".format(timeit.timeit(func_chunk_python, number=how_much)))
+    print("itertools [{}]".format(timeit.timeit(func_chunk_itertools, number=how_much)))
+    print("generator [{}]".format(timeit.timeit(func_chunk_generator, number=how_much)))

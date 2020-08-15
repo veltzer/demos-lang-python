@@ -1,5 +1,5 @@
 """
-An example demonstrating twisteds 'callInThread' function.
+An example demonstrating twisted's 'callInThread' function.
 """
 
 import time
