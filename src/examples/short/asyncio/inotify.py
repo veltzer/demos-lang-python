@@ -11,6 +11,7 @@ http://stackoverflow.com/questions/26414052/watch-for-a-file-with-asyncio
 import asyncio
 
 import pyinotify
+from pyfakeuse import fake_use
 
 
 class AsyncioNotifier(pyinotify.Notifier):
@@ -39,6 +40,7 @@ class EventHandler(pyinotify.ProcessEvent):
         self.loop = loop
 
     def process_IN_CREATE(self, event):
+        fake_use(self)
         print('Creating:', event.pathname)
 
 
@@ -47,6 +49,7 @@ main_loop = asyncio.get_event_loop()
 # set up pyinotify stuff
 wm = pyinotify.WatchManager()
 mask = pyinotify.IN_CREATE
+
 folder = '/tmp'
 wm.add_watch(folder, mask)
 handler = EventHandler(loop=main_loop)
