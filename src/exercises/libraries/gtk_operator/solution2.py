@@ -1,6 +1,10 @@
 import operator
 
-import gtk
+import gi
+from gi.repository import Gtk
+
+gi.require_version('Gtk', '3.0')
+
 
 '''
 This extended version allow selection of the arithmetic operator by
@@ -13,20 +17,20 @@ group of widgets, together with some functionality.
 '''
 
 
-class OperatorChoice(gtk.VBox):
+class OperatorChoice(Gtk.VBox):
     """An operator selection box."""
 
     def __init__(self):
-        gtk.VBox.__init__(self)
+        Gtk.VBox.__init__(self)
         self.radio_funcs = {}
 
         radio = None  # helps RadioButton grouping below
-        for (op, func) in zip('+-*/', [operator.add, operator.sub, operator.mul, operator.div]):
-            radio = gtk.RadioButton(radio, op)
-        self.pack_start(radio)
-        if op == '+':
-            radio.set_active(True)
-        self.radio_funcs[radio] = func
+        for (op, func) in zip('+-*/', [operator.add, operator.sub, operator.mul, operator.truediv]):
+            radio = Gtk.RadioButton(radio, op)
+            self.pack_start(radio)
+            if op == '+':
+                radio.set_active(True)
+            self.radio_funcs[radio] = func
 
     def compute(self, arg1, arg2):
         for (radio, func) in self.radio_funcs.items():
@@ -46,18 +50,18 @@ class OperatorChoice(gtk.VBox):
 
 # Notice how the rest of the app is almost unchanged. Success!
 
-w = gtk.Window()
-w.connect('delete_event', lambda *ignored: gtk.main_quit())
+w = Gtk.Window()
+w.connect('delete_event', lambda *ignored: Gtk.main_quit())
 
-hbox = gtk.HBox()
-w.add(hbox)
+horizontal_box = Gtk.HBox()
+w.add(horizontal_box)
 
-entry1 = gtk.Entry()
-operator = OperatorChoice()
-entry2 = gtk.Entry()
-result = gtk.Label()
-for widget in [entry1, operator, entry2, gtk.Label('='), result]:
-    hbox.pack_start(widget)
+entry1 = Gtk.Entry()
+operator_choice = OperatorChoice()
+entry2 = Gtk.Entry()
+result = Gtk.Label()
+for widget in [entry1, operator_choice, entry2, Gtk.Label('='), result]:
+    horizontal_box.pack_start(widget)
 
 
 def compute(*_ignored):
@@ -72,11 +76,11 @@ def compute(*_ignored):
 
 entry1.connect('changed', compute)
 entry2.connect('changed', compute)
-operator.connect_changed(compute)
+operator_choice.connect_changed(compute)
 
 # Initialize so it's immediately useful
 entry1.set_text('3')
 entry2.set_text('2')
 
 w.show_all()
-gtk.main()
+Gtk.main()
