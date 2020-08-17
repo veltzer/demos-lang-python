@@ -3,15 +3,15 @@ This is an example of a shared closure. All three functions share the same closu
 """
 
 
-def create_funcs(l):
+def create_funcs(number_list):
     def append_f(x):
-        l.append(x)
+        number_list.append(x)
 
     def print_f():
-        print(l)
+        print(number_list)
 
     def sum_f():
-        return sum(l)
+        return sum(number_list)
 
     return append_f, print_f, sum_f
 

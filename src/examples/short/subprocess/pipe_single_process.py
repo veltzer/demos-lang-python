@@ -13,15 +13,15 @@ This is similar to python>=2.7 subprocess.check_output
 
 def system_check_output(arg):
     pr = subprocess.Popen(arg, stdout=subprocess.PIPE)
-    (output, errout) = pr.communicate()
+    (output, errors) = pr.communicate()
     status = pr.returncode
     if status:
-        raise ValueError('error in executing', cmd)
+        raise ValueError('error in executing', arg)
     return output
 
 
 try:
     system_check_output(['non_exist', '--non_exist'])
-except:
+except FileNotFoundError:
     print('yes, got exception')
 print(system_check_output(['ls', '-l']))

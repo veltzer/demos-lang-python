@@ -1,3 +1,4 @@
+# noinspection PyPep8
 """
 This example explores how to inhibit python from printing the stack trace when
 exiting from an exception.
@@ -9,7 +10,6 @@ References:
 """
 
 import sys
-import traceback
 
 
 def do_error():

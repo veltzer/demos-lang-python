@@ -16,10 +16,10 @@ def sub(x, y):
 
 name = input('give me the name off the function: ')
 num = int(input('how many arguments to pass to the function: '))
-l = []
+str_list = []
 for i in range(num):
     a = input('give me argument [{0}]: '.format(i))
-    l.append(a)
+    str_list.append(a)
 # these two are the same
-print((vars()[name])(*l))
-print((vars()[name]).__call__(*l))
+print((vars()[name])(*str_list))
+print((vars()[name]).__call__(*str_list))

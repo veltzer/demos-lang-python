@@ -56,12 +56,12 @@ class Console(cmd.Cmd):
         return True
 
     # noinspection PyMethodMayBeStatic
-    def do_return_true(self, args):
+    def do_return_true(self, _args):
         """ return True """
         return True
 
     # noinspection PyMethodMayBeStatic
-    def do_return_false(self, args):
+    def do_return_false(self, _args):
         """ return False """
         return False
 
@@ -70,11 +70,11 @@ class Console(cmd.Cmd):
         """ return """
         return
 
-    def do_return_m1(self, args):
+    def do_return_m1(self, _args):
         """ return -1 """
         return -1
 
-    def do_return_none(self, args):
+    def do_return_none(self, _args):
         """ return None """
         return None
 

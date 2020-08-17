@@ -1,8 +1,8 @@
 """
-Exapmles of various types of comprehensions.
+Examples of various types of comprehensions.
 """
 
-# multiplication table as comprehenshion
+# multiplication table as comprehension
 l = [x * y for x in range(10) for y in range(10)]
 print(l)
 
@@ -27,5 +27,5 @@ print({2, 3, 4})
 print({2: 3, 4: 5})
 print({x: x ** 2 for x in range(10)})
 
-d = {'one': 'onev', 'two': 'twov'}
+d = {'one': 'one_value', 'two': 'two_value'}
 print(dict((y, x) for x, y in d.items()))

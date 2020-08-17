@@ -15,7 +15,7 @@ References:
 def do_error():
     try:
         raise ValueError('core')
-    except Exception as e:
+    except ValueError:
         raise ValueError('outer')
 
 
