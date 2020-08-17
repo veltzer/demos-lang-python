@@ -14,9 +14,12 @@ def do_error():
         raise ValueError('outer') from e
 
 
-try:
-    do_error()
-except (Exception, KeyboardInterrupt) as e:
-    while e.__cause__:
-        e = e.__cause__
-    print(e)
+def main():
+    try:
+        do_error()
+    except (Exception, KeyboardInterrupt) as e:
+        while e.__cause__:
+            e = e.__cause__
+        print(e)
+
+main()

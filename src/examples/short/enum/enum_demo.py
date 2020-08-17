@@ -6,20 +6,20 @@ import enum
 
 
 class Event(enum.Enum):
-    nodepreadd = 1
-    nodepostadd = 2
-    nodepredel = 3
-    nodepostdel = 4
-    edgepreadd = 5
-    edgepostadd = 6
-    edgepredel = 7
-    edgepostdel = 8
-    nodeprebuild = 9
-    nodepostbuild = 10
+    node_pre_add = 1
+    node_post_add = 2
+    node_pre_del = 3
+    node_post_del = 4
+    edge_pre_add = 5
+    edge_post_add = 6
+    edge_pre_del = 7
+    edge_post_del = 8
+    node_pre_build = 9
+    node_post_build = 10
 
 
-def is_enum(x):
-    if isinstance(x, Event):
+def is_enum(member):
+    if isinstance(member, Event):
         print('yes')
     else:
         print('no')
@@ -27,18 +27,18 @@ def is_enum(x):
 
 # passing numbers is no good, we need to pass the real values
 is_enum(7)
-is_enum(Event.edgepredel)
+is_enum(Event.edge_pre_del)
 
-print(Event.edgepredel)
-print(dir(Event.edgepredel))
+print(Event.edge_pre_del)
+print(dir(Event.edge_pre_del))
 print(dir(Event))
 print('name is [{name}] and type is [{type}]'.format(
-    name=Event.edgepredel.name,
-    type=type(Event.edgepredel.name),
+    name=Event.edge_pre_del.name,
+    type=type(Event.edge_pre_del.name),
 ))
 print('value is [{value}] and type is [{type}]'.format(
-    value=Event.edgepredel.value,
-    type=type(Event.edgepredel.value),
+    value=Event.edge_pre_del.value,
+    type=type(Event.edge_pre_del.value),
 ))
 
 print("listing all values of the enum...")
@@ -47,5 +47,5 @@ for x in Event:
     print(x.name)
     print(x.value)
 
-# tanslate from string to number
-print(Event["edgepredel"])
+# translate from string to number
+print(Event["edge_pre_del"])

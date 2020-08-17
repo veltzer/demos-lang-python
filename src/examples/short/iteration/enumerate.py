@@ -8,25 +8,26 @@ and in python3 although I haven't checked that.
 is more beautiful.
 """
 
-l = ['a', 'b', 'c']
-
-# the non pythonic way to do this
-for i in range(len(l)):
-    print(i, l[i])
-
-# the pythonic way to do this
-for i, c in enumerate(l):
-    print(i, c)
-
 
 # our own 'enumerate'
-def simple_enumerate(l):
+def simple_enumerate(value_list):
     i = 0
-    for c in l:
-        yield i, c
+    for val in value_list:
+        yield i, val
         i += 1
 
 
-# now let's use our own enumerator
-for i, c in simple_enumerate(l):
-    print(i, c)
+def main():
+    value_list = ['a', 'b', 'c']
+    # the non pythonic way to do this
+    for i in range(len(value_list)):
+        print(i, value_list[i])
+    # the pythonic way to do this
+    for i, c in enumerate(value_list):
+        print(i, c)
+    # now let's use our own enumerator
+    for i, c in simple_enumerate(value_list):
+        print(i, c)
+
+
+main()
