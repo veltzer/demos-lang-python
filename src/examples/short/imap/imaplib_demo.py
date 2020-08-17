@@ -14,7 +14,7 @@ import os.path
 import ConfigParser
 
 config = ConfigParser.ConfigParser()
-config.read(os.path.expanduser('~/.pyimap.ini'))
+config.read(os.path.expanduser('~/.passwords.ini'))
 opt_username = config.get('imap', 'username')
 opt_password = config.get('imap', 'password')
 opt_hostname = config.get('imap', 'hostname')
@@ -54,14 +54,18 @@ def imap_login(imap, username, password):
         raise ValueError('could not login')
 
 
-imap = imaplib.IMAP4_SSL(opt_hostname, opt_port)
-imap_login(imap, opt_username, opt_password)
-print(imap.capability())
-print(imap.list())
-if imap_have_mailbox(imap, 'foo'):
-    raise ValueError('have mailbox foo')
-if not imap_have_mailbox(imap, 'business'):
-    raise ValueError('do not have mailbox business')
-imap_create(imap, 'foo')
-imap_delete(imap, 'foo')
-imap_logout(imap)
+def main():
+    imap = imaplib.IMAP4_SSL(opt_hostname, opt_port)
+    imap_login(imap, opt_username, opt_password)
+    print(imap.capability())
+    print(imap.list())
+    if imap_have_mailbox(imap, 'foo'):
+        raise ValueError('have mailbox foo')
+    if not imap_have_mailbox(imap, 'business'):
+        raise ValueError('do not have mailbox business')
+    imap_create(imap, 'foo')
+    imap_delete(imap, 'foo')
+    imap_logout(imap)
+
+
+main()

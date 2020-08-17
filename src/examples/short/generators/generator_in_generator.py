@@ -16,6 +16,8 @@ def give_me_some_data():
         yield x
     yield 'this is data from the end'
 
+def main():
+    for x in give_me_some_data():
+        print('outer loop', x)
 
-for x in give_me_some_data():
-    print('outer loop', x)
+main()
