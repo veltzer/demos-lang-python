@@ -4,7 +4,7 @@ This is an example showing how to create object hierarchies in python.
 NOTES:
 - inheriting from object is recommended (you get lots of methods)
 - there are two ways to call parent methods.
-- all methods are overloadable.
+- all methods are overload-able.
 - parent attributes are directly accessible from the child
     (no access control).
 - the 'dir' function could be used for debugging.
@@ -25,8 +25,8 @@ class A:
     def method_overloaded3(self):
         print('A.method_overloaded3')
 
-    def method_onlya(self):
-        print('A.method_onlya')
+    def method_only_a(self):
+        print('A.method_only_a')
         print('a is', self.a)
 
 
@@ -46,7 +46,7 @@ class B(A):
     def method_overloaded2(self):
         print('B.method_overloaded2')
         # this is the best way to call the parent method
-        # (no hardcoding of the class name as above)
+        # (no hard coding of the class name as above)
         super(self.__class__, self).method_overloaded2()
 
     def method_overloaded3(self):
@@ -54,8 +54,8 @@ class B(A):
         # This is going back to the first way
         A.method_overloaded3(self)
 
-    def method_onlyb(self):
-        print('B.method_onlyb')
+    def method_only_b(self):
+        print('B.method_only_b')
         print('a is', self.a)
         print('b is', self.b)
 
@@ -68,8 +68,8 @@ b = B(5, 8)
 print('dir(b) is')
 print(dir(b))
 print('=================================')
-b.method_onlya()
+b.method_only_a()
 b.method_overloaded1()
 b.method_overloaded2()
 b.method_overloaded3()
-b.method_onlyb()
+b.method_only_b()

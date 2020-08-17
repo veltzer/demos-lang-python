@@ -5,7 +5,7 @@ import os
 # this finds the config package too, no good
 print(setuptools.find_packages())
 # this is better but we need to know what to exclude and
-# the right way to pass it, ough!
+# the right way to pass it!
 print(setuptools.find_packages(exclude=["config.*", "config"]))
 
 
@@ -18,7 +18,7 @@ def find_packages_walk(path="", prefix=""):
 
 
 # does not work, I don't know why...
-print(list(find_packages_walk(path="mypkg", prefix="mypkg")))
+print(list(find_packages_walk(path="my_pkg", prefix="my_pkg")))
 
 
 def find_packages_os(path='.'):
@@ -28,4 +28,4 @@ def find_packages_os(path='.'):
 
 
 # this is correct
-print(list(find_packages_os(path="mypkg")))
+print(list(find_packages_os(path="my_pkg")))
