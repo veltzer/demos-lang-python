@@ -5,7 +5,7 @@ The key is the logging.basicConfig method to setup the config
 for basic usage.
 
 The problem with this example is that you set your own logging
-level which is contrary to logging philosophy. You shuld not
+level which is contrary to logging philosophy. You should not
 set your own logging level.
 
 Another issue is that if you throw an exception it DOES NOT

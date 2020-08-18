@@ -1,5 +1,5 @@
 """
-This exmple explores how to undo what basicConfig does
+This example explores how to undo what basicConfig does
 """
 
 import logging
