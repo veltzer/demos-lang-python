@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 class Node:
     """
     This is a single element of the singly linked list

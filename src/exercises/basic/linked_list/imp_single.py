@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 References:
 - https://www.codefellows.org/blog/implementing-a-singly-linked-list-in-python/
