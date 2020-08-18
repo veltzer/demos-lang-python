@@ -32,7 +32,7 @@ def is_leap_year(year):
 
 class Calendar:
     """ A calendar of events, has an entry for every event,
-            which is a mapping from event name to Date o bject"""
+            which is a mapping from event name to Date object"""
 
     def __init__(self):
         self.events = {}

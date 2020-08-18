@@ -11,9 +11,9 @@ this blog post: http://scott.yang.id.au/2009/01/migrate-emails-maildir-gmail.htm
 import imaplib
 import os.path
 
-import ConfigParser
+import configparser
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(os.path.expanduser('~/.passwords.ini'))
 opt_username = config.get('imap', 'username')
 opt_password = config.get('imap', 'password')

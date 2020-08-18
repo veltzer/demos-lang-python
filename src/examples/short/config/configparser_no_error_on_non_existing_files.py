@@ -1,5 +1,5 @@
 """
-This is an example that shows that ConfigParser does NOT complain about
+This is an example that shows that configparser does NOT complain about
 reading files which don't exist.
 Quite stupid.
 """
@@ -7,4 +7,4 @@ Quite stupid.
 import configparser
 
 c = configparser.ConfigParser()
-c.read('nonexit.ini')
+c.read('non_exist.ini')

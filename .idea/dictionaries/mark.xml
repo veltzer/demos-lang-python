@@ -9,11 +9,13 @@
       <w>centos</w>
       <w>dbus</w>
       <w>defaultdict</w>
+      <w>dispy</w>
       <w>dtype</w>
       <w>emptyline</w>
       <w>errback</w>
       <w>errbacks</w>
       <w>errno</w>
+      <w>fastparquet</w>
       <w>fibonnaci</w>
       <w>glibc</w>
       <w>intersetellar</w>
@@ -21,6 +23,7 @@
       <w>ispkg</w>
       <w>jinja</w>
       <w>jsonschema</w>
+      <w>libdbus</w>
       <w>mako</w>
       <w>mordor</w>
       <w>mtime</w>
@@ -52,6 +55,7 @@
       <w>sigusr</w>
       <w>sphinxcontrib</w>
       <w>stopsig</w>
+      <w>termcolor</w>
       <w>textiowrapper</w>
       <w>tqdm</w>
       <w>tracebacklimit</w>

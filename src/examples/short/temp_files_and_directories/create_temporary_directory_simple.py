@@ -10,7 +10,7 @@ import tempfile
 import shutil
 import os.path
 
-dirpath = tempfile.mkdtemp()
-print("dirpath is [{}]".format(dirpath))
-shutil.copy("/etc/passwd", os.path.join(dirpath, "passwd"))
-shutil.rmtree(dirpath)
+dir_path = tempfile.mkdtemp()
+print(f"dir_path is [{dir_path}]")
+shutil.copy("/etc/passwd", os.path.join(dir_path, "passwd"))
+shutil.rmtree(dir_path)

@@ -12,6 +12,6 @@ for (name, ns, plugin) in plugins:
 
 # plugin_mgr.importPlugins(folder='plugins', ns='plugins')
 
-# plugin_mgr.importPlugin('commulative_plugins', [ 'plugins1' , 'plugins2' ], 'plugin1')
-# plugin_mgr.importPlugin('commulative_plugins', [ 'plugins1' , 'plugins2'
+# plugin_mgr.importPlugin('cumulative_plugins', [ 'plugins1' , 'plugins2' ], 'plugin1')
+# plugin_mgr.importPlugin('cumulative_plugins', [ 'plugins1' , 'plugins2'
 # ], 'plugin2')
