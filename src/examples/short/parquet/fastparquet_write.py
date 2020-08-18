@@ -11,6 +11,6 @@ from fastparquet import write
 df = pandas.read_csv("/etc/passwd", sep=":")
 
 # this is uncompressed write (I think!)
-write('/tmp/file.parq', df)
+write('/tmp/file.parquet', df)
 # this is compressed write
-write('/tmp/file_compressed.parq', df, compression='GZIP', file_scheme='hive')
+write('/tmp/file_compressed.parquet', df, compression='GZIP', file_scheme='hive')

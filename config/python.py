@@ -61,6 +61,7 @@ run_requires = [
     'boto3-stubs',
     'attr',
     'pyparsing',
+    'fastparquet',
     # my stuff
     'pyapikey',
     'pyfakeuse',

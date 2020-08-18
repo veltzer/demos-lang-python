@@ -7,4 +7,4 @@ They should be reformatted using textwrap.wrap with default settings.
 Hint: use a pipeline of several stages.
 
 Debugging hint:
-print list(reformat(['foo', 'bar', '', 'quux', 'quuux']))
+print list(reformat(['foo', 'bar', '', 'long', 'encyclopedia']))

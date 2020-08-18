@@ -50,11 +50,13 @@
       <w>redhat</w>
       <w>reformatter</w>
       <w>rivendell</w>
+      <w>rmtree</w>
       <w>scrapy</w>
       <w>signalfd</w>
       <w>sigusr</w>
       <w>sphinxcontrib</w>
       <w>stopsig</w>
+      <w>tempfile</w>
       <w>termcolor</w>
       <w>textiowrapper</w>
       <w>tqdm</w>
