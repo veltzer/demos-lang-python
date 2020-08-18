@@ -124,4 +124,4 @@ clean_hard:
 .PHONY: check_mode
 check_mode:
 	$(info doing [$@])
-	$(Q)find src -name "*.py" -and -type f -and -perm 022
+	$(Q)find src -name "*.py" -and -type f -and -not -perm 0644
