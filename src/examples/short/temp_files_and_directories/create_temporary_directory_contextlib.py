@@ -16,7 +16,7 @@ import tempfile
 
 
 @contextlib.contextmanager
-def cd(new_dir, cleanup=lambda: True):
+def cd(new_dir, cleanup=lambda: None):
     prev_dir = os.getcwd()
     os.chdir(os.path.expanduser(new_dir))
     try:

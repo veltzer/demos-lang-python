@@ -2,7 +2,7 @@ class Node:
     """
     This is a single element of the singly linked list
     """
-    def __init__(self, data, next):
+    def __init__(self, _data, _next_element):
         pass
 
 
@@ -23,18 +23,20 @@ class SingleLinkedList:
         pass
 
     def yield_elements(self):
-        pass
+        yield self
+
 
 def example_of_use():
-    l = SingleLinkedList()
-    l.add_head_element(3)
-    l.add_head_element(2)
-    l.add_head_element(1)
+    test_list = SingleLinkedList()
+    test_list.add_head_element(3)
+    test_list.add_head_element(2)
+    test_list.add_head_element(1)
     print("starting iteration")
-    for e in l.yield_elements():
+    for e in test_list.yield_elements():
         print(e)
     print("ending iteration")
-    print(l.pop_head_element())
-    print(l.pop_head_element())
+    print(test_list.pop_head_element())
+    print(test_list.pop_head_element())
+
 
 example_of_use()

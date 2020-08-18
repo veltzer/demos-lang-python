@@ -34,9 +34,10 @@ print('bool(None) is', b)
 # you do not pay attention to checking if the value is None before doing
 # some arithmetic with it.
 try:
+    # noinspection PyTypeChecker
     i = int(None)
 except TypeError as e:
-    print('yes,got exception from convering None to int', e)
+    print('yes,got exception from converting None to int', e)
 
 # on the other hand,None is covertible to str (string). Watch out!
 s = str(None)

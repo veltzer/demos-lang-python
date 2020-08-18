@@ -21,14 +21,14 @@ doSecond = True
 # get the list of all files accessible from /etc
 files = [f for f in glob.glob('/etc/*') if os.path.isfile(f)]
 files.extend([f for f in glob.glob('/etc/*/*') if os.path.isfile(f)])
-listlen = len(files)
-print('file list length is {listlen}...'.format(listlen=listlen))
+list_len = len(files)
+print(f'file list length is {list_len}...')
 
 # now do lots of os.path.getmtime() ops on them
 if doFirst:
     time_before = time.time()
     for i in range(count):
-        filename = files[i % listlen]
+        filename = files[i % list_len]
         os.path.getmtime(filename)
     time_after = time.time()
     print('time taken for {count} os.path.getmtime : {time:.3f} seconds'.format(
@@ -40,8 +40,9 @@ if doSecond:
     # now do the same with a cache
     times = dict()
     time_before = time.time()
+    filename = None
     for i in range(count):
-        filename = files[i % listlen]
+        filename = files[i % list_len]
     if filename in times:
         t = times[filename]
     else:

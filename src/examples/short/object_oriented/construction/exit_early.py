@@ -16,7 +16,7 @@ is a different story.
 
 
 class Book:
-    # noinspection PyReturnFromInit
+    # noinspection PyReturnFromInit,PyTypeChecker
     def __init__(self, price) -> 'Book':
         self.__price = price
         # return None

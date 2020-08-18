@@ -17,8 +17,8 @@ config = configparser.ConfigParser()
 config.read(os.path.expanduser('~/.passwords.ini'))
 opt_username = config.get('imap', 'username')
 opt_password = config.get('imap', 'password')
-opt_hostname = config.get('imap', 'hostname')
-opt_port = config.get('imap', 'port')
+opt_hostname: str = config.get('imap', 'hostname')
+opt_port: int = int(config.get('imap', 'port'))
 
 
 def imap_have_mailbox(imap, name):
@@ -55,7 +55,13 @@ def imap_login(imap, username, password):
 
 
 def main():
-    imap = imaplib.IMAP4_SSL(opt_hostname, opt_port)
+    """
+    imap = imaplib.IMAP4(
+        host=opt_hostname,
+        port=opt_port,
+    )
+    """
+    imap = imaplib.IMAP4_SSL(host=opt_hostname, port=opt_port)
     imap_login(imap, opt_username, opt_password)
     print(imap.capability())
     print(imap.list())
