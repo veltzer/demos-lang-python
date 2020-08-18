@@ -25,8 +25,8 @@ else:
     At the end of the loop we get an exception when the connection with the other side terminates.
     This is kinda ugly since strictly speaking this is not an error, but oh well.
     '''
-    bufsize = 1024
-    buf = os.read(fd, bufsize).decode()
+    buffer_size = 1024
+    buf = os.read(fd, buffer_size).decode()
     over = False
     while len(buf) > 0 and not over:
         # print('got buf [{0}]'.format(buf))
@@ -37,7 +37,7 @@ else:
             line += '\n'
             print('got line [{0}]'.format(line))
         try:
-            buf += os.read(fd, bufsize).decode()
+            buf += os.read(fd, buffer_size).decode()
         except OSError as e:
             over = True
     (pid, ret) = os.wait()

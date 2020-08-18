@@ -125,3 +125,18 @@ clean_hard:
 check_mode:
 	$(info doing [$@])
 	$(Q)find src -name "*.py" -and -type f -and -not -perm 0644
+
+.PHONY: check_exercises
+check_exercises:
+	$(info doing [$@])
+	$(Q)find src/exercises\
+		-mindepth 2\
+		-type f\
+		-not -name "exercise.txt"\
+		-not -name "solution*.py"\
+		-not -name "data*.txt"\
+		-not -name "data.xml"\
+		-not -name "start.py"\
+		-not -name "myclass*.py"\
+		-not -name "*.pyc"\
+		-not -name "*.stamp"
