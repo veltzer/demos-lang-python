@@ -1,2 +1,2 @@
-Use the xml.dom.minidom module to parse some xml and do some computation on it.
-Use the attached xml file for the input.
+Use the xml.dom.minidom module to add all salaries in some company.
+Use data_samples/numbers.xml for the input.

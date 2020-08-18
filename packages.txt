@@ -15,3 +15,5 @@ libpq-dev
 python3-gi
 libcairo2-dev
 python3-distutils-extra
+swig
+swig-doc

@@ -126,17 +126,19 @@ check_mode:
 	$(info doing [$@])
 	$(Q)find src -name "*.py" -and -type f -and -not -perm 0644
 
-.PHONY: check_exercises
-check_exercises:
+.PHONY: check_files
+check_files:
 	$(info doing [$@])
-	$(Q)find src/exercises\
-		-mindepth 2\
+	$(Q)find src\
 		-type f\
-		-not -name "exercise.txt"\
-		-not -name "solution*.py"\
-		-not -name "data*.txt"\
-		-not -name "data.xml"\
-		-not -name "start.py"\
-		-not -name "myclass*.py"\
+		-not -name "*.py"\
+		-not -name "*.external_py"\
+		-not -name "*.external_py"\
+		-not -name "*.pyo"\
 		-not -name "*.pyc"\
+		-not -name "*.txt"\
+		-not -name "Makefile"\
+		-not -name "*.cfg"\
+		-not -name "*.ini"\
+		-not -name "*.py.not"\
 		-not -name "*.stamp"

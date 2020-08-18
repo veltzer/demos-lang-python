@@ -1,14 +1,12 @@
-import re
 import xml.dom.minidom
 
-dom = xml.dom.minidom.parse('data.xml')  # parse an XML file by name
+# parse an XML file by name
+dom = xml.dom.minidom.parse('data_samples/numbers.xml')
 
-for ticket in dom.getElementsByTagName('ImportTicket'):
-    esr = ticket.getAttribute('external_system_reference')
-    esr = re.sub('^0+', '', esr)
-    ticket.setAttribute('external_system_reference', esr)
+salary_sum = 0
+for employee in dom.getElementsByTagName('employee'):
+    salary_str = employee.getAttribute('salary')
+    salary = int(salary_str)
+    salary_sum += salary
 
-# print(dir(dom))
-print(dom.toprettyxml())
-# outfile=open('/tmp/result.xml','wb')
-# dom.writexml(outfile)
+print(f"salary_sum is {salary_sum}")
