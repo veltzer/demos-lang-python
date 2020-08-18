@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+"""
+References:
+- https://www.codefellows.org/blog/implementing-a-singly-linked-list-in-python/
+"""
+
 class Node:
     """
     This is a single element of the singly linked list
