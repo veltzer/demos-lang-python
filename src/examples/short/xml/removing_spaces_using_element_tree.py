@@ -19,12 +19,12 @@ def omit_whitespaces(iter):
             elem.tail=''
         yield event,elem
 
-for event, elem in omit_whitespaces(xml.etree.ElementTree.iterparse('data.xml')):
+for event, elem in omit_whitespaces(xml.etree.ElementTree.iterparse('data_samples/data.xml')):
     if elem.tag=='root':
         print(xml.etree.ElementTree.tostring(elem))
 '''
 
-dom = xml.etree.ElementTree.parse('data.xml')
+dom = xml.etree.ElementTree.parse('data_samples/data.xml')
 for elem in dom.getroot().iter():
     if whitespaces.match(elem.text):
         elem.text = ''
