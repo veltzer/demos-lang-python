@@ -60,6 +60,7 @@ run_requires = [
     'boto3',
     'boto3-stubs',
     'attr',
+    'pyparsing',
     # my stuff
     'pyapikey',
     'pyfakeuse',

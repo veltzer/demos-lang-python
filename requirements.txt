@@ -51,6 +51,7 @@ boto
 boto3
 boto3-stubs
 attr
+pyparsing
 pyapikey
 pyfakeuse
 vext

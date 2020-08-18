@@ -5,5 +5,5 @@ Notes:
 - filter is builtin. No need to import anything.
 """
 
-for x in filter(lambda x: len(x) == 3, {"abc", "abcd", "cbcdef", "yui"}):
+for x in filter(lambda word: len(word) == 3, {"abc", "abcd", "cbcdef", "yui"}):
     print(x)
