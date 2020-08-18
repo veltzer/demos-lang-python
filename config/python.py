@@ -62,6 +62,8 @@ run_requires = [
     'attr',
     'pyparsing',
     'fastparquet',
+    'logging_tree',
+    'pluginbase',
     # my stuff
     'pyapikey',
     'pyfakeuse',

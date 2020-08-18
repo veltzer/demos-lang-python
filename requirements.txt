@@ -53,6 +53,8 @@ boto3-stubs
 attr
 pyparsing
 fastparquet
+logging_tree
+pluginbase
 pyapikey
 pyfakeuse
 vext

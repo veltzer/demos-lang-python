@@ -16,7 +16,7 @@ for instance in mgr.giveMe(myBaseClass1):
 import importlib
 import pkgutil
 
-import base
+from . import base
 
 do_debug = False
 do_print_members = False
