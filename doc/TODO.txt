@@ -1,3 +1,5 @@
+- show the number of examples and exercises that I have in README.md.
+
 - read the following three articles and write examples of them:
 	https://docs.python.org/3/howto/descriptor.html
 	https://docs.python.org/3/howto/functional.html
