@@ -14,8 +14,8 @@ for (module_loader, name, ispkg) in pkgutil.iter_modules(path=['plugins']):
         ml = module_loader.find_module(name)
         m = ml.load_module()
         if do_debug:
-            print(type(r))
-            print(dir(r))
+            print(type(m))
+            print(dir(m))
             print('var in that module is [{0}]'.format(m.var))
         m.do_something()
         if do_print_members:

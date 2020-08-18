@@ -7,7 +7,7 @@ References:
 
 import boto3
 
-ec2 = boto3.resource('ec2')  # type: boto3.resources.factory.ec2.ServiceResource
+ec2 = boto3.resource('ec2')
 instances = ec2.instances.filter(
     Filters=[
         {'Name': 'instance-state-name', 'Values': ['running']},
