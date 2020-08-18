@@ -3,7 +3,7 @@ This example shows how to do incremental packing and unpacking
 using the 'struct' module.
 
 Notes:
-- pack 
+- pack
 
 References:
 - https://docs.python.org/3/library/struct.html

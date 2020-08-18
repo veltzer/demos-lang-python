@@ -48,7 +48,7 @@ myDB = URL(
     query={'read_default_file': os.path.expanduser('~/.my.cnf')},
 )
 engine = create_engine(name_or_url=myDB)
-# engine = create_engine("mysql+pymysql://localhost/test?charset=utf8") 
+# engine = create_engine("mysql+pymysql://localhost/test?charset=utf8")
 
 # lets drop all tables in the database, whatever they are:
 meta = sqlalchemy.MetaData(engine)

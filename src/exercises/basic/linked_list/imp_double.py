@@ -7,7 +7,7 @@ class Node:
     def __init__(self, data, next, prev):
         self.data = data
         self.next = next
-        self.prev = prev 
+        self.prev = prev
 
 
 class DoubleLinkedList:
@@ -17,7 +17,7 @@ class DoubleLinkedList:
     def __init__(self):
         self.first_element = None
         self.last_element = None
-    
+
     def is_empty(self):
         return self.first_element is None
 
@@ -28,7 +28,7 @@ class DoubleLinkedList:
             self.last_element = node
         if node.next is not None:
             node.next.prev=node
-    
+
     def add_tail_element(self, data):
         node = Node(data, None, self.last_element)
         self.last_element = node
@@ -47,7 +47,7 @@ class DoubleLinkedList:
         else:
             self.first_element.prev = None
         return r
-    
+
     def pop_tail_element(self):
         if self.last_element is None:
             raise ValueError("There are no elements to pop")
@@ -64,7 +64,7 @@ class DoubleLinkedList:
         while pointer:
             yield pointer.data
             pointer = pointer.next
-    
+
     def yield_elements_from_tail_to_head(self):
         pointer = self.last_element
         while pointer:

@@ -48,7 +48,7 @@ all: $(ALL)
 check_all: $(ALL_STAMP) $(ALL_DEP)
 
 .PHONY: check
-check: check_ws check_has_key check_no_python2
+check: check_ws check_has_key check_no_python2 check_mode
 
 .PHONY: check_ws
 check_ws: $(ALL_DEP)
@@ -120,3 +120,8 @@ clean:
 .PHONY: clean_hard
 clean_hard:
 	git clean -qffxd
+
+.PHONY: check_mode
+check_mode:
+	$(info doing [$@])
+	$(Q)find src -name "*.py" -and -type f -and -perm 022

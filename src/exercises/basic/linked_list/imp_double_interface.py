@@ -14,25 +14,25 @@ class DoubleLinkedList:
     """
     def __init__(self):
         pass
-    
+
     def is_empty(self):
         pass
 
     def add_head_element(self, data):
         pass
-    
+
     def add_tail_element(self, data):
         pass
 
     def pop_head_element(self):
         pass
-    
+
     def pop_tail_element(self):
         pass
 
     def yield_elements_from_head_to_tail(self):
         pass
-    
+
     def yield_elements_from_tail_to_head(self):
         pass
 

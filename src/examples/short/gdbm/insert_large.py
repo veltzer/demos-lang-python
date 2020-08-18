@@ -24,7 +24,7 @@ d['large'] = large_text
 d[large_text] = 'is this possible'
 d.close()
 
-# lets open the file 
+# lets open the file
 d = dbm.gnu.open(filename, 'r')
 value = d['large'].decode()
 assert value == large_text

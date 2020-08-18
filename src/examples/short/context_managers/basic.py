@@ -11,7 +11,7 @@ You can see the basic flow of code:
 
 
 class MyResource:
-    
+
     def __init__(self):
         print("constructor")
 

@@ -2,7 +2,7 @@
 A basic example of plotly
 
 References:
-- https://plot.ly/python/getting-started/ 
+- https://plot.ly/python/getting-started/
 """
 
 import plotly.graph_objects as go
