@@ -15,7 +15,7 @@ Overload the operators: >, < , ==, !=, <=, >=.
 
 The data defined previously in the module will be used for validity checking of the dates.
 
-Write a class Callender.
+Write a class Calender.
 It will have the attribute events – a mapping from event name to date object.
 Write the following methods:
 

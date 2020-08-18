@@ -5,15 +5,15 @@ import sys
 p_debug = False
 
 
-def ftp_rmdir(ftp, folder, remove_toplevel, dontremove):
+def ftp_rmdir(ftp, folder, remove_toplevel, dont_remove):
     for filename, attr in ftp.mlsd(folder):
-        if attr['type'] == 'file' and filename not in dontremove:
+        if attr['type'] == 'file' and filename not in dont_remove:
             if p_debug:
                 print(
                     'removing file [{0}] from folder [{1}]'.format(filename, folder))
             ftp.delete(os.path.join(folder, filename))
         if attr['type'] == 'dir':
-            ftp_rmdir(ftp, filename, True, dontremove)
+            ftp_rmdir(ftp, filename, True, dont_remove)
     if remove_toplevel:
         if p_debug:
             print('removing folder [{0}]'.format(folder))

@@ -1,5 +1,5 @@
 run an editor (preferably something nice like notepad++).
 Write some python code in it.
-Save it as [somefile].py
+Save it as [filename].py
 run it from the command line using
-C:\blabla\> python [somefile].py
+C:\folder\> python [filename].py

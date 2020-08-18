@@ -18,9 +18,9 @@ class A:
 
     def __getattr__(self, name):
         return name[::-1]
-        # def mymethod(self):
+        # def my_method(self):
         #    print('in here with name',name)
-        # return mymethod
+        # return my_method
 
     def __setattr__(self, name, val):
         # print('ERROR! don't touch this...')
@@ -33,4 +33,4 @@ print(dir(a))
 print(a.whatIsThis)
 print(a.whatsGoingOn)
 print(a.howManyAttributesDoesThisObjectHave)
-# a.myprivate=7
+# a.my_private=7
