@@ -1,13 +1,13 @@
 """
 Parse a simple Makefile and execute it.
-Doen't support comments, variables, patterns or anything complex...
+Doesn't support comments, variables, patterns or anything complex...
 Doesn't check file system. all targets are always built.
 """
 
 import os
 
 
-def parse_makefile(fname):
+def parse_makefile(filename):
     """Parses a makefile.
 
     Input consists of only 2 kinds of lines::
@@ -28,7 +28,7 @@ def parse_makefile(fname):
     rules = {}
     commands = {}
     target = None
-    for line in open(fname):
+    for line in open(filename):
         if not line[0].isspace():
             # dep line (parse, set `target`)
             target, rest = line.split(':')
@@ -70,9 +70,12 @@ def build_one(target, rules, commands):
         os.system(command)
 
 
-import doctest
+def main():
+    import doctest
+    doctest.testmod()
 
-doctest.testmod()
+    rules, commands = parse_makefile('make_bonus.txt')
+    build('all', rules, commands)
 
-rules, commands = parse_makefile('make_bonus.txt')
-build('all', rules, commands)
+
+main()
