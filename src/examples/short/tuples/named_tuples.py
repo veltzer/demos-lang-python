@@ -1,7 +1,7 @@
 """
 Here is how to create and use named tuples in python.
 
-Refrences:
+References:
 - https://docs.python.org/3/library/collections.html#collections.namedtuple
 """
 

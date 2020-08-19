@@ -1,9 +1,9 @@
-import moda1
-import modb1
+import mod_a_1
+import mod_b_1
 
 # lets call the regular version of the function
 print('before hacking')
-modb1.funcb1()
+mod_b_1.func_b_1()
 
 # lets patch
 print('after hacking')
@@ -13,15 +13,15 @@ def hacked1():
     print('hacked1')
 
 
-moda1.funca1 = hacked1
-modb1.funcb1()
+moda1.func_a_1 = hacked1
+modb1.func_b_1()
 
-import modb2
-import moda2
+import mod_b_2
+import mod_a_2
 
 # lets call the regular version of the function
 print('before hacking')
-modb2.funcb2()
+modb2.func_b_2()
 
 # lets patch
 print('after hacking')
@@ -31,9 +31,9 @@ def hacked2():
     print('hacked2')
 
 
-moda2.funca2 = hacked2
-modb2.funcb2()
+mod_a_2.func_a_2 = hacked2
+mod_b_2.func_b_2()
 
 print('mmm, didnt work. Trying to patch modb directly')
-modb2.funca2 = hacked2
-modb2.funcb2()
+mod_b_2.func_a_2 = hacked2
+mod_b_2.func_b_2()

@@ -15,7 +15,7 @@ class MyResource:
     def __enter__(self):
         print("{} enter".format(self.name))
 
-    def __exit__(self, itype, value, traceback):
+    def __exit__(self, _type, value, traceback):
         print("{} exit".format(self.name))
 
 

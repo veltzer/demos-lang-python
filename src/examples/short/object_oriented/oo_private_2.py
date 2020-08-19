@@ -2,7 +2,7 @@
 This example shows that private values (values stored in attributes
 whose names is prefixed by one or two underscores) are not really private.
 - _values can be changed as is.
-- __values are just hidden in funny names. The reason for this is ofcourse inheritance.
+- __values are just hidden in funny names. The reason for this is inheritance.
 
 NOTE: new style (deriving from 'object') type object or old style object make no
 difference as to this point.
@@ -45,8 +45,8 @@ except AttributeError as e:
 # We CAN change the name since attributes that have just one _ in front of them appear AS IS
 # in the object
 print(
-    'if you see silmarilion below it means we changed the attribute even though it has _ in front of it')
-b._name = 'silmarilion'
+    'if you see hobbit below it means we changed the attribute even though it has _ in front of it')
+b._name = 'hobbit'
 b.printMe()
 
 # Now lets see what the object really has...

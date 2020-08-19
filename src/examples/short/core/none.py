@@ -29,7 +29,7 @@ b = bool(None)
 print('bool(None) is', b)
 
 # lets try to build an int from a None and see that we fail.
-# This is good behaviour since it protects you from accidentaly
+# This is good behaviour since it protects you from accidentally
 # interpreting Nones as integers. Imagine an array storing both where
 # you do not pay attention to checking if the value is None before doing
 # some arithmetic with it.
@@ -39,11 +39,11 @@ try:
 except TypeError as e:
     print('yes,got exception from converting None to int', e)
 
-# on the other hand,None is covertible to str (string). Watch out!
+# on the other hand,None can be converted to str (string). Watch out!
 s = str(None)
 print('str(None) has type', type(s), 'and has value [{0}]'.format(s))
 
-# lets show that None is not 0 or the empry string or False as far as actual value.
+# lets show that None is not 0 or the empty string or False as far as actual value.
 # We show this by storing all of them as keys in a dictionary.
 # Notice that False and 0 do step one over the other (not nice!).
 h = {

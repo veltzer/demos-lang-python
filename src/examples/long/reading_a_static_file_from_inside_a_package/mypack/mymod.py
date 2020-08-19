@@ -4,7 +4,7 @@ import pkgutil
 import pkg_resources
 
 static_file_content = pkg_resources.resource_string(
-    'mypack', 'static_file.html').decode()
+    'my_pack', 'static_file.html').decode()
 print('static_file_content is [{0}]'.format(static_file_content))
 
 
@@ -19,5 +19,5 @@ def get_data(filename):
 static_file_content2 = get_data('static_file.html').decode()
 print('static_file_content2 is [{0}]'.format(static_file_content2))
 
-static_file_content3 = pkgutil.get_data('mypack', 'static_file.html').decode()
+static_file_content3 = pkgutil.get_data('my_pack', 'static_file.html').decode()
 print('static_file_content3 is [{0}]'.format(static_file_content3))

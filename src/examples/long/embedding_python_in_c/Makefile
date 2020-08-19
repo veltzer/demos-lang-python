@@ -6,7 +6,7 @@ PYTHON_CFLAGS:=$(shell $(CONFIG) --cflags) -fPIE
 PYTHON_LIBS:=$(shell $(CONFIG) --libs)
 
 embed.elf: embed.c
-	gcc -o $@ $< $(PYTHON_CFLAGS) $(PYTHON_LIBS) -lpython3.8
+	gcc -o $@ $< $(PYTHON_CFLAGS) $(PYTHON_LIBS) -l python3.8
 
 .PHONY: clean
 clean:

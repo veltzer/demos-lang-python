@@ -22,10 +22,10 @@ if no such file exists then use sensible defaults
 
 def get_config():
     d = {}
-    inifile = os.path.expanduser('~/.my.cnf')
-    if os.path.isfile(inifile):
+    ini_file = os.path.expanduser('~/.my.cnf')
+    if os.path.isfile(ini_file):
         config = configparser.ConfigParser()
-        config.read(inifile)
+        config.read(ini_file)
         if config.has_option('mysql', 'user'):
             d['user'] = config.get('mysql', 'user')
         else:

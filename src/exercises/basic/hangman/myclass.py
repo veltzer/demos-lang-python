@@ -85,7 +85,7 @@ class SimpleHangman:
                   (letter, self._word.count(letter)))
             print(self)
         else:
-            print('Bzzz! No \'%s\' there.' % letter)
+            print('No \'%s\' there.' % letter)
             print(self)
 
 

@@ -25,18 +25,18 @@ for x in range(1, till):
     start_y = 340
     to_x = start_x + width
     to_y = start_y + height
-    frmt = '{start_x} {start_y} {to_x} {to_y}'.format(
+    area = '{start_x} {start_y} {to_x} {to_y}'.format(
         start_x=start_x,
         start_y=start_y,
         to_x=to_x,
         to_y=to_y,
     )
-    print('frmt is', frmt)
+    print('area is', area)
     subprocess.check_output([
         'pdfcrop',
         filename,
         '--bbox',
-        frmt,
+        area,
         slide_name,
     ])
     start_x += width + margin_x
@@ -44,18 +44,18 @@ for x in range(1, till):
     to_y = start_y + height
     slide_name = 'slide-%03d.pdf' % slide
     slide += 1
-    frmt = '{start_x} {start_y} {to_x} {to_y}'.format(
+    area = '{start_x} {start_y} {to_x} {to_y}'.format(
         start_x=start_x,
         start_y=start_y,
         to_x=to_x,
         to_y=to_y,
     )
-    print('frmt is', frmt)
+    print('frmt is', area)
     subprocess.check_output([
         'pdfcrop',
         filename,
         '--bbox',
-        frmt,
+        area,
         slide_name,
     ])
     start_x += width + margin_x
@@ -63,17 +63,17 @@ for x in range(1, till):
     to_y = start_y + height
     slide_name = 'slide-%03d.pdf' % slide
     slide += 1
-    frmt = '{start_x} {start_y} {to_x} {to_y}'.format(
+    area = '{start_x} {start_y} {to_x} {to_y}'.format(
         start_x=start_x,
         start_y=start_y,
         to_x=to_x,
         to_y=to_y,
     )
-    print('frmt is', frmt)
+    print('frmt is', area)
     subprocess.check_output([
         'pdfcrop',
         filename,
         '--bbox',
-        frmt,
+        area,
         slide_name,
     ])
