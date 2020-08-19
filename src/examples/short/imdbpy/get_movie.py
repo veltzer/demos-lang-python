@@ -1,6 +1,8 @@
 """
 get_movie.py
 
+Convert this script to imdbpy https://imdbpy.github.io/downloads/
+
 Usage: get_movie 'movieID'
 
 Show some info about the movie with the given movieID (e.g. '0133093'

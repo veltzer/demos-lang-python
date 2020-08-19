@@ -1,6 +1,8 @@
 """
 Usage: get_person.py 'personID'
 
+Convert this script to imdbpy https://imdbpy.github.io/downloads/
+
 NOTES:
 - this script is python2 on purpose because the imdb module is currently only available for python2 in ubuntu.
 """

@@ -65,6 +65,7 @@ run_requires = [
     'logging_tree',
     'pluginbase',
     'reportlab',
+    'imdbpy',
     # my stuff
     'pyapikey',
     'pyfakeuse',
