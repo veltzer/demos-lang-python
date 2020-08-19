@@ -1,7 +1,7 @@
-from module import *
+from . import module
 
-a()
+module.a()
 try:
-    b()
-except NameError as _:
+    module.b()
+except NameError:
     print("yes got exception")
