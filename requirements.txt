@@ -55,6 +55,7 @@ pyparsing
 fastparquet
 logging_tree
 pluginbase
+reportlab
 pyapikey
 pyfakeuse
 vext

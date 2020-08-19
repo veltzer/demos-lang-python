@@ -11,16 +11,8 @@ def print_it(x):
     print(x)
 
 
-f = functools.partial(print_it, "hello")
-f()
-
-
 def print_them(x, y):
     print(x, y)
-
-
-g = functools.partial(print_them, "hello")
-g("world")
 
 
 def print_times(text="hello", times=1):
@@ -28,14 +20,20 @@ def print_times(text="hello", times=1):
         print(text)
 
 
-h = functools.partial(print_times, times=3)
-h(text="hi")
+partial_a = functools.partial(print_it, "hello")
+partial_a()
 
-i = functools.partial(print_times, text="hey")
-i(times=2)
+partial_b = functools.partial(print_them, "hello")
+partial_b("world")
 
-j = functools.partial(print_times, text="ahoy", times=3)
-j()
+partial_c = functools.partial(print_times, times=3)
+partial_c(text="hi")
 
-h = functools.partial(print_times)
-h("aloha", 2)
+partial_d = functools.partial(print_times, text="hey")
+partial_d(times=2)
+
+partial_e = functools.partial(print_times, text="ahoy", times=3)
+partial_e()
+
+partial_f = functools.partial(print_times)
+partial_f("aloha", 2)

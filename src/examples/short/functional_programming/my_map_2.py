@@ -8,8 +8,8 @@ def my_map(func, val_list):
         yield func(value)
 
 
-def square(x):
-    return x * x
+def square(y):
+    return y * y
 
 
 for x in my_map(square, range(2, 8)):

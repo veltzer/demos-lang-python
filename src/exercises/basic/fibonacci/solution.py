@@ -1,8 +1,8 @@
 x = y = 1
-mycounter = 0
-mysum = 0
-while mycounter < 100:
-    mysum += x + y
+my_counter = 0
+my_sum = 0
+while my_counter < 100:
+    my_sum += x + y
     x, y = y, x + y
-    mycounter += 1
-print(mysum)
+    my_counter += 1
+print(my_sum)

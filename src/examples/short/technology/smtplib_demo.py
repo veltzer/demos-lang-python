@@ -16,7 +16,7 @@ def send_email(
         content='default content',
         smtp_host='localhost',
         smtp_port=587,
-        usetls=True,
+        use_tls=True,
         user=None,
         password=None,
         debug=False,
@@ -32,7 +32,7 @@ def send_email(
     # server.connect(host=smtp_host, port=smtp_port)
     if debug:
         server.set_debuglevel(1)
-    if usetls:
+    if use_tls:
         server.starttls()
     server.login(user, password)
     server.sendmail(fr, to, msg.as_string())

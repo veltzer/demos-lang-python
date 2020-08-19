@@ -64,6 +64,7 @@ run_requires = [
     'fastparquet',
     'logging_tree',
     'pluginbase',
+    'reportlab',
     # my stuff
     'pyapikey',
     'pyfakeuse',

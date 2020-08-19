@@ -12,39 +12,41 @@ import pickle
 import tempfile
 import random
 
-# first lets create a large dictionary and save it as json and pickle
-d = {}
-for x in range(100000):
-    d[x] = [random.random() for _ in range(10)]
 
-filename_json = tempfile.mktemp()
-filename_pickle = tempfile.mktemp()
-
-with open(filename_json, "wt", encoding='utf-8') as fp:
-    json.dump(d, fp)
-with open(filename_pickle, "wb") as fp:
-    pickle.dump(d, fp, protocol=pickle.HIGHEST_PROTOCOL)
+def load_json(filename_json):
+    with open(filename_json, "rt", encoding="utf-8") as f:
+        json.load(f)
 
 
-def load_json():
-    with open(filename_json, "rt", encoding="utf-8") as fp:
-        _ = json.load(fp)
+def load_pickle(filename_pickle):
+    with open(filename_pickle, "rb") as f:
+        pickle.load(f)
 
 
-def load_pickle():
-    with open(filename_pickle, "rb") as fp:
-        _ = pickle.load(fp)
+def main():
+    # first lets create a large dictionary and save it as json and pickle
+    d = {}
+    for x in range(100000):
+        d[x] = [random.random() for _ in range(10)]
 
+    filename_json = tempfile.mktemp()
+    filename_pickle = tempfile.mktemp()
 
-repetitions = 10
-print("json time {:.04f}".format(timeit.timeit(load_json, number=repetitions)))
-print("pickle time {:.04f}".format(timeit.timeit(load_pickle, number=repetitions)))
+    with open(filename_json, "wt", encoding='utf-8') as fp:
+        json.dump(d, fp)
+    with open(filename_pickle, "wb") as fp:
+        pickle.dump(d, fp, protocol=pickle.HIGHEST_PROTOCOL)
+    repetitions = 10
+    print("json time {:.04f}".format(timeit.timeit(
+        lambda f: load_json(filename_json), number=repetitions)))
+    print("pickle time {:.04f}".format(timeit.timeit(
+        lambda f: load_pickle(filename_pickle), number=repetitions)))
 
-length_json = os.stat(filename_json).st_size
-length_pickle = os.stat(filename_pickle).st_size
+    length_json = os.stat(filename_json).st_size
+    length_pickle = os.stat(filename_pickle).st_size
 
-print("json filesize {}".format(length_json))
-print("pickle filesize {}".format(length_pickle))
+    print("json filesize {}".format(length_json))
+    print("pickle filesize {}".format(length_pickle))
 
-os.unlink(filename_json)
-os.unlink(filename_pickle)
+    os.unlink(filename_json)
+    os.unlink(filename_pickle)

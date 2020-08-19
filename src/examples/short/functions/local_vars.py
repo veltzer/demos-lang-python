@@ -4,6 +4,7 @@ is really local
 """
 
 
+# noinspection PyShadowingNames
 def my_function():
     x = 5
     print(x)

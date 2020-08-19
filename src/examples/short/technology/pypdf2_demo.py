@@ -1,5 +1,5 @@
 """
-Make some simple multipage pdf files.
+Make some simple multi-page pdf files.
 
 References:
 https://github.com/mstamy2/PyPDF2/raw/master/Sample_Code/makesimple.py
@@ -28,8 +28,8 @@ def make_pdf_file(output_filename, np):
     c.save()
 
 
-nps = [5, 11, 17]
-for i, np in enumerate(nps):
+page_numbers = [5, 11, 17]
+for i, page_number in enumerate(page_numbers):
     filename = '/tmp/simple{0}.pdf'.format(i)
-    make_pdf_file(filename, np)
+    make_pdf_file(filename, page_number)
     print("Wrote", filename)

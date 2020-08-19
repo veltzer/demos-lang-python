@@ -10,6 +10,7 @@ Things to notice:
 """
 
 
+# noinspection PyShadowingNames
 def func(x):
     y = 7
     print('x is ', x)

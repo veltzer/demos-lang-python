@@ -1,3 +1,6 @@
+import sys
+
+
 class Queue:
     """
     Simple queue FIFO implementation using a python list
@@ -36,8 +39,10 @@ def process(q):
     return r
 
 
-import sys
+def main():
+    q = create_queue_from_string(sys.argv[1])
+    r = process(q)
+    print(r.data)
 
-q = create_queue_from_string(sys.argv[1])
-r = process(q)
-print(r.data)
+
+main()
