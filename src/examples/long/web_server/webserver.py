@@ -1,7 +1,8 @@
 """
 demo of simple web server in python using HTTPServer
 originally grabbed from 'http://fragments.turtlemeat.com/pythonwebserver.php'.
-Copyright Jon Berg , turtlemeat.com
+
+PYTHON3FIX
 """
 
 import cgi
@@ -90,19 +91,19 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
     def do_POST(self):
         try:
-            ctype, pdict = cgi.parse_header(
+            content_type, options_dict = cgi.parse_header(
                 self.headers.getheader('content-type'))
-            if ctype == 'multipart/form-data':
-                query = cgi.parse_multipart(self.rfile, pdict)
+            if content_type == 'multipart/form-data':
+                query = cgi.parse_multipart(self.rfile, options_dict)
             else:
                 raise ValueError("not a form")
             self.send_response(301)
             self.end_headers()
-            upfilecontent = query.get('upfile')
-            # print('filecontent', upfilecontent[0])
+            upload_content = query.get('upload_content')
+            # print("upload_content", upload_content[0])
             self.wfile.write('<html><body>POST OK.<br/><br/>')
             self.wfile.write('<b>file content is:</b><br/><code>')
-            self.wfile.write(upfilecontent[0])
+            self.wfile.write(upload_content[0])
             self.wfile.write('</code></body></html>')
         except Exception as e:
             self.send_error(

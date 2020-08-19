@@ -1,15 +1,15 @@
 # this example shows a synchronized stack which does not sleep
 # on pop on empty stack...
 
-import threading
 import time
+from threading import Condition, Thread
 
 number_of_elements = 400
 
 
 class Stack:
     def __init__(self):
-        self.cv = threading.Condition()
+        self.cv = Condition()
         self.data = []
 
     def push(self, number):
@@ -36,9 +36,9 @@ class Stack:
         return number
 
 
-class ProduceOrConsume(threading.Thread):
+class ProduceOrConsume(Thread):
     def __init__(self, stack, consume, number):
-        threading.Thread.__init__(self)
+        Thread.__init__(self)
         self.stack = stack
         self.consume = consume
         self.number = number
@@ -57,9 +57,9 @@ class ProduceOrConsume(threading.Thread):
 
 def main():
     stack = Stack()
-    threads = [None] * 6
+    threads = []
     for i in range(6):
-        threads[i] = ProduceOrConsume(stack, i % 2 == 0, i)
+        threads.append(ProduceOrConsume(stack, i % 2 == 0, i))
     for thread in threads:
         thread.start()
     for thread in threads:

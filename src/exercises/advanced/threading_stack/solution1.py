@@ -1,4 +1,4 @@
-from threading import *
+from threading import RLock, Thread
 
 
 class Stack:
@@ -45,11 +45,15 @@ class Consumer(Thread):
                 number = self.stack.pop()
 
 
-stack = Stack()
-threads = [None] * 6
-for i in range(3):
-    threads[i] = Producer(stack)
-for i in range(3, 6):
-    threads[i] = Consumer(stack)
-for thread in threads:
-    thread.start()
+def main():
+    stack = Stack()
+    threads = []
+    for i in range(3):
+        threads.append(Producer(stack))
+    for i in range(3):
+        threads.append(Consumer(stack))
+    for thread in threads:
+        thread.start()
+
+
+main()
