@@ -12,15 +12,15 @@ if os.path.isfile(filename):
 
 # lets put in some data
 d = dbm.gnu.open(filename, 'n')
-d["ehad"] = "yes!"
+d["one"] = "yes!"
 d.close()
 
 # lets open for read
 # the 'r' in the next line means open for read only
 d = dbm.gnu.open(filename, 'r')
 
-print('ehad in db', 'ehad' in d)
 print('one in db', 'one' in d)
+print('two in db', 'two' in d)
 
 # lets query a key which isn't there
 try:

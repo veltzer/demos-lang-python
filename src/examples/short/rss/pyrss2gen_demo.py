@@ -1,6 +1,6 @@
 """
 TBD: demo of how to use the PyRSS2Gen module.
 
-Refrences:
+References:
 - http://www.dalkescientific.com/Python/PyRSS2Gen.html
 """

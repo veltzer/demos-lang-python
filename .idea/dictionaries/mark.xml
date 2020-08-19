@@ -52,6 +52,7 @@
       <w>rivendell</w>
       <w>rmtree</w>
       <w>scrapy</w>
+      <w>shbang</w>
       <w>signalfd</w>
       <w>sigusr</w>
       <w>sphinxcontrib</w>
