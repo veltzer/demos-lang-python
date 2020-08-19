@@ -26,9 +26,11 @@ class Reverse:
         return self.data[self.index]
 
 
-'''
-And now lets use the iterator...
-'''
-l = [1, 2, 3, 4, 5, 6, 7]
-for x in Reverse(l):
-    print(x)
+def main():
+    # And now lets use the iterator...
+    y = [1, 2, 3, 4, 5, 6, 7]
+    for x in Reverse(y):
+        print(x)
+
+
+main()

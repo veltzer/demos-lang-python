@@ -5,16 +5,14 @@ This is a module that checks if a library given to it is loadable
 
 import ctypes
 
-import ctypes.cdll
-
 libdl = ctypes.CDLL('libdl.so')
 lib = None
 
 
 def check_lib(name):
-    l = ctypes.cdll.LoadLibrary(name)
+    x = ctypes.cdll.LoadLibrary(name)
     # noinspection PyProtectedMember
-    libdl.dlclose(l._handle)
+    libdl.dlclose(x._handle)
 
 
 def load_lib(name):

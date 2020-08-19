@@ -7,8 +7,8 @@ Notes:
 """
 
 # make an explicit list
-l = [x for x in filter(lambda x: x % 2 == 1, range(10))]
-print(l)
+filtered_list = [x for x in filter(lambda x: x % 2 == 1, range(10))]
+print(filtered_list)
 
 for x in filter(lambda x: x % 2 == 1, range(10)):
     print(x)

@@ -2,6 +2,7 @@ class Node:
     """
     This is a single element of the singly linked list
     """
+
     def __init__(self, data, next):
         self.data = data
         self.next = next
@@ -11,6 +12,7 @@ class SingleLinkedList:
     """
     This is the list implementation
     """
+
     def __init__(self):
         self.first_element = None
 
@@ -37,7 +39,7 @@ class SingleLinkedList:
     def add_sorted(self, data):
         prev = None
         pointer = self.first_element
-        while pointer is not None and pointer.data<data:
+        while pointer is not None and pointer.data < data:
             prev = pointer
             pointer = pointer.next
         node = Node(data, pointer)
@@ -47,30 +49,32 @@ class SingleLinkedList:
             self.first_element = node
 
 
-def reverse(l):
+def reverse(x):
     r = SingleLinkedList()
-    while not l.is_empty():
-        r.add_head_element(l.pop_head_element())
+    while not x.is_empty():
+        r.add_head_element(x.pop_head_element())
     return r
 
+
 def merge(l1, l2):
-    l = SingleLinkedList()
+    y = SingleLinkedList()
     pointer1 = l1.first_element
     pointer2 = l2.first_element
     while pointer1 is not None and pointer2 is not None:
         if pointer1.data < pointer2.data:
-            l.add_head_element(pointer1.data)
+            y.add_head_element(pointer1.data)
             pointer1 = pointer1.next
         else:
-            l.add_head_element(pointer2.data)
+            y.add_head_element(pointer2.data)
             pointer2 = pointer2.next
     while pointer1 is not None:
-            l.add_head_element(pointer1.data)
-            pointer1 = pointer1.next
+        y.add_head_element(pointer1.data)
+        pointer1 = pointer1.next
     while pointer2 is not None:
-            l.add_head_element(pointer2.data)
-            pointer2 = pointer2.next
-    return reverse(l)
+        y.add_head_element(pointer2.data)
+        pointer2 = pointer2.next
+    return reverse(y)
+
 
 def main():
     l1 = SingleLinkedList()
@@ -93,5 +97,6 @@ def main():
     for d in l.yield_elements():
         print(f"{d} ", end="")
     print()
+
 
 main()

@@ -2,6 +2,7 @@ class Node:
     """
     This is a single element of the doubly linked list
     """
+
     def __init__(self, data, next, prev):
         self.data = data
         self.next = next
@@ -12,6 +13,7 @@ class DoubleLinkedList:
     """
     This is the list implementation
     """
+
     def __init__(self):
         self.first_element = None
         self.last_element = None
@@ -25,7 +27,7 @@ class DoubleLinkedList:
         if self.last_element is None:
             self.last_element = node
         if node.next is not None:
-            node.next.prev=node
+            node.next.prev = node
 
     def add_tail_element(self, data):
         node = Node(data, None, self.last_element)
@@ -41,7 +43,7 @@ class DoubleLinkedList:
         r = self.first_element.data
         self.first_element = self.first_element.next
         if self.first_element is None:
-            self.last_element=None
+            self.last_element = None
         else:
             self.first_element.prev = None
         return r
@@ -52,9 +54,9 @@ class DoubleLinkedList:
         r = self.last_element.data
         self.last_element = self.last_element.prev
         if self.last_element is None:
-            self.first_element=None
+            self.first_element = None
         else:
-            self.last_element.next=None
+            self.last_element.next = None
         return r
 
     def yield_elements_from_head_to_tail(self):
@@ -68,6 +70,7 @@ class DoubleLinkedList:
         while pointer:
             yield pointer.data
             pointer = pointer.prev
+
 
 def example_of_use():
     l = DoubleLinkedList()
@@ -101,5 +104,6 @@ def example_of_use():
     print("starting forward iteration")
     for e in l.yield_elements_from_head_to_tail():
         print(e)
+
 
 example_of_use()

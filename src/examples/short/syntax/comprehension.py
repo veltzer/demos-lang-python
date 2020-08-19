@@ -3,21 +3,21 @@ Examples of various types of comprehensions.
 """
 
 # multiplication table as comprehension
-l = [x * y for x in range(10) for y in range(10)]
-print(l)
+list1 = [x * y for x in range(10) for y in range(10)]
+print(list1)
 
 # same code as above without comprehensions
-new_list = []
+list2 = []
 for x in range(10):
     for y in range(10):
-        new_list.append(x * y)
-print(new_list)
+        list2.append(x * y)
+print(list2)
 
-tup_list = []
+list3 = []
 for x in range(10):
     for y in range(10):
-        tup_list.append((x, y))
-print(map(lambda t: t[0] * t[1], tup_list))
+        list3.append((x, y))
+print(map(lambda t: t[0] * t[1], list3))
 
 # sets
 print({x * 2 for x in range(10)})

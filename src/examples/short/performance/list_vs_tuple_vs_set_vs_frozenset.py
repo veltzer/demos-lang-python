@@ -7,26 +7,26 @@ import timeit
 
 n = 1000
 repetitions = 1
-l = [str(k) for k in range(n)]
-s = set(l)
-f = frozenset(l)
-t = tuple(l)
+x = [str(k) for k in range(n)]
+s = set(x)
+f = frozenset(x)
+t = tuple(x)
 
 
 def demo_list():
-    return [value in l for value in l]
+    return [value in x for value in x]
 
 
 def demo_set():
-    return [value in s for value in l]
+    return [value in s for value in x]
 
 
 def demo_frozenset():
-    return [value in f for value in l]
+    return [value in f for value in x]
 
 
 def demo_tuple():
-    return [value in t for value in l]
+    return [value in t for value in x]
 
 
 print("list {:.04f}".format(timeit.timeit(demo_list, number=repetitions)))

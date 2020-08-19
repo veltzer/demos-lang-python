@@ -8,7 +8,8 @@ This method is not the best since it still shows information you may not want
 when multiple exceptions are raised.
 
 References:
-- http://stackoverflow.com/questions/17784849/in-python-how-do-i-print-an-error-message-without-printing-a-traceback-and-clos
+- http://stackoverflow.com/questions/17784849/
+in-python-how-do-i-print-an-error-message-without-printing-a-traceback-and-clos
 """
 
 

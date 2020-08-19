@@ -3,6 +3,5 @@ def yield_some_stuff():
         yield t
 
 
-
 for i in yield_some_stuff():
     print(i)

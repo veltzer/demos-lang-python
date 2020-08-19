@@ -30,22 +30,26 @@ class Reverse:
         return RevIter(self.data)
 
 
-'''
-And now lets use the iterator...
-'''
-for x in Reverse(range(7)):
-    print(x)
+def main():
+    """
+    And now lets use the iterator...
+    """
+    for x in Reverse(range(7)):
+        print(x)
 
-'''
-notice that Reverse(x) is NOT an iterator,at least by pythons understanding of it.
-Compare to pythons own reversed(x) implementation which does return an iterator...
-'''
-l = range(7)
-r1 = Reverse(l)
-print(type(r1))
-print('__next__' in dir(r1))
-print('__iter__' in dir(r1))
-r2 = reversed(l)
-print(type(r2))
-print('__next__' in dir(r2))
-print('__iter__' in dir(r2))
+    """
+    notice that Reverse(x) is NOT an iterator,at least by pythons understanding of it.
+    Compare to pythons own reversed(x) implementation which does return an iterator...
+    """
+    y = range(7)
+    r1 = Reverse(y)
+    print(type(r1))
+    print('__next__' in dir(r1))
+    print('__iter__' in dir(r1))
+    r2 = reversed(y)
+    print(type(r2))
+    print('__next__' in dir(r2))
+    print('__iter__' in dir(r2))
+
+
+main()

@@ -3,10 +3,12 @@ References:
 - https://www.codefellows.org/blog/implementing-a-singly-linked-list-in-python/
 """
 
+
 class Node:
     """
     This is a single element of the singly linked list
     """
+
     def __init__(self, data, next):
         self.data = data
         self.next = next
@@ -16,6 +18,7 @@ class SingleLinkedList:
     """
     This is the list implementation
     """
+
     def __init__(self):
         self.first_element = None
 
@@ -39,6 +42,7 @@ class SingleLinkedList:
             yield pointer.data
             pointer = pointer.next
 
+
 def example_of_use():
     l = SingleLinkedList()
     l.add_head_element(3)
@@ -50,5 +54,6 @@ def example_of_use():
     print("ending iteration")
     print(l.pop_head_element())
     print(l.pop_head_element())
+
 
 example_of_use()

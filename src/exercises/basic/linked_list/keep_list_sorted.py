@@ -2,6 +2,7 @@ class Node:
     """
     This is a single element of the singly linked list
     """
+
     def __init__(self, data, next):
         self.data = data
         self.next = next
@@ -11,6 +12,7 @@ class SingleLinkedList:
     """
     This is the list implementation
     """
+
     def __init__(self):
         self.first_element = None
 
@@ -37,7 +39,7 @@ class SingleLinkedList:
     def add_sorted(self, data):
         prev = None
         pointer = self.first_element
-        while pointer is not None and pointer.data<data:
+        while pointer is not None and pointer.data < data:
             prev = pointer
             pointer = pointer.next
         node = Node(data, pointer)
@@ -46,6 +48,7 @@ class SingleLinkedList:
         else:
             self.first_element = node
 
+
 def main():
     import random
     l = SingleLinkedList()
@@ -53,5 +56,6 @@ def main():
         l.add_sorted(random.randint(0, 100))
     for d in l.yield_elements():
         print(f"{d} ", end="")
+
 
 main()
