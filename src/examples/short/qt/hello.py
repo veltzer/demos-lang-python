@@ -28,6 +28,6 @@ This is the default behaviour so strictly speaking it is not needed.
 # app.setQuitOnLastWindowClosed(True)
 
 """
-Go into the appication main loop
+Go into the application main loop
 """
 sys.exit(app.exec_())
