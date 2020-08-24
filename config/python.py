@@ -66,6 +66,7 @@ run_requires = [
     'pluginbase',
     'reportlab',
     'imdbpy',
+    'mingus',
     # my stuff
     'pyapikey',
     'pyfakeuse',

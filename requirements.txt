@@ -57,6 +57,7 @@ logging_tree
 pluginbase
 reportlab
 imdbpy
+mingus
 pyapikey
 pyfakeuse
 vext
