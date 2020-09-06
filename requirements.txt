@@ -32,7 +32,6 @@ PyQt5
 PyQt5-stubs
 azure-cognitiveservices-search-websearch
 pygraph
-music
 flask
 tsv
 psycopg2
@@ -57,6 +56,8 @@ logging_tree
 pluginbase
 reportlab
 imdbpy
+python-pptx
+music
 mingus
 pyapikey
 pyfakeuse

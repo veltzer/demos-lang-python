@@ -41,7 +41,6 @@ run_requires = [
     'PyQt5-stubs',
     'azure-cognitiveservices-search-websearch',
     'pygraph',
-    'music',
     'flask',
     'tsv',
     'psycopg2',
@@ -66,6 +65,9 @@ run_requires = [
     'pluginbase',
     'reportlab',
     'imdbpy',
+    'python-pptx',
+    # music
+    'music',
     'mingus',
     # my stuff
     'pyapikey',
