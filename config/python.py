@@ -72,6 +72,7 @@ run_requires = [
     # my stuff
     'pyapikey',
     'pyfakeuse',
+    'pyvardump',
     # gtk stuff
     'vext',
     'vext.gi',

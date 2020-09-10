@@ -61,6 +61,7 @@ music
 mingus
 pyapikey
 pyfakeuse
+pyvardump
 vext
 vext.gi
 PyGObject
