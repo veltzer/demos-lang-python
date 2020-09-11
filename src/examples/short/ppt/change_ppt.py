@@ -4,10 +4,7 @@ Use the python-ppt to change a ppt
 References:
 - https://python-pptx.readthedocs.io/en/latest/#user-guide
 """
-from pptx import Presentation, shapes
-import sys
-
-from pptx.enum.shapes import MSO_SHAPE_TYPE
+from pptx import Presentation
 
 input_filename = "data_samples/sample.pptx"
 output_filename = "/tmp/out.pptx"
@@ -23,13 +20,13 @@ for slide in slides:
     #     continue
     print(len(slide.shapes))
     # for shape in slide.shapes:
-        # print(type(shape.shape_type))
-        # print(dir(shape.shape_type))
+    # print(type(shape.shape_type))
+    # print(dir(shape.shape_type))
     #     if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
     #        print("deleting")
-            # shape.getparent().remove(shape)
+    # shape.remove(shape)
     #         slide.shapes.remove(shape)
-            # slide.remove(shape)
+    # slide.remove(shape)
     element = slide.background.element
     element.delete()
     # slide.background.element = None
