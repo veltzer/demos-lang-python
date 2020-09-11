@@ -5,6 +5,7 @@ References:
 - https://python-pptx.readthedocs.io/en/latest/#user-guide
 """
 from pptx import Presentation
+from pyvardump import dump
 
 input_filename = "data_samples/sample.pptx"
 output_filename = "/tmp/out.pptx"
@@ -12,6 +13,7 @@ output_filename = "/tmp/out.pptx"
 presentation = Presentation(input_filename)
 slides = presentation.slides
 for slide in slides:
+    dump(slide)
     print(dir(slide))
     print(slide.follow_master_background)
     # slide.follow_master_background = False
