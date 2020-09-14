@@ -57,6 +57,7 @@ pluginbase
 reportlab
 imdbpy
 python-pptx
+selenium
 music
 mingus
 pyapikey

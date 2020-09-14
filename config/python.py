@@ -66,6 +66,7 @@ run_requires = [
     'reportlab',
     'imdbpy',
     'python-pptx',
+    'selenium',
     # music
     'music',
     'mingus',
