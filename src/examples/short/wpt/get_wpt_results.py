@@ -20,19 +20,25 @@ def get_http_status_string(code: int):
 
 
 if len(sys.argv) == 1:
-    url_to_test = "https://google.com"
+    url_to_test = "http://nikuda.co.il/"
 else:
     url_to_test = sys.argv[1]
-print(f"testing url {url_to_test}")
 
+print(f"testing url {url_to_test}")
 url_of_wpt_run = "http://localhost/runtest.php"
+# url_of_wpt_run = "https://www.webpagetest.org/runtest.php"
 r = requests.get(url_of_wpt_run, params={
     'url': url_to_test,
     'f': 'json',
+    'location': 'Test',
+    # 'runs': 1,
+    # 'fvonly': 1,
+    # 'private': 1,
+    # 'timeline': 1,
 })
 assert r.status_code == 200, get_http_status_string(r.status_code)
 response_obj = r.json()
-# print(json.dumps(response_obj, indent=4, sort_keys=Tru
+# print(json.dumps(response_obj, indent=4, sort_keys=True))
 testId = response_obj["data"]["testId"]
 jsonUrl = response_obj["data"]["jsonUrl"]
 print(f"testId is {testId}")
@@ -49,5 +55,21 @@ while not over:
     })
     assert r.status_code == 200, get_http_status_string(r.status_code)
     response_obj = r.json()
-    print(json.dumps(response_obj, indent=4, sort_keys=True))
+    job_status_code = int(response_obj["statusCode"])
+    if job_status_code == 200:
+        over = True
+        break
+    # print(json.dumps(response_obj, indent=4, sort_keys=True))
     time.sleep(1)
+
+print(f"getting results from url {jsonUrl}")
+r = requests.get(jsonUrl)
+assert r.status_code == 200, get_http_status_string(r.status_code)
+response_obj = r.json()
+with open("/tmp/results.json", "w") as f:
+    json.dump(
+        obj=response_obj,
+        fp=f,
+        indent=4,
+        sort_keys=True,
+    )
