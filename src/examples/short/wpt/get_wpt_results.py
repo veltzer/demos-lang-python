@@ -31,14 +31,16 @@ r = requests.get(url_of_wpt_run, params={
     'url': url_to_test,
     'f': 'json',
     'location': 'Test',
-    # 'runs': 1,
+    'runs': 1,
     # 'fvonly': 1,
     # 'private': 1,
     # 'timeline': 1,
 })
 assert r.status_code == 200, get_http_status_string(r.status_code)
 response_obj = r.json()
-# print(json.dumps(response_obj, indent=4, sort_keys=True))
+print("full result from server following...")
+print(json.dumps(response_obj, indent=4, sort_keys=True))
+print("=======================================")
 testId = response_obj["data"]["testId"]
 jsonUrl = response_obj["data"]["jsonUrl"]
 print(f"testId is {testId}")
