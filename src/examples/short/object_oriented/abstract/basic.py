@@ -5,27 +5,30 @@ Notes:
 - As can be seen from the example a class which only hooks
 to the __metaclass__ of abc.ABCMeta CAN BE INSTANTIATED.
 - only if the class has at least one abstract method then
-it cannot be instantiated (second example).
+it cannot be instantiated.
 - in python2 the syntax for this was different:
     class A:
         __metaclass__ = abc.ABCMeta
 
 References:
 - https://stackoverflow.com/questions/372042/difference-between-abstract-class-and-interface-in-python
+- https://stackoverflow.com/questions/13646245/is-it-possible-to-make-abstract-classes-in-python
 """
 
 import abc
 
-
-class A(metaclass=abc.ABCMeta):
-    pass
-
-
-a = A()
-assert isinstance(a, A)
+# This is the right way to do it
+class A(abc.ABC):
+    @abc.abstractmethod
+    def foo(self):
+            pass
 
 
 class B(metaclass=abc.ABCMeta):
+    pass
+
+
+class C(metaclass=abc.ABCMeta):
     __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
@@ -33,15 +36,26 @@ class B(metaclass=abc.ABCMeta):
         pass
 
 
-class C(B):
+class D(C):
     def foo(self):
         pass
 
 
 try:
-    b = B()
+    a = A()
+    assert isinstance(a, A)
 except TypeError as e:
-    print('yes, got exception [{0}]...'.format(str(e)))
-c = C()
-assert issubclass(C, B)
-assert isinstance(c, C)
+    print(f'yes, got exception [{str(e)}]...')
+
+b = B()
+assert isinstance(b, B)
+
+try:
+    c = C()
+    assert issubclass(c, C)
+except TypeError as e:
+    print(f'yes, got exception [{str(e)}]...')
+
+assert issubclass(D, C)
+d = D()
+assert isinstance(d, D)
