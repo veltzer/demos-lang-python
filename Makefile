@@ -89,11 +89,6 @@ check_no_future: $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)git grep "__future__" || exit 0
 
-$(ALL_STAMP): %.stamp: %.py $(ALL_DEP)
-	$(info doing [$@])
-	$(Q)scripts/syntax_check.py $<
-	$(Q)touch $@
-
 .PHONY: debug_me
 debug_me:
 	$(Q)$(info ALL_STMAP is $(ALL_STAMP))
@@ -142,3 +137,11 @@ check_files:
 		-not -name "*.ini"\
 		-not -name "*.py.not"\
 		-not -name "*.stamp"
+
+############
+# patterns #
+############
+$(ALL_STAMP): %.stamp: %.py $(ALL_DEP)
+	$(info doing [$@])
+	$(Q)scripts/syntax_check.py $<
+	$(Q)touch $@
