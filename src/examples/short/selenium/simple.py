@@ -16,14 +16,14 @@ CHROME_PATH = '/usr/bin/google-chrome'
 CHROMEDRIVER_PATH = '/home/mark/install/selenium/chromedriver.85'
 WINDOW_SIZE = "1920,1080"
 
-chrome_options = Options()  
-chrome_options.add_argument("--headless")  
+chrome_options = Options()
+chrome_options.add_argument("--headless")
 chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
 chrome_options.binary_location = CHROME_PATH
 
 driver = webdriver.Chrome(
     executable_path=CHROMEDRIVER_PATH,
     options=chrome_options,
-)  
+)
 driver.get("https://www.python.org")
 print(driver.title)

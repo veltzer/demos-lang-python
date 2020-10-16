@@ -58,7 +58,7 @@ check_ws: $(ALL_DEP)
 .PHONY: check_lint
 check_lint: $(ALL_DEP)
 	$(info doing [$@])
-	$(Q)pylint3 --py3k --rcfile=support/pylint.conf `find src -name "*.py"`
+	$(Q)pylint --py3k --rcfile=support/pylint.conf `find src -name "*.py"`
 
 # this is a bad check because returning tuples in python is perfectly legit
 .PHONY: check_return

@@ -34,6 +34,5 @@ for color in colors:
 print(d)
 
 # with collections.Counter
-# noinspection PyArgumentList
 d = collections.Counter(colors)
 print(d)
