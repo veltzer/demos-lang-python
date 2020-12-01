@@ -4,6 +4,11 @@
 
 - do example of the "raise [] from []" syntax:
 	https://stackoverflow.com/questions/24752395/python-raise-from-usage
+	https://stefan.sofa-rockers.org/2020/10/28/raise-from/
+
+- do example of mutable default values and explain them
+	https://florimond.dev/blog/articles/2018/08/python-mutable-defaults-are-the-source-of-all-evil/
+	https://towardsdatascience.com/python-pitfall-mutable-default-arguments-9385e8265422
 
 - do examples for relative import
 	https://stackoverflow.com/questions/16981921/relative-imports-in-python-3
