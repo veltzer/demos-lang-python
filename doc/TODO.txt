@@ -2,6 +2,9 @@
 
 - show the number of examples and exercises that I have in README.md.
 
+- do example of the "raise [] from []" syntax:
+	https://stackoverflow.com/questions/24752395/python-raise-from-usage
+
 - do examples for relative import
 	https://stackoverflow.com/questions/16981921/relative-imports-in-python-3
 	https://docs.python.org/2.5/whatsnew/pep-328.html
