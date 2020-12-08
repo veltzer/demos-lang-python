@@ -114,7 +114,7 @@ clean:
 
 .PHONY: clean_hard
 clean_hard:
-	git clean -qffxd
+	@git clean -qffxd
 
 .PHONY: check_mode
 check_mode:
