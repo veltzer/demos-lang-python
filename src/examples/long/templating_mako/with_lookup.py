@@ -23,7 +23,7 @@ d = {
 
 input_encoding = 'utf-8'
 output_encoding = 'utf-8'
-p_input = 'src/examples/long/templating_mako/simple.mako'
+p_input = 'src/examples/long/templating_mako/with_lookup.mako'
 p_output = '/tmp/simple'
 
 mylookup = mako.lookup.TemplateLookup(
