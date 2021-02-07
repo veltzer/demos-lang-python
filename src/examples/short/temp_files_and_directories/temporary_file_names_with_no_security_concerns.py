@@ -12,3 +12,4 @@ import tempfile
 
 for i in range(10):
     print(tempfile.mktemp())
+    print(tempfile.mkstemp())
