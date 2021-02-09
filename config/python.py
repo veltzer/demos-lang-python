@@ -36,6 +36,7 @@ run_requires = [
     'PyRSS2Gen',
     'fire',
     'PyGithub',
+    'gitpython',
     'prompt-toolkit',
     'PyQt5',
     'PyQt5-stubs',
