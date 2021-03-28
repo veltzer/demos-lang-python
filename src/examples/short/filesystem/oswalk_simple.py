@@ -19,7 +19,7 @@ root_folder = sys.argv[1]
 for root, directories, files in os.walk(root_folder):
     for file in files:
         full = os.path.join(root, file)
-        print('file [{}]'.format(full))
+        print(f"file [{full}]")
     for directory in directories:
         full = os.path.join(root, directory)
-        print('folder [{}]'.format(full))
+        print(f"folder [{full}]")
