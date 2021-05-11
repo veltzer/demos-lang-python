@@ -1,5 +1,5 @@
 """
-A script to separate the john bryce pdf to separate slides...
+A script to separate the a pdf to separate slides...
 """
 
 import os.path
