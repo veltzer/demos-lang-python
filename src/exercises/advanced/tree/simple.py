@@ -7,13 +7,9 @@ import os.path
 
 def print_tree(fullpath: str, filename: str, depth=0):
     print_str=" " * 3 * depth
+    print(f"{print_str}{filename}")
     if os.path.isdir(fullpath):
-        print(f"{print_str}{filename}")
-        files = list(os.listdir(fullpath))
-        for f in files:
+        for f in os.listdir(fullpath):
             print_tree(os.path.join(fullpath, f), f, depth+1)
-    if os.path.isfile(fullpath):
-        print(f"{print_str}{filename}")
 
-
-print_tree(".", ".")
+print_tree(".", ".", 0)
