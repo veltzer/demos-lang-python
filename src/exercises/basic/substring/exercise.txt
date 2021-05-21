@@ -1,0 +1,3 @@
+
+Write a function called my_substring(s1, s2) which
+	returns True iff s1 is a substring of s2.
