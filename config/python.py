@@ -77,11 +77,11 @@ run_requires = [
     'vext.gi',
 
     # There packages require special attention (they do not install without issues)
-    #'psycopg2',
-    #'systemd-python',
-    #'PyGObject',
-    #'PyGObject-stubs',
-    #'dbus-python',
+    'psycopg2',
+    'systemd-python',
+    'PyGObject',
+    'PyGObject-stubs',
+    'dbus-python',
 ]
 
 test_requires = [

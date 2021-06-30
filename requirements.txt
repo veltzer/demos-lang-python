@@ -63,5 +63,10 @@ pyfakeuse
 pyvardump
 vext
 vext.gi
+psycopg2
+systemd-python
+PyGObject
+PyGObject-stubs
+dbus-python
 # dev requirements
 pydmt
