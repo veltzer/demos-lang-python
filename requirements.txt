@@ -21,7 +21,6 @@ plotly
 gcloud
 networkx
 keyring
-dbus-python
 python-jenkins
 SortedContainers
 PyRSS2Gen
@@ -35,7 +34,6 @@ azure-cognitiveservices-search-websearch
 pygraph
 flask
 tsv
-psycopg2
 pygments
 simpleparse
 progressbar
@@ -46,7 +44,6 @@ ConfigParser
 unidecode
 bitmath
 paramiko
-systemd-python
 boto
 boto3
 boto3-stubs
@@ -66,7 +63,5 @@ pyfakeuse
 pyvardump
 vext
 vext.gi
-PyGObject
-PyGObject-stubs
 # dev requirements
 pydmt

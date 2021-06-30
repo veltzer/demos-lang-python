@@ -30,7 +30,6 @@ run_requires = [
     'gcloud',
     'networkx',
     'keyring',
-    'dbus-python',
     'python-jenkins',
     'SortedContainers',
     'PyRSS2Gen',
@@ -44,7 +43,6 @@ run_requires = [
     'pygraph',
     'flask',
     'tsv',
-    'psycopg2',
     'pygments',
     'simpleparse',
     'progressbar',
@@ -55,7 +53,6 @@ run_requires = [
     'unidecode',
     'bitmath',
     'paramiko',
-    'systemd-python',
     'boto',
     'boto3',
     'boto3-stubs',
@@ -78,8 +75,13 @@ run_requires = [
     # gtk stuff
     'vext',
     'vext.gi',
-    'PyGObject',
-    'PyGObject-stubs',
+
+    # There packages require special attention (they do not install without issues)
+    #'psycopg2',
+    #'systemd-python',
+    #'PyGObject',
+    #'PyGObject-stubs',
+    #'dbus-python',
 ]
 
 test_requires = [
