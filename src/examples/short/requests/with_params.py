@@ -17,6 +17,6 @@ params = dict(
 )
 
 resp = requests.get(url=url, params=params)
-assert resp.status_code == 200, resp.status_code
-data = resp.json() # Check the JSON Response Content documentation below
+resp.raise_for_status()
+data = resp.json()
 print(data)

@@ -11,7 +11,7 @@ do_everything = True
 if do_headlines:
     url = ('http://newsapi.org/v2/top-headlines?' 'country=us&' 'apiKey={}'.format(key))
     r = requests.get(url)
-    assert(r.status_code == 200)
+    r.raise_for_status()
     obj = r.json()
 
     articles = obj["articles"]
@@ -30,9 +30,9 @@ if do_everything:
     }
     url = 'http://newsapi.org/v2/everything'
     r = requests.get(url, params=mydict)
-    assert(r.status_code == 200)
+    r.raise_for_status()
     obj = r.json()
-    
+
     articles = obj["articles"]
     for i, article in enumerate(articles):
         print("{}: {}, {}".format(
