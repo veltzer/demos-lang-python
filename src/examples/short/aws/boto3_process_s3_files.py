@@ -14,6 +14,7 @@ import codecs
 
 import boto3
 import tqdm
+import locale
 
 do_count_lines = True
 bucket_name = 'bucket_name'
@@ -33,7 +34,7 @@ for object_summary in gen:
         stream = object_summary.get()['Body']
         # stream = io.BufferedReader(stream)
         # stream = io.TextIOWrapper(stream)
-        stream = codecs.getreader(encoding='utf-8')(stream)
+        stream = codecs.getreader(encoding=locale.getpreferredencodig())(stream)
         lines = 0
         for line in tqdm.tqdm(stream):
             # print(line, end='')

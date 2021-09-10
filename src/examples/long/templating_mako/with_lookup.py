@@ -21,21 +21,21 @@ d = {
     'c': 'd',
 }
 
-input_encoding = 'utf-8'
-output_encoding = 'utf-8'
+# input_encoding = 'utf-8'
+# output_encoding = 'utf-8'
 p_input = 'src/examples/long/templating_mako/with_lookup.mako'
 p_output = '/tmp/simple'
 
 mylookup = mako.lookup.TemplateLookup(
     directories=['.'],
     #   input_encoding=input_encoding,
-    #    output_encoding=output_encoding,
+    #   output_encoding=output_encoding,
 )
 template = mako.template.Template(
     filename=p_input,
     lookup=mylookup,
-    output_encoding=output_encoding,
-    input_encoding=input_encoding,
+    # output_encoding=output_encoding,
+    # input_encoding=input_encoding,
 )
 # the order here is importat. Do not open the file for writing until the rendering
 # is complete since we want to make sure that the rendering process does not throw

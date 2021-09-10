@@ -35,7 +35,6 @@ pygraph
 flask
 tsv
 pygments
-simpleparse
 progressbar
 numpy
 inject

@@ -44,7 +44,7 @@ run_requires = [
     'flask',
     'tsv',
     'pygments',
-    'simpleparse',
+    # 'simpleparse', causing problems
     'progressbar',
     'numpy',
     'inject',

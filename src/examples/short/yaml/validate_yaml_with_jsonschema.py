@@ -7,6 +7,7 @@ References:
 
 import yaml
 from jsonschema import validate
+from jsonschema.exceptions import ValidationError
 
 schema = """
 type: object
@@ -25,7 +26,7 @@ good_instance = """
 testing: ['this', 'is', 'a', 'test']
 """
 
-validate(yaml.load(good_instance), yaml.load(schema))  # passes
+validate(yaml.load(good_instance, Loader=yaml.SafeLoader), yaml.load(schema, Loader=yaml.SafeLoader))  # passes
 
 # Now let's try a bad instance...
 
@@ -34,7 +35,6 @@ testing: ['this', 'is', 'a', 'bad', 'test']
 """
 
 try:
-    validate(yaml.load(bad_instance), yaml.load(schema))
-except Exception as e:
-    print(e)
-    exit(1)
+    validate(yaml.load(bad_instance, Loader=yaml.SafeLoader), yaml.load(schema, Loader=yaml.SafeLoader))
+except ValidationError as e:
+    raise e

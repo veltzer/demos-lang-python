@@ -14,7 +14,7 @@ import random
 
 
 def load_json(filename_json):
-    with open(filename_json, "rt", encoding="utf-8") as f:
+    with open(filename_json, "rt") as f:
         json.load(f)
 
 
@@ -32,7 +32,7 @@ def main():
     filename_json = tempfile.mktemp()
     filename_pickle = tempfile.mktemp()
 
-    with open(filename_json, "wt", encoding='utf-8') as fp:
+    with open(filename_json, "wt") as fp:
         json.dump(d, fp)
     with open(filename_pickle, "wb") as fp:
         pickle.dump(d, fp, protocol=pickle.HIGHEST_PROTOCOL)
