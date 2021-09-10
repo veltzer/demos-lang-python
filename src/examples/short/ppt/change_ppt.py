@@ -7,7 +7,7 @@ References:
 from pptx import Presentation
 from pyvardump import dump
 
-input_filename = "data_samples/sample.pptx"
+input_filename = "data/ppt/sample.pptx"
 output_filename = "/tmp/out.pptx"
 
 presentation = Presentation(input_filename)

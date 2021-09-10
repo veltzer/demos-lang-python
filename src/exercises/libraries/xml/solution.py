@@ -1,7 +1,7 @@
 import xml.dom.minidom
 
 # parse an XML file by name
-dom = xml.dom.minidom.parse('data_samples/numbers.xml')
+dom = xml.dom.minidom.parse("data/xml/numbers.xml")
 
 salary_sum = 0
 for employee in dom.getElementsByTagName('employee'):

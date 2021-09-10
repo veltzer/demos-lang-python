@@ -4,7 +4,7 @@ A simple example of how to read a TSV file using the 'tsv' module
 
 import tsv
 
-reader = tsv.TsvReader(open("data_samples/file.tsv"))
+reader = tsv.TsvReader(open("data/tsv/file.tsv"))
 for parts in reader:
     parts = list(parts)
     # Here parts is a list of strings, one per tab-separated column.

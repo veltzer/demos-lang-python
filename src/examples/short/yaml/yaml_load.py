@@ -9,7 +9,7 @@ References:
 
 import yaml
 
-with open("data_samples/basic.yaml", 'r') as stream:
+with open("data/yaml/basic.yaml", "r") as stream:
     try:
         data = yaml.safe_load(stream)
         assert "concepts" in data
