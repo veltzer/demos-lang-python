@@ -1,3 +1,6 @@
+- move all stamps into their own folder so that they will
+	not be mixed in with the source code.
+
 - do linting on all my examples from a makefile.
 
 - show the number of examples and exercises that I have in README.md.
