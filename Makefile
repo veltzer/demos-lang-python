@@ -1,8 +1,3 @@
-############
-# includes #
-############
-# include /usr/share/templar/make/Makefile
-
 ##############
 # parameters #
 ##############
