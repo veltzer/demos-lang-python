@@ -82,6 +82,10 @@ run_requires = [
     'PyGObject',
     'PyGObject-stubs',
     'dbus-python',
+
+    # terminal color stuff
+    'termcolor',
+    'colored',
 ]
 
 test_requires = [

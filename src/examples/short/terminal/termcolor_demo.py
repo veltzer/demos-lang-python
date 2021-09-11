@@ -1,5 +1,5 @@
 """
-This example shows how to do colors at the terminal in python.
+This is an example of how to use the 'termcolor' module.
 
 References:
 - http://stackoverflow.com/questions/287871/print-in-terminal-with-colors-using-python

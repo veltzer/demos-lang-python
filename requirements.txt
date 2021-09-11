@@ -67,5 +67,7 @@ systemd-python
 PyGObject
 PyGObject-stubs
 dbus-python
+termcolor
+colored
 # dev requirements
 pydmt
