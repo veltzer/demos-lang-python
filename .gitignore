@@ -3,14 +3,10 @@
 *.pyo
 *.pyc
 __pycache__
-*.stamp
 /.venv/
-
-# binaries
 *.elf
 
-# output files
-*.out
+/out
 
 /.myenv.pip.errors
 /.pydmt/

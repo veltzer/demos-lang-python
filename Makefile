@@ -13,7 +13,7 @@ TOOLS:=tools.stamp
 ########
 ALL:=
 ALL_PY:=$(shell find src -name "*.py")
-ALL_STAMP:=$(addsuffix .stamp, $(basename $(ALL_PY)))
+ALL_STAMP:=$(addprefix out/,$(addsuffix .stamp, $(basename $(ALL_PY))))
 
 ifeq ($(DO_CHECK_SYNTAX),1)
 	ALL+=$(ALL_STAMP)
@@ -136,7 +136,7 @@ check_files:
 ############
 # patterns #
 ############
-$(ALL_STAMP): %.stamp: %.py $(ALL_DEP)
+$(ALL_STAMP): out/%.stamp: %.py $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)scripts/syntax_check.py $<
-	$(Q)touch $@
+	$(Q)pymakehelper touch_mkdir $@
