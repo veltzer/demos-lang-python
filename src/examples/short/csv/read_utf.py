@@ -28,19 +28,19 @@ import locale
 print(locale.getpreferredencoding())
 
 # open a regular file with the utf-8 encoding works
-with open("data/csv/file.csv", "r") as csv_file:
+with open("data/csv/file.csv") as csv_file:
     r = csv.reader(csv_file)
     for row in r:
         pass
 
 # now lets try reading a real utf file
-with open("data/csv/file_utf.csv", "r") as csv_file:
+with open("data/csv/file_utf.csv") as csv_file:
     r = csv.reader(csv_file)
     for row in r:
         pass
 
 # now lets try reading a real utf file without the encoding
-with open("data/csv/file_utf.csv", "r") as csv_file:
+with open("data/csv/file_utf.csv") as csv_file:
     r = csv.reader(csv_file)
     for row in r:
         print(row)
