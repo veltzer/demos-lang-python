@@ -39,23 +39,29 @@ def get_comments_seq(self, idx):
     return coms
 
 
-def walk_data(data):
+def yield_comments(data):
     if isinstance(data, CommentedMap):
         if isinstance(data.ca.comment, list):
             if isinstance(data.ca.comment[1], list):
                 yield "", data.ca.comment[1][0].value.rstrip()
         for k, v in data.items():
             for comment in get_comments_map(data, k):
-                yield k, comment.value.rstrip()
-            yield from walk_data(v)
+                for frag in comment.value.split("\n"):
+                    if frag=="":
+                        continue
+                    yield k, frag.rstrip()
+            yield from yield_comments(v)
     elif isinstance(data, CommentedSeq):
         if isinstance(data.ca.comment, list):
             if isinstance(data.ca.comment[1], list):
                 yield "", data.ca.comment[1][0].value.rstrip()
         for idx, item in enumerate(data):
             for comment in get_comments_seq(data, idx):
-                yield k, comment.value.rstrip()
-            yield from walk_data(item)
+                for frag in comment.value.split("\n"):
+                    if frag=="":
+                        continue
+                    yield idx, frag.rstrip()
+            yield from yield_comments(item)
 
 filenames = [
         "data/yaml/comments1.yaml",
@@ -68,8 +74,8 @@ for filename in filenames:
         yaml = ruamel.yaml.YAML()
         data = yaml.load(stream)
         my_sum = 0
-        for _, y in walk_data(data):
-            for frag in y.split("\n"):
-                to_add = frag.split("#")[1]
-                my_sum += int(to_add) 
+        for _, y in yield_comments(data):
+            # print(f"[{y}]")
+            to_add = y.split("#")[1]
+            my_sum += int(to_add) 
         print(my_sum)
