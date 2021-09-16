@@ -69,5 +69,7 @@ PyGObject-stubs
 dbus-python
 termcolor
 colored
+oyaml
+ruamel.yaml
 # dev requirements
 pydmt

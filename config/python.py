@@ -86,6 +86,10 @@ run_requires = [
     # terminal color stuff
     'termcolor',
     'colored',
+
+    # yaml
+    'oyaml',
+    'ruamel.yaml',
 ]
 
 test_requires = [
