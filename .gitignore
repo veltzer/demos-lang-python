@@ -8,5 +8,7 @@ __pycache__
 
 /out
 
+*.stamp
+
 /.myenv.pip.errors
 /.pydmt/
