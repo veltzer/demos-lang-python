@@ -2,7 +2,9 @@
 # parameters #
 ##############
 # do you want to check python syntax?
-DO_CHECK_SYNTAX:=1
+DO_SYNTAX:=1
+# do you want to lint python files?
+DO_LINT:=1
 # do you want to bring in tools?
 DO_TOOLS:=0
 # what is the tools.stamp file?
@@ -13,13 +15,18 @@ TOOLS:=tools.stamp
 ########
 ALL:=
 ALL_PY:=$(shell find src -name "*.py")
-ALL_STAMP:=$(addprefix out/,$(addsuffix .stamp, $(basename $(ALL_PY))))
+ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
+ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
 
-ifeq ($(DO_CHECK_SYNTAX),1)
-	ALL+=$(ALL_STAMP)
-endif # DO_CHECK_SYNTAX
+ifeq ($(DO_SYNTAX),1)
+	ALL+=$(ALL_SYNTAX)
+endif # DO_SYNTAX
+ifeq ($(DO_LINT),1)
+	ALL+=$(ALL_LINT)
+endif # DO_LINT
 
 ALL_DEP:=Makefile
+ALL_DEP:=
 
 ifeq ($(DO_TOOLS),1)
 	ALL_DEP+=$(TOOLS)
@@ -40,7 +47,7 @@ endif # DO_MKDBG
 all: $(ALL)
 
 .PHONY: check_all
-check_all: $(ALL_STAMP) $(ALL_DEP)
+check_all: check_ws $(ALL_DEP)
 
 .PHONY: check
 check: check_ws check_has_key check_no_python2 check_mode
@@ -86,7 +93,8 @@ check_no_future: $(ALL_DEP)
 
 .PHONY: debug_me
 debug_me:
-	$(Q)$(info ALL_STMAP is $(ALL_STAMP))
+	$(Q)$(info ALL_SYNTAX is $(ALL_SYNTAX))
+	$(Q)$(info ALL_LINT is $(ALL_LINT))
 	$(Q)$(info ALL is $(ALL))
 	$(Q)$(info ALL_DEP is $(ALL_DEP))
 
@@ -116,6 +124,11 @@ check_mode:
 	$(info doing [$@])
 	$(Q)find src -name "*.py" -and -type f -and -not -perm 0644
 
+.PHONY: fix_mode
+fix_mode:
+	$(info doing [$@])
+	$(Q)find src -type f -and -not -perm 644 -exec chmod 644 {} \+
+
 .PHONY: check_files
 check_files:
 	$(info doing [$@])
@@ -136,7 +149,11 @@ check_files:
 ############
 # patterns #
 ############
-$(ALL_STAMP): out/%.stamp: %.py $(ALL_DEP)
+$(ALL_SYNTAX): out/%.syntax: %.py $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)scripts/syntax_check.py $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_LINT): out/%.lint: %.py $(ALL_DEP)
+	$(info doing [$@])
+	$(Q)pylint --reports=n --score=n $<
 	$(Q)pymakehelper touch_mkdir $@

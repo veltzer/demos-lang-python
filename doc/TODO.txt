@@ -1,3 +1,5 @@
+- do demos for https://pypi.org/project/yamlpath
+
 - move all stamps into their own folder so that they will
 	not be mixed in with the source code.
 
