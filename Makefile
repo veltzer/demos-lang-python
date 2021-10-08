@@ -57,10 +57,10 @@ check_ws: $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)git grep -E "\s$$" -- '*.py' || exit 0
 
-.PHONY: check_lint
-check_lint: $(ALL_DEP)
+.PHONY: pylint
+pylint: $(ALL_DEP)
 	$(info doing [$@])
-	$(Q)pylint --py3k --rcfile=support/pylint.conf `find src -name "*.py"`
+	$(Q)pylint `find src -name "*.py"`
 
 # this is a bad check because returning tuples in python is perfectly legit
 .PHONY: check_return
@@ -112,8 +112,9 @@ remove_stamp:
 
 .PHONY: clean
 clean:
-	find . -name "__pycache__" -type d -exec rm -r {} \;
-	find . -name "*.pyc" -or -name "*.pyo" -delete
+	@rm -f $(ALL)
+	@find . -not -path "./.venv/*" -and -name "__pycache__" -and -type d -exec rm -r {} \;
+	@find . -not -path "./.venv/*" -name "*.pyc" -or -name "*.pyo" -delete
 
 .PHONY: clean_hard
 clean_hard:
