@@ -99,7 +99,10 @@ dev_requires = [
     'pydmt',  # for building
 ]
 
+test_container="[ 'ubuntu:21.04' ]"
+test_python="[3.9]"
+
 install_requires = list(setup_requires)
 install_requires.extend(run_requires)
 
-python_requires = ">=3.5"
+python_requires = ">=3.9"
