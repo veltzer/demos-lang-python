@@ -1,3 +1,8 @@
+"""
+solution
+"""
+
+
 def right_align_to(lines, width):
     """Right-align all lines to given width."""
     result = []
@@ -6,5 +11,10 @@ def right_align_to(lines, width):
     return result
 
 
-for line in right_align_to(['foo', 'x', '12345678'], 8):
-    print(line)
+def main():
+    """ main function """
+    for line in right_align_to(['foo', 'x', '12345678'], 8):
+        print(line)
+
+
+main()
