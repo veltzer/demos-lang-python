@@ -64,9 +64,9 @@ class SimpleHangman:
     def known_parts(self):
         """Reveal guessed letters, ? for hidden letters."""
         res = []
-        for c in self._word:
-            if c in self.open_letters:
-                res.append(c)
+        for current in self._word:
+            if current in self.open_letters:
+                res.append(current)
             else:
                 res.append('?')
         return ''.join(res)

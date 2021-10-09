@@ -4,7 +4,7 @@ Usage: hangman.py <secret_word>
 
 import sys
 
-from ex10_ex11_classes import Hangman
+from myclass import Hangman
 
 args = sys.argv[1:]
 if len(args) != 1:

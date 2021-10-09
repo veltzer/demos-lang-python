@@ -1,10 +1,21 @@
-def swap_lists(l1, l2):
-    for i in range(len(l1)):
-        [l1[i], l2[i]] = [l2[i], l1[i]]
+"""
+solution
+"""
 
 
-l1 = [2, 3, 4]
-l2 = [8, 7, 6]
-swap_lists(l1, l2)
-print(l1)
-print(l2)
+def swap_lists(list1, list2):
+    """ swap two lists """
+    # pylint: disable=consider-using-enumerate
+    for i in range(len(list1)):
+        [list1[i], list2[i]] = [list2[i], list1[i]]
+
+
+def main():
+    """ main function """
+    list1 = [2, 3, 4]
+    list2 = [8, 7, 6]
+    swap_lists(list1, list2)
+    print(list1)
+    print(list2)
+
+main()

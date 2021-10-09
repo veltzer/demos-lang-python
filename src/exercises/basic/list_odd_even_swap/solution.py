@@ -1,3 +1,7 @@
+"""
+solution
+"""
+
 size = int(input('please enter a list size: '))
 l = []
 for number in range(0, size):
@@ -8,5 +12,4 @@ for number in range(0, size):
         temp = l[number]
         l[number] = l[number + 1]
         l[number + 1] = temp
-    pass
 print(l)

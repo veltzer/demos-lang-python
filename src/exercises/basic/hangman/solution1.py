@@ -10,16 +10,16 @@ Bzzz! No 'x' there.
 """
 
 # Initialization
-_word = 'secret'
+WORD = 'secret'
 open_letters = set()
 
 
 def print_known_parts():
     """Reveal guessed letters, ? for hidden letters."""
     res = []
-    for c in _word:
-        if c in open_letters:
-            res.append(c)
+    for current in WORD:
+        if current in open_letters:
+            res.append(current)
         else:
             res.append('?')
     print(''.join(res))
@@ -28,8 +28,8 @@ def print_known_parts():
 def guess(letter):
     """Call this to play."""
     open_letters.add(letter)
-    if letter in _word:
-        print('Yes! \'%s\' appears %s times:' % (letter, _word.count(letter)))
+    if letter in WORD:
+        print('Yes! \'%s\' appears %s times:' % (letter, WORD.count(letter)))
     else:
         print('Bzzz! No \'%s\' there.' % letter)
     print_known_parts()
