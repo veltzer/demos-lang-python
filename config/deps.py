@@ -16,7 +16,9 @@ packages = [
     "libpq-dev",
     "python3-gi",
     "libcairo2-dev",
+    # python
     "python3-distutils-extra",
+    "python3-pip",
     # swig
     "swig",
     "swig-doc",
