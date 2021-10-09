@@ -1,9 +1,19 @@
+"""
+interfaces to be implemented
+"""
+
 class Node:
     """
     This is a single element of the singly linked list
     """
     def __init__(self, _data, _next_element):
         pass
+
+    def print(self):
+        """ print the current object """
+
+    def get_data(self):
+        """ get data from the current object """
 
 
 class SingleLinkedList:
@@ -14,26 +24,27 @@ class SingleLinkedList:
         pass
 
     def is_empty(self):
-        pass
+        """ is the current element empty """
 
     def add_head_element(self, data):
-        pass
+        """ add element at the head """
 
     def pop_head_element(self):
-        pass
+        """ pop the element the head of the list """
 
     def yield_elements(self):
-        yield self
+        """ yield all elements from the list """
 
 
 def example_of_use():
+    """ example of how your object could be used """
     test_list = SingleLinkedList()
     test_list.add_head_element(3)
     test_list.add_head_element(2)
     test_list.add_head_element(1)
     print("starting iteration")
-    for e in test_list.yield_elements():
-        print(e)
+    for element in test_list.yield_elements():
+        print(element)
     print("ending iteration")
     print(test_list.pop_head_element())
     print(test_list.pop_head_element())
