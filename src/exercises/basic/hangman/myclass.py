@@ -81,11 +81,10 @@ class SimpleHangman:
         """Call this to play."""
         self.open_letters.add(letter)
         if letter in self._word:
-            print('Yes! \'%s\' appears %s times:' %
-                  (letter, self._word.count(letter)))
+            print(f"Yes! '{letter}' appears {self._word.count(letter)} times:")
             print(self)
         else:
-            print('No \'%s\' there.' % letter)
+            print(f"No '{letter}' there.")
             print(self)
 
 
@@ -122,23 +121,22 @@ class Hangman(SimpleHangman):
     def __repr__(self):
         """Describe current game state."""
         if set(self._word) <= self.open_letters:
-            return '%s: YOU WON!' % self._word
+            return f"{self._word}: YOU WON!"
         if self.mistakes_allowed < 0:
-            return '%s: GAME OVER' % self.known_parts()
-        return ('%s: %s mistakes allowed' %
-                (self.known_parts(), self.mistakes_allowed))
+            return f"{self.known_parts()}: GAME OVER"
+        return f"{self.known_parts()}: {self.mistakes_allowed} mistakes allowed"
 
     def guess(self, letter):
         """Call this to play."""
         # bells and whistles
         if set(self._word) <= self.open_letters:
-            print('You won. Why do you keep guessing?')
+            print("You won. Why do you keep guessing?")
             return
         if self.mistakes_allowed < 0:
-            print('You lost. Stop trying.')
+            print("You lost. Stop trying.")
             return
         if letter in self.open_letters:
-            print('You already tried %s.' % letter)
+            print(f"You already tried {letter}.")
             print(self)
             return
 

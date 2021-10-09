@@ -103,21 +103,21 @@ show_shbang:
 
 .PHONY: todo
 todo:
-	@git grep @TODO -- ':!/Makefile'
+	$(Q)git grep @TODO -- ':!/Makefile'
 
 .PHONY: remove_stamp
 remove_stamp:
-	@find . -type f -and -name "*.stamp" -delete
+	$(Q)find . -type f -and -name "*.stamp" -delete
 
 .PHONY: clean
 clean:
-	@rm -f $(ALL)
-	@find . -not -path "./.venv/*" -and -name "__pycache__" -and -type d -exec rm -r {} \;
-	@find . -not -path "./.venv/*" -name "*.pyc" -or -name "*.pyo" -delete
+	$(Q)rm -f $(ALL)
+	$(Q)find . -not -path "./.venv/*" -and -name "__pycache__" -and -type d -exec rm -r {} \;
+	$(Q)find . -not -path "./.venv/*" -name "*.pyc" -or -name "*.pyo" -delete
 
 .PHONY: clean_hard
 clean_hard:
-	@git clean -qffxd
+	$(Q)git clean -qffxd
 
 .PHONY: check_mode
 check_mode:

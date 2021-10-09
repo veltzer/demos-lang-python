@@ -29,9 +29,9 @@ def guess(letter):
     """Call this to play."""
     open_letters.add(letter)
     if letter in WORD:
-        print('Yes! \'%s\' appears %s times:' % (letter, WORD.count(letter)))
+        print(f"Yes! '{letter}' appears {WORD.count(letter)} times:")
     else:
-        print('Bzzz! No \'%s\' there.' % letter)
+        print(f"Bzzz! No '{letter}' there.")
     print_known_parts()
 
 
