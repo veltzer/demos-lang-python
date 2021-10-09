@@ -26,7 +26,6 @@ ifeq ($(DO_LINT),1)
 endif # DO_LINT
 
 ALL_DEP:=Makefile
-ALL_DEP:=
 
 ifeq ($(DO_TOOLS),1)
 	ALL_DEP+=$(TOOLS)

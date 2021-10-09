@@ -11,6 +11,7 @@ https://docs.python.org/3/library/argparse.html#module-argparse
 """
 
 import argparse
+import sys
 
 parser = argparse.ArgumentParser()
 subparsers = parser.add_subparsers(title='sub commands', dest='sub_command')
@@ -26,4 +27,4 @@ parser.add_argument(
     '-i', '--integer', help='integer', type=int, default=5, choices=[5, 7, 9])
 args = parser.parse_args()
 
-print(args)
+print(args, sys.argv)
