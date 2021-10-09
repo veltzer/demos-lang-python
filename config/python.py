@@ -97,6 +97,7 @@ test_requires = [
 
 dev_requires = [
     'pydmt',  # for building
+    'pymakehelper',  # the the makefile
 ]
 
 test_container="[ 'ubuntu:21.04' ]"
