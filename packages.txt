@@ -17,3 +17,5 @@ python3-pip
 swig
 swig-doc
 fluidsynth
+libsystemd0
+libsystemd-dev

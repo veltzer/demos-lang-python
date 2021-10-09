@@ -23,4 +23,7 @@ packages = [
     "swig",
     "swig-doc",
     "fluidsynth",
+    # systemd
+    "libsystemd0",
+    "libsystemd-dev",
 ]
