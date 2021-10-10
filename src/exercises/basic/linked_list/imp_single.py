@@ -44,16 +44,16 @@ class SingleLinkedList:
 
 
 def example_of_use():
-    l = SingleLinkedList()
-    l.add_head_element(3)
-    l.add_head_element(2)
-    l.add_head_element(1)
+    the_list = SingleLinkedList()
+    the_list.add_head_element(3)
+    the_list.add_head_element(2)
+    the_list.add_head_element(1)
     print("starting iteration")
-    for e in l.yield_elements():
-        print(e)
+    for element in the_list.yield_elements():
+        print(element)
     print("ending iteration")
-    print(l.pop_head_element())
-    print(l.pop_head_element())
+    print(the_list.pop_head_element())
+    print(the_list.pop_head_element())
 
 
 example_of_use()

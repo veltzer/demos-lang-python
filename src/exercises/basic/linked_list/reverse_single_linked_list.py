@@ -61,16 +61,17 @@ def get_reverse(the_list):
 
 
 def main():
-    l = SingleLinkedList()
-    l.add_head_element(3)
-    l.add_head_element(2)
-    l.add_head_element(1)
+    the_list = SingleLinkedList()
+    the_list.add_head_element(3)
+    the_list.add_head_element(2)
+    the_list.add_head_element(1)
     print("original list follows...")
-    for d in l.yield_elements():
-        print(d)
-    l2 = get_reverse(l)
+    for element in the_list.yield_elements():
+        print(element)
+    reverse = get_reverse(the_list)
     print("reverse list follows...")
-    for d in l2.yield_elements():
-        print(d)
+    for element in reverse.yield_elements():
+        print(element)
+
 
 main()

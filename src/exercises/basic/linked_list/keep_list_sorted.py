@@ -1,3 +1,6 @@
+import random
+
+
 class Node:
     """
     This is a single element of the singly linked list
@@ -50,12 +53,11 @@ class SingleLinkedList:
 
 
 def main():
-    import random
-    l = SingleLinkedList()
-    for i in range(50):
-        l.add_sorted(random.randint(0, 100))
-    for d in l.yield_elements():
-        print(f"{d} ", end="")
+    the_list = SingleLinkedList()
+    for _ in range(50):
+        the_list.add_sorted(random.randint(0, 100))
+    for element in the_list.yield_elements():
+        print(f"{element} ", end="")
 
 
 main()

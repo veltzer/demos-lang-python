@@ -73,37 +73,37 @@ class DoubleLinkedList:
 
 
 def example_of_use():
-    l = DoubleLinkedList()
-    l.add_head_element(3)
-    l.add_head_element(2)
-    l.add_head_element(1)
-    l.add_tail_element(4)
-    l.add_tail_element(5)
-    l.add_tail_element(6)
+    the_list = DoubleLinkedList()
+    the_list.add_head_element(3)
+    the_list.add_head_element(2)
+    the_list.add_head_element(1)
+    the_list.add_tail_element(4)
+    the_list.add_tail_element(5)
+    the_list.add_tail_element(6)
 
     print("starting forward iteration")
-    for e in l.yield_elements_from_head_to_tail():
-        print(e)
+    for element in the_list.yield_elements_from_head_to_tail():
+        print(element)
 
     print("starting backward iteration")
-    for e in l.yield_elements_from_tail_to_head():
-        print(e)
+    for element in the_list.yield_elements_from_tail_to_head():
+        print(element)
 
     print("popping elements")
-    l.pop_head_element()
-    l.pop_tail_element()
+    the_list.pop_head_element()
+    the_list.pop_tail_element()
 
     print("starting forward iteration")
-    for e in l.yield_elements_from_head_to_tail():
-        print(e)
+    for element in the_list.yield_elements_from_head_to_tail():
+        print(element)
 
     print("popping all remaining elements")
-    while not l.is_empty():
-        l.pop_head_element()
+    while not the_list.is_empty():
+        the_list.pop_head_element()
 
     print("starting forward iteration")
-    for e in l.yield_elements_from_head_to_tail():
-        print(e)
+    for element in the_list.yield_elements_from_head_to_tail():
+        print(element)
 
 
 example_of_use()
