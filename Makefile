@@ -77,7 +77,7 @@ check_ws: $(ALL_DEP)
 .PHONY: pylint
 pylint: $(ALL_DEP)
 	$(info doing [$@])
-	$(Q)pylint `find src -name "*.py"`
+	$(Q)python -m pylint `find src -name "*.py"`
 
 # this is a bad check because returning tuples in python is perfectly legit
 .PHONY: check_return
@@ -173,7 +173,7 @@ $(ALL_SYNTAX): out/%.syntax: %.py $(ALL_DEP)
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_LINT): out/%.lint: %.py $(ALL_DEP)
 	$(info doing [$@])
-	$(Q)pylint --reports=n --score=n $<
+	$(Q)python -m pylint --reports=n --score=n $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_FLAKE8): out/%.flake8: %.py $(ALL_DEP)
 	$(info doing [$@])
