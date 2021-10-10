@@ -4,7 +4,6 @@
 on: [push, pull_request]
 jobs:
   build:
-    name: Build on ${"${{ matrix.container }}"}
     runs-on: ubuntu-latest
     container: ${"${{ matrix.container }}"}
     strategy:
@@ -22,6 +21,6 @@ jobs:
     - name: Install python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        python -m pip install -r requirements.txt
     - name: Build
-      run: make DO_MKDBG=1
+      run: make
