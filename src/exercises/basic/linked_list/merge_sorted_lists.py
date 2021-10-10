@@ -4,15 +4,16 @@ solution
 
 import random
 
+
 class Node:
     """
     This is a single element of the singly linked list
     """
 
     def __init__(self, data, next_data):
+        """ constructor """
         self.data = data
         self.next = next_data
-
 
     def print(self):
         """ print the current object """

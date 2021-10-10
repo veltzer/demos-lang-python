@@ -5,6 +5,8 @@
 DO_SYNTAX:=1
 # do you want to lint python files?
 DO_LINT:=1
+# do you want to lint python files using flake8?
+DO_FLAKE8:=1
 # do you want to bring in tools?
 DO_TOOLS:=0
 # what is the tools.stamp file?
@@ -17,6 +19,7 @@ ALL:=
 ALL_PY:=$(shell find src -name "*.py")
 ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
+ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
 
 ifeq ($(DO_SYNTAX),1)
 	ALL+=$(ALL_SYNTAX)
@@ -24,8 +27,14 @@ endif # DO_SYNTAX
 ifeq ($(DO_LINT),1)
 	ALL+=$(ALL_LINT)
 endif # DO_LINT
+ifeq ($(DO_FLAKE8),1)
+	ALL+=$(ALL_FLAKE8)
+endif # DO_FLAKE8
 
-ALL_DEP:=Makefile
+ALL_DEP:=
+ifeq ($(DO_ALLDEP),1)
+	ALL_DEP+=Makefile
+endif # DO_ALLDEP
 
 ifeq ($(DO_TOOLS),1)
 	ALL_DEP+=$(TOOLS)
@@ -44,6 +53,15 @@ endif # DO_MKDBG
 #########
 .PHONY: all
 all: $(ALL)
+
+.PHONY: syntax
+syntax: $(ALL_SYNTAX)
+
+.PHONY: lint 
+lint: $(ALL_LINT)
+
+.PHONY: flake8
+flake8: $(ALL_FLAKE8)
 
 .PHONY: check_all
 check_all: check_ws $(ALL_DEP)
@@ -156,4 +174,8 @@ $(ALL_SYNTAX): out/%.syntax: %.py $(ALL_DEP)
 $(ALL_LINT): out/%.lint: %.py $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)pylint --reports=n --score=n $<
+	$(Q)pymakehelper touch_mkdir $@
+$(ALL_FLAKE8): out/%.flake8: %.py $(ALL_DEP)
+	$(info doing [$@])
+	$(Q)PYTHONPATH=python flake8 $<
 	$(Q)pymakehelper touch_mkdir $@

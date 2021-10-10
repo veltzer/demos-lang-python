@@ -2,6 +2,7 @@
 solution
 """
 
+
 def max_len(lines):
     """Return the length of the longest string."""
     lengths = []
@@ -13,9 +14,9 @@ def max_len(lines):
 def main():
     """ main function """
     columns = [
-            ['H', 'He', 'Li', 'Be'],
-            ['Hidrogen', 'Helium', 'Litium', 'Berilium'],
-            ['1.008', '4.003', '6.941', '9.012'],
+        ['H', 'He', 'Li', 'Be'],
+        ['Hidrogen', 'Helium', 'Litium', 'Berilium'],
+        ['1.008', '4.003', '6.941', '9.012'],
     ]
     # Before printing, we must know the width for each column.
     widths = []

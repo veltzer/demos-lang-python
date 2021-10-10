@@ -2,6 +2,7 @@
 solution
 """
 
+
 def main():
     """ main function """
     columns = [['H', 'He', 'Li', 'Be'], ['Hidrogen', 'Helium',

@@ -2,6 +2,7 @@
 interfaces to be implemented
 """
 
+
 class Node:
     """
     This is a single element of the singly linked list

@@ -2,6 +2,7 @@
 solution
 """
 
+
 def swap_lists(list1, list2):
     """ swap two lists """
     # pylint: disable=consider-using-enumerate
