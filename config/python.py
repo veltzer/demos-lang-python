@@ -99,7 +99,7 @@ dev_requires = [
     'pydmt',  # for building
     'pymakehelper',  # the the makefile
     'pylint',
-    'flake8',
+    'flake8==3.7.9',
     'black',
 ]
 

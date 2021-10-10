@@ -16,6 +16,10 @@ class Node:
         """ get the data of the element """
         return self.data
 
+    def get_next(self):
+        """ get the next element """
+        return self.next
+
 
 class SingleLinkedList:
     """
@@ -61,6 +65,7 @@ def get_reverse(the_list):
 
 
 def main():
+    """ the main function """
     the_list = SingleLinkedList()
     the_list.add_head_element(3)
     the_list.add_head_element(2)

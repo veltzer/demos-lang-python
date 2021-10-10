@@ -177,5 +177,5 @@ $(ALL_LINT): out/%.lint: %.py $(ALL_DEP)
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_FLAKE8): out/%.flake8: %.py $(ALL_DEP)
 	$(info doing [$@])
-	$(Q)PYTHONPATH=python flake8 $<
+	$(Q)flake8 $<
 	$(Q)pymakehelper touch_mkdir $@
