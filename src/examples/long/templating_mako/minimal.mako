@@ -1,1 +1,1 @@
-This value of if ${foo} 
+This value of if ${foo}

@@ -9,7 +9,7 @@ p = subprocess.Popen(
         shell=False,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
-        ) 
+        )
 # do not use p.stdout.readlines() in the next line as it will block...
 for line in p.stdout:
     line = line.decode().rstrip()
@@ -24,7 +24,7 @@ if False:
             shell=False,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
-            ) 
+            )
     # this is another version but which gives you an addition last line of ''
     while p.poll() is None:
         line=p.stdout.readline().decode().rstrip()

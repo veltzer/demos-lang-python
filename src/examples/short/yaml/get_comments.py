@@ -68,7 +68,7 @@ filenames = [
         "data/yaml/comments2.yaml",
         "data/yaml/comments3.yaml",
 ]
-for filename in filenames: 
+for filename in filenames:
     with open(filename) as stream:
         print(f"{filename}...", end="")
         yaml = ruamel.yaml.YAML()
@@ -77,5 +77,5 @@ for filename in filenames:
         for _, y in yield_comments(data):
             # print(f"[{y}]")
             to_add = y.split("#")[1]
-            my_sum += int(to_add) 
+            my_sum += int(to_add)
         print(my_sum)

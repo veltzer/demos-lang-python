@@ -20,7 +20,7 @@ with open(filename) as f:
             if word not in words:
                 words[word]=0
             words[word] += 1
-l=list(words.items()) 
+l=list(words.items())
 # l.sort(key=get_second_item, reverse=True)
 l.sort(key=operator.itemgetter(1), reverse=True)
 print(l[:3])

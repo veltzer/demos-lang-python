@@ -13,7 +13,7 @@ def my_substring(s1, s2):
             k += 1
         else:
             return True
-    return False 
+    return False
 
 if len(sys.argv) != 3:
     print("You should pass exactly 2 strings to this program", file=sys.stderr)

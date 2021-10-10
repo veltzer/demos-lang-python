@@ -57,7 +57,7 @@ all: $(ALL)
 .PHONY: syntax
 syntax: $(ALL_SYNTAX)
 
-.PHONY: lint 
+.PHONY: lint
 lint: $(ALL_LINT)
 
 .PHONY: flake8
