@@ -1,12 +1,26 @@
+"""
+solution
+"""
+
+
 class Node:
     """
     This is a single element of the doubly linked list
     """
 
-    def __init__(self, data, next, prev):
+    def __init__(self, data, next_element, prev):
+        """ constructor """
         self.data = data
-        self.next = next
+        self.next = next_element
         self.prev = prev
+
+    def get_data(self):
+        """ get data from the node """
+        return self.data
+
+    def get_next(self):
+        """ get the next element """
+        return self.next
 
 
 class DoubleLinkedList:
@@ -15,13 +29,16 @@ class DoubleLinkedList:
     """
 
     def __init__(self):
+        """ constructor """
         self.first_element = None
         self.last_element = None
 
     def is_empty(self):
+        """ is the list empty """
         return self.first_element is None
 
     def add_head_element(self, data):
+        """ add element at the head """
         node = Node(data, self.first_element, None)
         self.first_element = node
         if self.last_element is None:
@@ -30,6 +47,7 @@ class DoubleLinkedList:
             node.next.prev = node
 
     def add_tail_element(self, data):
+        """ add element at the tail """
         node = Node(data, None, self.last_element)
         self.last_element = node
         if self.first_element is None:
@@ -38,34 +56,38 @@ class DoubleLinkedList:
             node.prev.next = node
 
     def pop_head_element(self):
+        """ pop element at the head """
         if self.first_element is None:
             raise ValueError("There are no elements to pop")
-        r = self.first_element.data
+        rest = self.first_element.data
         self.first_element = self.first_element.next
         if self.first_element is None:
             self.last_element = None
         else:
             self.first_element.prev = None
-        return r
+        return rest
 
     def pop_tail_element(self):
+        """ pop element at the tail """
         if self.last_element is None:
             raise ValueError("There are no elements to pop")
-        r = self.last_element.data
+        rest = self.last_element.data
         self.last_element = self.last_element.prev
         if self.last_element is None:
             self.first_element = None
         else:
             self.last_element.next = None
-        return r
+        return rest
 
-    def yield_elements_from_head_to_tail(self):
+    def yield_elements_head_to_tail(self):
+        """ yield elements from head to tail """
         pointer = self.first_element
         while pointer:
             yield pointer.data
             pointer = pointer.next
 
-    def yield_elements_from_tail_to_head(self):
+    def yield_elements_tail_to_head(self):
+        """ yield elements from tail to head """
         pointer = self.last_element
         while pointer:
             yield pointer.data
@@ -73,6 +95,7 @@ class DoubleLinkedList:
 
 
 def example_of_use():
+    """ example of using the API """
     the_list = DoubleLinkedList()
     the_list.add_head_element(3)
     the_list.add_head_element(2)
@@ -82,11 +105,11 @@ def example_of_use():
     the_list.add_tail_element(6)
 
     print("starting forward iteration")
-    for element in the_list.yield_elements_from_head_to_tail():
+    for element in the_list.yield_elements_head_to_tail():
         print(element)
 
     print("starting backward iteration")
-    for element in the_list.yield_elements_from_tail_to_head():
+    for element in the_list.yield_elements_tail_to_head():
         print(element)
 
     print("popping elements")
@@ -94,7 +117,7 @@ def example_of_use():
     the_list.pop_tail_element()
 
     print("starting forward iteration")
-    for element in the_list.yield_elements_from_head_to_tail():
+    for element in the_list.yield_elements_head_to_tail():
         print(element)
 
     print("popping all remaining elements")
@@ -102,7 +125,7 @@ def example_of_use():
         the_list.pop_head_element()
 
     print("starting forward iteration")
-    for element in the_list.yield_elements_from_head_to_tail():
+    for element in the_list.yield_elements_head_to_tail():
         print(element)
 
 
