@@ -101,6 +101,7 @@ dev_requires = [
     'pylint',
     'flake8==3.7.9',
     'black',
+    'pydmt',
 ]
 
 test_container="[ 'ubuntu:21.04' ]"

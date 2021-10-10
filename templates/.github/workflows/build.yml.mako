@@ -24,4 +24,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build
-      run: make
+      run: make DO_MKDBG=1
