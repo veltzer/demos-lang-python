@@ -74,3 +74,6 @@ ruamel.yaml
 # dev requirements
 pydmt
 pymakehelper
+pylint
+flake8
+black
