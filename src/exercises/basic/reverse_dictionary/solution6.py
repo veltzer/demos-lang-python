@@ -1,13 +1,14 @@
-d = {
+"""
+solution
+"""
+
+my_hash = {
     'Israel': 'Jerusalem',
     'France': 'Paris',
     'Italy': 'Rome',
     'Egypt': 'Cairo',
 }
 
-# Build from reverse items:
-# =========================
-
-# recall that zip(d.keys(), d.values())==d.items()
-rev_d = dict(zip(d.values(), d.keys()))
+# recall that zip(my_hash.keys(), my_hash.values())==my_hash.items()
+rev_d = dict(zip(my_hash.values(), my_hash.keys()))
 print(rev_d)

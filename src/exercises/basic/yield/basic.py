@@ -1,6 +1,12 @@
+"""
+solution
+"""
+
+
 def yield_some_stuff():
-    for t in range(5, 25, 5):
-        yield t
+    """ yield some data """
+    for data in range(5, 25, 5):
+        yield data
 
 
 for i in yield_some_stuff():

@@ -1,14 +1,17 @@
-#!/usr/bin/env python3
+"""
+solution
+"""
 
 import sys
 
-def my_substring(s1, s2):
-    if len(s2) < len(s1):
+def my_substring(string1, string2):
+    """ substring implemenetation """
+    if len(string2) < len(string1):
         return False
-    for i in range(len(s2)-len(s1)+1):
+    for i in range(len(string2)-len(string1)+1):
         k = 0
-        while k < len(s1):
-            if s1[k] != s2[i+k]:
+        while k < len(string1):
+            if string1[k] != string2[i+k]:
                 break
             k += 1
         else:

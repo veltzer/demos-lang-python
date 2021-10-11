@@ -3,13 +3,18 @@ This solution uses lamba and apply (advanced stuff)
 """
 
 
-def my_apply(f, seq):
-    for x in seq:
-        f(x)
+def my_apply(function, seq):
+    """ apply a function on a sequence """
+    for item in seq:
+        function(item)
 
 
-orig = {'Israel': 'Jerusalem', 'France':
-    'Paris', 'Italy': 'Rome', 'Egypt': 'Cairo'}
+orig = {
+    'Israel': 'Jerusalem',
+    'France': 'Paris',
+    'Italy': 'Rome',
+    'Egypt': 'Cairo',
+}
 target = {}
 u = map(lambda k: target.__setitem__(orig[k], k), orig)
 # u is unused
