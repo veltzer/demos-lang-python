@@ -2,6 +2,7 @@
 This script shows all users on a UNIX system
 """
 
+
 def main():
     """ the main function """
     all_users = []

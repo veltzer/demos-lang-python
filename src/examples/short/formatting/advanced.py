@@ -2,6 +2,8 @@
 This shows some advanced formatting
 """
 
-print("pi is {pi:0.3f} and e is {e:0.3f}".format(e=2.71828, pi=3.141572))
+e = 2.71828
+pi = 3.141572
+print(f"pi is {pi:0.3f} and e is {e:0.3f}")
 # zero padding
-print("d is {:02d}".format(7))
+print("d is {7:02d}")
