@@ -12,7 +12,7 @@ import sys
 import subprocess
 
 if len(sys.argv) != 2:
-    print('usage: {0} [filename]'.format(sys.argv[0]), file=sys.stderr)
+    print(f"usage: {sys.argv[0]} [filename]", file=sys.stderr)
     sys.exit(1)
 
 filename = sys.argv[1]
@@ -36,7 +36,7 @@ if check_with is None:
     check_with = 'python3'
 
 if check_with is None:
-    print('{0}: could not find how to check file [{1}]'.format(sys.argv[0], filename), file=sys.stderr)
+    print(f"{sys.argv[0]}: could not find how to check file [{filename}]", file=sys.stderr)
     sys.exit(1)
 
 # check the syntax
@@ -48,5 +48,5 @@ out = subprocess.check_output([
 ]).decode()
 # check that there is no output
 if out != "":
-    print("out is [{}]".format(out))
+    print(f"out is [{out}]")
     sys.exit(1)
