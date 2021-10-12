@@ -1,7 +1,7 @@
 """
 This example shows that if you have a generator
 you can turn it into a real list using several ways:
-- list()
+- list
 - [] (list comprehension)
 
 It also shows that the () comprehension will leave a generator

@@ -3,7 +3,7 @@ Example of generators using generators
 """
 
 
-def input_list():
+def list_input():
     counter = 0
     while True:
         yield counter
@@ -19,7 +19,7 @@ def square_it(input_generator):
 
 def main():
     result = []
-    for x in square_it(input_list):
+    for x in square_it(list_input):
         result.append(x + 1)
     print(result)
 

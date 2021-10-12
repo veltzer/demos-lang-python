@@ -30,6 +30,6 @@ def make_pdf_file(output_filename, np):
 
 page_numbers = [5, 11, 17]
 for i, page_number in enumerate(page_numbers):
-    filename = '/tmp/simple{0}.pdf'.format(i)
+    filename = f"/tmp/simple{i}.pdf"
     make_pdf_file(filename, page_number)
     print("Wrote", filename)

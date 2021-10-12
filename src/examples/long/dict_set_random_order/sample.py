@@ -7,12 +7,12 @@ import os
 
 d = dict((letter, i) for i, letter in enumerate('word'))
 print(d)
-d = dict()
+d = {}
 for x in dir(os):
     d[x] = None
 # d = {x:None for x in dir(os)}
 print(d)
-ud = dict()
+ud = {}
 od = collections.OrderedDict()
 s = set()
 for i in range(100):

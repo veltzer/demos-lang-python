@@ -37,16 +37,16 @@ def main():
     with open(filename_pickle, "wb") as fp:
         pickle.dump(d, fp, protocol=pickle.HIGHEST_PROTOCOL)
     repetitions = 10
-    print("json time {:.04f}".format(timeit.timeit(
-        lambda f: load_json(filename_json), number=repetitions)))
-    print("pickle time {:.04f}".format(timeit.timeit(
-        lambda f: load_pickle(filename_pickle), number=repetitions)))
+    json_time = timeit.timeit(lambda f: load_json(filename_json), number=repetitions)
+    print(f"json time {json_time:.04f}")
+    pickle_time = timeit.timeit(lambda f: load_pickle(filename_pickle), number=repetitions)
+    print(f"pickle time {pickle_time:.04f}")
 
     length_json = os.stat(filename_json).st_size
     length_pickle = os.stat(filename_pickle).st_size
 
-    print("json filesize {}".format(length_json))
-    print("pickle filesize {}".format(length_pickle))
+    print(f"json filesize {length_json}")
+    print(f"pickle filesize {length_pickle}")
 
     os.unlink(filename_json)
     os.unlink(filename_pickle)

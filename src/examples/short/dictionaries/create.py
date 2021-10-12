@@ -27,7 +27,7 @@ print(d1)
 d2 = {"one": "two", "three": "four"}
 print(d2)
 # empty constructor -> empty dictionary
-d3 = dict()
+d3 = {}
 print(d3)
 # constructor with key, value pairs to initialize the dictionary
 d4 = dict(one='two', three='four')

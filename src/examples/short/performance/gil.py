@@ -34,9 +34,7 @@ time_before = time.time()
 count(limit)
 count(limit)
 time_after = time.time()
-print('time taken for single thread: {0:.3f} seconds'.format(
-    time_after - time_before,
-))
+print(f"time taken for single thread: {time_after - time_before:.3f} seconds")
 
 # now two threads
 time_before = time.time()
@@ -47,6 +45,4 @@ t2.start()
 t1.join()
 t2.join()
 time_after = time.time()
-print('time taken for two threads: {0:.3f} seconds'.format(
-    time_after - time_before,
-))
+print(f"time taken for two threads: {time_after - time_before:.3f} seconds")

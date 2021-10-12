@@ -40,7 +40,7 @@ terminal_size3.name = 'tput'
 
 
 def terminal_size4():
-    d = dict()
+    d = {}
     for tc_entry in os.environ['TERMCAP'].split(':'):
         if tc_entry.find('#') != -1:
             key, val = tc_entry.split('#')

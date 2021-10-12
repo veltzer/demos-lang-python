@@ -29,7 +29,7 @@ def demo_tuple():
     return [value in t for value in x]
 
 
-print("list {:.04f}".format(timeit.timeit(demo_list, number=repetitions)))
-print("set {:.04f}".format(timeit.timeit(demo_set, number=repetitions)))
-print("frozenset {:.04f}".format(timeit.timeit(demo_frozenset, number=repetitions)))
-print("tuple {:.04f}".format(timeit.timeit(demo_tuple, number=repetitions)))
+print(f"list {timeit.timeit(demo_list, number=repetitions):.04f}")
+print(f"set {timeit.timeit(demo_set, number=repetitions):.04f}")
+print(f"frozenset {timeit.timeit(demo_frozenset, number=repetitions):.04f}")
+print(f"tuple {timeit.timeit(demo_tuple, number=repetitions):.04f}")

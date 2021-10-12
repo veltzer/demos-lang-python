@@ -105,7 +105,7 @@ for i in range(10):
 # in this case, we must be careful when accessing the dictionary...
 l = list(d.keys())
 assert isinstance(l, list)
-visited_keys = dict()
+visited_keys = {}
 for x in l:
     if x == 3:
         del d[5]

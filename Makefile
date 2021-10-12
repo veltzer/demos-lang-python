@@ -167,7 +167,7 @@ check_files:
 ############
 # patterns #
 ############
-$(ALL_SYNTAX): out/%.syntax: %.py $(ALL_DEP)
+$(ALL_SYNTAX): out/%.syntax: %.py scripts/syntax_check.py $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)scripts/syntax_check.py $<
 	$(Q)pymakehelper touch_mkdir $@
