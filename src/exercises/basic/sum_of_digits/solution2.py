@@ -8,12 +8,16 @@ if len(sys.argv) != 2:
 
 
 def sum_digits(n):
-    sum = 0;
+    my_sum = 0
     while n != 0:
-        sum += n % 10
+        my_sum += n % 10
         n = n // 10
-    return sum
+    return my_sum
 
 
-n = int(sys.argv[1])
-print(sum_digits(n))
+def main():
+    n = int(sys.argv[1])
+    print(sum_digits(n))
+
+
+main()

@@ -12,7 +12,8 @@ class TestGlob(unittest.TestCase):
         """Create some files in a temp dir."""
         self.dir = tempfile.mkdtemp()
         for fname in self.fnames:
-            open(self.absolute(fname), 'w').close()
+            with open(self.absolute(fname), 'w'):
+                pass
 
     def absolute(self, fname):
         return os.path.join(self.dir, fname)

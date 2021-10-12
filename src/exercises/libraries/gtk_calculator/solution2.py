@@ -1,12 +1,4 @@
-import operator
-
-import gi
-from gi.repository import Gtk
-
-gi.require_version('Gtk', '3.0')
-
-
-'''
+"""
 This extended version allow selection of the arithmetic operator by
 radio boxes. Constructing them and tracking which is active is
 somewhat messy, so we want to isolate it from the rest of the
@@ -14,7 +6,14 @@ application.
 
 This is a nice example how a class can encapsulate a non-trivial
 group of widgets, together with some functionality.
-'''
+"""
+
+import operator
+
+import gi
+gi.require_version('Gtk', '3.0')
+# pylint: disable=wrong-import-position
+from gi.repository import Gtk
 
 
 class OperatorChoice(Gtk.VBox):
@@ -36,8 +35,7 @@ class OperatorChoice(Gtk.VBox):
         for (radio, func) in self.radio_funcs.items():
             if radio.get_active():
                 return func(arg1, arg2)
-        else:
-            raise ValueError('No operator chosen')
+        raise ValueError('No operator chosen')
 
     # The app should react to change or operator, but shouldn't know
     # the implementation details of this widget. The 'elegant' way
@@ -69,7 +67,7 @@ def compute(*_ignored):
     try:
         arg1 = float(entry1.get_text())
         arg2 = float(entry2.get_text())
-        result.set_text(str(operator.compute(arg1, arg2)))
+        result.set_text(str(arg1+arg2))
     except ValueError:
         result.set_text('<ERROR>')
 

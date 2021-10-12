@@ -4,15 +4,13 @@ import functools
 def my_min(x, y):
     if x < y:
         return x
-    else:
-        return y
+    return y
 
 
 def my_max(x, y):
     if x < y:
         return y
-    else:
-        return x
+    return x
 
 
 def my_sum(x, y):

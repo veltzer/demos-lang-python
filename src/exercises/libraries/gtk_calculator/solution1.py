@@ -1,16 +1,19 @@
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+# pylint: disable=wrong-import-position
+from gi.repository import Gtk
 
-w = gtk.Window()
-w.connect('delete_event', lambda *ignored: gtk.main_quit())
+w = Gtk.Window()
+w.connect('delete_event', lambda *ignored: Gtk.main_quit())
 
-horizontal_box = gtk.HBox()
+horizontal_box = Gtk.HBox()
 w.add(horizontal_box)
 
-entry1 = gtk.Entry()
-entry2 = gtk.Entry()
-result = gtk.Label()
-for widget in [entry1, gtk.Label('+'), entry2, gtk.Label('='), result]:
-    horizontal_box.pack_start(widget)
+entry1 = Gtk.Entry()
+entry2 = Gtk.Entry()
+result = Gtk.Label()
+# for widget in [entry1, Gtk.Label(label='+'), entry2, Gtk.Label(label='='), result]:
+#   horizontal_box.pack_start(widget)
 
 
 def compute(*_ignored):
@@ -31,4 +34,4 @@ entry1.set_text('3')
 entry2.set_text('2')
 
 w.show_all()
-gtk.main()
+Gtk.main()

@@ -14,7 +14,4 @@ for c in s:
         print('you moron')
 
 for i in range(10):
-    print('{i} appeared {count} times in the text'.format(
-        i=i,
-        count=d[i]
-    ))
+    print(f"{i} appeared {d[i]} times in the text")

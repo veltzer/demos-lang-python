@@ -1,8 +1,7 @@
 def my_map(x):
     if x % 2 == 0:
         return -x
-    else:
-        return x
+    return x
 
 
 def odds_minus_evens(l):

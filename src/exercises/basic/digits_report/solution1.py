@@ -14,5 +14,4 @@ else:
     # output a 'simple' report (just showing the counters...)
     # print(l)
     for n, counter in enumerate(l):
-        print(
-            '{n} appeared {counter} times in the text'.format(n=n, counter=counter))
+        print(f"{n} appeared {counter} times in the text")

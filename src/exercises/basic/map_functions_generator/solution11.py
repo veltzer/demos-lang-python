@@ -1,8 +1,9 @@
-import doctest
-
 """
 Using a for loop
 """
+
+
+import doctest
 
 
 def apply_funcs1(funcs, x):
@@ -19,15 +20,12 @@ def apply_funcs1(funcs, x):
     return results
 
 
-"""
-Using list comprehensions
-"""
-
-
 def apply_funcs2(funcs, x):
     """Apply a list of unary functions on an argument.
 
     Return a list of the results.
+
+    This is using list comprehensions
 
     >>> apply_funcs2([lambda x:x**2, lambda x:x+1], 3)
     [9, 4]
@@ -35,15 +33,12 @@ def apply_funcs2(funcs, x):
     return [f(x) for f in funcs]
 
 
-"""
-Using map()
-"""
-
-
 def apply_funcs3(funcs, x):
     """Apply a list of unary functions on an argument.
 
     Return a list of the results.
+
+    This is using the builtin 'map' function.
 
     >>> apply_funcs3([lambda x:x**2, lambda x:x+1], 3)
     [9, 4]

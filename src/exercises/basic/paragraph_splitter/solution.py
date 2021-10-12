@@ -17,13 +17,9 @@ def lines2paragraphs(lines):
         yield paragraph
 
 
-"""
-Bonus: streaming lines->lines reformatter
-"""
-
-
 def reformat(lines, chars):
     """
+    Bonus: streaming lines->lines reformatter
     Generate lines of reformatted paragraphs.
     Paragraph in input and output are separated by empty lines.
     """
@@ -33,6 +29,7 @@ def reformat(lines, chars):
         yield ''
 
 
-mygen = reformat(lines2paragraphs(open('/usr/share/doc/python/copyright')), 50)
-for l in mygen:
-    print(l)
+with open("/usr/share/doc/python/copyright") as f:
+    mygen = reformat(lines2paragraphs(f), 50)
+    for l in mygen:
+        print(l)

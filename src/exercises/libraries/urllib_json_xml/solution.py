@@ -3,7 +3,8 @@ import urllib.request
 import xml.etree.cElementTree as ElementTree
 
 URL = 'http://ws.geonames.org/hierarchyJSON?geonameId=2657896'
-places = json.loads(urllib.request.urlopen(URL).read())['geonames']
+with urllib.request.urlopen(URL) as stream:
+    places = json.loads(stream.read())['geonames']
 
 root = last = ElementTree.Element('place', name=places[0]['name'])
 for place in places[1:]:

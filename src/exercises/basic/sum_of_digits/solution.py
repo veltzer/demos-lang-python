@@ -9,11 +9,15 @@ if len(sys.argv) != 2:
 
 def sum_digits(n):
     n = str(n)
-    sum = 0
+    my_sum = 0
     for c in n:
-        sum += ord(c)-ord('0')
-    return sum
+        my_sum += ord(c)-ord('0')
+    return my_sum
 
 
-n = int(sys.argv[1])
-print(sum_digits(n))
+def main():
+    n = int(sys.argv[1])
+    print(sum_digits(n))
+
+
+main()

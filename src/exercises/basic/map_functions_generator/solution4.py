@@ -1,4 +1,6 @@
-""" using a regular for loop with yield """
+
+
+import doctest
 
 
 def apply_funcs_gen1(funcs, x):
@@ -20,9 +22,6 @@ def apply_funcs_gen1(funcs, x):
         yield f(x)
 
 
-''' using generator comprehensions '''
-
-
 def apply_funcs_gen2(funcs, x):
     """Generate results of functions applied to an argument.
     >>> def print_a(x):
@@ -40,7 +39,5 @@ def apply_funcs_gen2(funcs, x):
     """
     return (f(x) for f in funcs)
 
-
-import doctest
 
 doctest.testmod()

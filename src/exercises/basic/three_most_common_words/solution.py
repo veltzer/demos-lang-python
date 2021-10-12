@@ -12,7 +12,7 @@ def get_second_item(t):
 
 
 filename = sys.argv[1]
-words = dict()
+words = {}
 with open(filename) as f:
     for line in f:
         line = line.rstrip()
