@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """
 This is an example of what bad indentation can cause.
 In this example it will cause a compliation abort with an IndentationError.

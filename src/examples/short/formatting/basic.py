@@ -2,9 +2,15 @@
 This shows some basic formatting.
 """
 
+# pylint: disable=consider-using-f-string
+
+name = "mark"
+
 # by position
-name = "mark"
 print("my name is {}".format(name))
+# by number
+print("my name is {0}".format(name))
 # by name
-name = "mark"
 print("my name is {name}".format(name=name))
+# fstring
+print(f"my name is {name}")

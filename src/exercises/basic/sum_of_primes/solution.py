@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
-
 import math
+
 
 def is_prime(n):
     for j in range(2,int(math.sqrt(n))+1):
