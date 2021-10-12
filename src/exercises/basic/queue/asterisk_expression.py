@@ -28,7 +28,7 @@ def evaluate(exp):
         if c.isalpha():
             q.push(c)
             continue
-        raise ValueError("value {} is not supported".format(c))
+        raise ValueError(f"value {c} is not supported")
     return "".join(q.data)
 
 

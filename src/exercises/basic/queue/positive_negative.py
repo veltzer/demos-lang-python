@@ -28,7 +28,7 @@ def create_queue_from_string(exp):
 
 def process(q):
     r = Queue()
-    for i in range(q.len()):
+    for _ in range(q.len()):
         c = q.pop()
         if c < 0:
             r.push(c)
