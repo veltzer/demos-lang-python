@@ -11,8 +11,7 @@ def get_num_of_days_in_month(month_name):
     return the number of days in this month"""
     if month_name in name_to_days_num:
         return name_to_days_num[months_names]
-    else:
-        raise DateException(month_name + ' is not a valid month')
+    raise DateException(month_name + ' is not a valid month')
 
 
 def get_following_month(month_name):
@@ -21,8 +20,7 @@ def get_following_month(month_name):
     if month_name in name_to_days_num:
         i = months_names.index(month_name)
         return months_names[(i + 1) % 12]
-    else:
-        raise DateException(month_name + ' is not a valid month')
+    raise DateException(month_name + ' is not a valid month')
 
 
 def is_leap_year(year):
@@ -55,9 +53,9 @@ class Calendar:
         """ Return a dictionary with all the events in the given month
         month is the number of the month """
         month_events = {}
-        for name in self.events.keys():
-            if self.events[name].month == month:
-                month_events[name] = self.events[name]
+        for name, e in self.events.items():
+            if e.month == month:
+                month_events[name] = e
 
         return month_events
 
@@ -70,12 +68,10 @@ class Date:
             raise DateException('Month must be between 1 and 12')
         if is_leap_year(year) and (month == 2):
             if day < 0 or day > 29:
-                raise DateException('Day must be between 1 and {0}'.format(
-                    days_in_months[month - 1]))
+                raise DateException(f"Day must be between 1 and {days_in_months[month - 1]}")
         else:
             if day < 0 or day > days_in_months[month - 1]:
-                raise DateException('Day must be between 1 and {0}'.format(
-                    days_in_months[month - 1]))
+                raise DateException(f"Day must be between 1 and {days_in_months[month - 1]}")
         self.day = day
         self.month = month
         self.year = year
@@ -84,10 +80,10 @@ class Date:
         """ Overloading operator>for dates """
         if self.year > other.year:
             return True
-        elif self.year == other.year:
+        if self.year == other.year:
             if self.month > other.month:
                 return True
-            elif self.month == other.month:
+            if self.month == other.month:
                 if self.day > other.day:
                     return True
         return False
@@ -102,7 +98,7 @@ class Date:
 
     def __ne__(self, other):
         """ Overloading operator!=for dates """
-        return not (self == other)
+        return not self == other
 
     def __le__(self, other):
         """ Overloading operator<=for dates """

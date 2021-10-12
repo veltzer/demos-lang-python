@@ -17,8 +17,7 @@ def get_num_of_days_in_month(month_name):
     return the number of days in this month"""
     if month_name in name_to_days_num:
         return name_to_days_num[month_name]
-    else:
-        print('No such month')
+    raise ValueError("no such month")
 
 
 def get_following_month(month_name):
@@ -27,8 +26,7 @@ def get_following_month(month_name):
     if month_name in name_to_days_num:
         month_number = months_name.index(month_name)
         return months_name[(month_number + 1) % 12]
-    else:
-        print('No such month')
+    raise ValueError("No such month")
 
 
 def is_leap_year(year):

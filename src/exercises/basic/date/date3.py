@@ -1,9 +1,9 @@
-import mydate
-
-'''
+"""
 A calendar of events, has an entry for every event,
 which is a mapping from event name to Date object
-'''
+"""
+
+import mydate
 
 
 class Calendar:
@@ -26,9 +26,9 @@ class Calendar:
         """ Return a dictionary with all the events in the given month
         month is the number of the month """
         month_events = {}
-        for name in self.events.keys():
-            if self.events[name].month == month:
-                month_events[name] = self.events[name]
+        for name, e in self.events.items():
+            if e.month == month:
+                month_events[name] = e
         return month_events
 
 
@@ -55,10 +55,10 @@ class Date:
         """ Overloading operator>for dates """
         if self.year > other.year:
             return True
-        elif self.year == other.year:
+        if self.year == other.year:
             if self.month > other.month:
                 return True
-            elif self.month == other.month:
+            if self.month == other.month:
                 if self.day > other.day:
                     return True
         return False
@@ -73,7 +73,7 @@ class Date:
 
     def __ne__(self, other):
         """ Overloading operator!=for dates """
-        return not (self == other)
+        return not self == other
 
     def __le__(self, other):
         """ Overloading operator<=for dates """

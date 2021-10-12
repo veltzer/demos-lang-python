@@ -10,16 +10,14 @@ name_to_days_num = {
 def get_num_of_days_in_month(month_name):
     if month_name in name_to_days_num:
         return name_to_days_num[months_names]
-    else:
-        print('No such month')
+    raise ValueError('No such month')
 
 
 def get_following_month(month_name):
     if month_name in name_to_days_num:
         i = months_names.index(month_name)
         return months_names[(i + 1) % 12]
-    else:
-        print('No such month')
+    raise ValueError('No such month')
 
 
 def is_leap_year(year):
@@ -50,10 +48,10 @@ class Date:
         """ Overloading operator>for dates """
         if self.year > other.year:
             return True
-        elif self.year == other.year:
+        if self.year == other.year:
             if self.month > other.month:
                 return True
-            elif self.month == other.month:
+            if self.month == other.month:
                 if self.day > other.day:
                     return True
         return False
@@ -68,7 +66,7 @@ class Date:
 
     def __ne__(self, other):
         """ Overloading operator!=for dates """
-        return not (self == other)
+        return not self == other
 
     def __le__(self, other):
         """ Overloading operator<=for dates """

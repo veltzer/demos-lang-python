@@ -12,8 +12,7 @@ def get_num_of_days_in_month(month_name):
     return the number of days in this month"""
     if month_name in name_to_days_num:
         return name_to_days_num[months_names]
-    else:
-        raise DateException('No such month name')
+    raise DateException('No such month name')
 
 
 def get_following_month(month_name):
@@ -22,8 +21,7 @@ def get_following_month(month_name):
     if month_name in name_to_days_num:
         i = months_names.index(month_name)
         return months_names[(i + 1) % 12]
-    else:
-        raise DateException('No such month name')
+    raise DateException('No such month name')
 
 
 def is_leap_year(year):
@@ -54,9 +52,9 @@ class Calendar:
         """ Return a dictionary with all the events in the given month
         month is the number of the month """
         month_events = {}
-        for name in self.events.keys():
-            if self.events[name].month == month:
-                month_events[name] = self.events[name]
+        for name, e in self.events.items():
+            if e.month == month:
+                month_events[name] = e
         return month_events
 
 
@@ -68,12 +66,9 @@ class Date:
             raise DateException('Month must be between 1 and 12')
         if is_leap_year(year):
             if day < 0 or day > days_in_months_leap_year[month - 1]:
-                raise DateException(
-                    'Day must be between 1 and {0}'.format(days_in_months[month - 1]))
-            else:
-                if day < 0 or day > days_in_months[month - 1]:
-                    raise DateException(
-                        'Day must be between 1 and {0}'.format(days_in_months[month - 1]))
+                raise DateException(f"Day must be between 1 and {days_in_months[month - 1]}")
+            if day < 0 or day > days_in_months[month - 1]:
+                raise DateException(f"Day must be between 1 and {days_in_months[month - 1]}")
 
         self.day = day
         self.month = month
@@ -83,10 +78,10 @@ class Date:
         """ Overloading operator>for dates """
         if self.year > other.year:
             return True
-        elif self.year == other.year:
+        if self.year == other.year:
             if self.month > other.month:
                 return True
-            elif self.month == other.month:
+            if self.month == other.month:
                 if self.day > other.day:
                     return True
         return False

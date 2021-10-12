@@ -19,10 +19,10 @@ class Date:
         """ Overloading operator>for dates """
         if self.year > other.year:
             return True
-        elif self.year == other.year:
+        if self.year == other.year:
             if self.month > other.month:
                 return True
-            elif self.month == other.month:
+            if self.month == other.month:
                 if self.day > other.day:
                     return True
         return False
@@ -37,7 +37,7 @@ class Date:
 
     def __ne__(self, other):
         """ Overloading operator!=for dates """
-        return not (self == other)
+        return not self == other
 
     def __le__(self, other):
         """ Overloading operator<=for dates """

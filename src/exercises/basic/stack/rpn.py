@@ -1,3 +1,5 @@
+import sys
+
 class Stack:
     """
     Simple stack implementation using a python list
@@ -32,7 +34,7 @@ def apply_operator(c, a, b):
         return a * b
     if c == "/":
         return a / b
-    raise ValueError("strange operator {} you have".format(c))
+    raise ValueError(f"strange operator {c} you have")
 
 
 def evaluate(exp):
@@ -49,7 +51,5 @@ def evaluate(exp):
     assert s.len() == 1, "Too many things on the stack"
     return s.pop()
 
-
-import sys
 
 print(evaluate(sys.argv[1]))

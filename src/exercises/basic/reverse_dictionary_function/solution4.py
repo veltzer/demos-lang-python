@@ -2,6 +2,7 @@
 Excercise: write a function to inverse a dictionary.
 Assume that all values are different.
 """
+import doctest
 
 
 def rev_dict1(d):
@@ -10,7 +11,7 @@ def rev_dict1(d):
     True
     """
     rev_d = {}
-    for (k, v) in d.items():
+    for k, v in d.items():
         rev_d[v] = k
     return rev_d
 
@@ -30,6 +31,7 @@ def rev_dict3(d):
     True
     """
     # list comprehension
+    # pylint: disable=consider-using-dict-comprehension
     return dict([(v, k) for (k, v) in d.items()])
 
 
@@ -47,10 +49,8 @@ def rev_dict5(d):
     >>> rev_dict5({'a': 2, 'b': 3})=={2: 'a', 3: 'b'}
     True
     """
-    # generator expression (same but no intermediate list)
+    # dictionary comprehension
     return {v: k for k, v in d.items()}
 
-
-import doctest
 
 doctest.testmod()

@@ -1,6 +1,7 @@
 """
 this is a simple solution to the reverse hash function exercise
 """
+import doctest
 
 
 def rev_hash(o):
@@ -14,7 +15,5 @@ def rev_hash(o):
         ret[v] = k
     return ret
 
-
-import doctest
 
 doctest.testmod()
