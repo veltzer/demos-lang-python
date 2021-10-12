@@ -8,13 +8,13 @@ NOTES:
 """
 
 import sys
-
 import imdb
 
+
 if len(sys.argv) != 2:
-    print('{0}: usage: {0} [personID]'.format(sys.argv[0]))
-    print('{0}: usage: {0} 0124930'.format(sys.argv[0]))
-    print('{0}: usage: {0} 0000264 (for unicode)'.format(sys.argv[0]))
+    print(f"{sys.argv[0]}: usage: {sys.argv[0]} [personID]", file=sys.stderr)
+    print(f"{sys.argv[0]}: usage: {sys.argv[0]} 0124930", file=sys.stderr)
+    print(f"{sys.argv[0]}: usage: {sys.argv[0]} 0000264 (for unicode)", file=sys.stderr)
     sys.exit(1)
 
 personID = sys.argv[1]
@@ -28,6 +28,6 @@ print('i_canonical_name is [{0}]'.format(
     i_canonical_name.encode(out_encoding)))
 
 for k, v in person.items():
-    if isinstance(v, unicode):
+    if isinstance(v, str):
         v = v.encode(out_encoding)
     print('[{0}],[{1}]'.format(k, v))

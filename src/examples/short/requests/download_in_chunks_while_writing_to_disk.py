@@ -8,7 +8,8 @@ References:
 
 import requests
 
-def download_file(url:str, filename: str=None, chunk_size=8192):
+
+def download_file(url: str, filename: str = None, chunk_size=8192):
     if filename is None:
         filename = url.replace("/", ".")
     # NOTE the stream=True parameter below
@@ -18,9 +19,10 @@ def download_file(url:str, filename: str=None, chunk_size=8192):
             for chunk in r.iter_content(chunk_size=chunk_size):
                 # If you have chunk encoded response uncomment if
                 # and set chunk_size parameter to None.
-                #if chunk:
+                # if chunk:
                 f.write(chunk)
     return filename
+
 
 download_file(
     url="http://www.google.com",

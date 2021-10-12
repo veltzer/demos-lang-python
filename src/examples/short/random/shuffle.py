@@ -9,6 +9,6 @@ import random
 
 # to get deterministic behaviour
 # random.seed(7)
-l = list(range(1, 10))
-random.shuffle(l)
-print(l)
+my_list = list(range(1, 10))
+random.shuffle(my_list)
+print(my_list)

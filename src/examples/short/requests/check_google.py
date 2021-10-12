@@ -1,11 +1,9 @@
-import requests
-
-
 """
 Test is to see if google gives a web reply to python request without
 having to fake the type of web client
 """
 
+import requests
 
 
 def get_http_status_string(code: int):
@@ -22,7 +20,7 @@ def get_http_status_string(code: int):
     return f"http code [{code}], [{requests.status_codes._codes[code][0]}]"
 
 
-url= "http://google.com"
+url = "http://google.com"
 r = requests.get(url)
 assert r.status_code == 200, get_http_status_string(r.status_code)
 response = r.content.decode()

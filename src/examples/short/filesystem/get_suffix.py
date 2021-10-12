@@ -12,6 +12,7 @@ import sys
 def get_suffix(filename:str) -> str:
     return os.path.splitext(filename)[1]
 
+
 for line in sys.stdin:
     line = line.rstrip()
     print(f"suffix is [{get_suffix(line)}]")

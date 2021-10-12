@@ -14,8 +14,8 @@ zipfile_handle = zipfile.ZipFile('/tmp/demo.zip', 'w', zipfile.ZIP_DEFLATED)
 zipfile_handle.write("/etc/passwd")
 # add a file with a different name
 zipfile_handle.write(
-        filename="/etc/group",
-        arcname="this_is_groups",
+    filename="/etc/group",
+    arcname="this_is_groups",
 )
 # add a string as content
 # TBD

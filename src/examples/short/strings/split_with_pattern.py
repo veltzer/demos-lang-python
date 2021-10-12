@@ -15,6 +15,6 @@ re_space = r'\s'
 
 re_full = '|'.join([re_comma, re_dots, re_space])
 
-l = re.split(re_full, s)
-l = [x for x in l if x]
-print(l)
+my_list = re.split(re_full, s)
+my_list = [x for x in my_list if x]
+print(my_list)

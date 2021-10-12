@@ -1,5 +1,6 @@
-import pyapikey
+import sys
 import requests
+import pyapikey
 
 key = pyapikey.get_key("newsapi.org")
 
@@ -17,14 +18,13 @@ if do_headlines:
         print("{}: {}".format(i, article["title"]))
 
 
-import sys
 if do_everything:
     param_q = 'qInTitle={}&'.format("corona")
     mydict = {
-            'qInTitle': sys.argv[1],
-            'pageSize': 20,
-            'page': 1,
-            'apiKey': key,
+        'qInTitle': sys.argv[1],
+        'pageSize': 20,
+        'page': 1,
+        'apiKey': key,
     }
     url = 'http://newsapi.org/v2/everything'
     r = requests.get(url, params=mydict)

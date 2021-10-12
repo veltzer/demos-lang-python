@@ -8,21 +8,21 @@ This means that a function cannot be used until after it has been defined.
 # noinspection PyBroadException
 try:
     # noinspection PyUnboundLocalVariable
-    foo()
-except:
-    print('yep, this failed')
+    foo()  # noqa: F821
+except NameError:
+    print("yep, this failed")
 
 
 def foo():
     print('this is foo')
-    bar()
+    bar()  # noqa: F821
 
 
 # this will call foo but will fail once foo tried to call bar
 # noinspection PyBroadException
 try:
     foo()
-except:
+except NameError:
     print('yep, this failed')
 
 
@@ -38,5 +38,5 @@ del bar
 # now that 'bar' is no longer defined any call to 'foo' should fail
 try:
     foo()
-except:
+except NameError:
     print('yep, this failed')

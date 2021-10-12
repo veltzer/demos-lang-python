@@ -11,21 +11,21 @@ import timeit
 
 
 def func1():
-    del l[0]
+    del my_list[0]
 
 
 func1.name = 'del list[0]'
 
 
 def func2():
-    l.pop(0)
+    my_list.pop(0)
 
 
 func2.name = 'list.pop(0)'
 
 
 def func3():
-    l.insert(0, 'newelem')
+    my_list.insert(0, 'newelem')
 
 
 func3.name = 'insert(0, newelement)'
@@ -51,7 +51,7 @@ def func6():
 
 func6.name = 'deque.appendleft(newelement)'
 
-l = list(range(1000000))
+my_list = list(range(1000000))
 d = collections.deque(range(1000000))
 
 functions = [
@@ -67,4 +67,4 @@ number = 1000
 results = [(timeit.timeit(f, number=number), f.name) for f in functions]
 sorted_results = sorted(results, key=lambda tup: tup[0])
 for r in sorted_results:
-    print('{0:.4f}: {1}'.format(r[0], r[1]))
+    print(f"{r[0]:.4f}: {r[1]}")

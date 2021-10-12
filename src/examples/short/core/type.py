@@ -22,7 +22,7 @@ class B:
         self.privar = val
 
 
-l = [
+my_list = [
     5,
     5.5,
     5 + 6j,
@@ -42,4 +42,4 @@ l = [
     B(6)
 ]
 
-print(map(type, l))
+print(map(type, my_list))

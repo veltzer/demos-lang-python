@@ -26,5 +26,5 @@ d['a'] = 'e'
 d.ro = True
 try:
     d['a'] = 'u'
-except Exception as e:
+except Exception:
     print('yes, got exception. Dictionary is read only')

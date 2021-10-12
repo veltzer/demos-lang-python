@@ -24,7 +24,7 @@ print('two in db', 'two' in d)
 # lets query a key which isn't there
 try:
     print(d["one"])
-except KeyError as e:
+except KeyError:
     print("yes!, got KeyError")
 
 d.close()

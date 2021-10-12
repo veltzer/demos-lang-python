@@ -1,5 +1,3 @@
-import requests
-
 """
 This example shows how to handle the HTTP return codes
 in order to print nice error messages.
@@ -9,6 +7,9 @@ r.raise_for_status() which raises nice exceptions...
 This is only needed in older versions of python which did not have
 that method.
 """
+
+import requests
+
 
 def get_http_status_string(code: int):
     """
@@ -24,7 +25,7 @@ def get_http_status_string(code: int):
     return f"http code [{code}], [{requests.status_codes._codes[code][0]}]"
 
 
-url= "http://google.com"
+url = "http://google.com"
 r = requests.get(url)
 assert r.status_code == 200, get_http_status_string(r.status_code)
 response = r.content.decode()

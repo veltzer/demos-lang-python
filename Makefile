@@ -112,6 +112,7 @@ check_no_future: $(ALL_DEP)
 debug_me:
 	$(Q)$(info ALL_SYNTAX is $(ALL_SYNTAX))
 	$(Q)$(info ALL_LINT is $(ALL_LINT))
+	$(Q)$(info ALL_FLAKE8 is $(ALL_FLAKE8))
 	$(Q)$(info ALL is $(ALL))
 	$(Q)$(info ALL_DEP is $(ALL_DEP))
 
@@ -136,6 +137,18 @@ clean:
 .PHONY: clean_hard
 clean_hard:
 	$(Q)git clean -qffxd
+
+.PHONY: clean_syntax
+clean_syntax:
+	$(Q)rm -f $(ALL_SYNTAX)
+
+.PHONY: clean_lint
+clean_lint:
+	$(Q)rm -f $(ALL_LINT)
+
+.PHONY: clean_flake8
+clean_flake8:
+	$(Q)rm -f $(ALL_FLAKE8)
 
 .PHONY: check_mode
 check_mode:

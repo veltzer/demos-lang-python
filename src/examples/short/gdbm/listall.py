@@ -16,7 +16,7 @@ d = dbm.gnu.open(filename)
 try:
     for _k, _v in d.items():
         pass
-except AttributeError as _:
+except AttributeError:
     print("nope, you cannot use 'items' on a gdbm handle")
 
 # show all key value pairs

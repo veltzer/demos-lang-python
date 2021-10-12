@@ -8,10 +8,10 @@ def add1(f):
 def makeAList(f):
     def inner(*args, **_kw):
         #    return [f(x) for x in args]
-        l = []
+        my_list = []
         for x in args:
-            l.append(f(x))
-        return l
+            my_list.append(f(x))
+        return my_list
 
     return inner
 

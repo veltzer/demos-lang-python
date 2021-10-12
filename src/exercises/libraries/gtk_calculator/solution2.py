@@ -13,7 +13,7 @@ import operator
 import gi
 gi.require_version('Gtk', '3.0')
 # pylint: disable=wrong-import-position
-from gi.repository import Gtk
+from gi.repository import Gtk  # noqa: E402
 
 
 class OperatorChoice(Gtk.VBox):
@@ -67,7 +67,7 @@ def compute(*_ignored):
     try:
         arg1 = float(entry1.get_text())
         arg2 = float(entry2.get_text())
-        result.set_text(str(arg1+arg2))
+        result.set_text(str(arg1 + arg2))
     except ValueError:
         result.set_text('<ERROR>')
 

@@ -10,6 +10,7 @@ argparser.add_argument('-s', '--shout', action='store_true', help='N00B EMULATIO
 argparser.add_argument('-r', '--repeat', type=int, help='output [n] times')
 argparser.add_argument('word', nargs='?', help='word to say')
 
+
 class CmdLineApp(Cmd):
     def __init__(self):
         self.multilineCommands = ['orate']

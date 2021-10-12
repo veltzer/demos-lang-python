@@ -11,7 +11,7 @@ from systemd.journal import JournalHandler
 
 root_logger = logging.getLogger()
 root_logger.setLevel(logging.INFO)
-handler = systemd.journal.JournalHanlder()
+handler = JournalHandler()
 root_logger.addHandler(handler)
 
 logger = logging.getLogger(__name__)

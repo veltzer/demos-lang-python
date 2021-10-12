@@ -32,7 +32,7 @@ try:
     # the given movieID.
     movie = i.get_movie(movieID)
 except imdb.IMDbError as e:
-    print("Probably youre not connected to Internet. Complete error report: {e}")
+    print(f"Probably youre not connected to Internet. Complete error report: {e}")
     sys.exit(3)
 
 print(movie.summary().encode(out_encoding, 'replace'))

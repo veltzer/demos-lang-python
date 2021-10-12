@@ -28,7 +28,7 @@ if False:
     ) as p:
         # this is another version but which gives you an addition last line of ''
         while p.poll() is None:
-            line=p.stdout.readline().decode().rstrip()
+            line = p.stdout.readline().decode().rstrip()
             print(f"line is [{line}]")
         p.wait()
         print(f"return code is [{p.returncode}]")
