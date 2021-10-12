@@ -6,6 +6,7 @@ References:
 - https://cloud.google.com/datastore/docs/datastore-api-tutorial
 """
 
+# pylint: disable=no-name-in-module
 from google.cloud import datastore
 
 datastore_client = datastore.Client()
