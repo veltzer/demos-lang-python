@@ -23,7 +23,7 @@ terminal_size1.name = 'ioctl'
 
 
 def terminal_size2():
-    ret = os.popen('stty size', 'r').read().split()
+    ret = os.popen('stty size').read().split()
     return int(ret[1]), int(ret[0])
 
 
@@ -31,8 +31,8 @@ terminal_size2.name = 'stty'
 
 
 def terminal_size3():
-    x = int(os.popen('tput cols', 'r').read())
-    y = int(os.popen('tput lines', 'r').read())
+    x = int(os.popen('tput cols').read())
+    y = int(os.popen('tput lines').read())
     return x, y
 
 

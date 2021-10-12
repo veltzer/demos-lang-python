@@ -1,4 +1,4 @@
-f = open('ex4.py', 'r')
+f = open('ex4.py')
 report = {}
 lines = f.readlines()
 for line in lines:

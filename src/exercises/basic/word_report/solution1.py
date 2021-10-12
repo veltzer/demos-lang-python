@@ -18,7 +18,7 @@ for line in open('word_report_1.py'):
 '''
 with open('/tmp/report.txt','w') as f:
     for word,count in report.items():
-        f.write('word {word} appeared {count} times\n'.format(word=word,count=count))
+        f.write(f"word {word} appeared {count} times\n")
 '''
 
 # the cheapest way to printout the report...

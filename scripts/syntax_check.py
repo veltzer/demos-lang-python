@@ -19,7 +19,7 @@ filename = sys.argv[1]
 
 # read the first line of the file
 check_with = None
-with open(filename, 'r') as f:
+with open(filename) as f:
     for line in f:
         line = line.rstrip()
         if line == '#!/usr/bin/python2':
