@@ -22,13 +22,15 @@ def redirect_output_to(fname):
 
 # Running this will destroy [outfile]!
 # make sure file is empty
-open(outfile, 'w').close()
+with open(outfile, 'w'):
+    pass
 # test
 print('This should output nothing:')
 for name in ['Fred', 'Barney']:
     with redirect_output_to(outfile):
-        print('Hello, {0}!'.format(name))
+        print(f"Hello, {name}!")
 print('The file now contains this:')
-print(open(outfile).read())
+with open(outfile) as f:
+    print(f.read())
 # clean up
 os.remove(outfile)
