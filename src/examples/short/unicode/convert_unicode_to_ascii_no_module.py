@@ -11,7 +11,7 @@ References:
 - http://stackoverflow.com/questions/196345/how-to-check-if-a-string-in-python-is-in-ascii
 """
 
-s = u'\u05d4\u05d9hello'
+s = '\u05d4\u05d9hello'
 print(type(s))
 print(s)
 

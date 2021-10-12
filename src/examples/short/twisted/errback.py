@@ -11,12 +11,13 @@ from twisted.web.client import getPage
 
 
 def my_other_callback(content):
-    print('in other_callback', content)
+    print(f"in other_callback {content}")
+    # pylint: disable=no-member
     reactor.stop()
 
 
 def my_callback(content):
-    print('in callback', content)
+    print(f"in callback {content}")
     deferred = getPage('http://localhost/~user/')
     deferred.addCallback(my_other_callback)
     # raise Exception('this is an exception')
@@ -25,6 +26,7 @@ def my_callback(content):
 
 def my_errback(error):
     print('in error', error)
+    # pylint: disable=no-member
     reactor.stop()
 
 
@@ -32,6 +34,7 @@ def main():
     deferred = getPage('http://localhost')
     deferred.addCallback(my_callback)
     deferred.addErrback(my_errback)
+    # pylint: disable=no-member
     reactor.run()
 
 

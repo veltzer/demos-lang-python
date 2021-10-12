@@ -11,7 +11,7 @@ References:
 
 import unidecode
 
-s = u'ko\u017eu\u0161\u010dek'
+s = 'ko\u017eu\u0161\u010dek'
 print(type(s))
 print(s)
 t = unidecode.unidecode(s)

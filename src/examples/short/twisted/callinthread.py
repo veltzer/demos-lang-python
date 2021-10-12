@@ -16,11 +16,14 @@ def aSillyBlockingMethod(t, stop):
     #    reactor.stop()
     # instead we must do:
     if stop:
+        # pylint: disable=no-member
         reactor.callFromThread(reactor.stop)
 
 
 # run method in thread
+# pylint: disable=no-member
 reactor.callInThread(aSillyBlockingMethod, 10, True)
+# pylint: disable=no-member
 reactor.callInThread(aSillyBlockingMethod, 5, False)
 print('before suggestThreadPoolSize')
 reactor.suggestThreadPoolSize(2)

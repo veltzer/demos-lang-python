@@ -21,7 +21,7 @@ def largeFibonnaciNumber():
         first = second
         second = new
         if i % 1000 == 0:
-            print('Progress: calculating the {0}th Fibonnaci number'.format(i))
+            print(f"Progress: calculating the {i}th Fibonnaci number")
     # give the Deferred the answer to pass to the callbacks:
     d.callback(second)
     # return the Deferred with the answer:
@@ -40,8 +40,7 @@ def main():
 
     time_after = time.time()
 
-    print(
-        'Total time taken for largeFibonnaciNumber call: {0:.3f} seconds'.format(time_after - time_before))
+    print(f"Total time taken for largeFibonnaciNumber call: {time_after-time_before:.3f} seconds")
 
     # add a callback to it to output the number
     print('Adding the callback now.')
