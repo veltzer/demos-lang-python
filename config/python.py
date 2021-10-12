@@ -90,6 +90,12 @@ run_requires = [
     # yaml
     'oyaml',
     'ruamel.yaml',
+
+    # google cloud
+    "google-api-python-client",
+    "google-auth-httplib2",
+    "google-auth-oauthlib",
+    "google-cloud-datastore",
 ]
 
 test_requires = [
