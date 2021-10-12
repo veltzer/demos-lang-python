@@ -29,7 +29,7 @@ def largeFibonnaciNumber():
 
 
 def printNumber(number):
-    print('The %dth Fibonacci number is %d' % (TARGET, number))
+    print(f"The {TARGET}th Fibonacci number is {number}")
 
 
 def main():

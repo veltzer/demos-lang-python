@@ -80,5 +80,6 @@ class MyFactory(Factory):
 
 
 myFactory = MyFactory()
+# pylint: disable=no-member
 reactor.listenTCP(myFactory.port, myFactory)
 reactor.run()

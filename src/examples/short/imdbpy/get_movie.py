@@ -19,8 +19,8 @@ import sys
 import imdb
 
 if len(sys.argv) != 2:
-    print('{0}: usage: {0} [moviedID]'.format(sys.argv[0]))
-    print('{0}: example: {0} 0120591'.format(sys.argv[0]))
+    print(f"{sys.argv[0]}: usage: {sys.argv[0]} [moviedID]")
+    print(f"{sys.argv[0]}: example: {sys.argv[0]} 0120591")
     sys.exit(1)
 
 movieID = sys.argv[1]
@@ -32,41 +32,40 @@ try:
     # the given movieID.
     movie = i.get_movie(movieID)
 except imdb.IMDbError as e:
-    print('Probably youre not connected to Internet. Complete error report:')
-    print(e)
+    print("Probably youre not connected to Internet. Complete error report: {e}")
     sys.exit(3)
 
 print(movie.summary().encode(out_encoding, 'replace'))
 print(movie.summary())
 
 for k in movie.keys():
-    print('=============== {0} ==============='.format(k))
+    print(f"=============== {k} ===============")
     print(movie[k])
 
-print('==== [{0}] movieID: [{1}] ===='.format(movie['title'], movieID))
+print(f"==== [{movie['title']}] movieID: [{movieID}] ====")
 imdbURL = i.get_imdbURL(movie)
 if imdbURL:
-    print('IMDb URL: [{0}]'.format(imdbURL))
+    print(f"IMDb URL: [{imdbURL}]")
 genres = movie.get('genres')
 if genres:
-    print('Genres: %s' % ' '.join(genres))
+    print(f"Genres: {' '.join(genres)}")
 cast = movie.get('cast')
 if cast:
     print('Cast: ')
     cast = cast[:5]
     for name in cast:
-        print('%s (%s)' % (name['name'], name.currentRole))
+        print(f"{name['name']} ({name.currentRole})")
 rating = movie.get('rating')
 if rating:
-    print('Rating: %s' % rating)
+    print(f"Rating: {rating}")
 i.update(movie, info=['trivia'])
 trivia = movie.get('trivia')
 if trivia:
     rand_trivia = trivia[random.randrange(len(trivia))]
-    print('Random trivia: %s' % rand_trivia)
+    print(f"Random trivia: {rand_trivia}")
 
 info_runtime = movie.get('runtime')
-print('Runtime is: {info_runtime}'.format(info_runtime=info_runtime))
+print(f"Runtime is: {info_runtime}")
 
 info_directors = movie.get('director')
 print(info_directors)
@@ -75,4 +74,4 @@ for n, d in enumerate(info_directors):
     for k, v in d.items():
         print(k, v)
     print(d.personID)
-    print('{n}, {d}'.format(n=n, d=d['name']))
+    print(f"{n}, {d['name']}")

@@ -11,10 +11,12 @@ def find_emitter(room):
             if char in emiter2dxdy:
                 dx, dy = emiter2dxdy[char]
                 return x, y, dx, dy
+    raise ValueError("not found")
 
 
 def lasers(fname):
-    room = open(fname).readlines()
+    with open(fname) as f:
+        room = f.readlines()
 
     x, y, dx, dy = find_emitter(room)
 
@@ -37,7 +39,9 @@ def lasers(fname):
             return char == 'x'
 
 
-for fname in ['lasers_hit.txt', 'lasers_miss.txt']:
-    print(open(fname).read())
-    print(lasers(fname))
+def main():
+    for fname in ['lasers_hit.txt', 'lasers_miss.txt']:
+        with open(fname) as f:
+            print(f.read())
+        print(lasers(fname))
     print()

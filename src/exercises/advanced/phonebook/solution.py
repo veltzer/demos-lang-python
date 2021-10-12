@@ -3,10 +3,11 @@ import re
 
 def read_phonebook():
     pb = {}
-    for line in open('data.txt'):
-        line = line.rstrip()
-        mylist = line.split(',')
-        pb[mylist[0]] = mylist[1]
+    with open("data.txt") as f:
+        for line in f:
+            line = line.rstrip()
+            mylist = line.split(',')
+            pb[mylist[0]] = mylist[1]
     return pb
 
 
@@ -22,7 +23,7 @@ def print_the_menu():
     return selection
 
 
-def search_for_name():
+def search_for_name(mypb):
     name = input('please give me a name to search for: ')
     if name in mypb:
         print('the number is', mypb[name])
@@ -30,15 +31,15 @@ def search_for_name():
         print('the name', name, 'is not in the phonebook')
 
 
-def delete_a_name():
+def delete_a_name(mypb):
     name = input('please give me a name to search for: ')
     if name in mypb:
         del mypb[name]
     else:
-        print('the name', name, 'is not in the phonebook')
+        print(f"the name {name} is not in the phonebook")
 
 
-def add_a_name():
+def add_a_name(mypb):
     name = input('please give me a name: ')
     if name in mypb:
         print('sorry, name', name, 'is already in the phonebook...')
@@ -47,7 +48,7 @@ def add_a_name():
     mypb[name] = phone
 
 
-def edit_a_name():
+def edit_a_name(mypb):
     name = input('please give me a name to edit: ')
     if name not in mypb:
         print('sorry, name', name, 'is not in the phonebook...')
@@ -56,21 +57,18 @@ def edit_a_name():
     mypb[name] = phone
 
 
-def save():
-    f = open('data.txt', 'w')
-    for name in mypb:
-        f.write(name + ',' + mypb[name] + '\n')
-    f.close()
-    global done
-    done = True
+def save(mypb):
+    with open("data.txt", "w") as f:
+        for name in mypb:
+            f.write(name + ',' + mypb[name] + '\n')
 
 
-def print_phonebook():
+def print_phonebook(mypb):
     for name in mypb:
         print('name', name, 'phone', mypb[name])
 
 
-def find_in_phonebook():
+def find_in_phonebook(mypb):
     regexp = input('please give me a regexp: ')
     for name in mypb:
         m = re.search(regexp, name)
@@ -78,31 +76,35 @@ def find_in_phonebook():
             print('found', name, 'with phone', mypb[name])
 
 
-mypb = read_phonebook()
-done = False
-while not done:
-    selection = print_the_menu()
-    if selection == '1':
-        print('you selected (1)')
-        search_for_name()
-    elif selection == '2':
-        print('you selected (2)')
-        delete_a_name()
-    elif selection == '3':
-        print('you selected (3)')
-        add_a_name()
-    elif selection == '4':
-        print('you selected (4)')
-        edit_a_name()
-    elif selection == '5':
-        print('you selected (5)')
-        save()
-    elif selection == '6':
-        print('you selected (6)')
-        print_phonebook()
-    elif selection == '7':
-        print('you selected (7)')
-        find_in_phonebook()
-    else:
-        print('Sorry, selection ', selection, ' is not supported')
-print('after the loop')
+def main():
+    mypb = read_phonebook()
+    done = False
+    while not done:
+        selection = print_the_menu()
+        if selection == '1':
+            print('you selected (1)')
+            search_for_name(mypb)
+        elif selection == '2':
+            print('you selected (2)')
+            delete_a_name(mypb)
+        elif selection == '3':
+            print('you selected (3)')
+            add_a_name(mypb)
+        elif selection == '4':
+            print('you selected (4)')
+            edit_a_name(mypb)
+        elif selection == '5':
+            print('you selected (5)')
+            save(mypb)
+        elif selection == '6':
+            print('you selected (6)')
+            print_phonebook(mypb)
+        elif selection == '7':
+            print('you selected (7)')
+            find_in_phonebook(mypb)
+        else:
+            print('Sorry, selection ', selection, ' is not supported')
+    print('after the loop')
+
+
+main()

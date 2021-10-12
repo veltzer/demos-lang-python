@@ -8,6 +8,7 @@ be global).
 
 
 def return_inc(val_to_increment):
+    # pylint: disable=unused-variable
     val_to_incremnt = val_to_increment + 1
     return val_to_increment
 

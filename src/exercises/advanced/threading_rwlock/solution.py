@@ -1,3 +1,5 @@
+import threading
+
 class RWL:
     def __init__(self):
         self._writersWaiting = 0
@@ -27,9 +29,9 @@ class RWL:
             while self._readersInside or self._writersInside:
                 self.c.wait()
             self._writersWaiting -= 1
-            self._writerInside += 1
+            self._writersInside += 1
 
     def WriterLeave(self):
         with self.c:
-            self._writerInside -= 1
+            self._writersInside -= 1
             self.c.notifyAll()

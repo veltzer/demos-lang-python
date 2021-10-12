@@ -20,7 +20,7 @@ def main():
         this is 1 indent 4'''
 
     for (indent, paragraph) in itertools.groupby(data.split('\n'), key=indentation):
-        print('%d-spaced paragraph' % indent)
+        print(f"{indent}-spaced paragraph")
         for line in paragraph:
             print(line.strip())
 

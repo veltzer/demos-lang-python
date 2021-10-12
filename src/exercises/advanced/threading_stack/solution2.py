@@ -13,21 +13,16 @@ class Stack:
         self.data = []
 
     def push(self, number):
-        self.lock.acquire()
-        self.data.append(number)
-        print(number, ' pushed to stack')
-        self.lock.release()
+        with self.lock:
+            self.data.append(number)
+        print(f"{number} pushed to stack")
 
     def pop(self):
-        if len(self.data) == 0:
-            return None
-        self.lock.acquire()
-        if len(self.data) == 0:
-            self.lock.release()
-            return None
-        number = self.data.pop(len(self.data) - 1)
-        print(number, ' popped from stack')
-        self.lock.release()
+        with self.lock:
+            if len(self.data) == 0:
+                return None
+            number = self.data.pop(len(self.data) - 1)
+        print(f"{number} popped from stack")
         return number
 
 

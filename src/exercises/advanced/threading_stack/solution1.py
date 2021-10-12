@@ -7,19 +7,16 @@ class Stack:
         self.numbers = []
 
     def push(self, number):
-        self.lock.acquire()
-        self.numbers.append(number)
-        print(number, ' pushed to stack')
-        self.lock.release()
+        with self.lock:
+            self.numbers.append(number)
+        print(f"{number} pushed to stack")
 
     def pop(self):
-        self.lock.acquire()
-        if len(self.numbers) == 0:
-            self.lock.release()
-            return None
-        number = self.numbers.pop(len(self.numbers) - 1)
-        print(number, ' popped from stack')
-        self.lock.release()
+        with self.lock:
+            if len(self.numbers) == 0:
+                return None
+            number = self.numbers.pop(len(self.numbers) - 1)
+        print(f"{number} popped from stack")
         return number
 
 
@@ -39,7 +36,7 @@ class Consumer(Thread):
         self.stack = stack
 
     def run(self):
-        for i in range(20):
+        for _ in range(20):
             number = self.stack.pop()
             while number is None:
                 number = self.stack.pop()
@@ -48,9 +45,9 @@ class Consumer(Thread):
 def main():
     stack = Stack()
     threads = []
-    for i in range(3):
+    for _ in range(3):
         threads.append(Producer(stack))
-    for i in range(3):
+    for _ in range(3):
         threads.append(Consumer(stack))
     for thread in threads:
         thread.start()
