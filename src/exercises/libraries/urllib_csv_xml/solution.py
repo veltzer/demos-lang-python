@@ -19,7 +19,8 @@ def write_csv(filename, parsed_feed_string):
 
 
 output = '/tmp/pypi.csv'
-feed = urllib.request.urlopen('http://pypi.python.org/pypi?:action=rss').read()
+with urllib.request.urlopen('http://pypi.python.org/pypi?:action=rss') as stream:
+    feed = stream.read()
 parsed_feed = parse_feed(feed)
 write_csv(output, parsed_feed)
-print('wrote file [{0}]'.format(output))
+print(f"wrote file [{output}]")

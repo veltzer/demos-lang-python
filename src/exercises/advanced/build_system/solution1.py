@@ -5,7 +5,10 @@ Doesn't check file system, all targets are always built.
 """
 
 
-def parse_makefile(fname):
+import doctest
+
+
+def parse_makefile(filename):
     """Parses a file of lines of the form::
 
             target: dependency1 dependency2...
@@ -13,10 +16,11 @@ def parse_makefile(fname):
     Returns a dict {'target': ['dependency1', ...], ...}
     """
     rules = {}
-    for line in open(fname):
-        target, rest = line.split(':')
-        target = target.strip()
-        rules[target] = rest.split()
+    with open(filename) as f:
+        for line in f:
+            target, rest = line.split(':')
+            target = target.strip()
+            rules[target] = rest.split()
     return rules
 
 
@@ -43,9 +47,10 @@ def build_plan(target, rules):
     return plan
 
 
-import doctest
+def main():
+    doctest.testmod()
+    rules = parse_makefile('make.txt')
+    print(build_plan('all', rules))
 
-doctest.testmod()
 
-rules = parse_makefile('make.txt')
-print(build_plan('all', rules))
+main()

@@ -5,6 +5,7 @@ Doesn't check file system. all targets are always built.
 """
 
 import os
+import doctest
 
 
 def parse_makefile(filename):
@@ -28,16 +29,17 @@ def parse_makefile(filename):
     rules = {}
     commands = {}
     target = None
-    for line in open(filename):
-        if not line[0].isspace():
-            # dep line (parse, set `target`)
-            target, rest = line.split(':')
-            target = target.strip()
-            rules[target] = rest.split()
-            commands[target] = []
-        else:
-            # command line (`target` was set by last dep line)
-            commands[target].append(line.strip())
+    with open(filename) as f:
+        for line in f:
+            if not line[0].isspace():
+                # dep line (parse, set `target`)
+                target, rest = line.split(':')
+                target = target.strip()
+                rules[target] = rest.split()
+                commands[target] = []
+            else:
+                # command line (`target` was set by last dep line)
+                commands[target].append(line.strip())
 
     return rules, commands
 
@@ -64,14 +66,14 @@ def build(target, rules, commands):
 
 def build_one(target, rules, commands):
     """Execute commands for one target."""
-    print('== Building {0} -> {1} =='.format(', '.join(rules[target]), target))
+    source = ', '.join(rules[target])
+    print(f"== Building {source} -> {target} ==")
     for command in commands[target]:
         print(command)
         os.system(command)
 
 
 def main():
-    import doctest
     doctest.testmod()
 
     rules, commands = parse_makefile('make_bonus.txt')
