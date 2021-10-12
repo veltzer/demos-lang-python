@@ -20,11 +20,11 @@ class Stack:
 
 
 def is_open(c):
-    return c == '(' or c == '[' or c == '{'
+    return c in ['(', '[', '{']
 
 
 def is_close(c):
-    return c == ')' or c == ']' or c == '}'
+    return c in [')', ']', '}']
 
 
 def check_match(open_braces, close_braces, pos):
@@ -34,7 +34,7 @@ def check_match(open_braces, close_braces, pos):
         return
     if open_braces == '{' and close_braces == '}':
         return
-    raise ValueError("problem with parenthesis at pos {}".format(pos))
+    raise ValueError(f"problem with parenthesis at pos {pos}")
 
 
 def check_expression(exp):
@@ -48,7 +48,7 @@ def check_expression(exp):
             check_match(last_open, c, pos)
 
             continue
-        raise ValueError("what is {} at position {}?".format(c, pos))
+        raise ValueError(f"what is {c} at position {pos}?")
     assert s.len() == 0, "opened parenthesis at end of expression"
 
 

@@ -1,4 +1,5 @@
 import collections
+from time import thread_time
 
 
 class Stack1:
@@ -45,8 +46,7 @@ class Stack2:
         if self.max > 0:
             self.max -= 1
             return self.data[self.max]
-        else:
-            raise ValueError("stack is empty")
+        raise ValueError("stack is empty")
 
     def len(self):
         return self.max
@@ -134,11 +134,12 @@ def stress_test(s):
             s.pop()
 
 
-from time import thread_time
 
 
-class Timer(object):
+class Timer:
     def __init__(self, description):
+        self.start = None
+        self.end = None
         self.description = description
 
     def __enter__(self):
@@ -175,7 +176,11 @@ def reverse_string(s):
     return result
 
 
-do_reverse = False
-if do_reverse:
-    s = input("give me a string: ")
-    print(reverse_string(s))
+def main():
+    do_reverse = False
+    if do_reverse:
+        s = input("give me a string: ")
+        print(reverse_string(s))
+
+
+main()
