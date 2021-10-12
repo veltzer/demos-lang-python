@@ -1,5 +1,6 @@
 import sys
 
+
 class Stack:
     """
     Simple stack implementation using a python list

@@ -134,8 +134,6 @@ def stress_test(s):
             s.pop()
 
 
-
-
 class Timer:
     def __init__(self, description):
         self.start = None
