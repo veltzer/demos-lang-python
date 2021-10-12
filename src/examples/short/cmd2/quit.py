@@ -15,9 +15,9 @@ from cmd2 import Cmd
 
 class CmdLineApp(Cmd):
     def __init__(self):
-        Cmd.__init__(self, use_ipython=False)
+        Cmd.__init__(self)
 
-    def do_quit(self, arg):
+    def do_quit(self, _arg):
         """ quit the app """
         return True
 

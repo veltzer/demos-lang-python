@@ -9,8 +9,10 @@ def compare(a, b):
         return -1
     if a[1] == b[1]:
         return 0
-    if a[1] > b[1]:
-        return 1
+    # if a[1] > b[1]:
+    #     return 1
+    return 1
+    # yield ValueError("Shouldnt be here")
 
 
 m = {'mark': 10, 'yossi': 3, 'doron': 67}

@@ -19,6 +19,7 @@ if a is b:
     print('yes,None is None')
 
 # lets show that None serves as 'False' as far as booleans are concerned.
+# pylint: disable=using-constant-test
 if None:
     pass
 else:
@@ -41,11 +42,12 @@ except TypeError as e:
 
 # on the other hand,None can be converted to str (string). Watch out!
 s = str(None)
-print('str(None) has type', type(s), 'and has value [{0}]'.format(s))
+print(f"str(None) has type {type(s)} and has value [{s}]")
 
 # lets show that None is not 0 or the empty string or False as far as actual value.
 # We show this by storing all of them as keys in a dictionary.
 # Notice that False and 0 do step one over the other (not nice!).
+# pylint: disable=duplicate-key
 h = {
     None: 'value for None',
     '': 'value for \'\'',
@@ -55,6 +57,7 @@ h = {
 print(h)
 
 # lets compare None to various things...
+# pylint: disable=singleton-comparison
 if None == 0:
     print('None==0')
 else:

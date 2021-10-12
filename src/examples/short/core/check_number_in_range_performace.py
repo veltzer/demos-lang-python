@@ -12,6 +12,7 @@ def func_naive() -> int:
     count = 0
     for i in random_list:
         # noinspection PyChainedComparisons
+        # pylint: disable=chained-comparison
         if i >= check_from and i < check_to:
             count += 1
     return count
@@ -33,6 +34,6 @@ def func_range() -> int:
     return count
 
 
-print("naive: {}".format(timeit.timeit(func_naive, number=1)))
-print("concise: {}".format(timeit.timeit(func_concise, number=1)))
-print("range: {}".format(timeit.timeit(func_range, number=1)))
+print(f"naive: {timeit.timeit(func_naive, number=1)}")
+print(f"concise: {timeit.timeit(func_concise, number=1)}")
+print(f"range: {format(timeit.timeit(func_range, number=1))}")

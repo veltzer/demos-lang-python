@@ -32,14 +32,8 @@ is_enum(Event.edge_pre_del)
 print(Event.edge_pre_del)
 print(dir(Event.edge_pre_del))
 print(dir(Event))
-print('name is [{name}] and type is [{type}]'.format(
-    name=Event.edge_pre_del.name,
-    type=type(Event.edge_pre_del.name),
-))
-print('value is [{value}] and type is [{type}]'.format(
-    value=Event.edge_pre_del.value,
-    type=type(Event.edge_pre_del.value),
-))
+print(f"name is [{Event.edge_pre_del.name}] and type is [{type(Event.edge_pre_del.name)}]")
+print(f"value is [{Event.edge_pre_del.value}] and type is [{type(Event.edge_pre_del.value)}]")
 
 print("listing all values of the enum...")
 for x in Event:
