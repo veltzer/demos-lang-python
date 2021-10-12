@@ -17,11 +17,12 @@ References:
 
 import abc
 
+
 # This is the right way to do it
 class A(abc.ABC):
     @abc.abstractmethod
     def foo(self):
-            pass
+        pass
 
 
 class B(metaclass=abc.ABCMeta):

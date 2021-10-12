@@ -13,7 +13,7 @@ The problem with this method is that the "_replace" method is considered
 private and development environments and linters will give you hell about that.
 """
 
-import sys
+
 import urllib.parse
 
 url = "https://www.wish.com/search/living%20room#default"

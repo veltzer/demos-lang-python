@@ -2,7 +2,7 @@
 This example plainly shows that you cannot have two methods in a class by the same
 name. This is true for constructors as well as for regular methods.
 """
-from pyfakeuse import pyfakeuse, fake_use
+from pyfakeuse import fake_use
 
 
 class A:
@@ -10,14 +10,14 @@ class A:
         self.__private_var = val
 
     # noinspection PyRedeclaration
-    def __init__(self):
+    def __init__(self):  # noqa: F811
         self.__private_var = 5
 
     def sayHello(self):
         print(self.__private_var, 'hello')
 
     # noinspection PyRedeclaration
-    def sayHello(self, name):
+    def sayHello(self, name):  # noqa: F811
         print(self.__private_var, 'hello', name)
 
 

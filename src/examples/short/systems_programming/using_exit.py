@@ -8,9 +8,10 @@ A few notes:
 - os._exit(N) exists immediately (just like _exit(2)).
 """
 
+
 # os._exit(113)
 # exit(114)
 try:
     exit(115)
-except SystemExit as e:
-    print('hey,I did not exit')
+except SystemExit:
+    print("hey,I did not exit")

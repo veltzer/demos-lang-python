@@ -13,10 +13,11 @@ import urllib.request
 import tempfile
 import os.path
 
-url="http://google.com"
+
+url = "http://google.com"
 filename = None
 with tempfile.NamedTemporaryFile() as file_handle:
-    filename=file_handle.name
+    filename = file_handle.name
     with urllib.request.urlopen(url) as fsrc:
         shutil.copyfileobj(fsrc, file_handle)
     assert os.path.isfile(filename)

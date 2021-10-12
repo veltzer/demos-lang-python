@@ -13,21 +13,21 @@ frozenset(a,b) then you don't actually change the set.
 try:
     set_a = frozenset()
     set_a.add('a')
-except AttributeError as e:
+except AttributeError:
     print('yes, got AttributeError')
 
 # frozenset does not support 'remove'
 try:
     set_a = frozenset()
     set_a.remove('a')
-except AttributeError as e:
+except AttributeError:
     print('yes, got AttributeError')
 
 try:
     set_a = set()
     set_a.add({'a', 'b'})
     set_a.add({'b', 'a'})
-except TypeError as e:
+except TypeError:
     print('yes, got TypeError')
 
 # same thing with frozenset

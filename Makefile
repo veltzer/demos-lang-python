@@ -155,6 +155,12 @@ check_mode:
 	$(info doing [$@])
 	$(Q)find src -name "*.py" -and -type f -and -not -perm 0644
 
+.PHONY: stats
+stats:
+	$(Q)find . -name "*.syntax" | wc -l
+	$(Q)find . -name "*.lint" | wc -l
+	$(Q)find . -name "*.flake8" | wc -l
+
 .PHONY: fix_mode
 fix_mode:
 	$(info doing [$@])

@@ -18,7 +18,7 @@ def my_mystery_function():
     # global g
     print(g)
     if True:
-        g += 17
+        g += 17  # noqa: F823
     print(g)
 
 
@@ -26,6 +26,6 @@ g = 4
 # noinspection PyBroadException
 try:
     my_mystery_function()
-except:
-    print('yes, got an exception')
+except UnboundLocalError:
+    print("yes, got an exception")
 print(g)

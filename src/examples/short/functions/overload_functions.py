@@ -16,7 +16,7 @@ def foo():
 
 
 # noinspection PyRedeclaration
-def foo(a):
+def foo(a):  # noqa: F811
     print('hello', a)
 
 

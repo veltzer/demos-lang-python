@@ -9,7 +9,7 @@ def make_adder():
 
     def adder():
         # noinspection PyUnboundLocalVariable,PyUnresolvedReferences
-        x += 1
+        x += 1  # noqa: F823
         # noinspection PyUnresolvedReferences
         print(x)
 

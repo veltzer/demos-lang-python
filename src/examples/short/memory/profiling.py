@@ -7,5 +7,5 @@ which makes sense if each int is 4 bytes.
 
 import sys
 
-l = [x for x in range(1000000)]
-print('getsizeof is [{0}]'.format(sys.getsizeof(l)))
+my_list = [x for x in range(1000000)]
+print(f"getsizeof is [{sys.getsizeof(my_list)}]")

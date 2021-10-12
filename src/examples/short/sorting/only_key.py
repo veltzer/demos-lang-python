@@ -13,16 +13,16 @@ def the_default_function_wrong(t):
     return t[0]
 
 
-#def the_default_function(t):
+# def the_default_function(t):
 #    return t
 
 
-#def the_default_function(t):
+# def the_default_function(t):
 #    return t[0], t[1]
 
 
 def the_default_function(t):
-    return t[0]*1000+ t[1]
+    return t[0] * 1000 + t[1]
 
 
 def by_y_x(t):

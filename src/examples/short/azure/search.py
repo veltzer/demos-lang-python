@@ -1,6 +1,5 @@
 import sys
 from azure.cognitiveservices.search.websearch import WebSearchClient
-from azure.cognitiveservices.search.websearch.models import SafeSearch
 from msrest.authentication import CognitiveServicesCredentials
 
 search = sys.argv[1]

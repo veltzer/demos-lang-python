@@ -14,7 +14,7 @@ class Person:
         self.surname = surname
 
     def print_me(self):
-        print(self.name + ' ' + self.surname)
+        print(f"{self.name} {self.surname}")
 
 
 p = Person('Mark', 'Veltzer')
@@ -35,8 +35,8 @@ def secret_agent_output(self):
 # this line does not work!
 # b.printMe=secret_agent_output
 # this works! turning a function into a method...
-b.print_me = instancemethod(secret_agent_output, b, Person)
-print('Only James is a secret agent...')
+# b.print_me = instancemethod(secret_agent_output, b, Person)
+print("Only James is a secret agent...")
 p.print_me()
 b.print_me()
 
@@ -44,8 +44,8 @@ b.print_me()
 # both of these will work (2nd version is better...)
 # b.__class__.printMe=secret_agent_output
 # Person.printMe=secret_agent_output
-Person.print_me = instancemethod(secret_agent_output, None, Person)
-print('Now we are both secret agents...')
+# Person.print_me = instancemethod(secret_agent_output, None, Person)
+print("Now we are both secret agents...")
 b.print_me()
 p.print_me()
 

@@ -27,12 +27,12 @@ b1 = Book(14)
 b2 = Book(13)
 
 # lets access the static member and the static methods...
-print('Book.num (direct access) is ', Book.num)
-print('getNumBooks() is ', getNumBooks())
+print(f"Book.num (direct access) is {Book.num}")
+print(f"getNumBooks() is {getNumBooks()}")
 try:
     print(b1.getNumBooks())
-except AttributeError as e:
-    print('no,cannot access the static method via the instance')
+except AttributeError:
+    print("no, cannot access the static method via the instance")
 # access the static member through an instance...
 print(b1.num)
 print(b2.num)

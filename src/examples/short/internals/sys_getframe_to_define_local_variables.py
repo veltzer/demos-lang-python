@@ -8,7 +8,7 @@ import sys
 # define a new local variable 'foo' and assign the value '42' to it...
 # noinspection PyProtectedMember
 sys._getframe().f_locals['foo'] = 42
-print(foo)
+print(foo)  # noqa: F821
 
 
 def f():

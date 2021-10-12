@@ -83,11 +83,11 @@ for i in range(10):
 # get a copy of all the keys but rather a special object
 # which behaves likes the keys but points to the original
 # dictionary...
-l = d.keys()
-assert l.__class__.__name__ == 'dict_keys'
+my_list = d.keys()
+assert my_list.__class__.__name__ == 'dict_keys'
 visited_keys = set()
 try:
-    for x in l:
+    for x in my_list:
         if x == 3:
             del d[5]
         visited_keys.add(x)
@@ -103,10 +103,10 @@ for i in range(10):
 # in this case we actually iterate all the original keys from the original
 # hash, regardless of modification
 # in this case, we must be careful when accessing the dictionary...
-l = list(d.keys())
-assert isinstance(l, list)
+my_list = list(d.keys())
+assert isinstance(my_list, list)
 visited_keys = {}
-for x in l:
+for x in my_list:
     if x == 3:
         del d[5]
     if x in d:

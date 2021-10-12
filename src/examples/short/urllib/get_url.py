@@ -8,5 +8,5 @@ http://stackoverflow.com/questions/22676/how-do-i-download-a-file-over-http-usin
 import urllib.request
 
 with urllib.request.urlopen("http://python.org") as response:
-	html = response.read()
-	print(html)
+    html = response.read()
+    print(html)

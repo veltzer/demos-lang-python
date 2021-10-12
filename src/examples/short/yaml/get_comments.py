@@ -6,7 +6,7 @@ References:
 """
 
 import ruamel.yaml
-from ruamel.yaml.comments import CommentedMap, CommentedSeq, Comment
+from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
 
 def get_comments_map(self, key):
@@ -47,7 +47,7 @@ def yield_comments(data):
         for k, v in data.items():
             for comment in get_comments_map(data, k):
                 for frag in comment.value.split("\n"):
-                    if frag=="":
+                    if frag == "":
                         continue
                     yield k, frag.rstrip()
             yield from yield_comments(v)
@@ -58,15 +58,16 @@ def yield_comments(data):
         for idx, item in enumerate(data):
             for comment in get_comments_seq(data, idx):
                 for frag in comment.value.split("\n"):
-                    if frag=="":
+                    if frag == "":
                         continue
                     yield idx, frag.rstrip()
             yield from yield_comments(item)
 
+
 filenames = [
-        "data/yaml/comments1.yaml",
-        "data/yaml/comments2.yaml",
-        "data/yaml/comments3.yaml",
+    "data/yaml/comments1.yaml",
+    "data/yaml/comments2.yaml",
+    "data/yaml/comments3.yaml",
 ]
 for filename in filenames:
     with open(filename) as stream:

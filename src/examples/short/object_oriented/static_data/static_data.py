@@ -27,11 +27,11 @@ print(give_me_a_unique_value())
 
 
 def give_me_unique_generator():
-    l = [0]
+    my_list = [0]
 
     def give_me_unique():
-        l[0] += 1
-        return l[0]
+        my_list[0] += 1
+        return my_list[0]
 
     return give_me_unique
 

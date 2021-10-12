@@ -19,7 +19,7 @@ def func(param: int) -> int:
 
 
 # from . import __main__
-import __main__
+import __main__  # noqa: E402
 
 a = 1  # type: int
 print(get_type_hints(__main__))
