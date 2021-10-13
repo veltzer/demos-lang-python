@@ -5,12 +5,10 @@ If we had this would not have been neccessary.
 """
 
 import sys
+import car
+
 
 sys.path.append('build/lib.linux-i686-2.7')
-
-# noinspection PyPep8
-import car  # noqa: E402
-
 c = car.Car()
 print(c)
 c.printSelf()

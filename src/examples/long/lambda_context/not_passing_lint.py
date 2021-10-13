@@ -24,7 +24,7 @@ my_list = [
         "mark": 1000,
         "doron": 2000,
     },
-    # secnod company
+    # second company
     {
         "yuval": 3000,
         "avi": 4000,
@@ -33,6 +33,7 @@ my_list = [
 
 # this exapmle does not pass lint
 for c in my_list:
+    # pylint: disable=cell-var-from-loop
     max_person = max(c.keys(), key=lambda x: c[x])
     print(f"{max_person}")
 # this exapmle does pass lint

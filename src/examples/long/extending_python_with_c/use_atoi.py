@@ -5,10 +5,9 @@ If we had done this this would not have been neccessary.
 """
 
 import sys
-
-sys.path.append('build/lib.linux-i686-2.7')
-
 # noinspection PyPep8
 import atoi  # noqa: E402
 
+
+sys.path.append('build/lib.linux-i686-2.7')
 print(atoi.atoi('-7.6'))

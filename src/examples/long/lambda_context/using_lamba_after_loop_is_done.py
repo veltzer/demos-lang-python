@@ -39,6 +39,7 @@ def basic():
     """ This is the basic example. What does this produce? """
     handlers = []
     for i in range(10):
+        # pylint: disable=cell-var-from-loop
         handlers.append(lambda: i)
     print([h() for h in handlers])
 
@@ -48,6 +49,7 @@ def wrong():
     handlers = []
     for i in range(10):
         def f():
+            # pylint: disable=cell-var-from-loop
             return i
         handlers.append(f)
     print([h() for h in handlers])
@@ -79,6 +81,7 @@ def partial_pattern_wrong():
     """ This is using the partial python standard function, but without arguments it does not work """
     handlers = []
     for i in range(10):
+        # pylint: disable=cell-var-from-loop
         f = lambda: i  # noqa: E731
         good_f = partial(f)
         handlers.append(good_f)

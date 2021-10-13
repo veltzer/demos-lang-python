@@ -5,8 +5,9 @@ modules in python.
 
 import importlib
 import time
-import my_module.a
+from .my_module import a
+
 
 while True:
-    importlib.reload(my_module.a)
+    importlib.reload(a)
     time.sleep(1)

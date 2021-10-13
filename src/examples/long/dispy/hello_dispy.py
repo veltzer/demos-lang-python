@@ -4,19 +4,20 @@ cluster
 """
 
 
-# 'compute' is distributed to each node running 'dispynode'
+import time
+import socket
+import random
+import dispy
+
+
 def compute(n):
-    import time
-    import socket
+    """ 'compute' is distributed to each node running 'dispynode' """
     time.sleep(n)
     host = socket.gethostname()
     return host, n
 
 
 def main():
-    import dispy
-    import random
-
     cluster = dispy.JobCluster(compute)
     jobs = []
     for i in range(10):

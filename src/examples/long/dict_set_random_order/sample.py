@@ -20,8 +20,8 @@ for i in range(100):
     od[str(i)] = i
     s.add(str(i))
 print('unordered dict')
-print(' '.join(['{k},{v}'.format(k=k, v=v) for k, v in ud.items()]))
+print(' '.join([f"{k},{v}" for k, v in ud.items()]))
 print('ordered dict')
-print(' '.join(['{k},{v}'.format(k=k, v=v) for k, v in od.items()]))
+print(' '.join([f"{k},{v}" for k, v in od.items()]))
 print('set')
-print(' '.join([x for x in s]))
+print(' '.join(x for x in s))
