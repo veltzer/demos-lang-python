@@ -16,6 +16,7 @@ for instance in mgr.giveMe(myBaseClass1):
 import importlib
 import pkgutil
 
+# pylint: disable=relative-beyond-top-level
 from . import base
 
 do_debug = False
@@ -35,9 +36,10 @@ for importer, modname, is_package in pkgutil.walk_packages(
         module_obj = importlib.import_module(modname)
         done.add(modname)
         print(done)
-        print('imported {0}'.format(modname))
+        print(f"imported {modname}")
         for name, t in module_obj.__dict__.items():
-            if type(t) is type and issubclass(t, base.BaseClass):
+            # if type(t) is type and issubclass(t, base.BaseClass):
+            if isinstance(t, base.BaseClass):
                 instance = t()
                 print(name)
                 print(t)

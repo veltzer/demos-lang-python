@@ -32,7 +32,7 @@ def rev_dict3(d):
     """
     # list comprehension
     # pylint: disable=consider-using-dict-comprehension
-    return dict([(v, k) for (k, v) in d.items()])
+    return dict([(v, k) for k, v in d.items()])
 
 
 def rev_dict4(d):
@@ -41,7 +41,7 @@ def rev_dict4(d):
     True
     """
     # generator expression (same but no intermediate list)
-    return dict((v, k) for (k, v) in d.items())
+    return dict((v, k) for k, v in d.items())
 
 
 def rev_dict5(d):

@@ -1,4 +1,4 @@
-print('[{0}] loading'.format(__file__))
+print(f"[{__file__}] loading")
 
 var = 'plugin1_value'
 

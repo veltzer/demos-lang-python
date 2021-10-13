@@ -29,7 +29,7 @@ jump = 7
 
 
 def chunk_groupby(data, n):
-    return ((d for _, d in dd) for (_, dd) in itertools.groupby(enumerate(data), key=lambda v: v[0] // n))
+    return ((d for _, d in dd) for _, dd in itertools.groupby(enumerate(data), key=lambda v: v[0] // n))
 
 
 def chunk_groupby_closure(data, n):
@@ -42,7 +42,7 @@ def chunk_groupby_closure(data, n):
             counter[1] += 1
         return counter[1]
 
-    return (dd for (_, dd) in itertools.groupby(data, key=group_classifier))
+    return (dd for _, dd in itertools.groupby(data, key=group_classifier))
 
 
 def chunk_python(data, n):

@@ -24,7 +24,7 @@ class OperatorChoice(Gtk.VBox):
         self.radio_funcs = {}
 
         radio = None  # helps RadioButton grouping below
-        for (op, func) in zip('+-*/', [operator.add, operator.sub, operator.mul, operator.truediv]):
+        for op, func in zip('+-*/', [operator.add, operator.sub, operator.mul, operator.truediv]):
             radio = Gtk.RadioButton(radio, op)
             self.pack_start(radio)
             if op == '+':
@@ -32,7 +32,7 @@ class OperatorChoice(Gtk.VBox):
             self.radio_funcs[radio] = func
 
     def compute(self, arg1, arg2):
-        for (radio, func) in self.radio_funcs.items():
+        for radio, func in self.radio_funcs.items():
             if radio.get_active():
                 return func(arg1, arg2)
         raise ValueError('No operator chosen')

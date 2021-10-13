@@ -1,4 +1,5 @@
 # noinspection PyDeprecation
+# pylint: disable=deprecated-module
 import imp
 import os
 import os.path

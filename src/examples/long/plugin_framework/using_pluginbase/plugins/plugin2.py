@@ -1,6 +1,7 @@
-import demo
+# pylint: disable=relative-beyond-top-level
+from .. import demo
 
-print('[{0}] loading'.format(__file__))
+print(f"[{__file__}] loading")
 
 var = 'plugin2_value'
 
@@ -8,7 +9,7 @@ extra_var_only_for_plugin2 = 'extra_value_only_for_plugin2'
 
 
 def do_something():
-    print('[{0}] running'.format(__file__))
+    print(f"[{__file__}] running")
 
 
 class Plugin2Class1(dict):

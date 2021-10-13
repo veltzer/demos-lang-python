@@ -122,13 +122,14 @@ class Console(cmd.Cmd):
         print("this is an empty line")
 
     def default(self, line):
-        """Called on an input line when the command prefix is not recognized.
-           In that case we execute the line as Python code.
+        """
+        Called on an input line when the command prefix is not recognized.
+        In that case we execute the line as Python code.
         """
         try:
             exec(line) in self._locals, self._globals
         except Exception as e:
-            print(e.__class__, ":", e)
+            print(f"{e.__class__}:{e}")
 
 
 if __name__ == '__main__':
