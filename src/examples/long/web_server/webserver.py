@@ -1,8 +1,6 @@
 """
 demo of simple web server in python using HTTPServer
 originally grabbed from 'http://fragments.turtlemeat.com/pythonwebserver.php'.
-
-PYTHON3FIX
 """
 
 import cgi
@@ -10,30 +8,28 @@ import os
 import threading
 import time
 
-import BaseHTTPServer
-import SocketServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import socketserver
 
 
-class ThreadedServer(SocketServer.ThreadingMixIn, BaseHTTPServer.HTTPServer):
+class ThreadedServer(socketserver.ThreadingMixIn, HTTPServer):
     """Handle requests in a separate thread."""
-    pass
 
 
-class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
-    def __init__(self):
-        super(MyHandler).__init__()
+class MyHandler(BaseHTTPRequestHandler):
+    def __init__(self, addr, handler):
+        super().__init__(self, addr, handler)
         self.real_path = None
 
     def handle_static(self, mimetype):
-        f = open(self.real_path)
         # note that this potentially makes every file on your computer
         # readable by the internet. A real web server also checks that
         # the file that it is serving is inside into service 'realm'.
         self.send_response(200)
         self.send_header('Content-type', mimetype)
         self.end_headers()
-        self.wfile.write(f.read())
-        f.close()
+        with open(self.real_path) as f:
+            self.wfile.write(f.read())
 
     def handle_esp(self):
         self.send_response(200)
@@ -73,8 +69,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                 self.handle_static('image/vnd.microsoft.icon')
                 return
             # unrecognized file suffix
-            self.send_error(
-                500, 'Unrecognized file type: {0}'.format(self.path))
+            self.send_error(500, f"Unrecognized file type: {self.path}")
             return
         if os.path.isdir(self.real_path):
             self.handle_dir()
@@ -83,13 +78,14 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         print(threading.current_thread())
         # this is the method called by the framework... any lower level error
         # should send internal error to the client...
+        # pylint: disable=broad-except
         try:
             self.get()
         except Exception as e:
-            self.send_error(
-                500, 'GET Internal server error for resource: {0} {1}'.format(self.path, e))
+            self.send_error(500, f"GET Internal server error for resource: {self.path} {e}")
 
     def do_POST(self):
+        # pylint: disable=broad-except
         try:
             content_type, options_dict = cgi.parse_header(
                 self.headers.getheader('content-type'))
@@ -106,9 +102,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             self.wfile.write(upload_content[0])
             self.wfile.write('</code></body></html>')
         except Exception as e:
-            self.send_error(
-                500, 'POST Internal server error for resource: {0} {1}'.format(self.path, e))
-
+            self.send_error(500, f"POST Internal server error for resource: {self.path} {e}")
 
 def main():
     host = 'localhost'
@@ -120,7 +114,7 @@ def main():
     if threaded:
         server = ThreadedServer((host, port), MyHandler)
     else:
-        server = BaseHTTPServer.HTTPServer((host, port), MyHandler)
+        server = HTTPServer((host, port), MyHandler)
     try:
         print('contact me at ' + url)
         server.serve_forever()
