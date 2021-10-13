@@ -3,5 +3,5 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def bar():
-    logger.info("in bar")
+def demo():
+    logger.info("in demo")

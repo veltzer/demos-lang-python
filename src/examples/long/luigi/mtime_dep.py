@@ -27,10 +27,10 @@ class DepTask(luigi.Task):
         recently than this task"""
 
         # assuming 1 output
-        if not os.path.exists(self.output().path):
+        if not os.path.exists(self.output()[0].path):
             return False
 
-        self_mtime = mtime(self.output().path)
+        self_mtime = mtime(self.output()[0].path)
 
         # the below assumes a list of requirements, each with a single output
         for el in self.requires():

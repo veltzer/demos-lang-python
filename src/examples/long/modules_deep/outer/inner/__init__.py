@@ -1,1 +1,1 @@
-print('hello from [{0}]'.format(__file__))
+print(f"hello from [{__file__}]")

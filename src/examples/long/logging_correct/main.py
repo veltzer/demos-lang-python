@@ -12,8 +12,8 @@ def main():
     logging.config.dictConfig(config)
     logger = logging.getLogger(__name__)
     logger.info("before")
-    correct.bar()
-    incorrect.bar()
+    correct.demo()
+    incorrect.demo()
     logger.info("after")
 
 

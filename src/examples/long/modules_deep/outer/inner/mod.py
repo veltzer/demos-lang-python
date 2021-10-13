@@ -7,6 +7,7 @@ my_global = 42
 
 def print_module_info():
     # noinspection PyUnusedLocal
+    # pylint: disable=unused-variable
     my_local = 42  # noqa: F841
     print(f"module variables are [{vars()}]")
     sane_globals = {k: v for k, v in globals().items() if not k.startswith('__')}

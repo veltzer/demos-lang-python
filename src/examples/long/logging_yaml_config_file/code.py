@@ -1,10 +1,11 @@
-import logging.config
-
-import yaml
-
 """
 This is how to load a yaml file as configuration for python logging
 """
+
+import logging.config
+import yaml
+
+
 with open('logging.yaml') as f:
     config = yaml.load(f.read())
     logging.config.dictConfig(config)

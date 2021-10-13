@@ -1,6 +1,6 @@
 import logging
 
 
-def bar():
+def demo():
     logger = logging.getLogger(__name__)
-    logger.info("in bar")
+    logger.info("in demo")

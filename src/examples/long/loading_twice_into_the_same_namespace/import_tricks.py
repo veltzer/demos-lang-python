@@ -4,6 +4,7 @@ into the same namespace. You select the namespace, in this case 'config'.
 """
 
 # noinspection PyDeprecation
+# pylint: disable=deprecated-module
 import imp
 
 # noinspection PyDeprecation

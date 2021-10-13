@@ -15,8 +15,7 @@ def mtime(path):
 def to_list(obj):
     if type(obj) in (type(()), type([])):
         return obj
-    else:
-        return [obj]
+    return [obj]
 
 
 class MTimeMixin:

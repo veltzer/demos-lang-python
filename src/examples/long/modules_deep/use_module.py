@@ -1,5 +1,5 @@
 import outer.inner.mod
 
-print('hello from [{0}]'.format(__file__))
+print(f"hello from [{__file__}]")
 
 outer.inner.mod.print_module_info()
