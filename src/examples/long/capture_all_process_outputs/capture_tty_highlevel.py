@@ -20,10 +20,8 @@ if pid == 0:
     os.execv(sys.argv[1], sys.argv[1:])
     print("execv didnt work", file=sys.stderr)
 else:
-    '''
-    At the end of the loop we get an exception when the connection with the other side terminates.
-    This is kinda ugly since strictly speaking this is not an error, but oh well.
-    '''
+    # At the end of the loop we get an exception when the connection with the other side terminates.
+    # This is kinda ugly since strictly speaking this is not an error, but oh well.
     try:
         for line in os.fdopen(fd):
             print(f"got line [{line}]")

@@ -13,8 +13,12 @@ if len(sys.argv) < 2:
     print('must supply process to run and arguments for it', file=sys.stderr)
     sys.exit(1)
 
-pr = subprocess.Popen(
-    sys.argv[1:], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=False)
-for line in pr.stdout:
-    line = line.decode()
-    print('got line [{0}]'.format(line.rstrip()))
+with subprocess.Popen(
+    sys.argv[1:],
+    stdout=subprocess.PIPE,
+    stderr=subprocess.STDOUT,
+    shell=False
+) as pr:
+    for line in pr.stdout:
+        line = line.decode()
+        print(f"got line [{line.rstrip()}]")

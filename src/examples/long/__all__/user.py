@@ -1,3 +1,4 @@
+# pylint: disable=relative-beyond-top-level
 from . import module
 
 module.a()

@@ -1,6 +1,4 @@
-import os
-
-'''
+"""
 This example shows that iterating a hash produces random order
 
 NOTES:
@@ -10,7 +8,10 @@ of the hash.
 dict will be in order of insertion. It does guarantee that the order will be
 the same in every run. So it guarantees determinism, not order which is
 sometimes good enough.
-'''
+"""
+
+
+import os
 
 print("No PYTHONHASHSEED")
 os.system('./sample.py')

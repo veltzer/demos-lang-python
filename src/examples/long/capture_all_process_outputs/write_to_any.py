@@ -19,7 +19,6 @@ and you can combine...
 
 import sys
 import time
-from typing import Optional, IO
 
 args = sys.argv[1:]
 if 'stdout' in args:
@@ -37,12 +36,11 @@ if 'stderr' in args:
         time.sleep(1)
 
 if 'tty' in args:
-    f = open('/dev/tty', 'w')  # type: Optional[IO[str]]
-    f.write('this is /dev/tty\n')
-    for i in ['this ', 'is ', '/dev/tty\n']:
-        print(i, end='', file=f)
-        f.flush()
-        time.sleep(1)
-    f.close()
+    with open('/dev/tty', 'w') as f:
+        f.write('this is /dev/tty\n')
+        for i in ['this ', 'is ', '/dev/tty\n']:
+            print(i, end='', file=f)
+            f.flush()
+            time.sleep(1)
 
 sys.exit(7)
