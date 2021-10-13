@@ -11,12 +11,15 @@ DO_FLAKE8:=1
 DO_TOOLS:=0
 # what is the tools.stamp file?
 TOOLS:=tools.stamp
+# do dependency on the makefile itself?
+DO_ALLDEP:=1
 
 ########
 # code #
 ########
 ALL:=
-ALL_PY:=$(shell find src -name "*.py")
+# ALL_PY:=$(shell find src -name "*.py")
+ALL_PY:=$(shell git ls-files 'src/*.py')
 ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
 ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
@@ -108,13 +111,14 @@ check_no_future: $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)git grep "__future__" || exit 0
 
-.PHONY: debug_me
-debug_me:
-	$(Q)$(info ALL_SYNTAX is $(ALL_SYNTAX))
-	$(Q)$(info ALL_LINT is $(ALL_LINT))
-	$(Q)$(info ALL_FLAKE8 is $(ALL_FLAKE8))
-	$(Q)$(info ALL is $(ALL))
-	$(Q)$(info ALL_DEP is $(ALL_DEP))
+.PHONY: debug
+debug:
+	$(info ALL_PY is $(ALL_PY))
+	$(info ALL_SYNTAX is $(ALL_SYNTAX))
+	$(info ALL_LINT is $(ALL_LINT))
+	$(info ALL_FLAKE8 is $(ALL_FLAKE8))
+	$(info ALL is $(ALL))
+	$(info ALL_DEP is $(ALL_DEP))
 
 .PHONY: show_shbang
 show_shbang:
