@@ -161,9 +161,9 @@ check_mode:
 
 .PHONY: stats
 stats:
-	$(Q)find . -name "*.syntax" | wc -l
-	$(Q)find . -name "*.lint" | wc -l
-	$(Q)find . -name "*.flake8" | wc -l
+	$(Q)find out -name "*.syntax" | wc -l
+	$(Q)find out -name "*.lint" | wc -l
+	$(Q)find out -name "*.flake8" | wc -l
 
 .PHONY: fix_mode
 fix_mode:
