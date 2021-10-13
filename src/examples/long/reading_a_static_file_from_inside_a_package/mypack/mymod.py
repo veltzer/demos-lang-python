@@ -5,7 +5,7 @@ import pkg_resources
 
 static_file_content = pkg_resources.resource_string(
     'my_pack', 'static_file.html').decode()
-print('static_file_content is [{0}]'.format(static_file_content))
+print(f"static_file_content is [{static_file_content}]")
 
 
 def get_real_filename(filename):
@@ -17,7 +17,7 @@ def get_data(filename):
 
 
 static_file_content2 = get_data('static_file.html').decode()
-print('static_file_content2 is [{0}]'.format(static_file_content2))
+print(f"static_file_content2 is [{static_file_content2}]")
 
 static_file_content3 = pkgutil.get_data('my_pack', 'static_file.html').decode()
-print('static_file_content3 is [{0}]'.format(static_file_content3))
+print(f"static_file_content3 is [{static_file_content3}]")

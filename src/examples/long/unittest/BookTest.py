@@ -1,5 +1,6 @@
 import unittest
 
+# pylint: disable=relative-beyond-top-level
 from . import Book
 
 
@@ -15,13 +16,14 @@ class BookTest(unittest.TestCase):
     def testBasic(self):
         print('in testBasic')
         p = Book.Book(50)
-        self.assertTrue(50 == p.get_price())
+        self.assertTrue(p.get_price() == 50)
 
     def testMore(self):
         print('in testMore')
         p = Book.Book(50)
+        # pylint: disable=protected-access
         p._Book__price = 60
-        self.assertTrue(60 == p.get_price())
+        self.assertTrue(p.get_price() == 60)
 
     @unittest.skip("demonstrating skipping")
     def testSkipped(self):
@@ -30,8 +32,9 @@ class BookTest(unittest.TestCase):
     def runTest(self):
         print('in runTest')
         p = Book.Book(50)
+        # pylint: disable=protected-access
         p._Book__price = 60
-        self.assertTrue(60 == p.get_price())
+        self.assertTrue(p.get_price() == 60)
 
 
 unittest.main()

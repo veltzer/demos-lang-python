@@ -1,6 +1,6 @@
-import setuptools
 from pkgutil import walk_packages
 import os
+import setuptools
 
 # this finds the config package too, no good
 print(setuptools.find_packages())
@@ -22,7 +22,7 @@ print(list(find_packages_walk(path="my_pkg", prefix="my_pkg")))
 
 
 def find_packages_os(path='.'):
-    for root, dirs, files in os.walk(path):
+    for root, _dirs, files in os.walk(path):
         if '__init__.py' in files:
             yield root.replace("/", ".")
 

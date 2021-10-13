@@ -1,8 +1,8 @@
 class Book:
     def __init__(self, price):
         """ constructor """
-        """ call parent constructor """
-        super(Book, self).__init__()
+        # call parent constructor
+        super().__init__()
         self.__price = price
 
     def get_price(self):
