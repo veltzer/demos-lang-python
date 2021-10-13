@@ -1,9 +1,13 @@
 """
 setup.py file for SWIG car
 """
-import distutils
 
-car_module = Extension('_car',
+
+from setuptools import setup, Extension
+
+
+car_module = Extension(
+    '_car',
     sources=['car_wrap.cxx', 'car.cc'],
 )
 

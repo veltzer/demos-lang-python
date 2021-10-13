@@ -1,4 +1,4 @@
-from music import Node, Play        # import music library
+# from music import Note, Play
 
-note = Note(C4, HN)        # create a middle C half note
-Play.midi(note)            # and play it!
+# note = Note(C4, HN)
+# Play.midi(note)

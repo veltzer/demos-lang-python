@@ -17,24 +17,25 @@ References:
 - https://stackoverflow.com/questions/25314547/cell-var-from-loop-warning-from-pylint
 """
 
-l = [
-        # first company
-        {
-            "mark": 1000,
-            "doron": 2000,
-        },
-        # secnod company
-        {
-            "yuval": 3000,
-            "avi": 4000,
-        },
+
+my_list = [
+    # first company
+    {
+        "mark": 1000,
+        "doron": 2000,
+    },
+    # secnod company
+    {
+        "yuval": 3000,
+        "avi": 4000,
+    },
 ]
 
 # this exapmle does not pass lint
-for c in l:
+for c in my_list:
     max_person = max(c.keys(), key=lambda x: c[x])
     print(f"{max_person}")
 # this exapmle does pass lint
-for c in l:
+for c in my_list:
     max_person = max(c.keys(), key=lambda x, d=c: d[x])
     print(f"{max_person}")

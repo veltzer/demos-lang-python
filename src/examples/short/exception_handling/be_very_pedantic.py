@@ -3,7 +3,6 @@ This example shows how to catch all exceptions, and exit the software in any cas
 """
 
 import sys
-import traceback
 
 
 def excepthook(_type, value, _traceback):
@@ -22,7 +21,7 @@ sys.excepthook = excepthook
 # noinspection PyBroadException
 try:
     raise ValueError('core')
-except Exception as e:
+except Exception:
     print("haha, got the exception and continuing anyway...")
 print("after")
 

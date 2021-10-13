@@ -27,8 +27,7 @@ else:
     try:
         for line in os.fdopen(fd):
             print(f"got line [{line}]")
-    except OSError as e:
-        # print(e)
+    except OSError:
         pass
     pid, ret = os.wait()
     if os.WIFEXITED(ret):

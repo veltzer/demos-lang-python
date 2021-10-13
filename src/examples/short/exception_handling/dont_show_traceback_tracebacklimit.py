@@ -12,6 +12,8 @@ References:
 in-python-how-do-i-print-an-error-message-without-printing-a-traceback-and-clos
 """
 
+import sys
+
 
 def do_error():
     try:
@@ -20,8 +22,5 @@ def do_error():
         raise ValueError('outer')
 
 
-import sys
-
 sys.tracebacklimit = None
-
 do_error()

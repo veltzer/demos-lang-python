@@ -35,50 +35,69 @@ References:
 from functools import partial
 
 
-print("This is the basic example. What does this produce?")
-handlers = []
-for i in range(10):
-    handlers.append(lambda: i)
-print([h() for h in handlers])
+def basic():
+    """ This is the basic example. What does this produce? """
+    handlers = []
+    for i in range(10):
+        handlers.append(lambda: i)
+    print([h() for h in handlers])
 
-print("This does not work since there will be only one f")
-handlers = []
-for i in range(10):
-    def f():
-        return i
-    handlers.append(f)
-print([h() for h in handlers])
 
-print("This works because each f will be stored with it's own default value for 'val'.")
-handlers = []
-for i in range(10):
-    def f(val=i):
-        return val
-    handlers.append(f)
-print([h() for h in handlers])
+def wrong():
+    """ This does not work since there will be only one f """
+    handlers = []
+    for i in range(10):
+        def f():
+            return i
+        handlers.append(f)
+    print([h() for h in handlers])
 
-print("This is called a function creator pattern, it uses the closure of the function to store i.")
-def create_f(i):
-    def f():
-        return i
-    return f
-handlers = []
-for i in range(10):
-    handlers.append(create_f(i))
-print([h() for h in handlers])
 
-print("This is using the partial python standard function, but without arguments it does not work")
-handlers = []
-for i in range(10):
-    f=lambda: i
-    good_f=partial(f)
-    handlers.append(good_f)
-print([h() for h in handlers])
+def correction():
+    """ This works because each f will be stored with it's own default value for 'val'. """
+    handlers = []
+    for i in range(10):
+        def f(val=i):
+            return val
+        handlers.append(f)
+    print([h() for h in handlers])
 
-print("This is using the partial python standard function")
-handlers = []
-for i in range(10):
-    f=lambda i: i
-    good_f=partial(f, i)
-    handlers.append(good_f)
-print([h() for h in handlers])
+
+def creator_pattern():
+    """ This is called a function creator pattern, it uses the closure of the function to store i. """
+    def create_f(i):
+        def f():
+            return i
+        return f
+    handlers = []
+    for i in range(10):
+        handlers.append(create_f(i))
+    print([h() for h in handlers])
+
+
+def partial_pattern_wrong():
+    """ This is using the partial python standard function, but without arguments it does not work """
+    handlers = []
+    for i in range(10):
+        f = lambda: i  # noqa: E731
+        good_f = partial(f)
+        handlers.append(good_f)
+    print([h() for h in handlers])
+
+
+def partial_pattern():
+    """ This is using the partial python standard function """
+    handlers = []
+    for i in range(10):
+        f = lambda i: i  # noqa: E731
+        good_f = partial(f, i)
+        handlers.append(good_f)
+    print([h() for h in handlers])
+
+
+basic()
+wrong()
+correction()
+creator_pattern()
+partial_pattern_wrong()
+partial_pattern()

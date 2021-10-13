@@ -37,7 +37,7 @@ else:
             print('got line [{0}]'.format(line))
         try:
             buf += os.read(fd, buffer_size).decode()
-        except OSError as e:
+        except OSError:
             over = True
     (pid, ret) = os.wait()
     if os.WIFEXITED(ret):

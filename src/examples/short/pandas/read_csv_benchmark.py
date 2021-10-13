@@ -33,8 +33,7 @@ def prepare_large_tsv_file(input_file: str, size: int):
                 str(random.random()),
                 str(random.random()),
                 str(random.random()),
-            ]) + "\n"
-                                )
+            ]) + "\n")
 
 
 @time_it
@@ -90,13 +89,15 @@ def loop_with_python(_input_file: str, _separator: str):
 
 def main():
     input_file = "/tmp/large.tsv"
-    size = 1000000
+    # size = 1000000
     # prepare_large_tsv_file(input_file, size)
-    lc3 = read_it_with_python(input_file, "\t")
+    lc1 = read_it_with_python(input_file, "\t")
     lc2 = read_it_with_pandas(input_file, "\t")
-    lc1 = read_it_with_pandas_chunks(input_file, "\t")
-    lc3 = loop_with_python(input_file, "\t")
+    lc3 = read_it_with_pandas_chunks(input_file, "\t")
+    lc4 = loop_with_python(input_file, "\t")
     assert lc1 == lc2
+    assert lc2 == lc3
+    assert lc3 == lc4
 
 
 if __name__ == '__main__':

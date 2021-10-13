@@ -1,13 +1,13 @@
 def simple_func(x):
     x += 1
 
-    s = range(20)
-    z = None
-    w = ()
+    # s = range(20)
+    # z = None
+    # w = ()
 
-    y = dict((i, i ** 2) for i in s)
+    # y = dict((i, i ** 2) for i in s)
 
-    k = set(range(5, 99))
+    # k = set(range(5, 99))
 
     try:
         x.invalid

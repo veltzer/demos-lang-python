@@ -6,7 +6,6 @@ I need to ascertain this
 """
 
 import datetime
-import sys
 
 import mako.lookup
 

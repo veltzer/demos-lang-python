@@ -9,7 +9,7 @@ import sys
 sys.path.append('build/lib.linux-i686-2.7')
 
 # noinspection PyPep8
-import car
+import car  # noqa: E402
 
 c = car.Car()
 print(c)
