@@ -6,7 +6,7 @@ the pythondialog module (which is itself a Python interface to the
 well-known dialog utility, or any other program compatible with
 dialog).
 
-Please have a look at the documentation for the `handle_exit_code'
+Please have a look at the documentation for the "handle_exit_code"
 function in order to understand the somewhat relaxed error checking
 policy for pythondialog calls in this demo.
 
@@ -35,9 +35,9 @@ FAST_DEMO = True
 def handle_exit_code(d, code):
     if code in (d.DIALOG_CANCEL, d.DIALOG_ESC):
         if code == d.DIALOG_CANCEL:
-            msg = 'You chose CANCEL in the last dialog box. Do you want to exit this demo?'
+            msg = "You chose CANCEL in the last dialog box. Do you want to exit this demo?"
         else:
-            msg = 'You pressed ESC in the last dialog box. Do you want to exit this demo?'
+            msg = "You pressed ESC in the last dialog box. Do you want to exit this demo?"
         if d.yesno(msg) == d.DIALOG_OK:
             sys.exit(0)
         else:
@@ -48,13 +48,13 @@ def handle_exit_code(d, code):
 
 def show_and_exit(collected):
     for k, v in collected.items():
-        print('{k} is [{v}]'.format(k=k, v=v))
+        print(f"{k} is [{v}]")
     sys.exit(0)
 
 
 def demo_inputbox(d):
     while True:
-        (code, answer) = d.inputbox('Whats your name?', init='Snow White')
+        code, answer = d.inputbox("Whats your name?", init="Snow White")
         if handle_exit_code(d, code):
             break
     return answer
@@ -62,24 +62,23 @@ def demo_inputbox(d):
 
 def demo_menu(d):
     while True:
-        (code, tag) = d.menu(
-            'Whats your favorite day of the week?',
+        code, tag = d.menu(
+            "Whats your favorite day of the week?",
             width=60,
-            choices=[('Monday', 'Being the first day of the week...'),
-                     ('Tuesday', 'Comes after Monday'),
-                     ('Wednesday', 'Before Thursday day'),
-                     ('Thursday', 'Itself after Wednesday'),
-                     ('Friday', 'The best day of all'),
-                     ('Saturday', 'Well, Ive had enough, thanks'),
-                     ('Sunday', 'Lets rest a little bit')])
+            choices=[("Monday", "Being the first day of the week..."),
+                     ("Tuesday", "Comes after Monday"),
+                     ("Wednesday", "Before Thursday day"),
+                     ("Thursday", "Itself after Wednesday"),
+                     ("Friday", "The best day of all"),
+                     ("Saturday", "Well, Ive had enough, thanks"),
+                     ("Sunday", "Lets rest a little bit")])
         if handle_exit_code(d, code):
             break
     return tag
 
 
 def demo_infobox(d):
-    d.infobox(
-        'One moment, please. Just wasting some time here to show you the infobox...')
+    d.infobox("One moment, please. Just wasting some time here to show you the infobox...")
     if FAST_DEMO:
         time.sleep(0.5)
     else:
@@ -87,15 +86,15 @@ def demo_infobox(d):
 
 
 def demo_gauge(d):
-    d.gauge_start('Progress: 0%', title='Still testing your patience...')
+    d.gauge_start("Progress: 0%", title="Still testing your patience...")
     for i in range(1, 101):
         if i < 50:
-            d.gauge_update(i, 'Progress: %d%%' % i, update_text=1)
+            d.gauge_update(i, f"Progress: {i}", update_text=1)
         elif i == 50:
-            d.gauge_update(i, 'Over %d%%. Good.' % i, update_text=1)
+            d.gauge_update(i, f"Over {i}. Good.", update_text=1)
         elif i == 80:
             d.gauge_update(
-                i, 'Yeah, this boring crap will be over Really Soon Now.', update_text=1)
+                i, "Yeah, this boring crap will be over Really Soon Now.", update_text=1)
         else:
             d.gauge_update(i)
         if FAST_DEMO:
@@ -106,11 +105,11 @@ def demo_gauge(d):
 
 
 def demo_yesno(d):
-    answer = d.yesno('Do you like this demo?')
+    answer = d.yesno("Do you like this demo?")
     if answer == d.DIALOG_OK:
-        d.msgbox('Excellent! Press OK to see the source code.')
+        d.msgbox("Excellent! Press OK to see the source code.")
     else:
-        d.msgbox('Well, feel free to send your complaints to /dev/null!')
+        d.msgbox("Well, feel free to send your complaints to /dev/null!")
     return answer
 
 
@@ -120,15 +119,15 @@ def demo_textbox(d):
 
 def demo_checklist(d):
     while True:
-        (code, tag) = d.checklist(text='What sandwich toppings do you like?',
+        (code, tag) = d.checklist(text="What sandwich toppings do you like?",
                                   height=15, width=54, list_height=7,
-                                  choices=[('Mustard', '', 0),
-                                           ('Pesto', '', 0),
-                                           ('Horse radish', '', 1),
-                                           ('Sun-dried tomatoes', '', 1)],
-                                  title='Do you prefer ham or spam?',
-                                  backtitle='And now, for something '
-                                            'completely different...')
+                                  choices=[("Mustard", "", 0),
+                                           ("Pesto", "", 0),
+                                           ("Horse radish", "", 1),
+                                           ("Sun-dried tomatoes", "", 1)],
+                                  title="Do you prefer ham or spam?",
+                                  backtitle="And now, for something "
+                                            "completely different...")
         if handle_exit_code(d, code):
             break
     return tag
@@ -136,19 +135,18 @@ def demo_checklist(d):
 
 def demo_radiolist(d):
     while True:
-        (code, tag) = d.radiolist(
-            'Whats your favorite kind of sandwich?',
+        code, tag = d.radiolist(
+            "Whats your favorite kind of sandwich?",
             width=65,
-            choices=[('Hamburger', '2 slices of bread, a steak...', 0),
-                     ('Hot-dog', 'doesnt bite any more', 0),
-                     ('Burrito', 'no se lo que es', 0),
-                     ('Bagel', 'Of course!', 0),
-                     ('Big Mac', 'Ah, that\'s easy!', 1),
-                     ('Whopper', 'Erm, sorry', 0),
-                     ('Quarter Pound', 'called \'le Big Mac\' in France', 0),
-                     ('Peanut Butter and Jelly', 'Well, that\'s your own '
-                                                 'business...', 0),
-                     ('Grilled cheese', 'And nothing more?', 0)])
+            choices=[("Hamburger", "2 slices of bread, a steak...", 0),
+                     ("Hot-dog", "doesnt bite any more", 0),
+                     ("Burrito", "no se lo que es", 0),
+                     ("Bagel", "Of course!", 0),
+                     ("Big Mac", "Ah, thats easy!", 1),
+                     ("Whopper", "Erm, sorry", 0),
+                     ("Quarter Pound", "called le Big Mac in France", 0),
+                     ("Peanut Butter and Jelly", "Well, thats your own business...", 0),
+                     ("Grilled cheese", "And nothing more?", 0)])
         if handle_exit_code(d, code):
             break
     return tag
@@ -156,8 +154,8 @@ def demo_radiolist(d):
 
 def demo_calendar(d):
     while True:
-        (code, date) = d.calendar(
-            'When do you think Debian sarge will be released?', year=0)
+        code, date = d.calendar(
+            "When do you think Debian sarge will be released?", year=0)
         if handle_exit_code(d, code):
             break
     return date
@@ -165,22 +163,22 @@ def demo_calendar(d):
 
 def demo_passwordbox(d):
     while True:
-        (code, password) = d.passwordbox(
-            'What is your root password, so that I can crack your system right now?')
+        code, password = d.passwordbox(
+            "What is your root password, so that I can crack your system right now?")
         if handle_exit_code(d, code):
             break
     return password
 
 
 def demo_fselect(d):
-    homedir = os.getenv('HOME') + os.sep
+    homedir = os.getenv("HOME") + os.sep
     while True:
         (code, path) = d.fselect(homedir, 10, 50,
-                                 title='Cute little file to show as in a [tail -f]')
+                                 title="Cute little file to show as in a [tail -f]")
         if handle_exit_code(d, code):
             if not os.path.isfile(path):
                 d.scrollbox(
-                    'Hmm. Didnt I ask you to select a *file*?', width=50, height=10)
+                    "Hmm. Didnt I ask you to select a *file*?", width=50, height=10)
             else:
                 break
     return path
@@ -188,33 +186,33 @@ def demo_fselect(d):
 
 def demo_tailbox(d, file):
     d.tailbox(
-        file, 20, 60, title='You are brave. You deserve the right to rest, now.')
+        file, 20, 60, title="You are brave. You deserve the right to rest, now.")
 
 
 def demo_scrollbox(d, collected):
-    msg = 'Here are your choice...\n'
+    msg = "Here are your choice...\n"
     for k, v in collected.items():
-        msg += '{k} is [{v}]\n'.format(k=k, v=v)
-    d.scrollbox(msg, height=20, width=75, title='Great Report of the Year')
+        msg += f"{k} is [{v}]\n"
+    d.scrollbox(msg, height=20, width=75, title="Great Report of the Year")
 
 
 def demo():
     collected = {}
-    d = dialog.Dialog(dialog='dialog')
-    d.add_persistent_args(['--backtitle', 'pythondialog demo'])
+    d = dialog.Dialog(dialog="dialog")
+    d.add_persistent_args(["--backtitle", "pythondialog demo"])
 
-    collected['name'] = demo_inputbox(d)
-    collected['favourite_day'] = demo_menu(d)
+    collected["name"] = demo_inputbox(d)
+    collected["favourite_day"] = demo_menu(d)
     demo_infobox(d)
     demo_gauge(d)
-    collected['yesno'] = demo_yesno(d)
+    collected["yesno"] = demo_yesno(d)
     demo_textbox(d)
-    collected['toppings'] = demo_checklist(d)
-    collected['sandwich'] = demo_radiolist(d)
-    collected['date'] = demo_calendar(d)
-    collected['password'] = demo_passwordbox(d)
-    collected['file'] = demo_fselect(d)
-    demo_tailbox(d, collected['file'])
+    collected["toppings"] = demo_checklist(d)
+    collected["sandwich"] = demo_radiolist(d)
+    collected["date"] = demo_calendar(d)
+    collected["password"] = demo_passwordbox(d)
+    collected["file"] = demo_fselect(d)
+    demo_tailbox(d, collected["file"])
     demo_scrollbox(d, collected)
     # show_and_exit(collected)
 
@@ -223,5 +221,5 @@ def main():
     demo()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
