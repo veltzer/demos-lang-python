@@ -38,9 +38,9 @@ except imdb.IMDbError as e:
 print(movie.summary().encode(out_encoding, 'replace'))
 print(movie.summary())
 
-for k in movie.keys():
+for k, v in movie.items():
     print(f"=============== {k} ===============")
-    print(movie[k])
+    print(v)
 
 print(f"==== [{movie['title']}] movieID: [{movieID}] ====")
 imdbURL = i.get_imdbURL(movie)

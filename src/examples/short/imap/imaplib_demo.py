@@ -31,13 +31,13 @@ def imap_have_mailbox(imap, name):
 
 
 def imap_create(imap, name):
-    (res, l) = imap.create(name)
+    (res, _) = imap.create(name)
     if res != 'OK':
         raise ValueError('could not create', name)
 
 
 def imap_delete(imap, name):
-    (res, l) = imap.delete(name)
+    (res, _) = imap.delete(name)
     if res != 'OK':
         raise ValueError('could not delete', name)
 
@@ -49,7 +49,7 @@ def imap_logout(imap):
 
 
 def imap_login(imap, username, password):
-    (res, l) = imap.login(username, password)
+    (res, _) = imap.login(username, password)
     if res != 'OK':
         raise ValueError('could not login')
 

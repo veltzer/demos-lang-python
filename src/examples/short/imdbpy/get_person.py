@@ -24,10 +24,9 @@ out_encoding = sys.stdout.encoding or sys.getdefaultencoding()
 person = connection.get_person(personID)
 
 i_canonical_name = person['canonical name']
-print('i_canonical_name is [{0}]'.format(
-    i_canonical_name.encode(out_encoding)))
+print(f"i_canonical_name is [{i_canonical_name.encode(out_encoding)}]")
 
 for k, v in person.items():
     if isinstance(v, str):
         v = v.encode(out_encoding)
-    print('[{0}],[{1}]'.format(k, v))
+    print(f"[{k}],[{v}]")

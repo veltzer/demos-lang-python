@@ -29,34 +29,25 @@ def digest(filename: str) -> str:
 def main():
     print("The default way - non identical outputs")
     for x in range(0, 3):
-        input_handle = open(f_name, 'rb')
         output_filename = output_template.format(x)
-        my_zip = gzip.open(output_filename, 'wb')
-        try:
+        with open(f_name, 'rb') as input_handle, gzip.open(output_filename, 'wb') as my_zip:
+            # pylint: disable=cell-var-from-loop
             for chunk in iter(lambda: input_handle.read(block_size), b''):
                 my_zip.write(chunk)
-        finally:
-            input_handle.close()
-            my_zip.close()
         print(digest(output_filename))
 
     print("The right way to get identical outputs")
     for x in range(3, 6):
-        input_handle = open(f_name, 'rb')
         output_filename = output_template.format(x)
-        my_zip = gzip.GzipFile(
-            filename='',  # do not emit filename into the output gzip file
-            mode='wb',
-            fileobj=open(output_filename, 'wb'),
-            mtime=0,  # do not emit modification time information into the output gzip file
-        )
-
-        try:
+        with open(f_name, 'rb') as input_handle, open(output_filename, 'wb') as output_stream:
+            my_zip = gzip.GzipFile(
+                filename='',  # do not emit filename into the output gzip file
+                mode='wb',
+                fileobj=output_stream,
+                mtime=0,  # do not emit modification time information into the output gzip file
+            )
             for chunk in iter(lambda: input_handle.read(block_size), b''):
                 my_zip.write(chunk)
-        finally:
-            input_handle.close()
-            my_zip.close()
         print(digest(output_filename))
 
 
