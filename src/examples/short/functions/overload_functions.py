@@ -11,18 +11,20 @@ function so that it cannot be used.
 """
 
 
-def foo():
-    print('hello')
+def demo_foo():
+    print("hello")
 
 
 # noinspection PyRedeclaration
-def foo(a):  # noqa: F811
-    print('hello', a)
+# pylint: disable=function-redefined
+def demo_foo(a):  # noqa: F811
+    print(f"hello {a}")
 
 
 try:
     # noinspection PyArgumentList
-    foo()
+    # pylint: disable=no-value-for-parameter
+    demo_foo()
 except TypeError:
-    print('oops,got an error')
-foo('mark')
+    print("oops, got an error")
+demo_foo("mark")

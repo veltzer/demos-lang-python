@@ -8,24 +8,24 @@ References:
 
 def decor(func):
     def inner():
-        print("decor start", func.__name__)
+        print(f"decor start {func.__name__}")
         return_value = func()
-        print("decor end", func.__name__)
+        print(f"decor end {func.__name__}")
         return return_value
 
     return inner
 
 
 @decor
-def bar():
-    print("in bar")
+def demo_bar():
+    print("in demo_bar")
 
 
 @decor
-def foo():
-    print("in foo start")
-    bar()
-    print("in foo end")
+def demo_foo():
+    print("in demo_foo start")
+    demo_bar()
+    print("in demo_foo end")
 
 
-foo()
+demo_foo()

@@ -7,6 +7,7 @@ Notes:
 """
 
 # make an explicit list
+# pylint: disable=unnecessary-comprehension
 filtered_list = [x for x in filter(lambda x: x % 2 == 1, range(10))]
 print(filtered_list)
 

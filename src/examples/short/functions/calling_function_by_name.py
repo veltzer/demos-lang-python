@@ -18,7 +18,7 @@ name = input('give me the name off the function: ')
 num = int(input('how many arguments to pass to the function: '))
 str_list = []
 for i in range(num):
-    a = input('give me argument [{0}]: '.format(i))
+    a = input(f"give me argument [{i}]: ")
     str_list.append(a)
 # these two are the same
 print((vars()[name])(*str_list))

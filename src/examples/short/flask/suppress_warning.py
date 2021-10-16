@@ -6,8 +6,8 @@ References:
 - https://stackoverflow.com/questions/50284753/warning-message-while-running-flask
 """
 
-import flask
 import os
+import flask
 
 app = flask.Flask(__name__)
 os.environ["FLASK_ENV"] = "development"

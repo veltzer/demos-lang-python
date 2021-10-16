@@ -16,7 +16,7 @@ def print_them(x, y):
 
 
 def print_times(text="hello", times=1):
-    for i in range(times):
+    for _ in range(times):
         print(text)
 
 

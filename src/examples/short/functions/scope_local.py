@@ -11,6 +11,7 @@ Things to notice:
 
 
 # noinspection PyShadowingNames
+# pylint: disable=redefined-outer-name
 def func(x):
     y = 7
     print('x is ', x)

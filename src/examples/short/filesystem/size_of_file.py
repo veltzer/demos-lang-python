@@ -7,5 +7,5 @@ References:
 
 import os
 
-statinfo = os.stat('/etc/passwd')
-print("size of the file is [{}]".format(statinfo.st_size))
+statinfo = os.stat("/etc/passwd")
+print(f"size of the file is [{statinfo.st_size}]")

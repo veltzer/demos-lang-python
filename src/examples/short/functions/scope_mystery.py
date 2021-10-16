@@ -16,7 +16,9 @@ that.
 # noinspection PyUnboundLocalVariable
 def my_mystery_function():
     # global g
+    # pylint: disable=redefined-outer-name,used-before-assignment
     print(g)
+    # pylint: disable=using-constant-test
     if True:
         g += 17  # noqa: F823
     print(g)

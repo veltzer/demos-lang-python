@@ -5,10 +5,10 @@ References:
 - https://stackoverflow.com/questions/14888799/disable-console-messages-in-flask-server
 """
 
-import flask
 import logging
+import flask
 
-log = logging.getLogger('werkzeug')
+log = logging.getLogger("werkzeug")
 log.setLevel(logging.ERROR)
 
 app = flask.Flask(__name__)

@@ -11,7 +11,7 @@ import sys
 
 for line in sys.stdin:
     line = line.strip()
-    print('basename is [{0}]'.format(os.path.basename(line)))
-    print('dirname is [{0}]'.format(os.path.dirname(line)))
-    print('splitext is [{0}]'.format(os.path.splitext(line)))
-    print('split is [{0}]'.format(os.path.split(line)))
+    print(f"basename is [{os.path.basename(line)}]")
+    print(f"dirname is [{os.path.dirname(line)}]")
+    print(f"splitext is [{os.path.splitext(line)}]")
+    print(f"split is [{os.path.split(line)}]")

@@ -11,14 +11,14 @@ import flask
 app = flask.Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def empty():
-    return flask.redirect('/index.html')
+    return flask.redirect("/index.html")
 
 
 @app.route('/<path:path>')
 def all_routes(path):
-    return 'path is [{}]'.format(path)
+    return f"path is [{path}]"
 
 
 print(app.url_map)

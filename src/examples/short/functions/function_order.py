@@ -8,35 +8,35 @@ This means that a function cannot be used until after it has been defined.
 # noinspection PyBroadException
 try:
     # noinspection PyUnboundLocalVariable
-    foo()  # noqa: F821
+    demo_foo()  # noqa: F821
 except NameError:
     print("yep, this failed")
 
 
-def foo():
-    print('this is foo')
-    bar()  # noqa: F821
+def demo_foo():
+    print("this is demo_foo")
+    demo_bar()  # noqa: F821
 
 
 # this will call foo but will fail once foo tried to call bar
 # noinspection PyBroadException
 try:
-    foo()
+    demo_foo()
 except NameError:
-    print('yep, this failed')
+    print("yep, this failed")
 
 
-def bar():
+def demo_bar():
     print('this is bar')
 
 
 # this should work now that both 'foo' and 'bar' are defined
-foo()
+demo_foo()
 
-del bar
+del demo_bar
 
 # now that 'bar' is no longer defined any call to 'foo' should fail
 try:
-    foo()
+    demo_foo()
 except NameError:
-    print('yep, this failed')
+    print("yep, this failed")

@@ -5,7 +5,7 @@ and get the arguments for it from the outside
 
 
 def call_n_times(n, f, *args, **kwargs):
-    for i in range(n):
+    for _ in range(n):
         f(*args, **kwargs)
 
 

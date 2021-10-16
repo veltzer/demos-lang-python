@@ -16,7 +16,8 @@ large_text_filename = "/var/log/auth.log"
 if os.path.isfile(filename):
     os.unlink(filename)
 
-large_text = open(large_text_filename).read()
+with open(large_text_filename) as f:
+    large_text = f.read()
 
 # n means create a new database and open for reading and writing
 d = dbm.gnu.open(filename, 'n')

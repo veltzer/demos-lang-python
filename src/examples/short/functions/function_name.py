@@ -16,23 +16,24 @@ import sys
 
 
 def my_func():
-    print('inside the function')
-    print('===================')
-    print('inspect.stack()[0][0].f_code.co_name is [{0}]'.format(inspect.stack()[0][0].f_code.co_name))
-    print('inspect.stack()[0][3] is [{0}]'.format(inspect.stack()[0][3]))
-    print('inspect.currentframe().f_code.co_name is [{0}]'.format(inspect.currentframe().f_code.co_name))
+    print("inside the function")
+    print("===================")
+    print(f"inspect.stack()[0][0].f_code.co_name is [{inspect.stack()[0][0].f_code.co_name}]")
+    print(f"inspect.stack()[0][3] is [{inspect.stack()[0][3]}]")
+    print(f"inspect.currentframe().f_code.co_name is [{inspect.currentframe().f_code.co_name}]")
     # noinspection PyProtectedMember
-    print('sys._getframe().f_code.co_name is [{0}]'.format(sys._getframe().f_code.co_name))
+    # pylint: disable=protected-access
+    print(f"sys._getframe().f_code.co_name is [{sys._getframe().f_code.co_name}]")
 
 
-print('outside the function')
-print('====================')
-print('my_func.__name__ is [{0}]'.format(my_func.__name__))
-print('my_func.__qualname__ is [{0}]'.format(my_func.__qualname__))
-print('my_func.__module__ is [{0}]'.format(my_func.__module__))
-print('my_func is [{0}]'.format(my_func))
-print('str(my_func) is [{0}]'.format(str(my_func)))
+print("outside the function")
+print("====================")
+print(f"my_func.__name__ is [{my_func.__name__}]")
+print(f"my_func.__qualname__ is [{my_func.__name__}]")
+print(f"my_func.__module__ is [{my_func.__module__}]")
+print(f"my_func is [{my_func}]")
+print(f"str(my_func) is [{str(my_func)}]")
 my_func()
-print('these are the methods that you can call on a function')
-print('=====================================================')
+print("these are the methods that you can call on a function")
+print("=====================================================")
 print(dir(my_func))

@@ -15,20 +15,24 @@ what happens with twisted).
 
 def evens():
     for x in range(0, 100, 2):
-        print('evens say ', x)
+        print(f"evens say {x}")
         yield
 
 
 def odds():
     for x in range(10001, 10101, 2):
-        print('odds say ', x)
+        print(f"odds say {x}")
         yield
 
 
-c1 = evens()
-c1.__next__()
-c2 = odds()
-c2.__next__()
-for x in range(10):
+def main():
+    c1 = evens()
     c1.__next__()
+    c2 = odds()
     c2.__next__()
+    for _ in range(10):
+        c1.__next__()
+    c2.__next__()
+
+
+main()

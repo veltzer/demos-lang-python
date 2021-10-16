@@ -5,10 +5,10 @@ References:
 - https://stackoverflow.com/questions/14888799/disable-console-messages-in-flask-server
 """
 
-import flask
 import os
+import flask
 
-os.environ['WERKZEUG_RUN_MAIN'] = 'true'
+os.environ["WERKZEUG_RUN_MAIN"] = "true"
 
 app = flask.Flask(__name__)
 app.run()
