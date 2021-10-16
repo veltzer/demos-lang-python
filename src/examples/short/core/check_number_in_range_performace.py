@@ -11,9 +11,7 @@ random_list = [random.randrange(0, 100) for _i in range(0, num_checks)]
 def func_naive() -> int:
     count = 0
     for i in random_list:
-        # noinspection PyChainedComparisons
-        # pylint: disable=chained-comparison
-        if i >= check_from and i < check_to:
+        if check_from <= i < check_to:
             count += 1
     return count
 

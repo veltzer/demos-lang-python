@@ -15,7 +15,7 @@ import concurrent.futures
 
 def work(n):
     # raise ValueError("this is an error")
-    for i in range(n):
+    for _ in range(n):
         pass
     return n
 

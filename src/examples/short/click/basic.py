@@ -26,9 +26,10 @@ def main(count, name, required, output, hash_type):
     print(required)
     print(output)
     print(hash_type)
-    for x in range(count):
-        click.echo('Hello %s!' % name)
+    for _ in range(count):
+        click.echo(f"Hello {name}!")
 
 
 if __name__ == '__main__':
+    # pylint: disable=no-value-for-parameter
     main()

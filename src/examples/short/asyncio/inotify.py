@@ -36,7 +36,7 @@ class AsyncioNotifier(pyinotify.Notifier):
 
 class EventHandler(pyinotify.ProcessEvent):
     def __init__(self, loop=None):
-        super(EventHandler, self).__init__()
+        super().__init__()
         self.loop = loop
 
     def process_IN_CREATE(self, event):
@@ -48,6 +48,7 @@ main_loop = asyncio.get_event_loop()
 
 # set up pyinotify stuff
 wm = pyinotify.WatchManager()
+# pylint: disable=no-member
 mask = pyinotify.IN_CREATE
 
 folder = '/tmp'

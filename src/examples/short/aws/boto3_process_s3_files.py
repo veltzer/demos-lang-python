@@ -11,16 +11,16 @@ References:
 """
 
 import codecs
+import locale
 
 import boto3
 import tqdm
-import locale
 
 do_count_lines = True
-bucket_name = 'bucket_name'
-folder = 'folder'
+bucket_name = "bucket_name"
+folder = "folder"
 
-s3 = boto3.resource('s3')
+s3 = boto3.resource("s3")
 bucket = s3.Bucket(bucket_name)
 # this will give you all objects in the bucket
 # gen = bucket.objects.all()
@@ -28,16 +28,16 @@ bucket = s3.Bucket(bucket_name)
 gen = bucket.objects.filter(Prefix=folder)
 file_num = 0
 for object_summary in gen:
-    print('doing [{0}]'.format(object_summary.key))
+    print(f"doing [{object_summary.key}]")
     file_num += 1
     if do_count_lines:
         stream = object_summary.get()['Body']
         # stream = io.BufferedReader(stream)
         # stream = io.TextIOWrapper(stream)
-        stream = codecs.getreader(encoding=locale.getpreferredencodig())(stream)
+        stream = codecs.getreader(encoding=locale.getpreferredencoding())(stream)
         lines = 0
         for line in tqdm.tqdm(stream):
-            # print(line, end='')
+            # print(line, end="")
             lines += 1
-        print('got [{0}] lines...'.format(lines))
-print('got [{0}] files...'.format(file_num))
+        print(f"got [{lines}] lines...")
+print(f"got [{file_num}] files...")

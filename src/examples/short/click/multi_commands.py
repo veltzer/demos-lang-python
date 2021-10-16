@@ -27,7 +27,7 @@ def say_goodbye():
 
 
 @cli.command(name="foo")
-def bar():
+def demo():
     print('foo')
 
 

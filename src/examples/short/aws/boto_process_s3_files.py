@@ -23,7 +23,7 @@ bucket = conn.get_bucket(bucket_name)
 key_list = bucket.list(folder)
 file_num = 0
 for key in key_list:
-    print('doing [{0}]'.format(key.name))
+    print(f"doing [{key.name}]")
     file_num += 1
     if do_count_lines:
         key.open_read()
@@ -32,5 +32,5 @@ for key in key_list:
             if do_print:
                 print(line, end='')
             line_number += 1
-        print('got [{0}] lines...'.format(line_number))
-print('got [{0}] files...'.format(file_num))
+        print(f"got [{line_number}] lines...")
+print(f"got [{file_num}] files...")

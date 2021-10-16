@@ -29,12 +29,12 @@ class Console(cmd.Cmd):
 
     # Command definitions
     # noinspection PyUnusedLocal
-    def do_hist(self, args):
+    def do_hist(self, _args):
         """Print a list of commands that have been entered"""
         print(self._hist)
 
     # noinspection PyMethodMayBeStatic, PyUnusedLocal
-    def do_exit(self, args):
+    def do_exit(self, _args):
         """Exits from the console"""
         return -1
 
@@ -66,7 +66,7 @@ class Console(cmd.Cmd):
         return False
 
     # noinspection PyMethodMayBeStatic
-    def do_return(self, args):
+    def do_return(self, _args):
         """ return """
         return
 
@@ -78,13 +78,13 @@ class Console(cmd.Cmd):
         """ return None """
         return None
 
-    def do_help(self, args):
+    def do_help(self, arg):
         """Get help on commands
            'help' or '?' with no arguments prints a list of commands for which help is available
            'help <command>' or '? <command>' gives help on <command>
         """
         # The only reason to define this method is for the help text in the doc string
-        cmd.Cmd.do_help(self, args)
+        cmd.Cmd.do_help(self, arg)
 
     # Override methods in Cmd object
     def preloop(self):
@@ -126,7 +126,9 @@ class Console(cmd.Cmd):
         Called on an input line when the command prefix is not recognized.
         In that case we execute the line as Python code.
         """
+        # pylint: disable=broad-except
         try:
+            # pylint: disable=exec-used
             exec(line) in self._locals, self._globals
         except Exception as e:
             print(f"{e.__class__}:{e}")

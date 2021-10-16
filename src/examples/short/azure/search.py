@@ -11,7 +11,7 @@ client = WebSearchClient(
     credentials=CognitiveServicesCredentials(subscription_key),
 )
 
-print("searching for [{}]".format(search))
+print(f"searching for [{search}]")
 web_data = client.web.search(
     query=search,
     count=20,
@@ -20,25 +20,25 @@ web_data = client.web.search(
 if web_data.web_pages is None:
     print("have no web_pages results")
 else:
-    print("web search results will follow... (got [{}] results)...".format(len(web_data.web_pages.value)))
+    print(f"web search results will follow... (got [{len(web_data.web_pages.value)}] results)...")
     for i, val in enumerate(web_data.web_pages.value):
-        print("{} {}".format(i, val.name))
+        print(f"{i} {val.name}")
         print(val.url)
 
 if web_data.videos is None:
     print("have no video results")
 else:
-    print("video results will follow... (got [{}] results)...".format(len(web_data.videos.value)))
+    print(f"video results will follow... (got [{len(web_data.videos.value)}] results)...")
 
 if web_data.images is None:
     print("have no images results")
 else:
-    print("images results will follow... (got [{}] results)...".format(len(web_data.images.value)))
+    print(f"images results will follow... (got [{len(web_data.images.value)}] results)...")
 
 if web_data.news is None:
     print("have no news results")
 else:
-    print("news results will follow... (got [{}] results)...".format(len(web_data.news.value)))
+    print(f"news results will follow... (got [{len(web_data.news.value)}] results)...")
     for i, val in enumerate(web_data.news.value):
-        print("{} {}".format(i, val.name))
+        print(f"{i} {val.name}")
         print(val.url)

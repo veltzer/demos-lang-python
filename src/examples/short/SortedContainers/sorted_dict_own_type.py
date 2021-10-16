@@ -7,14 +7,13 @@ class Range:
         self.to = to
 
     def __lt__(self, t):
-        if type(t) == int:
+        if isinstance(t, int):
             return self.to <= t
         return self.to <= t.fr
 
     def __eq__(self, t):
-        if type(t) == int:
-            # noinspection PyChainedComparisons
-            return self.fr <= t and t < self.to
+        if isinstance(t, int):
+            return self.fr <= t < self.to
         return self.fr == t.fr and self.to == t.to
 
     def __ne__(self, t):
@@ -24,7 +23,7 @@ class Range:
         return hash(str(self))
 
     def __str__(self):
-        return "[{}-{}]".format(self.fr, self.to)
+        return f"[{self.fr}-{self.to}]"
 
 
 d = SortedDict()

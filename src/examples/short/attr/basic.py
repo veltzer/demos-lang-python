@@ -11,7 +11,7 @@ from attr import attrs, attrib
 
 
 @attrs
-class MyObject(object):
+class MyObject:
     a = attrib(default=None)  # type: int
     b = attrib(default=None)  # type: int
 
