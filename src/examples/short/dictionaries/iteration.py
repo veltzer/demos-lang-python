@@ -28,11 +28,13 @@ for x in h.items():
     print(f"key is {x[0]}")
     print(f"val is {x[1]}")
 # this is the same but you only get a key each time
+# pylint: disable=consider-using-dict-items
 for x in h:
     print(x)
     print(f"key is {x}")
     print(f"val is {h[x]}")
 # this is less efficient (at least in some versions of python)
+# pylint: disable=consider-iterating-dictionary
 for x in h.keys():
     print(x)
     print(f"key is {x}")

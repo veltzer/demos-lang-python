@@ -51,6 +51,7 @@ for i in range(10):
 # we still get the exception if we change the number of elements
 visited_keys = set()
 try:
+    # pylint: disable=consider-iterating-dictionary
     for x in d.keys():
         if x == 3:
             del d[5]
@@ -65,6 +66,7 @@ for i in range(10):
 
 # what if we pass over d.keys() and make sure to keep the same amount of elements?
 visited_keys = set()
+# pylint: disable=consider-iterating-dictionary
 for x in d.keys():
     if x == 3:
         del d[5]

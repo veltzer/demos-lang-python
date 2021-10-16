@@ -18,7 +18,8 @@ def do_error():
 def main():
     try:
         do_error()
-    except (Exception, KeyboardInterrupt) as e:
+    # the parenthesis in the next line are essential
+    except (ValueError, KeyboardInterrupt) as e:
         while e.__cause__:
             e = e.__cause__
         print(e)

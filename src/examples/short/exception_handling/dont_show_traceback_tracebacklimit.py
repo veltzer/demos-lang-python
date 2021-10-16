@@ -18,8 +18,8 @@ import sys
 def do_error():
     try:
         raise ValueError('core')
-    except ValueError:
-        raise ValueError('outer')
+    except ValueError as e:
+        raise ValueError('outer') from e
 
 
 sys.tracebacklimit = None

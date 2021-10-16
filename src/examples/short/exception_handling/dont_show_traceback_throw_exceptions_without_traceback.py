@@ -13,11 +13,12 @@ import sys
 
 class NoTraceBackWithLineNumber(Exception):
     def __init__(self, msg):
+        super().__init__()
         try:
             ln = sys.exc_info()[-1].tb_lineno
         except AttributeError:
             ln = inspect.currentframe().f_back.f_lineno
-        self.args = "{0.__name__} (line {1}): {2}".format(type(self), ln, msg),
+        self.args = f"{type(self).__name__} (line {ln}): {msg}"
         sys.exit(self)
 
 

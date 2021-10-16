@@ -21,7 +21,7 @@ sys.excepthook = excepthook
 # noinspection PyBroadException
 try:
     raise ValueError('core')
-except Exception:
+except ValueError:
     print("haha, got the exception and continuing anyway...")
 print("after")
 
