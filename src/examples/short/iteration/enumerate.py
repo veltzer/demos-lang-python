@@ -20,6 +20,7 @@ def simple_enumerate(value_list):
 def main():
     value_list = ['a', 'b', 'c']
     # the non pythonic way to do this
+    # pylint: disable=consider-using-enumerate
     for i in range(len(value_list)):
         print(i, value_list[i])
     # the pythonic way to do this

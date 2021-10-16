@@ -29,7 +29,7 @@ def simple_range(stop, start=0, step=1):
     while count < stop:
         yield count
         count += step
-    raise StopIteration()
+    # raise StopIteration()
 
 
 print('simple_range(10)')

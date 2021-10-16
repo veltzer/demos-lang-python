@@ -5,7 +5,8 @@ This example of how to wrap a dictionary to look like a namespace
 
 class D(dict):
     def __init__(self):
-        super(D, self).__init__()
+        super().__init__()
+        self.two = None
 
     def __getattr__(self, name):
         return self[name]

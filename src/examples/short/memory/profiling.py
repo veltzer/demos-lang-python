@@ -7,5 +7,5 @@ which makes sense if each int is 4 bytes.
 
 import sys
 
-my_list = [x for x in range(1000000)]
+my_list = list(range(1000000))
 print(f"getsizeof is [{sys.getsizeof(my_list)}]")

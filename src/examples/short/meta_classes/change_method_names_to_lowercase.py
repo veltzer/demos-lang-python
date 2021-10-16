@@ -17,7 +17,7 @@ class MetaClass(type):
         return type.__new__(mcs, name, bases, new_dict)
 
 
-class MyClass(object):
+class MyClass:
     __metaclass__ = MetaClass
 
     @classmethod
@@ -26,4 +26,5 @@ class MyClass(object):
 
 
 # Look! we now call the method in lowercase...
+# pylint: disable=no-member
 MyClass.sayhello()

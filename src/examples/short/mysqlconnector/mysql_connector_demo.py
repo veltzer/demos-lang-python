@@ -12,15 +12,13 @@ import os.path
 
 import mysql.connector
 
-'''
-get the configuration, including user and password from the ~/.my.cnf
-file of the user
-
-if no such file exists then use sensible defaults
-'''
-
 
 def get_config():
+    '''
+    get the configuration, including user and password from the ~/.my.cnf
+    file of the user
+    if no such file exists then use sensible defaults
+    '''
     d = {}
     ini_file = os.path.expanduser('~/.my.cnf')
     if os.path.isfile(ini_file):
@@ -37,10 +35,9 @@ def get_config():
         if config.has_option('mysql', 'password'):
             d['password'] = config.get('mysql', 'password')
         return d
-    else:
-        d['user'] = getpass.getuser()
-        d['database'] = 'mysql'
-        return d
+    d['user'] = getpass.getuser()
+    d['database'] = 'mysql'
+    return d
 
 
 db = mysql.connector.Connect(**get_config())

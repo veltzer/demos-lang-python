@@ -27,6 +27,7 @@ class NoCons:
 class A:
     # wrong! don't do this...
     # noinspection PyMethodParameters
+    # pylint: disable=no-method-argument
     def __init__():
         print('in A constructor')
 
@@ -58,6 +59,7 @@ class E:
 n = NoCons()
 print(type(n))
 try:
+    # pylint: disable=too-many-function-args
     a = A()
 except TypeError:
     print('oh,no. Cant construct an object. Must pass self')

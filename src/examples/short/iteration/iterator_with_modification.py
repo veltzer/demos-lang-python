@@ -26,7 +26,7 @@ example number 1: removing elements in the list in the position before
 the place where we are in. Result: Certain elements are never visited.
 """)
 size = 10
-my_list = range(size)
+my_list = list(range(size))
 elements_visited = set()
 all_elements = set(my_list)
 for i, x in enumerate(my_list):
@@ -46,7 +46,7 @@ example number 2: removing elements in the list in the position before
 the place where we are in but doing it on the last element
 """)
 size = 10
-my_list = range(size)
+my_list = list(range(size))
 elements_visited = set()
 all_elements = set(my_list)
 for i, x in enumerate(my_list):
@@ -62,7 +62,7 @@ if len(elements_visited) != size:
 
 print("example number 3: adding elements before the position that we are in")
 size = 10
-my_list = range(size)
+my_list = list(range(size))
 elements_visited = set()
 all_elements = set(my_list)
 for i, x in enumerate(my_list):
@@ -74,7 +74,7 @@ for i, x in enumerate(my_list):
     elements_visited.add(x)
 if len(elements_visited) != len(my_list):
     print(f"elements_visited is {len(elements_visited)} while size is {len(my_list)}")
-    print(f"This can cause problems for various algorithms")
+    print("This can cause problems for various algorithms")
 
 print("example number 4: adding elements to a dictionary while iterating it")
 try:

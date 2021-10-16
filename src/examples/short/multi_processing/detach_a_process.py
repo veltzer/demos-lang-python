@@ -11,4 +11,4 @@ import time
 if os.fork() == 0:
     for i in range(10):
         time.sleep(1)
-        print('im still here {0}...'.format(i))
+        print(f"im still here {i}...")

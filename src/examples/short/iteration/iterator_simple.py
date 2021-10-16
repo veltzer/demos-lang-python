@@ -8,10 +8,9 @@ Differences between python2.7 and python3:
 - in python2.7 the __next__ method should be called 'next'.
 """
 
-'''Iterator for looping over a sequence backwards'''
-
 
 class Reverse:
+    """ Iterator for looping over a sequence backwards """
     def __init__(self, data):
         self.data = data
         self.index = len(data)

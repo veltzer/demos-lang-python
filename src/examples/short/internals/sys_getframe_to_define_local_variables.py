@@ -5,22 +5,25 @@ frame including your own
 
 import sys
 
-# define a new local variable 'foo' and assign the value '42' to it...
+# define a new local variable "foo" and assign the value "42" to it...
 # noinspection PyProtectedMember
-sys._getframe().f_locals['foo'] = 42
+# pylint: disable=protected-access
+sys._getframe().f_locals["foo"] = 42
+# pylint: disable=undefined-variable
 print(foo)  # noqa: F821
 
 
 def f():
-    x = ['one']
-    print('val before is {0}'.format(x[0]))
+    x = ["one"]
+    print(f"val before is {x[0]}")
     g()
-    print('val after is {0}'.format(x[0]))
+    print(f"val after is {x[0]}")
 
 
 def g():
     # noinspection PyProtectedMember
-    sys._getframe(1).f_locals['x'][0] = 42
+    # pylint: disable=protected-access
+    sys._getframe(1).f_locals["x"][0] = 42
 
 
 f()

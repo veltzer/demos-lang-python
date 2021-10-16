@@ -15,4 +15,4 @@ server = jenkins.Jenkins(
     password='mypassword'
 )
 version = server.get_version()
-print('server version is [{}]'.format(version))
+print(f"server version is [{version}]")

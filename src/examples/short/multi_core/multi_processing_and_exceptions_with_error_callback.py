@@ -25,8 +25,7 @@ def print_exception(e):
     print('exception happened', e)
 
 
-pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
-for i in range(10):
-    pool.apply_async(sleep_a_little, [i], error_callback=print_exception)
-pool.close()
-pool.join()
+with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
+    for i in range(10):
+        pool.apply_async(sleep_a_little, [i], error_callback=print_exception)
+    pool.join()

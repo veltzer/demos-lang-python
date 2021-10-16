@@ -14,14 +14,14 @@ socket_address = (HOST, PORT)
 s = socket.socket(af, socket_type, proto)
 s.bind(socket_address)
 s.listen(1)
-print('contact me at {}'.format(socket_address))
+print(f"contact me at {socket_address}")
 while True:
     conn, address = s.accept()
-    print('Connected by {}'.format(address))
+    print(f"Connected by {address}")
     while True:
         data = conn.recv(1024)
         if not data:
             break
         conn.send(data)
-    print('connection closed')
+    print("connection closed")
     conn.close()

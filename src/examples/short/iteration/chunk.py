@@ -60,9 +60,10 @@ def chunk_python(data, n):
         for _ in range(n):
             try:
                 yield next(i)
-            except StopIteration as e:
+            except StopIteration:
                 over.cancel()
-                raise e
+                return
+                # raise e
 
     while not over.is_cancelled:
         yield return_n()
@@ -74,6 +75,7 @@ def chunk_itertools(data, n):
         # first = next(i)
         # second version is faster...
         # yield itertools.islice(itertools.chain((first,), i), n)
+        # pylint: disable=stop-iteration-return
         yield itertools.chain((next(i),), itertools.islice(i, n - 1))
 
 
@@ -139,8 +141,8 @@ def main():
         count += jump
 
     how_much = 10
-    print("groupby [{}]".format(timeit.timeit(func_chunk_groupby, number=how_much)))
-    print("groupby_closure [{}]".format(timeit.timeit(func_chunk_groupby_closure, number=how_much)))
-    print("python [{}]".format(timeit.timeit(func_chunk_python, number=how_much)))
-    print("itertools [{}]".format(timeit.timeit(func_chunk_itertools, number=how_much)))
-    print("generator [{}]".format(timeit.timeit(func_chunk_generator, number=how_much)))
+    print(f"groupby [{timeit.timeit(func_chunk_groupby, number=how_much)}]")
+    print(f"groupby_closure [{timeit.timeit(func_chunk_groupby_closure, number=how_much)}]")
+    print(f"python [{timeit.timeit(func_chunk_python, number=how_much)}]")
+    print(f"itertools [{timeit.timeit(func_chunk_itertools, number=how_much)}]")
+    print(f"generator [{timeit.timeit(func_chunk_generator, number=how_much)}]")

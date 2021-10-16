@@ -8,6 +8,6 @@ References:
 import subprocess
 import time
 
-p = subprocess.Popen(['watch', 'ls'])
-time.sleep(10)
-p.terminate()
+with subprocess.Popen(['watch', 'ls']) as p:
+    time.sleep(10)
+    p.terminate()

@@ -12,8 +12,7 @@ def sleep_a_little(num):
     print('after', num)
 
 
-pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
-for i in range(10):
-    pool.apply_async(sleep_a_little, [i])
-pool.close()
-pool.join()
+with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
+    for i in range(10):
+        pool.apply_async(sleep_a_little, [i])
+    pool.join()

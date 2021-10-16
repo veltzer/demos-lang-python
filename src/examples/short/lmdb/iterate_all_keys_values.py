@@ -5,8 +5,8 @@ References:
 - https://stackoverflow.com/questions/32489778/how-do-i-count-and-enumerate-the-keys-in-an-lmdb-with-python
 """
 
-import lmdb
 import os
+import lmdb
 
 # first lets create the mdb file
 encoding = 'utf-8'
@@ -27,8 +27,8 @@ env = lmdb.open(filename, subdir=False, map_size=1000000000000)
 with env.begin() as txn:
     with txn.cursor() as curs:
         for key, value in curs:
-            print('key is: {}'.format(key.decode(encoding)))
-            print('value is: {}'.format(value.decode(encoding)))
+            print(f"key is: {key.decode(encoding)}")
+            print(f"value is: {value.decode(encoding)}")
 
 # finally lets remove the file
 os.unlink(filename)

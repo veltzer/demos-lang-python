@@ -19,19 +19,17 @@ def sleep_a_little(num):
     time.sleep(1)
     if num % 2 == 1:
         raise ValueError('this is bad ' + str(num))
-    else:
-        return num
+    return num
 
 
-pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
-results = []
-for i in range(10):
-    results.append(pool.apply_async(sleep_a_little, [i]))
-pool.close()
-pool.join()
+with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
+    results = []
+    for i in range(10):
+        results.append(pool.apply_async(sleep_a_little, [i]))
+    pool.join()
 for i, result in enumerate(results):
     try:
         r = result.get()
         print(i, r)
-    except Exception as e:
+    except ValueError as e:
         print(i, type(e))

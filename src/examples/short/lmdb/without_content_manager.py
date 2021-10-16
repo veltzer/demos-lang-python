@@ -5,8 +5,8 @@ References:
 - https://lmdb.readthedocs.io/en/release/
 """
 
-import lmdb
 import os
+import lmdb
 
 # first lets create the mdb file
 encoding = 'utf-8'
@@ -27,8 +27,8 @@ env = lmdb.open(filename, subdir=False, map_size=1000000000000)
 txn = env.begin()
 with txn.cursor() as curs:
     for key, value in curs:
-        print('key is: {}'.format(key.decode(encoding)))
-        print('value is: {}'.format(value.decode(encoding)))
+        print(f"key is: {key.decode(encoding)}")
+        print(f"value is: {value.decode(encoding)}")
 env.close()
 
 # finally lets remove the file

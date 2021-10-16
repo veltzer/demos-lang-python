@@ -24,7 +24,8 @@ def chomp(x):
 
 
 s = "hello\n\n\t\n"
+newline = "\n"
 
-print("s.strip() is [{}]".format(s.rstrip()))
-print("s.strip('\\n') is [{}]".format(s.rstrip("\n")))
-print("chomp(s) is [{}]".format(chomp(s)))
+print(f"s.strip() is [{s.rstrip()}]")
+print(f"s.strip(newline) is [{s.rstrip(newline)}]")
+print(f"chomp(s) is [{chomp(s)}]")

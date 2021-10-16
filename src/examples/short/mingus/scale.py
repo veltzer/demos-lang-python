@@ -1,6 +1,6 @@
+import time
 from mingus.midi import fluidsynth
 from mingus.containers import Note
-import time
 
 
 fluidsynth.init('/usr/share/sounds/sf2/FluidR3_GM.sf2', "pulseaudio")

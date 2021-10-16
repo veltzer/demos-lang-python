@@ -12,5 +12,9 @@ def chunks(l, n):
         yield l[i:i + n]
 
 
-for l in chunks(range(5, 28), 7):
-    print(l)
+def main():
+    for l in chunks(range(5, 28), 7):
+        print(l)
+
+
+main()

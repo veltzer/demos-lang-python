@@ -21,7 +21,7 @@ import abc
 # This is the right way to do it
 class A(abc.ABC):
     @abc.abstractmethod
-    def foo(self):
+    def method(self):
         pass
 
 
@@ -33,16 +33,17 @@ class C(metaclass=abc.ABCMeta):
     __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
-    def foo(self):
+    def method(self):
         pass
 
 
 class D(C):
-    def foo(self):
+    def method(self):
         pass
 
 
 try:
+    # pylint: disable=abstract-class-instantiated
     a = A()
     assert isinstance(a, A)
 except TypeError as e:
@@ -52,6 +53,7 @@ b = B()
 assert isinstance(b, B)
 
 try:
+    # pylint: disable=abstract-class-instantiated
     c = C()
     assert issubclass(c, C)
 except TypeError as e:

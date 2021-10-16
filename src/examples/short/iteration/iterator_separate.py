@@ -17,12 +17,10 @@ class RevIter:
         return self.data[self.index]
 
 
-'''
-Iterator for looping over a sequence backwards
-'''
-
-
 class Reverse:
+    '''
+    Iterator for looping over a sequence backwards
+    '''
     def __init__(self, data):
         self.data = data
 
@@ -31,16 +29,12 @@ class Reverse:
 
 
 def main():
-    """
-    And now lets use the iterator...
-    """
+    # And now lets use the iterator...
     for x in Reverse(range(7)):
         print(x)
 
-    """
-    notice that Reverse(x) is NOT an iterator,at least by pythons understanding of it.
-    Compare to pythons own reversed(x) implementation which does return an iterator...
-    """
+    # notice that Reverse(x) is NOT an iterator,at least by pythons understanding of it.
+    # Compare to pythons own reversed(x) implementation which does return an iterator...
     y = range(7)
     r1 = Reverse(y)
     print(type(r1))

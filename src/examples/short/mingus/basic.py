@@ -1,6 +1,6 @@
+import time
 from mingus.midi import fluidsynth
 from mingus.containers import NoteContainer
-import time
 
 # mingus documentation:
 # http://bspaans.github.io/python-mingus/
