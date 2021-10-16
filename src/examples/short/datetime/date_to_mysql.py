@@ -16,9 +16,9 @@ def date_to_mysql(output: str):
 
 def main():
     output = subprocess.check_output('date').decode().strip()
-    print('output is [{0}]'.format(output))
+    print(f"output is [{output}]")
     d = date_to_mysql(output)
-    print('d is [{0}]'.format(d))
+    print(f"d is [{d}]")
 
 
 if __name__ == '__main__':

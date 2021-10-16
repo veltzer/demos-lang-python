@@ -4,6 +4,7 @@ This is an example of debugging python with pdb.
 
 import pdb
 
+# pylint: disable=forgotten-debug-statement
 pdb.set_trace()
 
 

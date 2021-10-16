@@ -16,6 +16,7 @@ import signal
 libacl = ctypes.cdll.LoadLibrary('libacl.so')
 libdl = ctypes.CDLL('libdl.so')
 # noinspection PyProtectedMember
+# pylint: disable=protected-access
 libdl.dlclose(libacl._handle)
 while True:
     signal.pause()

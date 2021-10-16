@@ -17,6 +17,7 @@ def calc():
     while True:
         current_sum += i
         if i == 600:
+            # pylint: disable=forgotten-debug-statement
             pdb.set_trace()
         i += 1
 

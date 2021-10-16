@@ -7,4 +7,4 @@ References:
 
 str_num = "1,324,432.23"
 float_num = float(str_num.replace(',', ''))
-print("float_num is [{}]".format(str(float_num)))
+print(f"float_num is [{float_num}]")

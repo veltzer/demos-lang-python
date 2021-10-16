@@ -32,7 +32,7 @@ class MyResource:
         return self.suppress
 
 
-''' first lets try to just see if enter and exit are called '''
+# first lets try to just see if enter and exit are called
 with MyResource() as r:
     print(r)
     print('in block of code')
@@ -41,19 +41,19 @@ assert MyResource.exitCallsCounter == 1
 print(
     'yes,if we got this far it means that both enter and exit were called exactly one time during the last attempt')
 
-''' now lets try to throw an exception from the 'with' block and see that exit it called '''
+# now lets try to throw an exception from the 'with' block and see that exit it called
 try:
     with MyResource() as r:
         print(r)
-        raise Exception('foobar')
-except Exception:
+        raise ValueError('foobar')
+except ValueError:
     pass
 assert MyResource.enterCallsCounter == 2
 assert MyResource.exitCallsCounter == 2
 print(
     'yes,if we got this far it means that both enter and exit were called exactly one time during the last attempt')
 
-''' now lets try to suppress the exception thrown '''
+# now lets try to suppress the exception thrown
 with MyResource(suppress=True) as r:
     print(r)
     raise Exception('foobar')

@@ -23,4 +23,5 @@ def configure(binder: inject.Binder) -> None:
 
 inject.configure(config=configure)
 
+# pylint: disable=no-value-for-parameter
 doit()

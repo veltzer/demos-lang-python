@@ -10,13 +10,13 @@ class MyResource:
 
     def __init__(self, name):
         self.name = name
-        print("{} constructor".format(self.name))
+        print(f"{self.name} constructor")
 
     def __enter__(self):
-        print("{} enter".format(self.name))
+        print(f"{self.name} enter")
 
     def __exit__(self, _type, value, traceback):
-        print("{} exit".format(self.name))
+        print(f"{self.name} exit")
 
 
 with MyResource("r1") as r1, MyResource("r2") as r2:
