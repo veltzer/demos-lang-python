@@ -2,6 +2,9 @@
 This example shows how to create a read only dictionary
 """
 
+class ReadOnlyException(Exception):
+    pass
+
 
 class RoDict:
     def __init__(self):
@@ -13,9 +16,8 @@ class RoDict:
 
     def __setitem__(self, key, val):
         if self.ro:
-            raise Exception('dont touch this')
-        else:
-            self.d[key] = val
+            raise ReadOnlyException()
+        self.d[key] = val
 
 
 d = RoDict()
@@ -26,5 +28,5 @@ d['a'] = 'e'
 d.ro = True
 try:
     d['a'] = 'u'
-except Exception:
-    print('yes, got exception. Dictionary is read only')
+except ReadOnlyException:
+    print("yes, got exception. Dictionary is read only")

@@ -1,25 +1,26 @@
 """
+Example of stealing a method from another object
 """
 
 
-class Book(object):
-    """ initializer """
-
+class Book:
     def __init__(self, price):
+        """ initializer """
         self.price = price
 
     def print_me(self):
-        print('price is', self.price)
+        print(f"price is {self.price}")
 
     def set_price(self, price):
         self.price = price
 
 
-''' Lets show how we use our object... '''
+print("Lets show how we use our object")
 b = Book(50)
+# pylint: disable=no-value-for-parameter
 b.print_me()
 
-""" apply method without object """
+print("apply method without object")
 m = b.set_price
 print(type(m))
 m(55)
@@ -30,51 +31,41 @@ def my_func(self):
     print(f"in myfunc {self.price}")
 
 
-"""
-when running a function it will not pass the object it is attached to as 'self'
-and so we would not have a "self"
-"""
+# when running a function it will not pass the object it is attached to as 'self'
+# and so we would not have a "self"
 try:
+    # pylint: disable=attribute-defined-outside-init
     b.new_method_1 = my_func
     print(type(b.new_method_1))
     # noinspection PyArgumentList
     b.new_method_1()
 except TypeError:
-    print('all is well, got exception')
+    print("all is well, got exception")
 
-"""
-You can, however, use it if you pass "self" yourself...
-"""
+# You can, however, use it if you pass "self" yourself...
+# pylint: disable=attribute-defined-outside-init
 b.new_method_2 = my_func
 print(type(b.new_method_2))
 b.new_method_2(b)
 
-"""
-Another way is to tie the function directly to the class
-It's type is still a 'function' but now you can call it from
-every instance.
-"""
+# Another way is to tie the function directly to the class
+# It's type is still a 'function' but now you can call it from
+# every instance.
 Book.new_method_3 = my_func
 print(type(Book.new_method_3))
 b.new_method_3()
 
-"""
-who about plugging in a method which already exists in the instance?
-The problem with this is that we still need to pass "self" our selves.
-"""
+# who about plugging in a method which already exists in the instance?
+# The problem with this is that we still need to pass "self" our selves.
 b2 = Book(60)
 b2.print_me = my_func
 b2.print_me(b2)
 
-"""
-Replacing methods at the class level works...
-"""
+# Replacing methods at the class level works...
 Book.print_me = my_func
 b.print_me()
 
-"""
-lets see if we can make it a real method
-"""
+# lets see if we can make it a real method
 # TBD
 # print(dir(type(Book.set_price)))
 # print(dir(type(Book.print_me)))

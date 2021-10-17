@@ -22,6 +22,7 @@ a_instance = None
 
 def get_a_instance():
     # noinspection PyGlobalUndefined
+    # pylint: disable=global-statement
     global a_instance, get_a_instance
     if a_instance is None:
         a_instance = A()
@@ -52,6 +53,7 @@ b_instance = None
 
 
 def getBInstance():
+    # pylint: disable=global-statement
     global b_instance
     if b_instance is None:
         b_instance = B()
@@ -75,10 +77,10 @@ time_before = time.time()
 for _ in range(num):
     a = get_a_instance()
 time_after = time.time()
-print('time for A: {0:.3f} seconds'.format(time_after - time_before))
+print(f"time for A: {time_after-time_before:.3f} seconds")
 time_before = time.time()
 # noinspection PyRedeclaration
 for _ in range(num):
     b = getBInstance()
 time_after = time.time()
-print('time for B: {0:.3f} seconds'.format(time_after - time_before))
+print(f"time for B: {time_after-time_before:.3f} seconds")

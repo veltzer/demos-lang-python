@@ -9,6 +9,7 @@ try this command to check it out:
 References:
 """
 
+# pylint: disable=deprecated-module
 import optparse
 
 parser = optparse.OptionParser(

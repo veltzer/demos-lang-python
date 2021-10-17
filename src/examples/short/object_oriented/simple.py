@@ -17,16 +17,15 @@ is really an initializer.
 
 
 class Book:
-    """ initializer """
-
     def __init__(self, price):
+        """ initializer """
         self.price = price
 
     def printMe(self):
         print('price is', self.price)
 
 
-''' Lets show how we use our object... '''
+# Lets show how we use our object
 b = Book(50)
 b.printMe()
 b.price = 60
