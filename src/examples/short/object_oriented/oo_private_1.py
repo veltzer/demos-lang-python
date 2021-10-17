@@ -41,6 +41,7 @@ MyClass.setPublic(b, 11)
 b.pr()
 print('here is how you access the accessible variable ' + str(b.public_variable))
 print('setting inaccessible variable')
+# pylint: disable=protected-access
 b.__private_variable = 6
 b.pr()
 print('didnt work,huh ?')
@@ -49,6 +50,7 @@ print('from outside its value looks like ' + str(b.__private_variable))
 print('this is our real var ' + str(b._MyClass__private_variable))
 print('this means that there is no real security for the __[var] in python')
 print('lets look at our class')
+# pylint: disable=attribute-defined-outside-init
 b._MyClass__private_variable = 666
 b.pr()
 b.pr()

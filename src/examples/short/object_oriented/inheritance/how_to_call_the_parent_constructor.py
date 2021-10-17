@@ -20,13 +20,13 @@ class A:
 class B1(A):
     """ most standard and short way """
 
+    # pylint: disable=useless-super-delegation
     def __init__(self):
         super().__init__()
 
 
 class B2(A):
     """ If you don't need to do anything in your constructor, you get your fathers """
-    pass
 
 
 class B3(A):
@@ -39,14 +39,18 @@ class B3(A):
 class B4(A):
     """ python2 way """
 
+    # pylint: disable=useless-super-delegation
     def __init__(self):
+        # pylint: disable=super-with-arguments
         super(B4, self).__init__()
 
 
 class B5(A):
     """ python2 way but without coding the class name yet again """
 
+    # pylint: disable=useless-super-delegation
     def __init__(self):
+        # pylint: disable=bad-super-call
         super(self.__class__, self).__init__()
 
 

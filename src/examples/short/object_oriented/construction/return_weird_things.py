@@ -18,18 +18,21 @@ even returned to the programmer).
 
 class A:
     # noinspection PyReturnFromInit
+    # pylint: disable=return-in-init
     def __init__(self):
         return 0
 
 
 class B:
     # noinspection PyReturnFromInit
+    # pylint: disable=return-in-init
     def __init__(self):
         return None
 
 
 class C:
     # noinspection PyReturnFromInit
+    # pylint: disable=return-in-init
     def __init__(self):
         return self
 
@@ -42,11 +45,11 @@ class D:
 
 try:
     a = A()
-except Exception as e:
-    print('yes, got the exception [{0}]...'.format(str(e)))
+except TypeError as e:
+    print(f"yes, got the exception [{e}]")
 b = B()
 try:
     c = C()
-except Exception as e:
-    print('yes, got the exception [{0}]...'.format(str(e)))
+except TypeError as e:
+    print(f"yes, got the exception [{e}]")
 d = D()

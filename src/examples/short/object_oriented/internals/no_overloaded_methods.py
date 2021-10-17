@@ -10,6 +10,7 @@ class A:
         self.__private_var = val
 
     # noinspection PyRedeclaration
+    # pylint: disable=function-redefined
     def __init__(self):  # noqa: F811
         self.__private_var = 5
 
@@ -22,6 +23,7 @@ class A:
 
 
 try:
+    # pylint: disable=too-many-function-args
     a = A(5)
     fake_use(a)
 except TypeError:
@@ -33,6 +35,6 @@ try:
     a.sayHello()
 except TypeError:
     print('oops,got an error')
-    print(
-        'the no argument version of the method \'sayHello\' does not exist...')
+    print('the no argument version of the method \'sayHello\' does not exist')
+# pylint: disable=too-many-function-args
 a.sayHello('mark')
