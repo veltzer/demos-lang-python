@@ -5,10 +5,10 @@ References:
 - https://www.syncfusion.com/kb/8672/how-to-extract-text-from-a-powerpoint-presentation
 - https://python-pptx.readthedocs.io/en/latest/#user-guide
 """
+import sys
 from itertools import islice
 
 from pptx import Presentation
-import sys
 
 
 input_filename = sys.argv[1]

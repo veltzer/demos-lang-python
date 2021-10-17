@@ -37,7 +37,7 @@ for x in range(1, till):
     start_x += width + margin_x
     to_x = start_x + width
     to_y = start_y + height
-    slide_name = 'slide-%03d.pdf' % slide
+    slide_name = f"slide-{slide:03}.pdf"
     slide += 1
     area = f"{start_x} {start_y} {to_x} {to_y}"
     print(f"frmt is {area}")

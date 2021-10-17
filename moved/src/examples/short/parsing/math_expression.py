@@ -15,19 +15,19 @@ class MyProcessorClass(simpleparse.dispatchprocessor.DispatchProcessor):
     # def __init__(self):
     #     print('cons')
 
-    def number(self, tup, buf):
+    def number(self, _tup, _buf):
+        """ Process the given production and it's children """
         print('in number')
-        '''Process the given production and it's children'''
 
-    def expr(self, tup, buf):
+    def expr(self, _tup, _buf):
+        """ Process the given production and it's children """
         print('in expr')
-        '''Process the given production and it's children'''
 
     def __call__(self, value, data):
-        print('value is ' + str(value))
-        print('data is ' + str(data))
-        return value
         # return super(self.__class__,self).__call__(self,value,data)
+        print(f"value is {value}")
+        print(f"data is {data}")
+        return value
 
 
 class MyParser(simpleparse.parser.Parser):
@@ -35,5 +35,5 @@ class MyParser(simpleparse.parser.Parser):
         return MyProcessorClass()
 
 
-parser = MyParser(declaration, 'full')
+parser = MyParser(declaration, "full")
 pprint.pprint(parser.parse(sys.argv[1]))
