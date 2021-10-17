@@ -26,6 +26,7 @@ for slide_number, slide in enumerate(islice(slides, None)):
             continue
         print(v.target_ref)
     for shape in slide.shapes:
+        # pylint: disable=no-member
         if shape.shape_type == MSO_SHAPE_TYPE.PLACEHOLDER:
             print(shape.shape_type)
             print(shape.text)
