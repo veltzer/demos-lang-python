@@ -11,7 +11,7 @@ import pwd
 
 username = getpass.getuser()
 userid = pwd.getpwnam(username).pw_uid
-print('current username is [{0}] and uid is [{1}]'.format(username, userid))
+print(f"current username is [{username}] and uid is [{userid}]")
 groups = [(g.gr_name, g.gr_gid)
           for g in grp.getgrall() if username in g.gr_mem]
 primary_gid = pwd.getpwnam(username).pw_gid

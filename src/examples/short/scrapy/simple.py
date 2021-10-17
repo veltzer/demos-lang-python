@@ -23,17 +23,16 @@ class SearchSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         """ constructor """
         # important, call the parent
-        super(SearchSpider, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.logger.info('in __init__')
 
-    def parse(self, response):
+    def parse(self, _response, **_kwargs):
         """
         This method is called whenever you get a response
         """
         self.logger.info('in parse')
 
-    # noinspection PyUnusedLocal
-    def closed(self, reason):
+    def closed(self, _reason):
         """
         This method is called automatically when the crawler finishes
         """

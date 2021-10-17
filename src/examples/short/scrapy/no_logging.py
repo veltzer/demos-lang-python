@@ -26,28 +26,25 @@ class SearchSpider(scrapy.Spider):
     start_urls = (
         'https://jet.com/search/',
     )
-    ''' constructor '''
 
     def __init__(self, *args, **kwargs):
-        super(SearchSpider, self).__init__(*args, **kwargs)
+        ''' constructor '''
+        super().__init__(*args, **kwargs)
         # important, call the parent
         self.logger.info('in __init__')
 
-    '''
-    This method is called whenever you get a response
-    '''
 
-    def parse(self, response):
+    def parse(self, _response, **_kwargs):
+        ''' This method is called whenever you get a response '''
         self.logger.info('in parse')
 
-    '''
-    This method is called automatically when the crawler finishes
-    Note that because of python tricks this methods signature is different
-    in the parent but this signature is the right one...
-    '''
 
-    # noinspection PyUnusedLocal
-    def closed(self, reason):
+    def closed(self, _reason):
+        '''
+        This method is called automatically when the crawler finishes
+        Note that because of python tricks this methods signature is different
+        in the parent but this signature is the right one...
+        '''
         self.logger.info('in closed')
 
 

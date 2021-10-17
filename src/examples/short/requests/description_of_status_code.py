@@ -27,6 +27,7 @@ def get_http_status_string(code: int):
     :return:
     """
     # noinspection PyProtectedMember,PyUnresolvedReferences
+    # pylint: disable=protected-access
     return f"http code [{code}], [{requests.status_codes._codes[code][0]}]"
 
 

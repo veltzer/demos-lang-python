@@ -1,8 +1,14 @@
-import sys
+"""
+This is an image viewer application
+"""
 
+
+import sys
+import signal
+# pylint: disable=no-name-in-module
 from PyQt5.QtGui import QPixmap, QPainter
 from PyQt5.QtWidgets import QWidget, QApplication, QTableWidget
-import signal
+
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
@@ -10,10 +16,10 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 class ImageWidget(QWidget):
 
     def __init__(self, image_path, parent):
-        super(ImageWidget, self).__init__(parent)
+        super().__init__(parent)
         self.picture = QPixmap(image_path)
 
-    def paintEvent(self, event):
+    def paintEvent(self, _event):
         painter = QPainter(self)
         painter.drawPixmap(0, 0, self.picture)
 

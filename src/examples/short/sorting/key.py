@@ -12,8 +12,9 @@ def my_tup_reverse(t1, t2):
         return -1
     if (t1[1], t1[0]) > (t2[1], t2[0]):
         return 1
-    if (t1[1], t1[0]) == (t2[1], t2[0]):
-        return 0
+    # if (t1[1], t1[0]) == (t2[1], t2[0]):
+    #    return 0
+    return 0
 
 
 def my_reverse(t1, t2):
@@ -21,8 +22,8 @@ def my_reverse(t1, t2):
         return -1
     if t2 > t1:
         return 1
-    if t2 == t1:
-        return 0
+    # if t2 == t1:
+    return 0
 
 
 def my_second_cor_key(t):
