@@ -9,4 +9,4 @@ line_count = 0
 for chunk in reader:
     line_count += 1
     print(chunk.loc[0][0])
-print("line_count is {}".format(line_count))
+print(f"line_count is {line_count}")

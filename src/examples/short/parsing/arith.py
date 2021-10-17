@@ -9,8 +9,7 @@ import pyparsing
 number = pyparsing.Word(pyparsing.nums).setParseAction(lambda t: int(t[0]))
 
 
-# noinspection PyUnusedLocal
-def number_act(string, location, tok):
+def number_act(_string, _location, tok):
     return int(tok[0])
 
 

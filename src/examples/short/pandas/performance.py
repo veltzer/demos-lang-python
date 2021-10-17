@@ -40,14 +40,16 @@ random_strings = []
 
 
 def create_random_strings():
+    # pylint: disable=global-statement
     global random_strings
-    random_strings = list(map(lambda i: str(i), range(1000000, 1000000 + large_table_size)))
+    random_strings = list(str(i) for i in range(1000000, 1000000 + large_table_size))
 
 
 df = None
 
 
 def create_string_table():
+    # pylint: disable=global-statement
     global df
     columns = [
         "A",
@@ -58,7 +60,7 @@ def create_string_table():
 
 
 def create_set_from_strings():
-    _ = {x for x in random_strings}
+    _ = set(random_strings)
 
 
 def create_dict_from_strings():
@@ -66,32 +68,30 @@ def create_dict_from_strings():
 
 
 input("press any key...")
-print("creating 15mil empty table [{}]".format(timeit.timeit(create_large_table, number=1)))
+print(f"creating 15mil empty table [{timeit.timeit(create_large_table, number=1)}]")
 input("press any key...")
-print("creating 15mil different strings [{}]".format(timeit.timeit(create_random_strings, number=1)))
+print(f"creating 15mil different strings [{timeit.timeit(create_random_strings, number=1)}]")
 input("press any key...")
-print("creating 15mil string table indexed by the random strings [{}]".format(
-    timeit.timeit(create_string_table, number=1)))
+print(f"creating 15mil string table indexed by the random strings [{timeit.timeit(create_string_table, number=1)}]")
 input("press any key...")
-print("creating 15mil set [{}]".format(timeit.timeit(create_set_from_strings, number=1)))
+print(f"creating 15mil set [{timeit.timeit(create_set_from_strings, number=1)}]")
 input("press any key...")
-print("creating 15mil dict [{}]".format(timeit.timeit(create_dict_from_strings, number=1)))
+print(f"creating 15mil dict [{timeit.timeit(create_dict_from_strings, number=1)}]")
 input("press any key...")
 
 # print("creating a random array ")
 # print("querying about 15mil entries by key")
 
-"""
-size = 15000000
-random_words = list(map(lambda _: random_word(10), range(size)))
-print("after creation")
-print(type(random_words))
-print(len(random_words))
-print_data(df)
-for _ in range(size):
-    df.set_value()
-df.set_value(0, "A", "mark")
-df.set_value(0, "B", "veltzer")
+def more_stuff():
+    size = 15000000
+    random_words = list(map(lambda _: random_word(10), range(size)))
+    print("after creation")
+    print(type(random_words))
+    print(len(random_words))
+    print_data(df)
+    for _ in range(size):
+        df.set_value()
+    df.set_value(0, "A", "mark")
+    df.set_value(0, "B", "veltzer")
 
-print(df.get_values())
-"""
+    print(df.get_values())

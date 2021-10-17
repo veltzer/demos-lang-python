@@ -13,6 +13,7 @@ assert isinstance(df, pandas.core.frame.DataFrame)
 num_rows = df.shape[0]
 
 # lets get a series
+# pylint: disable=unsubscriptable-object, no-member
 c = df[0]
 assert isinstance(c, pandas.core.series.Series)
 assert c.shape == (num_rows,)

@@ -27,7 +27,7 @@ def time_it(f):
 @time_it
 def prepare_large_tsv_file(input_file: str, size: int):
     with gzip.open(input_file, "wt") as output_handle:
-        for i in range(size):
+        for _ in range(size):
             output_handle.write("\t".join([
                 str(random.random()),
                 str(random.random()),
@@ -65,10 +65,11 @@ def read_it_with_pandas_chunks(input_file: str, separator: str):
 @time_it
 def read_it_with_python(input_file: str, separator: str):
     line_count = 0
-    for line in open(input_file, "rt"):
-        _ = line.split(separator)
-        line_count += 1
-    return line_count
+    with open(input_file, "rt") as f:
+        for line in f:
+            _ = line.split(separator)
+            line_count += 1
+        return line_count
 
 
 @time_it
