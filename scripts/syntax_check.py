@@ -25,7 +25,7 @@ with open(filename) as f:
         if line == '#!/usr/bin/python2':
             check_with = 'python2'
             break
-        elif line == '#!/usr/bin/python3':
+        if line == '#!/usr/bin/python3':
             check_with = 'python3'
             break
         if line.startswith('# CHECK_WITH'):
