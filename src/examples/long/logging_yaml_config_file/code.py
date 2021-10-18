@@ -7,7 +7,7 @@ import yaml
 
 
 with open('logging.yaml') as f:
-    config = yaml.load(f.read())
+    config = yaml.safe_load(f.read())
     logging.config.dictConfig(config)
 
 logger = logging.getLogger('simple')
