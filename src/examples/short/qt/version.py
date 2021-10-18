@@ -2,6 +2,7 @@
 An example of how to know which PyQt version you are using
 """
 
+# pylint: disable=c-extension-no-member
 import PyQt5.QtCore
 
 
