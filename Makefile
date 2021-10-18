@@ -195,13 +195,13 @@ check_files:
 ############
 $(ALL_SYNTAX): out/%.syntax: %.py scripts/syntax_check.py $(ALL_DEP)
 	$(info doing [$@])
-	$(Q)scripts/syntax_check.py $<
+	$(Q)pymakehelper error_on_print scripts/syntax_check.py $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_LINT): out/%.lint: %.py $(ALL_DEP)
 	$(info doing [$@])
-	$(Q)python -m pylint --reports=n --score=n $<
+	$(Q)pymakehelper error_on_print python -m pylint --reports=n --score=n $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_FLAKE8): out/%.flake8: %.py $(ALL_DEP)
 	$(info doing [$@])
-	$(Q)flake8 $<
+	$(Q)pymakehelper error_on_print flake8 $<
 	$(Q)pymakehelper touch_mkdir $@

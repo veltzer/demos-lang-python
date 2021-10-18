@@ -1,3 +1,8 @@
+- make CI/CD faster by doing pylint on all the sources ***IN ONE INVOCATION***
+	of pylint.
+	same for flake8.
+	currently build on github takes 25 minutes!!!
+
 - do demos for https://pypi.org/project/yamlpath
 
 - move all stamps into their own folder so that they will
