@@ -5,7 +5,7 @@ using the 'tsv' module
 
 import tsv
 
-writer = tsv.TsvWriter(open("/tmp/file.tsv", "w"))
-
-writer.line("\t\t\t", "Column 2", 12345)
-writer.close()
+with open("/tmp/file.tsv", "w") as f:
+    writer = tsv.TsvWriter(f)
+    writer.line("\t\t\t", "Column 2", 12345)
+    writer.close()

@@ -19,7 +19,7 @@ v1_in = 2
 v2_in = 3
 packed = struct.pack("ih", v1_in, v2_in)
 assert len(packed) == 6
-assert type(packed) == bytes
+assert isinstance(packed, bytes)
 v1, v2 = struct.unpack("ih", packed)
 assert v1 == v1_in
 assert v2 == v2_in

@@ -17,7 +17,7 @@ def get_comments_map(self, key):
     for token in comments:
         if token is None:
             continue
-        elif isinstance(token, list):
+        if isinstance(token, list):
             coms.extend(token)
         else:
             coms.append(token)
@@ -32,7 +32,7 @@ def get_comments_seq(self, idx):
     for token in comments:
         if token is None:
             continue
-        elif isinstance(token, list):
+        if isinstance(token, list):
             coms.extend(token)
         else:
             coms.append(token)
@@ -64,19 +64,23 @@ def yield_comments(data):
             yield from yield_comments(item)
 
 
-filenames = [
-    "data/yaml/comments1.yaml",
-    "data/yaml/comments2.yaml",
-    "data/yaml/comments3.yaml",
-]
-for filename in filenames:
-    with open(filename) as stream:
-        print(f"{filename}...", end="")
-        yaml = ruamel.yaml.YAML()
-        data = yaml.load(stream)
-        my_sum = 0
-        for _, y in yield_comments(data):
-            # print(f"[{y}]")
-            to_add = y.split("#")[1]
-            my_sum += int(to_add)
-        print(my_sum)
+def main():
+    filenames = [
+        "data/yaml/comments1.yaml",
+        "data/yaml/comments2.yaml",
+        "data/yaml/comments3.yaml",
+    ]
+    for filename in filenames:
+        with open(filename) as stream:
+            print(f"{filename}...", end="")
+            yaml = ruamel.yaml.YAML()
+            data = yaml.load(stream)
+            my_sum = 0
+            for _, y in yield_comments(data):
+                # print(f"[{y}]")
+                to_add = y.split("#")[1]
+                my_sum += int(to_add)
+            print(my_sum)
+
+
+main()

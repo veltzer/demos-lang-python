@@ -38,18 +38,17 @@ def call_old(old_val, signum, frame):
 
 # this is my signal handler
 def signal_handler(signum, frame):
-    debug('signal_handler: got signal {0}'.format(signum))
+    debug(f"signal_handler: got signal {signum}")
     if signum == signal.SIGUSR1:
         # lets call the old signal handler
-        global old_sig_usr1
         call_old(old_sig_usr1, signum, frame)
         debug('signal_handler: doing some work')
     if signum == signal.SIGUSR2:
         # lets call the old signal handler
-        global old_sig_usr2
         call_old(old_sig_usr2, signum, frame)
         # lets signal the main thread to stop
         debug('signal_handler: setting stop to True')
+        # pylint: disable=global-statement
         global stop
         stop = True
     if signum == signal.SIGINT:
@@ -62,15 +61,15 @@ def main():
     signal.signal(signal.SIGUSR2, signal_handler)
     signal.signal(signal.SIGINT, signal_handler)
 
-    debug(
-        'main: program starting,signal me using [kill -s SIGUSR1 {0}] or [kill -s SIGUSR2 {0}]'.format(os.getpid()))
+    debug("main: program starting")
+    debug(f"signal me using [kill -s SIGUSR1 {os.getpid()}] or [kill -s SIGUSR2 {os.getpid()}]")
     while True:
-        debug('main: going to pause()')
+        debug("main: going to pause()")
         signal.pause()
         if stop:
-            debug('main: I was asked to stop')
+            debug("main: I was asked to stop")
             break
-    debug('main: program ending')
+    debug("main: program ending")
 
 
 main()

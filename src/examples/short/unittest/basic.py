@@ -10,7 +10,7 @@ class MyUnitTest(unittest.TestCase):
         current_sum = 0
         for x in range(0, 100):
             current_sum += x
-        self.assert_(current_sum == 4950)
+        self.assertEqual(current_sum, 4950)
 
 
 unittest.main()

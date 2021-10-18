@@ -10,9 +10,9 @@ import time
 
 
 def worker(number):
-    print('thread {0} is going to sleep...'.format(number))
+    print(f"thread {number} is going to sleep...")
     time.sleep(1)
-    print('thread {0} is waking up...'.format(number))
+    print(f"thread {number} is waking up...")
 
 
 threads = []

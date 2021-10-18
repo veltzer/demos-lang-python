@@ -33,11 +33,9 @@ class SearchSpider(scrapy.Spider):
         # important, call the parent
         self.logger.info('in __init__')
 
-
     def parse(self, _response, **_kwargs):
         ''' This method is called whenever you get a response '''
         self.logger.info('in parse')
-
 
     def closed(self, _reason):
         '''

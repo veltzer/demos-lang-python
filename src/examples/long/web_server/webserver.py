@@ -104,6 +104,7 @@ class MyHandler(BaseHTTPRequestHandler):
         except Exception as e:
             self.send_error(500, f"POST Internal server error for resource: {self.path} {e}")
 
+
 def main():
     host = 'localhost'
     port = 8001

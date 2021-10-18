@@ -35,4 +35,4 @@ number = 100
 results = [(timeit.timeit(f, number=number), f.name) for f in functions]
 sorted_results = sorted(results, key=lambda tup: tup[0])
 for r in sorted_results:
-    print('{0:.4f}: {1}'.format(r[0], r[1]))
+    print(f"{r[0]:.4f}: {r[1]}")

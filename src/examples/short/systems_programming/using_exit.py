@@ -9,9 +9,11 @@ A few notes:
 """
 
 
-# os._exit(113)
-# exit(114)
+import sys
+
 try:
-    exit(115)
+    # os._exit(113)
+    # exit(114)
+    sys.exit(115)
 except SystemExit:
     print("hey,I did not exit")

@@ -9,7 +9,7 @@ the bottom.
 
 import io
 import xml
-import xml.etree.ElementTree as ElementTree
+from xml.etree import ElementTree
 
 root = ElementTree.Element('root')
 doc = ElementTree.SubElement(root, 'doc')

@@ -2,6 +2,7 @@
 This example shows how to create a read only dictionary
 """
 
+
 class ReadOnlyException(Exception):
     pass
 
