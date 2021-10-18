@@ -6,6 +6,7 @@ If we had done this this would not have been neccessary.
 
 import sys
 # noinspection PyPep8
+# pylint: disable=import-error
 import atoi  # noqa: E402
 
 
