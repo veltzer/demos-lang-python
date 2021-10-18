@@ -5,7 +5,7 @@ If we had this would not have been neccessary.
 """
 
 import sys
-# pylunt: disable=import-error
+# pylint: disable=import-error
 import car
 
 
