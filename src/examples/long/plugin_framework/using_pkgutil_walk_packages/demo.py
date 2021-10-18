@@ -16,7 +16,7 @@ for instance in mgr.giveMe(myBaseClass1):
 import importlib
 import pkgutil
 
-# pylint: disable=relative-beyond-top-level
+# pylint: disable=relative-beyond-top-level, no-name-in-module
 from . import base
 
 do_debug = False

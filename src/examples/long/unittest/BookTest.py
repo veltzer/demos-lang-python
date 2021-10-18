@@ -1,6 +1,6 @@
 import unittest
 
-# pylint: disable=relative-beyond-top-level
+# pylint: disable=relative-beyond-top-level, no-name-in-module
 from . import Book
 
 
