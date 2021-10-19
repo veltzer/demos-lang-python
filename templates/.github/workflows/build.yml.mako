@@ -1,5 +1,5 @@
 <%!
-	import config.python
+import config.python
 %>name: build
 on: [push, pull_request]
 jobs:
@@ -23,13 +23,13 @@ jobs:
         apt install wget
         wget https://mirrors.edge.kernel.org/ubuntu/pool/main/libf/libffi/libffi7_3.3-4_amd64.deb
         dpkg --install libffi7_3.3-4_amd64.deb
-	apt install xvfb
+        apt install xvfb
     - name: Install python dependencies
       run: |
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
     - name: Build
       run: |
-	Xvfb :1 -screen 0 800x600x8 &
-	export DISPLAY=:1
-	make DO_LINT=0 DO_FLAKE8=0 all_lint all_flake8
+        Xvfb :1 -screen 0 800x600x8 &
+        export DISPLAY=:1
+        make DO_LINT=0 DO_FLAKE8=0 all_lint all_flake8
