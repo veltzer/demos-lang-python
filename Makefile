@@ -81,6 +81,10 @@ check: check_ws check_has_key check_no_python2 check_mode
 all_lint:
 	$(info doing [$@])
 	$(Q)shopt -s globstar; pymakehelper error_on_print python -m pylint --reports=n --score=n src/**/*.py
+.PHONY: all_flake8
+all_flake8:
+	$(info doing [$@])
+	$(Q)pymakehelper error_on_print flake8 src
 
 .PHONY: check_ws
 check_ws: $(ALL_DEP)
