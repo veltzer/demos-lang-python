@@ -12,7 +12,7 @@ DO_TOOLS:=0
 # what is the tools.stamp file?
 TOOLS:=tools.stamp
 # do dependency on the makefile itself?
-DO_ALLDEP:=1
+DO_ALLDEP:=0
 
 ########
 # code #
@@ -90,11 +90,6 @@ all_flake8:
 check_ws: $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)git grep -E "\s$$" -- '*.py' || exit 0
-
-.PHONY: pylint
-pylint: $(ALL_DEP)
-	$(info doing [$@])
-	$(Q)python -m pylint `find src -name "*.py"`
 
 # this is a bad check because returning tuples in python is perfectly legit
 .PHONY: check_return
