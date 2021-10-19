@@ -28,4 +28,6 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
     - name: Build
-      run: make
+      run: make DO_LINT=0
+    - name: Lint
+      run: make DO_LINT=0 all_lint

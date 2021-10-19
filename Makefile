@@ -17,6 +17,8 @@ DO_ALLDEP:=1
 ########
 # code #
 ########
+SHELL:=/bin/bash
+
 ALL:=
 ifeq (, $(shell which git))
 ALL_PY:=$(shell find src -name "*.py")
@@ -74,6 +76,11 @@ check_all: check_ws $(ALL_DEP)
 
 .PHONY: check
 check: check_ws check_has_key check_no_python2 check_mode
+
+.PHONY: all_lint
+all_lint:
+	$(info doing [$@])
+	$(Q)shopt -s globstar; pymakehelper error_on_print python -m pylint --reports=n --score=n src/**/*.py
 
 .PHONY: check_ws
 check_ws: $(ALL_DEP)

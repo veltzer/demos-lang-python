@@ -18,20 +18,6 @@ import os
 import select
 import signal
 
-# create a non blocking pipe
-pipe_r, pipe_w = os.pipe()
-flags = fcntl.fcntl(pipe_w, fcntl.F_GETFL, 0)
-flags = flags | os.O_NONBLOCK
-flags = fcntl.fcntl(pipe_w, fcntl.F_SETFL, flags)
-
-# set the write end of the pipe as the target of signals
-signal.set_wakeup_fd(pipe_w)
-
-# write a signal handler for our signal, otherwise we will
-# exit every time the signal is received...
-signal.signal(signal.SIGUSR1, lambda x, y: None)
-
-
 def do_poll(poller):
     """
         We need this functions since python, unlike glibc, does not restart system
@@ -52,6 +38,20 @@ def do_poll(poller):
 
 
 def main():
+    # create a non blocking pipe
+    pipe_r, pipe_w = os.pipe()
+    flags = fcntl.fcntl(pipe_w, fcntl.F_GETFL, 0)
+    flags = flags | os.O_NONBLOCK
+    flags = fcntl.fcntl(pipe_w, fcntl.F_SETFL, flags)
+
+    # set the write end of the pipe as the target of signals
+    signal.set_wakeup_fd(pipe_w)
+
+    # write a signal handler for our signal, otherwise we will
+    # exit every time the signal is received...
+    signal.signal(signal.SIGUSR1, lambda x, y: None)
+
+    # pylint: disable=no-member
     poller = select.epoll()
     poller.register(pipe_r, select.EPOLLIN)
 
@@ -61,7 +61,7 @@ def main():
     while True:
         events = do_poll(poller)
         for _ in events:
-            print('we got signal')
+            print("we got a signal")
             os.read(pipe_r, 1)
 
 
