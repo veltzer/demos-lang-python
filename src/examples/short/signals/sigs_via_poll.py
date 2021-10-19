@@ -18,6 +18,7 @@ import os
 import select
 import signal
 
+
 def do_poll(poller):
     """
         We need this functions since python, unlike glibc, does not restart system
