@@ -14,3 +14,4 @@ r = requests.get(url)
 # assert r.status_code == 200
 r.raise_for_status()
 print(len(r.content))
+# print(r.content)
