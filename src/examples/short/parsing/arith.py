@@ -20,7 +20,7 @@ operand = number | expr
 
 op_multiply = pyparsing.oneOf('* /')
 op_plus = pyparsing.oneOf('+ -')
-expr = pyparsing.operatorPrecedence(operand, [
+expr = pyparsing.infixNotation(operand, [
     (op_multiply, 2, pyparsing.opAssoc.LEFT),
     (op_plus, 2, pyparsing.opAssoc.LEFT),
 ])
