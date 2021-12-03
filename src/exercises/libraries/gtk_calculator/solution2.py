@@ -12,7 +12,7 @@ import operator
 
 import gi
 gi.require_version('Gtk', '3.0')
-# pylint: disable=wrong-import-position
+# pylint: disable=wrong-import-position,no-member
 from gi.repository import Gtk  # noqa: E402
 
 

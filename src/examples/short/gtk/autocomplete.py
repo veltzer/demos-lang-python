@@ -61,6 +61,7 @@ class EntryMultiCompletion(Gtk.Entry):
         return True
 
 
+# pylint: disable=no-member
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 win = Gtk.Window()
 win.connect('delete-event', Gtk.main_quit)

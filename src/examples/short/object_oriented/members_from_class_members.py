@@ -9,16 +9,16 @@ This is based on the loop
 
 
 class MyClass:
-    var_foo = 14
+    var_member = 14
 
-    def __init__(self, foo):
-        if foo:
-            self.var_foo = foo
+    def __init__(self, member):
+        if member:
+            self.var_member = member
         else:
-            self.var_foo = self.var_foo
+            self.var_member = self.var_member
 
     def do_print(self):
-        print(f"var_foo is {self.var_foo}")
+        print(f"var_member is {self.var_member}")
 
 
 # Lets show how we use our object
