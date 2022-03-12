@@ -6,13 +6,15 @@ References:
 """
 
 
-def decor(func):
+def decor(_func):
     def inner():
         print("goodbye")
     return inner
 
+
 @decor
 def demo_bar():
     print("hello")
+
 
 demo_bar()

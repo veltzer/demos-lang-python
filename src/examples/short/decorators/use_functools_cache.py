@@ -11,11 +11,12 @@ from functools import cache
 
 @cache
 def calc_sum(i):
-    sum = 0
+    my_sum = 0
     for j in range(i):
         time.sleep(0.5)
-        sum += j
-    return sum
+        my_sum += j
+    return my_sum
+
 
 print(calc_sum(6))
 print(calc_sum(6))
