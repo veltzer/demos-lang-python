@@ -15,8 +15,10 @@ def decor(func):
         print("after")
     return inner
 
+
 @decor
 def demo_bar():
     print("hello")
+
 
 demo_bar()

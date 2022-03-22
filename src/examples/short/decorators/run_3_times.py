@@ -13,8 +13,10 @@ def run_3_times(func):
         func()
     return inner
 
+
 @run_3_times
 def demo_bar():
     print("hello")
+
 
 demo_bar()
