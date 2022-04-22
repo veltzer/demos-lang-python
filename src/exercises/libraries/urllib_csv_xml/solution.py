@@ -1,5 +1,6 @@
 import csv
 import urllib.request
+# pylint: disable=deprecated-module
 import xml.etree.cElementTree as ElementTree
 
 

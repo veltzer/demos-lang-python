@@ -37,6 +37,7 @@ visited_keys = set()
 for x in d:
     if x == 3:
         del d[5]
+        # pylint: disable=modified-iterating-dict
         d[10] = 10
     visited_keys.add(x)
 assert len(visited_keys) == 10

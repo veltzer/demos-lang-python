@@ -1,5 +1,6 @@
 import json
 import urllib.request
+# pylint: disable=deprecated-module
 import xml.etree.cElementTree as ElementTree
 
 URL = 'http://ws.geonames.org/hierarchyJSON?geonameId=2657896'
