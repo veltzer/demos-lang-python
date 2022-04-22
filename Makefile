@@ -39,13 +39,12 @@ ifeq ($(DO_FLAKE8),1)
 	ALL+=$(ALL_FLAKE8)
 endif # DO_FLAKE8
 
-ALL_DEP:=
 ifeq ($(DO_ALLDEP),1)
-	ALL_DEP+=Makefile
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
 endif # DO_ALLDEP
 
 ifeq ($(DO_TOOLS),1)
-	ALL_DEP+=$(TOOLS)
+.EXTRA_PREREQS+=tools.stamp
 endif # DO_TOOLS
 
 ifeq ($(DO_MKDBG),1)
@@ -72,7 +71,7 @@ lint: $(ALL_LINT)
 flake8: $(ALL_FLAKE8)
 
 .PHONY: check_all
-check_all: check_ws $(ALL_DEP)
+check_all: check_ws
 
 .PHONY: check
 check: check_ws check_has_key check_no_python2 check_mode
@@ -87,36 +86,36 @@ all_flake8:
 	$(Q)pymakehelper error_on_print flake8 src
 
 .PHONY: check_ws
-check_ws: $(ALL_DEP)
+check_ws:
 	$(info doing [$@])
 	$(Q)git grep -E "\s$$" -- '*.py' || exit 0
 
 # this is a bad check because returning tuples in python is perfectly legit
 .PHONY: check_return
-check_return: $(ALL_DEP)
+check_return:
 	$(info doing [$@])
 	$(Q)git grep -l -E "return\(.*\)$$" -- '*.py' || exit 0
 	$(Q)git grep -l -E "return \(.*\)$$" -- '*.py' || exit 0
 
 # this is a bad check because comparing tuples in python is perfectly legit
 .PHONY: check_if
-check_if: $(ALL_DEP)
+check_if:
 	$(info doing [$@])
 	$(Q)git grep -l -E "if \(" -- '*.py' || exit 0
 	$(Q)git grep -l -E "if\(" -- '*.py' || exit 0
 
 .PHONY: check_has_key
-check_has_key: $(ALL_DEP)
+check_has_key:
 	$(info doing [$@])
 	$(Q)git grep -l "has_key" -- '*.py' || exit 0
 
 .PHONY: check_no_python2
-check_no_python2: $(ALL_DEP)
+check_no_python2:
 	$(info doing [$@])
 	$(Q)git grep -E "^#!/usr/bin/python2" || exit 0
 
 .PHONY: check_no_future
-check_no_future: $(ALL_DEP)
+check_no_future:
 	$(info doing [$@])
 	$(Q)git grep "__future__" || exit 0
 
@@ -127,7 +126,6 @@ debug:
 	$(info ALL_LINT is $(ALL_LINT))
 	$(info ALL_FLAKE8 is $(ALL_FLAKE8))
 	$(info ALL is $(ALL))
-	$(info ALL_DEP is $(ALL_DEP))
 
 .PHONY: show_shbang
 show_shbang:
@@ -199,15 +197,15 @@ check_files:
 ############
 # patterns #
 ############
-$(ALL_SYNTAX): out/%.syntax: %.py scripts/syntax_check.py $(ALL_DEP)
+$(ALL_SYNTAX): out/%.syntax: %.py scripts/syntax_check.py
 	$(info doing [$@])
 	$(Q)pymakehelper error_on_print scripts/syntax_check.py $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_LINT): out/%.lint: %.py $(ALL_DEP)
+$(ALL_LINT): out/%.lint: %.py
 	$(info doing [$@])
 	$(Q)pymakehelper error_on_print python -m pylint --reports=n --score=n $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_FLAKE8): out/%.flake8: %.py $(ALL_DEP)
+$(ALL_FLAKE8): out/%.flake8: %.py
 	$(info doing [$@])
 	$(Q)pymakehelper error_on_print flake8 $<
 	$(Q)pymakehelper touch_mkdir $@
