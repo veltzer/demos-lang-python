@@ -12,7 +12,7 @@ DO_TOOLS:=0
 # what is the tools.stamp file?
 TOOLS:=tools.stamp
 # do dependency on the makefile itself?
-DO_ALLDEP:=0
+DO_ALLDEP:=1
 
 ########
 # code #
@@ -60,6 +60,7 @@ endif # DO_MKDBG
 #########
 .PHONY: all
 all: $(ALL)
+	@true
 
 .PHONY: syntax
 syntax: $(ALL_SYNTAX)
