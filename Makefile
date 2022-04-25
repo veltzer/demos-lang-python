@@ -24,7 +24,7 @@ ifeq (, $(shell which git))
 ALL_PY:=$(shell find src -name "*.py")
 else
 ALL_PY:=$(shell git ls-files 'src/*.py')
-endif
+endif # shell which git
 ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
 ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
