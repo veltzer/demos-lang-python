@@ -32,4 +32,4 @@ jobs:
       run: |
         Xvfb :1 -screen 0 800x600x8 &
         export DISPLAY=:1
-        make DO_LINT=0 DO_FLAKE8=0 all_lint all_flake8
+        pymakehelepr run_make DO_LINT=0 DO_FLAKE8=0 all_lint all_flake8

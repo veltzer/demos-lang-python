@@ -23,11 +23,11 @@ jobs:
         dpkg --install libffi7_3.3-4_amd64.deb
         apt-get install -yq xvfb
     - name: Install python dependencies
-      run: python -m pip install -r requirements.txt
-    - name: pydmt
-      run: pydmt build
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
     - name: Build
       run: |
         Xvfb :1 -screen 0 800x600x8 &
         export DISPLAY=:1
-        pymakehelper make DO_LINT=0 DO_FLAKE8=0 all_lint all_flake8
+        pymakehelepr run_make DO_LINT=0 DO_FLAKE8=0 all_lint all_flake8
