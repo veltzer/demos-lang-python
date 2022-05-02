@@ -27,6 +27,7 @@ stop = False
 
 # a small debugging function that prints the thread doing the printing...
 def debug(msg):
+    # pylint: disable=deprecated-method
     print(threading.currentThread().name, msg)
 
 

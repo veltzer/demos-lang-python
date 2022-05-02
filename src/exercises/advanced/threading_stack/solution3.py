@@ -15,7 +15,7 @@ class Stack:
     def push(self, number):
         self.cv.acquire()
         self.data.append(number)
-        self.cv.notifyAll()
+        self.cv.notify_all()
         # print('size of stack is ', len(self.data))
         self.cv.release()
 

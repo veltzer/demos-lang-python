@@ -35,4 +35,4 @@ class RWL:
     def WriterLeave(self):
         with self.c:
             self._writersInside -= 1
-            self.c.notifyAll()
+            self.c.notify_all()
