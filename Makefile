@@ -7,8 +7,6 @@ DO_SYNTAX:=1
 DO_LINT:=1
 # do you want to lint python files using flake8?
 DO_FLAKE8:=1
-# do you want to bring in tools?
-DO_TOOLS:=1
 # do dependency on the makefile itself?
 DO_ALLDEP:=1
 
@@ -16,8 +14,6 @@ DO_ALLDEP:=1
 # code #
 ########
 SHELL:=/bin/bash
-# what is the tools.stamp file?
-TOOLS:=tools.stamp
 
 ALL:=
 ifeq (, $(shell which git))
@@ -28,11 +24,6 @@ endif # shell which git
 ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
 ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
-
-ifeq ($(DO_TOOLS),1)
-.EXTRA_PREREQS+=$(TOOLS)
-ALL+=$(TOOLS)
-endif # DO_TOOLS
 
 ifeq ($(DO_SYNTAX),1)
 ALL+=$(ALL_SYNTAX)
@@ -64,11 +55,6 @@ endif # DO_MKDBG
 .PHONY: all
 all: $(ALL)
 	@true
-
-$(TOOLS): packages.txt config/deps.py
-	$(info doing [$@])
-	$(Q)xargs -a packages.txt sudo apt-get -y install > /dev/null
-	$(Q)pymakehelper touch_mkdir $@
 
 .PHONY: syntax
 syntax: $(ALL_SYNTAX)
