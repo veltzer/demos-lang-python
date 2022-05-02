@@ -2,6 +2,7 @@
 setup.py file for SWIG atoi
 """
 
+# pylint: disable=deprecated-module
 import distutils.core
 
 atoi_module = distutils.core.Extension('_atoi',
