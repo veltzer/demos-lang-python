@@ -2,12 +2,8 @@ import config.project
 
 package_name = config.project.project_name
 
-console_scripts = [
-]
-
-setup_requires = [
-]
-
+console_scripts = []
+setup_requires = []
 run_requires = [
     'click',
     'requests',
@@ -82,38 +78,30 @@ run_requires = [
     'PyGObject',
     'PyGObject-stubs',
     'dbus-python',
-
     # terminal color stuff
     'termcolor',
     'colored',
-
     # yaml
     'oyaml',
     'ruamel.yaml',
-
     # google cloud
     "google-api-python-client",
     "google-auth-httplib2",
     "google-auth-oauthlib",
     "google-cloud-datastore",
 ]
-
-test_requires = [
-]
-
+test_requires = []
 dev_requires = [
-    'pydmt',  # for building
-    'pymakehelper',  # the the makefile
+    'pydmt',
+    'pymakehelper',
     'pylint',
     'flake8==3.7.9',
     'black',
     'pydmt',
 ]
-
-test_container="[ 'ubuntu:21.04' ]"
-test_python="[3.9]"
-
 install_requires = list(setup_requires)
 install_requires.extend(run_requires)
 
 python_requires = ">=3.9"
+test_container="[ 'ubuntu:21.04' ]"
+test_python="[3.9]"
