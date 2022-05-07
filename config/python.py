@@ -6,7 +6,7 @@ dev_requires = [
     "pydmt",
     "pymakehelper",
     "pylint",
-    "flake8==3.7.9",
+    "flake8",
     "black",
     "pydmt",
 ]
