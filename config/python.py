@@ -2,6 +2,14 @@ import config.project
 
 package_name = config.project.project_name
 
+dev_requires = [
+    "pydmt",
+    "pymakehelper",
+    "pylint",
+    "flake8==3.7.9",
+    "black",
+    "pydmt",
+]
 install_requires = [
     "click",
     "requests",
@@ -88,14 +96,8 @@ install_requires = [
     "google-auth-oauthlib",
     "google-cloud-datastore",
 ]
-dev_requires = [
-    "pydmt",
-    "pymakehelper",
-    "pylint",
-    "flake8==3.7.9",
-    "black",
-    "pydmt",
-]
-python_requires = ">=3.9"
-test_container=["ubuntu:21.04"]
-test_python=["3.9"]
+
+python_requires = ">=3.10"
+
+test_container=["ubuntu:22.04"]
+test_python=["3.10"]
