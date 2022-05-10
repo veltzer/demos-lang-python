@@ -31,5 +31,5 @@ def reformat(lines, chars):
 
 with open("/usr/share/doc/python/copyright") as f:
     mygen = reformat(lines2paragraphs(f), 50)
-    for l in mygen:
-        print(l)
+    for element in mygen:
+        print(element)

@@ -138,8 +138,8 @@ remove_stamp:
 .PHONY: clean
 clean:
 	$(Q)rm -f $(ALL)
-	$(Q)find . -not -path "./.venv/*" -and -name "__pycache__" -and -type d -exec rm -r {} \;
-	$(Q)find . -not -path "./.venv/*" -name "*.pyc" -or -name "*.pyo" -delete
+#	$(Q)find . -not -path "./.venv/*" -and -name "__pycache__" -and -type d -exec rm -r {} \;
+#	$(Q)find . -not -path "./.venv/*" -name "*.pyc" -or -name "*.pyo" -delete
 
 .PHONY: clean_hard
 clean_hard:

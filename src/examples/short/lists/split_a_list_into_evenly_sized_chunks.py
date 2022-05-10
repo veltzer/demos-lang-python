@@ -6,15 +6,15 @@ References:
 """
 
 
-def chunks(l, n):
+def chunks(a_list, n):
     """Yield successive n-sized chunks from l."""
-    for i in range(0, len(l), n):
-        yield l[i:i + n]
+    for i in range(0, len(a_list), n):
+        yield a_list[i:i + n]
 
 
 def main():
-    for l in chunks(range(5, 28), 7):
-        print(l)
+    for sublist in chunks(range(5, 28), 7):
+        print(sublist)
 
 
 main()

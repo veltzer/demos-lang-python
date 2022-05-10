@@ -58,7 +58,7 @@ print(h)
 
 # lets compare None to various things...
 # pylint: disable=singleton-comparison
-if None == 0:  # noqa: F711
+if None == 0:  # noqa: E711
     print('None==0')
 else:
     print('!None==0')
