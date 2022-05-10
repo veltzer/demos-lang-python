@@ -9,6 +9,8 @@ DO_LINT:=1
 DO_FLAKE8:=1
 # do dependency on the makefile itself?
 DO_ALLDEP:=1
+# do you want to see the commands given?
+DO_MKDBG:=1
 
 ########
 # code #
@@ -203,5 +205,7 @@ $(ALL_LINT): out/%.lint: %.py
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_FLAKE8): out/%.flake8: %.py
 	$(info doing [$@])
+	$(Q)flake8 --version
+	$(Q)which flake8
 	$(Q)pymakehelper error_on_print flake8 $<
 	$(Q)pymakehelper touch_mkdir $@
