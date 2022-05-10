@@ -7,10 +7,10 @@ def my_func(x, y):
     return x + y
 
 
-def odds_minus_evens(l):
-    result = functools.reduce(my_func, l)
-    if l[0] % 2 == 0:
-        result -= 2 * l[0]
+def odds_minus_evens(my_list):
+    result = functools.reduce(my_func, my_list)
+    if my_list[0] % 2 == 0:
+        result -= 2 * my_list[0]
     return result
 
 
