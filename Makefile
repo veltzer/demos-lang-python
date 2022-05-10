@@ -207,5 +207,6 @@ $(ALL_FLAKE8): out/%.flake8: %.py
 	$(Q)which flake8
 	$(Q)echo ${PYTHONWARNINGS}
 	$(Q)env
+	$(Q)pymakehelper env
 	$(Q)pymakehelper error_on_print flake8 $<
 	$(Q)pymakehelper touch_mkdir $@
