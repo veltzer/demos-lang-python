@@ -5,10 +5,7 @@ package_name = config.project.project_name
 dev_requires = [
     "pydmt",
     "pymakehelper",
-    "pylint",
-    "flake8",
     "black",
-    "pydmt",
 ]
 install_requires = [
     "click",
@@ -95,6 +92,14 @@ install_requires = [
     "google-auth-httplib2",
     "google-auth-oauthlib",
     "google-cloud-datastore",
+]
+test_requiers = [
+    "pymakehelper",
+    "pylint",
+    "pytest",
+    "pytest-cov",
+    "flake8",
+    "pylogconf",
 ]
 
 python_requires = ">=3.10"
