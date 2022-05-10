@@ -15,7 +15,7 @@ install_requires = [
     "pythondialog",
     "lmdb",
     "cachetools",
-    "pandas",
+
     "dispy",
     "mako",
     "luigi",
@@ -45,7 +45,6 @@ install_requires = [
     "pygments",
     # "simpleparse", causing problems
     "progressbar",
-    "numpy",
     "inject",
     "scrapy",
     "ConfigParser",
@@ -74,6 +73,9 @@ install_requires = [
     # gtk stuff
     "vext",
     "vext.gi",
+    # machine learning
+    "pandas",
+    "numpy",
 
     # There packages require special attention (they do not install without issues)
     "psycopg2",
