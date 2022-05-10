@@ -100,6 +100,7 @@ test_requires = [
     "pylint",
     "pytest",
     "pytest-cov",
+    "pytest-flake8",
     "flake8",
     "pylogconf",
 ]
