@@ -93,7 +93,7 @@ install_requires = [
     "google-auth-oauthlib",
     "google-cloud-datastore",
 ]
-test_requiers = [
+test_requires = [
     "pymakehelper",
     "pylint",
     "pytest",
