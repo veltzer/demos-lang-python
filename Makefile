@@ -2,21 +2,19 @@
 # parameters #
 ##############
 # do you want to check python syntax?
-DO_SYNTAX:=1
+DO_SYNTAX:=0
 # do you want to lint python files?
-DO_LINT:=1
+DO_LINT:=0
 # do you want to lint python files using flake8?
 DO_FLAKE8:=1
 # do dependency on the makefile itself?
-DO_ALLDEP:=1
+DO_ALLDEP:=0
 # do you want to see the commands given?
 DO_MKDBG:=1
 
 ########
 # code #
 ########
-SHELL:=/bin/bash
-
 ALL:=
 ifeq (, $(shell which git))
 ALL_PY:=$(shell find src -name "*.py")
@@ -207,5 +205,6 @@ $(ALL_FLAKE8): out/%.flake8: %.py
 	$(info doing [$@])
 	$(Q)flake8 --version
 	$(Q)which flake8
+	$(Q)echo ${PYTHONWARNINGS}
 	$(Q)pymakehelper error_on_print flake8 $<
 	$(Q)pymakehelper touch_mkdir $@
