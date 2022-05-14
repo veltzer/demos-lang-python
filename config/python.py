@@ -1,10 +1,7 @@
-import config.project
-
-package_name = config.project.project_name
-
-dev_requires = [
-    "pydmt",
+make_requires = [
     "pymakehelper",
+]
+dev_requires = [
     "black",
 ]
 install_requires = [
