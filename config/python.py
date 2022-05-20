@@ -13,6 +13,7 @@ install_requires = [
     "lmdb",
     "cachetools",
 
+    "jsonschema",
     "dispy",
     "mako",
     "luigi",
