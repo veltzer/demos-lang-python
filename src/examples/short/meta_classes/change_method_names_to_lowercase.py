@@ -10,11 +10,12 @@ References:
 
 
 class MetaClass(type):
-    def __new__(mcs, name, bases, cls_dict):
+    def __new__(cls, name, bases, cls_dict):
+        # super().__new__(cls, name, bases, cls_dict)
         new_dict = {}
         for k, v in cls_dict.iteritems():
             new_dict[k.lower()] = v
-        return type.__new__(mcs, name, bases, new_dict)
+        return type.__new__(cls, name, bases, new_dict)
 
 
 class MyClass:

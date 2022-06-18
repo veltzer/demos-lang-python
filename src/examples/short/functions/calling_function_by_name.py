@@ -22,4 +22,5 @@ for i in range(num):
     str_list.append(a)
 # these two are the same
 print((vars()[name])(*str_list))
+# pylint: disable=unnecessary-dunder-call
 print((vars()[name]).__call__(*str_list))

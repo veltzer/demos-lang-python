@@ -81,7 +81,7 @@ def partial_pattern_wrong():
     """ This is using the partial python standard function, but without arguments it does not work """
     handlers = []
     for i in range(10):
-        # pylint: disable=cell-var-from-loop
+        # pylint: disable=cell-var-from-loop,unnecessary-lambda-assignment
         f = lambda: i  # noqa: E731
         good_f = partial(f)
         handlers.append(good_f)
@@ -92,6 +92,7 @@ def partial_pattern():
     """ This is using the partial python standard function """
     handlers = []
     for i in range(10):
+        # pylint: disable=unnecessary-lambda-assignment
         f = lambda i: i  # noqa: E731
         good_f = partial(f, i)
         handlers.append(good_f)

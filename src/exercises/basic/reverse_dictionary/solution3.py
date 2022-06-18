@@ -16,6 +16,7 @@ orig = {
     'Egypt': 'Cairo',
 }
 target = {}
+# pylint: disable=unnecessary-dunder-call
 u = map(lambda k: target.__setitem__(orig[k], k), orig)
 # u is unused
 print(target)

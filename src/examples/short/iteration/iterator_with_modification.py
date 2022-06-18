@@ -53,6 +53,7 @@ for i, x in enumerate(my_list):
     if i == size - 1:
         my_list.pop(0)
     try:
+        # pylint: disable=unnecessary-list-index-lookup
         elements_visited.add(my_list[i])
     except IndexError:
         print("yes,got errors when accessing l[i]")

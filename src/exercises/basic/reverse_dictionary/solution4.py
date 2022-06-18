@@ -12,6 +12,7 @@ def my_apply(function, seq):
 def reverse_hash(my_dict):
     """ reverse a hash table """
     target = {}
+    # pylint: disable=unnecessary-dunder-call
     my_apply(lambda k: target.__setitem__(my_dict[k], k), my_dict)
     # this will create a compilation error
     # my_apply(lambda k: target[d[k]]=k,orig)

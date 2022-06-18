@@ -151,7 +151,7 @@ disable=raw-checker-failed,
         useless-suppression,
         deprecated-pragma,
         use-symbolic-message-instead,
-	missing-function-docstring, # here I started adding
+	missing-function-docstring, # MV: here I started adding
 	invalid-name,
 	too-few-public-methods,
 	missing-class-docstring,
@@ -456,8 +456,8 @@ spelling-store-unknown-words=no
 
 # List of note tags to take in consideration, separated by a comma.
 notes=FIXME,
-      XXX,
-      TODO
+      XXX
+#      TODO # MV
 
 # Regular expression of note tags to take in consideration.
 notes-rgx=
@@ -598,7 +598,7 @@ max-attributes=7
 max-bool-expr=5
 
 # Maximum number of branch for function / method body.
-max-branches=12
+max-branches=14 # MV
 
 # Maximum number of locals for function / method body.
 max-locals=15

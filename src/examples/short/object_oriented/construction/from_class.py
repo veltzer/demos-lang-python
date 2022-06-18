@@ -26,6 +26,7 @@ def make_something_2(cls=None):
 
 def make_something_3(cls=None):
     t = cls.__new__(cls)
+    # pylint: disable=unnecessary-dunder-call
     t.__init__()
     return t
 
