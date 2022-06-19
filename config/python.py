@@ -12,6 +12,7 @@ install_requires = [
     "pythondialog",
     "lmdb",
     "cachetools",
+    "psutil",
 
     "jsonschema",
     "dispy",
