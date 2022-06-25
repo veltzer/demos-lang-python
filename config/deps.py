@@ -25,5 +25,6 @@ packages = [
     "fluidsynth",
     # systemd
     "libsystemd0",
-    "libsystemd-dev",
+    # cannot install this
+    # "libsystemd-dev",
 ]
