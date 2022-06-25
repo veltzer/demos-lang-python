@@ -78,7 +78,8 @@ install_requires = [
 
     # There packages require special attention (they do not install without issues)
     "psycopg2",
-    "systemd-python",
+    # TODO: cannot install because libsystem-dev cannot be installed
+    # "systemd-python",
     "PyGObject",
     "PyGObject-stubs",
     "dbus-python",

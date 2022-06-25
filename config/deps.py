@@ -25,6 +25,6 @@ packages = [
     "fluidsynth",
     # systemd
     "libsystemd0",
-    # cannot install this
+    # TODO: cannot install this at this moment because of a problem in ubuntu repos
     # "libsystemd-dev",
 ]
