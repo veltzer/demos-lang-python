@@ -103,4 +103,5 @@ test_requires = [
     "pytest-flake8",
     "flake8",
     "pylogconf",
+    "mypy",
 ]

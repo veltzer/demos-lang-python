@@ -4,14 +4,16 @@ This is an example which shows a standard dictionary vs an ordered dict.
 
 import collections
 import os
+from typing import Dict
 
-d = dict((letter, i) for i, letter in enumerate('word'))
-print(d)
-d = {}
+d1 = dict((letter, i) for i, letter in enumerate('word'))
+print(d1)
+d2: Dict[str,None] = {}
 for x in dir(os):
-    d[x] = None
-# d = {x:None for x in dir(os)}
-print(d)
+    d2[x] = None
+print(d2)
+d3 = {x:None for x in dir(os)}
+print(d3)
 ud = {}
 od = collections.OrderedDict()
 s = set()

@@ -19,6 +19,7 @@ with subprocess.Popen(
     stderr=subprocess.STDOUT,
     shell=False
 ) as pr:
-    for line in pr.stdout:
-        line = line.decode()
+    assert pr.stdout is not None
+    for line_b in pr.stdout:
+        line = line_b.decode()
         print(f"got line [{line.rstrip()}]")
