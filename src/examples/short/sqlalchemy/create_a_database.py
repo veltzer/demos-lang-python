@@ -14,7 +14,7 @@ Base = declarative_base()
 STRING_LENGTH = 250
 
 
-class Person(Base):
+class Person(Base):  # type: ignore
     __tablename__ = 'person'
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
@@ -22,7 +22,7 @@ class Person(Base):
     name = Column(String(STRING_LENGTH), nullable=False)
 
 
-class Address(Base):
+class Address(Base):  # type: ignore
     __tablename__ = 'address'
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.

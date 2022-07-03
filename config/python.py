@@ -109,4 +109,5 @@ test_requires = [
     "types-boto",
     "types-PyMySQL",
     "types-requests",
+    "types-paramiko",
 ]
