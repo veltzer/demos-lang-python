@@ -7,7 +7,6 @@ This example shows:
 """
 
 import sys
-from typing import Optional, IO
 
 print('Hello from regular print')
 print('Hello from sys.stdout', file=sys.stdout)
@@ -15,7 +14,7 @@ print('Hello from sys.stderr', file=sys.stderr)
 
 sys.stdout.close()
 
-with open('/dev/tty', 'w') as f:  # type: Optional[IO[str]]
+with open('/dev/tty', 'w') as f:
     f.write('Hello from /dev/tty...\n')
     f.flush()
     print('Another hello from /dev/tty...', file=f)

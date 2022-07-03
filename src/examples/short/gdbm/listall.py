@@ -14,7 +14,7 @@ d = dbm.gnu.open(filename)
 
 # lets try iterating with .items()
 try:
-    for _k, _v in d.items():
+    for _k, _v in d.items():  # type: ignore
         pass
 except AttributeError:
     print("nope, you cannot use 'items' on a gdbm handle")

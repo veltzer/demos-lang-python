@@ -36,7 +36,7 @@ print('bool(None) is', b)
 # some arithmetic with it.
 try:
     # noinspection PyTypeChecker
-    i = int(None)
+    i = int(None)  # type: ignore
 except TypeError as e:
     print('yes,got exception from converting None to int', e)
 

@@ -3,6 +3,7 @@ This example shows how to group data with dictionaries
 """
 
 import collections
+from typing import Dict, List
 
 colors = [
     'red',
@@ -17,7 +18,7 @@ colors = [
 ]
 
 # the simple way
-d = {}
+d: Dict[int, List[str]] = {}
 for color in colors:
     key = len(color)
     if key not in d:

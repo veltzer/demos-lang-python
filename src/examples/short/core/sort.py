@@ -1,23 +1,14 @@
 """
-Example of sorting with python.
-Notice the passing of the comparator and it's triped (1,0,-1) return value.
+Example of sorting with python using the key parameter
 """
 
 
-def compare(a, b):
-    if a[1] < b[1]:
-        return -1
-    if a[1] == b[1]:
-        return 0
-    # if a[1] > b[1]:
-    #     return 1
-    return 1
-    # yield ValueError("Shouldnt be here")
+def compare(item):
+    return item[1]
 
 
 m = {'mark': 10, 'yossi': 3, 'doron': 67}
-arr = m.items()
-arr.sort(cmp=compare)
+arr = list(m.items())
+arr.sort(key=compare)
 
-for x in arr:
-    print(arr[0] + ' ' + str(arr[1]))
+print(arr)

@@ -29,12 +29,12 @@ d[''] = 'emptystring'
 d['emptystring'] = ''
 try:
     # noinspection PyTypeChecker
-    d['three'] = None
+    d['three'] = None  # type: ignore
 except TypeError:
     print("yes, got exception when trying to put None as value")
 try:
     # noinspection PyTypeChecker
-    d[None] = 'four'
+    d[None] = 'four'  # type: ignore
 except TypeError:
     print("yes, got exception when trying to put string as key")
 d['five'] = 'five'.encode()

@@ -11,8 +11,8 @@ for module_loader, name, ispkg in pkgutil.iter_modules(path=['plugins']):
     if do_debug:
         print(module_loader, name, ispkg)
     if not ispkg:
-        ml = module_loader.find_module(name)
-        m = ml.load_module()
+        ml = module_loader.find_loader(name)[0]  # type: ignore
+        m = ml.load_module()  # type: ignore
         if do_debug:
             print(type(m))
             print(dir(m))

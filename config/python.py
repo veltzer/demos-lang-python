@@ -104,4 +104,7 @@ test_requires = [
     "flake8",
     "pylogconf",
     "mypy",
+    "types-PyYAML",
+    "types-setuptools",
+    "types-boto",
 ]

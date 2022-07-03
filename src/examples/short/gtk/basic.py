@@ -21,7 +21,8 @@ def quit_callback(_window, _event):
 
 # pylint: disable=no-member
 b = Gtk.Button('Click me')  # create a button
-b.num = 0  # attache some data to it
+# attache some data to it (quite ugly)
+b.num = 0  # type: ignore
 b.connect('clicked', clicked_callback)  # attach it to the callback
 
 w = Gtk.Window()  # create a new window

@@ -29,21 +29,21 @@ for x in h.items():
     print(f"val is {x[1]}")
 # this is the same but you only get a key each time
 # pylint: disable=consider-using-dict-items
-for x in h:
-    print(x)
-    print(f"key is {x}")
-    print(f"val is {h[x]}")
+for y in h:
+    print(y)
+    print(f"key is {y}")
+    print(f"val is {h[y]}")
 # this is less efficient (at least in some versions of python)
 # pylint: disable=consider-iterating-dictionary
-for x in h.keys():
-    print(x)
-    print(f"key is {x}")
-    print(f"val is {h[x]}")
+for z in h.keys():
+    print(z)
+    print(f"key is {z}")
+    print(f"val is {h[z]}")
 # this is TERRIBLE performance wise although to a novice it looks
 # almost the same... Some versions of python may be smart enough to optimize
 # this away but you really shouldn't count on it.
 key_list = h.keys()
-for x in key_list:
-    print(x)
-    print(f"key is {x}")
-    print(f"val is {h[x]}")
+for m in key_list:
+    print(m)
+    print(f"key is {m}")
+    print(f"val is {h[m]}")

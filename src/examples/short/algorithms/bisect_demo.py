@@ -9,9 +9,9 @@ contains only the values by which to look.
 
 import bisect
 
-my_list = [1, 3, 4, 5, 71, 82]
+my_list_int = [1, 3, 4, 5, 71, 82]
 
-print(bisect.bisect_left(my_list, 60))
+print(bisect.bisect_left(my_list_int, 60))
 
 my_list = ["a", "aa", "ab", "ba", "bb"]
 

@@ -19,5 +19,7 @@ def get_data(filename):
 static_file_content2 = get_data('static_file.html').decode()
 print(f"static_file_content2 is [{static_file_content2}]")
 
-static_file_content3 = pkgutil.get_data('my_pack', 'static_file.html').decode()
+static_file_content3_bytes = pkgutil.get_data('my_pack', 'static_file.html')
+assert isinstance(static_file_content3_bytes, bytes)
+static_file_content3 = static_file_content3_bytes.decode()
 print(f"static_file_content3 is [{static_file_content3}]")

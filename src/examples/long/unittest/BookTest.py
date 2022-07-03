@@ -1,3 +1,5 @@
+# type: ignore
+
 import unittest
 
 # pylint: disable=relative-beyond-top-level, no-name-in-module

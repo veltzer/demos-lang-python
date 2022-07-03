@@ -22,5 +22,5 @@ def do_error():
         raise ValueError('outer') from e
 
 
-sys.tracebacklimit = None
+sys.tracebacklimit = 0
 do_error()

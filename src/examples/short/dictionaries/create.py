@@ -10,6 +10,8 @@ TODO:
 from a mapping object. I need to add an example of this.
 """
 
+from typing import Dict
+
 
 def gen_tuples():
     for i in range(5):
@@ -21,13 +23,14 @@ list_of_keys = ['red', 'green', 'blue']
 list_of_values = ['red', 'green', 'blue']
 
 # simplest way, built in the language syntax, empty dictionary
-d1 = {}
+d1: Dict[str, str] = {}
 print(d1)
 # explicit dictionary syntax with some data
+# pylint: disable=use-dict-literal
 d2 = {"one": "two", "three": "four"}
 print(d2)
 # empty constructor -> empty dictionary
-d3 = {}
+d3: Dict[str, str] = dict()
 print(d3)
 # constructor with key, value pairs to initialize the dictionary
 d4 = dict(one='two', three='four')

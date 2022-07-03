@@ -26,7 +26,7 @@ class CmdLineApp(Cmd):
         # For option commands, pass a single argument string instead of a list of argument strings to the do_* methods
         # set_use_arg_list(False)
 
-    @with_argparser(argparser)
+    @with_argparser(argparser)  # type: ignore
     def do_speak(self, arg, opts=None):
         """Repeats what you tell me to."""
         arg = ''.join(arg)

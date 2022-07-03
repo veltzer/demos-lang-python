@@ -1,3 +1,4 @@
+# type: ignore
 # pylint: disable=relative-beyond-top-level
 from .. import demo
 
