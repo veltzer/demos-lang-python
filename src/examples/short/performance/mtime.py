@@ -14,6 +14,8 @@ import glob
 import os.path
 import time
 
+from typing import Dict
+
 count = 1000000
 doFirst = True
 doSecond = True
@@ -23,6 +25,8 @@ files = [f for f in glob.glob('/etc/*') if os.path.isfile(f)]
 files.extend([f for f in glob.glob('/etc/*/*') if os.path.isfile(f)])
 list_len = len(files)
 print(f"file list length is {list_len}...")
+
+filename: str
 
 # now do lots of os.path.getmtime() ops on them
 if doFirst:
@@ -35,9 +39,8 @@ if doFirst:
 
 if doSecond:
     # now do the same with a cache
-    times = {}
+    times: Dict[str, float] = {}
     time_before = time.time()
-    filename = None
     for i in range(count):
         filename = files[i % list_len]
     if filename in times:

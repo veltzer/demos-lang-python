@@ -1,3 +1,4 @@
+# type: ignore
 """
 Example of stealing a method from another object
 """

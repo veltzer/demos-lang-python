@@ -11,29 +11,29 @@ frozenset(a,b) then you don't actually change the set.
 
 # frozenset does not support 'add'
 try:
-    set_a = frozenset()
-    set_a.add('a')
+    set_a: frozenset = frozenset()
+    set_a.add('a')  # type: ignore
 except AttributeError:
     print('yes, got AttributeError')
 
 # frozenset does not support 'remove'
 try:
-    set_a = frozenset()
-    set_a.remove('a')
+    set_b: frozenset = frozenset()
+    set_b.remove('a')  # type: ignore
 except AttributeError:
     print('yes, got AttributeError')
 
 try:
-    set_a = set()
-    set_a.add({'a', 'b'})
-    set_a.add({'b', 'a'})
+    set_c = set()
+    set_c.add({'a', 'b'})
+    set_c.add({'b', 'a'})
 except TypeError:
     print('yes, got TypeError')
 
 # same thing with frozenset
-set_b = set()
-set_b.add(frozenset(['a', 'b']))
-set_b.add(frozenset(['b', 'a']))
-set_b.add(frozenset(['a', 'b']))
-set_b.add(frozenset(['b', 'a']))
-print(set_b)
+set_d = set()
+set_d.add(frozenset(['a', 'b']))
+set_d.add(frozenset(['b', 'a']))
+set_d.add(frozenset(['a', 'b']))
+set_d.add(frozenset(['b', 'a']))
+print(set_d)

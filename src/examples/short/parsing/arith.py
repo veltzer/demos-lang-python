@@ -20,7 +20,7 @@ operand = number | expr
 
 op_multiply = pyparsing.oneOf('* /')
 op_plus = pyparsing.oneOf('+ -')
-expr = pyparsing.infixNotation(operand, [
+expr_2 = pyparsing.infixNotation(operand, [
     (op_multiply, 2, pyparsing.opAssoc.LEFT),
     (op_plus, 2, pyparsing.opAssoc.LEFT),
 ])
@@ -39,8 +39,8 @@ def expr_act(s, loc, tok):
     return None
 
 
-expr.setParseAction(expr_act)
+expr_2.setParseAction(expr_act)
 
-expr.setDebug()
+expr_2.setDebug()
 
-print(expr.parseString(sys.argv[1])[0])
+print(expr_2.parseString(sys.argv[1])[0])

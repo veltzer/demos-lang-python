@@ -107,4 +107,6 @@ test_requires = [
     "types-PyYAML",
     "types-setuptools",
     "types-boto",
+    "types-PyMySQL",
+    "types-requests",
 ]

@@ -14,7 +14,7 @@ input_filename = sys.argv[1]
 
 presentation = Presentation(input_filename)
 slides = presentation.slides
-refs = set()
+# refs = set()
 for number, slide in enumerate(slides):
     print(f"slide {number}")
     dump_json(slide)

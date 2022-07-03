@@ -28,7 +28,7 @@ def get_http_status_string(code: int):
     """
     # noinspection PyProtectedMember,PyUnresolvedReferences
     # pylint: disable=protected-access
-    return f"http code [{code}], [{requests.status_codes._codes[code][0]}]"
+    return f"http code [{code}], [{requests.status_codes._codes[code][0]}]"  # type: ignore
 
 
 url = 'http://www.google.com/does_not_exist'

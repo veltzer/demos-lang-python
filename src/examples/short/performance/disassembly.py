@@ -10,5 +10,5 @@ def add(a, b):
     return a + b
 
 
-print(dis.dis(add))
+dis.dis(add)
 print(inspect.getsourcelines(add))
