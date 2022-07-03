@@ -1,5 +1,7 @@
+from typing import Dict
+
 with open('ex4.py') as f:
-    report = {}
+    report: Dict[str, int] = {}
     lines = f.readlines()
     for line in lines:
         for c in line:

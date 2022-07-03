@@ -1,5 +1,7 @@
+from typing import Dict
+
 with open('input.txt') as f:
-    report = {}
+    report: Dict[str, int] = {}
     for line in f.readlines():
         for c in line:
             if not (c in [' ', '\n', '\r', '\t']):

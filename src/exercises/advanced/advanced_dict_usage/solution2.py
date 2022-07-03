@@ -1,4 +1,6 @@
-places = {
+from typing import Dict, List
+
+places: Dict[str, Dict[str, str]] = {
     'Shire': {'leave': 'Bree', 'stay': 'DEATH'},
     'DEATH': {},
     'Bree': {'with Strider': 'Rivendell', 'alone': 'DEATH'},
@@ -26,7 +28,7 @@ print('Mordor' in reachable)
 
 # Finding the actual path:
 
-way_to = {'Rivendell': []}
+way_to: Dict[str, List[str]] = {'Rivendell': []}
 for _ in range(7):
     for place, way_to_place in way_to.items():
         for action, place2 in places[place].items():

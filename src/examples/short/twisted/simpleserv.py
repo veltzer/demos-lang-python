@@ -20,10 +20,10 @@ factory.protocol = Echo
 
 # This runs the protocol on port 8000
 # pylint: disable=no-member
-reactor.listenTCP(8000, factory)
+reactor.listenTCP(8000, factory)  # type: ignore
 # And again on port 8002
 # pylint: disable=no-member
-reactor.listenTCP(8002, factory)
+reactor.listenTCP(8002, factory)  # type: ignore
 # run the main loop of the reactor
 # pylint: disable=no-member
-reactor.run()
+reactor.run()  # type: ignore

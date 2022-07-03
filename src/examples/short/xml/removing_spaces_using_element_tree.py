@@ -27,6 +27,7 @@ for event, elem in omit_whitespaces(xml.etree.ElementTree.iterparse("data/xml/da
 
 dom = xml.etree.ElementTree.parse("data/xml/data.xml")
 for elem in dom.getroot().iter():
+    assert elem.text is not None
     if whitespaces.match(elem.text):
         elem.text = ""
     if elem.tail is not None and whitespaces.match(elem.tail):

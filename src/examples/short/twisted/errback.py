@@ -2,10 +2,8 @@
 An example of using errbacks in twisted.
 """
 
-# from twisted.internet.protocol import Factory,Protocol
 from twisted.internet import reactor
-# pylint: disable=no-name-in-module
-from twisted.web.client import getPage
+from twisted.web.client import Agent
 
 
 # from twisted.protocols.basic import LineReceiver
@@ -17,12 +15,8 @@ def my_other_callback(content):
     reactor.stop()
 
 
-def my_callback(content):
-    print(f"in callback {content}")
-    deferred = getPage('http://localhost/~user/')
-    deferred.addCallback(my_other_callback)
-    # raise Exception('this is an exception')
-    # reactor.stop()
+def my_callback(response):
+    print(f"in callback {response}")
 
 
 def my_errback(error):
@@ -32,11 +26,16 @@ def my_errback(error):
 
 
 def main():
-    deferred = getPage('http://localhost')
+    agent = Agent(reactor)
+
+    deferred = agent.request(
+        uri='http://localhost',
+        method='GET',
+    )
     deferred.addCallback(my_callback)
     deferred.addErrback(my_errback)
     # pylint: disable=no-member
-    reactor.run()
+    reactor.run()  # type: ignore
 
 
 if __name__ == '__main__':

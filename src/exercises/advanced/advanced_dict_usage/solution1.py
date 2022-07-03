@@ -1,4 +1,6 @@
-places = {
+from typing import Dict
+
+places: Dict[str, Dict[str, str]] = {
     'Shire': {'leave': 'Bree', 'stay': 'DEATH'},
     'DEATH': {},
     'Bree': {'with Strider': 'Rivendell', 'alone': 'DEATH'},

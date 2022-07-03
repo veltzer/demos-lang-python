@@ -81,5 +81,5 @@ class MyFactory(Factory):
 
 myFactory = MyFactory()
 # pylint: disable=no-member
-reactor.listenTCP(myFactory.port, myFactory)
-reactor.run()
+reactor.listenTCP(myFactory.port, myFactory)  # type: ignore
+reactor.run()  # type: ignore

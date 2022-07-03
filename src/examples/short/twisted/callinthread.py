@@ -22,11 +22,11 @@ def aSillyBlockingMethod(t, stop):
 
 # run method in thread
 # pylint: disable=no-member
-reactor.callInThread(aSillyBlockingMethod, 10, True)
+reactor.callInThread(aSillyBlockingMethod, 10, True)  # type: ignore
 # pylint: disable=no-member
-reactor.callInThread(aSillyBlockingMethod, 5, False)
+reactor.callInThread(aSillyBlockingMethod, 5, False)  # type: ignore
 print('before suggestThreadPoolSize')
-reactor.suggestThreadPoolSize(2)
+reactor.suggestThreadPoolSize(2)  # type: ignore
 time.sleep(10)
 print('finished sleeping...')
-reactor.run()
+reactor.run()  # type: ignore
