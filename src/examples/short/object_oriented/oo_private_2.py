@@ -55,5 +55,5 @@ print(dir(b))
 # that... YES WE CAN...
 print("if you see price=70 it means we changed the attribute even though it has __ in front of it")
 # pylint: disable=attribute-defined-outside-init
-b._Book__price = 70
+b._Book__price = 70  # type: ignore
 b.printMe()

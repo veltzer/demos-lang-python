@@ -44,7 +44,7 @@ class D(C):
 
 try:
     # pylint: disable=abstract-class-instantiated
-    a = A()
+    a = A()  # type: ignore
     assert isinstance(a, A)
 except TypeError as e:
     print(f"yes, got exception [{str(e)}]...")
@@ -54,8 +54,8 @@ assert isinstance(b, B)
 
 try:
     # pylint: disable=abstract-class-instantiated
-    c = C()
-    assert issubclass(c, C)
+    c = C()  # type: ignore
+    assert issubclass(c, C)  # type: ignore
 except TypeError as e:
     print(f"yes, got exception [{str(e)}]...")
 

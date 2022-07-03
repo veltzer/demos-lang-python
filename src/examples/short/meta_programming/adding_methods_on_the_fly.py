@@ -57,12 +57,12 @@ def fire_your_gun(self):
     print(self.name + ' is firing!')
 
 
-Person.fire = fire_your_gun
+Person.fire = fire_your_gun  # type: ignore
 
 # lets kill some people
 print('Now we both have firing capabilities...')
-b.fire()
-p.fire()
+b.fire()  # type: ignore
+p.fire()  # type: ignore
 
 print('Here is some debug info:')
 print('here is james...')

@@ -30,7 +30,7 @@ b2 = Book(13)
 print(f"Book.num (direct access) is {Book.num}")
 print(f"getNumBooks() is {getNumBooks()}")
 try:
-    print(b1.getNumBooks())
+    print(b1.getNumBooks())  # type: ignore
 except AttributeError:
     print("no, cannot access the static method via the instance")
 # access the static member through an instance...

@@ -47,11 +47,11 @@ b.pr()
 print('didnt work,huh ?')
 print('from outside its value looks like ' + str(b.__private_variable))
 # noinspection PyProtectedMember
-print('this is our real var ' + str(b._MyClass__private_variable))
+print('this is our real var ' + str(b._MyClass__private_variable))  # type: ignore
 print('this means that there is no real security for the __[var] in python')
 print('lets look at our class')
 # pylint: disable=attribute-defined-outside-init
-b._MyClass__private_variable = 666
+b._MyClass__private_variable = 666  # type: ignore
 b.pr()
 b.pr()
 print(dir(MyClass))

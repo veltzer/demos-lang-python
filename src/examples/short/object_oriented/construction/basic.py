@@ -28,7 +28,7 @@ class A:
     # wrong! don't do this...
     # noinspection PyMethodParameters
     # pylint: disable=no-method-argument
-    def __init__():
+    def __init__():  # type: ignore
         print('in A constructor')
 
 

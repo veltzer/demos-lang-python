@@ -18,10 +18,11 @@ constructor for A * without * the 'getInstance' method
 as the instance (in A.instance). This can be fixed by moving
 the registration into the constructor function itself.
 """
+from typing import Union, Any
 
 
 class A:
-    instance = None
+    instance: Union[Any, None] = None
 
     def __init__(self):
         if A.instance is not None:

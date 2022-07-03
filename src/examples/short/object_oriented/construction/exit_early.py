@@ -18,11 +18,11 @@ is a different story.
 class Book:
     # noinspection PyReturnFromInit,PyTypeChecker
     # pylint: disable=return-in-init
-    def __init__(self, price) -> 'Book':
+    def __init__(self, price) -> 'Book':  # type: ignore
         self.__price = price
         # return None
         # noinspection PyTypeChecker
-        return 7
+        return 7  # type: ignore
         # return
 
     def setPrice(self, val):

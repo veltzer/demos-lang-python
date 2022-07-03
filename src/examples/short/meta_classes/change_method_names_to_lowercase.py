@@ -28,4 +28,4 @@ class MyClass:
 
 # Look! we now call the method in lowercase...
 # pylint: disable=no-member
-MyClass.sayhello()
+MyClass.sayhello()  # type: ignore

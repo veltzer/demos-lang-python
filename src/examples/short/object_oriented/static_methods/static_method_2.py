@@ -25,7 +25,7 @@ b1 = Book(14)
 b2 = Book(13)
 # lets output the static data in various ways...
 print(Book.num)
-print(b1.getNumBooks())
+print(b1.getNumBooks())  # type: ignore
 print(Book.getNumBooks(b1))
 # these will throw an exception since you must pass an instance...
 # print(Book.getNumBooks())

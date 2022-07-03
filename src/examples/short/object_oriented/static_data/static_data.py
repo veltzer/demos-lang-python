@@ -51,7 +51,7 @@ def give_me_a_unique_value2():
     return give_me_a_unique_value2.counter
 
 
-give_me_a_unique_value2.counter = 0
+give_me_a_unique_value2.counter = 0  # type: ignore
 print(give_me_a_unique_value2())
 print(give_me_a_unique_value2())
 print(give_me_a_unique_value2())

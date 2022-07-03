@@ -1,3 +1,4 @@
+# type: ignore
 """
 Demo to show the usage of the imp module in python
 This clearly shows that you can reload any module into any name space using
