@@ -8,9 +8,9 @@ c = Calendar()
 with open(filename) as f:
     events = f.readlines()
     for event in events:
-        event = event.split(' ').rstrip()
-        name = event[0]
-        date_values = event[1].split('.')
+        events_ev = event.rstrip().split(' ')
+        name = events_ev[0]
+        date_values = events_ev[1].split('.')
         if date_values[0].isdigit() and date_values[1].isdigit() and date_values[2].isdigit():
             date = Date(int(date_values[0]), int(
                 date_values[1]), int(date_values[2]))

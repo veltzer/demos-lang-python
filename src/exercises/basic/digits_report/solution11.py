@@ -10,12 +10,13 @@ while found:
             found = True
             break
 print('starting real work on', input_string)
+assert input_string is not None
 # this is the easy solution...
 for digit in range(10):
-    print('digit', digit, ' appears', input_string.count(str(digit)), ' times')
+    print(f"digit {digit} appears {input_string.count(str(digit))} times")
 # this is the right one...
 counters = [0] * 10
-for digit in input_string:
-    counters[int(digit)] += 1
+for digit1 in input_string:
+    counters[int(digit1)] += 1
 for digit, count in enumerate(counters):
     print('digit', digit, ' appears', count, ' times')

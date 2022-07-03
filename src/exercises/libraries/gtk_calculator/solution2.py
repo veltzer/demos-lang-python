@@ -1,3 +1,4 @@
+# type: ignore
 """
 This extended version allow selection of the arithmetic operator by
 radio boxes. Constructing them and tracking which is active is
@@ -59,6 +60,7 @@ operator_choice = OperatorChoice()
 entry2 = Gtk.Entry()
 result = Gtk.Label()
 for widget in [entry1, operator_choice, entry2, Gtk.Label('='), result]:
+    print(type(widget))
     horizontal_box.pack_start(widget)
 
 
