@@ -6,6 +6,9 @@ the right way to go.
 import timeit
 
 
+function_names = {}
+
+
 def func1():
     s = names[0]
     for name in names[1:]:
@@ -13,14 +16,14 @@ def func1():
     return s
 
 
-func1.name = 'plus'
+function_names[func1] = 'plus'
 
 
 def func2():
     return ','.join(names)
 
 
-func2.name = 'join'
+function_names[func2] = 'join'
 
 names = []
 for i in range(1000000):
@@ -32,7 +35,7 @@ functions = [
 ]
 
 number = 100
-results = [(timeit.timeit(f, number=number), f.name) for f in functions]
+results = [(timeit.timeit(f, number=number), function_names[f]) for f in functions]
 sorted_results = sorted(results, key=lambda tup: tup[0])
 for r in sorted_results:
     print(f"{r[0]:.4f}: {r[1]}")

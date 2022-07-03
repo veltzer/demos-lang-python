@@ -11,8 +11,9 @@ with subprocess.Popen(
     stderr=subprocess.PIPE
 ) as p:
     # do not use p.stdout.readlines() in the next line as it will block...
-    for line in p.stdout:
-        line = line.decode().rstrip()
+    assert p.stdout is not None
+    for line_b in p.stdout:
+        line = line_b.decode().rstrip()
         print(f"line is [{line}]")
     p.wait()
     print(f"return code is [{p.returncode}]")

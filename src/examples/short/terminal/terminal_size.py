@@ -14,12 +14,15 @@ import termios
 import timeit
 
 
+function_names = {}
+
+
 def terminal_size1():
     h, w, _hp, _wp = struct.unpack('HHHH', fcntl.ioctl(0, termios.TIOCGWINSZ, struct.pack('HHHH', 0, 0, 0, 0)), )
     return w, h
 
 
-terminal_size1.name = 'ioctl'
+function_names[terminal_size1] = 'ioctl'
 
 
 def terminal_size2():
@@ -27,7 +30,7 @@ def terminal_size2():
     return int(ret[1]), int(ret[0])
 
 
-terminal_size2.name = 'stty'
+function_names[terminal_size2] = 'stty'
 
 
 def terminal_size3():
@@ -36,7 +39,7 @@ def terminal_size3():
     return x, y
 
 
-terminal_size3.name = 'tput'
+function_names[terminal_size3] = 'tput'
 
 
 def terminal_size4():
@@ -48,7 +51,7 @@ def terminal_size4():
     return int(d['co']), int(d['li'])
 
 
-terminal_size4.name = 'TERMCAP'
+function_names[terminal_size4] = 'TERMCAP'
 
 
 def terminal_size5():
@@ -58,7 +61,7 @@ def terminal_size5():
     return x, y
 
 
-terminal_size5.name = 'environment'
+function_names[terminal_size5] = 'environment'
 
 print(terminal_size1())
 print(terminal_size2())
@@ -75,7 +78,7 @@ functions = [
 ]
 
 number = 1000
-results = [(timeit.timeit(f, number=number), f.name) for f in functions]
+results = [(timeit.timeit(f, number=number), function_names[f]) for f in functions]
 sorted_results = sorted(results, key=lambda tup: tup[0])
 for r in sorted_results:
     print(f"{r[0]:.4f}: {r[1]}")

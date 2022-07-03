@@ -19,6 +19,8 @@ remove_re = re.compile("[a-z]")
 
 line = "this 2342 is56 is the 2line"
 
+function_names = {}
+
 
 def remove_many(s, list_of_chars):
     for x in list_of_chars:
@@ -30,14 +32,14 @@ def using_re():
     return remove_re.sub('', line)
 
 
-using_re.name = 'using_re'
+function_names[using_re] = 'using_re'
 
 
 def using_replace():
     return remove_many(line, "abcdefghijklmnopqrstuvwxyz")
 
 
-using_replace.name = 'using_replace'
+function_names[using_replace] = 'using_replace'
 
 assert using_re() == using_replace()
 
@@ -48,7 +50,7 @@ functions = [
 
 number = 2000000
 
-results = [(timeit.timeit(f, number=number), f.name) for f in functions]
+results = [(timeit.timeit(f, number=number), function_names[f]) for f in functions]
 sorted_results = sorted(results, key=lambda tup: tup[0])
 for r in sorted_results:
     print(f"{r[0]:.4f}: {r[1]}")

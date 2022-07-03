@@ -110,4 +110,5 @@ test_requires = [
     "types-PyMySQL",
     "types-requests",
     "types-paramiko",
+    "types-termcolor",
 ]

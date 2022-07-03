@@ -16,12 +16,15 @@ x = 'abc'
 y = 'def'
 
 
+function_names = {}
+
+
 def concat1():
     z = x + y
     return z
 
 
-concat1.name = '+ operator'
+function_names[concat1] = '+ operator'
 
 
 def concat2():
@@ -30,7 +33,7 @@ def concat2():
     return z
 
 
-concat2.name = '%s%s'
+function_names[concat2] = '%s%s'
 
 
 def concat3():
@@ -39,7 +42,7 @@ def concat3():
     return z
 
 
-concat3.name = '{}{}'
+function_names[concat3] = '{}{}'
 
 
 def concat4():
@@ -48,21 +51,21 @@ def concat4():
     return z
 
 
-concat4.name = '{0}{1}'
+function_names[concat4] = '{0}{1}'
 
 
 def concat5():
     return ''.join([x, y])
 
 
-concat5.name = 'join'
+function_names[concat4] = 'join'
 
 
 def concat6():
     return f"{x}{y}"
 
 
-concat6.name = 'f-string'
+function_names[concat6] = 'f-string'
 
 
 functions = [
@@ -76,7 +79,7 @@ functions = [
 
 number = 2000000
 
-results = [(timeit.timeit(f, number=number), f.name) for f in functions]
+results = [(timeit.timeit(f, number=number), function_names[f]) for f in functions]
 sorted_results = sorted(results, key=lambda tup: tup[0])
 for r in sorted_results:
     print(f"{r[0]:.4f}: {r[1]}")
