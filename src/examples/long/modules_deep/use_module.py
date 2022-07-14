@@ -1,5 +1,5 @@
-import outer.inner.mod
+import a.b.c.mod
 
 print(f"hello from [{__file__}]")
 
-outer.inner.mod.print_module_info()
+a.b.c.mod.print_module_info()
