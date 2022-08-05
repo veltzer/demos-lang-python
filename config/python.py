@@ -61,6 +61,8 @@ install_requires = [
     "reportlab",
     "imdbpy",
     "python-pptx",
+    # selenium stuff
+    "webdriver-manager",
     "selenium",
     # music
     "music",
