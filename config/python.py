@@ -64,6 +64,7 @@ install_requires = [
     # selenium stuff
     "webdriver-manager",
     "selenium",
+    "selenium-wire",
     # music
     "music",
     "mingus",
