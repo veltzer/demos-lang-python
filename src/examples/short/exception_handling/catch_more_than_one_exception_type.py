@@ -3,6 +3,9 @@ This example shows how to catch more than one exception type in python.
 
 The syntax is:
     except <tuple of exception types> as e:
+
+References:
+- https://rollbar.com/blog/python-catching-multiple-exceptions/
 """
 
 
