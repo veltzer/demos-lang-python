@@ -73,8 +73,8 @@ install_requires = [
     "pyfakeuse",
     "pyvardump",
     # gtk stuff
-    "vext",
-    "vext.gi",
+    # "vext",
+    # "vext.gi",
     # machine learning
     "pandas",
     "numpy",
