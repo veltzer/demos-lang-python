@@ -34,5 +34,9 @@ for color in colors:
 print(d)
 
 # with collections.Counter
-d = collections.Counter(colors)
+d = collections.Counter(["red", "green"])
+# this is how to do a single update
+d['green'] += 1
+# this is how to do a multi update
+d.update(["red", "green"])
 print(d)
