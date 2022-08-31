@@ -32,5 +32,5 @@ def get_http_status_string(code: int):
 
 
 url = 'http://www.google.com/does_not_exist'
-r = requests.get(url)
+r = requests.get(url, timeout=5)
 print(get_http_status_string(r.status_code))

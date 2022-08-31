@@ -22,7 +22,7 @@ def get_http_status_string(code: int):
 
 
 url = "http://google.com"
-r = requests.get(url)
+r = requests.get(url, timeout=5)
 assert r.status_code == 200, get_http_status_string(r.status_code)
 response = r.content.decode()
 print(response)

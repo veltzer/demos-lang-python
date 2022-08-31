@@ -16,7 +16,7 @@ params = dict(
     sensor='false',
 )
 
-resp = requests.get(url=url, params=params)
+resp = requests.get(url=url, params=params, timeout=5)
 resp.raise_for_status()
 data = resp.json()
 print(data)

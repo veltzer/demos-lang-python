@@ -9,7 +9,7 @@ do_everything = True
 
 if do_headlines:
     url = f"http://newsapi.org/v2/top-headlines?country=us&apiKey={key}"
-    r = requests.get(url)
+    r = requests.get(url, timeout=5)
     r.raise_for_status()
     obj = r.json()
 
@@ -27,7 +27,7 @@ if do_everything:
         'apiKey': key,
     }
     url = 'http://newsapi.org/v2/everything'
-    r = requests.get(url, params=mydict)
+    r = requests.get(url, params=mydict, timeout=5)
     r.raise_for_status()
     obj = r.json()
 
