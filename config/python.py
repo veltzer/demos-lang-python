@@ -80,7 +80,7 @@ install_requires = [
     "numpy",
 
     # There packages require special attention (they do not install without issues)
-    # "psycopg2",
+    "psycopg2",
     # TODO: cannot install because libsystem-dev cannot be installed
     # "systemd-python",
     "PyGObject",
