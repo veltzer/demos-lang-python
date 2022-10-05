@@ -1,6 +1,9 @@
 """
 This example shows how to use a session. You will probaly
 want a session whenever you do many requests in a row.
+
+References:
+- https://requests.readthedocs.io/en/latest/user/advanced/
 """
 
 import requests
