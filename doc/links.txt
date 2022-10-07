@@ -8,7 +8,6 @@ tons of videos about python:
 	http://pyvideo.org
 
 python graph:
-- documentation is at:
 	http://dl.dropbox.com/u/1823095/python-graph/docs/index.html
 	(yes - I know it's weird).
 
@@ -25,3 +24,7 @@ blogs about python:
 
 python tricks collection:
 	http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html
+
+similar repos:
+	https://github.com/reuven/pandas-workout
+	https://github.com/reuven/python-workout
