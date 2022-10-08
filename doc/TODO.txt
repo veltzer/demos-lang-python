@@ -3,6 +3,9 @@
 	same for flake8.
 	currently build on github takes 25 minutes!!!
 
+- demo of data classes
+	https://docs.python.org/3/library/dataclasses.html
+
 - do demos for https://pypi.org/project/yamlpath
 
 - move all stamps into their own folder so that they will
