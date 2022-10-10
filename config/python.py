@@ -1,5 +1,7 @@
 make_requires = [
     "pymakehelper",
+    "pydmt",
+    "pyclassifiers",
 ]
 dev_requires = [
     "black",
@@ -99,7 +101,6 @@ install_requires = [
     "google-cloud-datastore",
 ]
 test_requires = [
-    "pymakehelper",
     "pylint",
     "pytest",
     "pytest-cov",
