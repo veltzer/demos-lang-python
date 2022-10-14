@@ -1,7 +1,7 @@
 packages = [
     # dbus
-    'libdbus-glib-1-dev',
-    'libdbus-1-dev',
+    "libdbus-glib-1-dev",
+    "libdbus-1-dev",
     # glib
     "libglib2.0-dev",
     # gtk
