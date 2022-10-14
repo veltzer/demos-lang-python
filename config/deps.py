@@ -28,3 +28,8 @@ packages = [
     # TODO: cannot install this at this moment because of a problem in ubuntu repos
     # "libsystemd-dev",
 ]
+
+dev_packages = [
+	"libpq-dev",
+	"libcairo2-dev",
+]
