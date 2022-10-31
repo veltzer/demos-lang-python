@@ -3,6 +3,7 @@ This is an example that gets an enviroment variable and verifies that it exists
 
 References:
 - https://stackoverflow.com/questions/40697845/what-is-a-good-practice-to-check-if-an-environmental-variable-exists-or-not
+- https://able.bio/rhett/how-to-set-and-get-environment-variables-in-python--274rgt5
 """
 
 import os
