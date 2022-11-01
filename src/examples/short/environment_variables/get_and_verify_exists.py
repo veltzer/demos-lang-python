@@ -17,4 +17,5 @@ def get_strict(name: str):
     assert name in os.environ, f"missing environment variable [{name}]"
     return os.getenv(name)
 
+
 print(get_strict("HOME"))
