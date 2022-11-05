@@ -79,6 +79,7 @@ install_requires = [
     # machine learning
     "pandas",
     "numpy",
+    "furl",
 
     # There packages require special attention (they do not install without issues)
     "psycopg2",
