@@ -1,6 +1,6 @@
 ## demos-python3
 
-version: 0.0.1
+version: 0.0.2
 
 description: Demos for the Python programming language (version 3)
 
