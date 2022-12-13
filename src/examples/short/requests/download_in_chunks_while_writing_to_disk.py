@@ -6,10 +6,11 @@ References:
 - https://stackoverflow.com/questions/16694907/download-large-file-in-python-with-requests
 """
 
+from typing import Union
 import requests
 
 
-def download_file(url: str, filename: str = None, chunk_size=8192):
+def download_file(url: str, filename: Union[str, None] = None, chunk_size=8192):
     if filename is None:
         filename = url.replace("/", ".")
     # NOTE the stream=True parameter below
