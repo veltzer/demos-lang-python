@@ -130,4 +130,4 @@ class NotebookExample:
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 NotebookExample()
-Gtk.main()
+Gtk.main()  # type: ignore[attr-defined]
