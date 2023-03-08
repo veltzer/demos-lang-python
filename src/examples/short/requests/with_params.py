@@ -9,12 +9,12 @@ import requests
 
 url = 'http://maps.googleapis.com/maps/api/directions/json'
 
-params = dict(
-    origin='Chicago,IL',
-    destination='Los+Angeles,CA',
-    waypoints='Joplin,MO|Oklahoma+City,OK',
-    sensor='false',
-)
+params = {
+    "origin": 'Chicago,IL',
+    "destination": 'Los+Angeles,CA',
+    "waypoints": 'Joplin,MO|Oklahoma+City,OK',
+    "sensor": 'false',
+}
 
 resp = requests.get(url=url, params=params, timeout=5)
 resp.raise_for_status()

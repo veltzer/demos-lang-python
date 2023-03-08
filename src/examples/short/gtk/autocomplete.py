@@ -11,7 +11,6 @@ import signal
 import gi
 
 from gi.repository import Gtk
-from gi.repository import GObject
 
 gi.require_version('Gtk', '3.0')
 
@@ -64,14 +63,14 @@ class EntryMultiCompletion(Gtk.Entry):
 # pylint: disable=no-member
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 win = Gtk.Window()
-win.connect('delete-event', Gtk.main_quit)
+win.connect('delete-event', Gtk.main_quit)  # type: ignore[attr-defined]
 entry_completion = EntryMultiCompletion()
-list_store = Gtk.ListStore(GObject.TYPE_STRING)
+list_store = Gtk.ListStore()
 entry_completion.completion.set_model(list_store)
 entry_completion.completion.set_text_column(0)
 for word in ['python', 'perl', 'scala', 'c++', 'ruby', 'c#', 'java', 'assembly', 'PHP']:
     list_store.append([word])
-win.add(entry_completion)
-win.show_all()
+win.add(entry_completion)  # type: ignore[attr-defined]
+win.show_all()  # type: ignore[attr-defined]
 
-Gtk.main()
+Gtk.main()  # type: ignore[attr-defined]

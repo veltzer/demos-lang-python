@@ -8,7 +8,7 @@ This means that a function cannot be used until after it has been defined.
 # noinspection PyBroadException
 try:
     # noinspection PyUnboundLocalVariable
-    demo_foo()  # noqa: F821
+    demo_foo()  # type: ignore[used-before-def]
 except NameError:
     print("yep, this failed")
 

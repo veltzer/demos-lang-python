@@ -6,7 +6,7 @@ def read_csv(filename):
     """Generate dictionaries, drop the descriptions."""
     with open(filename) as f:
         for date, package, version, _description in csv.reader(f):
-            yield dict(date=date, package=package, version=version)
+            yield {"date": date, "package": package, "version": version}
 
 
 db = sqlite3.connect('pypi.sqlite')

@@ -12,6 +12,7 @@ class A:
 
     def __init__(self):
         if A.instance is not None:
+            # pylint: disable=broad-exception-raised
             raise Exception('you called the constructor twice!!')
         # constructor code goes here
         print('in A constructor')

@@ -52,8 +52,8 @@ engine = create_engine(url=myDB)
 
 # lets drop all tables in the database, whatever they are:
 meta = sqlalchemy.MetaData(engine)
-meta.reflect()
-meta.drop_all()
+meta.reflect(bind=None)
+meta.drop_all(bind=None)
 
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.

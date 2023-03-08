@@ -25,7 +25,7 @@ print(z)
 w1 = (x for x in generate_items())
 print(w1)
 
-w2 = (generate_items())
+w2 = generate_items()
 print(w2)
 
 w3 = [generate_items()]

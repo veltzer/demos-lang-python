@@ -32,6 +32,6 @@ class HelloWorldGTK:
 # with stack trace
 try:
     app = HelloWorldGTK()
-    Gtk.main()
+    Gtk.main()  # type: ignore
 except KeyboardInterrupt:
     pass
