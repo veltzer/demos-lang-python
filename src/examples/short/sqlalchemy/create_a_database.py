@@ -42,18 +42,21 @@ class Address(Base):  # type: ignore
 # for the next line to work you need the 'pymysql' module installed
 
 myDB = URL(
+    username=None,
+    password=None,
+    port=None,
     drivername='mysql+pymysql',
     host='localhost',
     database='test',
-    query={'read_default_file': os.path.expanduser('~/.my.cnf')},
+    query={'read_default_file': os.path.expanduser('~/.my.cnf')},  # type: ignore
 )
 engine = create_engine(url=myDB)
 # engine = create_engine("mysql+pymysql://localhost/test?charset=utf8")
 
 # lets drop all tables in the database, whatever they are:
-meta = sqlalchemy.MetaData(engine)
-meta.reflect(bind=None)
-meta.drop_all(bind=None)
+meta = sqlalchemy.MetaData()
+meta.reflect(bind=engine)
+meta.drop_all(bind=engine)
 
 # Create all tables in the engine. This is equivalent to "Create Table"
 # statements in raw SQL.

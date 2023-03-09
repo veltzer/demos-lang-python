@@ -4,10 +4,10 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk  # noqa: E402
 
 w = Gtk.Window()
-w.connect('delete_event', lambda *ignored: Gtk.main_quit())
+w.connect('delete_event', lambda *ignored: Gtk.main_quit())  # type: ignore[attr-defined]
 
-horizontal_box = Gtk.HBox()
-w.add(horizontal_box)
+horizontal_box = Gtk.HBox()  # type: ignore[attr-defined]
+w.add(horizontal_box)  # type: ignore[attr-defined]
 
 entry1 = Gtk.Entry()
 entry2 = Gtk.Entry()
@@ -33,5 +33,5 @@ entry2.connect('changed', compute)
 entry1.set_text('3')
 entry2.set_text('2')
 
-w.show_all()
-Gtk.main()
+w.show_all()  # type: ignore[attr-defined]
+Gtk.main()  # type: ignore[attr-defined]
