@@ -56,7 +56,7 @@ print(
 # now lets try to suppress the exception thrown
 with MyResource(suppress=True) as r:
     print(r)
-    raise Exception('foobar')
+    raise ValueError('foobar')
 assert MyResource.enterCallsCounter == 3
 assert MyResource.exitCallsCounter == 3
 print(
