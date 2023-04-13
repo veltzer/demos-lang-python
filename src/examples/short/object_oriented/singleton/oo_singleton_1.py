@@ -26,7 +26,7 @@ class A:
 
     def __init__(self):
         if A.instance is not None:
-            raise Exception('you called the constructor twice!!')
+            raise ValueError('you called the constructor twice!!')
         # constructor code goes here
         print('in A constructor')
         self.my_attribute = 'value'
