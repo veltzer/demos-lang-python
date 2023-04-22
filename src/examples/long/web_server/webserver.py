@@ -3,6 +3,7 @@ demo of simple web server in python using HTTPServer
 originally grabbed from 'http://fragments.turtlemeat.com/pythonwebserver.php'.
 """
 
+# pylint: disable=deprecated-module
 import cgi
 import os
 import threading
