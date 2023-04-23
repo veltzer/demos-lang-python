@@ -1,14 +1,14 @@
-## demos-python3
+## demos-python
 
 version: 0.0.2
 
 description: Demos for the Python programming language (version 3)
 
-website: https://veltzer.github.io/demos-python3
+website: https://veltzer.github.io/demos-python
 
 ## build
 
-![build](https://github.com/veltzer/demos-python3/workflows/build/badge.svg)
+![build](https://github.com/veltzer/demos-python/workflows/build/badge.svg)
 
 This project explores the python programming language.
 The idea is that when you are programming you may find many examples
