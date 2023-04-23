@@ -1,14 +1,14 @@
-==============
-*demos-python*
-==============
+===============
+*demos-python3*
+===============
 
-.. image:: https://img.shields.io/pypi/v/demos-python
+.. image:: https://img.shields.io/pypi/v/demos-python3
 
-.. image:: https://img.shields.io/github/license/veltzer/demos-python
+.. image:: https://img.shields.io/github/license/veltzer/demos-python3
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
 
-project website: https://veltzer.github.io/demos-python
+project website: https://veltzer.github.io/demos-python3
 
 author: Mark Veltzer
 
