@@ -7,12 +7,13 @@ References:
 - https://stackoverflow.com/questions/15562446/how-to-stop-flask-application-without-using-ctrl-c
 """
 
-from flask import Flask
-from flask import request
 import os
 import signal
+from flask import Flask
+from flask import request
 
 app = Flask("app")
+
 
 @app.route("/")
 def root():
@@ -32,6 +33,7 @@ def stop_using_wekzeug():
 def stopServer():
     os.kill(os.getpid(), signal.SIGINT)
     return "Server is shutting down..."
+
 
 print(app.url_map)
 app.run(port=8080, host="0.0.0.0")
