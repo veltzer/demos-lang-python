@@ -1,3 +1,4 @@
+name = "demos-python"
 description_short = "Demos for the Python programming language (version 3)"
 description_long = """This project explores the python programming language.
 The idea is that when you are programming you may find many examples
@@ -12,3 +13,7 @@ This is a much better way of programming since you are not doing
 the experiments on your full system but rather on a small example
 that is easy to run, debug and manage. Once you have the example ready and
 running correctly you can incorporate it"s code into a larger project."""
+keywords = [
+    "demos",
+    "python",
+]
