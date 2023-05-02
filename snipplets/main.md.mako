@@ -1,5 +1,5 @@
 <%!
-    import pydmt.helpers.files
+    import pydmt.helpers.git
 %>${"##"} number of examples 
 
-Currently there are ${pydmt.helpers.files.count_files("src", ".py")} examples in this repo.
+Currently there are ${pydmt.helpers.git.count_files("src/**/*.py")} examples in this repo.
