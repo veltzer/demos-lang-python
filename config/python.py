@@ -6,25 +6,65 @@ dev_requires = [
     "black",
 ]
 install_requires = [
+    # command line parsing
     "click",
-    "requests",
-    "tqdm",
     "cmd2",
+    # web
+    "furl",
+    "requests",
+    "beautifulsoup4",
+    "html5lib",
+    "lxml",
+    # progress and tui
+    "tqdm",
     "pythondialog",
+    # systems programming
+    "psutil",
+    "systemd-python",
+    "PyGObject",
+    "PyGObject-stubs",
+    "dbus-python",
+    # cache and database
     "lmdb",
     "cachetools",
-    "psutil",
-
+    # databases
+    "pymysql",
+    "mysql.connector",
+    "sqlalchemy",
+    "psycopg2",
+    # data languages
     "jsonschema",
+    # GUI
+    "PyQt5",
+    "PyQt5-stubs",
+    # selenium stuff
+    "webdriver-manager",
+    "selenium",
+    "selenium-wire",
+    # music
+    "music",
+    "mingus",
+    # machine learning
+    "pandas",
+    "numpy",
+    # terminal color stuff
+    "termcolor",
+    "colored",
+    # yaml
+    "oyaml",
+    "ruamel.yaml",
+    # google cloud
+    "google-api-python-client",
+    "google-auth-httplib2",
+    "google-auth-oauthlib",
+    "google-cloud-datastore",
+    # misc
     "dispy",
     "mako",
     "luigi",
     "pyinotify",
     "twisted",
     "yapsy",
-    "pymysql",
-    "mysql.connector",
-    "sqlalchemy",
     "plotly",
     "gcloud",
     "networkx",
@@ -36,14 +76,12 @@ install_requires = [
     "PyGithub",
     "gitpython",
     "prompt-toolkit",
-    "PyQt5",
-    "PyQt5-stubs",
     "azure-cognitiveservices-search-websearch",
     "pygraph",
     "flask",
     "tsv",
     "pygments",
-    # "simpleparse", causing problems
+    "simpleparse",
     "progressbar",
     "inject",
     "scrapy",
@@ -62,43 +100,10 @@ install_requires = [
     "reportlab",
     "imdbpy",
     "python-pptx",
-    # selenium stuff
-    "webdriver-manager",
-    "selenium",
-    "selenium-wire",
-    # music
-    "music",
-    "mingus",
     # my stuff
     "pyapikey",
     "pyfakeuse",
     "pyvardump",
-    # gtk stuff
-    # "vext",
-    # "vext.gi",
-    # machine learning
-    "pandas",
-    "numpy",
-    "furl",
-
-    # There packages require special attention (they do not install without issues)
-    "psycopg2",
-    # TODO: cannot install because libsystem-dev cannot be installed
-    # "systemd-python",
-    "PyGObject",
-    "PyGObject-stubs",
-    "dbus-python",
-    # terminal color stuff
-    "termcolor",
-    "colored",
-    # yaml
-    "oyaml",
-    "ruamel.yaml",
-    # google cloud
-    "google-api-python-client",
-    "google-auth-httplib2",
-    "google-auth-oauthlib",
-    "google-cloud-datastore",
 ]
 test_requires = [
     "pylint",
