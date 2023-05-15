@@ -1,0 +1,17 @@
+TABLE {
+	background-color: #DDDDDD;
+	width: 100%;
+	border-style: groove;
+}
+BODY {
+	background-color: white;
+	border-style: groove;
+}
+TH {
+	background-color: #6677aa;
+	border-style: groove;
+}
+TD {
+	background-color: #E0E0FF;
+	border-style: groove;
+}

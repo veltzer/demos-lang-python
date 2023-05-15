@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<employees>
+		<employee name="mark" salary="7000"/>
+		<employee name="tom" salary="8000"/>
+	</employees>
+</data>

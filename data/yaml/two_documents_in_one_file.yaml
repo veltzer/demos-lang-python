@@ -1,0 +1,16 @@
+---
+concepts:
+  Phone:
+    queriable: true
+  Cover:
+    queriable: true
+  PhoneCover:
+    queriable: true
+#  FeaturePhone:
+#    queriable: true
+  SmartPhone:
+    queriable: true
+---
+anotherone:
+  this: that
+  other: foo

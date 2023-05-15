@@ -1,0 +1,7 @@
+# This is an example TSV file
+# It lists whether various genes are good or not.
+# Sometimes there are column headers that look like comments; we just ignore those.
+# GENE  STATUS  POINTS  DATA
+BRCA1	GOOD	37
+BRCA2	NOT_GOOD	-100	c=5
+HLA-A	VERY_GOOD	3	0,2,3,1,3,2
