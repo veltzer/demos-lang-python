@@ -1,5 +1,8 @@
 """
 A simple demos for BeautifulSoup
+
+References:
+- https://www.topcoder.com/thrive/articles/web-scraping-with-beautiful-soup
 """
 
 from bs4 import BeautifulSoup
