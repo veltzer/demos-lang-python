@@ -1,7 +1,7 @@
 """
-This example explores what happens when you just 'raise' without parameters.
+This example explores what happens when you just "raise" without parameters.
 
-The difference is that when you 'raise' with an exception the place where
+The difference is that when you "raise" with an exception the place where
 you raise is added to the stack trace of the exception. If this is a new
 exception that you create
 """
@@ -34,7 +34,7 @@ def main():
     # lets try to raise without an exception
     try:
         try:
-            raise ValueError('hello')
+            raise ValueError("hello")
         # pylint: disable=try-except-raise
         except ValueError:
             raise
@@ -45,7 +45,7 @@ def main():
     # lets try to raise with an exception
     try:
         try:
-            raise ValueError('hello')
+            raise ValueError("hello")
         except ValueError as e:
             # pylint: disable=try-except-raise
             raise e

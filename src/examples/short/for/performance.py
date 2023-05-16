@@ -15,17 +15,17 @@ def do_sum_range():
     total_sum = 0
     for i in range(100000000):
         total_sum += i
-    print(f'Sum: {total_sum}')
+    print(f"Sum: {total_sum}")
 
 
 def do_sum_functional():
     total_sum = sum(range(100000000))
-    print(f'Sum: {total_sum}')
+    print(f"Sum: {total_sum}")
 
 
 def do_sum_numpy():
     total_sum = np.sum(np.arange(100000000))
-    print(f'Sum: {total_sum}')
+    print(f"Sum: {total_sum}")
 
 
 def do_stats_for(random_scores):

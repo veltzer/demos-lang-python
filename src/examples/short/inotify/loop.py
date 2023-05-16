@@ -14,8 +14,8 @@ wm = pyinotify.WatchManager()
 # process events).
 notifier = pyinotify.Notifier(wm)
 # Add a new watch on /tmp for ALL_EVENTS.
-wm.add_watch('/tmp', pyinotify.ALL_EVENTS)
+wm.add_watch("/tmp", pyinotify.ALL_EVENTS)
 # Print a message to the user
-print('do stuff in [{0}] and see the events here...')
+print("do stuff in [{0}] and see the events here...")
 # Loop forever and handle events.
 notifier.loop()

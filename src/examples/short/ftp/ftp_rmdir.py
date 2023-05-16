@@ -32,7 +32,7 @@ def main():
 
     ftp = ftplib.FTP(p_host)
     ftp.login(user=p_user, passwd=p_pass)
-    # ftp_rmdir(ftp, p_dir, False, set(['.ftpquota']))
+    # ftp_rmdir(ftp, p_dir, False, set([".ftpquota"]))
     ftp_rmdir(ftp, p_dir, False, set())
     ftp.quit()
 

@@ -1,5 +1,5 @@
 """
-Usage: get_person.py 'personID'
+Usage: get_person.py "personID"
 
 Convert this script to imdbpy https://imdbpy.github.io/downloads/
 
@@ -23,7 +23,7 @@ out_encoding = sys.stdout.encoding or sys.getdefaultencoding()
 
 person = connection.get_person(personID)
 
-i_canonical_name = person['canonical name']
+i_canonical_name = person["canonical name"]
 print(f"i_canonical_name is [{i_canonical_name.encode(out_encoding)}]")
 
 for k, v in person.items():

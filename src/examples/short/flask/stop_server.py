@@ -20,16 +20,16 @@ def root():
     return "<html><body><h1>this is python with flask in a docker!<h1></body><html>"
 
 
-@app.route('/stop_using_werkzeug')
+@app.route("/stop_using_werkzeug")
 def stop_using_wekzeug():
-    func = request.environ.get('werkzeug.server.shutdown')
+    func = request.environ.get("werkzeug.server.shutdown")
     if func is None:
         return "Not running with the Werkzeug Server"
     func()
     return "Shutting down..."
 
 
-@app.route('/crash')
+@app.route("/crash")
 def stopServer():
     os.kill(os.getpid(), signal.SIGINT)
     return "Server is shutting down..."
