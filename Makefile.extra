@@ -1,3 +1,0 @@
-.PHONY: check
-check:
-	@find src -executable -type f

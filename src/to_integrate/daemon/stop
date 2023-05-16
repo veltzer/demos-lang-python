@@ -1,4 +1,0 @@
-#!/bin/sh
-
-pid=$(ps -ef | grep my_daemon.py | grep -v grep | tr -s " " | cut -f 2 -d " ")
-kill -9 $pid
