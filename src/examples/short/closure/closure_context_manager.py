@@ -17,11 +17,11 @@ def iter_through_files(filenames: List[str]):
 
 
 def main():
-    iterators = iter_through_files(['/etc/passwd', '/etc/group'])
+    iterators = iter_through_files(["/etc/passwd", "/etc/group"])
     for i in iterators:
         for j in i:
-            print(j, end='')
+            print(j, end="")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -2,10 +2,10 @@
 This is an example of how to use the cmd python module adjusted for python3
 
 Notes:
-- all commands are in the 'do_XXX' methods.
+- all commands are in the "do_XXX" methods.
 - these methods *must* received both self and args.
 You may choose to not use the args but they must be received.
-- an empty line method must really be called 'emptyline'
+- an empty line method must really be called "emptyline"
 - return True when you want to quit. Returning nothing is OK and so is returning
 False or None. Returning -1 is exiting.
 - so: returning anything which evaluates to True is exiting.
@@ -45,7 +45,7 @@ class Console(cmd.Cmd):
 
     # noinspection PyMethodMayBeStatic
     def do_shell(self, args):
-        """Pass command to a system shell when line begins with '!'"""
+        """Pass command to a system shell when line begins with !"""
         os.system(args)
 
     # noinspection PyMethodMayBeStatic
@@ -80,8 +80,8 @@ class Console(cmd.Cmd):
 
     def do_help(self, arg):
         """Get help on commands
-           'help' or '?' with no arguments prints a list of commands for which help is available
-           'help <command>' or '? <command>' gives help on <command>
+           "help" or "?" with no arguments prints a list of commands for which help is available
+           "help <command>" or "? <command>" gives help on <command>
         """
         # The only reason to define this method is for the help text in the doc string
         cmd.Cmd.do_help(self, arg)
@@ -134,6 +134,6 @@ class Console(cmd.Cmd):
             print(f"{e.__class__}:{e}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     console = Console()
     console.cmdloop()

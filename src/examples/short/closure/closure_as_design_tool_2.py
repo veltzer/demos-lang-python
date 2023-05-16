@@ -10,8 +10,8 @@ def make_print_something(s):
     return inner
 
 
-print_hello = make_print_something('hello')
-print_goodbye = make_print_something('goodbye')
+print_hello = make_print_something("hello")
+print_goodbye = make_print_something("goodbye")
 
 print_hello()
 print_goodbye()

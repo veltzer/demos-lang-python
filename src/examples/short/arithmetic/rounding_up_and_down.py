@@ -2,7 +2,7 @@
 This example shows how to round up and down
 
 NOTES:
-- in python2 the 'ceil' and 'floor' class methods of math return float types
+- in python2 the "ceil" and "floor" class methods of math return float types
 and not ints as in python3. python3 is saner.
 
 References:

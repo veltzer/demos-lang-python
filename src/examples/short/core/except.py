@@ -3,8 +3,8 @@ Example code for raising an exception,catching it and executing finally code in 
 """
 
 try:
-    raise ValueError('hello')
+    raise ValueError("hello")
 except ValueError as e:
-    print('in except', e)
+    print("in except", e)
 finally:
-    print('finally is here')
+    print("finally is here")

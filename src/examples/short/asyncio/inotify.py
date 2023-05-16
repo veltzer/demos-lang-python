@@ -2,7 +2,7 @@
 This is an example of integrating pyinotify with asyncio
 
 Notes:
-- this is a python3 example since python2 does not have 'asyncio'.
+- this is a python3 example since python2 does not have "asyncio".
 
 References:
 http://stackoverflow.com/questions/26414052/watch-for-a-file-with-asyncio
@@ -41,7 +41,7 @@ class EventHandler(pyinotify.ProcessEvent):
 
     def process_IN_CREATE(self, event):
         fake_use(self)
-        print('Creating:', event.pathname)
+        print("Creating:", event.pathname)
 
 
 main_loop = asyncio.get_event_loop()
@@ -51,7 +51,7 @@ wm = pyinotify.WatchManager()
 # pylint: disable=no-member
 mask = pyinotify.IN_CREATE
 
-folder = '/tmp'
+folder = "/tmp"
 wm.add_watch(folder, mask)
 handler = EventHandler(loop=main_loop)
 notifier = pyinotify.AsyncioNotifier(wm, main_loop, default_proc_fun=handler)

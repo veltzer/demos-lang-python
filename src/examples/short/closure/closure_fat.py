@@ -1,7 +1,7 @@
 """
-This is an example of how to create a closure which is 'fat': meaning
+This is an example of how to create a closure which is "fat": meaning
 has lots of data and not just primitives. In this case the closure
-contains the list 'function_list' which can be very long indeed.
+contains the list "function_list" which can be very long indeed.
 """
 
 

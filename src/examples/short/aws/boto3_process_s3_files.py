@@ -1,6 +1,6 @@
 """
 An example about how to connect to s3 and iterate files
-in some "folder" of s3 using the 'boto3' module.
+in some "folder" of s3 using the "boto3" module.
 
 The credentials for this are NOT stored in this script
 but rather are in ~/.aws/credentials.
@@ -31,7 +31,7 @@ for object_summary in gen:
     print(f"doing [{object_summary.key}]")
     file_num += 1
     if do_count_lines:
-        stream = object_summary.get()['Body']
+        stream = object_summary.get()["Body"]
         # stream = io.BufferedReader(stream)
         # stream = io.TextIOWrapper(stream)
         stream = codecs.getreader(encoding=locale.getpreferredencoding())(stream)
