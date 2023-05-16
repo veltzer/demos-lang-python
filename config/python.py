@@ -60,6 +60,7 @@ install_requires = [
     "google-auth-oauthlib",
     "google-cloud-datastore",
     # misc
+    "texttable",
     "dispy",
     "mako",
     "luigi",
