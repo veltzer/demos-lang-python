@@ -7,7 +7,7 @@ def compare(item):
     return item[1]
 
 
-m = {'mark': 10, 'yossi': 3, 'doron': 67}
+m = {"mark": 10, "yossi": 3, "doron": 67}
 arr = list(m.items())
 arr.sort(key=compare)
 

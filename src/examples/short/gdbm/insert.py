@@ -13,7 +13,7 @@ NOTES:
 import dbm.gnu
 import os.path
 
-# the 'c' in the next row means open rw and create if it doesn't exist
+# the 'c' in the next row means open rw and create if it doesnt exist
 filename = "/tmp/test.gdbm"
 
 if os.path.isfile(filename):

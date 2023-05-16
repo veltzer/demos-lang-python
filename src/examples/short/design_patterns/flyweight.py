@@ -6,8 +6,8 @@ more natural than in other languages.
 
 
 class Button:
-    color = 'blue'
-    text = 'no text'
+    color = "blue"
+    text = "no text"
     weight = 3
     bgColor = 7
 
@@ -16,8 +16,8 @@ class Button:
         pass
 
     def printMe(self):
-        print('color', self.color)
-        print('text', self.text)
+        print("color", self.color)
+        print("text", self.text)
 
     def setText(self, text):
         self.text = text
@@ -38,11 +38,11 @@ b1 = Button()
 b2 = Button()
 b1.printMe()
 b2.printMe()
-b1.setColor('green')
+b1.setColor("green")
 b1.printMe()
 b2.printMe()
 
-Button.color = 'red'
+Button.color = "red"
 b1.printMe()
 b2.printMe()
 # print(b1.color)
@@ -55,11 +55,11 @@ b2.printMe()
 # print(b1.getColor())
 # print(b1.weight)
 # print(b1.getWeight())
-# b1.setColor('white')
-# b2.setColor('black')
+# b1.setColor("white")
+# b2.setColor("black")
 # b1.doSomething()
 # b2.doSomething()
-# Button.text='new text'
+# Button.text="new text"
 # b1.doSomething()
 # b2.doSomething()
 # print(b1.__dict__)

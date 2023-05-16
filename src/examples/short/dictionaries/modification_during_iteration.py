@@ -15,7 +15,7 @@ for i in range(10):
 # you get the exception as soon as you use the iterator after modifying
 # the size of the dictionary
 # this means that the iterator saves the size of the dictionary and
-# compares the size of the dictionary with it's own size every iteration.
+# compares the size of the dictionary with its own size every iteration.
 visited_keys = set()
 try:
     for x in d:
@@ -23,7 +23,7 @@ try:
             del d[5]
         visited_keys.add(x)
 except RuntimeError as e:
-    assert str(e) == 'dictionary changed size during iteration'
+    assert str(e) == "dictionary changed size during iteration"
     assert len(visited_keys) == 4
 
 d = {}
@@ -58,7 +58,7 @@ try:
             del d[5]
         visited_keys.add(x)
 except RuntimeError as e:
-    assert str(e) == 'dictionary changed size during iteration'
+    assert str(e) == "dictionary changed size during iteration"
     assert len(visited_keys) == 4
 
 d = {}
@@ -82,12 +82,12 @@ for i in range(10):
     d[i] = i
 
 # what if we store d.keys() and pass over that?
-# this does not help. when you do l=d.keys() you don't
+# this does not help. when you do l=d.keys() you don"t
 # get a copy of all the keys but rather a special object
 # which behaves likes the keys but points to the original
 # dictionary...
 my_list1 = d.keys()
-assert my_list1.__class__.__name__ == 'dict_keys'
+assert my_list1.__class__.__name__ == "dict_keys"
 visited_keys = set()
 try:
     for x in my_list1:
@@ -95,7 +95,7 @@ try:
             del d[5]
         visited_keys.add(x)
 except RuntimeError as e:
-    assert str(e) == 'dictionary changed size during iteration'
+    assert str(e) == "dictionary changed size during iteration"
     assert len(visited_keys) == 4
 
 d = {}

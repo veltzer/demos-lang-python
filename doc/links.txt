@@ -9,7 +9,7 @@ tons of videos about python:
 
 python graph:
 	http://dl.dropbox.com/u/1823095/python-graph/docs/index.html
-	(yes - I know it's weird).
+	(yes - I know its weird).
 
 tutorials about interesting python modules:
 	http://www.python-course.eu/index.php

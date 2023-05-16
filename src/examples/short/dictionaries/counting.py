@@ -5,12 +5,12 @@ This example shows how to count using a dictionary
 import collections
 
 colors = [
-    'red',
-    'green',
-    'red',
-    'blue',
-    'green',
-    'red',
+    "red",
+    "green",
+    "red",
+    "blue",
+    "green",
+    "red",
 ]
 
 # the simple way
@@ -36,7 +36,7 @@ print(d)
 # with collections.Counter
 d = collections.Counter(["red", "green"])
 # this is how to do a single update
-d['green'] += 1
+d["green"] += 1
 # this is how to do a multi update
 d.update(["red", "green"])
 print(d)

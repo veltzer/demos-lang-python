@@ -3,7 +3,7 @@ This example shows how to handle the exceptions that happen in a multiprocessing
 python process in the main process that launched that process.
 
 The idea is that when you call 'apply_async' you get a "future" object.
-When you call 'get' on that object you block until you get it's result.
+When you call 'get' on that object you block until you get its result.
 
 In order to launch multiple concurrent processes you call 'async_apply'
 multiple times and store the "future" objects in an array.

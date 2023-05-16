@@ -51,7 +51,7 @@ that tries to find a way?
 For simplicity, we're only looking for sequences of at most 7 actions.
 
 If it simplifies matters for you, you don't have to find the sequence
-of actions, just check *whether* it's possible (in no more than 7
+of actions, just check *whether* its possible (in no more than 7
 steps).
 
 **Hints**:
@@ -71,6 +71,6 @@ know the way (the keys will be the action sequences to reach them).
 	means you should do ``for k in dictionary.keys():`` instead of ``for
 	k in dictionary:``.
 
-Still lost? Read the solution, it's shorter that you'd expect.
+Still lost? Read the solution, its shorter that you'd expect.
 
 Solution: ``solution2.py``

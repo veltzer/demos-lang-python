@@ -18,7 +18,7 @@ def main():
     print(separator_line)
 
     # A better way to write it would be: zip(*columns)
-    # but you probably haven't seen that syntax yet.
+    # but you probably havent seen that syntax yet.
     for row in zip(columns[0], columns[1], columns[2]):
         line = '|'
         for text in row:

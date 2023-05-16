@@ -66,7 +66,7 @@ class TreeViewColumnExample:
         self.tvcolumn1.pack_start(self.cell1, True)
 
         # set the cell attributes to the appropriate liststore column
-        # GTK+ 2.0 doesn't support the "stock_id" property
+        # GTK+ 2.0 doesnt support the "stock_id" property
         if gtk.gtk_version[1] < 2:
             self.tvcolumn.set_cell_data_func(self.cellpb, self.make_pb)
         else:

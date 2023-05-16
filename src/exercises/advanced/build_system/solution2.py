@@ -60,7 +60,7 @@ def build(target, rules, commands):
     for dep in rules[target]:
         build(dep, rules, commands)
     # And then build the target.
-    # (A real make tool would compare file dates to see if it's needed.)
+    # (A real make tool would compare file dates to see if its needed.)
     build_one(target, rules, commands)
 
 

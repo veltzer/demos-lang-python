@@ -15,7 +15,7 @@ but an initializer since __init__ receives 'self' which is already
 an object of the required type.
 
 If you don't write an explicit '__init__' initializer for your
-class then your class still works. It's just that it's empty.
+class then your class still works. It's just that its empty.
 """
 
 

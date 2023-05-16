@@ -1,6 +1,6 @@
 """
 This example shows how to create a temporary directory in python and
-destroy it's content once you are done with it.
+destroy its content once you are done with it.
 
 References:
 - https://stackoverflow.com/questions/3223604/how-to-create-a-temporary-directory-and-get-the-path-file-name-in-python

@@ -12,7 +12,7 @@ things to note:
 	place in the hierarchy. 
 
 - any "__init__.py" file is executed exactly once. You don't have to worry about that.
-	Python does that all on it's own.
+	Python does that all on its own.
 
 - module usage is logical (import outer.inner.mod) instead of physical:
 	outer/inner/mod.py. that is very good because:

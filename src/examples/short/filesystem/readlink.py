@@ -12,7 +12,7 @@ does not point to another symlink, in that case you need to redo the whole
 thing once again...
 
 It turns out that os.path.realpath does all of this iterative resolution
-of a symbolic link but doesn't care if any of the symlinks in the process
+of a symbolic link but doesnt care if any of the symlinks in the process
 do not point to a real file (in that case it just stops). See the shorter
 version in the code below.
 """
@@ -27,7 +27,7 @@ def find_link_target(link):
     link_target = os.readlink(link)
     if not os.path.isabs(link_target):
         real_link_target = os.path.join(link_folder, link_target)
-        # fix the path so that it doesn't contain superfluous parts like ../ etc
+        # fix the path so that it doesnt contain superfluous parts like ../ etc
         real_link_target = os.path.abspath(real_link_target)
     else:
         real_link_target = link_target

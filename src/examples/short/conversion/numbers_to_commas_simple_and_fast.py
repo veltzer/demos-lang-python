@@ -6,5 +6,5 @@ References:
 """
 
 str_num = "1,324,432.23"
-float_num = float(str_num.replace(',', ''))
+float_num = float(str_num.replace(",", ""))
 print(f"float_num is [{float_num}]")

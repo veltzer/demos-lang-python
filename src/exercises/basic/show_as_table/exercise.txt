@@ -13,7 +13,7 @@ Note that:
 
 What do you need to do?
 Read the values in the original table and "pad" them with spaces
-Your script should read the data from standard input and write it's output to standard output.
+Your script should read the data from standard input and write its output to standard output.
 Your script will be run like this:
 ./your_script.py < test_data.txt > output.txt
 

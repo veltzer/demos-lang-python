@@ -3,7 +3,7 @@ This example shows how to use the 'enumerate' iterator.
 
 Notes:
 - enumerate is supposed to be efficient both in python2.7
-and in python3 although I haven't checked that.
+and in python3 although I havent checked that.
 - the two code samples below do the same but the second
 is more beautiful.
 """

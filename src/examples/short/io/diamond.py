@@ -2,7 +2,7 @@
 This example shows how to approximate the <> operator of perl
 in python.
 
-Reminder: the <> operator (or as it's called diamond) reads
+Reminder: the <> operator (or as its called diamond) reads
 all lines either specified on the command line or from standard input.
 
 References:

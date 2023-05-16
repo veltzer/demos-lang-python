@@ -1,5 +1,5 @@
 """
-This is an example for how to use a generator directly and get all of it's values
+This is an example for how to use a generator directly and get all of its values
 through the python API and not through the iterator abstraction (for loop).
 
 Note that the following are equivalent:

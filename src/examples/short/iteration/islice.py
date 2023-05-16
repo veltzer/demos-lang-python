@@ -17,7 +17,7 @@ def simple_islice(iterable, size: int):
 
 def main():
     # This is the most basic example: getting only the first n elements
-    # from an iterable. When islice gets one argument it's meaning is 'stop'.
+    # from an iterable. When islice gets one argument its meaning is 'stop'.
     for i in islice(range(10), 5):
         print(i)
     # start and stop

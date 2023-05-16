@@ -5,6 +5,6 @@ def give_me_some_data():
 
 
 for x in give_me_some_data():
-    print('outer loop', x)
+    print("outer loop", x)
     for y in give_me_some_data():
-        print('inner loop', y)
+        print("inner loop", y)

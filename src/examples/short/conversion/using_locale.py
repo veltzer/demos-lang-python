@@ -1,6 +1,6 @@
 """
 This is an example of how to convert numbers with commans to ints or floats using
-the 'locale' module.
+the "locale" module.
 
 
 References:
@@ -11,6 +11,6 @@ References:
 
 import locale
 
-locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
-print(locale.atoi('1,000,000'))
-print(locale.atof('1,000,000.53'))
+locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
+print(locale.atoi("1,000,000"))
+print(locale.atof("1,000,000.53"))

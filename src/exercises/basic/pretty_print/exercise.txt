@@ -35,7 +35,7 @@ parallel.
 - ``"Helium".ljust(10)`` returns ``"Helium "``.
 - Try ``zip(columns[0], columns[1], columns[2])`` in the
 	interpreter. If you don't understand how this helps you, peek
-	at the solution - it's an useful function to know!
+	at the solution - its an useful function to know!
 
 Solution: ``solution1.py``
 

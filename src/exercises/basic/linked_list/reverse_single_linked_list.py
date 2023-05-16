@@ -56,7 +56,7 @@ class SingleLinkedList:
 
 def get_reverse(the_list):
     """
-    Get a list and return a list with all of it's elements in reverse order
+    Get a list and return a list with all of its elements in reverse order
     """
     reverse = SingleLinkedList()
     while not the_list.is_empty():

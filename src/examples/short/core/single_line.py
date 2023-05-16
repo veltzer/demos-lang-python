@@ -5,9 +5,9 @@ a block starter
 
 # pylint: disable=using-constant-test
 if True:
-    print('show')
+    print("show")
 else:
-    print('else')
+    print("else")
 
 for x in range(10):
     print(x)

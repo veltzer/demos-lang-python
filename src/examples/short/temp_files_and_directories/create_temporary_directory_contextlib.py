@@ -1,6 +1,6 @@
 """
 This example shows how to create a directory with the contextlib
-library in such a way as to have the directory and all of it's context
+library in such a way as to have the directory and all of its context
 destroyed automatically when you are done with it.
 
 This destruction also happens in the case of an exception thrown.

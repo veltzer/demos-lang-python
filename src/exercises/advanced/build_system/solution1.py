@@ -41,7 +41,7 @@ def build_plan(target, rules):
         plan += build_plan(dep, rules)
 
     # And then build the target.
-    # (A real make tool would compare file dates to see if it's needed.)
+    # (A real make tool would compare file dates to see if its needed.)
     plan.append(target)
 
     return plan

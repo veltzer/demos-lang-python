@@ -5,14 +5,14 @@ This is an example of how to use pythons built-in configparser.
 import configparser
 import os.path
 
-ini_file = '/tmp/demo.ini'
+ini_file = "/tmp/demo.ini"
 if os.path.isfile(ini_file):
-    print('ini_file exists, reading it')
+    print("ini_file exists, reading it")
     config = configparser.ConfigParser()
     config.read(ini_file)
-    my_int = config.getint('section1', 'my_int')
-    my_bool = config.getboolean('section1', 'my_bool')
-    my_float = config.getfloat('section2', 'my_float')
+    my_int = config.getint("section1", "my_int")
+    my_bool = config.getboolean("section1", "my_bool")
+    my_float = config.getfloat("section2", "my_float")
     print(f"\tmy_int is {my_int}")
     print(f"\tmy_bool is {my_bool}")
     print(f"\tmy_float is {my_float}")

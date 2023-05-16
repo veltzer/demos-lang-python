@@ -1,6 +1,6 @@
 """
 This example shows how you can call a function when all you
-know is it's name. The name may come from the user, database, etc.
+know is its name. The name may come from the user, database, etc.
 The idea here is to use 'vars()[name]' to get the function object
 and then just apply the '()' or '__call__' method on it.
 """

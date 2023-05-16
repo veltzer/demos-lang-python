@@ -16,11 +16,11 @@ class MyProcessorClass(simpleparse.dispatchprocessor.DispatchProcessor):
     #     print('cons')
 
     def number(self, _tup, _buf):
-        """ Process the given production and it's children """
+        """ Process the given production and its children """
         print('in number')
 
     def expr(self, _tup, _buf):
-        """ Process the given production and it's children """
+        """ Process the given production and its children """
         print('in expr')
 
     def __call__(self, value, data):

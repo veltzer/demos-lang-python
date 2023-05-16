@@ -11,7 +11,7 @@ not really a constructor in object oriented terminology
 but rather an initializer function. The object on which
 it works is already alive and well and is already determined
 and the initializer function has no say in that matter.
-That is why it's return value is uninteresting (it is not
+That is why its return value is uninteresting (it is not
 even returned to the programmer).
 """
 

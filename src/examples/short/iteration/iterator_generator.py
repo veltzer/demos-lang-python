@@ -19,8 +19,8 @@ for char in my_reverse('golf'):
 # 'generator' or something.
 # When you do use it for data the return value is a 'generator'.
 # Compare this to pythons own 'reversed' generator:
-# - it is built in so it's type is type
-# - when using it as a generator it's type is 'reversed'.
+# - it is built in so its type is type
+# - when using it as a generator its type is 'reversed'.
 
 print(type(my_reverse))
 print(type(my_reverse('golf')))

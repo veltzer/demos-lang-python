@@ -6,15 +6,15 @@ import collections
 from typing import Dict, List
 
 colors = [
-    'red',
-    'green',
-    'yellow',
-    'orange',
-    'blue',
-    'white',
-    'black',
-    'purple',
-    'cyan',
+    "red",
+    "green",
+    "yellow",
+    "orange",
+    "blue",
+    "white",
+    "black",
+    "purple",
+    "cyan",
 ]
 
 # the simple way
@@ -26,14 +26,14 @@ for color in colors:
     d[key].append(color)
 print(d)
 
-# using 'setdefault'
+# using "setdefault"
 d = {}
 for color in colors:
     key = len(color)
     d.setdefault(key, []).append(color)
 print(d)
 
-# using 'collections.defaultdict'
+# using "collections.defaultdict"
 d = collections.defaultdict(list)
 for color in colors:
     key = len(color)

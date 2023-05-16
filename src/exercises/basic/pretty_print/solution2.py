@@ -32,8 +32,8 @@ def main():
 
     print(separator_line)
 
-    # If you haven't seen this function(*args_list) syntax yet -
-    # it's the same as zip(columns[0], columns[1], columns[2])
+    # If you havent seen this function(*args_list) syntax yet -
+    # its the same as zip(columns[0], columns[1], columns[2])
     # but would work for any number of columns.
     for row in zip(*columns):
         line = '|'

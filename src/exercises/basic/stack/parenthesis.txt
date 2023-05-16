@@ -1,5 +1,5 @@
 Parenthesis checker:
-You are given an expression of ONLY parenthesis and you should check it's validity.
+You are given an expression of ONLY parenthesis and you should check its validity.
 Here are some examples:
 Legal:
 	()
