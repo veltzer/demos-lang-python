@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-
+#!/usr/bin/env python
 
 """
 - We may add "-a" or "-a -a" to the autopep8 to make it fix more.

@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 """
 This example shows how to buffer stdout
 """
