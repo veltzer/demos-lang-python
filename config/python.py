@@ -20,7 +20,8 @@ install_requires = [
     "pythondialog",
     # systems programming
     "psutil",
-    "systemd-python",
+    # problems intalling the next module on github systems
+    # "systemd-python",
     "PyGObject",
     "PyGObject-stubs",
     "dbus-python",
