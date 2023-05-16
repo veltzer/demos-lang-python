@@ -7,9 +7,9 @@ import time
 
 
 def sleep_a_little(num):
-    print('before', num)
+    print("before", num)
     time.sleep(1)
-    print('after', num)
+    print("after", num)
 
 
 pool = multiprocessing.pool.ThreadPool(multiprocessing.cpu_count())

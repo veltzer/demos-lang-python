@@ -17,10 +17,10 @@ class Person:
         print(f"{self.name} {self.surname}")
 
 
-p = Person('Mark', 'Veltzer')
+p = Person("Mark", "Veltzer")
 p.print_me()
 
-b = Person('James', 'Bond')
+b = Person("James", "Bond")
 b.print_me()
 
 
@@ -28,10 +28,10 @@ b.print_me()
 
 
 def secret_agent_output(self):
-    print(self.surname + ',', self.name, self.surname)
+    print(self.surname + ",", self.name, self.surname)
 
 
-# lets add this method only to the 'b' instance...
+# lets add this method only to the "b" instance...
 # this line does not work!
 # b.printMe=secret_agent_output
 # this works! turning a function into a method...
@@ -54,21 +54,21 @@ p.print_me()
 
 
 def fire_your_gun(self):
-    print(self.name + ' is firing!')
+    print(self.name + " is firing!")
 
 
 Person.fire = fire_your_gun  # type: ignore
 
 # lets kill some people
-print('Now we both have firing capabilities...')
+print("Now we both have firing capabilities...")
 b.fire()  # type: ignore
 p.fire()  # type: ignore
 
-print('Here is some debug info:')
-print('here is james...')
+print("Here is some debug info:")
+print("here is james...")
 pprint.pprint(b.__dict__)
-print('here is mark...')
+print("here is mark...")
 pprint.pprint(p.__dict__)
-print('here is the class definition...')
+print("here is the class definition...")
 pprint.pprint(b.__class__)
 pprint.pprint(b.__class__.__dict__)

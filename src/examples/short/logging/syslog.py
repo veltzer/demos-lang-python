@@ -11,10 +11,10 @@ import logging.handlers
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-handler = logging.handlers.SysLogHandler(address='/dev/log')
-formatter = logging.Formatter('%(name)s %(levelname)s %(message)s')
+handler = logging.handlers.SysLogHandler(address="/dev/log")
+formatter = logging.Formatter("%(name)s %(levelname)s %(message)s")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-logger.debug('this is debug')
-logger.critical('this is critical')
+logger.debug("this is debug")
+logger.critical("this is critical")

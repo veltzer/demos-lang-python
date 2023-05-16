@@ -24,7 +24,7 @@ def single_runner():
         fcntl.lockf(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except IOError:
         # another instance is running
-        print('this program is already running...', file=sys.stderr)
+        print("this program is already running...", file=sys.stderr)
         sys.exit(1)
 
 
@@ -39,7 +39,7 @@ def single_runner_simple():
     except IOError as e:
         print(e)
         # another instance is running
-        print('this program is already running...', file=sys.stderr)
+        print("this program is already running...", file=sys.stderr)
         sys.exit(1)
 
 

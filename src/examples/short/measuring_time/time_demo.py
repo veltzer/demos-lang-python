@@ -1,5 +1,5 @@
 """
-Example of timing python code using the 'time' module
+Example of timing python code using the "time" module
 
 Note that the time measured by time.time() is the wall
 clock time which is not always what you want to measure.

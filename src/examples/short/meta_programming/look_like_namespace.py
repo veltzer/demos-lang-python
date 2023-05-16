@@ -16,12 +16,12 @@ class D(dict):
 
 
 a = D()
-a['one'] = 'one_value'
-a.two = 'two_value'
+a["one"] = "one_value"
+a.two = "two_value"
 
-print(a['one'])
+print(a["one"])
 print(a.one)
 
-print('listing all entries in the object')
+print("listing all entries in the object")
 for k, v in a.items():
     print(k, v)

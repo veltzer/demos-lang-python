@@ -9,7 +9,7 @@ class A:
         self.myfield = 7
 
     def my_method(self):
-        print('Hello')
+        print("Hello")
 
 
 a = A()

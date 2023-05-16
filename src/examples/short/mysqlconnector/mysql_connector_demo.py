@@ -14,39 +14,39 @@ import mysql.connector
 
 
 def get_config():
-    '''
+    """
     get the configuration, including user and password from the ~/.my.cnf
     file of the user
     if no such file exists then use sensible defaults
-    '''
+    """
     d = {}
-    ini_file = os.path.expanduser('~/.my.cnf')
+    ini_file = os.path.expanduser("~/.my.cnf")
     if os.path.isfile(ini_file):
         config = configparser.ConfigParser()
         config.read(ini_file)
-        if config.has_option('mysql', 'user'):
-            d['user'] = config.get('mysql', 'user')
+        if config.has_option("mysql", "user"):
+            d["user"] = config.get("mysql", "user")
         else:
-            d['user'] = getpass.getuser()
-        if config.has_option('mysql', 'database'):
-            d['database'] = config.get('mysql', 'database')
+            d["user"] = getpass.getuser()
+        if config.has_option("mysql", "database"):
+            d["database"] = config.get("mysql", "database")
         else:
-            d['database'] = 'mysql'
-        if config.has_option('mysql', 'password'):
-            d['password'] = config.get('mysql', 'password')
+            d["database"] = "mysql"
+        if config.has_option("mysql", "password"):
+            d["password"] = config.get("mysql", "password")
         return d
-    d['user'] = getpass.getuser()
-    d['database'] = 'mysql'
+    d["user"] = getpass.getuser()
+    d["database"] = "mysql"
     return d
 
 
 db = mysql.connector.Connect(**get_config())
 cursor = db.cursor()
-cursor.execute('SHOW TABLES')
+cursor.execute("SHOW TABLES")
 for row in cursor:
     print(row[0])
 # demo with place holders
-cursor.execute('SELECT * FROM user WHERE host=%(host)s', {'host': 'localhost'})
+cursor.execute("SELECT * FROM user WHERE host=%(host)s", {"host": "localhost"})
 for row in cursor:
     print(row)
 db.close()

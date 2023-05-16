@@ -8,7 +8,7 @@ conclusions:
     "No handlers could be found for logger "root""
     This is printed once and then no more.
     this is true for both "__main__" and "root" which is
-    the logger you get when you do 'logging.getLogger()'
+    the logger you get when you do "logging.getLogger()"
 """
 
 import logging
