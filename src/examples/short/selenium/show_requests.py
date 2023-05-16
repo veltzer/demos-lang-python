@@ -13,8 +13,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 options = Options()
-# options.add_argument('--headless')
-options.add_argument('--disable-gpu')
+# options.add_argument("--headless")
+options.add_argument("--disable-gpu")
 # dir_user = os.path.expanduser("~/.config/google-chrome/Default")
 # options.add_argument(f"user-data-dir={dir_user}")
 dir_profile = os.path.expanduser("~/.config/google-chrome/Default")
@@ -26,5 +26,5 @@ for request in driver.requests:
         print(
             request.url,
             request.response.status_code,
-            request.response.headers['Content-Type']
+            request.response.headers["Content-Type"]
         )

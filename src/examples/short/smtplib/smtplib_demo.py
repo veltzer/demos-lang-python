@@ -10,11 +10,11 @@ import smtplib
 
 
 def send_email(
-        subject='default subject',
-        fr='default from',
+        subject="default subject",
+        fr="default from",
         to=None,
-        content='default content',
-        smtp_host='localhost',
+        content="default content",
+        smtp_host="localhost",
         smtp_port=587,
         use_tls=True,
         user=None,
@@ -23,8 +23,8 @@ def send_email(
 ):
     # build the message
     msg = email.mime.text.MIMEText(content)
-    msg['Subject'] = subject
-    msg['From'] = fr
+    msg["Subject"] = subject
+    msg["From"] = fr
     # send the message via our own SMTP server,but dont include the envelope header.
     # server=smtplib.SMTP()
     server = smtplib.SMTP(host=smtp_host, port=smtp_port)
@@ -40,10 +40,10 @@ def send_email(
 
 
 send_email(
-    smtp_host='smtp.gmail.com',
-    user='myname@gmail.com',
-    to='myname@gmail.com',
-    fr='myname@gmail.com',
-    password='XXXXXXXX',
+    smtp_host="smtp.gmail.com",
+    user="myname@gmail.com",
+    to="myname@gmail.com",
+    fr="myname@gmail.com",
+    password="XXXXXXXX",
     debug=True,
 )

@@ -22,14 +22,14 @@ ssh_connection.connect(
 )
 
 # this is ssh
-stdin, stdout, stderr = ssh_connection.exec_command('ls -la')
+stdin, stdout, stderr = ssh_connection.exec_command("ls -la")
 for x in stdout.readlines():
     print(x, end="")
 for x in stderr.readlines():
     print(x, end="")
 print(stdout.channel.recv_exit_status())
 
-_stdin, stdout, stderr = ssh_connection.exec_command('ls -la /non')
+_stdin, stdout, stderr = ssh_connection.exec_command("ls -la /non")
 for x in stdout.readlines():
     print(x, end="")
 for x in stderr.readlines():

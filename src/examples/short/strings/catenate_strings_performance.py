@@ -12,8 +12,8 @@ References:
 
 import timeit
 
-x = 'abc'
-y = 'def'
+x = "abc"
+y = "def"
 
 
 function_names = {}
@@ -24,48 +24,48 @@ def concat1():
     return z
 
 
-function_names[concat1] = '+ operator'
+function_names[concat1] = "+ operator"
 
 
 def concat2():
     # pylint: disable=consider-using-f-string
-    z = '%s%s' % (x, y)
+    z = "%s%s" % (x, y)
     return z
 
 
-function_names[concat2] = '%s%s'
+function_names[concat2] = "%s%s"
 
 
 def concat3():
     # pylint: disable=consider-using-f-string
-    z = '{}{}'.format(x, y)
+    z = "{}{}".format(x, y)
     return z
 
 
-function_names[concat3] = '{}{}'
+function_names[concat3] = "{}{}"
 
 
 def concat4():
     # pylint: disable=consider-using-f-string
-    z = '{0}{1}'.format(x, y)
+    z = "{0}{1}".format(x, y)
     return z
 
 
-function_names[concat4] = '{0}{1}'
+function_names[concat4] = "{0}{1}"
 
 
 def concat5():
-    return ''.join([x, y])
+    return "".join([x, y])
 
 
-function_names[concat4] = 'join'
+function_names[concat4] = "join"
 
 
 def concat6():
     return f"{x}{y}"
 
 
-function_names[concat6] = 'f-string'
+function_names[concat6] = "f-string"
 
 
 functions = [

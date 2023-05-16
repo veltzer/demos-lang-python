@@ -1,11 +1,11 @@
 """
-Demo of the 'pickle' module for serialization and deserialization
+Demo of the "pickle" module for serialization and deserialization
 """
 
 import pickle
 
-# .p is for 'pickle'
-filename = '/tmp/serialized.p'
+# .p is for "pickle"
+filename = "/tmp/serialized.p"
 
 favorite_color = {"lion": "yellow", "kitty": "red"}
 

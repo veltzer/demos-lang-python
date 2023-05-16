@@ -56,8 +56,8 @@ def main():
     poller = select.epoll()
     poller.register(pipe_r, select.EPOLLIN)
 
-    print('mail loop staring...')
-    # print('press CTRL+C to see how I catch the signal...')
+    print("mail loop staring...")
+    # print("press CTRL+C to see how I catch the signal...")
     print(f"signal me with [kill -s SIGUSR1 {os.getpid()}]")
     while True:
         events = do_poll(poller)
@@ -66,5 +66,5 @@ def main():
             os.read(pipe_r, 1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

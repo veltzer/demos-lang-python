@@ -1,8 +1,8 @@
 """
 This is an example of how to sort lists in python
-using the 'key' function.
+using the "key" function.
 
-Note: in python2 you could sort lists usnig the 'cmp' function.
+Note: in python2 you could sort lists usnig the "cmp" function.
 This no longer works and was removed in python3 (see Hettinger for reasons why...).
 """
 

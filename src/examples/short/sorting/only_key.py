@@ -1,6 +1,6 @@
 """
 This is an example of how to sort lists in python
-using the 'key' function.
+using the "key" function.
 """
 
 

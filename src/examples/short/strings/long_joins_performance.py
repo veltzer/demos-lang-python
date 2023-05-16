@@ -1,5 +1,5 @@
 """
-This example proves that when you want to catenate many strings 'join' is
+This example proves that when you want to catenate many strings "join" is
 the right way to go.
 """
 
@@ -12,22 +12,22 @@ function_names = {}
 def func1():
     s = names[0]
     for name in names[1:]:
-        s += ', ' + name
+        s += ", " + name
     return s
 
 
-function_names[func1] = 'plus'
+function_names[func1] = "plus"
 
 
 def func2():
-    return ','.join(names)
+    return ",".join(names)
 
 
-function_names[func2] = 'join'
+function_names[func2] = "join"
 
 names = []
 for i in range(1000000):
-    names.append('name' + str(i))
+    names.append("name" + str(i))
 
 functions = [
     func1,

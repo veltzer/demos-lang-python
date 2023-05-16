@@ -15,7 +15,7 @@ STRING_LENGTH = 250
 
 
 class Person(Base):  # type: ignore
-    __tablename__ = 'person'
+    __tablename__ = "person"
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
@@ -23,32 +23,32 @@ class Person(Base):  # type: ignore
 
 
 class Address(Base):  # type: ignore
-    __tablename__ = 'address'
+    __tablename__ = "address"
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
     street_name = Column(String(STRING_LENGTH))
     street_number = Column(String(STRING_LENGTH))
     post_code = Column(String(STRING_LENGTH), nullable=False)
-    person_id = Column(Integer, ForeignKey('person.id'))
+    person_id = Column(Integer, ForeignKey("person.id"))
     person = relationship(Person)
 
 
-# Create an engine that stores data in the local directory's
+# Create an engine that stores data in the local directory"s
 # sqlalchemy_example.db file.
 # filename = "/tmp/sqlalchemy_example.db"
-# engine = create_engine('sqlite:///{}'.format(filename))
+# engine = create_engine("sqlite:///{}".format(filename))
 
-# for the next line to work you need the 'pymysql' module installed
+# for the next line to work you need the "pymysql" module installed
 
 myDB = URL(
     username=None,
     password=None,
     port=None,
-    drivername='mysql+pymysql',
-    host='localhost',
-    database='test',
-    query={'read_default_file': os.path.expanduser('~/.my.cnf')},  # type: ignore
+    drivername="mysql+pymysql",
+    host="localhost",
+    database="test",
+    query={"read_default_file": os.path.expanduser("~/.my.cnf")},  # type: ignore
 )
 engine = create_engine(url=myDB)
 # engine = create_engine("mysql+pymysql://localhost/test?charset=utf8")

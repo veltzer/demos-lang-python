@@ -8,7 +8,7 @@ import time
 
 
 def signal_handler(_sig, _frame):
-    print('You send me SIGTERM, I Refuse to die!')
+    print("You send me SIGTERM, I Refuse to die!")
 
 
 signal.signal(signal.SIGTERM, signal_handler)

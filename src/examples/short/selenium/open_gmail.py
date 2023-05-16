@@ -1,7 +1,7 @@
 """
 This is an example of how to open gmail (real one with session) using selenium.
 
-Turns out this is a really hard thing to do since google really don't want someone
+Turns out this is a really hard thing to do since google really don"t want someone
 to open gmail in selenium.
 
 I tried with both firefox and chrom (see below) but to no avail.
@@ -21,8 +21,8 @@ from webdriver_manager.firefox import GeckoDriverManager
 browser = "chrome"
 if browser == "chrome":
     options = selenium.webdriver.chrome.options.Options()
-    options.add_argument('--headless')  # do not really open a window
-    options.add_argument('--disable-gpu')  # Last I checked this was necessary.
+    options.add_argument("--headless")  # do not really open a window
+    options.add_argument("--disable-gpu")  # Last I checked this was necessary.
     user_data_dir = os.path.expanduser("~/.config/google-chrome/Default")
     user_data_dir = os.path.expanduser("~/.config/google-chrome")
     assert os.path.isdir(user_data_dir)

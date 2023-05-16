@@ -7,13 +7,13 @@ References:
 
 import requests
 
-url = 'http://maps.googleapis.com/maps/api/directions/json'
+url = "http://maps.googleapis.com/maps/api/directions/json"
 
 params = {
-    "origin": 'Chicago,IL',
-    "destination": 'Los+Angeles,CA',
-    "waypoints": 'Joplin,MO|Oklahoma+City,OK',
-    "sensor": 'false',
+    "origin": "Chicago,IL",
+    "destination": "Los+Angeles,CA",
+    "waypoints": "Joplin,MO|Oklahoma+City,OK",
+    "sensor": "false",
 }
 
 resp = requests.get(url=url, params=params, timeout=5)

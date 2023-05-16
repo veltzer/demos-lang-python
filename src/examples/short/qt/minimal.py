@@ -8,6 +8,6 @@ import sys
 import PyQt5.QtWidgets
 
 app = PyQt5.QtWidgets.QApplication(sys.argv)
-window = PyQt5.QtWidgets.QPushButton('Hello World', None)
+window = PyQt5.QtWidgets.QPushButton("Hello World", None)
 window.show()
 sys.exit(app.exec_())

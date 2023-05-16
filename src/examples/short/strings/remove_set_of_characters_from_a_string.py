@@ -5,7 +5,7 @@ We examine two approaches:
 - s.replace
 - re.compile and then re.sub
 
-* In python2 we could have used the 'maketrans' and 'translate' approach but translate
+* In python2 we could have used the "maketrans" and "translate" approach but translate
 cannot be used to remove a string in python3.
 
 References:
@@ -29,17 +29,17 @@ def remove_many(s, list_of_chars):
 
 
 def using_re():
-    return remove_re.sub('', line)
+    return remove_re.sub("", line)
 
 
-function_names[using_re] = 'using_re'
+function_names[using_re] = "using_re"
 
 
 def using_replace():
     return remove_many(line, "abcdefghijklmnopqrstuvwxyz")
 
 
-function_names[using_replace] = 'using_replace'
+function_names[using_replace] = "using_replace"
 
 assert using_re() == using_replace()
 

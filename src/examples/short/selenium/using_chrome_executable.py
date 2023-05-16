@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 # from selenium.webdriver.common.keys import Keys
 
 
-CHROME_PATH = '/usr/bin/google-chrome'
+CHROME_PATH = "/usr/bin/google-chrome"
 WINDOW_SIZE = "1920,1080"
 
 chrome_options = Options()
