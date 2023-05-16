@@ -2,9 +2,9 @@ import base
 
 print(f"[{__file__}] loading")
 
-var = 'plugin1_value'
+var = "plugin1_value"
 
-extra_var_only_for_plugin1 = 'extra_value_only_for_plugin1'
+extra_var_only_for_plugin1 = "extra_value_only_for_plugin1"
 
 
 def do_something():
@@ -13,4 +13,4 @@ def do_something():
 
 class Plugin1(base.BaseClass):
     def __init__(self):
-        print('in init of Plugin1')
+        print("in init of Plugin1")

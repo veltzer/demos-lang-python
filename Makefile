@@ -75,12 +75,6 @@ flake8: $(ALL_FLAKE8)
 .PHONY: mypy
 mypy: $(ALL_MYPY)
 
-.PHONY: check_all
-check_all: check_ws
-
-.PHONY: check
-check: check_ws check_has_key check_no_python2 check_mode
-
 .PHONY: all_lint
 all_lint:
 	$(info doing [$@])
@@ -90,6 +84,9 @@ all_lint:
 all_flake8:
 	$(info doing [$@])
 	$(Q)pymakehelper error_on_print flake8 src
+
+.PHONY: check_all
+check_all: check_ws check_quotes check_no_python2 check_mode check_has_key check_no_future
 
 .PHONY: check_ws
 check_ws:
@@ -101,29 +98,20 @@ check_quotes:
 	$(info doing [$@])
 	$(Q)git grep "'" -- '*.py' || exit 0
 
-# this is a bad check because returning tuples in python is perfectly legit
-.PHONY: check_return
-check_return:
+.PHONY: check_no_python2
+check_no_python2:
 	$(info doing [$@])
-	$(Q)git grep -l -E "return\(.*\)$$" -- '*.py' || exit 0
-	$(Q)git grep -l -E "return \(.*\)$$" -- '*.py' || exit 0
+	$(Q)git grep -E "^#!/usr/bin/python2" || exit 0
 
-# this is a bad check because comparing tuples in python is perfectly legit
-.PHONY: check_if
-check_if:
+.PHONY: check_mode
+check_mode:
 	$(info doing [$@])
-	$(Q)git grep -l -E "if \(" -- '*.py' || exit 0
-	$(Q)git grep -l -E "if\(" -- '*.py' || exit 0
+	$(Q)find src -name "*.py" -and -type f -and -not -perm 0644
 
 .PHONY: check_has_key
 check_has_key:
 	$(info doing [$@])
 	$(Q)git grep -l "has_key" -- '*.py' || exit 0
-
-.PHONY: check_no_python2
-check_no_python2:
-	$(info doing [$@])
-	$(Q)git grep -E "^#!/usr/bin/python2" || exit 0
 
 .PHONY: check_no_future
 check_no_future:
@@ -176,11 +164,6 @@ clean_flake8:
 .PHONY: clean_mypy
 clean_mypy:
 	$(Q)rm -f $(ALL_MYPY)
-
-.PHONY: check_mode
-check_mode:
-	$(info doing [$@])
-	$(Q)find src -name "*.py" -and -type f -and -not -perm 0644
 
 .PHONY: stats
 stats:

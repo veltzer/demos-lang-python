@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 """
 This is an example of how to create a job for jenkins by remote using python.
 This uses the 'python-jenkins' module.

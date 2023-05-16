@@ -17,5 +17,5 @@ def main():
     logger.info("after")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

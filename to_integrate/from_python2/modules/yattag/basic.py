@@ -2,7 +2,6 @@
 A basic example of how to use yattag.
 """
 
-from __future__ import print_function
 from yattag import Doc
 
 doc, tag, text = Doc().tagtext()

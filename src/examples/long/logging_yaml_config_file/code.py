@@ -6,11 +6,11 @@ import logging.config
 import yaml
 
 
-with open('logging.yaml') as f:
+with open("logging.yaml") as f:
     config = yaml.safe_load(f.read())
     logging.config.dictConfig(config)
 
-logger = logging.getLogger('simple')
+logger = logging.getLogger("simple")
 
 print(__name__)
 logger.debug("this is a debug message")

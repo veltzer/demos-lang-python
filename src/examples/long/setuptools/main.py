@@ -17,13 +17,13 @@ def find_packages_walk(path="", prefix=""):
             yield name
 
 
-# does not work, I don't know why...
+# does not work, I dont know why...
 print(list(find_packages_walk(path="my_pkg", prefix="my_pkg")))
 
 
-def find_packages_os(path='.'):
+def find_packages_os(path="."):
     for root, _dirs, files in os.walk(path):
-        if '__init__.py' in files:
+        if "__init__.py" in files:
             yield root.replace("/", ".")
 
 

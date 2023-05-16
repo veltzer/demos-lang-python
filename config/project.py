@@ -12,7 +12,7 @@ add your example as a new example or contribute it back to this project.
 This is a much better way of programming since you are not doing
 the experiments on your full system but rather on a small example
 that is easy to run, debug and manage. Once you have the example ready and
-running correctly you can incorporate it"s code into a larger project."""
+running correctly you can incorporate its code into a larger project."""
 keywords = [
     "demos",
     "python",

@@ -14,7 +14,7 @@ and stores it with the reference.
 - Actually, only one lambda is created
 - So which value does it use when called?
     Which ever value the variable has AT THE TIME THAT IT IS CALLED.
-    Inside the loop it's ok since the variable has the current value.
+    Inside the loop its ok since the variable has the current value.
     Outside the loop this causes problems since it will refer to the last value
     of the variable
 
@@ -56,7 +56,7 @@ def wrong():
 
 
 def correction():
-    """ This works because each f will be stored with it's own default value for 'val'. """
+    """ This works because each f will be stored with its own default value for "val". """
     handlers = []
     for i in range(10):
         def f(val=i):

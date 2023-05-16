@@ -7,8 +7,8 @@ In python2 you would have to put a 'u' prefix but in python3 this is no longer n
 strings are unicode by default.
 """
 
-print('\u05d4\u05d9')
+print("\u05d4\u05d9")
 # This is a snake (http://www.fileformat.info/info/unicode/char/1f40d/index.htm)
-print('\U0001F40D')
+print("\U0001F40D")
 # This is a cloud (http://www.fileformat.info/info/unicode/char/2601/index.htm)
-print('\u2601')
+print("\u2601")

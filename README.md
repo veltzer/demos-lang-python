@@ -22,7 +22,7 @@ add your example as a new example or contribute it back to this project.
 This is a much better way of programming since you are not doing
 the experiments on your full system but rather on a small example
 that is easy to run, debug and manage. Once you have the example ready and
-running correctly you can incorporate it"s code into a larger project.
+running correctly you can incorporate its code into a larger project.
 
 ## contact
 
@@ -30,6 +30,6 @@ chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gi
 
 ## number of examples 
 
-Currently there are 778 examples in this repo.
+Currently there are 781 examples in this repo.
 
 Mark Veltzer, Copyright © 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023

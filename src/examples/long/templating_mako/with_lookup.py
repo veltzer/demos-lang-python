@@ -12,21 +12,21 @@ import mako.lookup
 
 def years(x):
     curr_year = datetime.datetime.now().year
-    return ','.join(map(str, range(x, curr_year + 1)))
+    return ",".join(map(str, range(x, curr_year + 1)))
 
 
 d = {
-    'a': 'b',
-    'c': 'd',
+    "a": "b",
+    "c": "d",
 }
 
-# input_encoding = 'utf-8'
-# output_encoding = 'utf-8'
-p_input = 'src/examples/long/templating_mako/with_lookup.mako'
-p_output = '/tmp/simple'
+# input_encoding = "utf-8"
+# output_encoding = "utf-8"
+p_input = "src/examples/long/templating_mako/with_lookup.mako"
+p_output = "/tmp/simple"
 
 mylookup = mako.lookup.TemplateLookup(
-    directories=['.'],
+    directories=["."],
     #   input_encoding=input_encoding,
     #   output_encoding=output_encoding,
 )
@@ -41,6 +41,6 @@ template = mako.template.Template(
 # an exception. Only then do we open the file for writing.
 # otherwise we will leave behind a partially written file and force the user
 # to fix his makefile to remove the cruft we left behind...
-output = template.render(foo='bar', years=years, d=d)
-with open(p_output, 'wb') as file_handle:
+output = template.render(foo="bar", years=years, d=d)
+with open(p_output, "wb") as file_handle:
     file_handle.write(output)

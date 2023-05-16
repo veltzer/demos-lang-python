@@ -1,6 +1,6 @@
 """
 This is the parent process. It is the watchdog.
-It use the 'subprocess' module to run the child.
+It use the "subprocess" module to run the child.
 """
 
 import subprocess

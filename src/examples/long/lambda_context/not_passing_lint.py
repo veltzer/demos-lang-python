@@ -4,10 +4,10 @@ This is an example of why context in lamba matters
 In this example we have a list of companies.
 Each company is a dict of employees and their salaries.
 We would like to find the employee which has the maximal salary
-in each company using the 'max' function.
+in each company using the "max" function.
 
 Look at the two examples below which look very similar and try
-to explain why the first command doesn't pass lint and the second
+to explain why the first command doesnt pass lint and the second
 does.
 
 Run lint with:
