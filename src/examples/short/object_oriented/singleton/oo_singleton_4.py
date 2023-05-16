@@ -1,6 +1,6 @@
 """
 This is a *fast* singleton in that you pay only for the first call.
-All subsequent calls don't even have an 'if' statement in them...
+All subsequent calls don"t even have an "if" statement in them...
 
 We also compare the difference in speed between the variation with
 the if statement and without.
@@ -41,7 +41,7 @@ print(type(A2))
 print(A1)
 print(A2)
 if A1 is A2:
-    print('yes,they are the same instance')
+    print("yes,they are the same instance")
 
 
 class B:
@@ -67,7 +67,7 @@ print(type(B2))
 print(B1)
 print(B2)
 if B1 is B2:
-    print('yes,they are the same instance')
+    print("yes,they are the same instance")
 
 # sys.exit(0)
 

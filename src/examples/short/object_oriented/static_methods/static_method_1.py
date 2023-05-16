@@ -12,7 +12,7 @@ class Book:
         Book.num += 1
 
     def printit(self):
-        print('price is', self.__price)
+        print("price is", self.__price)
 
     def setPrice(self, newprice):
         self.__price = newprice

@@ -12,17 +12,17 @@ class A:
     pi = 3.14
 
     def __init__(self, val):
-        print('in A constructor')
+        print("in A constructor")
         self.a = val
 
     def printMe(self):
-        print('a is', self.a)
+        print("a is", self.a)
 
 
 a = A(7)
-print('dir(a) follows...')
+print("dir(a) follows...")
 print(dir(a))
-print('a.__dict__ follows...')
+print("a.__dict__ follows...")
 print(a.__dict__)
-print('A.__dict__ follows...')
+print("A.__dict__ follows...")
 print(A.__dict__)

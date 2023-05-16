@@ -16,11 +16,11 @@ class A:
         self.__private_var = 5
 
     def sayHello(self):
-        print(self.__private_var, 'hello')
+        print(self.__private_var, "hello")
 
     # noinspection PyRedeclaration
     def sayHello(self, name):  # noqa: F811
-        print(self.__private_var, 'hello', name)
+        print(self.__private_var, "hello", name)
 
 
 try:
@@ -28,14 +28,14 @@ try:
     a = A(5)
     fake_use(a)
 except TypeError:
-    print('oops,got an error')
-    print('the no argument version of the constructor does not exist...')
+    print("oops,got an error")
+    print("the no argument version of the constructor does not exist...")
 # this will pass without an exception...
 a = A()
 try:
     a.sayHello()
 except TypeError:
-    print('oops,got an error')
-    print('the no argument version of the method \'sayHello\' does not exist')
+    print("oops,got an error")
+    print("the no argument version of the method \"sayHello\" does not exist")
 # pylint: disable=too-many-function-args
-a.sayHello('mark')
+a.sayHello("mark")

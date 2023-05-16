@@ -18,8 +18,8 @@ number.setParseAction(number_act)
 expr = pyparsing.Forward()
 operand = number | expr
 
-op_multiply = pyparsing.oneOf('* /')
-op_plus = pyparsing.oneOf('+ -')
+op_multiply = pyparsing.oneOf("* /")
+op_plus = pyparsing.oneOf("+ -")
 expr_2 = pyparsing.infixNotation(operand, [
     (op_multiply, 2, pyparsing.opAssoc.LEFT),
     (op_plus, 2, pyparsing.opAssoc.LEFT),
@@ -27,14 +27,14 @@ expr_2 = pyparsing.infixNotation(operand, [
 
 
 def expr_act(s, loc, tok):
-    print('in here', s, loc, tok)
-    if tok[0][1] == '*':
+    print("in here", s, loc, tok)
+    if tok[0][1] == "*":
         return tok[0][0] * tok[0][2]
-    if tok[0][1] == '/':
+    if tok[0][1] == "/":
         return tok[0][0] // tok[0][2]
-    if tok[0][1] == '+':
+    if tok[0][1] == "+":
         return tok[0][0] + tok[0][2]
-    if tok[0][1] == '-':
+    if tok[0][1] == "-":
         return tok[0][0] - tok[0][2]
     return None
 

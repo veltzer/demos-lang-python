@@ -22,12 +22,12 @@ class RoDict:
 
 
 d = RoDict()
-d['a'] = 'b'
-d['c'] = 'd'
-print(d['a'])
-d['a'] = 'e'
+d["a"] = "b"
+d["c"] = "d"
+print(d["a"])
+d["a"] = "e"
 d.ro = True
 try:
-    d['a'] = 'u'
+    d["a"] = "u"
 except ReadOnlyException:
     print("yes, got exception. Dictionary is read only")

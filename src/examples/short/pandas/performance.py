@@ -15,7 +15,7 @@ from pandas import DataFrame
 
 
 def random_word(length):
-    return ''.join(random.choice(string.ascii_lowercase) for _ in range(length))
+    return "".join(random.choice(string.ascii_lowercase) for _ in range(length))
 
 
 def print_data(data_frame: DataFrame):

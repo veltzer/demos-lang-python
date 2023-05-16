@@ -32,7 +32,7 @@ def my_func(self):
     print(f"in myfunc {self.price}")
 
 
-# when running a function it will not pass the object it is attached to as 'self'
+# when running a function it will not pass the object it is attached to as "self"
 # and so we would not have a "self"
 try:
     # pylint: disable=attribute-defined-outside-init
@@ -50,7 +50,7 @@ print(type(b.new_method_2))
 b.new_method_2(b)
 
 # Another way is to tie the function directly to the class
-# It's type is still a 'function' but now you can call it from
+# Its type is still a "function" but now you can call it from
 # every instance.
 Book.new_method_3 = my_func
 print(type(Book.new_method_3))

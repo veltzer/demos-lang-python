@@ -14,19 +14,19 @@ import optparse
 
 parser = optparse.OptionParser(
     description=__doc__,
-    usage='%prog [options]',
+    usage="%prog [options]",
 )
-parser.add_option('', '--mail-folder', dest='mail-folder',
-                  default='~/Mail', help='Folder where mail is. [default: %default]')
-parser.add_option('', '--debug', action='store_true', dest='debug',
-                  default=False, help='do you want to debug the script? [default: %default]')
-parser.add_option('', '--exit', action='store_true', dest='exit',
-                  default=False, help='exit after debug? [default: %default]')
-parser.add_option('', '--no-progress', action='store_true', dest='no-progress',
-                  default=False, help='dont report progress [default: %default]')
+parser.add_option("", "--mail-folder", dest="mail-folder",
+                  default="~/Mail", help="Folder where mail is. [default: %default]")
+parser.add_option("", "--debug", action="store_true", dest="debug",
+                  default=False, help="do you want to debug the script? [default: %default]")
+parser.add_option("", "--exit", action="store_true", dest="exit",
+                  default=False, help="exit after debug? [default: %default]")
+parser.add_option("", "--no-progress", action="store_true", dest="no-progress",
+                  default=False, help="dont report progress [default: %default]")
 parser.add_option(
-    '', '--toplevel', dest='toplevel', default='default for toplevel',
-    help='toplevel tag for importing [default: %default]')
+    "", "--toplevel", dest="toplevel", default="default for toplevel",
+    help="toplevel tag for importing [default: %default]")
 (options, args) = parser.parse_args()
 
 print(options)

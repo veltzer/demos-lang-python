@@ -1,5 +1,5 @@
 """
-An example of reading parquet files with 'fastparquet'.
+An example of reading parquet files with "fastparquet".
 
 References:
 - https://github.com/dask/fastparquet
@@ -7,7 +7,7 @@ References:
 
 from fastparquet import ParquetFile
 
-# pf = ParquetFile('/tmp/file.parquet')
-pf = ParquetFile('/tmp/file_compressed.parquet')
+# pf = ParquetFile("/tmp/file.parquet")
+pf = ParquetFile("/tmp/file_compressed.parquet")
 df = pf.to_pandas()
 print(df)

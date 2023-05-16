@@ -1,6 +1,6 @@
 """
 This is the right way to create a static method in python.
-Decorate it with the builtin 'staticmethod' decorator function.
+Decorate it with the builtin "staticmethod" decorator function.
 You can then call the method using the instance AND using
 the class.
 """
@@ -14,7 +14,7 @@ class Book:
         Book.num += 1
 
     def printit(self):
-        print('price is', self.__price)
+        print("price is", self.__price)
 
     def setPrice(self, newprice):
         self.__price = newprice

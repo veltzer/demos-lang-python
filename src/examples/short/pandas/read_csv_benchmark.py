@@ -101,5 +101,5 @@ def main():
     assert lc3 == lc4
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

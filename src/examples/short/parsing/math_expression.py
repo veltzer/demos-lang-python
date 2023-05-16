@@ -3,25 +3,25 @@ import sys
 
 import simpleparse.dispatchprocessor
 
-declaration = r'''# note use of raw string when embedding in python code...
+declaration = r"""# note use of raw string when embedding in python code...
 full        := ws,expr,ws
 number        := [0-9eE+.-]+
-expr        := number,'+',number/number,'-',number
+expr        := number,"+",number/number,"-",number
 ws        := [ \t\v]*
-'''
+"""
 
 
 class MyProcessorClass(simpleparse.dispatchprocessor.DispatchProcessor):
     # def __init__(self):
-    #     print('cons')
+    #     print("cons")
 
     def number(self, _tup, _buf):
         """ Process the given production and its children """
-        print('in number')
+        print("in number")
 
     def expr(self, _tup, _buf):
         """ Process the given production and its children """
-        print('in expr')
+        print("in expr")
 
     def __call__(self, value, data):
         # return super(self.__class__,self).__call__(self,value,data)

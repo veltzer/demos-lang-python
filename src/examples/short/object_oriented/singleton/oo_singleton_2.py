@@ -15,13 +15,13 @@ class A:
 
     def __init__(self):
         if A.instance is not None:
-            raise ValueError('you called the constructor twice!!')
+            raise ValueError("you called the constructor twice!!")
         # constructor code goes here
-        print('in A constructor')
-        self.my_attribute = 'value'
+        print("in A constructor")
+        self.my_attribute = "value"
 
     @classmethod
-    def get_instance(cls) -> typing.Union['A', None]:
+    def get_instance(cls) -> typing.Union["A", None]:
         if cls.instance is None:
             cls.instance = cls()
         return cls.instance
@@ -30,7 +30,7 @@ class A:
 a1 = A.get_instance()
 a2 = A.get_instance()
 if a1 is a2:
-    print('yes,they are the same instance')
+    print("yes,they are the same instance")
 print(a1)
 print(a2)
 print(dir(a1))
