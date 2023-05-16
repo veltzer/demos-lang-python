@@ -10,16 +10,16 @@ def indentation(line):
 
 
 def main():
-    data = '''this is no indent 1
+    data = """this is no indent 1
     this is no indent 2
         this is 1 indent 1
         this is 1 indent 2
     this is no indent 3
     this is no indent 4
         this is 1 indent 3
-        this is 1 indent 4'''
+        this is 1 indent 4"""
 
-    for indent, paragraph in itertools.groupby(data.split('\n'), key=indentation):
+    for indent, paragraph in itertools.groupby(data.split("\n"), key=indentation):
         print(f"{indent}-spaced paragraph")
         for line in paragraph:
             print(line.strip())

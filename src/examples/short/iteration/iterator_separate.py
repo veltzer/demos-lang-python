@@ -18,9 +18,9 @@ class RevIter:
 
 
 class Reverse:
-    '''
+    """
     Iterator for looping over a sequence backwards
-    '''
+    """
     def __init__(self, data):
         self.data = data
 
@@ -38,12 +38,12 @@ def main():
     y = range(7)
     r1 = Reverse(y)
     print(type(r1))
-    print('__next__' in dir(r1))
-    print('__iter__' in dir(r1))
+    print("__next__" in dir(r1))
+    print("__iter__" in dir(r1))
     r2 = reversed(y)
     print(type(r2))
-    print('__next__' in dir(r2))
-    print('__iter__' in dir(r2))
+    print("__next__" in dir(r2))
+    print("__iter__" in dir(r2))
 
 
 main()

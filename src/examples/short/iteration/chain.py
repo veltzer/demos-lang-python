@@ -2,7 +2,7 @@
 This example shows how to iterate two containers in sequence.
 
 Notes:
-- 'chain' is supposed to be efficient in python3 but I have not
+- "chain" is supposed to be efficient in python3 but I have not
 verified that.
 """
 

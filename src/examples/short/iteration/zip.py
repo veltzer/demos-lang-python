@@ -8,7 +8,7 @@ until the shorter one (see example below).
 a list of all the tuples in advance while izip does not.
 - for python 2.7 izip is from itertools while zip is default
 - for python 3 izip is gone and zip has the efficiency of
-python2.7's izip so you don't need to think about any of this
+python2.7s izip so you dont need to think about any of this
 (yay python3!).
 - in python 3 zip is in the default namespace.
 """

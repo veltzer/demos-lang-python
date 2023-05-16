@@ -1,5 +1,5 @@
 """
-This example shows how to use the 'enumerate' iterator.
+This example shows how to use the "enumerate" iterator.
 
 Notes:
 - enumerate is supposed to be efficient both in python2.7
@@ -9,7 +9,7 @@ is more beautiful.
 """
 
 
-# our own 'enumerate'
+# our own "enumerate"
 def simple_enumerate(value_list):
     i = 0
     for val in value_list:
@@ -18,7 +18,7 @@ def simple_enumerate(value_list):
 
 
 def main():
-    value_list = ['a', 'b', 'c']
+    value_list = ["a", "b", "c"]
     # the non pythonic way to do this
     # pylint: disable=consider-using-enumerate
     for i in range(len(value_list)):
@@ -26,7 +26,7 @@ def main():
     # the pythonic way to do this
     for i, c in enumerate(value_list):
         print(i, c)
-    # now let's use our own enumerator
+    # now let"s use our own enumerator
     for i, c in simple_enumerate(value_list):
         print(i, c)
 

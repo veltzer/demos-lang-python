@@ -79,13 +79,13 @@ if len(elements_visited3) != len(my_list):
 
 print("example number 4: adding elements to a dictionary while iterating it")
 try:
-    d = {'one': 'ehad', 'two': 'shnaim', 'three': 'shalosh'}
+    d = {"one": "ehad", "two": "shnaim", "three": "shalosh"}
     all_elements4 = set(d.keys())  # type: ignore
     elements_visited4 = set()
     i = 0
     for k, v in d.items():
         if i == 1:
-            d['four'] = 'arba'
+            d["four"] = "arba"
         elements_visited4.add(k)
         i += 1
 except RuntimeError as e:
@@ -93,35 +93,35 @@ except RuntimeError as e:
 
 print("example number 5: removing elements to a dictionary while iterating it")
 try:
-    d = {'one': 'ehad', 'two': 'shnaim', 'three': 'shalosh'}
+    d = {"one": "ehad", "two": "shnaim", "three": "shalosh"}
     all_elements5 = set(d.keys())
     elements_visited5 = set()
     i = 0
     for k, v in d.items():
         if i == 1:
-            del d['one']
+            del d["one"]
         elements_visited5.add(k)
         i += 1
 except RuntimeError as e:
     print(f"yes,got runtime error when trying to modify the exception: {e}")
 
-print('''
+print("""
 example number 6: adding and removing elements in dictionary while iterating it
 thus keeping the size of the dictionary the same.
 Notice that we do not get an exception in this case.
-''')
-d = {'one': 'ehad', 'two': 'shnaim', 'three': 'shalosh'}
+""")
+d = {"one": "ehad", "two": "shnaim", "three": "shalosh"}
 all_elements6 = set(d.keys())
 elements_visited6 = set()
 i = 0
 for k, v in d.items():
     if i == 1:
-        d['four'] = 'arba'
-        d['five'] = 'hamesh'
-        d['six'] = 'shesh'
-        del d['one']
-        del d['two']
-        del d['three']
+        d["four"] = "arba"
+        d["five"] = "hamesh"
+        d["six"] = "shesh"
+        del d["one"]
+        del d["two"]
+        del d["three"]
     elements_visited6.add(k)
     i += 1
 print(f"elements not visited are {all_elements6 - elements_visited6}")

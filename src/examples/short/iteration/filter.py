@@ -1,5 +1,5 @@
 """
-An example of how to use the 'filter' built-in python function.
+An example of how to use the "filter" built-in python function.
 
 Notes:
 - filter is builtin. No need to import anything.

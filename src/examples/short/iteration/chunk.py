@@ -5,7 +5,7 @@ all of the data coming out of that iterator with each
 one producing N pieces of data (except possibly the last one).
 
 The result is that the best option is to use the iterator
-API directly (look at the function 'chunk' below).
+API directly (look at the function "chunk" below).
 
 Regarding checking if something is a generator.
 There are two ways to check this:

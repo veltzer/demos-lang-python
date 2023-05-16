@@ -5,7 +5,7 @@ In this example the object returns itself as the iterator
 chosen to return another object.
 
 Differences between python2.7 and python3:
-- in python2.7 the __next__ method should be called 'next'.
+- in python2.7 the __next__ method should be called "next".
 """
 
 

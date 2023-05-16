@@ -2,9 +2,9 @@
 This example shows how to use the iterator API.
 
 The API is made of 3 things:
-- the 'iter' function to get a new iterator from an iterable.
-- the 'next' function to get the new data from an iterator.
-- the 'StopIteration' exception which is thrown when there is not
+- the "iter" function to get a new iterator from an iterable.
+- the "next" function to get the new data from an iterator.
+- the "StopIteration" exception which is thrown when there is not
 more data be had.
 """
 
