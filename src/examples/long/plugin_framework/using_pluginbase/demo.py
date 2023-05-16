@@ -8,8 +8,8 @@ class BaseClass:
 
 
 def main():
-    plugin_base = PluginBase(package='plugins')
-    plugin_source = plugin_base.make_plugin_source(searchpath=['plugins'])
+    plugin_base = PluginBase(package="plugins")
+    plugin_source = plugin_base.make_plugin_source(searchpath=["plugins"])
     for plugin in plugin_source.list_plugins():
         p = plugin_source.load_plugin(plugin)
         p.do_something()
@@ -21,5 +21,5 @@ def main():
                 print(k)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

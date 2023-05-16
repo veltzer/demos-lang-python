@@ -11,13 +11,13 @@ import yapsy.PluginManager
 
 simplePluginManager = yapsy.PluginManager.PluginManager()
 # Tell it the default place(s) where to find plugins
-simplePluginManager.setPluginPlaces(['plugins'])
+simplePluginManager.setPluginPlaces(["plugins"])
 
 print(
-    'load all the plugins (this also calls the construction of IPlugin objects)')
+    "load all the plugins (this also calls the construction of IPlugin objects)")
 simplePluginManager.collectPlugins()
 
-print('now printing plugins info')
+print("now printing plugins info")
 for pluginInfo in simplePluginManager.getAllPlugins():
     print(f"name is [{pluginInfo.name}]")
     print(f"description is [{pluginInfo.description}]")
@@ -32,14 +32,14 @@ for pluginInfo in simplePluginManager.getAllPlugins():
     # print(pluginInfo.__class__)
     # print(pluginInfo.__module__)
 
-print('activate all the plugins')
+print("activate all the plugins")
 for pluginInfo in simplePluginManager.getAllPlugins():
     simplePluginManager.activatePluginByName(pluginInfo.name)
 
-print('do something with all plugins')
+print("do something with all plugins")
 for pluginInfo in simplePluginManager.getAllPlugins():
     pluginInfo.plugin_object.do_something()
 
-print('deactivate all the plugins')
+print("deactivate all the plugins")
 for pluginInfo in simplePluginManager.getAllPlugins():
     simplePluginManager.deactivatePluginByName(pluginInfo.name)

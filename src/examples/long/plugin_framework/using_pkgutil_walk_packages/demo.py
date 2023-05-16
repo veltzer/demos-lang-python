@@ -24,8 +24,8 @@ from . import base
 do_debug = False
 do_print_members = False
 
-folder = 'plugins'
-namespace = 'plugins.'
+folder = "plugins"
+namespace = "plugins."
 
 done = set()
 for importer, modname, is_package in pkgutil.walk_packages(

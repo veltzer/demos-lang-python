@@ -7,7 +7,7 @@ import pkgutil
 do_debug = False
 do_print_members = False
 
-for module_loader, name, ispkg in pkgutil.iter_modules(path=['plugins']):
+for module_loader, name, ispkg in pkgutil.iter_modules(path=["plugins"]):
     if do_debug:
         print(module_loader, name, ispkg)
     if not ispkg:
@@ -21,5 +21,5 @@ for module_loader, name, ispkg in pkgutil.iter_modules(path=['plugins']):
         if do_print_members:
             print(f"members of [{name}]")
             for p, v in m.__dict__.items():
-                if not p.startswith('__'):
+                if not p.startswith("__"):
                     print(f"\t{p} -> {v}")
