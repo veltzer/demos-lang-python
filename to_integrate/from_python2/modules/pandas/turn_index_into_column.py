@@ -10,14 +10,14 @@ import pandas
 filename = "data_samples/2_by_2.tsv"
 df = pandas.read_csv(
     filename,
-    sep='\t',
+    sep="\t",
     header=None,
 )
 
-print df.head()
+print(df.head())
 
 df.set_index(0, inplace=True)
-print df.head()
+print(df.head())
 
 df.reset_index(level=0, inplace=True)
-print df.head()
+print(df.head())

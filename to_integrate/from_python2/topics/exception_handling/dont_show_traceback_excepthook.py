@@ -10,7 +10,7 @@ import sys
 
 
 def do_error():
-    raise ValueError('core')
+    raise ValueError("core")
 
 
 def excepthook(_type, value, _traceback):

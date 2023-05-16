@@ -10,7 +10,7 @@ import pandas
 filename = "data_samples/3_by_2.tsv"
 df = pandas.read_csv(
     filename,
-    sep='\t',
+    sep="\t",
     header=None,
 )
 

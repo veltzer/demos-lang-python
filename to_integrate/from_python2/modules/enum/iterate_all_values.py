@@ -12,12 +12,12 @@ class SampleEnum(enum.Enum):
 
 # This works but the problem is that pycharm complains about it
 for x in SampleEnum:
-    print('actual enum value is [{}]'.format(x))
-    print('int is [{}]'.format(x.value))
-    print('name is [{}]'.format(x.name))
+    print(f"actual enum value is [{x}]")
+    print(f"int is [{x.value}]")
+    print(f"name is [{x.name}]")
 
 # pycharm does not complain about this one...
 for x in SampleEnum.__members__.values():
-    print('actual enum value is [{}]'.format(x))
-    print('int is [{}]'.format(x.value))
-    print('name is [{}]'.format(x.name))
+    print(f"actual enum value is [{x}]")
+    print(f"int is [{x.value}]")
+    print(f"name is [{x.name}]")

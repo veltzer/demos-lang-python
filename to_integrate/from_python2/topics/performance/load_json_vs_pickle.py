@@ -21,7 +21,7 @@ for x in range(100000):
 filename_json = tempfile.mktemp()
 filename_pickle = tempfile.mktemp()
 
-with codecs.open(filename_json, "wt", encoding='utf-8') as fp:
+with codecs.open(filename_json, "wt", encoding="utf-8") as fp:
     json.dump(d, fp)
 with open(filename_pickle, "wb") as fp:
     pickle.dump(d, fp, protocol=pickle.HIGHEST_PROTOCOL)
@@ -37,7 +37,7 @@ def load_pickle():
         _ = pickle.load(fp)
 
 
-repetitions=10
+repetitions = 10
 print("json time {:.04f}".format(timeit.timeit(load_json, number=repetitions)))
 print("pickle time {:.04f}".format(timeit.timeit(load_pickle, number=repetitions)))
 

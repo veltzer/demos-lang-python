@@ -5,7 +5,7 @@ NOTES:
 - The idea of passing __name__ to the logger
 is that you can turn logs on and off from certain modules.
 - the first time you create a logger it doesnt have any handlers
-and thats why you don't get any output despite the logging level
+and thats why you don"t get any output despite the logging level
 begin set correctly. if you turn off do_addhandler below you will
 see no logging at debug level.
 - to create another handler one must:
@@ -32,7 +32,7 @@ print(logger.handlers)
 if do_addhandler:
     handler = logging.StreamHandler()
     handler.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(name)s %(levelname)s %(message)s')
+    formatter = logging.Formatter("%(name)s %(levelname)s %(message)s")
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 

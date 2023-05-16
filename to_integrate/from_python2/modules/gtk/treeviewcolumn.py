@@ -3,7 +3,7 @@ example treeviewcolumn.py
 """
 
 import pygtk
-pygtk.require('2.0')
+pygtk.require("2.0")
 import gtk
 
 class TreeViewColumnExample:
@@ -16,7 +16,7 @@ class TreeViewColumnExample:
     def make_pb(self, tvcolumn, cell, model, iter):
         stock = model.get_value(iter, 1)
         pb = self.treeview.render_icon(stock, gtk.ICON_SIZE_MENU, None)
-        cell.set_property('pixbuf', pb)
+        cell.set_property("pixbuf", pb)
         return
 
     def __init__(self):
@@ -30,20 +30,20 @@ class TreeViewColumnExample:
         self.window.connect("delete_event", self.delete_event)
 
         # create a liststore with one string column to use as the model
-        self.liststore = gtk.ListStore(str, str, str, 'gboolean')
+        self.liststore = gtk.ListStore(str, str, str, "gboolean")
 
         # create the TreeView using liststore
         self.treeview = gtk.TreeView(self.liststore)
 
         # create the TreeViewColumns to display the data
-        self.tvcolumn = gtk.TreeViewColumn('Pixbuf and Text')
-        self.tvcolumn1 = gtk.TreeViewColumn('Text Only')
+        self.tvcolumn = gtk.TreeViewColumn("Pixbuf and Text")
+        self.tvcolumn1 = gtk.TreeViewColumn("Text Only")
 
         # add a row with text and a stock item - color strings for
         # the background
-        self.liststore.append(['Open', gtk.STOCK_OPEN, 'Open a File', True])
-        self.liststore.append(['New', gtk.STOCK_NEW, 'New File', True])
-        self.liststore.append(['Print', gtk.STOCK_PRINT, 'Print File', False])
+        self.liststore.append(["Open", gtk.STOCK_OPEN, "Open a File", True])
+        self.liststore.append(["New", gtk.STOCK_NEW, "New File", True])
+        self.liststore.append(["Print", gtk.STOCK_PRINT, "Print File", False])
 
         # add columns to treeview
         self.treeview.append_column(self.tvcolumn)
@@ -55,9 +55,9 @@ class TreeViewColumnExample:
         self.cell1 = gtk.CellRendererText()
 
         # set background color property
-        self.cellpb.set_property('cell-background', 'yellow')
-        self.cell.set_property('cell-background', 'cyan')
-        self.cell1.set_property('cell-background', 'pink')
+        self.cellpb.set_property("cell-background", "yellow")
+        self.cell.set_property("cell-background", "cyan")
+        self.cell1.set_property("cell-background", "pink")
 
 
         # add the cells to the columns - 2 in the first

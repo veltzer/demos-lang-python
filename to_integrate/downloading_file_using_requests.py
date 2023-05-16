@@ -1,9 +1,12 @@
-def download_file(url:str, filename: str=None, chunk_size=8192):
+import requests
+
+
+def download_file(url:str, filename: str = None, chunk_size = 8192):
     """ download a file from a url """
     if filename is None:
         filename = url.replace("/", ".")
     # NOTE the stream=True parameter below
-    with requests.get(url, stream=True) as r:
+    with requests.get(url, stream=True, timeout=5) as r:
         r.raise_for_status()
         with open(filename, "wb") as f:
             for chunk in r.iter_content(chunk_size=chunk_size):
@@ -12,4 +15,3 @@ def download_file(url:str, filename: str=None, chunk_size=8192):
                 #if chunk:
                 f.write(chunk)
     return filename
-

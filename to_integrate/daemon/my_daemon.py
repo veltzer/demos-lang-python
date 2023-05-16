@@ -9,8 +9,8 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
-i=0
+i = 0
 while True:
-    logger.debug("this is debug mesage "+str(i))
-    i+=1
+    logger.debug(f"this is debug mesage {i}")
+    i += 1
     time.sleep(5)
