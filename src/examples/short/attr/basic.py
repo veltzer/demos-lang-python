@@ -1,10 +1,10 @@
 """
-A basic example of how to use the 'attrs' framework.
+A basic example of how to use the "attrs" framework.
 
 Notes:
-- you can construct an 'attrs' based instance with no data at all.
+- you can construct an "attrs" based instance with no data at all.
 At runtime you can add the missing data.
-- you can construct an 'attrs' based instance with partial data.
+- you can construct an "attrs" based instance with partial data.
 """
 
 from attr import attrs, attrib

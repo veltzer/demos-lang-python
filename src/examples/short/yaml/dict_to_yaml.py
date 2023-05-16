@@ -2,24 +2,24 @@ import sys
 import yaml
 
 dict_file = {
-    'sports':
+    "sports":
     [
-        'soccer',
-        'football',
-        'basketball',
-        'cricket',
-        'hockey',
-        'table tennis',
+        "soccer",
+        "football",
+        "basketball",
+        "cricket",
+        "hockey",
+        "table tennis",
     ],
-    'countries':
+    "countries":
     [
-        'Pakistan',
-        'USA',
-        'India',
-        'China',
-        'Germany',
-        'France',
-        'Spain'
+        "Pakistan",
+        "USA",
+        "India",
+        "China",
+        "Germany",
+        "France",
+        "Spain"
     ]
 }
 

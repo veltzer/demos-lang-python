@@ -8,10 +8,10 @@ import click
 
 @click.command()
 @click.option(
-    '--count',
+    "--count",
     default=1,
     type=int,
-    help='Number of greetings.',
+    help="Number of greetings.",
     show_default=True,
 )
 def main(count: int) -> None:
@@ -19,6 +19,6 @@ def main(count: int) -> None:
     print(count)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # pylint: disable=no-value-for-parameter
     main()

@@ -18,18 +18,18 @@ def cli():
 
 @cli.command()
 def say_hello():
-    print('hello')
+    print("hello")
 
 
 @cli.command()
 def say_goodbye():
-    print('goodbye')
+    print("goodbye")
 
 
 @cli.command(name="foo")
 def demo():
-    print('foo')
+    print("foo")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()

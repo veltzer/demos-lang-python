@@ -13,7 +13,7 @@ import builtins
 
 def my_max(*args):
     print("hey, I am here...")
-    # now call the builtin 'max' function
+    # now call the builtin "max" function
     return builtins.max(args)
 
 
@@ -24,7 +24,7 @@ original_min = min
 
 def my_min(*args):
     print("hey, I am here...")
-    # now call the builtin 'min' function
+    # now call the builtin "min" function
     return original_min(args)
 
 

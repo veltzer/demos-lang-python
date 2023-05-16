@@ -7,11 +7,11 @@ References:
 
 import boto3
 
-ec2 = boto3.resource('ec2')
+ec2 = boto3.resource("ec2")
 instances = ec2.instances.filter(
     Filters=[
-        {'Name': 'instance-state-name', 'Values': ['running']},
-        {'Name': 'tag:Owner', 'Values': ['mark@twiggle.com']},
+        {"Name": "instance-state-name", "Values": ["running"]},
+        {"Name": "tag:Owner", "Values": ["mark@twiggle.com"]},
     ]
 )
 for instance in instances:

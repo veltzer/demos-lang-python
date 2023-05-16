@@ -23,15 +23,15 @@ properties:
 """
 
 good_instance = """
-testing: ['this', 'is', 'a', 'test']
+testing: ["this", "is", "a", "test"]
 """
 
 validate(yaml.load(good_instance, Loader=yaml.SafeLoader), yaml.load(schema, Loader=yaml.SafeLoader))  # passes
 
-# Now let's try a bad instance...
+# Now lets try a bad instance...
 
 bad_instance = """
-testing: ['this', 'is', 'a', 'bad', 'test']
+testing: ["this", "is", "a", "bad", "test"]
 """
 
 try:

@@ -3,7 +3,7 @@ This is an example that shows that we can change the closure if
 it made up of non primitive data.
 
 Here are the ways to do it:
-- We may return a 'closure altering' function which then can be
+- We may return a "closure altering" function which then can be
 used to change the closure.
 - We may return a function that returns pointers to the data in
 the closure. If these are data structures (lists,dictionaries
@@ -46,34 +46,34 @@ def make_funcs(number_list):
 # alter the list via the mechanisms described above.
 
 # first lets output the initial state
-print('f_max is', f_max())
-print('f_min is', f_min())
+print("f_max is", f_max())
+print("f_min is", f_min())
 
-print('''
+print("""
 lets use the first method mentioned above. lets use the f_set
 function to alter the closure
-''')
+""")
 f_set(3, 5)
 f_set(2, 0)
-print('f_max is', f_max())
-print('f_min is', f_min())
+print("f_max is", f_max())
+print("f_min is", f_min())
 
-print('''
+print("""
 lets use the second method mentioned above. returning the internals
 of the closure using a closure function...
-''')
+""")
 f_int()[3] = 6
 f_int()[2] = -1
-print('f_max is', f_max())
-print('f_min is', f_min())
+print("f_max is", f_max())
+print("f_min is", f_min())
 
-print('''
+print("""
 lets use the third method mentioned above. the __closure__ property.
-''')
+""")
 f_max.__closure__[0].cell_contents[3] = 7
 f_max.__closure__[0].cell_contents[2] = -2
-print('f_max is', f_max())
-print('f_min is', f_min())
+print("f_max is", f_max())
+print("f_min is", f_min())
 
 # after we do this then the list will be garbage collected...
 f_max = None

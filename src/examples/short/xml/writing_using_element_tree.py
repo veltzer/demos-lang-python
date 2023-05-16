@@ -11,16 +11,16 @@ import io
 import xml
 from xml.etree import ElementTree
 
-root = ElementTree.Element('root')
-doc = ElementTree.SubElement(root, 'doc')
+root = ElementTree.Element("root")
+doc = ElementTree.SubElement(root, "doc")
 
-field1 = ElementTree.SubElement(doc, 'field1')
-field1.set('name', 'name of field1')
-field1.text = 'field 1 free text'
+field1 = ElementTree.SubElement(doc, "field1")
+field1.set("name", "name of field1")
+field1.text = "field 1 free text"
 
-field1 = ElementTree.SubElement(doc, 'field2')
-field1.set('name', 'name of field2')
-field1.text = 'field 2 free text'
+field1 = ElementTree.SubElement(doc, "field2")
+field1.set("name", "name of field2")
+field1.text = "field 2 free text"
 
 tree = ElementTree.ElementTree(root)
 f = io.BytesIO()

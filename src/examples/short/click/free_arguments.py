@@ -5,7 +5,7 @@ parameters on the command line.
 Notes:
 - The parameters: show_default, help, type, as NOT allowed for the
 free arguments section (click.argument).
-- The parameter 'required' is allowed.
+- The parameter "required" is allowed.
 
 References:
 - http://click.pocoo.org/5/arguments/#variadic-arguments
@@ -16,7 +16,7 @@ import click
 
 @click.command()
 @click.argument(
-    'args',
+    "args",
     nargs=-1,
     required=True,
 )
@@ -25,6 +25,6 @@ def main(args):
     print(args)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # pylint: disable=no-value-for-parameter
     main()
