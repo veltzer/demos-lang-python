@@ -20,9 +20,9 @@ sys.excepthook = excepthook
 # simulate a piece of bad code which "swallows" exceptions...
 # noinspection PyBroadException
 try:
-    raise ValueError('core')
+    raise ValueError("core")
 except ValueError:
     print("haha, got the exception and continuing anyway...")
 print("after")
 
-raise ValueError('core')
+raise ValueError("core")

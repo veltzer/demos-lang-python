@@ -5,6 +5,6 @@ from traceback import print_exc
 
 
 try:
-    raise ValueError('hello')
+    raise ValueError("hello")
 except ValueError:
     print_exc()

@@ -4,7 +4,7 @@ The full description is that we want the lists to be of the same length
 and that every element in position x in the first list should be equal
 to element in position x in the second list.
 
-The short answer is to use the '==' operator for list.
+The short answer is to use the "==" operator for list.
 
 References:
 - https://stackoverflow.com/questions/36420022/how-can-i-compare-two-ordered-lists-in-python

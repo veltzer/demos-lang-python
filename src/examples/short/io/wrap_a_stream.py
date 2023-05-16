@@ -18,4 +18,4 @@ with open(filename, "rb") as file_handle1:
 with open(filename, "rb") as file_handle2:
     wrapped = io.TextIOWrapper(file_handle2)
     for line2 in itertools.islice(wrapped, 5):
-        print(line2, end='')
+        print(line2, end="")

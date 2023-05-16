@@ -30,7 +30,7 @@ for key in key_list:
         line_number = 0
         for line in key:
             if do_print:
-                print(line, end='')
+                print(line, end="")
             line_number += 1
         print(f"got [{line_number}] lines...")
 print(f"got [{file_num}] files...")

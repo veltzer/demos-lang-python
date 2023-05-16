@@ -14,4 +14,4 @@ d = {
 }
 while d:
     key, value = d.popitem()
-    print(key, '-->', value)
+    print(key, "-->", value)

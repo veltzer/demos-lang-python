@@ -8,4 +8,4 @@ References:
 import git
 
 repo = git.Repo(".")
-repo.index.remove(['folder'], True, r=True)
+repo.index.remove(["folder"], True, r=True)

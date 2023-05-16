@@ -9,7 +9,7 @@ References:
 
 from furl import furl
 
-url = furl('http://example.com')
+url = furl("http://example.com")
 print(url)
 url.password = "password"
 url.username = "user"

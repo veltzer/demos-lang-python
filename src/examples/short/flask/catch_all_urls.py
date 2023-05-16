@@ -16,7 +16,7 @@ def empty():
     return flask.redirect("/index.html")
 
 
-@app.route('/<path:path>')
+@app.route("/<path:path>")
 def all_routes(path):
     return f"path is [{path}]"
 

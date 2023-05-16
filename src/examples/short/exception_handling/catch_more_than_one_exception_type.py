@@ -10,7 +10,7 @@ References:
 
 
 def raise_it(a_type):
-    raise a_type('hello')
+    raise a_type("hello")
 
 
 for x in ValueError, RuntimeError:

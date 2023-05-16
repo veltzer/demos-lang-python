@@ -9,10 +9,10 @@ import logging
 import os
 import flask
 
-log = logging.getLogger('werkzeug')
+log = logging.getLogger("werkzeug")
 log.setLevel(logging.ERROR)
 os.environ["FLASK_ENV"] = "development"
-os.environ['WERKZEUG_RUN_MAIN'] = 'true'
+os.environ["WERKZEUG_RUN_MAIN"] = "true"
 
 app = flask.Flask(__name__)
 app.run()

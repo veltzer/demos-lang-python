@@ -8,6 +8,6 @@ References:
 import os
 
 prev_mask = os.umask(0o000)
-with os.fdopen(os.open("/tmp/test", os.O_WRONLY | os.O_CREAT, 0o644), 'wt') as f:
+with os.fdopen(os.open("/tmp/test", os.O_WRONLY | os.O_CREAT, 0o644), "wt") as f:
     f.write("Hello, World!")
 os.umask(prev_mask)

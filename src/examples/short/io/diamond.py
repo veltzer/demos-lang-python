@@ -18,14 +18,14 @@ def diamond_lines():
             yield line
     else:
         for filename in sys.argv[1:]:
-            with open(filename, 'rt') as file_handle:
+            with open(filename, "rt") as file_handle:
                 for line in file_handle:
                     yield line
 
 
 def main():
     for line in diamond_lines():
-        print(line, end='')
+        print(line, end="")
 
 
 if __name__ == "__main__":

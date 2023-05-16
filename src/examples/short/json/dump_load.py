@@ -8,13 +8,13 @@ Notes:
 import json
 
 my_dict = {
-    'one': 'one value',
-    'two': 'two value',
+    "one": "one value",
+    "two": "two value",
 }
 
-filename = '/tmp/json_store.json'
+filename = "/tmp/json_store.json"
 
-with open(filename, 'w') as file_handle:
+with open(filename, "w") as file_handle:
     json.dump(my_dict, file_handle, indent=4)
 
 with open(filename) as file_handle:

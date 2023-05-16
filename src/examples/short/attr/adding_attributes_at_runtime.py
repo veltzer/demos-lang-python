@@ -1,6 +1,6 @@
 """
 This example shows that you can add attributes at run
-time to an object which is created using the 'attrs'
+time to an object which is created using the "attrs"
 framework. The attribute will not be printed when printing
 the instances. The attribute is accessible from outside
 and from within the object and is seen in dir(object).

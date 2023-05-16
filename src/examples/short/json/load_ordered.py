@@ -12,7 +12,7 @@ References:
 import json
 from collections import OrderedDict
 
-raw_data = '{"foo":1, "bar": 2}'
+raw_data = "{\"foo\":1, \"bar\": 2}"
 data1 = json.loads(raw_data, object_pairs_hook=OrderedDict)
 data2 = json.loads(raw_data)
 print("ordered")
