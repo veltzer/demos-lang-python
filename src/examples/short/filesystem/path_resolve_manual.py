@@ -7,10 +7,10 @@ import re
 import sys
 
 if len(sys.argv) < 2:
-    raise ValueError('plase pass regexp')
+    raise ValueError("plase pass regexp")
 c = re.compile(sys.argv[1])
 
-for root, dirs, files in os.walk('.'):
+for root, dirs, files in os.walk("."):
     for file in files:
         full = os.path.join(root, file)
         with open(full) as f:

@@ -10,9 +10,9 @@ in-python-how-do-i-print-an-error-message-without-printing-a-traceback-and-clos
 
 def do_error():
     try:
-        raise ValueError('core')
+        raise ValueError("core")
     except Exception as e:
-        raise ValueError('outer') from e
+        raise ValueError("outer") from e
 
 
 def main():

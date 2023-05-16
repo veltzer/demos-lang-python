@@ -10,6 +10,6 @@ for line in sys.stdin:
     # remove white space
     line = line.rstrip()
     if os.path.isabs(line):
-        print('absolute')
+        print("absolute")
     else:
-        print('relative', os.path.abspath(line))
+        print("relative", os.path.abspath(line))

@@ -5,5 +5,5 @@ in a directory.
 
 import glob
 
-for file in glob.glob('/etc/*'):
+for file in glob.glob("/etc/*"):
     print(file)

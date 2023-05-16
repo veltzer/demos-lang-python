@@ -1,5 +1,5 @@
 """
-This is an example of the 'os.walk' API that allows one to traverse
+This is an example of the "os.walk" API that allows one to traverse
 a directory of files recursively.
 This is used to implement find(1)+grep(1) in just a few lines of python.
 If you just want to iterate files then you just need the first block
@@ -13,7 +13,7 @@ import os
 import sys
 
 if len(sys.argv) < 2:
-    raise ValueError('please pass root_folder')
+    raise ValueError("please pass root_folder")
 root_folder = sys.argv[1]
 
 for root, directories, files in os.walk(root_folder):

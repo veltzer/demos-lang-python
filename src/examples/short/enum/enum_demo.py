@@ -20,9 +20,9 @@ class Event(enum.Enum):
 
 def is_enum(member):
     if isinstance(member, Event):
-        print('yes')
+        print("yes")
     else:
-        print('no')
+        print("no")
 
 
 # passing numbers is no good, we need to pass the real values

@@ -17,9 +17,9 @@ import sys
 
 def do_error():
     try:
-        raise ValueError('core')
+        raise ValueError("core")
     except ValueError as e:
-        raise ValueError('outer') from e
+        raise ValueError("outer") from e
 
 
 sys.tracebacklimit = 0

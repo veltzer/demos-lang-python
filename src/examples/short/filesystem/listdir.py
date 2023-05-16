@@ -11,7 +11,7 @@ import os
 import sys
 
 if len(sys.argv) < 2:
-    raise ValueError('please pass folder')
+    raise ValueError("please pass folder")
 folder = sys.argv[1]
 
 for file in os.listdir(folder):

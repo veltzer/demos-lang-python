@@ -3,11 +3,11 @@ get_movie.py
 
 Convert this script to imdbpy https://imdbpy.github.io/downloads/
 
-Usage: get_movie 'movieID'
+Usage: get_movie "movieID"
 
-Show some info about the movie with the given movieID (e.g. '0133093'
-for 'The Matrix', using 'http' or 'mobile').
-Notice that movieID, using 'sql', are not the same IDs used on the web.
+Show some info about the movie with the given movieID (e.g. "0133093"
+for "The Matrix", using "http" or "mobile").
+Notice that movieID, using "sql", are not the same IDs used on the web.
 
 NOTES:
 - this script is python2 on purpose because the imdb module is currently only available for python2 in ubuntu.
@@ -35,43 +35,46 @@ except imdb.IMDbError as e:
     print(f"Probably youre not connected to Internet. Complete error report: {e}")
     sys.exit(3)
 
-print(movie.summary().encode(out_encoding, 'replace'))
+print(movie.summary().encode(out_encoding, "replace"))
 print(movie.summary())
 
 for k, v in movie.items():
     print(f"=============== {k} ===============")
     print(v)
 
-print(f"==== [{movie['title']}] movieID: [{movieID}] ====")
+title = movie["title"]
+print(f"==== [{title}] movieID: [{movieID}] ====")
 imdbURL = i.get_imdbURL(movie)
 if imdbURL:
     print(f"IMDb URL: [{imdbURL}]")
-genres = movie.get('genres')
+genres = movie.get("genres")
 if genres:
-    print(f"Genres: {' '.join(genres)}")
-cast = movie.get('cast')
+    print(f"Genres: {genres}")
+cast = movie.get("cast")
 if cast:
-    print('Cast: ')
+    print("Cast: ")
     cast = cast[:5]
-    for name in cast:
-        print(f"{name['name']} ({name.currentRole})")
-rating = movie.get('rating')
+    for person in cast:
+        name = person["name"]
+        print(f"{name} ({name.currentRole})")
+rating = movie.get("rating")
 if rating:
     print(f"Rating: {rating}")
-i.update(movie, info=['trivia'])
-trivia = movie.get('trivia')
+i.update(movie, info=["trivia"])
+trivia = movie.get("trivia")
 if trivia:
     rand_trivia = trivia[random.randrange(len(trivia))]
     print(f"Random trivia: {rand_trivia}")
 
-info_runtime = movie.get('runtime')
+info_runtime = movie.get("runtime")
 print(f"Runtime is: {info_runtime}")
 
-info_directors = movie.get('director')
+info_directors = movie.get("director")
 print(info_directors)
 for n, d in enumerate(info_directors):
     print(dir(d))
     for k, v in d.items():
         print(k, v)
     print(d.personID)
-    print(f"{n}, {d['name']}")
+    name = d["name"]
+    print(f"{n}, {name}")

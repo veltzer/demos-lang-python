@@ -12,7 +12,7 @@ import gi
 
 from gi.repository import Gtk
 
-gi.require_version('Gtk', '3.0')
+gi.require_version("Gtk", "3.0")
 
 
 class EntryMultiCompletion(Gtk.Entry):
@@ -24,7 +24,7 @@ class EntryMultiCompletion(Gtk.Entry):
         self.completion.set_match_func(self.match_func, None)
         # handle the match-selected signal, raised when a completion
         # is selected from the popup
-        self.completion.connect('match-selected', self.on_completion_match)
+        self.completion.connect("match-selected", self.on_completion_match)
         self.set_completion(self.completion)
 
     def match_func(self, _completion, key_string, iterator, _data):
@@ -33,7 +33,7 @@ class EntryMultiCompletion(Gtk.Entry):
         model_str = model[iterator][0]
         # check if the user has typed in a space char,
         # get the last word and check if it matches something
-        if ' ' in key_string:
+        if " " in key_string:
             last_word = key_string.split()[-1]
             return model_str.startswith(last_word)
         # we have only one word typed
@@ -45,13 +45,13 @@ class EntryMultiCompletion(Gtk.Entry):
         # last one because we want to replace it with the matching word
         # note: the user may have typed only a part of the entire word
         # and so this step is necessary
-        if ' ' in current_text:
-            current_text = ' '.join(current_text.split()[:-1])
-            # current_text='%s %s'%(current_text, model[iter][0])
+        if " " in current_text:
+            current_text = " ".join(current_text.split()[:-1])
+            # current_text="%s %s"%(current_text, model[iter][0])
         else:
             current_text = model[iterator][0]
         # add the matching word
-        # current_text='%s %s'%(current_text, model[iter][0])
+        # current_text="%s %s"%(current_text, model[iter][0])
         # set back the whole text
         self.set_text(current_text)
         # move the cursor at the end
@@ -63,12 +63,12 @@ class EntryMultiCompletion(Gtk.Entry):
 # pylint: disable=no-member
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 win = Gtk.Window()
-win.connect('delete-event', Gtk.main_quit)  # type: ignore[attr-defined]
+win.connect("delete-event", Gtk.main_quit)  # type: ignore[attr-defined]
 entry_completion = EntryMultiCompletion()
 list_store = Gtk.ListStore()
 entry_completion.completion.set_model(list_store)
 entry_completion.completion.set_text_column(0)
-for word in ['python', 'perl', 'scala', 'c++', 'ruby', 'c#', 'java', 'assembly', 'PHP']:
+for word in ["python", "perl", "scala", "c++", "ruby", "c#", "java", "assembly", "PHP"]:
     list_store.append([word])
 win.add(entry_completion)  # type: ignore[attr-defined]
 win.show_all()  # type: ignore[attr-defined]

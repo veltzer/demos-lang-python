@@ -14,9 +14,9 @@ import sys
 
 def do_error():
     try:
-        raise ValueError('core')
+        raise ValueError("core")
     except Exception as e:
-        raise ValueError('outer') from e
+        raise ValueError("outer") from e
 
 
 def excepthook(_type, value, _traceback):

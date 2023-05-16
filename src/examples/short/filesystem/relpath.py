@@ -4,4 +4,4 @@ This is an example that shows how to calculate the relative paths of one path to
 
 import os.path
 
-print(os.path.relpath('/etc/passwd', '/etc'))
+print(os.path.relpath("/etc/passwd", "/etc"))

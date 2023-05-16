@@ -52,8 +52,8 @@ def main():
     this is a file name which is a symbolic name on most linux
     systems
     """
-    # link = '/tmp/foo'
-    link = '/etc/resolv.conf'
+    # link = "/tmp/foo"
+    link = "/etc/resolv.conf"
     real_link_target = find_link_target_rec(link)
     assert os.path.exists(real_link_target) and not os.path.islink(real_link_target)
 

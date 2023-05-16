@@ -16,4 +16,4 @@ def rmtree_if_exists(folder):
         shutil.rmtree(folder)
 
 
-shutil.rmtree('/tmp/folder_to_remove')
+shutil.rmtree("/tmp/folder_to_remove")

@@ -7,4 +7,4 @@ output line by line.
 import sys
 
 for x in sys.stdin:
-    print(x, end='')
+    print(x, end="")

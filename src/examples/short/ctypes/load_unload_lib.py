@@ -13,8 +13,8 @@ http://stackoverflow.com/questions/359498/how-can-i-unload-a-dll-using-ctypes-in
 import ctypes
 import signal
 
-libacl = ctypes.cdll.LoadLibrary('libacl.so')
-libdl = ctypes.CDLL('libdl.so')
+libacl = ctypes.cdll.LoadLibrary("libacl.so")
+libdl = ctypes.CDLL("libdl.so")
 # noinspection PyProtectedMember
 # pylint: disable=protected-access
 libdl.dlclose(libacl._handle)
