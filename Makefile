@@ -96,6 +96,11 @@ check_ws:
 	$(info doing [$@])
 	$(Q)git grep -E "\s$$" -- '*.py' || exit 0
 
+.PHONY: check_quotes
+check_quotes:
+	$(info doing [$@])
+	$(Q)git grep "'" -- '*.py' || exit 0
+
 # this is a bad check because returning tuples in python is perfectly legit
 .PHONY: check_return
 check_return:

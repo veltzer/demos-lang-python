@@ -1,6 +1,6 @@
 """
-This is an example of creating your own resource to be used with the 'with'
-python syntax. This is called a 'Context Manager'.
+This is an example of creating your own resource to be used with the "with"
+python syntax. This is called a "Context Manager".
 
 You can see the basic flow of code:
 - first the constructor of your context manager is called.
