@@ -1,35 +1,35 @@
 """
 Simple implementation of a hangman game.
 
->>> h1=Hangman('banana', mistakes_allowed=2)
+>>> h1=Hangman("banana", mistakes_allowed=2)
 ??????: 2 mistakes allowed
->>> h2=Hangman('cinnamon')
+>>> h2=Hangman("cinnamon")
 ????????: 5 mistakes allowed
->>> h1.guess('a')
-Yes! 'a' appears 3 times:
+>>> h1.guess("a")
+Yes! "a" appears 3 times:
 ?a?a?a: 2 mistakes allowed
 
 Sometimes you make mistakes:
 
->>> h1.guess('h')
-Bzzz! No 'h' there.
+>>> h1.guess("h")
+Bzzz! No "h" there.
 ?a?a?a: 1 mistakes allowed
 
 Game objects are independent:
 
 >>> h2
 ????????: 5 mistakes allowed
->>> h2.guess('n')
-Yes! 'n' appears 3 times:
+>>> h2.guess("n")
+Yes! "n" appears 3 times:
 ??nn???n: 5 mistakes allowed
 >>> h1
 ?a?a?a: 1 mistakes allowed
 
->>> h1.guess('n')
-Yes! 'n' appears 2 times:
+>>> h1.guess("n")
+Yes! "n" appears 2 times:
 ?anana: 1 mistakes allowed
->>> h1.guess('b')
-Yes! 'b' appears 1 times:
+>>> h1.guess("b")
+Yes! "b" appears 1 times:
 banana: YOU WON!
 
 """
@@ -40,22 +40,22 @@ class SimpleHangman:
     Simple hangman game playable from the interpreter.
 
     No limit on the number of mistakes.
-    Doesn't detect victory either.
+    Doesn"t detect victory either.
 
     Call .guess() to play:
 
-    >>> h=SimpleHangman('secret')
+    >>> h=SimpleHangman("secret")
     ??????
-    >>> h.guess('e')
-    Yes! 'e' appears 2 times:
+    >>> h.guess("e")
+    Yes! "e" appears 2 times:
     ?e??e?
-    >>> h.guess('x')
-    Bzzz! No 'x' there.
+    >>> h.guess("x")
+    Bzzz! No "x" there.
     ?e??e?
     """
 
     def __init__(self, word):
-        # Private don't look here!
+        # Private don"t look here!
         self._word = word
         # Public
         self.open_letters = set()
@@ -68,11 +68,11 @@ class SimpleHangman:
             if current in self.open_letters:
                 res.append(current)
             else:
-                res.append('?')
-        return ''.join(res)
+                res.append("?")
+        return "".join(res)
 
     # __repr__ defines how the object is displayed.
-    # It's called by 'print' and by the interpreter.
+    # It"s called by "print" and by the interpreter.
     def __repr__(self):
         """Describe current game state."""
         return self.known_parts()
@@ -81,10 +81,10 @@ class SimpleHangman:
         """Call this to play."""
         self.open_letters.add(letter)
         if letter in self._word:
-            print(f"Yes! '{letter}' appears {self._word.count(letter)} times:")
+            print(f"Yes! [{letter}] appears {self._word.count(letter)} times:")
             print(self)
         else:
-            print(f"No '{letter}' there.")
+            print(f"No [{letter}] there.")
             print(self)
 
 
@@ -96,19 +96,19 @@ class Hangman(SimpleHangman):
 
     Call .guess() to play:
 
-    >>> h=Hangman('secret', 1)
+    >>> h=Hangman("secret", 1)
     ??????: 1 mistakes allowed
-    >>> h.guess('e')
-    Yes! 'e' appears 2 times:
+    >>> h.guess("e")
+    Yes! "e" appears 2 times:
     ?e??e?: 1 mistakes allowed
-    >>> h.guess('x')
-    Bzzz! No 'x' there.
+    >>> h.guess("x")
+    Bzzz! No "x" there.
     ?e??e?: 0 mistakes allowed
-    >>> h.guess('x')
-    You already tried 'x'.
+    >>> h.guess("x")
+    You already tried "x".
     ?e??e?: 0 mistakes allowed
-    >>> h.guess('z')
-    Bzzz! No 'z' there.
+    >>> h.guess("z")
+    Bzzz! No "z" there.
     ?e??e?: GAME OVER
     """
 
@@ -146,7 +146,7 @@ class Hangman(SimpleHangman):
 
 
 # test if run directly, do nothing if imported
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
 
     doctest.testmod()

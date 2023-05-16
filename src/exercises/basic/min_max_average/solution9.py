@@ -2,7 +2,7 @@
 this solution is without the varargs type.
 notice that this does prevent us from calling it with the range
 generator...
-also notice the 'import division' to make sure that the division to
+also notice the "import division" to make sure that the division to
 calculate the average is done in float.
 """
 

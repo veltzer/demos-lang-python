@@ -22,10 +22,10 @@ def reverse_hash(my_dict):
 def main():
     """ the main function """
     orig = {
-        'Israel': 'Jerusalem',
-        'France': 'Paris',
-        'Italy': 'Rome',
-        'Egypt': 'Cairo',
+        "Israel": "Jerusalem",
+        "France": "Paris",
+        "Italy": "Rome",
+        "Egypt": "Cairo",
     }
     print(reverse_hash(orig))
 

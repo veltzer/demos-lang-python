@@ -4,8 +4,8 @@ import xml.dom.minidom
 dom = xml.dom.minidom.parse("data/xml/numbers.xml")
 
 salary_sum = 0
-for employee in dom.getElementsByTagName('employee'):
-    salary_str = employee.getAttribute('salary')
+for employee in dom.getElementsByTagName("employee"):
+    salary_str = employee.getAttribute("salary")
     salary = int(salary_str)
     salary_sum += salary
 

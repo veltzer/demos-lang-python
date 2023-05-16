@@ -2,10 +2,10 @@
 solution
 """
 
-size = int(input('please enter a list size: '))
+size = int(input("please enter a list size: "))
 number_list = []
 for number in range(0, size):
-    num = int(input('please enter a number ' + str(number) + ': '))
+    num = int(input("please enter a number " + str(number) + ": "))
     number_list.append(num)
 for number in range(0, size):
     if number / 2 == 0:

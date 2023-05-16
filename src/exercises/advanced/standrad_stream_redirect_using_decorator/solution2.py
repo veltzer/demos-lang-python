@@ -15,7 +15,7 @@ def with_output_to(fname):
         def decorated_f(*args, **kw):
             old_stdout = sys.stdout
             # pylint: disable=consider-using-with
-            new_stdout = sys.stdout = open(fname, 'a')
+            new_stdout = sys.stdout = open(fname, "a")
             try:
                 return f(*args, **kw)
             finally:
@@ -27,25 +27,25 @@ def with_output_to(fname):
     return decorator
 
 
-@with_output_to('/tmp/out2.txt')
+@with_output_to("/tmp/out2.txt")
 def hello(name):
     print(f"Hello, {name}!")
 
 
 def main():
-    # Running this will destroy '/tmp/out2.txt'!
+    # Running this will destroy "/tmp/out2.txt"!
     # make sure file is empty
-    with open('/tmp/out2.txt', 'w'):
+    with open("/tmp/out2.txt", "w"):
         pass
     # test
-    print('This should output nothing:')
-    hello('Fred')
-    hello('Barney')
-    print('The file now contains this:')
-    with open('/tmp/out2.txt') as f:
+    print("This should output nothing:")
+    hello("Fred")
+    hello("Barney")
+    print("The file now contains this:")
+    with open("/tmp/out2.txt") as f:
         print(f.read())
     # clean up
-    os.remove('/tmp/out2.txt')
+    os.remove("/tmp/out2.txt")
 
 
 main()

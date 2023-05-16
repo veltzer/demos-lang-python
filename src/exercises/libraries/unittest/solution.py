@@ -6,13 +6,13 @@ import unittest
 
 
 class TestGlob(unittest.TestCase):
-    fnames = ['foo.txt', 'bar.txt', 'baz.py']
+    fnames = ["foo.txt", "bar.txt", "baz.py"]
 
     def setUp(self):
         """Create some files in a temp dir."""
         self.dir = tempfile.mkdtemp()
         for fname in self.fnames:
-            with open(self.absolute(fname), 'w'):
+            with open(self.absolute(fname), "w"):
                 pass
 
     def absolute(self, fname):
@@ -28,12 +28,12 @@ class TestGlob(unittest.TestCase):
     def testCurrentDirGlob(self):
         """Test globbing in current dir."""
         os.chdir(self.dir)
-        self.assertGlob('ba?.*', ['bar.txt', 'baz.py'])
+        self.assertGlob("ba?.*", ["bar.txt", "baz.py"])
 
     def testAbsoluteGlob(self):
         """Test globbing with full path."""
-        self.assertGlob(self.absolute('*xt'), map(
-            self.absolute, ['foo.txt', 'bar.txt']))
+        self.assertGlob(self.absolute("*xt"), map(
+            self.absolute, ["foo.txt", "bar.txt"]))
 
 
 unittest.main()

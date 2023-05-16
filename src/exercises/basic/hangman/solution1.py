@@ -1,16 +1,16 @@
 """
 Simple implementation of a hangman game.
 
->>> guess('e')
-Yes! 'e' appears 2 times:
+>>> guess("e")
+Yes! "e" appears 2 times:
 ?e??e?
->>> guess('x')
-Bzzz! No 'x' there.
+>>> guess("x")
+Bzzz! No "x" there.
 ?e??e?
 """
 
 # Initialization
-WORD = 'secret'
+WORD = "secret"
 open_letters = set()
 
 
@@ -21,22 +21,22 @@ def print_known_parts():
         if current in open_letters:
             res.append(current)
         else:
-            res.append('?')
-    print(''.join(res))
+            res.append("?")
+    print("".join(res))
 
 
 def guess(letter):
     """Call this to play."""
     open_letters.add(letter)
     if letter in WORD:
-        print(f"Yes! '{letter}' appears {WORD.count(letter)} times:")
+        print(f"Yes! [{letter}] appears {WORD.count(letter)} times:")
     else:
-        print(f"Bzzz! No '{letter}' there.")
+        print(f"Bzzz! No [{letter}] there.")
     print_known_parts()
 
 
 # test if run directly, print if imported
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
 
     doctest.testmod()

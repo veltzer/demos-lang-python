@@ -12,10 +12,10 @@ def my_apply(function, seq):
 
 
 orig = {
-    'Israel': 'Jerusalem',
-    'France': 'Paris',
-    'Italy': 'Rome',
-    'Egypt': 'Cairo',
+    "Israel": "Jerusalem",
+    "France": "Paris",
+    "Italy": "Rome",
+    "Egypt": "Cairo",
 }
 target: Dict[str, str] = {}
 # pylint: disable=unnecessary-dunder-call

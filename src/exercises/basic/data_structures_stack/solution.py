@@ -1,4 +1,4 @@
-# A function for each operation. You'll see below why I do this.
+# A function for each operation. You"ll see below why I do this.
 
 
 def add(a, b):
@@ -20,7 +20,7 @@ def div(a, b):
 # (BTW, the `operator` module is packed with function like these.)
 
 # Functions are objects like anything else, we can stick them in a dict!
-operators = {'+': add, '-': sub, '*': mul, '/': div}
+operators = {"+": add, "-": sub, "*": mul, "/": div}
 
 
 def rpn_calc(expression):
@@ -39,4 +39,4 @@ def rpn_calc(expression):
         print(stack)
 
 
-rpn_calc(' '.join(['2', '2', '+', '5', '*']))
+rpn_calc(" ".join(["2", "2", "+", "5", "*"]))

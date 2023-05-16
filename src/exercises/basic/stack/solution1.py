@@ -4,7 +4,7 @@ from time import thread_time
 
 class Stack1:
     """
-    First implementation. Naive using the built in python 'list' data structure which offers
+    First implementation. Naive using the built in python "list" data structure which offers
     everything out of the box
     """
 

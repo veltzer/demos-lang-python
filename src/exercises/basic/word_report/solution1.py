@@ -6,7 +6,7 @@ this is a solution to the word report exercies
 report = {}
 
 # lets read all the lines in our own exercise...
-# NOTE: the 'for' scope will close the file automagically...
+# NOTE: the "for" scope will close the file automagically...
 with open("word_report_1.py") as f:
     for line in f:
         for word in line.split():
@@ -16,21 +16,21 @@ with open("word_report_1.py") as f:
             report[word] += 1
 # NOTE: the with statement takes care of closing the file for us...
 # this is an unsorted report
-with open('/tmp/report.txt','w') as f:
+with open("/tmp/report.txt","w") as f:
     for word, count in report.items():
         f.write(f"word {word} appeared {count} times\n")
 
 # the cheapest way to printout the report...
-with open('/tmp/report.txt','w') as f:
+with open("/tmp/report.txt","w") as f:
     f.write(str(report))
 
 # this is a nice sorted report...
-with open('/tmp/report.txt','w') as f:
+with open("/tmp/report.txt","w") as f:
     for word,count in report.items():
         f.write(f"word {word} appeared {count} times\n")
         f.write(str(report))
 
-with open('/tmp/report.txt', 'w') as f:
+with open("/tmp/report.txt", "w") as f:
     for word in sorted(report.keys()):
         count = report[word]
         f.write(f"word {word} appeared {count} times\n")

@@ -9,7 +9,7 @@ def sum_digits(n):
     n = str(n)
     my_sum = 0
     for c in n:
-        my_sum += ord(c) - ord('0')
+        my_sum += ord(c) - ord("0")
     return my_sum
 
 

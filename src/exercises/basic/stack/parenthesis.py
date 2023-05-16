@@ -20,19 +20,19 @@ class Stack:
 
 
 def is_open(c):
-    return c in ['(', '[', '{']
+    return c in ["(", "[", "{"]
 
 
 def is_close(c):
-    return c in [')', ']', '}']
+    return c in [")", "]", "}"]
 
 
 def check_match(open_braces, close_braces, pos):
-    if open_braces == '(' and close_braces == ')':
+    if open_braces == "(" and close_braces == ")":
         return
-    if open_braces == '[' and close_braces == ']':
+    if open_braces == "[" and close_braces == "]":
         return
-    if open_braces == '{' and close_braces == '}':
+    if open_braces == "{" and close_braces == "}":
         return
     raise ValueError(f"problem with parenthesis at pos {pos}")
 

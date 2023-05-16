@@ -38,7 +38,7 @@ def apply_funcs3(funcs, x):
 
     Return a list of the results.
 
-    This is using the builtin 'map' function.
+    This is using the builtin "map" function.
 
     >>> apply_funcs3([lambda x:x**2, lambda x:x+1], 3)
     [9, 4]

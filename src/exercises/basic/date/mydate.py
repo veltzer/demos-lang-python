@@ -4,12 +4,12 @@ Module to handle dates
 
 days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 days_in_months_leap_year = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-months_name = ['January', 'February', 'March', 'April', 'May', 'June',
-               'July', 'August', 'September', 'October', 'November', 'December']
+months_name = ["January", "February", "March", "April", "May", "June",
+               "July", "August", "September", "October", "November", "December"]
 name_to_days_num = {}
 for i in range(12):
     name_to_days_num[months_name[i]] = days_in_months[i]
-    # print('setting ',months_name[i],'to',days_in_months[i])
+    # print("setting ",months_name[i],"to",days_in_months[i])
 
 
 def get_num_of_days_in_month(month_name):

@@ -6,13 +6,13 @@ def lines2paragraphs(lines):
     paragraph = []
     for line in lines:
         line = line.strip()
-        if line == '':
+        if line == "":
             yield paragraph
             paragraph = []
         else:
             paragraph.append(line)
     # The last paragraph remains
-    # (if the input didn't end with an empty line)
+    # (if the input didn"t end with an empty line)
     if len(paragraph) > 0:
         yield paragraph
 
@@ -24,9 +24,9 @@ def reformat(lines, chars):
     Paragraph in input and output are separated by empty lines.
     """
     for para in lines:
-        for line in textwrap.wrap(' '.join(para), chars):
+        for line in textwrap.wrap(" ".join(para), chars):
             yield line
-        yield ''
+        yield ""
 
 
 with open("/usr/share/doc/python/copyright") as f:

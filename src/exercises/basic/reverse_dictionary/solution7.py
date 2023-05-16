@@ -3,10 +3,10 @@ solution
 """
 
 d1 = {
-    'Israel': 'Jerusalem',
-    'France': 'Paris',
-    'Italy': 'Rome',
-    'Egypt': 'Cairo',
+    "Israel": "Jerusalem",
+    "France": "Paris",
+    "Italy": "Rome",
+    "Egypt": "Cairo",
 }
 d2 = {}
 # pylint: disable=consider-using-dict-items,consider-iterating-dictionary

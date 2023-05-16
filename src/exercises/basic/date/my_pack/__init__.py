@@ -1,3 +1,3 @@
-print('This is initializing code for my_pack...')
+print("This is initializing code for my_pack...")
 
-author = 'Linus Torvalds'
+author = "Linus Torvalds"

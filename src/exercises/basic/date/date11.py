@@ -1,6 +1,6 @@
 days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-months_names = ['January', 'February', 'March', 'April', 'May', 'June',
-                'July', 'August', 'September', 'October', 'November', 'December']
+months_names = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"]
 name_to_days_num = {
     months_names[i]: days_in_months[i] for i in range(12)
 }
@@ -11,7 +11,7 @@ def get_num_of_days_in_month(month_name):
     return the number of days in this month"""
     if month_name in name_to_days_num:
         return name_to_days_num[months_names]
-    raise DateException(month_name + ' is not a valid month')
+    raise DateException(month_name + " is not a valid month")
 
 
 def get_following_month(month_name):
@@ -20,7 +20,7 @@ def get_following_month(month_name):
     if month_name in name_to_days_num:
         i = months_names.index(month_name)
         return months_names[(i + 1) % 12]
-    raise DateException(month_name + ' is not a valid month')
+    raise DateException(month_name + " is not a valid month")
 
 
 def is_leap_year(year):
@@ -63,9 +63,9 @@ class Calendar:
 class Date:
     def __init__(self, day, month, year):
         if not isinstance(day, int) or not isinstance(month, int) or not isinstance(year, int):
-            raise DateException('Date must be initialized with numbers')
+            raise DateException("Date must be initialized with numbers")
         if month < 1 or month > 12:
-            raise DateException('Month must be between 1 and 12')
+            raise DateException("Month must be between 1 and 12")
         if is_leap_year(year) and (month == 2):
             if day < 0 or day > 29:
                 raise DateException(f"Day must be between 1 and {days_in_months[month - 1]}")
@@ -109,7 +109,7 @@ class Date:
         return self > other or self == other
 
     def __str__(self):
-        return str(self.day) + '.' + str(self.month) + '.' + str(self.year)
+        return str(self.day) + "." + str(self.month) + "." + str(self.year)
 
 
 class DateException(Exception):

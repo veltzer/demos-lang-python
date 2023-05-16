@@ -5,7 +5,7 @@ with open("tmp.txt") as f:
     lines = f.readlines()
     for line in lines:
         for c in line:
-            if not (c in [' ', '\n', '\r', '\t']):
+            if not (c in [" ", "\n", "\r", "\t"]):
                 if c in report:
                     report[c] += 1
                 else:

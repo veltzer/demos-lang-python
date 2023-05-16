@@ -13,7 +13,7 @@ def right_align_to(lines, width):
 
 def main():
     """ main function """
-    for line in right_align_to(['foo', 'x', '12345678'], 8):
+    for line in right_align_to(["foo", "x", "12345678"], 8):
         print(line)
 
 

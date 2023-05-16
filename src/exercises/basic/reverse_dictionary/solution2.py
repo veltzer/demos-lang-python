@@ -5,10 +5,10 @@ a second lookup...
 """
 
 orig = {
-    'Israel': 'Jerusalem',
-    'France': 'Paris',
-    'Italy': 'Rome',
-    'Egypt': 'Cairo',
+    "Israel": "Jerusalem",
+    "France": "Paris",
+    "Italy": "Rome",
+    "Egypt": "Cairo",
 }
 
 rev = {}

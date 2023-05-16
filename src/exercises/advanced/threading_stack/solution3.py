@@ -16,22 +16,22 @@ class Stack:
         self.cv.acquire()
         self.data.append(number)
         self.cv.notify_all()
-        # print('size of stack is ', len(self.data))
+        # print("size of stack is ", len(self.data))
         self.cv.release()
 
     def pop(self):
         self.cv.acquire()
         count = 0
         while len(self.data) == 0:
-            # print('going to deep sleep...', iter,
+            # print("going to deep sleep...", iter,
             # threading.currentThread().number)
             count += 1
             if count > 1:
-                print('Bonanza!')
+                print("Bonanza!")
             self.cv.wait()
-        # print('i'm waking up...')
+        # print("i"m waking up...")
         number = self.data.pop(len(self.data) - 1)
-        # print('size of stack is ', len(self.data))
+        # print("size of stack is ", len(self.data))
         self.cv.release()
         return number
 

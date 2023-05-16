@@ -3,10 +3,10 @@ solution
 """
 
 my_hash = {
-    'Israel': 'Jerusalem',
-    'France': 'Paris',
-    'Italy': 'Rome',
-    'Egypt': 'Cairo',
+    "Israel": "Jerusalem",
+    "France": "Paris",
+    "Italy": "Rome",
+    "Egypt": "Cairo",
 }
 
 # recall that zip(my_hash.keys(), my_hash.values())==my_hash.items()

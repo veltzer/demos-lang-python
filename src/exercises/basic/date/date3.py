@@ -35,17 +35,17 @@ class Calendar:
 class Date:
     def __init__(self, day, month, year):
         if not isinstance(day, int) or not isinstance(month, int) or not isinstance(year, int):
-            print('Date must be initialized with numbers')
+            print("Date must be initialized with numbers")
             return
         if month < 1 or month > 12:
-            print('Month must be between 1 and 12')
+            print("Month must be between 1 and 12")
             return
         if mydate.is_leap_year(year):
             days = mydate.days_in_months_leap_year[month - 1]
         else:
             days = mydate.days_in_months[month - 1]
         if day < 1 or day > days:
-            print('Day must be between 1 and ', days)
+            print("Day must be between 1 and ", days)
             return
         self.day = day
         self.month = month
@@ -84,4 +84,4 @@ class Date:
         return self > other or self == other
 
     def __str__(self):
-        return str(self.day) + '.' + str(self.month) + '.' + str(self.year)
+        return str(self.day) + "." + str(self.month) + "." + str(self.year)
