@@ -34,12 +34,12 @@ def fermat(n):
 
 def main():
     # noinspection PyTypeChecker
-    print('SF', simple_func(10))
+    print("SF", simple_func(10))
 
     for i in fermat(2):
         print(i)
 
-    print('FINISHED')
+    print("FINISHED")
 
 
 if __name__ == "__main__":

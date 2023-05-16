@@ -30,12 +30,12 @@ print("after hacking")
 
 
 def hacked2():
-    print('hacked2')
+    print("hacked2")
 
 
 mod_a_2.func_a_2 = hacked2
 mod_b_2.func_b_2()
 
-print('mmm, didnt work. Trying to patch modb directly')
+print("mmm, didnt work. Trying to patch modb directly")
 mod_b_2.func_a_2 = hacked2
 mod_b_2.func_b_2()

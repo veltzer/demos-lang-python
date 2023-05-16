@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-This script does not use 'sudo' so you need to run it as sudo yourself with:
+This script does not use "sudo" so you need to run it as sudo yourself with:
     $ sudo python -m scripts.install
 """
 
@@ -12,7 +12,7 @@ import config.deps
 
 do_sudo = len(sys.argv) > 1
 # make apt noninteractive
-os.environ['DEBIAN_FRONTEND']='noninteractive'
+os.environ["DEBIAN_FRONTEND"]="noninteractive"
 args=[]
 if do_sudo:
     args.append("sudo")

@@ -18,7 +18,7 @@ if len(sys.argv) < 2:
 (pid, fd) = pty.fork()
 if pid == 0:
     os.execv(sys.argv[1], sys.argv[1:])
-    print('execv didnt work', file=sys.stderr)
+    print("execv didnt work", file=sys.stderr)
 else:
     # At the end of the loop we get an exception when the connection with the other side terminates.
     # This is kinda ugly since strictly speaking this is not an error, but oh well.
@@ -26,12 +26,12 @@ else:
     buf = os.read(fd, buffer_size).decode()
     over = False
     while len(buf) > 0 and not over:
-        # print('got buf [{0}]'.format(buf))
-        lines = buf.split('\n')
+        # print("got buf [{0}]".format(buf))
+        lines = buf.split("\n")
         buf = lines[-1]
         del lines[-1]
         for line in lines:
-            line += '\n'
+            line += "\n"
             print(f"got line [{line}]")
         try:
             buf += os.read(fd, buffer_size).decode()

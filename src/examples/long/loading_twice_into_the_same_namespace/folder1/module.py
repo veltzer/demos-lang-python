@@ -1,2 +1,2 @@
 name = __name__
-in_both = 'value in folder1/module.py'
+in_both = "value in folder1/module.py"

@@ -1,12 +1,12 @@
 """
-This is an example of how to use luigi to get 'make' like functionality regarding dependencies.
+This is an example of how to use luigi to get "make" like functionality regarding dependencies.
 
 Lets explain:
 by default luigi only updates targets which *DO NOT EXIST*, with no relation to time stamps.
 That means that if the output file of a task exists, it will not be recreated even if the time
 stamp of the input has changed and the input is now newer than the target.
 
-This could be altered by overriding the 'complete' method of luigi.Task.
+This could be altered by overriding the "complete" method of luigi.Task.
 References:
 http://stackoverflow.com/questions/28793832/can-luigi-rerun-tasks-when-the-task-dependencies-become-out-of-date
 """
@@ -59,14 +59,14 @@ class CountLines(DepTask):
         What is the input to this task?
         This is an array because there could be many inputs to one task.
         """
-        return [FileExists(filename='input.txt')]
+        return [FileExists(filename="input.txt")]
 
     def output(self):
         """
         Where will this Task produce output?
         This is just a single output.
         """
-        return luigi.LocalTarget('output.txt')
+        return luigi.LocalTarget("output.txt")
 
     def run(self):
         """
@@ -77,10 +77,10 @@ class CountLines(DepTask):
             with i.open() as f_in:
                 while f_in.readline():
                     count += 1
-        with self.output().open('w') as f_out:
+        with self.output().open("w") as f_out:
             f_out.write(str(count))
 
 
 # luigi.run()
 luigi.run(main_task_cls=CountLines, local_scheduler=True)
-# luigi.run(['--local-scheduler','CountLines'])
+# luigi.run(["--local-scheduler","CountLines"])

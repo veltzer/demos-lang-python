@@ -10,7 +10,7 @@ import subprocess
 import sys
 
 if len(sys.argv) < 2:
-    print('must supply process to run and arguments for it', file=sys.stderr)
+    print("must supply process to run and arguments for it", file=sys.stderr)
     sys.exit(1)
 
 with subprocess.Popen(

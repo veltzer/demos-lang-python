@@ -34,9 +34,9 @@ def fermat(n):
 
 
 # noinspection PyTypeChecker
-print('SF', simple_func(10))
+print("SF", simple_func(10))
 
 for j in fermat(2):
     print(j)
 
-print('FINISHED')
+print("FINISHED")
