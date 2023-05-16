@@ -1,5 +1,5 @@
 """
-This example demonstrates the use of the 'unittest' module.
+This example demonstrates the use of the "unittest" module.
 """
 
 import unittest

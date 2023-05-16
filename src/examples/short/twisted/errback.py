@@ -20,7 +20,7 @@ def my_callback(response):
 
 
 def my_errback(error):
-    print('in error', error)
+    print("in error", error)
     # pylint: disable=no-member
     reactor.stop()
 
@@ -29,8 +29,8 @@ def main():
     agent = Agent(reactor)
 
     deferred = agent.request(
-        uri='http://localhost',
-        method='GET',
+        uri="http://localhost",
+        method="GET",
     )
     deferred.addCallback(my_callback)
     deferred.addErrback(my_errback)
@@ -38,5 +38,5 @@ def main():
     reactor.run()  # type: ignore
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

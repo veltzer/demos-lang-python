@@ -49,7 +49,7 @@ class Consumer(threading.Thread):
 def main():
     stack = Stack()
     threads = []
-    print('starting')
+    print("starting")
     for _ in range(3):
         threads.append(Producer(stack))
         threads.append(Consumer(stack))
@@ -57,7 +57,7 @@ def main():
         thread.start()
     for thread in threads:
         thread.join()
-    print('ending')
+    print("ending")
 
 
 main()

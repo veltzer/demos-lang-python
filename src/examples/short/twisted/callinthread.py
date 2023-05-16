@@ -1,5 +1,5 @@
 """
-An example demonstrating twisted's 'callInThread' function.
+An example demonstrating twisted"s "callInThread" function.
 """
 
 import time
@@ -8,9 +8,9 @@ from twisted.internet import reactor
 
 
 def aSillyBlockingMethod(t, stop):
-    print('starting...')
+    print("starting...")
     time.sleep(t)
-    print(t, 'seconds have passed')
+    print(t, "seconds have passed")
     # this will not work as we are running in a separate thread...
     # if stop:
     #    reactor.stop()
@@ -25,8 +25,8 @@ def aSillyBlockingMethod(t, stop):
 reactor.callInThread(aSillyBlockingMethod, 10, True)  # type: ignore
 # pylint: disable=no-member
 reactor.callInThread(aSillyBlockingMethod, 5, False)  # type: ignore
-print('before suggestThreadPoolSize')
+print("before suggestThreadPoolSize")
 reactor.suggestThreadPoolSize(2)  # type: ignore
 time.sleep(10)
-print('finished sleeping...')
+print("finished sleeping...")
 reactor.run()  # type: ignore

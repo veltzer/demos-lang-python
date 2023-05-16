@@ -21,7 +21,7 @@ d = dbm.gnu.open(filename)
 print("one in db", "one" in d)
 print("two in db", "two" in d)
 
-# lets query a key which isn"t there
+# lets query a key which isnt there
 try:
     print(d["one"])
 except KeyError:

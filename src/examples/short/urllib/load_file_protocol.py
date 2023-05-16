@@ -1,5 +1,5 @@
 """
-An example of using 'urllib' for loading files with the "file:" protocol.
+An example of using "urllib" for loading files with the "file:" protocol.
 
 References:
 - ???

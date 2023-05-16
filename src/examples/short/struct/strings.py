@@ -1,5 +1,5 @@
 """
-This example encodes a string using the 'struct' module.
+This example encodes a string using the "struct" module.
 
 References:
 - https://docs.python.org/3/library/struct.html

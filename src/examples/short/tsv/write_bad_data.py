@@ -1,6 +1,6 @@
 """
 This example shows that you can write bad data into TSV files
-using the 'tsv' module
+using the "tsv" module
 """
 
 import tsv

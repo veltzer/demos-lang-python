@@ -1,7 +1,7 @@
 """
 Parse a simple Makefile (without commands) and output a build plan.
-Doen't support comments, variables, patterns or anything complex...
-Doesn't check file system, all targets are always built.
+Doen"t support comments, variables, patterns or anything complex...
+Doesn"t check file system, all targets are always built.
 """
 
 
@@ -13,12 +13,12 @@ def parse_makefile(filename):
 
             target: dependency1 dependency2...
 
-    Returns a dict {'target': ['dependency1', ...], ...}
+    Returns a dict {"target": ["dependency1", ...], ...}
     """
     rules = {}
     with open(filename) as f:
         for line in f:
-            target, rest = line.split(':')
+            target, rest = line.split(":")
             target = target.strip()
             rules[target] = rest.split()
     return rules
@@ -27,8 +27,8 @@ def parse_makefile(filename):
 def build_plan(target, rules):
     """Compute order in which things should be built for target.
 
-    >>> build_plan('a', {'a': ['b', 'c'], 'b': ['d']})
-    ['b', 'a']
+    >>> build_plan("a", {"a": ["b", "c"], "b": ["d"]})
+    ["b", "a"]
     """
     if target not in rules:
         # Nothing needs to be done.
@@ -49,8 +49,8 @@ def build_plan(target, rules):
 
 def main():
     doctest.testmod()
-    rules = parse_makefile('make.txt')
-    print(build_plan('all', rules))
+    rules = parse_makefile("make.txt")
+    print(build_plan("all", rules))
 
 
 main()

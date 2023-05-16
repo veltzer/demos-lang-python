@@ -18,50 +18,50 @@ function_names = {}
 
 
 def terminal_size1():
-    h, w, _hp, _wp = struct.unpack('HHHH', fcntl.ioctl(0, termios.TIOCGWINSZ, struct.pack('HHHH', 0, 0, 0, 0)), )
+    h, w, _hp, _wp = struct.unpack("HHHH", fcntl.ioctl(0, termios.TIOCGWINSZ, struct.pack("HHHH", 0, 0, 0, 0)), )
     return w, h
 
 
-function_names[terminal_size1] = 'ioctl'
+function_names[terminal_size1] = "ioctl"
 
 
 def terminal_size2():
-    ret = os.popen('stty size').read().split()
+    ret = os.popen("stty size").read().split()
     return int(ret[1]), int(ret[0])
 
 
-function_names[terminal_size2] = 'stty'
+function_names[terminal_size2] = "stty"
 
 
 def terminal_size3():
-    x = int(os.popen('tput cols').read())
-    y = int(os.popen('tput lines').read())
+    x = int(os.popen("tput cols").read())
+    y = int(os.popen("tput lines").read())
     return x, y
 
 
-function_names[terminal_size3] = 'tput'
+function_names[terminal_size3] = "tput"
 
 
 def terminal_size4():
     d = {}
-    for tc_entry in os.environ['TERMCAP'].split(':'):
-        if tc_entry.find('#') != -1:
-            key, val = tc_entry.split('#')
+    for tc_entry in os.environ["TERMCAP"].split(":"):
+        if tc_entry.find("#") != -1:
+            key, val = tc_entry.split("#")
             d[key] = val
-    return int(d['co']), int(d['li'])
+    return int(d["co"]), int(d["li"])
 
 
-function_names[terminal_size4] = 'TERMCAP'
+function_names[terminal_size4] = "TERMCAP"
 
 
 def terminal_size5():
     """ this function does not work since LINES and COLUMNS are not exported"""
-    x = int(os.environ['LINES'])
-    y = int(os.environ['COLUMNS'])
+    x = int(os.environ["LINES"])
+    y = int(os.environ["COLUMNS"])
     return x, y
 
 
-function_names[terminal_size5] = 'environment'
+function_names[terminal_size5] = "environment"
 
 print(terminal_size1())
 print(terminal_size2())

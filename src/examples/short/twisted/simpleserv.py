@@ -6,8 +6,8 @@ from twisted.internet import reactor, protocol
 
 
 class Echo(protocol.Protocol):
-    '''This is just about the simplest possible protocol
-    As soon as any data is received,write it back.'''
+    """This is just about the simplest possible protocol
+    As soon as any data is received,write it back."""
     def __init__(self):
         super().__init__(self)
 

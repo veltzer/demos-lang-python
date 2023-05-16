@@ -1,5 +1,5 @@
 """
-This is an example of how to use the 'termcolor' module.
+This is an example of how to use the "termcolor" module.
 
 References:
 - http://stackoverflow.com/questions/287871/print-in-terminal-with-colors-using-python
@@ -7,4 +7,4 @@ References:
 
 from termcolor import colored
 
-print(colored('hello', 'red'), colored('world', 'green'))
+print(colored("hello", "red"), colored("world", "green"))

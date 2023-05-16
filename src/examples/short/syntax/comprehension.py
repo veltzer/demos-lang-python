@@ -27,5 +27,5 @@ print({2, 3, 4})
 print({2: 3, 4: 5})
 print({x: x ** 2 for x in range(10)})
 
-d = {'one': 'one_value', 'two': 'two_value'}
+d = {"one": "one_value", "two": "two_value"}
 print(dict((y, x) for x, y in d.items()))

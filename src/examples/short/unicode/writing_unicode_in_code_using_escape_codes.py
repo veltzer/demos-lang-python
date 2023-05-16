@@ -1,9 +1,9 @@
 """
-This example shows how to use the 'u' prefix to strings and the \\u escape in strings to create
+This example shows how to use the "u" prefix to strings and the \\u escape in strings to create
 multi lingual strings. All in all its better not to do all of this and keep multi lingual strings
 out of the code and put it in some external source (database,config file,...).
 
-In python2 you would have to put a 'u' prefix but in python3 this is no longer needed since all
+In python2 you would have to put a "u" prefix but in python3 this is no longer needed since all
 strings are unicode by default.
 """
 

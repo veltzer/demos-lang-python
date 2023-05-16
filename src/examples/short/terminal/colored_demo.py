@@ -8,5 +8,5 @@ References:
 import colored
 
 
-print(colored.stylize('hello', colored.fg('red')), colored.stylize('world', colored.fg('green')))
-print(colored.stylize("warning", colored.fg('red') + colored.attr('bold')))
+print(colored.stylize("hello", colored.fg("red")), colored.stylize("world", colored.fg("green")))
+print(colored.stylize("warning", colored.fg("red") + colored.attr("bold")))

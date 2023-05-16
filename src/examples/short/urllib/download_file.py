@@ -1,5 +1,5 @@
 """
-This is a simple example of how to download a file using the 'urllib' module.
+This is a simple example of how to download a file using the "urllib" module.
 
 
 References:

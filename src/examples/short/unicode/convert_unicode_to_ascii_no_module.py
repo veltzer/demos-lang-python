@@ -11,7 +11,7 @@ References:
 - http://stackoverflow.com/questions/196345/how-to-check-if-a-string-in-python-is-in-ascii
 """
 
-s = '\u05d4\u05d9hello'
+s = "\u05d4\u05d9hello"
 print(type(s))
 print(s)
 
@@ -23,7 +23,7 @@ r = s.encode("ascii", errors="ignore").decode()
 print(type(r))
 print(r)
 
-r = ''.join(c for c in s if ord(c) < 128)
+r = "".join(c for c in s if ord(c) < 128)
 print(type(r))
 print(r)
 

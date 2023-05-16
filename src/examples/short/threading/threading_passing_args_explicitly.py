@@ -12,6 +12,6 @@ def func(data):
     print(data)
 
 
-t = threading.Thread(target=func, args=('Hello',))
+t = threading.Thread(target=func, args=("Hello",))
 t.start()
 t.join()

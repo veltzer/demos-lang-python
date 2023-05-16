@@ -6,11 +6,11 @@ Find the return code of the process.
 import subprocess
 
 try:
-    with subprocess.Popen(['no such process', '--no-such-option']):
+    with subprocess.Popen(["no such process", "--no-such-option"]):
         pass
 except FileNotFoundError:
-    print('yes, got error for it')
-with subprocess.Popen(['sleep', '10']) as p:
-    print("in here, async, isn't it?")
+    print("yes, got error for it")
+with subprocess.Popen(["sleep", "10"]) as p:
+    print("in here, async, isnt it?")
     ret = p.wait()
     print(f"ret is {ret}")

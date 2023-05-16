@@ -5,7 +5,7 @@ This is an example of how to use the subprocess module for streaming
 import subprocess
 
 with subprocess.Popen(
-    ['ls','-l'],
+    ["ls","-l"],
     shell=False,
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE
@@ -22,12 +22,12 @@ with subprocess.Popen(
 # pylint: disable=using-constant-test
 if False:
     with subprocess.Popen(
-        ['ls','-l'],
+        ["ls","-l"],
         shell=False,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
     ) as p:
-        # this is another version but which gives you an addition last line of ''
+        # this is another version but which gives you an addition last line of ""
         while p.poll() is None:
             line = p.stdout.readline().decode().rstrip()
             print(f"line is [{line}]")

@@ -21,10 +21,10 @@ def getch():
     return ch
 
 
-print('press 6 to end')
+print("press 6 to end")
 while True:
     c = getch()
-    print(c, end='')
+    print(c, end="")
     sys.stdout.flush()
-    if c == '6':
+    if c == "6":
         break

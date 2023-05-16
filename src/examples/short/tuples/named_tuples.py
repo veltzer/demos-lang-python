@@ -7,7 +7,7 @@ References:
 
 import collections
 
-Point = collections.namedtuple('Point', ['x', 'y'])
+Point = collections.namedtuple("Point", ["x", "y"])
 print(type(Point))
 print(dir(Point))
 print(Point._fields)

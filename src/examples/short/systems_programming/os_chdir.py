@@ -8,8 +8,8 @@ import os
 
 try:
     # a wrong directory on purpose...
-    os.chdir('/no_such_folder')
+    os.chdir("/no_such_folder")
 except FileNotFoundError:
-    print('yes, got an exception for a bad directory')
-os.chdir('/tmp')
-os.system('ls')
+    print("yes, got an exception for a bad directory")
+os.chdir("/tmp")
+os.system("ls")

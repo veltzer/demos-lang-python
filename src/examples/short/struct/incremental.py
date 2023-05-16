@@ -1,6 +1,6 @@
 """
 This example shows how to do incremental packing and unpacking
-using the 'struct' module.
+using the "struct" module.
 
 Notes:
 - pack

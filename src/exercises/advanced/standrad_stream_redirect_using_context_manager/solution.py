@@ -2,7 +2,7 @@ import contextlib
 import os
 import sys
 
-outfile = '/tmp/out3.txt'
+outfile = "/tmp/out3.txt"
 
 
 @contextlib.contextmanager
@@ -12,7 +12,7 @@ def redirect_output_to(fname):
     finishes.
     """
     old_stdout = sys.stdout
-    new_stdout = sys.stdout = open(fname, 'a')
+    new_stdout = sys.stdout = open(fname, "a")
     try:
         yield
     finally:
@@ -22,14 +22,14 @@ def redirect_output_to(fname):
 
 # Running this will destroy [outfile]!
 # make sure file is empty
-with open(outfile, 'w'):
+with open(outfile, "w"):
     pass
 # test
-print('This should output nothing:')
-for name in ['Fred', 'Barney']:
+print("This should output nothing:")
+for name in ["Fred", "Barney"]:
     with redirect_output_to(outfile):
         print(f"Hello, {name}!")
-print('The file now contains this:')
+print("The file now contains this:")
 with open(outfile) as f:
     print(f.read())
 # clean up

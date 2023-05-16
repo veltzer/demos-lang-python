@@ -1,6 +1,6 @@
 """
-This is a demo of how to use the 'requests' module to download a url (possibly
-a large blob) into a temporary file which gets 'auto deleted' using the
+This is a demo of how to use the "requests" module to download a url (possibly
+a large blob) into a temporary file which gets "auto deleted" using the
 standard NamedTemporaryFile tempfile context manager.
 
 References:

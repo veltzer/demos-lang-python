@@ -23,7 +23,7 @@ def create_func(func_to_run, data):
     return wrapper
 
 
-myfunc = create_func(func, 'Hello,World')
+myfunc = create_func(func, "Hello,World")
 t = threading.Thread(target=myfunc)
 t.start()
 t.join()

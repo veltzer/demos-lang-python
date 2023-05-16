@@ -16,13 +16,13 @@ def worker(number):
 
 
 threads = []
-print('creating the threads')
+print("creating the threads")
 for i in range(10):
     threads.append(threading.Thread(target=worker, args=(i,)))
-print('launching the threads')
+print("launching the threads")
 for thread in threads:
     thread.start()
-print('joining the threads')
+print("joining the threads")
 for thread in threads:
     thread.join()
-print('done')
+print("done")

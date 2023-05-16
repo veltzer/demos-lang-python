@@ -1,5 +1,5 @@
 """
-This is an exmple of how to parse a query string using the 'urllib.parse'
+This is an exmple of how to parse a query string using the "urllib.parse"
 library in python3
 """
 

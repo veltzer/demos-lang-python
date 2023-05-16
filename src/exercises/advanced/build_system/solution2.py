@@ -1,7 +1,7 @@
 """
 Parse a simple Makefile and execute it.
-Doesn't support comments, variables, patterns or anything complex...
-Doesn't check file system. all targets are always built.
+Doesnt support comments, variables, patterns or anything complex...
+Doesnt check file system. all targets are always built.
 """
 
 import os
@@ -23,8 +23,8 @@ def parse_makefile(filename):
     (any leading whitespace means command.)
 
     Returns tuple (rules, commands) where:
-    - rules is a dict {'target': ['dependency1', ...], ...}
-    - commands is a dict {'target': ['command1', ...], ...}
+    - rules is a dict {"target": ["dependency1", ...], ...}
+    - commands is a dict {"target": ["command1", ...], ...}
     """
     rules = {}
     commands = {}
@@ -33,7 +33,7 @@ def parse_makefile(filename):
         for line in f:
             if not line[0].isspace():
                 # dep line (parse, set `target`)
-                target, rest = line.split(':')
+                target, rest = line.split(":")
                 target = target.strip()
                 rules[target] = rest.split()
                 commands[target] = []
@@ -47,7 +47,7 @@ def parse_makefile(filename):
 def build(target, rules, commands):
     """Compute order in which things should be built for target.
 
-    >>> build('a', {'a': ['b', 'c'], 'b': ['d']}, {'a': [], 'b': []})
+    >>> build("a", {"a": ["b", "c"], "b": ["d"]}, {"a": [], "b": []})
     == Building d -> b ==
     == Building b, c -> a ==
     """
@@ -66,7 +66,7 @@ def build(target, rules, commands):
 
 def build_one(target, rules, commands):
     """Execute commands for one target."""
-    source = ', '.join(rules[target])
+    source = ", ".join(rules[target])
     print(f"== Building {source} -> {target} ==")
     for command in commands[target]:
         print(command)
@@ -76,8 +76,8 @@ def build_one(target, rules, commands):
 def main():
     doctest.testmod()
 
-    rules, commands = parse_makefile('make_bonus.txt')
-    build('all', rules, commands)
+    rules, commands = parse_makefile("make_bonus.txt")
+    build("all", rules, commands)
 
 
 main()

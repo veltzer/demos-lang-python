@@ -5,7 +5,7 @@ For those of you who do not know about UNIX signals,pause allows you
 to do a busy wait without a busy wait. Pause will put your process
 to sleep until any signal arrives. Since number of signals is small
 this means that your process will be asleep most of the time. This
-pattern allow you to react to signals in your 'main' thread since
+pattern allow you to react to signals in your "main" thread since
 the signal handler can change some variable and cause your main
 thread to react,just as in this example.
 
@@ -43,18 +43,18 @@ def signal_handler(signum, frame):
     if signum == signal.SIGUSR1:
         # lets call the old signal handler
         call_old(old_sig_usr1, signum, frame)
-        debug('signal_handler: doing some work')
+        debug("signal_handler: doing some work")
     if signum == signal.SIGUSR2:
         # lets call the old signal handler
         call_old(old_sig_usr2, signum, frame)
         # lets signal the main thread to stop
-        debug('signal_handler: setting stop to True')
+        debug("signal_handler: setting stop to True")
         # pylint: disable=global-statement
         global stop
         stop = True
     if signum == signal.SIGINT:
         # here we do not call the old function
-        debug('signal_handler: dont press CTRL+C. Kill me using SIGUSR2')
+        debug("signal_handler: dont press CTRL+C. Kill me using SIGUSR2")
 
 
 def main():
