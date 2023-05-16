@@ -7,7 +7,7 @@ is used...
 import socket
 
 while True:
-    adr = ('localhost', 8080)
+    adr = ("localhost", 8080)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind(adr)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

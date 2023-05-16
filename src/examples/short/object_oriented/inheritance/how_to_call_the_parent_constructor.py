@@ -26,7 +26,7 @@ class B1(A):
 
 
 class B2(A):
-    """ If you don't need to do anything in your constructor, you get your fathers """
+    """ If you dont need to do anything in your constructor, you get your fathers """
 
 
 class B3(A):

@@ -2,12 +2,12 @@
 Example of how to create more than one constructor for a class.
 
 Notes:
-- You should not create an object of type 'A' in the 'from_q'
-method below but rather an object type of 'cls' since the method
+- You should not create an object of type "A" in the "from_q"
+method below but rather an object type of "cls" since the method
 might be called on a subclass and in that case the class created
 for the user should be the subclass and not the parent class.
-- the 'classmethod' decoration serves two purposes. One is to make
-sure that we get passed the 'cls' parameter which is very important
+- the "classmethod" decoration serves two purposes. One is to make
+sure that we get passed the "cls" parameter which is very important
 (see above). The second is to make sure that this method will be
 called on the class and not on an instance.
 """

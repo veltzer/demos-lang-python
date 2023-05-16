@@ -4,9 +4,9 @@ Trying to return weird things from the constructor
 Conclusions:
 - you can only return None or nothing (which is None)
 from a import constructor.
-- this helps you to get out early if you don't want to
+- this helps you to get out early if you dont want to
 execute the rest of the constructor code.
-- you cannot return 'self' since the __init__ method is
+- you cannot return "self" since the __init__ method is
 not really a constructor in object oriented terminology
 but rather an initializer function. The object on which
 it works is already alive and well and is already determined

@@ -23,7 +23,7 @@ class A:
         # return my_method
 
     def __setattr__(self, name, val):
-        # print("ERROR! don"t touch this...")
+        # print("ERROR! dont touch this...")
         # getattr(self,"d").__setitem__("\""+name+"\"",val)
         pass
 

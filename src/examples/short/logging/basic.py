@@ -5,7 +5,7 @@ NOTES:
 - The idea of passing __name__ to the logger
 is that you can turn logs on and off from certain modules.
 - the first time you create a logger it doesnt have any handlers
-and that"s why you don"t get any output despite the logging level
+and that"s why you dont get any output despite the logging level
 begin set correctly. if you turn off do_add_handler below you will
 see no logging at debug level.
 - to create another handler one must:

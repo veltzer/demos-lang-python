@@ -82,7 +82,7 @@ for i in range(10):
     d[i] = i
 
 # what if we store d.keys() and pass over that?
-# this does not help. when you do l=d.keys() you don"t
+# this does not help. when you do l=d.keys() you dont
 # get a copy of all the keys but rather a special object
 # which behaves likes the keys but points to the original
 # dictionary...

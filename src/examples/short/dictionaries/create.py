@@ -3,7 +3,7 @@ An example showing the different ways to create dicts
 
 Notes:
 - there are many ways to create dicts
-- most of the time you don"t need to code a loop to create your dictionary
+- most of the time you dont need to code a loop to create your dictionary
 
 TODO:
 - from help(dict) it seems that there should be a way to create a dictionary

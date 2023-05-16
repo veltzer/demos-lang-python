@@ -1,6 +1,6 @@
 """
 This is an example that shows that configparser does NOT complain about
-reading files which don"t exist.
+reading files which dont exist.
 Quite stupid.
 """
 

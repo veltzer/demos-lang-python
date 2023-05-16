@@ -4,7 +4,7 @@ Echo server program
 
 import socket
 
-HOST = '0.0.0.0'  # this means all interfaces
+HOST = "0.0.0.0"  # this means all interfaces
 PORT = 5000  # arbitrary non-privileged port (above 1024, can be listened to by non-root user)
 af = socket.AF_INET
 socket_type = socket.SOCK_STREAM

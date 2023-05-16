@@ -11,7 +11,7 @@ usually a bad idea to change that symlink since this is the
 used for a lot more in a modern distribution than just run your
 code and so the default version should be determined by the
 distribution vendor and not by you. If you want to use a different
-version of python install it (either from the vendor if it"s available
+version of python install it (either from the vendor if its available
 or from binary or source code on your own) and use your own version
 explicitly with the shbang line or environment variables,or maybe
 absolute path on the command line.

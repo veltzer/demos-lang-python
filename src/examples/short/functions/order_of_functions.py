@@ -5,7 +5,7 @@
 
     Conclusion: in Python define all of your function at the beginning
     of your module in any order you like and only then put execution
-    code. Then you don"t have to worry about order at all.
+    code. Then you dont have to worry about order at all.
 """
 
 

@@ -17,5 +17,5 @@ fluidsynth.stop_NoteContainer(NoteContainer(["C", "Eb", "G"]))
 fluidsynth.play_NoteContainer(NoteContainer(["C", "E", "G"]))
 time.sleep(1)
 fluidsynth.stop_NoteContainer(NoteContainer(["C", "E", "G"]))
-# You don"t have to call the next method
+# You dont have to call the next method
 # fluidsynth.stop_everything()

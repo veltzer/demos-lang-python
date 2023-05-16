@@ -1,9 +1,9 @@
 """
 This example shows how to get out of a constructor early.
-This is done via 'return None' or simply 'return' (which is the same).
+This is done via "return None" or simply "return" (which is the same).
 
 Notice that you cannot return anything but None. The final value
-which is returned to the caller of the constructor is 'self' and
+which is returned to the caller of the constructor is "self" and
 that is returned by python, not by your code.
 
 If you do not return None from the constructor you will get the
@@ -18,7 +18,7 @@ is a different story.
 class Book:
     # noinspection PyReturnFromInit,PyTypeChecker
     # pylint: disable=return-in-init
-    def __init__(self, price) -> 'Book':  # type: ignore
+    def __init__(self, price) -> "Book":  # type: ignore
         self.__price = price
         # return None
         # noinspection PyTypeChecker
@@ -32,7 +32,7 @@ class Book:
         return self.__price
 
     def printMe(self):
-        print('printMe: price is', self.__price)
+        print("printMe: price is", self.__price)
 
 
 try:
@@ -43,4 +43,4 @@ try:
     print(dir(b))
     b.printMe()
 except TypeError:
-    print('yes, got an exception')
+    print("yes, got an exception")

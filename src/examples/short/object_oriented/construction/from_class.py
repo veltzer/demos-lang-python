@@ -3,15 +3,15 @@ An example of constructing an object from the class when the class is a paramete
 
 Notes:
 - cls() will do everything you want (construct a new object and call the initialization
-hook '__init__'.
-- __new__ enables you to construct an object *without* calling the '__init__' initialization
+hook "__init__".
+- __new__ enables you to construct an object *without* calling the "__init__" initialization
 hook. flexible.
 """
 
 
 class A:
     def __init__(self):
-        print('in A constructor')
+        print("in A constructor")
 
 
 def make_something(cls=None):

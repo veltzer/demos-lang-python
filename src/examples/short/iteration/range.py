@@ -6,7 +6,7 @@ Notes:
 of "range" vs. "xrange". "range" built the entire list in advance
 while "xrange" only iterated the given list.
 - in python3 "xrange" is gone. "range" has the efficiency of python2.7"s
-"xrange" and so you don"t have to worry about any of these.
+"xrange" and so you dont have to worry about any of these.
 """
 
 print("range(10)")

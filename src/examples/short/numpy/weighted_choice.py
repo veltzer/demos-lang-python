@@ -14,7 +14,7 @@ References:
 
 from numpy.random import choice
 
-elements = ['one', 'two', 'three']
+elements = ["one", "two", "three"]
 weights = [0.2, 0.3, 0.5]
 
 # replate=True is the default
