@@ -1,8 +1,9 @@
+# DONTCHECK
 import pprint
 
 import simpleparse.parser
 
-declaration = r'''# note use of raw string when embedding in python code...
+declaration = r"""# note use of raw string when embedding in python code...
 file := [ \t\n]*, section+
 section := '[',identifier,']', ts,'\n', body
 body := statement*
@@ -17,9 +18,9 @@ char := -[\134\']+
 number := [0-9eE+.-]+
 string := (char/escapedchar)*
 escapedchar := '\134\''/'\134\134'
-'''
+"""
 
-testdata = '''
+testdata = """
     [test1]
     val=23
     val2='23'
@@ -30,7 +31,7 @@ testdata = '''
 [test2]
 loose=lips
 
-'''
+"""
 
-parser = simpleparse.parser.Parser(declaration, 'file')
+parser = simpleparse.parser.Parser(declaration, "file")
 pprint.pprint(parser.parse(testdata))

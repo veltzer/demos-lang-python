@@ -11,7 +11,7 @@ import time
 count = 1000000
 time_before = time.time()
 for i in range(count):
-    filename = 'unknown' + str(i % 1000) + '.nosuchending'
+    filename = "unknown" + str(i % 1000) + ".nosuchending"
     try:
         os.unlink(filename)
     except IOError:

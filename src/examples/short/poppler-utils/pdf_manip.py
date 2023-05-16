@@ -6,9 +6,9 @@ import os.path
 import subprocess
 
 subprocess.check_output([
-    'pdfseparate',
-    'file.pdf',
-    'page-%d.pdf',
+    "pdfseparate",
+    "file.pdf",
+    "page-%d.pdf",
 ])
 slide = 1
 till = 166
@@ -28,9 +28,9 @@ for x in range(1, till):
     area = f"{start_x} {start_y} {to_x} {to_y}"
     print(f"area is {area}")
     subprocess.check_output([
-        'pdfcrop',
+        "pdfcrop",
         filename,
-        '--bbox',
+        "--bbox",
         area,
         slide_name,
     ])
@@ -42,9 +42,9 @@ for x in range(1, till):
     area = f"{start_x} {start_y} {to_x} {to_y}"
     print(f"frmt is {area}")
     subprocess.check_output([
-        'pdfcrop',
+        "pdfcrop",
         filename,
-        '--bbox',
+        "--bbox",
         area,
         slide_name,
     ])
@@ -56,9 +56,9 @@ for x in range(1, till):
     area = f"{start_x} {start_y} {to_x} {to_y}"
     print(f"frmt is {area}")
     subprocess.check_output([
-        'pdfcrop',
+        "pdfcrop",
         filename,
-        '--bbox',
+        "--bbox",
         area,
         slide_name,
     ])

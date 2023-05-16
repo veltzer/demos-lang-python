@@ -1,5 +1,5 @@
 """
-Example of disassembling a python function using the 'dis' and 'inspect' modules.
+Example of disassembling a python function using the "dis" and "inspect" modules.
 """
 
 import dis

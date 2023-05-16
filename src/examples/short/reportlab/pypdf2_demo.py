@@ -10,7 +10,7 @@ import reportlab.pdfgen.canvas
 point = 1
 inch = 72
 
-TEXT = '''%s    page %d of %d a wonderful file created with python'''
+TEXT = """%s    page %d of %d a wonderful file created with python"""
 
 
 def make_pdf_file(output_filename, np):
@@ -21,7 +21,7 @@ def make_pdf_file(output_filename, np):
     c.setFont("Helvetica", 12 * point)
     for pn in range(1, np + 1):
         v = 10 * inch
-        for sub_line in (TEXT % (output_filename, pn, np)).split('\n'):
+        for sub_line in (TEXT % (output_filename, pn, np)).split("\n"):
             c.drawString(1 * inch, v, sub_line)
             v -= 12 * point
         c.showPage()

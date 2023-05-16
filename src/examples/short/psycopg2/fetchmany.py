@@ -1,5 +1,5 @@
 """
-This example shows how to use the 'fetchmany' api of the cursor of psycopg2.
+This example shows how to use the "fetchmany" api of the cursor of psycopg2.
 
 References:
 - https://www.python.org/dev/peps/pep-0249/#arraysize
@@ -15,7 +15,7 @@ with psycopg2.connect(connection_string) as connection:
     cursor.arraysize = 3
     cursor.execute("select * from test")
     while True:
-        print('loop')
+        print("loop")
         rows = cursor.fetchmany()
         if not rows:
             break

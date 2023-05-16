@@ -15,22 +15,25 @@ if do_headlines:
 
     articles = obj["articles"]
     for i, article in enumerate(articles):
-        print(f"{i}: {article['title']}")
+        title = article["title"]
+        print(f"{i}: {title}")
 
 
 if do_everything:
     param_q = "qInTitle=corona&"
     mydict = {
-        'qInTitle': sys.argv[1],
-        'pageSize': 20,
-        'page': 1,
-        'apiKey': key,
+        "qInTitle": sys.argv[1],
+        "pageSize": 20,
+        "page": 1,
+        "apiKey": key,
     }
-    url = 'http://newsapi.org/v2/everything'
+    url = "http://newsapi.org/v2/everything"
     r = requests.get(url, params=mydict, timeout=5)
     r.raise_for_status()
     obj = r.json()
 
     articles = obj["articles"]
     for i, article in enumerate(articles):
-        print(f"{i}: {article['title']}, {article['url']}")
+        title = article["title"]
+        url = article["url"]
+        print(f"{i}: {title}, {url}")

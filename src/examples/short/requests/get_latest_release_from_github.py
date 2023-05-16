@@ -8,8 +8,8 @@ References:
 import requests
 
 
-owner = 'veltzer'
-repo = 'pyflexebs'
+owner = "veltzer"
+repo = "pyflexebs"
 
 response = requests.get(f"https://api.github.com/repos/{owner}/{repo}/releases/latest", timeout=5)
 response.raise_for_status()

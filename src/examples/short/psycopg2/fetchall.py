@@ -1,5 +1,5 @@
 """
-This example shows how to use the 'fetchall' api of the cursor of psycopg2.
+This example shows how to use the "fetchall" api of the cursor of psycopg2.
 
 Notes:
 - do not use this API when you are bringing a lot of records from the database.

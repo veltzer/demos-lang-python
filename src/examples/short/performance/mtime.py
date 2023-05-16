@@ -21,8 +21,8 @@ doFirst = True
 doSecond = True
 
 # get the list of all files accessible from /etc
-files = [f for f in glob.glob('/etc/*') if os.path.isfile(f)]
-files.extend([f for f in glob.glob('/etc/*/*') if os.path.isfile(f)])
+files = [f for f in glob.glob("/etc/*") if os.path.isfile(f)]
+files.extend([f for f in glob.glob("/etc/*/*") if os.path.isfile(f)])
 list_len = len(files)
 print(f"file list length is {list_len}...")
 
