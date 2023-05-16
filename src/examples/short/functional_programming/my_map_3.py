@@ -1,9 +1,9 @@
 """
-this is an example of implementing the python builtin 'map'
+this is an example of implementing the python builtin "map"
 function in python.
 
 Obviously you should not use this approach and it is presented
-for pedagogic purposes only. Python's own 'map' is written in C
+for pedagogic purposes only. Pythons own "map" is written in C
 and performs much better.
 """
 

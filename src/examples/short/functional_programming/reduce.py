@@ -1,5 +1,5 @@
 """
-A basic python functional 'reduce' example
+A basic python functional "reduce" example
 """
 
 import functools

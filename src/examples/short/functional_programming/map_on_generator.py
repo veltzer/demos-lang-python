@@ -7,12 +7,12 @@ added one element at a time to the resulting list.
 
 def my_gen():
     for i in range(10):
-        print('my_gen')
+        print("my_gen")
         yield i ** 2
 
 
 def plus1(x):
-    print('plus1')
+    print("plus1")
     return x + 1
 
 

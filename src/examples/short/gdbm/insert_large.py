@@ -9,7 +9,7 @@ as you want.
 import dbm.gnu
 import os.path
 
-# the 'c' in the next row means open rw and create if it doesnt exist
+# the "c" in the next row means open rw and create if it doesnt exist
 filename = "/tmp/test.gdbm"
 large_text_filename = "/var/log/auth.log"
 
@@ -20,15 +20,15 @@ with open(large_text_filename) as f:
     large_text = f.read()
 
 # n means create a new database and open for reading and writing
-d = dbm.gnu.open(filename, 'n')
-d['large'] = large_text
-d[large_text] = 'is this possible'
+d = dbm.gnu.open(filename, "n")
+d["large"] = large_text
+d[large_text] = "is this possible"
 d.close()
 
 # lets open the file
 d = dbm.gnu.open(filename)
-value = d['large'].decode()
+value = d["large"].decode()
 assert value == large_text
 value = d[large_text].decode()
-assert value == 'is this possible'
+assert value == "is this possible"
 d.close()

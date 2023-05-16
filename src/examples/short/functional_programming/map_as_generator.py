@@ -19,7 +19,7 @@ def square(x):
 
 # wrong, still a generator
 print(map(square, generate_items()))
-# right, using the 'list' function
+# right, using the "list" function
 print(list(map(square, generate_items())))
 # right, using list comprehension
 # pylint: disable=unnecessary-comprehension

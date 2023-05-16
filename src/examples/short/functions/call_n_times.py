@@ -13,4 +13,4 @@ def print_string(s):
     print(s)
 
 
-call_n_times(5, print_string, 'mark')
+call_n_times(5, print_string, "mark")

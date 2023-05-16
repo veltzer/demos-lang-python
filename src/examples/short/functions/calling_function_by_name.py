@@ -1,8 +1,8 @@
 """
 This example shows how you can call a function when all you
 know is its name. The name may come from the user, database, etc.
-The idea here is to use 'vars()[name]' to get the function object
-and then just apply the '()' or '__call__' method on it.
+The idea here is to use "vars()[name]" to get the function object
+and then just apply the "()" or "__call__" method on it.
 """
 
 
@@ -14,8 +14,8 @@ def sub(x, y):
     return x - y
 
 
-name = input('give me the name off the function: ')
-num = int(input('how many arguments to pass to the function: '))
+name = input("give me the name off the function: ")
+num = int(input("how many arguments to pass to the function: "))
 str_list = []
 for i in range(num):
     a = input(f"give me argument [{i}]: ")

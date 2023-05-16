@@ -1,1 +1,3 @@
 - we use double quotes for strings.
+- if we write words like it's, that's, doesn't we omit the single quote (its not important for english
+	anyway and it makes detecting strings harder)

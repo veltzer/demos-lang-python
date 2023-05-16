@@ -27,15 +27,15 @@ except NameError:
 
 
 def demo_bar():
-    print('this is bar')
+    print("this is bar")
 
 
-# this should work now that both 'foo' and 'bar' are defined
+# this should work now that both "foo" and "bar" are defined
 demo_foo()
 
 del demo_bar
 
-# now that 'bar' is no longer defined any call to 'foo' should fail
+# now that "bar" is no longer defined any call to "foo" should fail
 try:
     demo_foo()
 except NameError:

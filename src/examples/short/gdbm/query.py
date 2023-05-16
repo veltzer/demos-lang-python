@@ -11,17 +11,17 @@ if os.path.isfile(filename):
     os.unlink(filename)
 
 # lets put in some data
-d = dbm.gnu.open(filename, 'n')
+d = dbm.gnu.open(filename, "n")
 d["one"] = "yes!"
 d.close()
 
 # lets open for read
 d = dbm.gnu.open(filename)
 
-print('one in db', 'one' in d)
-print('two in db', 'two' in d)
+print("one in db", "one" in d)
+print("two in db", "two" in d)
 
-# lets query a key which isn't there
+# lets query a key which isn"t there
 try:
     print(d["one"])
 except KeyError:

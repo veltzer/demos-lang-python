@@ -2,8 +2,8 @@
 An example of how to build a quit command in cmd2.
 The idea is just to "return True" from the command.
 
-Note that the 'do_quit' function still needs to get
-the argument 'arg' as it is called with two arguments
+Note that the "do_quit" function still needs to get
+the argument "arg" as it is called with two arguments
 (self and arg).
 
 References:
@@ -22,6 +22,6 @@ class CmdLineApp(Cmd):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     c = CmdLineApp()
     c.cmdloop()
