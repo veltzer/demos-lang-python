@@ -11,11 +11,11 @@ ec2 = boto3.resource("ec2")
 instances = ec2.instances.filter(
     Filters=[
         {"Name": "instance-state-name", "Values": ["running"]},
-        {"Name": "tag:Owner", "Values": ["mark@twiggle.com"]},
+#        {"Name": "tag:Owner", "Values": ["mark@twiggle.com"]},
     ]
 )
 for instance in instances:
     print(instance.id)
     print(instance.instance_type)
-    print(instance.public_dns_name)
-    print(instance.key_name)
+    # print(instance.public_dns_name)
+    # print(instance.key_name)

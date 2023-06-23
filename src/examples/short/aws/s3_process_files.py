@@ -17,8 +17,8 @@ import boto3
 import tqdm
 
 do_count_lines = True
-bucket_name = "bucket_name"
-folder = "folder"
+bucket_name = "litebc-upload"
+folder = "/"
 
 s3 = boto3.resource("s3")
 bucket = s3.Bucket(bucket_name)
