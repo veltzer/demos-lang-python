@@ -10,27 +10,18 @@ References:
 - http://boto.cloudhackers.com/en/latest/ref/
 """
 
-import boto
+import boto3
 
-do_count_lines = True
 do_print = True
 
 bucket_name = "bucket_name"
 folder = "folder"
 
-conn = boto.connect_s3()
-bucket = conn.get_bucket(bucket_name)
+s3 = boto3.resource("s3")
+bucket = s3.Bucket(bucket_name)
 key_list = bucket.list(folder)
 file_num = 0
 for key in key_list:
-    print(f"doing [{key.name}]")
+    print(f"got [{key.name}]")
     file_num += 1
-    if do_count_lines:
-        key.open_read()
-        line_number = 0
-        for line in key:
-            if do_print:
-                print(line, end="")
-            line_number += 1
-        print(f"got [{line_number}] lines...")
 print(f"got [{file_num}] files...")
