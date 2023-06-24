@@ -102,6 +102,7 @@ install_requires = [
     "reportlab",
     "imdbpy",
     "python-pptx",
+    "elasticsearch",
     # my stuff
     "pyapikey",
     "pyfakeuse",
