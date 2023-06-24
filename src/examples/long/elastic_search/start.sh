@@ -4,6 +4,7 @@
 # References:
 # - https://levelup.gitconnected.com/how-to-run-elasticsearch-8-on-docker-for-local-development-401fd3fff829
 NAME="elasticsearch:8.8.1"
+# this is really needed otherwise elasticsearch will not come up
 sudo sysctl -w vm.max_map_count=262144
 docker run\
 	-p 9200:9200\
