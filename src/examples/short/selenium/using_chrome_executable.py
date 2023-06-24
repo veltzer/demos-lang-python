@@ -20,7 +20,7 @@ chrome_options.add_argument(f"--window-size={WINDOW_SIZE}")
 chrome_options.binary_location = CHROME_PATH
 
 driver = webdriver.Chrome(
-    executable_path=CHROME_PATH,
+    # executable_path=CHROME_PATH,
     options=chrome_options,
 )
 driver.get("https://www.python.org")
