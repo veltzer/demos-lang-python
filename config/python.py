@@ -107,6 +107,7 @@ install_requires = [
     "pyapikey",
     "pyfakeuse",
     "pyvardump",
+    "Pillow",
 ]
 test_requires = [
     "pylint",
