@@ -109,6 +109,7 @@ install_requires = [
     "pyvardump",
     "Pillow",
     "ExifRead",
+    "exif",
 ]
 test_requires = [
     "pylint",

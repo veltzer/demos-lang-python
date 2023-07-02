@@ -6,7 +6,7 @@ import sys
 import exifread
 
 if len(sys.argv) != 2:
-    print("{sys.argv[0]}: usage: {sys.argv[0]} [IMAGE_FILENAME]")
+    print(f"{sys.argv[0]}: usage: {sys.argv[0]} [IMAGE_FILENAME]")
     sys.exit(1)
 image_name = sys.argv[1]
 with open(image_name, 'rb') as stream:
