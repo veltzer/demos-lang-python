@@ -107,9 +107,11 @@ install_requires = [
     "pyapikey",
     "pyfakeuse",
     "pyvardump",
+    # EXIF and image related libraries
     "Pillow",
     "ExifRead",
     "exif",
+    "piexif",
 ]
 test_requires = [
     "pylint",
