@@ -5,10 +5,15 @@ References:
 - https://stackoverflow.com/questions/4764932/in-python-how-do-i-read-the-exif-data-for-an-image
 """
 
+import sys
 import PIL.Image
 import PIL.ExifTags
 
-img = PIL.Image.open('data/jpg/image_with_exif.jpg')
+if len(sys.argv) != 2:
+    print("{sys.argv[0]}: usage: {sys.argv[0]} [IMAGE_FILENAME]")
+    sys.exit(1)
+image_name = sys.argv[1]
+img = PIL.Image.open(image_name)
 exif_data = img.getexif()
 for k, v in exif_data.items():
     string_tag = None

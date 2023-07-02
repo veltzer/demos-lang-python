@@ -108,6 +108,7 @@ install_requires = [
     "pyfakeuse",
     "pyvardump",
     "Pillow",
+    "ExifRead",
 ]
 test_requires = [
     "pylint",
