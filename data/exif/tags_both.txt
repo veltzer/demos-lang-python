@@ -1,2 +1,5 @@
+Balance
 Directory
+Duration
 Megapixels
+Rotation

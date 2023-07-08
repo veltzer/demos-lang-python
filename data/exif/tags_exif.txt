@@ -1509,7 +1509,6 @@ BackgroundMusicFlag
 BackgroundTiling
 BackupTime
 BadFaxLines
-Balance
 Band
 BandwidthSharing
 BankDetailsSet
@@ -4657,7 +4656,6 @@ DummyColsRight
 DuotoneHalftoningInfo
 DuotoneImageInfo
 DuotoneTransferFuncs
-Duration
 DurationOfXrayOn
 DurationScale
 DurationValue
@@ -13389,7 +13387,6 @@ RootNote
 RootObjectDirectory
 RootPreface
 RotMode
-Rotation
 RotationAngle
 RotationDirection
 RotationFromSourceXRot
