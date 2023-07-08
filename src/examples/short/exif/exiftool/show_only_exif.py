@@ -1,6 +1,9 @@
 """
 This script shows ONLY exif data from a file.
 If it shows nothing then this file does not have any EXIF data.
+
+References:
+- https://stackoverflow.com/questions/60576891/how-to-read-exif-data-of-movies-in-python
 """
 
 import sys

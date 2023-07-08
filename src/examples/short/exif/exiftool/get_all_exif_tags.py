@@ -9,6 +9,9 @@ I couldn't find such a list on the web.
 
 The problem is that the output of exiftool(1) is for human consumption and not for computer
 use so we need to run "exiftool -list" and masssage the output a little bit.
+
+References:
+- https://stackoverflow.com/questions/60576891/how-to-read-exif-data-of-movies-in-python
 """
 
 import subprocess
