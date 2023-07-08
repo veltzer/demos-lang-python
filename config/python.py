@@ -112,6 +112,7 @@ install_requires = [
     "ExifRead",
     "exif",
     "piexif",
+    "PyExifTool",
 ]
 test_requires = [
     "pylint",

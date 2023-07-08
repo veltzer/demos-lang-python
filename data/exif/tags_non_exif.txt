@@ -1,0 +1,49 @@
+Bits Per Sample
+Blue Matrix Column
+Blue Tone Reproduction Curve
+CMM Flags
+Color Components
+Color Space Data
+Connection Space Illuminant
+Device Attributes
+Device Manufacturer
+Device Model
+Directory
+Encoding Process
+ExifTool Version Number
+File Access Date/Time
+File Inode Change Date/Time
+File Modification Date/Time
+File Name
+File Permissions
+File Size
+File Type
+File Type Extension
+Green Matrix Column
+Green Tone Reproduction Curve
+Image Height
+Image Size
+Image Width
+JFIF Version
+MIME Type
+Media Black Point
+Media White Point
+Megapixels
+Primary Platform
+Profile CMM Type
+Profile Class
+Profile Connection Space
+Profile Copyright
+Profile Creator
+Profile Date Time
+Profile Description
+Profile File Signature
+Profile ID
+Profile Version
+Red Matrix Column
+Red Tone Reproduction Curve
+Rendering Intent
+Resolution Unit
+X Resolution
+Y Cb Cr Sub Sampling
+Y Resolution
