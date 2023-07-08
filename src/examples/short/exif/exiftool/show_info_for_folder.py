@@ -8,6 +8,8 @@ import os.path
 import sys
 import subprocess
 
+import statistics
+
 
 def get_suffix(filename:str) -> str:
     return os.path.splitext(filename)[1]
@@ -40,3 +42,6 @@ for root, directories, files in os.walk(folder_name):
         tag_numbers.append(tag_number)
 print(f"min: {min(tag_numbers)}")
 print(f"max: {max(tag_numbers)}")
+print(f"mean: {statistics.mean(tag_numbers)}")
+print(f"stdev: {statistics.stdev(tag_numbers)}")
+print(f"median: {statistics.median(tag_numbers)}")
