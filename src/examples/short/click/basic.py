@@ -14,7 +14,7 @@ References:
 import click
 
 
-@click.command()
+@click.command()  # type: ignore
 @click.option("--count", default=1, help="Number of greetings.", show_default=True)
 @click.option("--name", prompt="Your name", help="The person to greet.")
 @click.option("--required", required=True, help="this is a required parameter")
@@ -32,4 +32,4 @@ def main(count, name, required, output, hash_type):
 
 if __name__ == "__main__":
     # pylint: disable=no-value-for-parameter
-    main()
+    main()  # type: ignore

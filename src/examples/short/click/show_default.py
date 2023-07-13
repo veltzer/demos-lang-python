@@ -6,7 +6,7 @@ in click.
 import click
 
 
-@click.command()
+@click.command()  # type: ignore
 @click.option(
     "--count",
     default=1,
@@ -21,4 +21,4 @@ def main(count: int) -> None:
 
 if __name__ == "__main__":
     # pylint: disable=no-value-for-parameter
-    main()
+    main()  # type: ignore

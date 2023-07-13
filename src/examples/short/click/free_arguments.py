@@ -14,7 +14,7 @@ References:
 import click
 
 
-@click.command()
+@click.command()  # type: ignore
 @click.argument(
     "args",
     nargs=-1,
@@ -27,4 +27,4 @@ def main(args):
 
 if __name__ == "__main__":
     # pylint: disable=no-value-for-parameter
-    main()
+    main()  # type: ignore
