@@ -103,7 +103,7 @@ install_requires = [
     "imdbpy",
     "python-pptx",
     "elasticsearch",
-    "statitics",
+    "statistics",
     # my stuff
     "pyapikey",
     "pyfakeuse",
