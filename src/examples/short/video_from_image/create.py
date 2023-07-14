@@ -1,3 +1,12 @@
+"""
+This script converts a single image to a video.
+Try it with an .jpg input and a .avi output
+
+References:
+- https://stackoverflow.com/questions/44947505/how-to-make-a-movie-out-of-images-in-python
+"""
+
+
 import sys
 import cv2
 
