@@ -104,6 +104,7 @@ install_requires = [
     "python-pptx",
     "elasticsearch",
     "statistics",
+    "opencv-python",
     # my stuff
     "pyapikey",
     "pyfakeuse",
