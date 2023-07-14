@@ -1,5 +1,5 @@
 """
-This example shows how to silence logger.
+This example shows how to silence logger for a piece of code.
 """
 
 import logging
