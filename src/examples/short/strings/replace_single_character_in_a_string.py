@@ -2,8 +2,6 @@
 These are examples of replacing a character or characters in strings.
 """
 
-from string import maketrans
-
 s = 'a.b.c'
 result = "a-b-c"
 
@@ -13,5 +11,5 @@ assert s1 == result
 s2 = s.replace('.', '-')
 assert s2 == result
 
-s3 = s.translate(maketrans(".", "-"))
+s3 = s.translate(str.maketrans(".", "-"))
 assert s3 == result

@@ -9,6 +9,8 @@ DO_LINT:=1
 DO_FLAKE8:=1
 # do you wnat to lint python fies using mypy?
 DO_MYPY:=1
+# do you want to test that there are no .moved files?
+DO_MOVED:=1
 # do dependency on the makefile itself?
 DO_ALLDEP:=1
 # do you want to see the commands given?
@@ -44,6 +46,10 @@ ifeq ($(DO_MYPY),1)
 ALL+=$(ALL_MYPY)
 endif # DO_MYPY
 
+ifeq ($(DO_MOVED),1)
+ALL+=moved.phony
+endif # DO_MOVED
+
 ifeq ($(DO_ALLDEP),1)
 .EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
 endif # DO_ALLDEP
@@ -74,6 +80,10 @@ flake8: $(ALL_FLAKE8)
 
 .PHONY: mypy
 mypy: $(ALL_MYPY)
+
+.PHONY: moved.phony
+moved.phony:
+	$(Q)pymakehelper error_on_print find src -name "*.moved"
 
 .PHONY: all_lint
 all_lint:
