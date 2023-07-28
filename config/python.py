@@ -105,6 +105,7 @@ install_requires = [
     "elasticsearch",
     "statistics",
     "opencv-python",
+    "python-magic",
     # my stuff
     "pyapikey",
     "pyfakeuse",
