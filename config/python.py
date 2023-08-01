@@ -106,6 +106,7 @@ install_requires = [
     "statistics",
     "opencv-python",
     "python-magic",
+    "imageio",
     # my stuff
     "pyapikey",
     "pyfakeuse",
