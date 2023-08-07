@@ -14,7 +14,7 @@ References:
 import click
 
 
-@click.command()  # type: ignore
+@click.command()
 @click.argument(
     "args",
     nargs=-1,

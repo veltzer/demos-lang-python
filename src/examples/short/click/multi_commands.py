@@ -16,20 +16,20 @@ def cli():
     pass
 
 
-@cli.command()  # type: ignore
+@cli.command()
 def say_hello():
     print("hello")
 
 
-@cli.command()  # type: ignore
+@cli.command()
 def say_goodbye():
     print("goodbye")
 
 
-@cli.command(name="foo")  # type: ignore
+@cli.command(name="foo")
 def demo():
     print("foo")
 
 
 if __name__ == "__main__":
-    cli()  # type: ignore
+    cli()

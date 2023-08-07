@@ -5,7 +5,7 @@ This checks whether the order of options and arguments in click matters
 import click
 
 
-@click.command()  # type: ignore
+@click.command()
 @click.argument("arg")
 @click.option("--count", default=1, help="Number of greetings.", show_default=True)
 @click.option("--output", required=False, help="output file", type=click.File("w", lazy=False))
@@ -20,4 +20,4 @@ def main(arg, count, output, hash_type):
 
 if __name__ == "__main__":
     # pylint: disable=no-value-for-parameter
-    main()  # type: ignore
+    main()
