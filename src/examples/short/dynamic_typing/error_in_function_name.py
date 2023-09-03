@@ -6,10 +6,12 @@ until it reaches that line at runtime.
 
 # import time
 
+
 def do_something():
     print("Hello")
 
 
 print("hi")
 # time.sleep(3600)
-do_somethin()
+# pylint: disable=undefined-variable
+do_somethin()  # type:ignore # noqa: F821
