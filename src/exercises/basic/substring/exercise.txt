@@ -7,8 +7,8 @@ hints:
 For example:
 my_string = "hello"
 for c in my_string:
-	....
-will give you all the characters in the string "hello" 
+	print(c)
+will print all the characters in the string "hello", one on each line.
 * if you have a string and you want to access it's n'th characters then
 	s[n] will give you that character
 
