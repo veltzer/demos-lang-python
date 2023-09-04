@@ -23,10 +23,9 @@ def substring(string1, string2):
 assert substring("hi", "Ship")
 assert not substring("shi", "Ship")
 assert not substring("Ship", "Shi")
-"""
+
 if len(sys.argv) != 3:
     print("You should pass exactly 2 strings to this program", file=sys.stderr)
     sys.exit(1)
 
 print(substring(sys.argv[1], sys.argv[2]))
-"""
