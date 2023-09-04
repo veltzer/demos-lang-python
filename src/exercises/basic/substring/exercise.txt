@@ -1,2 +1,7 @@
 Write a function called substring(s1, s2) which
-	returns True iff s1 is a substring of s2.
+	returns True iff (if and only if) s1 is a substring of s2.
+
+Examples:
+hi, Ship -> True
+shi, Ship -> False
+Ships, Ship -> False
