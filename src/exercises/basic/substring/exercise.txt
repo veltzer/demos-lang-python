@@ -4,13 +4,15 @@ s1 is a substring of s2.
 
 hints:
 * You can iterate the characters of string with a for loop.
-For example:
-my_string = "hello"
-for c in my_string:
-	print(c)
-will print all the characters in the string "hello", one on each line.
-* if you have a string and you want to access it's n'th characters then
+	For example:
+	my_string = "hello"
+	for c in my_string:
+		print(c)
+	will print all the characters in the string "hello", one on each line.
+* if you have a string and you want to access it's n'th character then
 	s[n] will give you that character
+* if you want to access a substring of a string from location x to location
+	y (not including y) then s[x:y] will give you that slice of the string.
 
 Examples:
 hi, Ship -> True
