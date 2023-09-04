@@ -7,6 +7,7 @@ def rev_hash(o):
     ret = {}
     # pylint: disable=unnecessary-dunder-call
     map(lambda t: ret.__setitem__(t[1], t[0]), o.items())
+    # map(lambda t: ret[t[1]]=t[0], o.items())
     return ret
 
 
