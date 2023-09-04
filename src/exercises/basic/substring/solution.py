@@ -1,11 +1,11 @@
 """
-solution
+solution to the substring exercise
 """
 
 import sys
 
 
-def my_substring(string1, string2):
+def substring(string1, string2):
     """ substring implemenetation """
     if len(string2) < len(string1):
         return False
@@ -24,4 +24,4 @@ if len(sys.argv) != 3:
     print("You should pass exactly 2 strings to this program", file=sys.stderr)
     sys.exit(1)
 
-print(my_substring(sys.argv[1], sys.argv[2]))
+print(substring(sys.argv[1], sys.argv[2]))
