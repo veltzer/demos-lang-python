@@ -10,11 +10,9 @@ def substring(string1, string2):
     if len(string2) < len(string1):
         return False
     for i in range(len(string2) - len(string1) + 1):
-        k = 0
-        while k < len(string1):
+        for k in range(len(string1)):
             if string1[k] != string2[i + k]:
                 break
-            k += 1
         else:
             return True
     return False
