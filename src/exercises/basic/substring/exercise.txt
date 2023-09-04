@@ -4,7 +4,7 @@ s1 is a substring of s2, otherwise return False.
 
 Examples:
 hi, Ship -> True
-shi, Ship -> False (notice the difference case for the letter 's')
+shi, Ship -> False (notice the different case for the letter 's')
 Ships, Ship -> False (s2 is a substring of s1 but s1 is NOT a substring of s2)
 
 hints:
