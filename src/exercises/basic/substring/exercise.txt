@@ -1,5 +1,16 @@
-Write a function called substring(s1, s2) which
-	returns True iff (if and only if) s1 is a substring of s2.
+Write a function called "substring(s1, s2)" which
+receives two strings and returns True iff (if and only if)
+s1 is a substring of s2.
+
+hints:
+* You can iterate the characters of string with a for loop.
+For example:
+my_string = "hello"
+for c in my_string:
+	....
+will give you all the characters in the string "hello" 
+* if you have a string and you want to access it's n'th characters then
+	s[n] will give you that character
 
 Examples:
 hi, Ship -> True
