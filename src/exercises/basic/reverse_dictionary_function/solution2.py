@@ -1,14 +1,17 @@
 """
-this is a simple solution to the reverse hash function exercise
+this is a simple solution to the reverse dict function exercise
 """
 
 
-def rev_hash(o):
-    ret = {}
+def rev_dict(d):
+    rev_d = {}
     # pylint: disable=unnecessary-dunder-call
-    map(lambda t: ret.__setitem__(t[1], t[0]), o.items())
-    # map(lambda t: ret[t[1]]=t[0], o.items())
-    return ret
+    for _ in map(lambda t: rev_d.__setitem__(t[1], t[0]), d.items()):
+        pass
+    # the next version does not work because lambda does not support assignment
+    # for _ in map(lambda t: rev_d[t[1]]=t[0], d.items())
+    #     pass
+    return rev_d
 
 
 orig = {
@@ -17,5 +20,5 @@ orig = {
     "Italy": "Rome",
     "Egypt": "Cairo",
 }
-rev = rev_hash(orig)
+rev = rev_dict(orig)
 print(rev)

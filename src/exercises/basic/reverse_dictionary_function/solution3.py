@@ -1,10 +1,10 @@
 """
-this is a simple solution to the reverse hash function exercise
+this is a simple solution to the reverse dict function exercise
 """
 
 
-def rev_hash(o):
-    return dict(map(lambda t: (t[1], t[0]), o.items()))
+def rev_dict(d):
+    return dict(map(lambda t: (t[1], t[0]), d.items()))
 
 
 orig = {
@@ -13,5 +13,5 @@ orig = {
     "Italy": "Rome",
     "Egypt": "Cairo",
 }
-rev = rev_hash(orig)
+rev = rev_dict(orig)
 print(rev)
