@@ -1,2 +1,4 @@
+import tests.mod
+
 def test_hello():
-    pass
+    tests.mod.shared_method()
