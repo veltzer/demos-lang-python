@@ -7,6 +7,10 @@ get_num_of_days_in_month(month_name)
 get_following_month(month_name)
 is_leap_year(year)
 
+hint:
+What is a leap year?
+A year is a leap year if it is divisible by 4, and 100 or by 400.
+
 Edit your date module:
 1. Write a class that represents a Date.
 It will be initialized from 3 numbers: day, month, year. The __init__ method will check the validity of the arguments.
@@ -37,3 +41,4 @@ Go over the classes you wrote in the previous exercise.
 Add exception handling everywhere it is needed. (Raise an exception for invalid arguments).
 You might want to write your own exceptions for that.
 The calendar creating script will handle the exceptions.
+

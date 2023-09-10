@@ -7,7 +7,7 @@ import signal
 import gi
 
 from gi.repository import Gtk
-gi.require_version("Gtk", "3.0")
+gi.require_version("Gtk", "4.0")
 
 
 def clicked_callback(button):
@@ -20,7 +20,8 @@ def quit_callback(_window, _event):
 
 
 # pylint: disable=no-member
-b = Gtk.Button("Click me")  # type: ignore[arg-type]
+# b = Gtk.Button("Click me")  # type: ignore[arg-type]
+b = Gtk.Button()  # type: ignore[arg-type]
 b.num = 0  # type: ignore
 b.connect("clicked", clicked_callback)  # attach it to the callback
 
