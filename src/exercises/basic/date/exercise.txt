@@ -9,7 +9,7 @@ is_leap_year(year)
 
 hint:
 What is a leap year?
-A year is a leap year if it is divisible by 4, and 100 or by 400.
+A year is a leap year if it is divisible by 4 not divisible by 100 unless divisible by 400.
 
 Edit your date module:
 1. Write a class that represents a Date.
