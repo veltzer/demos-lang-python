@@ -8,6 +8,7 @@ def collect_all_primes(num):
             if i % p == 0:
                 break
             if p > int(math.sqrt(i)) + 1:
+                primes_found.append(i)
                 break
         else:
             primes_found.append(i)
