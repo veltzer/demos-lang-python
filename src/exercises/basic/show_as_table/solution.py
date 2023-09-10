@@ -24,6 +24,6 @@ for row in data:
 
 for row in data:
     for i, value in enumerate(row):
-        # print(value+ " " * (max_widths[i] - len(value) + 1), end="")
-        print(value+ " " * (max_widths[i] - len(value)+1)+"|", end="")
+        # print(value + " " * (max_widths[i] - len(value) + 1), end="")
+        print(value + " " * (max_widths[i] - len(value) + 1) + "|", end="")
     print()

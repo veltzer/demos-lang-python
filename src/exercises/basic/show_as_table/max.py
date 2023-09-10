@@ -1,9 +1,7 @@
-import sys
+my_list = [-7, 8, 95, 102, 3]
 
-l=[-7, 8, 95, 102, 3]
-
-print(max(l))
-m=0
-for x in l:
-    m=max(m, x)
+print(max(my_list))
+m = 0
+for x in my_list:
+    m = max(m, x)
 print(m)
