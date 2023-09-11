@@ -6,9 +6,9 @@ class Person:
         self.name=name
         self.surname=surname
     def __repr__(self):
-        return f"<id {self.id}, name {self.name}, surname {self.surname}>"
+        return f"repr <id {self.id}, name {self.name}, surname {self.surname}>"
     def __str__(self):
-        return f"<id {self.id}, name {self.name}, surname {self.surname}>"
+        return f"str <id {self.id}, name {self.name}, surname {self.surname}>"
 
 people = []
 id_to_person = {}
@@ -18,6 +18,7 @@ with open("people.csv", "rt") as stream:
         line=line.rstrip() # remove the newline at the end
         values = line.split(",")
         p = Person(*values)
+        print(p)
         id_to_person[p.id]=p
         people.append(p)
 
