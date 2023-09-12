@@ -9,7 +9,6 @@ from gi.repository import Gtk
 gi.require_version("Gtk", "4.0")
 
 
-
 class HelloWorld:
     # noinspection PyMethodMayBeStatic
     def hello(self, _widget, _data=None):

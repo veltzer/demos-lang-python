@@ -8,6 +8,7 @@ def collect_all_primes(num):
             if i % p == 0:
                 break
             if p > int(math.sqrt(i)) + 1:
+                # pylint: disable=modified-iterating-list
                 primes_found.append(i)
                 break
         else:
