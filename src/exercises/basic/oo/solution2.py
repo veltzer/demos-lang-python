@@ -1,27 +1,27 @@
 #!/usr/bin/env python
 
 class Person:
-    def __init__(self, id, name, surname):
-        self.id=id
+    def __init__(self, socialid, name, surname):
+        self.socialid=socialid
         self.name=name
         self.surname=surname
     def __repr__(self):
-        return f"repr <id {self.id}, name {self.name}, surname {self.surname}>"
+        return f"repr <socialid {self.socialid}, name {self.name}, surname {self.surname}>"
     def __str__(self):
-        return f"str <id {self.id}, name {self.name}, surname {self.surname}>"
+        return f"str <socialid {self.socialid}, name {self.name}, surname {self.surname}>"
 
 class Car:
-    def __init__(self, license, color, type):
-        self.license=license
+    def __init__(self, licenseid, color, cartype):
+        self.licenseid=licenseid
         self.color=color
-        self.type=type
+        self.cartype=cartype
         self.owners = []
     def add_owner(self, owner):
         self.owners.append(owner)
     def __repr__(self):
-        return f"repr <{license self.license}, color {self.color}, type {self.type}>"
+        return f"repr <licenseid {self.licenseid}, color {self.color}, cartype {self.cartype}>"
     def __str__(self):
-        return f"str <{license self.license}, color {self.color}, type {self.type}>"
+        return f"str <licenseid {self.licenseid}, color {self.color}, cartype {self.cartype}>"
 
 people = []
 id_to_person = {}
@@ -32,7 +32,7 @@ with open("people.csv", "rt") as stream:
         values = line.split(",")
         p = Person(*values)
         print(p)
-        id_to_person[p.id]=p
+        id_to_person[p.socialid]=p
         people.append(p)
 
 print(people)

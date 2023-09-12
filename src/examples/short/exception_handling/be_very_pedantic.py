@@ -11,7 +11,7 @@ def excepthook(_type, value, _traceback):
     # traceback.print_exception(value=value, tb=_traceback, etype=_type)
     while value.__cause__:
         value = value.__cause__
-    print("An exception was throw... Refusing to continue...")
+    print("An exception was thrown... Refusing to continue...")
     sys.exit(1)
 
 
