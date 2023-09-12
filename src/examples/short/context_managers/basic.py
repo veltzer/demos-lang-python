@@ -18,10 +18,15 @@ class MyResource:
     def __enter__(self):
         print("enter")
 
-    def __exit__(self, _type, value, traceback):
+    def __exit__(self, exception_type, value, traceback):
+        print(f"exception_type is {exception_type}")
+        print(f"{type(value)}")
+        if value is not None:
+            print("there was an exception, notfying the CIA")
         print("exit")
 
 
 print("lets see a basic use of the context manager...")
 with MyResource() as r:
     print("block of code")
+    raise ValueError(7)
