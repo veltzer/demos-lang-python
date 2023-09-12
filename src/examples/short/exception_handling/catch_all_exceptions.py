@@ -11,6 +11,7 @@ try:
     raise ValueError("hello")
 # this next line catches only ValueError exceptions, logs and throws them
 # back...
+# pylint: disable=broad-exception-caught
 except Exception as e:
     print("in except", e)
     # raise e
