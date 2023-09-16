@@ -5,8 +5,9 @@ A pygtk hello world application
 import signal
 
 import gi
-from gi.repository import Gtk
-gi.require_version("Gtk", "4.0")
+gi.require_version("Gtk", "3.0")
+# pylint: disable=wrong-import-position
+from gi.repository import Gtk  # noqa: E402
 
 
 class HelloWorld:
@@ -19,7 +20,7 @@ class HelloWorld:
         print("Hello World")
 
     # noinspection PyMethodMayBeStatic
-    # def delete_event(self, _widget, _event, _data=None):
+    def delete_event(self, _widget, _event, _data=None):
         # If you return FALSE in the "delete_event" signal handler,
         # GTK will emit the "destroy" signal. Returning TRUE means
         # you dont want the window to be destroyed.
@@ -29,7 +30,7 @@ class HelloWorld:
 
         # Change FALSE to TRUE and the main window will not be destroyed
         # with a "delete_event".
-    #     return False
+        return False
 
     # noinspection PyMethodMayBeStatic
     def destroy(self, _widget, _data=None):
@@ -56,7 +57,7 @@ class HelloWorld:
         # self.window.set_border_width(10)
 
         # Creates a new button with the label "Hello World".
-        self.button = Gtk.Button()
+        self.button = Gtk.Button(label="Hello World!")
 
         # When the button receives the "clicked" signal,it will call the
         # function hello() passing it None as its argument. The hello()
@@ -66,12 +67,10 @@ class HelloWorld:
         # This will cause the window to be destroyed by calling
         # gtk_widget_destroy(window) when "clicked". Again,the destroy
         # signal could come from here,or the window manager.
-        # self.button.connect_object("clicked",gtk.Widget.destroy,self.window)
+        self.button.connect_object("clicked", Gtk.Widget.destroy,self.window)
 
         # This packs the button into the window (a GTK container).
-        # self.window.add(self.button)
-        # self.window.add_controller(self.button)
-        self.window.set_child(self.button)
+        self.window.add(self.button)
 
         # The final step is to display this newly created widget.
         self.button.show()
@@ -90,5 +89,4 @@ class HelloWorld:
 # interpreter then create a HelloWorld instance and show it
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 hello = HelloWorld()
-hello.main()
 hello.main()
