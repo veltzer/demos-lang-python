@@ -10,9 +10,9 @@ import signal
 
 import gi
 
-from gi.repository import Gtk
-
-gi.require_version("Gtk", "4.0")
+gi.require_version("Gtk", "3.0")
+# pylint: disable=wrong-import-position
+from gi.repository import Gtk  # noqa: E402
 
 
 class EntryMultiCompletion(Gtk.Entry):
@@ -63,13 +63,15 @@ class EntryMultiCompletion(Gtk.Entry):
 # pylint: disable=no-member
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 win = Gtk.Window()
-# win.connect("delete-event", Gtk.main_quit)  # type: ignore[attr-defined]
-entry_completion = EntryMultiCompletion()
-list_store = Gtk.ListStore()
-entry_completion.completion.set_model(list_store)
-entry_completion.completion.set_text_column(0)
+win.connect("delete-event", Gtk.main_quit)  # type: ignore[attr-defined]
+
+list_store = Gtk.ListStore(str)  # type: ignore[call-arg]
 for word in ["python", "perl", "scala", "c++", "ruby", "c#", "java", "assembly", "PHP"]:
     list_store.append([word])
+
+entry_completion = EntryMultiCompletion()
+entry_completion.completion.set_model(list_store)
+entry_completion.completion.set_text_column(0)
 win.add(entry_completion)  # type: ignore[attr-defined]
 win.show_all()  # type: ignore[attr-defined]
 

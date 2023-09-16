@@ -49,8 +49,8 @@ class NotebookExample:
         Gtk.main_quit()
         return False
 
-    def add_button(self, table, name, event, p1, p2, p3, p4):
-        button = Gtk.Button(name)
+    def add_button(self, name, table, event, p1, p2, p3, p4):
+        button = Gtk.Button(label=name)
         button.connect("clicked", event)
         table.attach(button, p1, p2, p3, p4)
         button.show()
@@ -60,12 +60,12 @@ class NotebookExample:
         window.connect("delete_event", self.delete)
         window.set_border_width(10)
 
-        table = Gtk.Table(3, 6, False)
+        table = Gtk.Table(n_rows=3, n_columns=6, homogeneous=False)
         window.add(table)
 
         # Create a new notebook,place the position of the tabs
         notebook = Gtk.Notebook()
-        # notebook.set_tab_pos(gtk.POS_TOP)
+        # notebook.set_tab_pos(Gtk.POS_TOP)
         table.attach(notebook, 0, 6, 0, 1)
         notebook.show()
         self.show_tabs = True
@@ -81,19 +81,19 @@ class NotebookExample:
             frame.set_size_request(100, 75)
             frame.show()
 
-            label = Gtk.Label(buffer_frame)
+            label = Gtk.Label(label=buffer_frame)
             frame.add(label)
             label.show()
 
-            label = Gtk.Label(buffer_label)
+            label = Gtk.Label(label=buffer_label)
             notebook.append_page(frame, label)
 
         # Now lets add a page to a specific spot
-        checkbutton = Gtk.CheckButton("Check me please!")
+        checkbutton = Gtk.CheckButton(label="Check me please!")
         checkbutton.set_size_request(100, 75)
         checkbutton.show()
 
-        label = Gtk.Label("Add page")
+        label = Gtk.Label(label="Add page")
         notebook.insert_page(checkbutton, label, 2)
 
         # Now finally lets prepend pages to the notebook
@@ -106,11 +106,11 @@ class NotebookExample:
             frame.set_size_request(100, 75)
             frame.show()
 
-            label = Gtk.Label(buffer_frame)
+            label = Gtk.Label(label=buffer_frame)
             frame.add(label)
             label.show()
 
-            label = Gtk.Label(buffer_label)
+            label = Gtk.Label(label=buffer_label)
             notebook.prepend_page(frame, label)
 
         # Set what page to start at (page 4)
