@@ -7,7 +7,7 @@ import signal
 import gi
 
 from gi.repository import Gtk
-gi.require_version("Gtk", "4.0")
+gi.require_version("Gtk", "3.0")
 
 
 def clicked_callback(button):
