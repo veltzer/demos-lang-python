@@ -7,7 +7,7 @@ import signal
 import gi
 gi.require_version("Gtk", "4.0")
 # pylint: disable=wrong-import-position
-from gi.repository import Gtk
+from gi.repository import Gtk  # noqa: E402
 
 
 def on_activate(app):
@@ -28,15 +28,16 @@ def clicked_callback(button):
     button.num += 1
 
 
-def quit_callback(_window, _event):
+def on_shutdown(_app):
     """ function to be called when the application is quitted """
-    Gtk.main_quit()
+    print("shutdown")
 
 
 def main():
     """ main app code """
     app = Gtk.Application()
-    app.connect('activate', on_activate)
+    app.connect("activate", on_activate)
+    app.connect("shutdown", on_shutdown)
     app.run(sys.argv)
 
 
