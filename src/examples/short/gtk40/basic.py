@@ -1,5 +1,5 @@
 """
-A minimal gtk application demo.
+A basic gtk 4.0 application
 """
 
 import sys
@@ -17,6 +17,7 @@ def on_activate(app):
     button = Gtk.Button()
     button.num = 0
     clicked_callback(button)
+    # pylint: disable=no-member
     win.set_child(button)
     button.connect("clicked", clicked_callback)
     signal.signal(signal.SIGINT, signal.SIG_DFL)
