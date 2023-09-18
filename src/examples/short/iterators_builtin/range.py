@@ -1,12 +1,5 @@
 """
 This example shows how to use the "range" iterator.
-
-Notes:
-- in python2.7 there was a great different in the performance
-of "range" vs. "xrange". "range" built the entire list in advance
-while "xrange" only iterated the given list.
-- in python3 "xrange" is gone. "range" has the efficiency of python2.7"s
-"xrange" and so you dont have to worry about any of these.
 """
 
 print("range(10)")
@@ -29,7 +22,6 @@ def simple_range(stop, start=0, step=1):
     while count < stop:
         yield count
         count += step
-    # raise StopIteration()
 
 
 print("simple_range(10)")
