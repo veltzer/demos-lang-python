@@ -10,3 +10,4 @@ df = pandas.read_csv(
     header=None, )
 print(df)
 print(df.shape)
+# show that the second column is actually a "C" type integer
