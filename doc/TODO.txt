@@ -1,7 +1,17 @@
+- do demo of how to create your own pypi repo:
+	https://www.linode.com/docs/guides/how-to-create-a-private-python-package-repository/
+	and how to create, packages and push modules to it
+	and how to install modules from it.
+
+- demos of co-routines
+	https://docs.python.org/3/library/asyncio-task.html#coroutines
+
+
 - make CI/CD faster by doing pylint on all the sources ***IN ONE INVOCATION***
 	of pylint.
 	same for flake8.
 	currently build on github takes 25 minutes!!!
+	pylint src/**/*.py will do it in 1.5 minutes instead of much more.
 
 - demo of data classes
 	https://docs.python.org/3/library/dataclasses.html
