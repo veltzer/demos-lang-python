@@ -25,4 +25,4 @@ with open("people.csv", "rt") as stream:
         id_to_person[p.socialid] = p
         people.append(p)
 
-print(people)
+# print(people)

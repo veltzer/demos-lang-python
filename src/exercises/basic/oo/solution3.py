@@ -28,7 +28,7 @@ class Car:
         self.owners.append(owner)
 
     def __repr__(self):
-        return f"<licenseid {self.licenseid}, color {self.color}, cartype {self.cartype}>"
+        return f"<licenseid {self.licenseid}, color {self.color}, cartype {self.cartype} owners {self.owners}>"
 
     def __str__(self):
         return self.__repr__()
@@ -63,7 +63,8 @@ def main():
                 p = id_to_person[owner]
                 p.add_car(c)
                 c.add_owner(p)
-    print(cars)
+    for car in cars:
+        print(car)
 
 
 if __name__ == "__main__":
