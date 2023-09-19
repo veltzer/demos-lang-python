@@ -1,12 +1,16 @@
-PYTHON=python3
+PYTHON=python
+BINARY_FOLDER=build/lib.linux-x86_64-cpython-311
+SUFFIX=.cpython-311-x86_64-linux-gnu.so
+SO_CAR=$(BINARY_FOLDER)/_car$(SUFFIX)
+SO_ATOI=$(BINARY_FOLDER)/_atoi$(SUFFIX)
 
 .PHONY: all
-all: _car.so _atoi.so
+all: $(SO_CAR) $(SO_ATOI)
 
-_atoi.so: atoi_wrap.c
+$(SO_ATOI): atoi_wrap.c
 	$(PYTHON) setup_atoi.py build
 
-_car.so: car_wrap.cxx car.cc
+$(SO_CAR): car_wrap.cxx car.cc
 	$(PYTHON) setup_car.py build
 
 car.py car_wrap.cxx: car.i
@@ -16,11 +20,11 @@ atoi.py atoi_wrap.c: atoi.i
 
 .PHONY: use_car
 use_car:
-	$(PYTHON) use_car.py
+	$(PYTHON) use_car.py $(BINARY_FOLDER)
 
 .PHONY: use_atoi
 use_atoi:
-	$(PYTHON) use_atoi.py
+	$(PYTHON) use_atoi.py $(BINARY_FOLDER)
 
 .PHONY: clean
 clean:

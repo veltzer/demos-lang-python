@@ -5,10 +5,9 @@ If we had done this this would not have been neccessary.
 """
 
 import sys
-# noinspection PyPep8
-# pylint: disable=import-error
+sys.path.append(sys.argv[1])
+# pylint: disable=wrong-import-position
 import atoi  # noqa: E402
 
 
-sys.path.append("build/lib.linux-i686-2.7")
 print(atoi.atoi("-7.6"))
