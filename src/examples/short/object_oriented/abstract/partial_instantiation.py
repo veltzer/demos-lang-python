@@ -11,6 +11,7 @@ class A(abc.ABC):
     @abc.abstractmethod
     def method1(self):
         pass
+
     @abc.abstractmethod
     def method2(self):
         pass
@@ -19,6 +20,7 @@ class A(abc.ABC):
 class B(A):
     def method1(self):
         pass
+
 
 class C(B):
     def method2(self):

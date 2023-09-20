@@ -17,6 +17,7 @@ class B(A):
     def method(self):
         pass
 
+
 try:
     # pylint: disable=abstract-class-instantiated
     a = A()  # type: ignore
