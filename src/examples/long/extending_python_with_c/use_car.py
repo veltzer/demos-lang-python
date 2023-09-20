@@ -7,7 +7,7 @@ If we had this would not have been neccessary.
 import sys
 sys.path.append(sys.argv[1])
 
-# pylint: disable=wrong-import-position
+# pylint: disable=wrong-import-position,import-error
 import car  # noqa: E402
 c = car.Car()
 print(c)

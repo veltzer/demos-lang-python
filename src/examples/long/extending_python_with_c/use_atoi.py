@@ -6,7 +6,7 @@ If we had done this this would not have been neccessary.
 
 import sys
 sys.path.append(sys.argv[1])
-# pylint: disable=wrong-import-position
+# pylint: disable=wrong-import-position,import-error
 import atoi  # noqa: E402
 
 
