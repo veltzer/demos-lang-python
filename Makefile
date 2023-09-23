@@ -47,7 +47,11 @@ endif
 endif # DO_LINT
 
 ifeq ($(DO_FLAKE8),1)
+ifeq ($(DEV),1)
 ALL+=$(ALL_FLAKE8)
+else
+ALL+=all_flake8
+endif
 endif # DO_FLAKE8
 
 ifeq ($(DO_MYPY),1)
@@ -96,16 +100,6 @@ mypy: $(ALL_MYPY)
 .PHONY: moved.phony
 moved.phony:
 	$(Q)pymakehelper error_on_print find src -name "*.moved"
-
-.PHONY: all_lint
-all_lint:
-	$(info doing [$@])
-	$(Q)shopt -s globstar; pymakehelper error_on_print python -m pylint --reports=n --score=n src/**/*.py
-
-.PHONY: all_flake8
-all_flake8:
-	$(info doing [$@])
-	$(Q)pymakehelper error_on_print flake8 src
 
 .PHONY: check_all
 check_all: check_ws check_quotes check_no_python2 check_mode check_has_key check_no_future
@@ -224,6 +218,10 @@ all_pylint: $(ALL_PY)
 all_mypy: $(ALL_PY)
 	$(info doing [$@])
 	$(Q)mypy --package src --no-error-summary
+.PHONY: all_flake8
+all_flake8: $(ALL_PY)
+	$(info doing [$@])
+	$(Q)flake8 $(ALL_PY)
 
 ############
 # patterns #
