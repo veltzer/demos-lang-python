@@ -109,7 +109,6 @@ install_requires = [
     "imageio",
     # my stuff
     "pyapikey",
-    "pyfakeuse",
     "pyvardump",
     # EXIF and image related libraries
     "Pillow",

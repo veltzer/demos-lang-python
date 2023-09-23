@@ -3,7 +3,6 @@
 This example plainly shows that you cannot have two methods in a class by the same
 name. This is true for constructors as well as for regular methods.
 """
-from pyfakeuse import fake_use
 
 
 class A:
@@ -26,7 +25,6 @@ class A:
 try:
     # pylint: disable=too-many-function-args
     a = A(5)
-    fake_use(a)
 except TypeError:
     print("oops,got an error")
     print("the no argument version of the constructor does not exist...")
