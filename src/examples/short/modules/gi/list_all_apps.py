@@ -1,6 +1,7 @@
 from gi.repository import Gio
 
-all_apps = Gio.AppInfo.get_all()  # Returns a list of DesktopAppInfo objects (see docs)
+# Returns a list of DesktopAppInfo objects (see docs)
+all_apps = Gio.AppInfo.get_all()
 
 # For example, print display name and description of all apps
 for app in all_apps:
