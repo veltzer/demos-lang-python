@@ -217,7 +217,7 @@ check_files:
 .PHONY: all_pylint
 all_pylint: $(ALL_PY)
 	$(info doing [$@])
-	$(Q)pylint $(ALL_PY)
+	$(Q)pylint --reports=n --score=n $(ALL_PY)
 .PHONY: all_mypy
 all_mypy: $(ALL_PY)
 	$(info doing [$@])
