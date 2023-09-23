@@ -33,7 +33,9 @@ ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
 ALL_MYPY:=$(addprefix out/,$(addsuffix .mypy, $(basename $(ALL_PY))))
 
 ifeq ($(DO_SYNTAX),1)
+ifeq ($(DEV),1)
 ALL+=$(ALL_SYNTAX)
+endif
 endif # DO_SYNTAX
 
 ifeq ($(DO_LINT),1)
