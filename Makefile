@@ -15,6 +15,8 @@ DO_MOVED:=1
 DO_ALLDEP:=1
 # do you want to see the commands given?
 DO_MKDBG:=0
+# are we in a dev enviornment?
+DEV:=1
 
 ########
 # code #
@@ -35,7 +37,11 @@ ALL+=$(ALL_SYNTAX)
 endif # DO_SYNTAX
 
 ifeq ($(DO_LINT),1)
+ifeq ($(DEV),1)
 ALL+=$(ALL_LINT)
+else
+ALL+=all_pylint
+endif
 endif # DO_LINT
 
 ifeq ($(DO_FLAKE8),1)
@@ -203,6 +209,11 @@ check_files:
 		-not -name "*.ini"\
 		-not -name "*.py.not"\
 		-not -name "*.stamp"
+
+.PHONY: all_pylint
+all_pylint: $(ALL_PY)
+	$(info doing [$@])
+	$(Q)pylint $(ALL_PY)
 
 ############
 # patterns #

@@ -6,7 +6,6 @@
 - demos of co-routines
 	https://docs.python.org/3/library/asyncio-task.html#coroutines
 
-
 - make CI/CD faster by doing pylint on all the sources ***IN ONE INVOCATION***
 	of pylint.
 	same for flake8.
