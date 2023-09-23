@@ -49,7 +49,11 @@ ALL+=$(ALL_FLAKE8)
 endif # DO_FLAKE8
 
 ifeq ($(DO_MYPY),1)
+ifeq ($(DEV),1)
 ALL+=$(ALL_MYPY)
+else
+ALL+=all_mypy
+endif
 endif # DO_MYPY
 
 ifeq ($(DO_MOVED),1)
@@ -214,6 +218,10 @@ check_files:
 all_pylint: $(ALL_PY)
 	$(info doing [$@])
 	$(Q)pylint $(ALL_PY)
+.PHONY: all_mypy
+all_mypy: $(ALL_PY)
+	$(info doing [$@])
+	$(Q)mypy --package src --no-error-summary
 
 ############
 # patterns #

@@ -23,8 +23,8 @@ def resize_image_keep_aspect(image, width, height):
     https://stackoverflow.com/questions/43391205/add-padding-to-images-to-get-them-into-the-same-shape
     """
     h, w = image.shape[:2]
-    original_aspect: float = h / w
-    new_aspect: float = height / width
+    original_aspect: float = h / w  # type: ignore
+    new_aspect: float = height / width  # type: ignore
     if original_aspect > new_aspect:
         resize_factor = height / h
         new_height = height
