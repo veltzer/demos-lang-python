@@ -14,3 +14,8 @@ Here are other generators to be implemented:
 Allow the user to determine in which order to apply the generators.
 
 Print out the output from the last generator.
+
+hint:
+Start simple, don't allow the user to determine the order of generators at first.
+See that all generators work.
+And only then add the flexibility of allowing the user to determine the order of generators.
