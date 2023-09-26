@@ -3,11 +3,13 @@ def line_generator(filename):
         for line in stream:
             yield line
 
+
 def line_splitter():
     for x in line_generator("soliloquy.txt"):
         parts = x.split(" ")
         for part in parts:
             yield part
+
 
 def lowercase_generator():
     for x in line_splitter():
@@ -16,8 +18,9 @@ def lowercase_generator():
 
 def remove_empty_strings():
     for x in lowercase_generator():
-        if x!="":
+        if x != "":
             yield x
+
 
 def newline_remover():
     for x in remove_empty_strings():
@@ -26,16 +29,18 @@ def newline_remover():
         else:
             yield x
 
+
 def punctuation_remover():
-    punctuation_signs=['.', ',', ':', '?', ';']
+    punctuation_signs = ['.', ',', ':', '?', ';']
     for x in newline_remover():
         if x[-1] in punctuation_signs:
             yield x[:-1]
         else:
             yield x
 
+
 def extension_remover():
-    extensions=["ed", "ing", "ion"]
+    extensions = ["ed", "ing", "ion"]
     for x in punctuation_remover():
         found = False
         for y in extensions:
@@ -45,5 +50,6 @@ def extension_remover():
         if not found:
             yield x
 
-for x in extension_remover():
-    print(x)
+
+for t in extension_remover():
+    print(t)

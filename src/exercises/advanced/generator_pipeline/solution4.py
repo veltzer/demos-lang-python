@@ -3,20 +3,24 @@ def line_generator():
         for line in stream:
             yield line
 
+
 def line_splitter(g):
     for x in g:
         parts = x.split(" ")
         for part in parts:
             yield part
 
+
 def lowercase_generator(g):
     for x in g:
         yield x.lower()
 
+
 def remove_empty_strings(g):
     for x in g:
-        if x!="":
+        if x != "":
             yield x
+
 
 def newline_remover(g):
     for x in g:
@@ -25,16 +29,18 @@ def newline_remover(g):
         else:
             yield x
 
+
 def punctuation_remover(g):
-    punctuation_signs=['.', ',', ':', '?', ';']
+    punctuation_signs = ['.', ',', ':', '?', ';']
     for x in g:
         if x[-1] in punctuation_signs:
             yield x[:-1]
         else:
             yield x
 
+
 def extension_remover(g):
-    extensions=["ed", "ing", "ion"]
+    extensions = ["ed", "ing", "ion"]
     for x in g:
         found = False
         for y in extensions:
@@ -44,15 +50,16 @@ def extension_remover(g):
         if not found:
             yield x
 
+
 def main():
-    list_generators = [ ]
+    list_generators = []
     list_of_all_geneators = [
-            line_splitter,
-            lowercase_generator,
-            remove_empty_strings,
-            newline_remover,
-            punctuation_remover,
-            extension_remover,
+        line_splitter,
+        lowercase_generator,
+        remove_empty_strings,
+        newline_remover,
+        punctuation_remover,
+        extension_remover,
     ]
     while True:
         print("please add a generator out of the following list, -1 to end: ")
