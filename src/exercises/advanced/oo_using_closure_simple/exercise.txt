@@ -1,5 +1,3 @@
-
-
 Remember: if a function creates a function then the "inner"/"created" function
 gets to keep a reference to all of the "outer"/"creator" functions variables.
 
