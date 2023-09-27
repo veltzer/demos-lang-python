@@ -18,17 +18,19 @@ HTML = """
 </html>
 """
 
+
 @app.route("/")
 def form():
     return HTML
+
 
 @app.route("/add")
 def add():
     # curl "http://localhost:8081/add?a=X&b=Y"
     response = requests.get(
-            url=f"http://localhost:8081/add",
-            params=request.args,
-            timeout=5,
+        url="http://localhost:8081/add",
+        params=request.args,
+        timeout=5,
     )
     response.raise_for_status()
     return f"the result is {response.text}"
