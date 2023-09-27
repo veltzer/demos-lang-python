@@ -19,6 +19,7 @@ def calc_sum(i):
 
 
 print(calc_sum(6))
-print(calc_sum(6))
 print(calc_sum(7))
+
+print(calc_sum(6))
 print(calc_sum(7))
