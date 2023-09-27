@@ -14,7 +14,7 @@ of a and b.
 The micro service A will then show a weg page of the following format:
 		The result is: 12
 
-Micro Service A
+Micro Service B
 Micro service B will run on port 8081 (in order to not conflict with 8080 which is used by A).
 It will have only one url: /add
 When you access url B with web tools like wget like this:
