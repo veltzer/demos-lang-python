@@ -10,7 +10,7 @@ with subprocess.Popen(
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE
 ) as p:
-    assert p.stdout is not None
+    # assert p.stdout is not None
     for line_b in p.stdout:
         line = line_b.decode().rstrip()
         if line.startswith("secret="):

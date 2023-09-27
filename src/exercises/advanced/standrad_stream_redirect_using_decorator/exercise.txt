@@ -1,4 +1,4 @@
-Write a decorator that redirects sys.stdout to the file “out.txt” and for the duration of the function, and restores the original value when it returns:
+Write a decorator that redirects sys.stdout to the file "out.txt" for the duration of the function, and restores the original value when it returns:
 
 @with_output_to_out_txt
 def f():
