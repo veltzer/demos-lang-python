@@ -5,7 +5,7 @@ This is an example of how to use the subprocess module for streaming
 import subprocess
 
 with subprocess.Popen(
-    ["python", "arkcyber.py"],
+    ["python", "process.py"],
     shell=False,
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE
