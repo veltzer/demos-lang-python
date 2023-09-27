@@ -1,6 +1,7 @@
 import time
+from typing import Dict, Any
 
-timing = {}
+timing: Dict[Any, Any] = {}
 
 
 def time_it(func):
@@ -16,7 +17,7 @@ def time_it(func):
             n_calls = 0
         acc_time += t_func
         n_calls += 1
-        timing[func]=(acc_time, n_calls)
+        timing[func] = (acc_time, n_calls)
         return r
     return inner
 
@@ -29,15 +30,18 @@ def print_timing_summary():
 
 @time_it
 def add(a, b):
-    return a+b
+    return a + b
+
 
 @time_it
 def sub(a, b):
-    return a-b
+    return a - b
+
 
 @time_it
 def wait_1_sec():
     time.sleep(1)
+
 
 print(f"did you know that 2+2={add(2,2)}")
 print(f"did you know that 2-2={sub(2,2)}")
