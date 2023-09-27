@@ -12,4 +12,4 @@ def my_function(...):
 
 
 Hint:
-- use will need the 'time' module to actually know what the time is.
+- you will need the 'time' module to actually know what the time is.
