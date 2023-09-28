@@ -1,4 +1,0 @@
-Write a context manager that redirects sys.stdout to a file for the duration of the block, and restores it on exit.
-
-Note: compare this approach with the decorator approach. See how much simpler it is?
-Conclusion: don't use decorators when a context manager would do.
