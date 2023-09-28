@@ -12,17 +12,17 @@ import logging
 
 
 def my_function():
-    my_logger = logging.getLogger(__name__)
-    my_logger.setLevel(logging.DEBUG)
-    my_logger.warning("this is a warning message %d", 1)
-    my_logger.debug("this is a debug message")
-    my_logger.info("this is an info message")
-    my_logger.error("this is an error message")
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.WARNING)
+    logger.warning("from the function: this is a warning message")
+    logger.debug("from the function: this is a debug message")
+    logger.info("from the function: this is an info message")
+    logger.error("from the function: this is an error message")
 
-
+logging.basicConfig()
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-logger.warning("this is a warning message %d", 1)
+logger.setLevel(logging.WARNING)
+logger.warning("this is a warning message")
 logger.debug("this is a debug message")
 logger.info("this is an info message")
 logger.error("this is an error message")

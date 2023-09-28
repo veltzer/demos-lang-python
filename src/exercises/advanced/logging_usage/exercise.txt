@@ -1,0 +1,14 @@
+Use the python logging library.
+
+Create two logging object.
+The first logger object:
+	- will write to a file called "log.txt"
+	- will have severity "WARNING"
+		(this means it will only print message of severity WARNING and above)
+
+The second logger object:
+	- will send all of his message to the system logger.
+		(Eventlog in windows, syslog in linux/MacOSX).
+	- will have severity "DEBUG"
+
+Demonstrate that your loggers work as expected.
