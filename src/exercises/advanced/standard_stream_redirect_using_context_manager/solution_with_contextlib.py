@@ -26,8 +26,8 @@ with open(outfile, "w"):
     pass
 # test
 print("This should output nothing:")
-for name in ["Fred", "Barney"]:
-    with redirect_output_to(outfile):
+with redirect_output_to(outfile):
+    for name in ["Fred", "Barney"]:
         print(f"Hello, {name}!")
 print("The file now contains this:")
 with open(outfile) as f:
