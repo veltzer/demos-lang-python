@@ -1,3 +1,3 @@
 #!/bin/sh
 
-find . -name "*Test.py" -exec python3 "{}" \;
+find . -name "*Test.py" -exec python "{}" \;

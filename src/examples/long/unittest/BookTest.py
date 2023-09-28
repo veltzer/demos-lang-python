@@ -2,8 +2,7 @@
 
 import unittest
 
-# pylint: disable=relative-beyond-top-level, no-name-in-module
-from . import Book
+import Book
 
 
 class BookTest(unittest.TestCase):
