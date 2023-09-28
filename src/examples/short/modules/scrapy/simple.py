@@ -14,10 +14,10 @@ import scrapy.crawler
 class SearchSpider(scrapy.Spider):
     name = __name__
     allowed_domains = [
-        "jet.com"
+        "google.com"
     ]
     start_urls = (
-        "https://jet.com/search/",
+        "https://google.com",
     )
 
     def __init__(self, *args, **kwargs):
@@ -31,6 +31,9 @@ class SearchSpider(scrapy.Spider):
         This method is called whenever you get a response
         """
         self.logger.info("in parse")
+        # self.start_urls.append("https://safety.google/security-privacy/")
+        yield scrapy.Request(url="https://google.com/maps", callback=self.parse)
+
 
     def closed(self, _reason):
         """

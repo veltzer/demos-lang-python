@@ -10,4 +10,7 @@ sys.path.append(sys.argv[1])
 import atoi  # noqa: E402
 
 
-print(atoi.atoi("-7.6"))
+# the whole path is: python 'str' -> C string (char*) -> calls c 'atoi' - > C int (64 bit, singed) -> Python 'int'
+r = atoi.atoi("-7.6")
+print(type(r))
+print(r)
