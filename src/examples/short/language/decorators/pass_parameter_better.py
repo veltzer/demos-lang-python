@@ -1,6 +1,7 @@
 """
-This is an example of how to pass parameters to a decorator. 
+This is an example of how to pass parameters to a decorator.
 """
+
 
 def multply_by(n):
     def decorator_func(func):
@@ -9,10 +10,10 @@ def multply_by(n):
         return inner
     return decorator_func
 
+
 @multply_by(n=5)
 def add(a, b):
-    return a+b
+    return a + b
 
-# add = multply_by(5)
 
 print(f"did you know that 2+2={add(2,2)}")

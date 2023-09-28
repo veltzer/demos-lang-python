@@ -1,5 +1,5 @@
-import os
 import sys
+
 
 def with_output_to_outfile(filename):
     def creator(f):
@@ -27,4 +27,6 @@ def main():
     hello("Barney")
     print("You should now see this")
 
-main()
+
+if __name__ == "__main__":
+    main()
