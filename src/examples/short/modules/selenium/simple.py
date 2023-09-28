@@ -14,9 +14,12 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-options = Options()
-options.add_argument("--headless")  # do not really open a window
-options.add_argument("--disable-gpu")  # Last I checked this was necessary.
-driver = Chrome(service=Service(ChromeDriverManager().install()), options=options)
+# options = Options()
+# options.add_argument("--headless")  # do not really open a window
+# options.add_argument("--disable-gpu")  # Last I checked this was necessary.
+# driver = Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver = Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://www.python.org")
+import time
+time.sleep(10)
 print(driver.title)
