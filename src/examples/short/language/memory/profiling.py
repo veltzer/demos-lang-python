@@ -10,7 +10,6 @@ from collections import deque
 from reprlib import repr
 import sys
 
-my_list = list(range(1000000))
 
 
 def total_size(o, handlers={}, verbose=False):
@@ -32,7 +31,7 @@ def total_size(o, handlers={}, verbose=False):
                     deque: iter,
                     str: str_handler,
                     dict: dict_handler,
-                    object: object_handler,
+                    # object: object_handler,
                     set: iter,
                     frozenset: iter,
                    }
@@ -57,6 +56,8 @@ def total_size(o, handlers={}, verbose=False):
 
     return sizeof(o)
 
+# my_list = list(range(1000000))
+
 class Person():
 
     def __init__(self, name, surname, age):
@@ -65,9 +66,16 @@ class Person():
         self.age = age
         self.a = [0]*100
 
-p = Person("Linus", "Torvalds", 45)
+# p = Person("Linus", "Torvalds", 45)
 # print(f"my_list size is [{sys.getsizeof(my_list)}]")
 # print(f"p size is [{sys.getsizeof(p)}]")
 # print(f"my_list size is [{total_size(my_list)}]")
-print(f"p size is [{total_size(p, verbose=True)}]")
-print(dir(p))
+# print(f"p size is [{total_size(p)}]")
+# print(dir(p))
+
+l = [0,1,2,3,4,5,6,7,8,9, list(range(10000))]
+print(f"total_size of l is [{total_size(l)}]")
+
+import psutil
+print(psutil.virtual_memory())
+
