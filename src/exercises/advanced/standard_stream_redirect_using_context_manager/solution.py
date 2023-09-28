@@ -6,8 +6,8 @@ outfile = "/tmp/out3.txt"
 
 
 @contextlib.contextmanager
-def redirect_output_to(fname):
-    """Context manager to run with stdout redirected to fname.
+def redirect_output_to(filename):
+    """Context manager to run with stdout redirected to filename.
     The file is opened for appending and closed when the block
     finishes.
     """
