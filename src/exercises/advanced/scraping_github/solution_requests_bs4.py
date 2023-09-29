@@ -1,11 +1,13 @@
+"""
+We are looking for the following html fragment:
+     <h1 class="h0-mktg mt-sm-6 ...">
+        Let’s build from here
+    </h1>
+"""
+
 import requests
 from bs4 import BeautifulSoup
 
-
-"""
-We are looking for the following html fragment:
-     <h1 class="h0-mktg mt-sm-6 mt-md-11 mt-lg-9 mb-2 mb-sm-4 position-relative z-2">                                                Let’s build from here                                                                                                         </h1>
-"""
 
 url = "http://github.com"
 r = requests.get(url, timeout=5)

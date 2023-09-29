@@ -1,5 +1,5 @@
-import logging
 import os
+import logging
 import logging.handlers
 import logging_tree
 

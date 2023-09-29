@@ -1,19 +1,23 @@
-from code import our_function_to_test
-import pytest
 import time
 import subprocess
 
-@pytest.fixture()
-def server():
-    # setup - bring the server up
-    proc = subprocess.Popen(["python", "server.py"]) 
-    # give the process 2 seconds to set up
-    time.sleep(60)
-    yield "server"
-    # teardown - bring the server down
-    proc.kill()
+# pylint: disable=relative-beyond-top-level
+from .code import our_function_to_test
 
 
 class TestSomething:
-    def test_server(self, server):
+
+    @classmethod
+    def setup_class(cls):
+        # setup - bring the server up
+        # pylint: disable=consider-using-with
+        cls.proc = subprocess.Popen(["python", "server.py"])
+        # give the process 2 seconds to set up
+        time.sleep(2)
+
+    @classmethod
+    def teardown_class(cls):
+        cls.proc.kill()
+
+    def test_server(self):
         our_function_to_test()

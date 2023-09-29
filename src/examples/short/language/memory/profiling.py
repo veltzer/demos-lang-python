@@ -7,12 +7,12 @@ which makes sense if each int is 4 bytes.
 
 from itertools import chain
 from collections import deque
-from reprlib import repr
+import reprlib
 import sys
+import psutil
 
 
-
-def total_size(o, handlers={}, verbose=False):
+def total_size(o, handlers=None, verbose=False):
     """ Returns the approximate memory footprint an object and all of its contents.
 
     Automatically finds the contents of the following builtin containers and
@@ -23,18 +23,28 @@ def total_size(o, handlers={}, verbose=False):
                     OtherContainerClass: OtherContainerClass.get_elements}
 
     """
-    dict_handler = lambda d: chain.from_iterable(d.items())
-    object_handler = lambda o: o.__dict__.keys() 
-    str_handler = lambda s: s
-    all_handlers = {tuple: iter,
-                    list: iter,
-                    deque: iter,
-                    str: str_handler,
-                    dict: dict_handler,
-                    # object: object_handler,
-                    set: iter,
-                    frozenset: iter,
-                   }
+    if handlers is None:
+        handlers = {}
+
+    def dict_handler(d):
+        return chain.from_iterable(d.items())
+
+    # def object_handler(o):
+    #     return o.__dict__.keys()
+
+    def str_handler(s):
+        return s
+
+    all_handlers = {
+        tuple: iter,
+        list: iter,
+        deque: iter,
+        str: str_handler,
+        dict: dict_handler,
+        # object: object_handler,
+        set: iter,
+        frozenset: iter,
+    }
     all_handlers.update(handlers)     # user handlers take precedence
     seen = set()                      # track which object id's have already been seen
     default_size = sys.getsizeof(0)       # estimate sizeof object without __sizeof__
@@ -46,7 +56,7 @@ def total_size(o, handlers={}, verbose=False):
         s = sys.getsizeof(o, default_size)
 
         if verbose:
-            print(s, type(o), repr(o), file=sys.stderr)
+            print(s, type(o), reprlib.repr(o), file=sys.stderr)
 
         for typ, handler in all_handlers.items():
             if isinstance(o, typ):
@@ -58,13 +68,14 @@ def total_size(o, handlers={}, verbose=False):
 
 # my_list = list(range(1000000))
 
+
 class Person():
 
     def __init__(self, name, surname, age):
         self.name = name
         self.surname = surname
         self.age = age
-        self.a = [0]*100
+        self.a = [0] * 100
 
 # p = Person("Linus", "Torvalds", 45)
 # print(f"my_list size is [{sys.getsizeof(my_list)}]")
@@ -73,9 +84,8 @@ class Person():
 # print(f"p size is [{total_size(p)}]")
 # print(dir(p))
 
+
 l = [0,1,2,3,4,5,6,7,8,9, list(range(10000))]
 print(f"total_size of l is [{total_size(l)}]")
 
-import psutil
 print(psutil.virtual_memory())
-

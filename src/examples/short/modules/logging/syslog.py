@@ -7,7 +7,6 @@ the output...
 and who the message came from
 """
 
-import os
 import time
 import logging.handlers
 

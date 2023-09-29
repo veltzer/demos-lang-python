@@ -8,10 +8,11 @@ References:
     how-to-configure-chromedriver-to-initiate-chrome-browser-in-headless-mode-throug
 """
 
+import time
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+# from selenium.webdriver.chrome.options import Options
 
 
 # options = Options()
@@ -20,6 +21,5 @@ from webdriver_manager.chrome import ChromeDriverManager
 # driver = Chrome(service=Service(ChromeDriverManager().install()), options=options)
 driver = Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://www.python.org")
-import time
 time.sleep(10)
 print(driver.title)

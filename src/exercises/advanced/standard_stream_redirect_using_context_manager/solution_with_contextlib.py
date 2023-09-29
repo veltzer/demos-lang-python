@@ -12,12 +12,12 @@ def redirect_output_to(filename):
     finishes.
     """
     old_stdout = sys.stdout
-    new_stdout = sys.stdout = open(fname, "a")
+    sys.stdout = open(filename, "a")
     try:
         yield
     finally:
+        sys.stdout.close()
         sys.stdout = old_stdout
-        new_stdout.close()
 
 
 # Running this will destroy [outfile]!

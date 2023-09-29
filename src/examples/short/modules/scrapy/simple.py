@@ -34,7 +34,6 @@ class SearchSpider(scrapy.Spider):
         # self.start_urls.append("https://safety.google/security-privacy/")
         yield scrapy.Request(url="https://google.com/maps", callback=self.parse)
 
-
     def closed(self, _reason):
         """
         This method is called automatically when the crawler finishes
