@@ -35,6 +35,17 @@ install_requires = [
     "psycopg2",
     # data languages
     "jsonschema",
+    "jsonpickle",
+    # GUI
+    "PyQt5",
+    "PyQt5-stubs",
+    # selenium stuff
+    "webdriver-manager",
+    "selenium",
+    "selenium-wire",
+    # music
+    "music",
+    "mingus",
     # GUI
     "PyQt5",
     "PyQt5-stubs",
