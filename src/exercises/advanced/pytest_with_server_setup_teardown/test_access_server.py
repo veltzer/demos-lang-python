@@ -2,7 +2,7 @@ import time
 import subprocess
 
 # pylint: disable=relative-beyond-top-level
-from .code import our_function_to_test
+from our_code import our_function_to_test  # type: ignore
 
 
 class TestSomething:
