@@ -12,8 +12,8 @@ w.add(horizontal_box)  # type: ignore[attr-defined]
 entry1 = Gtk.Entry()
 entry2 = Gtk.Entry()
 result = Gtk.Label()
-# for widget in [entry1, Gtk.Label(label="+"), entry2, Gtk.Label(label="="), result]:
-#   horizontal_box.pack_start(widget)
+for widget in [entry1, Gtk.Label(label="+"), entry2, Gtk.Label(label="="), result]:
+    horizontal_box.add(widget)
 
 
 def compute(*_ignored):
