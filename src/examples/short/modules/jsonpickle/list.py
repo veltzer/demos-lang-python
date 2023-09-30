@@ -1,3 +1,7 @@
+"""
+This exapmle examines how jsonpickle serializes a python list
+"""
+
 import jsonpickle
 
 
@@ -15,13 +19,15 @@ class Person:
 
 # Create an instance of the class
 o1 = Person("John", 30)
-print(o1)
+o2 = Person("Mary", 24)
+l1 = [o1, o2]
+print(l1)
 
 # Serialize the instance to JSON using jsonpickle
-json_str = jsonpickle.encode(o1)
+json_str = jsonpickle.encode(l1)
 print(json_str)
 
-o2 = jsonpickle.decode(json_str)
-print(o2)
+l2 = jsonpickle.decode(json_str)
+print(l2)
 
-print(o1 == o2)
+print(l1 == l2)
