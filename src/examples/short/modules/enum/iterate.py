@@ -1,5 +1,7 @@
 """
-Example of an enum in python3
+Example of how to iterate all the values of an Enum type
+
+If you just want the basename of the enum use .name.
 """
 
 import enum
@@ -11,11 +13,7 @@ class SampleEnum(enum.Enum):
     three = 3
 
 
-y = SampleEnum.one
-print(y)
-print("==============")
 for x in SampleEnum:
+    print(type(x))
+    print(x.name)
     print(x)
-print("==============")
-for t in type(y):
-    print(t)
