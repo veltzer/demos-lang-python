@@ -14,9 +14,9 @@ def my_gen():
         yield i ** 2
 
 
-def plus1(x):
+def plus1(t):
     print("plus1")
-    return x + 1
+    return t + 1
 
 
 for x in map(plus1, my_gen()):
