@@ -1,7 +1,10 @@
 """
-This example shows that when map is given a generator it DOES NOT create a list
-with all the elements that the generator provides but rather iterates the generator
-added one element at a time to the resulting list.
+This example shows that when 'map' is given a generator it DOES NOT create a list
+with all the elements that the generator provides but rather creates a new generator
+that will provide you with the processed data, one element at a time.
+
+You can see that all the prints are interleaved which proves that the elements are generated
+one at a time.
 """
 
 
@@ -16,4 +19,5 @@ def plus1(x):
     return x + 1
 
 
-map(plus1, my_gen())
+for x in map(plus1, my_gen()):
+    print(x)

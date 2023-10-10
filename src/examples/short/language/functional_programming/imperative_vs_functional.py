@@ -1,5 +1,3 @@
-
-
 # this is the "regular" or "non-functional"
 # version of the code
 # this style of programming is called "imperative programming"
