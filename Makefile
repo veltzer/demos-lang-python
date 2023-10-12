@@ -238,7 +238,7 @@ $(ALL_FLAKE8): out/%.flake8: %.py
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error flake8 $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_MYPY): out/%.mypy: %.py
+$(ALL_MYPY): out/%.mypy: %.py .mypy.ini .mypy.specific.ini
 	$(info doing [$@])
-	$(Q)pymakehelper only_print_on_error mypy $<
+	$(Q)pymakehelper only_print_on_error mypy --config-file .mypy.ini --config-file .mypy.specific.ini $<
 	$(Q)pymakehelper touch_mkdir $@
