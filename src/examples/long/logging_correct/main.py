@@ -1,8 +1,8 @@
 import logging
 import logging.config
 
-import correct
-import incorrect
+import correct  # type: ignore
+import incorrect  # type: ignore
 import yaml
 
 

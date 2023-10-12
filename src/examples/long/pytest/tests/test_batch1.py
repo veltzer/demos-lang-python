@@ -1,4 +1,4 @@
-import tests.mod
+import tests.mod  # type: ignore
 
 
 def test_batch1_test1():

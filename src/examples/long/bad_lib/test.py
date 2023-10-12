@@ -1,4 +1,4 @@
-import module_checker
+import module_checker  # type: ignore
 
 # this works
 # module_checker.check_lib("libacl.so")

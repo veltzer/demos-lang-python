@@ -13,13 +13,16 @@ install_requires = [
     "furl",
     "requests",
     "beautifulsoup4",
+    "types-beautifulsoup4",
     "html5lib",
     "lxml",
     # progress and tui
     "tqdm",
+    "types-tqdm",
     "pythondialog",
     # systems programming
     "psutil",
+    "types-psutil",
     # problems intalling the next module on github systems
     # "systemd-python",
     "PyGObject",
@@ -33,8 +36,10 @@ install_requires = [
     "mysql.connector",
     "sqlalchemy",
     "psycopg2",
+    "types-psycopg2",
     # data languages
     "jsonschema",
+    "types-jsonschema",
     "jsonpickle",
     # GUI
     "PyQt5",
@@ -58,10 +63,13 @@ install_requires = [
     "mingus",
     # machine learning
     "pandas",
+    "pandas-stubs",
     "numpy",
     # terminal color stuff
     "termcolor",
     "colored",
+    "colorama",
+    "types-colorama",
     # yaml
     "oyaml",
     "ruamel.yaml",
@@ -94,6 +102,7 @@ install_requires = [
     "flask",
     "tsv",
     "pygments",
+    "types-pygments",
     "simpleparse",
     "progressbar",
     "inject",
@@ -123,6 +132,7 @@ install_requires = [
     "pyvardump",
     # EXIF and image related libraries
     "Pillow",
+    "types-Pillow",
     "ExifRead",
     "exif",
     "piexif",

@@ -1,4 +1,4 @@
-import a.b.c.mod
+import a.b.c.mod  # type: ignore
 
 print(f"hello from [{__file__}]")
 

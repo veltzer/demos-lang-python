@@ -8,7 +8,7 @@ import sys
 sys.path.append(sys.argv[1])
 
 # pylint: disable=wrong-import-position,import-error
-import car  # noqa: E402
+import car  # type: ignore # noqa: E402
 c = car.Car()
 print(c)
 c.printSelf()

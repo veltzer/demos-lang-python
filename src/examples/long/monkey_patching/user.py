@@ -1,5 +1,5 @@
-import mod_a_1
-import mod_b_1
+import mod_a_1  # type: ignore
+import mod_b_1  # type: ignore
 
 
 # lets call the regular version of the function
@@ -18,8 +18,8 @@ mod_a_1.func_a_1 = hacked1
 mod_b_1.func_b_1()
 
 # pylint: disable=wrong-import-position
-import mod_b_2  # noqa: E402
-import mod_a_2  # noqa: E402
+import mod_b_2  # type:ignore # noqa: E402
+import mod_a_2  # type:ignore # noqa: E402
 
 # lets call the regular version of the function
 print("before hacking")

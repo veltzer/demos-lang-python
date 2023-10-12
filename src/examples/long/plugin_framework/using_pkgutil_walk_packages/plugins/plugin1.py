@@ -1,4 +1,4 @@
-import base
+import base  # type: ignore
 
 print(f"[{__file__}] loading")
 

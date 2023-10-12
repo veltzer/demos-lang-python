@@ -1,4 +1,4 @@
-import mod_a_1
+import mod_a_1  # type: ignore
 
 
 def func_b_1():

@@ -1,4 +1,4 @@
-import plugin_mgr
+import plugin_mgr  # type: ignore
 
 # the easiest way to use
 plugins = plugin_mgr.importPlugins(folder="plugins")
