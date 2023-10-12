@@ -1,7 +1,7 @@
 import sys
 from time import localtime
 
-from date3 import Calendar, Date
+from date3 import Calendar, Date  # type: ignore
 
 filename = sys.argv[0]
 c = Calendar()

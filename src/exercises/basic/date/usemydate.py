@@ -1,4 +1,4 @@
-import mydate
+import mydate  # type: ignore
 
 for i in mydate.months_name:
     print("month is ", i)

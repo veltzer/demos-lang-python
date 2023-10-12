@@ -3,7 +3,7 @@ A calendar of events, has an entry for every event,
 which is a mapping from event name to Date object
 """
 
-import mydate
+import mydate  # type: ignore
 
 
 class Calendar:

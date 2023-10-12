@@ -1,7 +1,7 @@
 import sys
 from time import localtime
 
-from date3 import Calendar, Date
+from date3 import Calendar, Date  # type: ignore
 
 c = Calendar()
 with open(sys.argv[0]) as f:
