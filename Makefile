@@ -230,7 +230,7 @@ $(ALL_SYNTAX): out/%.syntax: %.py scripts/syntax_check.py
 	$(info doing [$@])
 	$(Q)pymakehelper error_on_print scripts/syntax_check.py $<
 	$(Q)pymakehelper touch_mkdir $@
-$(ALL_LINT): out/%.lint: %.py
+$(ALL_LINT): out/%.lint: %.py .pylintrc
 	$(info doing [$@])
 	$(Q)pymakehelper error_on_print python -m pylint --reports=n --score=n $<
 	$(Q)pymakehelper touch_mkdir $@
