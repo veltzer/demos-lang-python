@@ -65,6 +65,7 @@ install_requires = [
     "pandas",
     "pandas-stubs",
     "numpy",
+    "matplotlib",
     # terminal color stuff
     "termcolor",
     "colored",
