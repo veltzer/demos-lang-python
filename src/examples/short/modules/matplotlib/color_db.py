@@ -2,15 +2,13 @@
 This example shows you the color database that comes with matplotlib.
 """
 
-
-# List available color maps
-# from matplotlib import pyplot
-# color_maps = pyplot.colormaps()
-# print(color_maps)
-
+from matplotlib import pyplot
 from matplotlib import colors
-# Get XKCD color names and RGB values
-xkcd_colors = colors.XKCD_COLORS
+
+color_maps = pyplot.colormaps()
+for color_map in color_maps:
+    print(color_map)
+
 colors_dbs = [
     colors.XKCD_COLORS,
     colors.TABLEAU_COLORS,
