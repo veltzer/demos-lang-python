@@ -1,5 +1,5 @@
 """
-Example of an enum in python3
+This is an example of how to test if something is a member if this enum
 """
 
 import enum
@@ -28,18 +28,3 @@ def is_enum(member):
 # passing numbers is no good, we need to pass the real values
 is_enum(7)
 is_enum(Event.edge_pre_del)
-
-print(Event.edge_pre_del)
-print(dir(Event.edge_pre_del))
-print(dir(Event))
-print(f"name is [{Event.edge_pre_del.name}] and type is [{type(Event.edge_pre_del.name)}]")
-print(f"value is [{Event.edge_pre_del.value}] and type is [{type(Event.edge_pre_del.value)}]")
-
-print("listing all values of the enum...")
-for x in Event:
-    print(x)
-    print(x.name)
-    print(x.value)
-
-# translate from string to number
-print(Event["edge_pre_del"])

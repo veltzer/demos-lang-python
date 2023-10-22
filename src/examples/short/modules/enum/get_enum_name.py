@@ -1,6 +1,6 @@
 """
 This is an example of how to print the name of the enum
-Once is was EnumType._name_
+Once it was EnumType._name_ now it's __name__.
 """
 
 import enum
