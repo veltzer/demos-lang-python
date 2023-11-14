@@ -6,7 +6,7 @@ description: Demos for the Python programming language (version 3)
 
 website: https://veltzer.github.io/demos-python
 
-## build
+## Build
 
 ![build](https://github.com/veltzer/demos-python/workflows/build/badge.svg)
 
@@ -24,7 +24,7 @@ the experiments on your full system but rather on a small example
 that is easy to run, debug and manage. Once you have the example ready and
 running correctly you can incorporate its code into a larger project.
 
-## contact
+## Contact
 
 chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/veltzer/mark.veltzer)
 
