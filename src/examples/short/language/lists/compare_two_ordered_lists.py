@@ -12,5 +12,7 @@ References:
 
 list1 = [1, 2, 3]
 list2 = [1, 2, 3]
+list3 = [1, 2]
 
-assert list1, list2
+assert list1 == list2, "the lists are not the same"
+assert list2 != list3, "the lists are the same"
