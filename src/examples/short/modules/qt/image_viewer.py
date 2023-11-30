@@ -36,7 +36,7 @@ def main():
     table_widget = TableWidget(10, 2)
     table_widget.setImage(0, 1, "data/jpg/image0000.jpg")
     table_widget.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
 
 main()

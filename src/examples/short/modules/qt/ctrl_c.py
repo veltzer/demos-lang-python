@@ -26,4 +26,4 @@ window.show()
 # app.setQuitOnLastWindowClosed(True)
 
 # Go into the application main loop
-sys.exit(app.exec_())
+sys.exit(app.exec())
