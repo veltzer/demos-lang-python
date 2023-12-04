@@ -1,0 +1,10 @@
+general article
+https://stackoverflow.com/questions/15044447/how-do-i-unit-testing-my-gui-program-with-python-and-pyqt
+
+pytest-qt
+https://pytest-qt.readthedocs.io/en/latest/intro.html
+https://pypi.org/project/pytest-qt/
+
+QtTest
+https://github.com/jmcgeheeiv/pyqttestexample/
+https://web.archive.org/web/20130903012954/http://www.voom.net/pyqt-qtest-example
