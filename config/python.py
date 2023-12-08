@@ -139,6 +139,9 @@ install_requires = [
     "exif",
     "piexif",
     "PyExifTool",
+    # k8s
+    "kubernetes",
+    "kubernetes-stubs",
 ]
 test_requires = [
     "pylint",
