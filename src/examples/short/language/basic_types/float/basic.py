@@ -1,5 +1,5 @@
 """
-A basic demo of the python 'float' type
+A basic demo of the python "float" type
 
 It demonstrates the arbitrary precision of floats
 """

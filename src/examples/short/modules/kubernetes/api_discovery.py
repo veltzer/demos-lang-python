@@ -28,7 +28,9 @@ def main():
     kubernetes.config.load_kube_config()
 
     print("Supported APIs (* is preferred version):")
-    print(f"{'core':<40} {','.join(kubernetes.client.CoreApi().get_api_versions().versions)}")
+    versions = ",".join(kubernetes.client.CoreApi().get_api_versions().versions)
+    core = "core"
+    print(f"{core:<40} {versions}")
     for api in kubernetes.client.ApisApi().get_api_versions().groups:
         versions = []
         for v in api.versions:
@@ -38,8 +40,9 @@ def main():
                 name += "*"
             name += v.version
             versions.append(name)
-        print(f"{api.name:<40} {','.join(versions)}")
+        versions_str = ",".join(versions)
+        print(f"{api.name:<40} {versions_str}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

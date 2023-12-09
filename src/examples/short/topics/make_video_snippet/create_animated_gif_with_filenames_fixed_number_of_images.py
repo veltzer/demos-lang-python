@@ -1,6 +1,6 @@
 """
 This is an attempt to create an animated gif snippet from a video
-using the 'cv2' and 'imageio' python modules.
+using the "cv2" and "imageio" python modules.
 
 References:
 - https://theailearner.com/2021/05/29/creating-gif-from-video-using-opencv-and-imageio/

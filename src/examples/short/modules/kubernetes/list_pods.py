@@ -26,5 +26,5 @@ def main():
         print(f"{i.status.pod_ip} {i.metadata.namespace} {i.metadata.name}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

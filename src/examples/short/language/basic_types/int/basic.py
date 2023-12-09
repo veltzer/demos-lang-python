@@ -1,5 +1,5 @@
 """
-A basic demo of the python 'int' type
+A basic demo of the python "int" type
 
 It demonstrates the arbitrary precision of ints
 """

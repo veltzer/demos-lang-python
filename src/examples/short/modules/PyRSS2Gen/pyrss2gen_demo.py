@@ -10,7 +10,7 @@ import PyRSS2Gen
 
 
 rss = PyRSS2Gen.RSS2(
-    title="Andrew's PyRSS2Gen feed",
+    title="Andrews PyRSS2Gen feed",
     link="http://www.dalkescientific.com/Python/PyRSS2Gen.html",
     description="The latest news about PyRSS2Gen, a Python library for generating RSS2 feeds",
     lastBuildDate=datetime.datetime.now(),

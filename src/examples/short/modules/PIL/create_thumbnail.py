@@ -1,5 +1,5 @@
 """
-This is an example of who to create a thumbnail from an image using the 'Pillow'
+This is an example of who to create a thumbnail from an image using the "Pillow"
 python library.
 
 References:

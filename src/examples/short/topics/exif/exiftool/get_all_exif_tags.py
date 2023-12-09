@@ -5,7 +5,7 @@ names from it.
 Why do we need it?
 Because it turns out THERE IS NO LIST OF ALL POSSIBLE EXIF TAGS!!!
 I know! This is absurd!
-I couldn't find such a list on the web.
+I couldnt find such a list on the web.
 
 The problem is that the output of exiftool(1) is for human consumption and not for computer
 use so we need to run "exiftool -list" and masssage the output a little bit.

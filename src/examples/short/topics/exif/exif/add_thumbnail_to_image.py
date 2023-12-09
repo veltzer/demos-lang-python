@@ -1,5 +1,5 @@
 """
-This is an example of how to read EXIF data using the 'exif' python module
+This is an example of how to read EXIF data using the "exif" python module
 """
 
 import os.path
@@ -12,10 +12,10 @@ if len(sys.argv) != 3:
 original = sys.argv[1]
 target = sys.argv[2]
 assert not os.path.isfile(target), "target file should not exist"
-with open(original, 'rb') as image_file:
+with open(original, "rb") as image_file:
     image = Image(image_file)
     image.make = "Python"
     # image.thumbnail_bytes="foo"
     # image["Thumbnail"] = "thumbnail data"
-    with open(target, 'wb') as target_stream:
+    with open(target, "wb") as target_stream:
         target_stream.write(image.get_file())

@@ -1,5 +1,5 @@
 """
-This example shows all possible EXIF fields using the 'PyExifTool' python module.
+This example shows all possible EXIF fields using the "PyExifTool" python module.
 """
 
 import sys

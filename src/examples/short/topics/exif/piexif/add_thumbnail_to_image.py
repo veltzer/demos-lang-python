@@ -1,5 +1,5 @@
 """
-This is an example of how to read EXIF data using the 'piexif' python module
+This is an example of how to read EXIF data using the "piexif" python module
 """
 
 import os.path

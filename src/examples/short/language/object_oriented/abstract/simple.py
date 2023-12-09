@@ -1,6 +1,6 @@
 """
 This is an example with a class with an abstract method and the fact that it cannot
-be instantiated. It's subclass which does implement the method can be instantiated.
+be instantiated. Its subclass which does implement the method can be instantiated.
 """
 
 import abc

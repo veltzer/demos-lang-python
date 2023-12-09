@@ -1,5 +1,5 @@
 """
-This example shows that you cannot use the return value of the 'map' function
+This example shows that you cannot use the return value of the "map" function
 directly. Instead you must either use a "for" loop to extract the values or
 to construct some data structure from the map return value.
 """

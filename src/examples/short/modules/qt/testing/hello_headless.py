@@ -9,7 +9,7 @@ References:
 import sys
 import PyQt5.QtWidgets
 
-sys.argv.extend(['-platform', 'minimal'])
+sys.argv.extend(["-platform", "minimal"])
 app = PyQt5.QtWidgets.QApplication(sys.argv)
 button = PyQt5.QtWidgets.QPushButton("Button")
 button.clicked.connect(button.close)

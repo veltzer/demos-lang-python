@@ -1,5 +1,5 @@
 """
-This example shows that when 'map' is given a generator it DOES NOT create a list
+This example shows that when "map" is given a generator it DOES NOT create a list
 with all the elements that the generator provides but rather creates a new generator
 that will provide you with the processed data, one element at a time.
 

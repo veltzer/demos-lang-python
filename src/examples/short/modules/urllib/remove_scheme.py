@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 
 
 def strip_scheme(url: str) -> str:
-    schemaless = urlparse(url)._replace(scheme='').geturl()
+    schemaless = urlparse(url)._replace(scheme="").geturl()
     return schemaless[2:]
 
 

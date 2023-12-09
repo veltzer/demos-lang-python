@@ -19,7 +19,9 @@ def main():
     count = 10
     w = kubernetes.watch.Watch()
     for event in w.stream(v1.list_namespace, _request_timeout=60):
-        print(f"Event: {event['type']} {event['object'].metadata.name}")
+        f_type = event["type"]
+        f_object = event["object"]
+        print(f"Event: {f_type} {f_object.metadata.name}")
         count -= 1
         if not count:
             w.stop()
@@ -27,5 +29,5 @@ def main():
     print("Ended.")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

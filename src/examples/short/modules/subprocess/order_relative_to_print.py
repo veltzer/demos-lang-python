@@ -25,7 +25,7 @@ import subprocess
 # import sys
 # sys.stdout = open(
 #   sys.stdout.fileno(),
-#   mode='w',
+#   mode="w",
 #   buffering=1,
 #   encoding=sys.stdout.encoding,
 #   errors=sys.stdout.errors,

@@ -1,5 +1,5 @@
 """
-This is an example that shows all EXIF fields using the 'exif' python module.
+This is an example that shows all EXIF fields using the "exif" python module.
 """
 
 # import exif

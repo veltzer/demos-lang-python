@@ -1,6 +1,6 @@
 """
 This is an exmample of how to get the thumbnail EXIF data from an image that has a thumbnail
-using the 'piexif' python module.
+using the "piexif" python module.
 """
 
 import os.path

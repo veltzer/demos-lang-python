@@ -1,6 +1,6 @@
 """
 This is an example of how to create a video snippet from a video file using
-the python 'cv2' module.
+the python "cv2" module.
 
 The code was originally created by chatGPT
 """
@@ -59,7 +59,7 @@ def create_video_snippet(video_path, output_path, start_time, duration):
     frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = cap.get(cv2.CAP_PROP_FPS)
 
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Define the codec for the output video
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")  # Define the codec for the output video
     out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
 
     # Capture frames until the desired duration is reached

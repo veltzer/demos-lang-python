@@ -142,6 +142,7 @@ install_requires = [
     # k8s
     "kubernetes",
     "kubernetes-stubs",
+    "openshift-client",
 ]
 test_requires = [
     "pylint",

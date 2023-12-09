@@ -15,7 +15,7 @@ def correct_divide(a, b):
     try:
         return a / b
     except ZeroDivisionError as ex:
-        raise ValueError('b must not be zero') from ex
+        raise ValueError("b must not be zero") from ex
 
 
 def incorrect_divide(a, b):
@@ -23,7 +23,7 @@ def incorrect_divide(a, b):
         return a / b
     except ZeroDivisionError:
         # pylint: disable=raise-missing-from
-        raise ValueError('b must not be zero')
+        raise ValueError("b must not be zero")
 
 
 correct_divide(10, 0)

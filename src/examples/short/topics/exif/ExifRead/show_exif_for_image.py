@@ -9,7 +9,7 @@ if len(sys.argv) != 2:
     print(f"{sys.argv[0]}: usage: {sys.argv[0]} [IMAGE_FILENAME]")
     sys.exit(1)
 image_name = sys.argv[1]
-with open(image_name, 'rb') as stream:
+with open(image_name, "rb") as stream:
     tags = exifread.process_file(stream)
     for k, v in tags.items():
         v_str = str(v)

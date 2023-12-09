@@ -21,6 +21,6 @@ for k, v in exif_data.items():
     if k in PIL.ExifTags.TAGS:
         string_tag = PIL.ExifTags.TAGS[k]
     print(f"{string_tag} {k} {v}")
-exif_data = image.info['exif']
+exif_data = image.info["exif"]
 print(type(exif_data))
 # print(exif_data)

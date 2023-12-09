@@ -46,7 +46,7 @@ def total_size(o, handlers=None, verbose=False):
         frozenset: iter,
     }
     all_handlers.update(handlers)     # user handlers take precedence
-    seen = set()                      # track which object id's have already been seen
+    seen = set()                      # track which object ids have already been seen
     default_size = sys.getsizeof(0)       # estimate sizeof object without __sizeof__
 
     def sizeof(o):

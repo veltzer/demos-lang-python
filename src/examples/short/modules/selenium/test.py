@@ -14,7 +14,7 @@ driver = Chrome(service=Service(ChromeDriverManager().install()), options=option
 # Navigate to the Google homepage
 driver.get("https://www.google.com")
 
-# Find the search input element by its name attribute ('q')
+# Find the search input element by its name attribute ("q")
 search_input = driver.find_element(By.NAME, "q")  # Use By.NAME here
 
 # Enter a search query (e.g., "Selenium testing") into the search input

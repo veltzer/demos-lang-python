@@ -17,7 +17,7 @@ formatter = logging.Formatter("%(name)s %(levelname)s %(message)s")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-print("please run 'tail -f /var/log/syslog' to see the logs...")
+print("please run [tail -f /var/log/syslog] to see the logs...")
 counter = 0
 while True:
     logger.debug(f"this is debug {counter}")

@@ -1,5 +1,5 @@
 """
-This example shows all possible EXIF fields using the 'Pillow' python module.
+This example shows all possible EXIF fields using the "Pillow" python module.
 
 References:
 - https://stackoverflow.com/questions/4764932/in-python-how-do-i-read-the-exif-data-for-an-image

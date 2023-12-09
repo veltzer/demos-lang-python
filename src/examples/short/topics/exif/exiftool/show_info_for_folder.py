@@ -1,6 +1,6 @@
 """
 This script shows statistic are number of tags that exiftools finds per folder.
-It only scans '.mkv' files in that folder.
+It only scans ".mkv" files in that folder.
 """
 
 import os
