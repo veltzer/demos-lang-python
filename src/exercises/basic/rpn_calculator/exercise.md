@@ -16,19 +16,20 @@ RPN expressions, using a stack:
 
 Write a program that does this, printing the stack after each word::
 
-	[]
-	2
-	[2.0]
-	2
-	[2.0, 2.0]
-	+
-	[4.0]
-	5
-	[4.0, 5.0]
-	*
-	[20.0]
+```text
+[]
+2
+[2.0]
+2
+[2.0, 2.0]
++
+[4.0]
+5
+[4.0, 5.0]
+*
+[20.0]
+```
 
 ## Hints
 
-* A list works great to represent a stack - use ``.append(value)`` and
-	``.pop()`` methods.
+* A list works great to represent a stack - use `.append(value)` and `.pop()` methods.

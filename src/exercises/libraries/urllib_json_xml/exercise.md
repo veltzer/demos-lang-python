@@ -1,11 +1,11 @@
 # Urllib JSON and XML
 
-Fetch http://ws.geonames.org/hierarchyJSON?geonameId=2657896
+Fetch [this](http://ws.geonames.org/hierarchyJSON?geonameId=2657896)
 Parse this JSON and produce a nested XML showing the place of Zurich in the world:
 
 ```xml
 <place name="Earth>
-		<place name="Zurich />
+    <place name="Zurich />
 </place>
 ```xml
 

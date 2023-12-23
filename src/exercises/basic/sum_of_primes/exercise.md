@@ -1,1 +1,3 @@
-What is the sum of prime numbers less than 1000?
+# Sum of Primes
+
+What is the sum of prime numbers less than 1000 ?
