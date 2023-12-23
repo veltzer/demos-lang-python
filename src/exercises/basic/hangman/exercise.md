@@ -4,6 +4,7 @@ Write a module that implements a "hangman" game.
 It starts with a secret word (e.g. "banana"), and the module will have one public function:
 Guess(letter) that will either say there is no such letter, or reveal it in the word:
 
+```python
 >>>import hangman
 ??????
 >>>guess('a')
@@ -13,6 +14,7 @@ No such letter
 ?a?a?a
 >>> guess('n')
 ?anana
+```
 
 The original game limits the number of mistakes you can make - ignore it for now.
 

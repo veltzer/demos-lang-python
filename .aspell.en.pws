@@ -1,4 +1,4 @@
-personal_ws-1.1 en 991 
+personal_ws-1.1 en 1022 
 AARRR
 ACLs
 ADPlus
@@ -176,6 +176,7 @@ Elbit
 Employability
 EnableAutoConfiguration
 Endedness
+Eventlog
 Extjs
 FFT
 FS
@@ -323,6 +324,7 @@ MSysGit
 MTD
 MVC
 MVVM
+MacOSX
 MagicMock
 Makefile
 Manjaro
@@ -341,6 +343,7 @@ Mixpanel
 MobaXterm
 Mockito
 MontaVista
+Mordor
 Morozov
 MultiIndex
 Multicore
@@ -440,6 +443,7 @@ RFI
 RNN
 RNNs
 RPC
+RPN
 RTAI
 RTC
 RTLinux
@@ -448,16 +452,20 @@ RWLock
 RabbitMQ
 Radware
 RawMIDI
+ReaderEnter
+ReaderLeave
 Rebalancing
 Rebasing
 Recommender
 RecoverySystem
 RedHat
+RedirectManager
 Rekognition
 Remoting
 ReplicaSet
 Repo
 RestTemplate
+Rivendell
 Rollup
 Runnable
 Runtime
@@ -595,6 +603,8 @@ Werror
 Wi
 WinDbg
 Workspaces
+WriterEnter
+WriterLeave
 XFail
 XHR
 XP
@@ -645,6 +655,7 @@ buildstats
 busses
 callgrind
 canonicalization
+caser
 cd
 cgroups
 chatbot
@@ -674,6 +685,7 @@ creational
 crosstool
 crypto
 csh
+csv
 cve
 cyclictest
 dataset
@@ -735,17 +747,23 @@ gRPC
 gcd
 gdb
 gdbserver
+getStatus
 getpid
+getters
 gettid
 gettimeofday
+github
 gitignore
 glibc
 gperf
+hardcoded
 hashSetOf
 hotplug
+html
 icc
 imagePullPolicy
 inetd
+ing
 init
 initializer
 initializers
@@ -792,6 +810,7 @@ listOf
 livelock
 lmdb
 ln
+localhost
 lockdep
 lockless
 loopback
@@ -847,6 +866,7 @@ passwd
 pathspec
 perceptron
 perf
+phonebook
 pid
 pipenv
 polymorphism
@@ -887,6 +907,7 @@ rmdir
 rpath
 rpcgen
 rspec
+rstrip
 runnable
 runtime
 rwlocks
@@ -896,6 +917,7 @@ sbin
 sbrk
 scalability
 scalable
+scrapy
 scriptable
 sed
 sendfile
@@ -914,13 +936,18 @@ solrconfig
 spidering
 spinlock
 spinlocks
+splitter
 splunk
 sqlmap
+startListening
 staticcast
+stdout
+str
 strace
 struct
 stylesheets
 subnets
+subprocess
 sudo
 syllabi
 sys
@@ -935,10 +962,13 @@ tSNE
 tasklet
 taskset
 tcsh
+textwrap
 theming
 tid
 timerfd
 timeslices
+tis
+tmp
 tmpfs
 toolchain
 toolchains
@@ -979,6 +1009,7 @@ webhook
 webkit
 weblogic
 webserver
+wget
 wic
 worktree
 worktrees

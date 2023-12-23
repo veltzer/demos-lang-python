@@ -13,7 +13,7 @@ example of a shared closure:
 			pass
 		return (a,b)
 	both a and b have a pointer to the SAME X!!!!
-	That is a "shared clsoure".
+	That is a "shared closure".
 
 And now for the exercise:
 create a "stack" like data structure without using object oriented programming and

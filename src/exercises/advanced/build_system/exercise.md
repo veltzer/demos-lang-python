@@ -4,11 +4,11 @@ Make clone
 Make is a tool that reads a file describing files that can be produced
 from other files (e.g. executable from sources), and what commands
 have to be run to do it (e.g. compiler). It compares file
-modification dates, and only regenerates the files whose dependecies
+modification dates, and only regenerates the files whose dependencies
 changed.
 
 In this exercise, you'll write a very simplified version of Make.
-You'll only handle dependecy lists (without commands) and you'll
+You'll only handle dependency lists (without commands) and you'll
 ignore file modification times (always assuming everything need to be
 rebuilt).
 

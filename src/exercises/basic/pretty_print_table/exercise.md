@@ -33,7 +33,7 @@ For starters, assume there are exactly 3 columns and print each column
 ```
 
 This is quite easy. The only tricky part is that the data is arranged
-by columns, so you need to access the i'th element of each column in
+by columns, so you need to access the nth element of each column in
 parallel.
 
 ## Hints

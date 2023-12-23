@@ -6,7 +6,7 @@ Conclusion: don't use decorators when a context manager would do.
 this was redirection using a function decorator:
 
 @redirect
-def my_func():
+def my_function():
     print("hello")
 
 now we want the same thing but using a context manager and not a function decorator:

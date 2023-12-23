@@ -2,7 +2,7 @@ Write a script that shows a file in a tabular format.
 Here is an example of a file:
 =========>8=============
 Mark Python 8
-Doron Java 5
+Moron Java 5
 =========>8=============
 The output should be like this:
 Mark  Python 8
