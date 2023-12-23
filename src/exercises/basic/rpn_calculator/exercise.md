@@ -3,7 +3,9 @@
 A "Reverse Polish Notation" calculator takes input in a strange form,
 where operators come after the operands::
 
-	2 2 + 5 *
+```text
+2 2 + 5 *
+```
 
 which means (2 + 2) * 5. There is an extremely simple way to compute
 RPN expressions, using a stack:

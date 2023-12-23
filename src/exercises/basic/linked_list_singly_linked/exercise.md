@@ -1,6 +1,8 @@
-- Implement a single linked list in Python.
-	Do it an an object oriented fashion - create an object
-	which has both data and the next element.
-	The list ends when the next element pointer is None.
+# Linked List Singly List
 
-	Use imp_single_interface.py as a starting point.
+Implement a single linked list in Python.
+Do it an an object oriented fashion - create an object
+which has both data and the next element.
+The list ends when the next element pointer is None.
+
+Use `imp_single_interface.py` as a starting point.

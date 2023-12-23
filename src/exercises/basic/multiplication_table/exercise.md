@@ -1,4 +1,6 @@
+# Multiplication Table
+
 Write down the multiplication table up to 10.
 
-Bonus:
+## Bonus
 Add the sum of all numbers in the table.

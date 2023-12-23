@@ -1,3 +1,5 @@
+# Map Functions Generator
+
 Write a function that receives a list of unary functions and a single argument, and calls each 
 function with the argument.  It should return a list of the results. 
 Note that this is the opposite of map() which applies one function to different arguments. 
