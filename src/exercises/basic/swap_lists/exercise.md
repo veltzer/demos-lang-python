@@ -1,5 +1,10 @@
-Write a function that accepts two lists of the same size and swaps their contents.
-Usage example:
+# Swap Lists
+
+* Write a function that accepts two lists of the same size and swaps their contents.
+
+* Usage example
+
+```python
 >>> l1 = [1,2,3]
 >>> l2 = [4,5,6]
 >>> swap_list(l1,l2)
@@ -7,3 +12,4 @@ Usage example:
 [4,5,6]
 >>> l2
 [1,2,3]
+```

@@ -1,10 +1,11 @@
-The input code right-aligns several lines of text.
+# Text Processing
 
-Modify this code so that instead of being told the width (8 in this
-case), it will automatically compute the length of the longest line.
+* The input code right-aligns several lines of text.
 
-**Hints**:
+* Modify this code so that instead of being told the width (8 in this case), it will automatically compute the length of the longest line.
 
-- ``len("abc")`` returns 3.
+## Hints
 
-- ``max([3,1,8])`` returns 8.
+* `len("abc")` returns 3
+
+* `max([3,1,8])` returns 8

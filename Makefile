@@ -17,6 +17,10 @@ DO_ALLDEP:=1
 DO_MKDBG:=0
 # are we in a dev enviornment?
 DEV:=1
+# do you want to run mdl on md files?
+DO_MD_MDL:=1
+# do spell check on all?
+DO_MD_ASPELL:=1
 
 ########
 # code #
@@ -31,6 +35,10 @@ ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
 ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
 ALL_MYPY:=$(addprefix out/,$(addsuffix .mypy, $(basename $(ALL_PY))))
+MD_SRC:=$(shell find src/exercises -type f -and -name "*.md")
+MD_BAS:=$(basename $(MD_SRC))
+MD_MDL:=$(addprefix out/,$(addsuffix .mdl,$(MD_BAS)))
+MD_ASPELL:=$(addprefix out/,$(addsuffix .aspell,$(MD_BAS)))
 
 ifeq ($(DO_SYNTAX),1)
 ifeq ($(DEV),1)
@@ -69,6 +77,14 @@ endif # DO_MOVED
 ifeq ($(DO_ALLDEP),1)
 .EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
 endif # DO_ALLDEP
+
+ifeq ($(DO_MD_MDL),1)
+ALL+=$(MD_MDL)
+endif # DO_MD_MDL
+
+ifeq ($(DO_MD_ASPELL),1)
+ALL+=$(MD_ASPELL)
+endif # DO_MD_ASPELL
 
 ifeq ($(DO_MKDBG),1)
 Q=
@@ -142,6 +158,10 @@ debug:
 	$(info ALL_FLAKE8 is $(ALL_FLAKE8))
 	$(info ALL_MYPY is $(ALL_MYPY))
 	$(info ALL is $(ALL))
+	$(info MD_SRC is $(MD_SRC))
+	$(info MD_BAS is $(MD_BAS))
+	$(info MD_ASPELL is $(MD_ASPELL))
+	$(info MD_MDL is $(MD_MDL))
 
 .PHONY: show_shbang
 show_shbang:
@@ -241,4 +261,13 @@ $(ALL_FLAKE8): out/%.flake8: %.py
 $(ALL_MYPY): out/%.mypy: %.py .mypy.ini
 	$(info doing [$@])
 	$(Q)pymakehelper only_print_on_error mypy $<
+	$(Q)pymakehelper touch_mkdir $@
+$(MD_MDL): out/%.mdl: %.md .mdlrc .mdl.style.rb
+	$(info doing [$@])
+	$(Q)GEM_HOME=gems gems/bin/mdl $<
+	$(Q)mkdir -p $(dir $@)
+	$(Q)touch $@
+$(MD_ASPELL): out/%.aspell: %.md .aspell.conf .aspell.en.prepl .aspell.en.pws
+	$(info doing [$@])
+	$(Q)aspell --conf-dir=. --conf=.aspell.conf list < $< | pymakehelper error_on_print sort -u
 	$(Q)pymakehelper touch_mkdir $@

@@ -1,3 +1,5 @@
+# Hangman
+
 Write a module that implements a "hangman" game.
 It starts with a secret word (e.g. "banana"), and the module will have one public function:
 Guess(letter) that will either say there is no such letter, or reveal it in the word:

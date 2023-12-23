@@ -1,5 +1,4 @@
-RPN Calculator
-==============
+# RPN Calculator
 
 A "Reverse Polish Notation" calculator takes input in a strange form,
 where operators come after the operands::
@@ -9,10 +8,9 @@ where operators come after the operands::
 which means (2 + 2) * 5. There is an extremely simple way to compute
 RPN expressions, using a stack:
 
-- When you see a number, push it onto the stack.
+* When you see a number, push it onto the stack.
 
-- When you see an operator, pop 2 operands from the stack, and push
-	the result on the stack.
+* When you see an operator, pop 2 operands from the stack, and push the result on the stack.
 
 Write a program that does this, printing the stack after each word::
 
@@ -28,10 +26,7 @@ Write a program that does this, printing the stack after each word::
 	*
 	[20.0]
 
-**Hints**:
+## Hints
 
-- A list works great to represent a stack - use ``.append(value)`` and
+* A list works great to represent a stack - use ``.append(value)`` and
 	``.pop()`` methods.
-
-Solution: ``rpn_calculator.py`` (Read this solution! It will teach
-you something about using functions in unexpected ways.)
