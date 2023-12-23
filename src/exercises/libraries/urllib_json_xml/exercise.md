@@ -1,4 +1,4 @@
-# Urllib Json and XML
+# Urllib JSON and XML
 
 Fetch http://ws.geonames.org/hierarchyJSON?geonameId=2657896
 Parse this JSON and produce a nested XML showing the place of Zurich in the world:

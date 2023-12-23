@@ -24,6 +24,6 @@ for c in my_string:
 
 will print all the characters in the string "hello", one on each line.
 
-* if you have a string named 's' and you want to access it's 'n'th character then s[n] will give you that character (n should be an integer and represent a valid position within the string)
+* if you have a string named 's' and you want to access it's nth character then s[n] will give you that character (n should be an integer and represent a valid position within the string)
 
 * if you want to access a substring of a string from location x to location y (not including y) then `s[x:y]` will give you that slice of the string.
