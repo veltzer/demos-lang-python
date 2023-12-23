@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1022 
+personal_ws-1.1 en 1035 
 AARRR
 ACLs
 ADPlus
@@ -173,6 +173,7 @@ Eigen
 ElastiCache
 ElasticSearch
 Elbit
+ElementTree
 Employability
 EnableAutoConfiguration
 Endedness
@@ -444,6 +445,7 @@ RNN
 RNNs
 RPC
 RPN
+RSS
 RTAI
 RTC
 RTLinux
@@ -531,6 +533,7 @@ StatsD
 StrSafe
 Stroustrup
 Structs
+Substring
 Suggesters
 SurfaceFlinger
 Synchronizer
@@ -756,11 +759,13 @@ github
 gitignore
 glibc
 gperf
+gtk
 hardcoded
 hashSetOf
 hotplug
 html
 icc
+iff
 imagePullPolicy
 inetd
 ing
@@ -828,6 +833,7 @@ memmap
 microk
 mk
 mkdir
+mkdtemp
 mmap
 mmiotrace
 mortem
@@ -862,6 +868,7 @@ os
 outputstream
 packfiles
 pagefaults
+parsers
 passwd
 pathspec
 perceptron
@@ -904,6 +911,7 @@ repos
 resolvers
 retainment
 rmdir
+rmtree
 rpath
 rpcgen
 rspec
@@ -929,6 +937,7 @@ setOf
 setuptools
 shader
 shbang
+shutil
 siginterrupt
 signalfd
 sigprocmask
@@ -948,6 +957,7 @@ struct
 stylesheets
 subnets
 subprocess
+substring
 sudo
 syllabi
 sys
@@ -962,6 +972,7 @@ tSNE
 tasklet
 taskset
 tcsh
+tempfile
 textwrap
 theming
 tid
@@ -991,6 +1002,8 @@ uniq
 unittest
 unmangled
 uring
+urllib
+urlopen
 userspace
 valgrind
 variadic

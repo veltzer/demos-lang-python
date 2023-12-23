@@ -1,4 +1,4 @@
-﻿# Date
+# Date
 
 Write a module for dealing with dates.
 It will have a mapping from month name to number of days in that month, and also from month number to month name.
@@ -16,10 +16,10 @@ What is a leap year?
 A year is a leap year if it is divisible by 4 not divisible by 100 unless divisible by 400.
 
 Edit your date module:
-1. Write a class that represents a Date.
+Write a class that represents a Date.
 It will be initialized from 3 numbers: day, month, year. The __init__ method will check the validity of the arguments.
 Overload the operators: >, < , ==, !=, <=, >=.
-	Write an __str__() method.
+Write an __str__() method.
 
 The data defined previously in the module will be used for validity checking of the dates.
 
@@ -47,4 +47,3 @@ Hint: The module time can tell you what the current month is.
 * Add exception handling everywhere it is needed. (Raise an exception for invalid arguments).
 * You might want to write your own exceptions for that.
 * The calendar creating script will handle the exceptions.
-

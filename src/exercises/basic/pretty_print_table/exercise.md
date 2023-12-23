@@ -1,7 +1,6 @@
 # Pretty Print Table
 
-Table
-=====
+## Definition
 
 You are given a list of 3 columns, each being a list of strings (all of the same length):
 
@@ -22,13 +21,13 @@ For starters, assume there are exactly 3 columns and print each column
 
 ```text
 +-------+---------------+-------+
-|H  	|Hidrogen    	|1.008	|
+|H      |Hidrogen       |1.008  |
 +-------+---------------+-------+
-|He  	|Helium	    	|4.003	|
+|He     |Helium         |4.003  |
 +-------+---------------+-------+
-|Li	    |Litium	    	|6.941	|
+|Li     |Litium         |6.941  |
 +-------+---------------+-------+
-|Be  	|Berilium    	|9.012	|
+|Be     |Berilium       |9.012  |
 +-------+---------------+-------+
 ```
 
