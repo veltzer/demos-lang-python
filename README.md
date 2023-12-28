@@ -2,7 +2,7 @@
 
 version: 0.0.2
 
-description: Demos for the Python programming language (version 3)
+description: Demos for the Python programming language
 
 website: https://veltzer.github.io/demos-python
 

@@ -1,5 +1,5 @@
 name = "demos-python"
-description_short = "Demos for the Python programming language (version 3)"
+description_short = "Demos for the Python programming language"
 description_long = """This project explores the python programming language.
 The idea is that when you are programming you may find many examples
 over the Internet but you always need to tweak them a bit to see
