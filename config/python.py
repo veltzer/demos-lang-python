@@ -1,7 +1,4 @@
-make_requires = [
-    "pymakehelper",
-    "pydmt",
-]
+config_requires = []
 dev_requires = [
     "black",
 ]
@@ -144,6 +141,10 @@ install_requires = [
     "kubernetes-stubs",
     "openshift-client",
 ]
+make_requires = [
+    "pymakehelper",
+    "pydmt",
+]
 test_requires = [
     "pylint",
     "pytest",
@@ -160,3 +161,4 @@ test_requires = [
     "types-paramiko",
     "types-termcolor",
 ]
+requires = config_requires + install_requires + make_requires + test_requires
