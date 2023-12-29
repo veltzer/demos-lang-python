@@ -15,8 +15,6 @@ DO_MOVED:=1
 DO_ALLDEP:=1
 # do you want to see the commands given?
 DO_MKDBG:=0
-# are we in a dev enviornment?
-DEV:=1
 # do you want to run mdl on md files?
 DO_MD_MDL:=1
 # do spell check on all?
@@ -41,13 +39,15 @@ MD_MDL:=$(addprefix out/,$(addsuffix .mdl,$(MD_BAS)))
 MD_ASPELL:=$(addprefix out/,$(addsuffix .aspell,$(MD_BAS)))
 
 ifeq ($(DO_SYNTAX),1)
-ifeq ($(DEV),1)
+ifndef GITHUB_WORKFLOW
 ALL+=$(ALL_SYNTAX)
+else
+ALL+=all_syntax
 endif
 endif # DO_SYNTAX
 
 ifeq ($(DO_LINT),1)
-ifeq ($(DEV),1)
+ifndef GITHUB_WORKFLOW
 ALL+=$(ALL_LINT)
 else
 ALL+=all_pylint
@@ -55,7 +55,7 @@ endif
 endif # DO_LINT
 
 ifeq ($(DO_FLAKE8),1)
-ifeq ($(DEV),1)
+ifndef GITHUB_WORKFLOW
 ALL+=$(ALL_FLAKE8)
 else
 ALL+=all_flake8
@@ -63,7 +63,7 @@ endif
 endif # DO_FLAKE8
 
 ifeq ($(DO_MYPY),1)
-ifeq ($(DEV),1)
+ifndef GITHUB_WORKFLOW
 ALL+=$(ALL_MYPY)
 else
 ALL+=all_mypy
@@ -242,6 +242,10 @@ all_mypy: $(ALL_PY)
 all_flake8: $(ALL_PY)
 	$(info doing [$@])
 	$(Q)flake8 $(ALL_PY)
+.PHONY: all_syntax
+all_syntax: $(ALL_PY)
+	$(info doing [$@])
+	$(Q)scripts/syntax_check.py $(ALL_PY)
 
 ############
 # patterns #
