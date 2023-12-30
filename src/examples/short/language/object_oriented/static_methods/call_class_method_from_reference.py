@@ -3,6 +3,7 @@ This is an example of how to call a class method directly from a reference to th
 """
 
 from types import MethodType
+from typing import Callable, Any
 
 
 class Book:
@@ -31,15 +32,15 @@ ref_to_method = Book.increment_num
 ref_to_method()
 
 # this ref is also bound and so can be called
-ref_to_method = Book.ref_full
-ref_to_method()
+ref_to_method_2: Callable[[type[Book]], Any] = Book.ref_full
+ref_to_method_2()  # type: ignore
 
 # this ref is an unbloud method, and so cannot be called
-ref_to_method = Book.ref[0]
+ref_to_method_3: Callable[[type[Book]], Any] = Book.ref[0]
 try:
-    ref_to_method()
+    ref_to_method_3()  # type: ignore
 except TypeError as e:
     print(e)
 # this is how we bind the method back to the class
 # pylint: disable=not-callable
-MethodType(ref_to_method.__func__, Book)()
+MethodType(ref_to_method_3.__func__, Book)()  # type: ignore

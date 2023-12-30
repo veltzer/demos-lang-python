@@ -9,20 +9,20 @@ where the solution is the sum of its parts.
 https://en.wikipedia.org/wiki/Blackboard_system
 """
 from __future__ import annotations
-
+from typing import List, Dict
 import abc
 import random
 
 
 class Blackboard:
     def __init__(self) -> None:
-        self.experts = []
-        self.common_state = {
+        self.experts: List[AbstractExpert] = []
+        self.common_state: Dict[str, int] = {
             "problems": 0,
             "suggestions": 0,
-            "contributions": [],
             "progress": 0,  # percentage, if 100 -> task is finished
         }
+        self.contributions: List[str] = []
 
     def add_expert(self, expert: AbstractExpert) -> None:
         self.experts.append(expert)
@@ -66,8 +66,8 @@ class Student(AbstractExpert):
     def contribute(self) -> None:
         self.blackboard.common_state["problems"] += random.randint(1, 10)
         self.blackboard.common_state["suggestions"] += random.randint(1, 10)
-        self.blackboard.common_state["contributions"] += [self.__class__.__name__]
         self.blackboard.common_state["progress"] += random.randint(1, 2)
+        self.blackboard.contributions += [self.__class__.__name__]
 
 
 class Scientist(AbstractExpert):
@@ -78,8 +78,8 @@ class Scientist(AbstractExpert):
     def contribute(self) -> None:
         self.blackboard.common_state["problems"] += random.randint(10, 20)
         self.blackboard.common_state["suggestions"] += random.randint(10, 20)
-        self.blackboard.common_state["contributions"] += [self.__class__.__name__]
         self.blackboard.common_state["progress"] += random.randint(10, 30)
+        self.blackboard.contributions += [self.__class__.__name__]
 
 
 class Professor(AbstractExpert):
@@ -90,8 +90,8 @@ class Professor(AbstractExpert):
     def contribute(self) -> None:
         self.blackboard.common_state["problems"] += random.randint(1, 2)
         self.blackboard.common_state["suggestions"] += random.randint(10, 20)
-        self.blackboard.common_state["contributions"] += [self.__class__.__name__]
         self.blackboard.common_state["progress"] += random.randint(10, 100)
+        self.blackboard.contributions += [self.__class__.__name__]
 
 
 def main():
