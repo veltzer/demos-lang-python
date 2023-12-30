@@ -1,4 +1,9 @@
 This is a curated list of tools for python:
-	isort - fix your imports
-	black - fix your coding style
-	flake8 - check your coding style
+
+isort - fix your imports
+black - fix your coding style
+flake8 - check your coding style
+codespell- check your code for spelling mistakes
+pyupgrade - A tool (and pre-commit hook) to automatically upgrade syntax for newer versions of the language.
+tox - automate and standardize testing in Python
+devpi: PyPI server and packaging/testing/release tool

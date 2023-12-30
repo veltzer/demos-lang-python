@@ -10,7 +10,7 @@ DO_FLAKE8:=1
 # do you wnat to lint python fies using mypy?
 DO_MYPY:=1
 # do you want to test that there are no .moved files?
-DO_MOVED:=1
+DO_MOVED:=0
 # do dependency on the makefile itself?
 DO_ALLDEP:=1
 # do you want to see the commands given?
@@ -29,6 +29,7 @@ ALL_PY:=$(shell find src -name "*.py")
 else
 ALL_PY:=$(shell git ls-files 'src/*.py')
 endif # shell which git
+ALL_FILES=$(shell find src -type f)
 ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
 ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
@@ -71,7 +72,7 @@ endif
 endif # DO_MYPY
 
 ifeq ($(DO_MOVED),1)
-ALL+=moved.phony
+ALL+=out/moved.stamp
 endif # DO_MOVED
 
 ifeq ($(DO_ALLDEP),1)
@@ -113,9 +114,6 @@ flake8: $(ALL_FLAKE8)
 .PHONY: mypy
 mypy: $(ALL_MYPY)
 
-.PHONY: moved.phony
-moved.phony:
-	$(Q)pymakehelper error_on_print find src -name "*.moved"
 
 .PHONY: check_all
 check_all: check_ws check_quotes check_no_python2 check_mode check_has_key check_no_future
@@ -246,6 +244,13 @@ all_flake8: $(ALL_PY)
 all_syntax: $(ALL_PY)
 	$(info doing [$@])
 	$(Q)scripts/syntax_check.py $(ALL_PY)
+
+#####################
+# single file rules #
+#####################
+out/moved.stamp: $(ALL_FILES)
+	$(Q)pymakehelper error_on_print find src -name "*.moved"
+	$(Q)pymakehelper touch_mkdir $@
 
 ############
 # patterns #

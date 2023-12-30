@@ -28,3 +28,6 @@ python tricks collection:
 similar repos:
 	https://github.com/reuven/pandas-workout
 	https://github.com/reuven/python-workout
+
+design patterns for python
+	https://github.com/faif/python-patterns
