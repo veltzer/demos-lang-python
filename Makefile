@@ -80,7 +80,11 @@ ifeq ($(DO_ALLDEP),1)
 endif # DO_ALLDEP
 
 ifeq ($(DO_MD_MDL),1)
+ifndef GITHUB_WORKFLOW
 ALL+=$(MD_MDL)
+else
+ALL+=all_mdl
+endif
 endif # DO_MD_MDL
 
 ifeq ($(DO_MD_ASPELL),1)
@@ -244,6 +248,10 @@ all_flake8: $(ALL_PY)
 all_syntax: $(ALL_PY)
 	$(info doing [$@])
 	$(Q)scripts/syntax_check.py $(ALL_PY)
+.PHONY: all_mdl
+all_mdl: $(MD_SRC) .mdlrc .mdl.style.rb
+	$(info doing [$@])
+	$(Q)GEM_HOME=gems gems/bin/mdl $(MD_SRC)
 
 #####################
 # single file rules #
