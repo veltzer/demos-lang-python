@@ -24,10 +24,10 @@ class DiscountStrategyValidator:  # Descriptor class for check perform
         except ValueError as ex:
             print(str(ex))
             return False
-        else:
-            return True
+        return True
 
     def __set_name__(self, owner, name: str) -> None:
+        # pylint: disable=attribute-defined-outside-init
         self.private_name = f"_{name}"
 
     def __set__(self, obj: Order, value: Callable = None) -> None:
