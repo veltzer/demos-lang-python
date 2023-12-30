@@ -1,8 +1,11 @@
-config_requires = []
-dev_requires = [
+from typing import List
+
+
+config_requires: List[str] = []
+dev_requires: List[str] = [
     "black",
 ]
-install_requires = [
+install_requires: List[str] = [
     # command line parsing
     "click",
     "cmd2",
@@ -141,11 +144,11 @@ install_requires = [
     "kubernetes-stubs",
     "openshift-client",
 ]
-make_requires = [
+make_requires: List[str] = [
     "pymakehelper",
     "pydmt",
 ]
-test_requires = [
+test_requires: List[str] = [
     "pylint",
     "pytest",
     "pytest-cov",
