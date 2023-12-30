@@ -6,11 +6,11 @@ class RegistryHolder(type):
     REGISTRY: Dict[str, "RegistryHolder"] = {}
 
     def __new__(cls, name, bases, attrs):
-        new_cls = type.__new__(cls, name, bases, attrs)
         """
             Here the name of the class is used as key but it could be any class
             parameter.
         """
+        new_cls = type.__new__(cls, name, bases, attrs)
         cls.REGISTRY[new_cls.__name__] = new_cls
         return new_cls
 

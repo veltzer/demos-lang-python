@@ -20,6 +20,8 @@ Allow a request to pass down a chain of receivers until it is handled.
 
 from abc import ABC, abstractmethod
 from typing import Optional, Tuple
+from contextlib import redirect_stdout
+import io
 
 
 class Handler(ABC):
@@ -44,12 +46,11 @@ class Handler(ABC):
 
 
 class ConcreteHandler0(Handler):
-    """Each handler can be different.
+    """
+    Each handler can be different.
     Be simple and static...
     """
-
-    @staticmethod
-    def check_range(request: int) -> Optional[bool]:
+    def check_range(self, request: int) -> Optional[bool]:
         if 0 <= request < 10:
             print(f"request {request} handled in handler 0")
             return True
@@ -84,36 +85,35 @@ class ConcreteHandler2(Handler):
 
 
 class FallbackHandler(Handler):
-    @staticmethod
-    def check_range(request: int) -> Optional[bool]:
+    def check_range(self, request: int) -> Optional[bool]:
         print(f"end of chain, no handler for {request}")
         return False
 
 
-def main():
-    """
-    >>> h0 = ConcreteHandler0()
-    >>> h1 = ConcreteHandler1()
-    >>> h2 = ConcreteHandler2(FallbackHandler())
-    >>> h0.successor = h1
-    >>> h1.successor = h2
+CORRECT_OUTOUT=\
+"""request 2 handled in handler 0
+request 5 handled in handler 0
+request 14 handled in handler 1
+request 22 handled in handler 2
+request 18 handled in handler 1
+request 3 handled in handler 0
+end of chain, no handler for 35
+request 27 handled in handler 2
+request 20 handled in handler 2
+"""
 
-    >>> requests = [2, 5, 14, 22, 18, 3, 35, 27, 20]
-    >>> for request in requests:
-    ...     h0.handle(request)
-    request 2 handled in handler 0
-    request 5 handled in handler 0
-    request 14 handled in handler 1
-    request 22 handled in handler 2
-    request 18 handled in handler 1
-    request 3 handled in handler 0
-    end of chain, no handler for 35
-    request 27 handled in handler 2
-    request 20 handled in handler 2
-    """
+def main():
+    h0 = ConcreteHandler0()
+    h1 = ConcreteHandler1()
+    h2 = ConcreteHandler2(FallbackHandler())
+    h0.successor = h1
+    h1.successor = h2
+    requests = [2, 5, 14, 22, 18, 3, 35, 27, 20]
+    with redirect_stdout(io.StringIO()) as output:
+        for request in requests:
+            h0.handle(request)
+    assert output.getvalue() == CORRECT_OUTOUT
 
 
 if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod(optionflags=doctest.ELLIPSIS)
+    main()
