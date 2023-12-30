@@ -4,6 +4,7 @@ This is an example of how to call a class method directly from a reference to th
 
 from types import MethodType
 
+
 class Book:
     num = 0
 
@@ -16,8 +17,8 @@ class Book:
         cls.num += 1
         return cls.num
 
-    ref_full=increment_num
-    ref=[increment_num]
+    ref_full = increment_num
+    ref = [increment_num]
 
     @classmethod
     def call_it(cls):
@@ -25,15 +26,15 @@ class Book:
 
 
 # this ref is a bound method, and so can be called
-ref_to_method=Book.increment_num
+ref_to_method = Book.increment_num
 ref_to_method()
 
 # this ref is also bound and so can be called
-ref_to_method=Book.ref_full
+ref_to_method = Book.ref_full
 ref_to_method()
 
 # this ref is an unbloud method, and so cannot be called
-ref_to_method=Book.ref[0]
+ref_to_method = Book.ref[0]
 try:
     ref_to_method()
 except TypeError as e:

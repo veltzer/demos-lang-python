@@ -35,6 +35,8 @@ Decouples the creation of a complex object and its representation.
 # Abstract Building
 class Building:
     def __init__(self) -> None:
+        self.floor = None
+        self.size = None
         self.build_floor()
         self.build_size()
 
@@ -45,7 +47,7 @@ class Building:
         raise NotImplementedError
 
     def __repr__(self) -> str:
-        return "Floor: {0.floor} | Size: {0.size}".format(self)
+        return f"Floor: {self.floor} | Size: {self.size}"
 
 
 # Concrete Buildings
@@ -72,8 +74,11 @@ class Flat(Building):
 
 
 class ComplexBuilding:
+    def __init__(self) -> None:
+        self.floor = None
+        self.size = None
     def __repr__(self) -> str:
-        return "Floor: {0.floor} | Size: {0.size}".format(self)
+        return f"Floor: {self.floor} | Size: {self.size}"
 
 
 class ComplexHouse(ComplexBuilding):

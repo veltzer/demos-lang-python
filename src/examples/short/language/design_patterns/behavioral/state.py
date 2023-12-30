@@ -71,7 +71,7 @@ class Radio:
         self.state.scan()
 
 
-CORRECT_OUTPUT="""\
+CORRECT_OUTPUT = """\
 Scanning... Station is 1380 AM
 Scanning... Station is 1510 AM
 Switching to FM
@@ -83,6 +83,7 @@ Switching to AM
 Scanning... Station is 1250 AM
 Scanning... Station is 1380 AM
 """
+
 
 def main():
     radio = Radio()

@@ -109,8 +109,8 @@ class CatalogClass:
         will execute either _class_method_1 or _class_method_2
         depending on self.param value
         """
-        f=CatalogClass._class_method_choices[self.param]
-        m=MethodType(f.__func__, CatalogClass)
+        f = CatalogClass._class_method_choices[self.param]
+        m = MethodType(f.__func__, CatalogClass)
         # pylint: disable=not-callable
         return m()
 

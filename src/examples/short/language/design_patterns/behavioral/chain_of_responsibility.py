@@ -90,8 +90,8 @@ class FallbackHandler(Handler):
         return False
 
 
-CORRECT_OUTOUT=\
-"""request 2 handled in handler 0
+CORRECT_OUTOUT = """\
+request 2 handled in handler 0
 request 5 handled in handler 0
 request 14 handled in handler 1
 request 22 handled in handler 2
@@ -101,6 +101,7 @@ end of chain, no handler for 35
 request 27 handled in handler 2
 request 20 handled in handler 2
 """
+
 
 def main():
     h0 = ConcreteHandler0()
