@@ -20,6 +20,7 @@ class GraphSearch:
                 newpath = self.find_path_dfs(node, end, path[:])
                 if newpath:
                     return newpath
+        return path
 
     def find_all_paths_dfs(self, start, end, path=None):
         path = path or []
@@ -70,14 +71,14 @@ class GraphSearch:
         if start == end:
             return queue
 
-        while len(queue):
+        while len(queue) > 0:
             value = queue.pop(0)
             for node in self.graph[value]:
-                if node not in dist_to.keys():
+                if node not in dist_to:
                     edge_to[node] = value
                     dist_to[node] = dist_to[value] + 1
                     queue.append(node)
-                    if end in edge_to.keys():
+                    if end in edge_to:
                         path = []
                         node = end
                         while dist_to[node] != 0:
@@ -85,6 +86,7 @@ class GraphSearch:
                             node = edge_to[node]
                         path.insert(0, start)
                         return path
+        raise ValueError("I should not be here")
 
 
 def main():
