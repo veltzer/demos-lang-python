@@ -90,7 +90,7 @@ class FallbackHandler(Handler):
         return False
 
 
-CORRECT_OUTOUT = """\
+CORRECT_OUTPUT = """\
 request 2 handled in handler 0
 request 5 handled in handler 0
 request 14 handled in handler 1
@@ -113,7 +113,7 @@ def main():
     with redirect_stdout(io.StringIO()) as output:
         for request in requests:
             h0.handle(request)
-    assert output.getvalue() == CORRECT_OUTOUT
+    assert output.getvalue() == CORRECT_OUTPUT
 
 
 if __name__ == "__main__":
