@@ -15,7 +15,6 @@ class Model(ABC):
     def get(self, item):
         """Returns an object with a .items() call method
         that iterates over key,value pairs of its information."""
-        pass
 
     @property
     @abstractmethod
@@ -42,11 +41,11 @@ class ProductModel(Model):
     def __iter__(self):
         yield from self.products
 
-    def get(self, product):
+    def get(self, item):
         try:
-            return self.products[product]
+            return self.products[item]
         except KeyError as e:
-            raise KeyError(str(e) + " not in the model's item list.")
+            raise KeyError(str(e) + " not in the model's item list.") from e
 
 
 class View(ABC):
@@ -58,7 +57,6 @@ class View(ABC):
     def show_item_information(self, item_type, item_name, item_info):
         """Will look for item information by iterating over key,value pairs
         yielded by item_info.items()"""
-        pass
 
     @abstractmethod
     def item_not_found(self, item_type, item_name):
@@ -78,7 +76,7 @@ class ConsoleView(View):
 
     def show_item_information(self, item_type, item_name, item_info):
         print(item_type.upper() + " INFORMATION:")
-        printout = "Name: %s" % item_name
+        printout = f"Name: {item_name}"
         for key, value in item_info.items():
             printout += ", " + self.capitalizer(str(key)) + ": " + str(value)
         printout += "\n"
@@ -105,7 +103,7 @@ class Controller:
         """
         try:
             item_info = self.model.get(item_name)
-        except Exception:
+        except KeyError:
             item_type = self.model.item_type
             self.view.item_not_found(item_type, item_name)
         else:

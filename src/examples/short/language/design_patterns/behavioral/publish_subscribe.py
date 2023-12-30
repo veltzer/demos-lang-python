@@ -6,12 +6,13 @@ Author: https://github.com/HanWenfang
 
 
 from __future__ import annotations
+from typing import List, Dict
 
 
 class Provider:
     def __init__(self) -> None:
-        self.msg_queue = []
-        self.subscribers = {}
+        self.msg_queue: List[str] = []
+        self.subscribers: Dict[str, List[Subscriber]] = {}
 
     def notify(self, msg: str) -> None:
         self.msg_queue.append(msg)

@@ -32,7 +32,7 @@ https://github.com/onetwopunch/pythonDbTemplate/blob/master/database.py
 *TL;DR
 Provides singleton-like behavior sharing state between instances.
 """
-from typing import Dict
+from typing import Dict, Optional
 
 
 class Borg:
@@ -43,7 +43,7 @@ class Borg:
 
 
 class YourBorg(Borg):
-    def __init__(self, state: str = None) -> None:
+    def __init__(self, state: Optional[str] = None) -> None:
         super().__init__()
         if state:
             self.state = state

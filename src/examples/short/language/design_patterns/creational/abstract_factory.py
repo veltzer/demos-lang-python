@@ -86,6 +86,11 @@ def random_animal(name: str) -> Pet:
     return random.choice([Dog, Cat])(name)
 
 
+def random_animal_type() -> Type[Pet]:
+    """Let's be dynamic!"""
+    return random.choice([Dog, Cat])
+
+
 # Show pets with various factories
 def main() -> None:
     """
@@ -116,7 +121,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     random.seed(1234)  # for deterministic doctest outputs
-    shop = PetShop(random_animal)
+    shop = PetShop(random_animal_type())
     import doctest
 
     doctest.testmod()

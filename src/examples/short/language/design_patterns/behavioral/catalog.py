@@ -110,7 +110,7 @@ class CatalogClass:
         depending on self.param value
         """
         f = CatalogClass._class_method_choices[self.param]
-        m = MethodType(f.__func__, CatalogClass)
+        m = MethodType(f.__func__, CatalogClass)  # type: ignore
         # pylint: disable=not-callable
         return m()
 

@@ -62,7 +62,7 @@ class Radio:
         """We have an AM state and an FM state"""
         self.amstate = AmState(self)
         self.fmstate = FmState(self)
-        self.state = self.amstate
+        self.state: State = self.amstate
 
     def toggle_amfm(self) -> None:
         self.state.toggle_amfm()

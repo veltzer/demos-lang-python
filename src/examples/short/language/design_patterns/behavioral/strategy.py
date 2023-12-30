@@ -10,7 +10,7 @@ Enables selecting an algorithm at runtime.
 
 from __future__ import annotations
 
-from typing import Callable
+from typing import Callable, Optional
 
 
 class DiscountStrategyValidator:  # Descriptor class for check perform
@@ -30,20 +30,20 @@ class DiscountStrategyValidator:  # Descriptor class for check perform
         # pylint: disable=attribute-defined-outside-init
         self.private_name = f"_{name}"
 
-    def __set__(self, obj: Order, value: Callable = None) -> None:
+    def __set__(self, obj: Order, value: Optional[Callable] = None) -> None:
         if value and self.validate(obj, value):
             setattr(obj, self.private_name, value)
         else:
             setattr(obj, self.private_name, None)
 
-    def __get__(self, obj: object, objtype: type = None):
+    def __get__(self, obj: object, objtype: Optional[type] = None):
         return getattr(obj, self.private_name)
 
 
 class Order:
     discount_strategy = DiscountStrategyValidator()
 
-    def __init__(self, price: float, discount_strategy: Callable = None) -> None:
+    def __init__(self, price: float, discount_strategy: Optional[Callable] = None) -> None:
         self.price: float = price
         self.discount_strategy = discount_strategy
 

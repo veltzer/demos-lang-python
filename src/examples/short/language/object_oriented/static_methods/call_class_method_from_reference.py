@@ -22,6 +22,7 @@ class Book:
 
     @classmethod
     def call_it(cls):
+        # pylint: disable=not-callable
         MethodType(cls.ref[0], Book)()
 
 
@@ -40,4 +41,5 @@ try:
 except TypeError as e:
     print(e)
 # this is how we bind the method back to the class
+# pylint: disable=not-callable
 MethodType(ref_to_method.__func__, Book)()

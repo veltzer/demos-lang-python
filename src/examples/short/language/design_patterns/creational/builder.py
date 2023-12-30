@@ -30,13 +30,14 @@ https://sourcemaking.com/design_patterns/builder
 *TL;DR
 Decouples the creation of a complex object and its representation.
 """
+from typing import Optional
 
 
 # Abstract Building
 class Building:
     def __init__(self) -> None:
-        self.floor = None
-        self.size = None
+        self.floor: Optional[str] = None
+        self.size: Optional[str] = None
         self.build_floor()
         self.build_size()
 
@@ -75,8 +76,9 @@ class Flat(Building):
 
 class ComplexBuilding:
     def __init__(self) -> None:
-        self.floor = None
-        self.size = None
+        self.floor: Optional[str] = None
+        self.size: Optional[str] = None
+
     def __repr__(self) -> str:
         return f"Floor: {self.floor} | Size: {self.size}"
 
