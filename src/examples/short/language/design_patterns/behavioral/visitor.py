@@ -45,10 +45,10 @@ class Visitor:
             meth = self.generic_visit
         return meth(node, *args, **kwargs)
 
-    def generic_visit(self, node, *args, **kwargs):
+    def generic_visit(self, node, *_args, **_kwargs):
         print("generic_visit " + node.__class__.__name__)
 
-    def visit_B(self, node, *args, **kwargs):
+    def visit_B(self, node, *_args, **_kwargs):
         print("visit_B " + node.__class__.__name__)
 
 
