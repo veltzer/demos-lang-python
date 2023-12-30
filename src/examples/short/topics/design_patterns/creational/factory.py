@@ -38,7 +38,7 @@ class GreekLocalizer:
         self.translations = {"dog": "σκύλος", "cat": "γάτα"}
 
     def localize(self, msg: str) -> str:
-        """We'll punt if we don't have a translation"""
+        """Well punt if we dont have a translation"""
         return self.translations.get(msg, msg)
 
 

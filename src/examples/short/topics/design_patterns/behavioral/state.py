@@ -5,7 +5,7 @@ http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 
 *TL;DR
 Implements state as a derived class of the state pattern interface.
-Implements state transitions by invoking methods from the pattern's superclass.
+Implements state transitions by invoking methods from the patterns superclass.
 """
 
 from __future__ import annotations

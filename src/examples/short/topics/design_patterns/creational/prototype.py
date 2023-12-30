@@ -15,7 +15,7 @@ clients to query the Dispatcher for a prototype before cloning a new
 instance.
 
 Below provides an example of such Dispatcher, which contains three
-copies of the prototype: 'default', 'objecta' and 'objectb'.
+copies of the prototype: "default", "objecta" and "objectb".
 
 *TL;DR
 Creates new object instances by cloning prototype.
@@ -62,14 +62,14 @@ def main() -> None:
     >>> prototype = Prototype()
 
     >>> d = prototype.clone()
-    >>> a = prototype.clone(value='a-value', category='a')
-    >>> b = a.clone(value='b-value', is_checked=True)
-    >>> dispatcher.register_object('objecta', a)
-    >>> dispatcher.register_object('objectb', b)
-    >>> dispatcher.register_object('default', d)
+    >>> a = prototype.clone(value="a-value", category="a")
+    >>> b = a.clone(value="b-value", is_checked=True)
+    >>> dispatcher.register_object("objecta", a)
+    >>> dispatcher.register_object("objectb", b)
+    >>> dispatcher.register_object("default", d)
 
     >>> [{n: p.value} for n, p in dispatcher.get_objects().items()]
-    [{'objecta': 'a-value'}, {'objectb': 'b-value'}, {'default': 'default'}]
+    [{"objecta": "a-value"}, {"objectb": "b-value"}, {"default": "default"}]
 
     >>> print(b.category, b.is_checked)
     a True

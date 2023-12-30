@@ -19,7 +19,7 @@ see https://stackoverflow.com/questions/1453131/how-can-i-get-polymorphic-behavi
 required has to be provided by an external, already constructed
 instance of a different class.
 
-In general, in Python this won't be necessary, but a second example showing
+In general, in Python this wont be necessary, but a second example showing
 this kind of arrangement is also included.
 
 *Where is the pattern used practically?
@@ -70,7 +70,7 @@ class Flat(Building):
 
 # In some very complex cases, it might be desirable to pull out the building
 # logic into another function (or a method on another class), rather than being
-# in the base class '__init__'. (This leaves you in the strange situation where
+# in the base class "__init__". (This leaves you in the strange situation where
 # a concrete class does not have a useful constructor)
 
 

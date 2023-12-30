@@ -75,16 +75,16 @@ def main():
     """
     >>> front_controller = RequestController()
 
-    >>> front_controller.dispatch_request(Request('mobile'))
+    >>> front_controller.dispatch_request(Request("mobile"))
     Displaying mobile index page
 
-    >>> front_controller.dispatch_request(Request('tablet'))
+    >>> front_controller.dispatch_request(Request("tablet"))
     Displaying tablet index page
 
-    >>> front_controller.dispatch_request(Request('desktop'))
+    >>> front_controller.dispatch_request(Request("desktop"))
     Cannot dispatch the request
 
-    >>> front_controller.dispatch_request('mobile')
+    >>> front_controller.dispatch_request("mobile")
     request must be a Request object
     """
 

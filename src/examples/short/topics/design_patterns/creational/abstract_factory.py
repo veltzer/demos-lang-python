@@ -82,12 +82,12 @@ class PetShop:
 
 # Create a random animal
 def random_animal(name: str) -> Pet:
-    """Let's be dynamic!"""
+    """Lets be dynamic!"""
     return random.choice([Dog, Cat])(name)
 
 
 def random_animal_type() -> Type[Pet]:
-    """Let's be dynamic!"""
+    """Lets be dynamic!"""
     return random.choice([Dog, Cat])
 
 

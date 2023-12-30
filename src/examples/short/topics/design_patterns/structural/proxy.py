@@ -69,18 +69,18 @@ def main():
 
     >>> real_subject = RealSubject()
 
-    >>> client(proxy, 'admin')
+    >>> client(proxy, "admin")
     [log] Doing the job for admin is requested.
     I am doing the job for admin
 
-    >>> client(proxy, 'anonymous')
+    >>> client(proxy, "anonymous")
     [log] Doing the job for anonymous is requested.
     [log] I can do the job just for `admins`.
 
-    >>> client(real_subject, 'admin')
+    >>> client(real_subject, "admin")
     I am doing the job for admin
 
-    >>> client(real_subject, 'anonymous')
+    >>> client(real_subject, "anonymous")
     I am doing the job for anonymous
     """
 

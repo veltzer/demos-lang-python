@@ -10,9 +10,9 @@ Brian Jones, David Beazley "Python Cookbook" (2013):
 - "8.22. Implementing the Visitor Pattern Without Recursion"
 
 *Examples in Python ecosystem:
-- Python's ast.NodeVisitor: https://github.com/python/cpython/blob/master/Lib/ast.py#L250
+- Pythons ast.NodeVisitor: https://github.com/python/cpython/blob/master/Lib/ast.py#L250
 which is then being used e.g. in tools like `pyflakes`.
-- `Black` formatter tool implements it's own: https://github.com/ambv/black/blob/master/black.py#L718
+- `Black` formatter tool implements its own: https://github.com/ambv/black/blob/master/black.py#L718
 """
 
 

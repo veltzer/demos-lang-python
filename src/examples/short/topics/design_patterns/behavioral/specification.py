@@ -89,17 +89,17 @@ def main():
     """
     >>> andrey = User()
     >>> ivan = User(super_user=True)
-    >>> vasiliy = 'not User instance'
+    >>> vasiliy = "not User instance"
 
     >>> root_specification = UserSpecification().and_specification(SuperUserSpecification())
 
     # Is specification satisfied by <name>
-    >>> root_specification.is_satisfied_by(andrey), 'andrey'
-    (False, 'andrey')
-    >>> root_specification.is_satisfied_by(ivan), 'ivan'
-    (True, 'ivan')
-    >>> root_specification.is_satisfied_by(vasiliy), 'vasiliy'
-    (False, 'vasiliy')
+    >>> root_specification.is_satisfied_by(andrey), "andrey"
+    (False, "andrey")
+    >>> root_specification.is_satisfied_by(ivan), "ivan"
+    (True, "ivan")
+    >>> root_specification.is_satisfied_by(vasiliy), "vasiliy"
+    (False, "vasiliy")
     """
 
 

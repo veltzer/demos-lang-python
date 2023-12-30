@@ -10,7 +10,7 @@ method for each menu item and pass to it.
 We have a menu containing two items. Each item accepts a file name, one hides the file
 and the other deletes it. Both items have an undo option.
 Each item is a MenuItem class that accepts the corresponding command as input and executes
-it's execute method when it is pressed.
+its execute method when it is pressed.
 
 *TL;DR
 Object oriented implementation of callback functions.
@@ -81,7 +81,7 @@ def main():
     >>> item2 = MenuItem(HideFileCommand())
 
     # create a file named `test-file` to work with
-    >>> test_file_name = 'test-file'
+    >>> test_file_name = "test-file"
 
     # deleting `test-file`
     >>> item1.on_do_press(test_file_name)

@@ -3,7 +3,7 @@
 The Adapter pattern provides a different interface for a class. We can
 think about it as a cable adapter that allows you to charge a phone
 somewhere that has outlets in a different shape. Following this idea,
-the Adapter pattern is useful to integrate classes that couldn't be
+the Adapter pattern is useful to integrate classes that couldnt be
 integrated due to their incompatible interfaces.
 
 *What does this example do?
@@ -54,7 +54,7 @@ class Human:
         self.name = "Human"
 
     def speak(self) -> str:
-        return "'hello'"
+        return "hello"
 
 
 class Car:
@@ -62,7 +62,8 @@ class Car:
         self.name = "Car"
 
     def make_noise(self, octane_level: int) -> str:
-        return f"vroom{'!' * octane_level}"
+        octane = "!" * octane_level
+        return f"vroom{octane}"
 
 
 class Adapter:
@@ -75,7 +76,7 @@ class Adapter:
     """
 
     def __init__(self, obj: T, **adapted_methods: Callable):
-        """We set the adapted methods in the object's dict."""
+        """We set the adapted methods in the objects dict."""
         self.obj = obj
         self.__dict__.update(adapted_methods)
 
@@ -93,15 +94,15 @@ def main():
     >>> objects = []
     >>> dog = Dog()
     >>> print(dog.__dict__)
-    {'name': 'Dog'}
+    {"name": "Dog"}
 
     >>> objects.append(Adapter(dog, make_noise=dog.bark))
 
-    >>> objects[0].__dict__['obj'], objects[0].__dict__['make_noise']
+    >>> objects[0].__dict__["obj"], objects[0].__dict__["make_noise"]
     (<...Dog object at 0x...>, <bound method Dog.bark of <...Dog object at 0x...>>)
 
     >>> print(objects[0].original_dict())
-    {'name': 'Dog'}
+    {"name": "Dog"}
 
     >>> cat = Cat()
     >>> objects.append(Adapter(cat, make_noise=cat.meow))
@@ -114,7 +115,7 @@ def main():
     ...    print("A {0} goes {1}".format(obj.name, obj.make_noise()))
     A Dog goes woof!
     A Cat goes meow!
-    A Human goes 'hello'
+    A Human goes "hello"
     A Car goes vroom!!!
     """
 

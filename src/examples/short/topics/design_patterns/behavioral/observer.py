@@ -67,8 +67,8 @@ class DecimalViewer:
 
 def main():
     """
-    >>> data1 = Data('Data 1')
-    >>> data2 = Data('Data 2')
+    >>> data1 = Data("Data 1")
+    >>> data2 = Data("Data 2")
     >>> view1 = DecimalViewer()
     >>> view2 = HexViewer()
     >>> data1.attach(view1)

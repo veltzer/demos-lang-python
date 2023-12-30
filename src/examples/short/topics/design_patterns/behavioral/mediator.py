@@ -34,9 +34,9 @@ class User:
 
 def main():
     """
-    >>> molly = User('Molly')
-    >>> mark = User('Mark')
-    >>> ethan = User('Ethan')
+    >>> molly = User("Molly")
+    >>> mark = User("Mark")
+    >>> ethan = User("Ethan")
 
     >>> molly.say("Hi Team! Meeting at 3 PM today.")
     [Molly says]: Hi Team! Meeting at 3 PM today.

@@ -19,13 +19,13 @@ class Delegator:
     >>> delegator.p2
     Traceback (most recent call last):
     ...
-    AttributeError: 'Delegate' object has no attribute 'p2'
+    AttributeError: "Delegate" object has no attribute "p2"
     >>> delegator.do_something("nothing")
-    'Doing nothing'
+    "Doing nothing"
     >>> delegator.do_anything()
     Traceback (most recent call last):
     ...
-    AttributeError: 'Delegate' object has no attribute 'do_anything'
+    AttributeError: "Delegate" object has no attribute "do_anything"
     """
 
     def __init__(self, delegate: Delegate) -> None:

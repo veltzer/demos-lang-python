@@ -97,15 +97,15 @@ def main():
     ...        num_obj.increment()
     ...        print(num_obj)
     ...    a_transaction.commit()
-    ...    print('-- committed')
+    ...    print("-- committed")
     ...    for i in range(3):
     ...        num_obj.increment()
     ...        print(num_obj)
-    ...    num_obj.value += 'x'  # will fail
+    ...    num_obj.value += "x"  # will fail
     ...    print(num_obj)
     ... except Exception:
     ...    a_transaction.rollback()
-    ...    print('-- rolled back')
+    ...    print("-- rolled back")
     <NumObj: 0>
     <NumObj: 1>
     <NumObj: 2>
@@ -118,13 +118,13 @@ def main():
     >>> print(num_obj)
     <NumObj: 2>
 
-    >>> print('-- now doing stuff ...')
+    >>> print("-- now doing stuff ...")
     -- now doing stuff ...
 
     >>> try:
     ...    num_obj.do_stuff()
     ... except Exception:
-    ...    print('-> doing stuff failed!')
+    ...    print("-> doing stuff failed!")
     ...    import sys
     ...    import traceback
     ...    traceback.print_exc(file=sys.stdout)

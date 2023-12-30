@@ -93,56 +93,56 @@ def main():
     """
     # example of graph usage
     >>> graph = {
-    ...     'A': ['B', 'C'],
-    ...     'B': ['C', 'D'],
-    ...     'C': ['D', 'G'],
-    ...     'D': ['C'],
-    ...     'E': ['F'],
-    ...     'F': ['C'],
-    ...     'G': ['E'],
-    ...     'H': ['C']
+    ...     "A": ["B", "C"],
+    ...     "B": ["C", "D"],
+    ...     "C": ["D", "G"],
+    ...     "D": ["C"],
+    ...     "E": ["F"],
+    ...     "F": ["C"],
+    ...     "G": ["E"],
+    ...     "H": ["C"]
     ... }
 
     # initialization of new graph search object
     >>> graph_search = GraphSearch(graph)
 
-    >>> print(graph_search.find_path_dfs('A', 'D'))
-    ['A', 'B', 'C', 'D']
+    >>> print(graph_search.find_path_dfs("A", "D"))
+    ["A", "B", "C", "D"]
 
     # start the search somewhere in the middle
-    >>> print(graph_search.find_path_dfs('G', 'F'))
-    ['G', 'E', 'F']
+    >>> print(graph_search.find_path_dfs("G", "F"))
+    ["G", "E", "F"]
 
     # unreachable node
-    >>> print(graph_search.find_path_dfs('C', 'H'))
+    >>> print(graph_search.find_path_dfs("C", "H"))
     None
 
     # non existing node
-    >>> print(graph_search.find_path_dfs('C', 'X'))
+    >>> print(graph_search.find_path_dfs("C", "X"))
     None
 
-    >>> print(graph_search.find_all_paths_dfs('A', 'D'))
-    [['A', 'B', 'C', 'D'], ['A', 'B', 'D'], ['A', 'C', 'D']]
-    >>> print(graph_search.find_shortest_path_dfs('A', 'D'))
-    ['A', 'B', 'D']
-    >>> print(graph_search.find_shortest_path_dfs('A', 'F'))
-    ['A', 'C', 'G', 'E', 'F']
+    >>> print(graph_search.find_all_paths_dfs("A", "D"))
+    [["A", "B", "C", "D"], ["A", "B", "D"], ["A", "C", "D"]]
+    >>> print(graph_search.find_shortest_path_dfs("A", "D"))
+    ["A", "B", "D"]
+    >>> print(graph_search.find_shortest_path_dfs("A", "F"))
+    ["A", "C", "G", "E", "F"]
 
-    >>> print(graph_search.find_shortest_path_bfs('A', 'D'))
-    ['A', 'B', 'D']
-    >>> print(graph_search.find_shortest_path_bfs('A', 'F'))
-    ['A', 'C', 'G', 'E', 'F']
+    >>> print(graph_search.find_shortest_path_bfs("A", "D"))
+    ["A", "B", "D"]
+    >>> print(graph_search.find_shortest_path_bfs("A", "F"))
+    ["A", "C", "G", "E", "F"]
 
     # start the search somewhere in the middle
-    >>> print(graph_search.find_shortest_path_bfs('G', 'F'))
-    ['G', 'E', 'F']
+    >>> print(graph_search.find_shortest_path_bfs("G", "F"))
+    ["G", "E", "F"]
 
     # unreachable node
-    >>> print(graph_search.find_shortest_path_bfs('A', 'H'))
+    >>> print(graph_search.find_shortest_path_bfs("A", "H"))
     None
 
     # non existing node
-    >>> print(graph_search.find_shortest_path_bfs('A', 'X'))
+    >>> print(graph_search.find_shortest_path_bfs("A", "X"))
     None
     """
 

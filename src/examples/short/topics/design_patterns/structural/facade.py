@@ -51,7 +51,7 @@ class Memory:
     """
 
     def load(self, position: str, data: str) -> None:
-        print(f"Loading from {position} data: '{data}'.")
+        print(f"Loading from {position} data: {data}.")
 
 
 class SolidStateDrive:
@@ -85,7 +85,7 @@ def main():
     >>> computer_facade = ComputerFacade()
     >>> computer_facade.start()
     Freezing processor.
-    Loading from 0x00 data: 'Some data from sector 100 with size 1024'.
+    Loading from 0x00 data: Some data from sector 100 with size 1024.
     Jumping to: 0x00
     Executing.
     """

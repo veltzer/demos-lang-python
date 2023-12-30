@@ -16,7 +16,7 @@ In this example, the __shared_state attribute will be the dictionary
 shared between all instances, and this is ensured by assigning
 __shared_state to the __dict__ variable when initializing a new
 instance (i.e., in the __init__ method). Other attributes are usually
-added to the instance's attribute dictionary, but, since the attribute
+added to the instances attribute dictionary, but, since the attribute
 dictionary itself is shared (which is __shared_state), all other
 attributes will also be shared.
 
@@ -61,21 +61,21 @@ def main():
     >>> rm1 = YourBorg()
     >>> rm2 = YourBorg()
 
-    >>> rm1.state = 'Idle'
-    >>> rm2.state = 'Running'
+    >>> rm1.state = "Idle"
+    >>> rm2.state = "Running"
 
-    >>> print('rm1: {0}'.format(rm1))
+    >>> print("rm1: {0}".format(rm1))
     rm1: Running
-    >>> print('rm2: {0}'.format(rm2))
+    >>> print("rm2: {0}".format(rm2))
     rm2: Running
 
     # When the `state` attribute is modified from instance `rm2`,
     # the value of `state` in instance `rm1` also changes
-    >>> rm2.state = 'Zombie'
+    >>> rm2.state = "Zombie"
 
-    >>> print('rm1: {0}'.format(rm1))
+    >>> print("rm1: {0}".format(rm1))
     rm1: Zombie
-    >>> print('rm2: {0}'.format(rm2))
+    >>> print("rm2: {0}".format(rm2))
     rm2: Zombie
 
     # Even though `rm1` and `rm2` share attributes, the instances are not the same
@@ -85,21 +85,21 @@ def main():
     # New instances also get the same shared state
     >>> rm3 = YourBorg()
 
-    >>> print('rm1: {0}'.format(rm1))
+    >>> print("rm1: {0}".format(rm1))
     rm1: Zombie
-    >>> print('rm2: {0}'.format(rm2))
+    >>> print("rm2: {0}".format(rm2))
     rm2: Zombie
-    >>> print('rm3: {0}'.format(rm3))
+    >>> print("rm3: {0}".format(rm3))
     rm3: Zombie
 
     # A new instance can explicitly change the state during creation
-    >>> rm4 = YourBorg('Running')
+    >>> rm4 = YourBorg("Running")
 
-    >>> print('rm4: {0}'.format(rm4))
+    >>> print("rm4: {0}".format(rm4))
     rm4: Running
 
     # Existing instances reflect that change as well
-    >>> print('rm3: {0}'.format(rm3))
+    >>> print("rm3: {0}".format(rm3))
     rm3: Running
     """
 

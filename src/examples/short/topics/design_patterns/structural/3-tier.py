@@ -51,13 +51,11 @@ class Ui:
         product_info = self.business_logic.product_information(product)
         if product_info:
             print("PRODUCT INFORMATION:")
-            print(
-                f"Name: {product.title()}, "
-                + f"Price: {product_info.get('price', 0):.2f}, "
-                + f"Quantity: {product_info.get('quantity', 0):}"
-            )
+            price = product_info.get("price", 0)
+            quantity = product_info.get("quantity", 0)
+            print(f"Name: {product.title()} Price: {price:.2f}, Quantity: {quantity}")
         else:
-            print(f"That product '{product}' does not exist in the records")
+            print(f"That product [{product}] does not exist in the records")
 
 
 def main():
@@ -88,7 +86,7 @@ def main():
 
     >>> ui.get_product_information("arepas")
     (Fetching from Data Store)
-    That product 'arepas' does not exist in the records
+    That product "arepas" does not exist in the records
     """
 
 

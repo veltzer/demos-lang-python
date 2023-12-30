@@ -31,7 +31,7 @@ class Handler(ABC):
     def handle(self, request: int) -> None:
         """
         Handle request and stop.
-        If can't - call next handler in chain.
+        If cant - call next handler in chain.
 
         As an alternative you might even in case of success
         call the next handler.
@@ -58,7 +58,7 @@ class ConcreteHandler0(Handler):
 
 
 class ConcreteHandler1(Handler):
-    """... With it's own internal state"""
+    """... With its own internal state"""
 
     start, end = 10, 20
 

@@ -31,7 +31,7 @@ def main():
     """
     Before subclassing
     >>> sorted(RegistryHolder.REGISTRY)
-    ['BaseRegisteredClass']
+    ["BaseRegisteredClass"]
 
     >>> class ClassRegistree(BaseRegisteredClass):
     ...    def __init__(self, *args, **kwargs):
@@ -39,7 +39,7 @@ def main():
 
     After subclassing
     >>> sorted(RegistryHolder.REGISTRY)
-    ['BaseRegisteredClass', 'ClassRegistree']
+    ["BaseRegisteredClass", "ClassRegistree"]
     """
 
 

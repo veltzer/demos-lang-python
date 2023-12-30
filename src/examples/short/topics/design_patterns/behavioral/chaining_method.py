@@ -1,4 +1,6 @@
 from __future__ import annotations
+from contextlib import redirect_stdout
+import io
 
 
 class Person:
@@ -22,16 +24,18 @@ class Action:
         print("then stop")
 
 
+CORRECT_OUTPUT = """\
+Jack move 5m then stop
+"""
+
+
 def main():
-    """
-    >>> move = Action('move')
-    >>> person = Person('Jack')
-    >>> person.do_action(move).amount('5m').stop()
-    Jack move 5m then stop
-    """
+    move = Action("move")
+    person = Person("Jack")
+    with redirect_stdout(io.StringIO()) as output:
+        person.do_action(move).amount("5m").stop()
+    assert output.getvalue() == CORRECT_OUTPUT
 
 
 if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+    main()

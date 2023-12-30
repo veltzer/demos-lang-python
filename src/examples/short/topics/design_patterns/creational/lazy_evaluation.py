@@ -61,7 +61,7 @@ class Person:
 
     @lazy_property
     def relatives(self):
-        # Get all relatives, let's assume that it costs much time.
+        # Get all relatives, lets assume that it costs much time.
         relatives = "Many relatives."
         return relatives
 
@@ -73,32 +73,32 @@ class Person:
 
 def main():
     """
-    >>> Jhon = Person('Jhon', 'Coder')
+    >>> Jhon = Person("Jhon", "Coder")
 
     >>> Jhon.name
-    'Jhon'
+    "Jhon"
     >>> Jhon.occupation
-    'Coder'
+    "Coder"
 
     # Before we access `relatives`
     >>> sorted(Jhon.__dict__.items())
-    [('call_count2', 0), ('name', 'Jhon'), ('occupation', 'Coder')]
+    [("call_count2", 0), ("name", "Jhon"), ("occupation", "Coder")]
 
     >>> Jhon.relatives
-    'Many relatives.'
+    "Many relatives."
 
-    # After we've accessed `relatives`
+    # After weve accessed `relatives`
     >>> sorted(Jhon.__dict__.items())
-    [('call_count2', 0), ..., ('relatives', 'Many relatives.')]
+    [("call_count2", 0), ..., ("relatives", "Many relatives.")]
 
     >>> Jhon.parents
-    'Father and mother'
+    "Father and mother"
 
     >>> sorted(Jhon.__dict__.items())
-    [('_lazy__parents', 'Father and mother'), ('call_count2', 1), ..., ('relatives', 'Many relatives.')]
+    [("_lazy__parents", "Father and mother"), ("call_count2", 1), ..., ("relatives", "Many relatives.")]
 
     >>> Jhon.parents
-    'Father and mother'
+    "Father and mother"
 
     >>> Jhon.call_count2
     1

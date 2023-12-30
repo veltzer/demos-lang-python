@@ -5,7 +5,7 @@ created frequently) but only a few are used at a time. With a Pool we
 can manage those instances we have as of now by caching them. Now it
 is possible to skip the costly creation of an object if one is
 available in the pool.
-A pool allows to 'check out' an inactive object and then to return it.
+A pool allows to "check out" an inactive object and then to return it.
 If none are available the pool creates one to provide without wait.
 
 *What does this example do?
@@ -56,23 +56,23 @@ def main():
 
     >>> def test_object(queue):
     ...    pool = ObjectPool(queue, True)
-    ...    print('Inside func: {}'.format(pool.item))
+    ...    print("Inside func: {}".format(pool.item))
 
     >>> sample_queue = queue.Queue()
 
-    >>> sample_queue.put('yam')
+    >>> sample_queue.put("yam")
     >>> with ObjectPool(sample_queue) as obj:
-    ...    print('Inside with: {}'.format(obj))
+    ...    print("Inside with: {}".format(obj))
     Inside with: yam
 
-    >>> print('Outside with: {}'.format(sample_queue.get()))
+    >>> print("Outside with: {}".format(sample_queue.get()))
     Outside with: yam
 
-    >>> sample_queue.put('sam')
+    >>> sample_queue.put("sam")
     >>> test_object(sample_queue)
     Inside func: sam
 
-    >>> print('Outside func: {}'.format(sample_queue.get()))
+    >>> print("Outside func: {}".format(sample_queue.get()))
     Outside func: sam
 
     if not sample_queue.empty():

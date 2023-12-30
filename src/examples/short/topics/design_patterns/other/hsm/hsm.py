@@ -4,7 +4,7 @@ NFSM (nested finite state machine) C++ example from
 http://www.eventhelix.com/RealtimeMantra/HierarchicalStateMachine.htm#.VwqLVEL950w
 in Python
 
-- single source 'message type' for state transition changes
+- single source "message type" for state transition changes
 - message type considered, messages (comment) not considered to avoid complexity
 """
 

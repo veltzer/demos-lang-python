@@ -45,7 +45,7 @@ class ProductModel(Model):
         try:
             return self.products[item]
         except KeyError as e:
-            raise KeyError(str(e) + " not in the model's item list.") from e
+            raise KeyError(str(e) + " not in the models item list.") from e
 
 
 class View(ABC):
@@ -83,7 +83,7 @@ class ConsoleView(View):
         print(printout)
 
     def item_not_found(self, item_type, item_name):
-        print(f'That {item_type} "{item_name}" does not exist in the records')
+        print(f"That {item_type} {item_name} does not exist in the records")
 
 
 class Controller:
