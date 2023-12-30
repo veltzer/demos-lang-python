@@ -9,10 +9,21 @@ Implements state transitions by invoking methods from the pattern's superclass.
 """
 
 from __future__ import annotations
+from typing import List
+import abc
+from contextlib import redirect_stdout
+import io
 
 
 class State:
-    """Base state. This is to share functionality"""
+    __metaclass__ = abc.ABCMeta
+    """Base state. Put shared state and functionality here"""
+
+    def __init__(self, name: str, stations: List[str], radio: Radio) -> None:
+        self.radio = radio
+        self.stations = stations
+        self.pos = 0
+        self.name = name
 
     def scan(self) -> None:
         """Scan the dial to the next station"""
@@ -21,13 +32,14 @@ class State:
             self.pos = 0
         print(f"Scanning... Station is {self.stations[self.pos]} {self.name}")
 
+    @abc.abstractmethod
+    def toggle_amfm(self) -> None:
+        pass
+
 
 class AmState(State):
     def __init__(self, radio: Radio) -> None:
-        self.radio = radio
-        self.stations = ["1250", "1380", "1510"]
-        self.pos = 0
-        self.name = "AM"
+        super().__init__(name="AM", stations=["1250", "1380", "1510"], radio=radio)
 
     def toggle_amfm(self) -> None:
         print("Switching to FM")
@@ -36,10 +48,7 @@ class AmState(State):
 
 class FmState(State):
     def __init__(self, radio: Radio) -> None:
-        self.radio = radio
-        self.stations = ["81.3", "89.1", "103.9"]
-        self.pos = 0
-        self.name = "FM"
+        super().__init__(name="FM", stations=["81.3", "89.1", "103.9"], radio=radio)
 
     def toggle_amfm(self) -> None:
         print("Switching to AM")
@@ -47,7 +56,7 @@ class FmState(State):
 
 
 class Radio:
-    """A radio.     It has a scan button, and an AM/FM toggle switch."""
+    """A radio. It has a scan button, and an AM/FM toggle switch."""
 
     def __init__(self) -> None:
         """We have an AM state and an FM state"""
@@ -62,28 +71,29 @@ class Radio:
         self.state.scan()
 
 
-def main():
-    """
-    >>> radio = Radio()
-    >>> actions = [radio.scan] * 2 + [radio.toggle_amfm] + [radio.scan] * 2
-    >>> actions *= 2
+CORRECT_OUTPUT="""\
+Scanning... Station is 1380 AM
+Scanning... Station is 1510 AM
+Switching to FM
+Scanning... Station is 89.1 FM
+Scanning... Station is 103.9 FM
+Scanning... Station is 81.3 FM
+Scanning... Station is 89.1 FM
+Switching to AM
+Scanning... Station is 1250 AM
+Scanning... Station is 1380 AM
+"""
 
-    >>> for action in actions:
-    ...    action()
-    Scanning... Station is 1380 AM
-    Scanning... Station is 1510 AM
-    Switching to FM
-    Scanning... Station is 89.1 FM
-    Scanning... Station is 103.9 FM
-    Scanning... Station is 81.3 FM
-    Scanning... Station is 89.1 FM
-    Switching to AM
-    Scanning... Station is 1250 AM
-    Scanning... Station is 1380 AM
-    """
+def main():
+    radio = Radio()
+    actions = [radio.scan] * 2 + [radio.toggle_amfm] + [radio.scan] * 2
+    actions *= 2
+
+    with redirect_stdout(io.StringIO()) as output:
+        for action in actions:
+            action()
+    assert output.getvalue() == CORRECT_OUTPUT
 
 
 if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+    main()
