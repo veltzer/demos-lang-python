@@ -4,13 +4,13 @@ This pattern aims to minimise the number of objects that are needed by
 a program at run-time. A Flyweight is an object shared by multiple
 contexts, and is indistinguishable from an object that is not shared.
 
-The state of a Flyweight should not be affected by it's context, this
+The state of a Flyweight should not be affected by its context, this
 is known as its intrinsic state. The decoupling of the objects state
-from the object's context, allows the Flyweight to be shared.
+from the objects context, allows the Flyweight to be shared.
 
 *What does this example do?
-The example below sets-up an 'object pool' which stores initialised
-objects. When a 'Card' is created it first checks to see if it already
+The example below sets-up an "object pool" which stores initialised
+objects. When a "Card" is created it first checks to see if it already
 exists instead of creating a new one. This aims to reduce the number of
 objects initialised by the program.
 
@@ -34,15 +34,15 @@ class Card:
     # Could be a simple dict.
     # With WeakValueDictionary garbage collection can reclaim the object
     # when there are no other references to it.
-    _pool: weakref.WeakValueDictionary = weakref.WeakValueDictionary()
+    pool: weakref.WeakValueDictionary = weakref.WeakValueDictionary()
 
     def __new__(cls, value, suit):
         # If the object exists in the pool - just return it
-        obj = cls._pool.get(value + suit)
+        obj = cls.pool.get(value + suit)
         # otherwise - create new one (and add it to the pool)
         if obj is None:
             obj = object.__new__(Card)
-            cls._pool[value + suit] = obj
+            cls.pool[value + suit] = obj
             # This row does the part we usually see in `__init__`
             obj.value, obj.suit = value, suit
         return obj
@@ -57,29 +57,21 @@ class Card:
 
 
 def main():
-    """
-    >>> c1 = Card('9', 'h')
-    >>> c2 = Card('9', 'h')
-    >>> c1, c2
-    (<Card: 9h>, <Card: 9h>)
-    >>> c1 == c2
-    True
-    >>> c1 is c2
-    True
+    c1 = Card("9", "h")
+    c2 = Card("9", "h")
+    print(c1, c2)
+    assert c1 == c2
+    assert c1 is c2
 
-    >>> c1.new_attr = 'temp'
-    >>> c3 = Card('9', 'h')
-    >>> hasattr(c3, 'new_attr')
-    True
+    # pylint: disable=attribute-defined-outside-init
+    c1.new_attr = "temp"
+    c3 = Card("9", "h")
+    assert hasattr(c3, "new_attr")
 
-    >>> Card._pool.clear()
-    >>> c4 = Card('9', 'h')
-    >>> hasattr(c4, 'new_attr')
-    False
-    """
+    Card.pool.clear()
+    c4 = Card("9", "h")
+    assert not hasattr(c4, "new_attr")
 
 
 if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+    main()

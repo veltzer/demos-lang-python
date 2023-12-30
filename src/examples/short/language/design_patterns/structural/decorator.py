@@ -39,6 +39,7 @@ class BoldWrapper(TextTag):
     """Wraps a tag in <b>"""
 
     def __init__(self, wrapped: TextTag) -> None:
+        super().__init__("")
         self._wrapped = wrapped
 
     def render(self) -> str:
@@ -49,6 +50,7 @@ class ItalicWrapper(TextTag):
     """Wraps a tag in <i>"""
 
     def __init__(self, wrapped: TextTag) -> None:
+        super().__init__("")
         self._wrapped = wrapped
 
     def render(self) -> str:
