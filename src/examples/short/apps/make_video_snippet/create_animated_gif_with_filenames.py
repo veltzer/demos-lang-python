@@ -41,7 +41,7 @@ def create_animated_gif_from_video(
     cap.release()
     # loop = 0 will loop indefinitely
     # duration is in miliseconds for each frame
-    imageio.mimsave(output_path, image_list, loop=0, duration=1000)
+    imageio.mimsave(output_path, image_list, loop=0, duration=1000)  # type: ignore
     # with imageio.get_writer(output_path, mode="I") as writer:
     #     for img in image_list:
     #         writer.append_data(img)  # type: ignore
