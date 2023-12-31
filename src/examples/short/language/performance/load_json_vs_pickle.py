@@ -38,11 +38,9 @@ def main():
         pickle.dump(d, fp, protocol=pickle.HIGHEST_PROTOCOL)
     repetitions = 10
 
-    """
     def my_load_json():
         load_json(filename_json)
     json_time = timeit.timeit(my_load_json, number=repetitions)
-    """
 
     json_time = timeit.timeit(lambda : load_json(filename_json), number=repetitions)
     print(f"json time {json_time:.04f}")
