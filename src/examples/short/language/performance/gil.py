@@ -22,6 +22,7 @@ import threading
 import time
 
 limit = 100000000
+number_of_threads = 5
 
 
 def count(n):
@@ -31,18 +32,19 @@ def count(n):
 
 # first single thread
 time_before = time.time()
-count(limit)
-count(limit)
+for _ in range(number_of_threads):
+    count(limit)
 time_after = time.time()
 print(f"time taken for single thread: {time_after - time_before:.3f} seconds")
 
 # now two threads
 time_before = time.time()
-t1 = threading.Thread(target=count, args=(limit,))
-t2 = threading.Thread(target=count, args=(limit,))
-t1.start()
-t2.start()
-t1.join()
-t2.join()
+threads = []
+for _ in range(number_of_threads):
+    threads.append(threading.Thread(target=count, args=(limit,)))
+for t in threads:
+    t.start()
+for t in threads:
+    t.join()
 time_after = time.time()
 print(f"time taken for two threads: {time_after - time_before:.3f} seconds")

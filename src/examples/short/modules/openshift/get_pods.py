@@ -18,7 +18,8 @@ def get_project():
 
 def main():
     # you can use "default" in the next line
-    with openshift.project("kube-system"):
+    # with openshift.project("kube-system"):
+    with openshift.project("default"):
         for pod_obj in openshift.selector('pods').objects():
             name = pod_obj.name()
             print(name)
