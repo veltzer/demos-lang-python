@@ -6,19 +6,17 @@ References:
 """
 
 
-def decor(func):
+def run_it_3_times(func):
     def inner():
-        print("before")
         func()
         func()
         func()
-        print("after")
     return inner
 
 
-@decor
-def demo_bar():
+@run_it_3_times
+def hello():
     print("hello")
 
 
-demo_bar()
+hello()

@@ -35,10 +35,14 @@ def secret_agent_output(self):
 # this line does not work!
 # b.printMe=secret_agent_output
 # this works! turning a function into a method...
-# b.print_me = instancemethod(secret_agent_output, b, Person)
+from types import MethodType
+b.print_me = MethodType(secret_agent_output, b)
 print("Only James is a secret agent...")
 p.print_me()
 b.print_me()
+
+import sys
+sys.exit(1)
 
 # now lets make everyone a secret agent...
 # both of these will work (2nd version is better...)
