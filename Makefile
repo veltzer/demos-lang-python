@@ -154,6 +154,7 @@ check_no_future:
 
 .PHONY: debug
 debug:
+	$(info ALL_FILES is $(ALL_FILES))
 	$(info ALL_PY is $(ALL_PY))
 	$(info ALL_SYNTAX is $(ALL_SYNTAX))
 	$(info ALL_LINT is $(ALL_LINT))
@@ -256,7 +257,7 @@ all_mdl: $(MD_SRC) .mdlrc .mdl.style.rb
 #####################
 # single file rules #
 #####################
-out/moved.stamp: $(ALL_FILES)
+out/moved.stamp: $(ALL_FILE)
 	$(Q)pymakehelper error_on_print find src -name "*.moved"
 	$(Q)pymakehelper touch_mkdir $@
 
