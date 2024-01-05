@@ -12,12 +12,13 @@ class Person:
     def get_age(self):
         return self.age
 
-p=Person("yossi", 24)
 
-t=getattr(p, "get_name")
+p = Person("yossi", 24)
+
+t = getattr(p, "get_name")
 print(t)
 print(t())
-u=Person.get_name
+u = Person.get_name
 print(u)
 print(u(p))
 

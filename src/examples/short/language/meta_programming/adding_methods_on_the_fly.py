@@ -8,6 +8,7 @@ This exercise shows how to:
 from types import MethodType
 import pprint
 
+
 class Person:
     def __init__(self, name, surname):
         self.name = name
