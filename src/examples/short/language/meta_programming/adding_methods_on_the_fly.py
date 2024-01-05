@@ -5,8 +5,8 @@ This exercise shows how to:
     - add a method to an instance.
 """
 
+from types import MethodType
 import pprint
-
 
 class Person:
     def __init__(self, name, surname):
@@ -18,9 +18,11 @@ class Person:
 
 
 p = Person("Mark", "Veltzer")
+# pylint: disable=not-callable
 p.print_me()
 
 b = Person("James", "Bond")
+# pylint: disable=not-callable
 b.print_me()
 
 
@@ -35,14 +37,12 @@ def secret_agent_output(self):
 # this line does not work!
 # b.printMe=secret_agent_output
 # this works! turning a function into a method...
-from types import MethodType
-b.print_me = MethodType(secret_agent_output, b)
+b.print_me = MethodType(secret_agent_output, b)  # type: ignore
 print("Only James is a secret agent...")
+# pylint: disable=not-callable
 p.print_me()
+# pylint: disable=not-callable
 b.print_me()
-
-import sys
-sys.exit(1)
 
 # now lets make everyone a secret agent...
 # both of these will work (2nd version is better...)
@@ -50,7 +50,9 @@ sys.exit(1)
 # Person.printMe=secret_agent_output
 # Person.print_me = instancemethod(secret_agent_output, None, Person)
 print("Now we are both secret agents...")
+# pylint: disable=not-callable
 b.print_me()
+# pylint: disable=not-callable
 p.print_me()
 
 
