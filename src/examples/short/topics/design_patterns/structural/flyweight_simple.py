@@ -41,6 +41,9 @@ class Button:
 
 if __name__ == "__main__":
     b1 = Button()
+    print(b1.__dict__)
+    print(b1.color)
+"""
     assert b1.text == "no text"
     assert b1.color == "blue"
     assert b1.weight == 3
@@ -52,3 +55,4 @@ if __name__ == "__main__":
     b2.printMe()
     b2.text = "b2 text"
     b2.printMe()
+"""
