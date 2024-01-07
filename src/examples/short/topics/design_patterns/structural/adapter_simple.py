@@ -33,23 +33,30 @@ class Toaster:
     def __init__(self) -> None:
         pass
 
-    def toast(self, intesity) -> None:
-        return "toasting!"
+    def toast(self, intensity) -> None:
+        print(f"toasting! {intensity}")
+
     def stop(self) -> None:
-        return "stopped toasting!"
+        print("stopped toasting!")
+
 
 class ElectricAppliance:
     def __init__(self) -> None:
-        raise NotImplemented()
+        raise NotImplementedError()
+
     def on(self) -> None:
-        raise NotImplemented()
+        raise NotImplementedError()
+
     def off(self) -> None:
-        raise NotImplemented()
+        raise NotImplementedError()
+
 
 class ToasterToElectricApplianceAdapter:
     def __init__(self, toaster) -> None:
         self.toaster = toaster
+
     def on(self) -> None:
-        toaster.toast(intensity=5)
+        self.toaster.toast(intensity=5)
+
     def off(self) -> None:
-        toaster.stop()
+        self.toaster.stop()

@@ -58,6 +58,7 @@ visit_B B
 visit_B C
 """
 
+
 def main():
     c = C()
     print(c.__class__.__mro__)

@@ -7,12 +7,14 @@ class VisitInterface:
     """
     pure interface to the visit method
     """
-    def visit():
+    def visit(self):
         raise NotImplementedError()
 
 
 class Node(VisitInterface):
-    pass
+    def visit(self):
+        raise NotImplementedError()
+
 
 class A(Node):
     def visit(self):
@@ -28,10 +30,12 @@ class C(VisitInterface):
     def __init__(self):
         self.a = A()
         self.b = B()
+
     def visit(self):
         print("in C")
         self.a.visit()
         self.b.visit()
+
 
 def main():
     c = C()
