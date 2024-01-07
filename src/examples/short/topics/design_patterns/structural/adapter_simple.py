@@ -39,17 +39,17 @@ class Toaster:
         return "stopped toasting!"
 
 class ElectricAppliance:
-    def __init__(self) -> None
+    def __init__(self) -> None:
         raise NotImplemented()
-    def on(self) -> None
+    def on(self) -> None:
         raise NotImplemented()
-    def off(self) -> None
+    def off(self) -> None:
         raise NotImplemented()
 
 class ToasterToElectricApplianceAdapter:
-    def __init__(self, toaster) -> None
+    def __init__(self, toaster) -> None:
         self.toaster = toaster
-    def on(self) -> None
+    def on(self) -> None:
         toaster.toast(intensity=5)
-    def off(self) -> None
+    def off(self) -> None:
         toaster.stop()

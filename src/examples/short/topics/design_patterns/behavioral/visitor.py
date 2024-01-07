@@ -52,25 +52,21 @@ class Visitor:
         print("visit_B " + node.__class__.__name__)
 
 
+EXPECTED_OUTOUT = """
+generic_visit A
+visit_B B
+visit_B C
+"""
+
 def main():
     c = C()
     print(c.__class__.__mro__)
-    """
-    >>> a, b, c = A(), B(), C()
-    >>> visitor = Visitor()
-
-    >>> visitor.visit(a)
-    generic_visit A
-
-    >>> visitor.visit(b)
-    visit_B B
-
-    >>> visitor.visit(c)
-    visit_B C
-    """
+    a, b, c = A(), B(), C()
+    visitor = Visitor()
+    visitor.visit(a)
+    visitor.visit(b)
+    visitor.visit(c)
 
 
 if __name__ == "__main__":
-    # import doctest
-    # doctest.testmod()
     main()

@@ -1,4 +1,5 @@
 """
+A simple implementation of the visitor pattern
 """
 
 
@@ -7,7 +8,7 @@ class VisitInterface:
     pure interface to the visit method
     """
     def visit():
-        raise NotImplemented()
+        raise NotImplementedError()
 
 
 class Node(VisitInterface):
