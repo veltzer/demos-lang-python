@@ -80,6 +80,8 @@ install_requires: List[str] = [
     "google-auth-httplib2",
     "google-auth-oauthlib",
     "google-cloud-datastore",
+    # dependency injection
+    "dependency-injector",
     # misc
     "texttable",
     "dispy",
