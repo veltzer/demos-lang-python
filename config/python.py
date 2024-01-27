@@ -113,7 +113,6 @@ install_requires: List[str] = [
     "scrapy",
     "ConfigParser",
     "unidecode",
-    "bitmath",
     "paramiko",
     "boto",
     "boto3",
@@ -145,6 +144,9 @@ install_requires: List[str] = [
     "kubernetes",
     "kubernetes-stubs",
     "openshift-client",
+    # math
+    "bitmath",
+    "mpmath",
 ]
 build_requires: List[str] = [
     "pymakehelper",
