@@ -34,6 +34,7 @@ ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
 ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
 ALL_MYPY:=$(addprefix out/,$(addsuffix .mypy, $(basename $(ALL_PY))))
+
 MD_SRC:=$(shell find src/exercises -type f -and -name "*.md")
 MD_BAS:=$(basename $(MD_SRC))
 MD_MDL:=$(addprefix out/,$(addsuffix .mdl,$(MD_BAS)))
@@ -117,7 +118,6 @@ flake8: $(ALL_FLAKE8)
 
 .PHONY: mypy
 mypy: $(ALL_MYPY)
-
 
 .PHONY: check_all
 check_all: check_ws check_quotes check_no_python2 check_mode check_has_key check_no_future
