@@ -61,12 +61,6 @@ install_requires: List[str] = [
     # music
     "music",
     "mingus",
-    # machine learning
-    "pandas",
-    "pandas-stubs",
-    "numpy",
-    "matplotlib",
-    "colorspacious",
     # terminal color stuff
     "termcolor",
     "colored",
@@ -144,11 +138,17 @@ install_requires: List[str] = [
     "kubernetes",
     "kubernetes-stubs",
     "openshift-client",
-    # math
+    # math and machine learning
     "bitmath",
     "mpmath",
     "sympy",
     "scipy",
+    "pandas",
+    "pandas-stubs",
+    "numpy",
+    "matplotlib",
+    "colorspacious",
+    "scikit-learn",
 ]
 build_requires: List[str] = [
     "pymakehelper",
