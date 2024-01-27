@@ -148,6 +148,7 @@ install_requires: List[str] = [
     "bitmath",
     "mpmath",
     "sympy",
+    "scipy",
 ]
 build_requires: List[str] = [
     "pymakehelper",
