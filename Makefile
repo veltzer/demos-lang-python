@@ -8,7 +8,7 @@ DO_LINT:=1
 # do you want to lint python files using flake8?
 DO_FLAKE8:=1
 # do you wnat to lint python fies using mypy?
-DO_MYPY:=0
+DO_MYPY:=1
 # do you want to test that there are no .moved files?
 DO_MOVED:=0
 # do dependency on the makefile itself?
