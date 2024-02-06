@@ -138,6 +138,7 @@ install_requires: List[str] = [
     "kubernetes",
     "kubernetes-stubs",
     "openshift-client",
+    "openshift",
     # math and machine learning
     "bitmath",
     "mpmath",

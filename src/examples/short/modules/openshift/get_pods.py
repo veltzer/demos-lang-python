@@ -4,7 +4,7 @@ This example shows how to use the openshift API for listing all pods
 
 
 import subprocess
-import openshift
+import openshift.dynamic
 
 
 def get_project():
@@ -19,10 +19,10 @@ def get_project():
 def main():
     # you can use "default" in the next line
     # with openshift.project("kube-system"):
-    with openshift.project("default"):
-        for pod_obj in openshift.selector('pods').objects():
-            name = pod_obj.name()
-            print(name)
+    client = openshift.dynamic.client.DynamicClient(client="default")
+    pods = client.resources.get(api_version='v1', kind='Pod').get()
+    for pod in pods.items:
+        print(pod.metadata.name)
 
 
 if __name__ == "__main__":
