@@ -18,4 +18,7 @@ with zipfile.ZipFile("/tmp/demo.zip", "w", zipfile.ZIP_DEFLATED) as zipfile_hand
         arcname="this_is_groups",
     )
     # add a string as content
-    # TBD
+    zipfile_handle.writestr(
+        zinfo_or_arcname="str",
+        data="this is my data"
+    )
