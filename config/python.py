@@ -61,6 +61,8 @@ install_requires: List[str] = [
     # music
     "music",
     "mingus",
+    "simpleaudio",
+    "pygame",
     # terminal color stuff
     "termcolor",
     "colored",
