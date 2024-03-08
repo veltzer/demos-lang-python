@@ -1,5 +1,8 @@
 """
 Example of how to play a .wav file using simpleaudio
+
+References:
+- https://simpleaudio.readthedocs.io/en/latest/simpleaudio.html
 """
 
 import simpleaudio
