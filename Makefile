@@ -24,11 +24,7 @@ DO_MD_ASPELL:=1
 # code #
 ########
 ALL:=
-ifeq (, $(shell which git-nothere))
 ALL_PY:=$(shell find src -name "*.py")
-else
-ALL_PY:=$(shell git ls-files 'src/*.py')
-endif # shell which git
 ALL_FILES=$(shell find src -type f)
 ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
