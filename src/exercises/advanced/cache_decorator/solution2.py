@@ -35,7 +35,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-# test 'is_prime'
+# test "is_prime"
 # for i in range(100):
 #     if is_prime(i):
 #         print(i)

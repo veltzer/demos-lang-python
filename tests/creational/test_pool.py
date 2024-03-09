@@ -32,20 +32,20 @@ class TestNaitivePool(unittest.TestCase):
 
     """def test_object(queue):
     queue_object = QueueObject(queue, True)
-    print('Inside func: {}'.format(queue_object.object))"""
+    print("Inside func: {}".format(queue_object.object))"""
 
     def test_pool_behavior_with_single_object_inside(self):
         sample_queue = queue.Queue()
         sample_queue.put("yam")
         with ObjectPool(sample_queue) as obj:
-            # print('Inside with: {}'.format(obj))
+            # print("Inside with: {}".format(obj))
             self.assertEqual(obj, "yam")
         self.assertFalse(sample_queue.empty())
         self.assertTrue(sample_queue.get() == "yam")
         self.assertTrue(sample_queue.empty())
 
-    # sample_queue.put('sam')
+    # sample_queue.put("sam")
     # test_object(sample_queue)
-    # print('Outside func: {}'.format(sample_queue.get()))
+    # print("Outside func: {}".format(sample_queue.get()))
 
     # if not sample_queue.empty():

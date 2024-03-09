@@ -5,13 +5,13 @@ import logging_tree
 
 logging.basicConfig()
 
-# get the root logger, and remove it's handler
+# get the root logger, and remove its handler
 logging.root.handlers.clear()
 
 # logger1 configuration
 logger1 = logging.getLogger("name1")
 # logger1.propagate = False
-file_handler = logging.FileHandler('/tmp/log.txt')
+file_handler = logging.FileHandler("/tmp/log.txt")
 logger1.addHandler(file_handler)
 logger1.setLevel(logging.WARNING)
 

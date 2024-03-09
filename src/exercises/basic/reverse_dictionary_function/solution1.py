@@ -8,7 +8,7 @@ def rev_dict(d):
     """ reverse a dict (build a value=>key mapping)
 
     >>> rev_dict({"Israel":"Jerusalem","France":"Paris","Italy":"Rome","Egypt":"Cairo"})
-    {'Jerusalem': 'Israel', 'Paris': 'France', 'Rome': 'Italy', 'Cairo': 'Egypt'}
+    {"Jerusalem": "Israel", "Paris": "France", "Rome": "Italy", "Cairo": "Egypt"}
     """
     rev_d = {}
     for k, v in d.items():

@@ -6,7 +6,7 @@ this is a simple solution to the reverse dict function exercise
 def rev_dict(d):
     rev_d = {}
     # The next loop is critical to extract the values from the map function
-    # if you don't extract the values map will not actually do anything.
+    # if you dont extract the values map will not actually do anything.
     # pylint: disable=unnecessary-dunder-call
     for _ in map(lambda t: rev_d.__setitem__(t[1], t[0]), d.items()):
         pass

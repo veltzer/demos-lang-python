@@ -1,6 +1,17 @@
-from __future__ import annotations
 from contextlib import redirect_stdout
 import io
+
+
+class Action:
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+    def amount(self, val: str) -> __class__:
+        print(val, end=" ")
+        return self
+
+    def stop(self) -> None:
+        print("then stop")
 
 
 class Person:
@@ -10,18 +21,6 @@ class Person:
     def do_action(self, action: Action) -> Action:
         print(self.name, action.name, end=" ")
         return action
-
-
-class Action:
-    def __init__(self, name: str) -> None:
-        self.name = name
-
-    def amount(self, val: str) -> Action:
-        print(val, end=" ")
-        return self
-
-    def stop(self) -> None:
-        print("then stop")
 
 
 CORRECT_OUTPUT = """\

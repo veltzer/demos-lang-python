@@ -1,7 +1,7 @@
 import sympy as sym
 
-x = sym.Symbol('x')
-y = sym.Symbol('y')
+x = sym.Symbol("x")
+y = sym.Symbol("y")
 
 expression = 3 * x**2 + 2 * x * y + y**2
 

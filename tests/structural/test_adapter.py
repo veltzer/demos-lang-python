@@ -22,7 +22,7 @@ class ClassTest(unittest.TestCase):
 
     def test_human_shall_speak(self):
         noise = self.human.speak()
-        expected_noise = "'hello'"
+        expected_noise = "hello"
         self.assertEqual(noise, expected_noise)
 
     def test_car_shall_make_loud_noise(self):
@@ -55,7 +55,7 @@ class AdapterTest(unittest.TestCase):
         human = Human()
         human_adapter = Adapter(human, make_noise=human.speak)
         noise = human_adapter.make_noise()
-        expected_noise = "'hello'"
+        expected_noise = "hello"
         self.assertEqual(noise, expected_noise)
 
     def test_car_adapter_shall_make_loud_noise(self):

@@ -8,7 +8,7 @@ def is_prime(n):
     return True
 
 
-# test 'is_prime'
+# test is_prime
 # for i in range(100):
 #     if is_prime(i):
 #         print(i)

@@ -8,15 +8,6 @@ This reduces the dependencies between communicating objects, thereby reducing co
 Encapsulates how a set of objects interact.
 """
 
-from __future__ import annotations
-
-
-class ChatRoom:
-    """Mediator class"""
-
-    def display_message(self, user: User, message: str) -> None:
-        print(f"[{user} says]: {message}")
-
 
 class User:
     """A class whose instances want to interact with each other"""
@@ -30,6 +21,13 @@ class User:
 
     def __str__(self) -> str:
         return self.name
+
+
+class ChatRoom:
+    """Mediator class"""
+
+    def display_message(self, user: User, message: str) -> None:
+        print(f"[{user} says]: {message}")
 
 
 def main():

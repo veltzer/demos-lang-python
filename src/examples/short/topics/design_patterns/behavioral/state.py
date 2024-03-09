@@ -8,7 +8,6 @@ Implements state as a derived class of the state pattern interface.
 Implements state transitions by invoking methods from the patterns superclass.
 """
 
-from __future__ import annotations
 from typing import List
 import abc
 from contextlib import redirect_stdout
@@ -19,7 +18,7 @@ class State:
     __metaclass__ = abc.ABCMeta
     """Base state. Put shared state and functionality here"""
 
-    def __init__(self, name: str, stations: List[str], radio: Radio) -> None:
+    def __init__(self, name: str, stations: List[str], radio: "Radio") -> None:
         self.radio = radio
         self.stations = stations
         self.pos = 0
@@ -38,7 +37,7 @@ class State:
 
 
 class AmState(State):
-    def __init__(self, radio: Radio) -> None:
+    def __init__(self, radio: "Radio") -> None:
         super().__init__(name="AM", stations=["1250", "1380", "1510"], radio=radio)
 
     def toggle_amfm(self) -> None:
@@ -47,7 +46,7 @@ class AmState(State):
 
 
 class FmState(State):
-    def __init__(self, radio: Radio) -> None:
+    def __init__(self, radio: "Radio") -> None:
         super().__init__(name="FM", stations=["81.3", "89.1", "103.9"], radio=radio)
 
     def toggle_amfm(self) -> None:

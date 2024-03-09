@@ -3,7 +3,7 @@ An Example of the flyweight pattern in python. The idea is to use the scoping ru
 class,module,global) to make the flyweight feel natural. It seems that in python this pattern is much
 more natural than in other languages.
 
-Notice that we don't need to write any getters as we just use instance.[attribute] to get the attribute
+Notice that we dont need to write any getters as we just use instance.[attribute] to get the attribute
 [attribute]... I wrote one getter just for educational purposes.
 
 Technically speaking we can avoid writing setters too.

@@ -5,9 +5,22 @@
 Provides a centralized entry point that controls and manages request handling.
 """
 
-from __future__ import annotations
-
 from typing import Any
+
+
+class Request:
+    """request"""
+
+    mobile_type = "mobile"
+    tablet_type = "tablet"
+
+    def __init__(self, request):
+        self.type = None
+        request = request.lower()
+        if request == self.mobile_type:
+            self.type = self.mobile_type
+        elif request == self.tablet_type:
+            self.type = self.tablet_type
 
 
 class MobileView:
@@ -54,21 +67,6 @@ class RequestController:
             self.dispatcher.dispatch(request)
         else:
             print("request must be a Request object")
-
-
-class Request:
-    """request"""
-
-    mobile_type = "mobile"
-    tablet_type = "tablet"
-
-    def __init__(self, request):
-        self.type = None
-        request = request.lower()
-        if request == self.mobile_type:
-            self.type = self.mobile_type
-        elif request == self.tablet_type:
-            self.type = self.tablet_type
 
 
 def main():

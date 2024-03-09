@@ -20,7 +20,7 @@ def main():
     # you can use "default" in the next line
     # with openshift.project("kube-system"):
     client = openshift.dynamic.client.DynamicClient(client="default")
-    pods = client.resources.get(api_version='v1', kind='Pod').get()
+    pods = client.resources.get(api_version="v1", kind="Pod").get()
     for pod in pods.items:
         print(pod.metadata.name)
 

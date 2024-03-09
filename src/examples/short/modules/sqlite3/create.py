@@ -8,7 +8,7 @@ import os
 import tempfile
 
 # Create a temporary file in /tmp
-with tempfile.NamedTemporaryFile(suffix='.db', dir='/tmp', delete=True) as db_file:
+with tempfile.NamedTemporaryFile(suffix=".db", dir="/tmp", delete=True) as db_file:
     # Connect to the database
     conn = sqlite3.connect(db_file.name)
 
@@ -16,7 +16,7 @@ with tempfile.NamedTemporaryFile(suffix='.db', dir='/tmp', delete=True) as db_fi
     conn.execute("CREATE TABLE temp_table (id INTEGER PRIMARY KEY, name TEXT, value REAL)")
 
     # Insert some data
-    conn.execute("INSERT INTO temp_table VALUES (1, 'data', 10.5)")
+    conn.execute("INSERT INTO temp_table VALUES (1, \"data\", 10.5)")
 
     # Save and close
     conn.commit()

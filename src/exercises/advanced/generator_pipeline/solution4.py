@@ -31,7 +31,7 @@ def newline_remover(g):
 
 
 def punctuation_remover(g):
-    punctuation_signs = ['.', ',', ':', '?', ';']
+    punctuation_signs = [".", ",", ":", "?", ";"]
     for x in g:
         if x[-1] in punctuation_signs:
             yield x[:-1]

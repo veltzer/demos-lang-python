@@ -24,7 +24,7 @@ DO_MD_ASPELL:=1
 # code #
 ########
 ALL:=
-ifeq (, $(shell which git))
+ifeq (, $(shell which git-nothere))
 ALL_PY:=$(shell find src -name "*.py")
 else
 ALL_PY:=$(shell git ls-files 'src/*.py')
@@ -150,7 +150,7 @@ check_has_key:
 .PHONY: check_no_future
 check_no_future:
 	$(info doing [$@])
-	$(Q)git grep "__future__" || exit 0
+	$(Q)git grep "__future__" -- "*.py" || exit 0
 
 .PHONY: debug
 debug:

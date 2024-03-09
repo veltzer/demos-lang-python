@@ -4,7 +4,6 @@ Implementation of the iterator pattern using the iterator protocol from Python
 *TL;DR
 Traverses a container and accesses the containers elements.
 """
-from __future__ import annotations
 
 
 class NumberWords:
@@ -22,7 +21,7 @@ class NumberWords:
         self.start = start
         self.stop = stop
 
-    def __iter__(self) -> NumberWords:  # this makes the class an Iterable
+    def __iter__(self) -> __class__:  # this makes the class an Iterable
         return self
 
     def __next__(self) -> str:  # this makes the class an Iterator

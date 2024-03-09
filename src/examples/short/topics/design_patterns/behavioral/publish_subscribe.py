@@ -5,8 +5,22 @@ Author: https://github.com/HanWenfang
 """
 
 
-from __future__ import annotations
 from typing import List, Dict
+
+
+class Subscriber:
+    def __init__(self, name: str, msg_center: "Provider") -> None:
+        self.name = name
+        self.provider = msg_center
+
+    def subscribe(self, msg: str) -> None:
+        self.provider.subscribe(msg, self)
+
+    def unsubscribe(self, msg: str) -> None:
+        self.provider.unsubscribe(msg, self)
+
+    def run(self, msg: str) -> None:
+        print(f"{self.name} got {msg}")
 
 
 class Provider:
@@ -36,21 +50,6 @@ class Publisher:
 
     def publish(self, msg: str) -> None:
         self.provider.notify(msg)
-
-
-class Subscriber:
-    def __init__(self, name: str, msg_center: Provider) -> None:
-        self.name = name
-        self.provider = msg_center
-
-    def subscribe(self, msg: str) -> None:
-        self.provider.subscribe(msg, self)
-
-    def unsubscribe(self, msg: str) -> None:
-        self.provider.unsubscribe(msg, self)
-
-    def run(self, msg: str) -> None:
-        print(f"{self.name} got {msg}")
 
 
 def main():

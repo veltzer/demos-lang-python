@@ -6,9 +6,15 @@ Author: https://github.com/IuryAlves
 Allows object composition to achieve the same code reuse as inheritance.
 """
 
-from __future__ import annotations
-
 from typing import Any, Callable
+
+
+class Delegate:
+    def __init__(self) -> None:
+        self.p1 = 123
+
+    def do_something(self, something: str) -> str:
+        return f"Doing {something}"
 
 
 class Delegator:
@@ -41,14 +47,6 @@ class Delegator:
             return attr(*args, **kwargs)
 
         return wrapper
-
-
-class Delegate:
-    def __init__(self) -> None:
-        self.p1 = 123
-
-    def do_something(self, something: str) -> str:
-        return f"Doing {something}"
 
 
 if __name__ == "__main__":
