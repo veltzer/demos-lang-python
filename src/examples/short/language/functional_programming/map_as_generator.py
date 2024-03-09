@@ -9,8 +9,7 @@ Note that in python2.7 the behaviour was different.
 
 
 def generate_items():
-    for i in range(10):
-        yield i
+    yield from range(10)
 
 
 def square(x):

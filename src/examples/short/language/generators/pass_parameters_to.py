@@ -5,8 +5,7 @@ function...
 
 
 def generate_items(start, stop):
-    for i in range(start, stop):
-        yield i
+    yield from range(start, stop)
 
 
 for x in generate_items(2, 6):

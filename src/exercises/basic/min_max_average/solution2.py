@@ -1,16 +1,14 @@
 def my_min(my_list):
     current_min = my_list[0]
     for x in my_list:
-        if x < current_min:
-            current_min = x
+        current_min = min(current_min, x)
     return current_min
 
 
 def my_max(my_list):
     current_max = my_list[0]
     for x in my_list:
-        if x > current_max:
-            current_max = x
+        current_max = max(current_max, x)
     return current_max
 
 

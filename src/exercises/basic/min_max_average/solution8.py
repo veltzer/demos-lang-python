@@ -1,16 +1,14 @@
 def my_min(lst):
     cur_min = lst[0]
     for x in lst:
-        if x < cur_min:
-            cur_min = x
+        cur_min = min(cur_min, x)
     return cur_min
 
 
 def my_max(lst):
     cur_max = lst[0]
     for x in lst:
-        if x > cur_max:
-            cur_max = x
+        cur_max = max(cur_max, x)
     return cur_max
 
 

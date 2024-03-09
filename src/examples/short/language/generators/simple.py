@@ -7,8 +7,7 @@ NOTES:
 
 
 def generate_items():
-    for i in range(10):
-        yield i
+    yield from range(10)
 
 
 for x in generate_items():

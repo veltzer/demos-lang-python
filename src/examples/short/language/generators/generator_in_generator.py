@@ -9,11 +9,9 @@ def give_me_more_data():
 
 
 def give_me_some_data():
-    for x in give_me_little_data():
-        yield x
+    yield from give_me_little_data()
     yield "this is data from the middle"
-    for x in give_me_more_data():
-        yield x
+    yield from give_me_more_data()
     yield "this is data from the end"
 
 

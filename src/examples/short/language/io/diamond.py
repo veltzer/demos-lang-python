@@ -14,13 +14,11 @@ import sys
 
 def diamond_lines():
     if len(sys.argv) == 1:
-        for line in sys.stdin.readlines():
-            yield line
+        yield from sys.stdin.readlines()
     else:
         for filename in sys.argv[1:]:
             with open(filename, "rt") as file_handle:
-                for line in file_handle:
-                    yield line
+                yield from file_handle
 
 
 def main():

@@ -1,14 +1,11 @@
 def line_generator(filename):
     with open(filename, "rt") as stream:
-        for line in stream:
-            yield line
+        yield from stream
 
 
 def line_splitter():
     for x in line_generator("soliloquy.txt"):
-        parts = x.split(" ")
-        for part in parts:
-            yield part
+        yield from x.split(" ")
 
 
 def lowercase_generator():

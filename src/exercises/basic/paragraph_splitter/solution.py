@@ -24,8 +24,7 @@ def reformat(lines, chars):
     Paragraph in input and output are separated by empty lines.
     """
     for para in lines:
-        for line in textwrap.wrap(" ".join(para), chars):
-            yield line
+        yield from textwrap.wrap(" ".join(para), chars)
         yield ""
 
 

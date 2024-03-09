@@ -20,15 +20,13 @@ def make_funcs(number_list):
     def func_max():
         current_max = 0
         for x in number_list:
-            if x > current_max:
-                current_max = x
+            current_max = max(current_max, x)
         return current_max
 
     def func_min():
         current_min = 10000
         for x in number_list:
-            if x < current_min:
-                current_min = x
+            current_min = min(current_min, x)
         return current_min
 
     def func_set(index, val):
