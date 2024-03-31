@@ -6,6 +6,7 @@ dev_requires: List[str] = [
     "black",
 ]
 install_requires: List[str] = [
+    "pydantic",
     # command line parsing
     "click",
     "cmd2",
