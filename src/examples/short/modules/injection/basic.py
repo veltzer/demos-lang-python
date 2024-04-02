@@ -13,15 +13,21 @@ import inject
 
 
 @inject.params(var=list)
-def doit(var):
-    print(var)
+def doit(a, b, var):
+    print(a, b, var)
 
 
-def configure(binder: inject.Binder) -> None:
+def my_config(binder: inject.Binder) -> None:
     binder.bind(list, [1, 2, 3])
 
 
-inject.configure(config=configure)
+inject.configure(config=my_config)
 
 # pylint: disable=no-value-for-parameter
-doit()
+def f1():
+    f2()
+def f2():
+    f3()
+def f3():
+    doit(a=5, b=7)
+f1()
