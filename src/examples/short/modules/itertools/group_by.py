@@ -19,7 +19,12 @@ def main():
         this is 1 indent 3
         this is 1 indent 4"""
 
-    for indent, paragraph in itertools.groupby(data.split("\n"), key=indentation):
+    lines = data.split("\n")
+    # lines.sort(key=indentation)
+    # print(lines)
+    # import sys
+    # sys.exit(1)
+    for indent, paragraph in itertools.groupby(lines , key=indentation):
         print(f"{indent}-spaced paragraph")
         for line in paragraph:
             print(line.strip())

@@ -8,8 +8,8 @@ verified that.
 
 import itertools
 
-l1 = [1, 2, 3]
-l2 = [4, 5, 6, 7]
+l1 = range(0, 5000) 
+l2 = range(6000, 90000)
 
 for x in itertools.chain(l1, l2):
     print(x)
