@@ -23,11 +23,18 @@ def my_config(binder: inject.Binder) -> None:
 
 inject.configure(config=my_config)
 
+
 # pylint: disable=no-value-for-parameter
 def f1():
     f2()
+
+
 def f2():
     f3()
+
+
 def f3():
     doit(a=5, b=7)
+
+
 f1()

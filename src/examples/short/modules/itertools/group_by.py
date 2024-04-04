@@ -24,7 +24,7 @@ def main():
     # print(lines)
     # import sys
     # sys.exit(1)
-    for indent, paragraph in itertools.groupby(lines , key=indentation):
+    for indent, paragraph in itertools.groupby(lines, key=indentation):
         print(f"{indent}-spaced paragraph")
         for line in paragraph:
             print(line.strip())
