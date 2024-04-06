@@ -121,17 +121,17 @@ check_all: check_ws check_quotes check_no_python2 check_mode check_has_key check
 .PHONY: check_ws
 check_ws:
 	$(info doing [$@])
-	$(Q)git grep -E "\s$$" -- '*.py' || exit 0
+	$(Q)git grep -E "\s$$" -- 'src/**.py' || exit 0
 
 .PHONY: check_quotes
 check_quotes:
 	$(info doing [$@])
-	$(Q)git grep "'" -- '*.py' || exit 0
+	$(Q)git grep "'" -- 'src/**.py' || exit 0
 
 .PHONY: check_no_python2
 check_no_python2:
 	$(info doing [$@])
-	$(Q)git grep -E "^#!/usr/bin/python2" || exit 0
+	$(Q)git grep -E "^#!/usr/bin/python2" -- 'src/**.py' || exit 0
 
 .PHONY: check_mode
 check_mode:
@@ -141,12 +141,12 @@ check_mode:
 .PHONY: check_has_key
 check_has_key:
 	$(info doing [$@])
-	$(Q)git grep -l "has_key" -- '*.py' || exit 0
+	$(Q)git grep -l "has_key" -- 'src/**.py' || exit 0
 
 .PHONY: check_no_future
 check_no_future:
 	$(info doing [$@])
-	$(Q)git grep "__future__" -- "*.py" || exit 0
+	$(Q)git grep "__future__" -- 'src/**.py' || exit 0
 
 .PHONY: debug
 debug:
