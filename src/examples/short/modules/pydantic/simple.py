@@ -11,14 +11,14 @@ class User(BaseModel):
 
 # Create an instance of the model from a dictionary
 user_data = {
-    'name': 'John Doe',
-    'age': 30,
-    'email': 'john@example.com'
+    "name": "John Doe",
+    "age": 30,
+    "email": "john@example.com"
 }
 
 user = User(**user_data)
 print(user)
-# Output: User(name='John Doe', age=30, email='john@example.com', is_admin=False)
+# Output: User(name="John Doe", age=30, email="john@example.com", is_admin=False)
 
 # Access the fields
 print(user.name)  # Output: John Doe
@@ -29,11 +29,11 @@ print(user.is_admin)  # Output: False
 # Modify the fields
 user.is_admin = True
 print(user)
-# Output: User(name='John Doe', age=30, email='john@example.com', is_admin=True)
+# Output: User(name="John Doe", age=30, email="john@example.com", is_admin=True)
 
 # Create an instance with validation errors
 try:
-    invalid_user = User(name='Alice', age='invalid', email='alice@example.com')
+    invalid_user = User(name="Alice", age="invalid", email="alice@example.com")
 except ValueError as e:
     print(e)
     # Output: 1 validation error for User

@@ -7,13 +7,13 @@ class User(BaseModel):
 
 
 # Valid email
-valid_user = User(name='John Doe', email='john@example.com')
+valid_user = User(name="John Doe", email="john@example.com")
 print(valid_user)
-# Output: User(name='John Doe', email=EmailStr('john@example.com'))
+# Output: User(name="John Doe", email=EmailStr("john@example.com"))
 
 # Invalid email
 try:
-    invalid_user = User(name='Alice', email='invalid_email')
+    invalid_user = User(name="Alice", email="invalid_email")
 except ValueError as e:
     print(e)
     # Output: 1 validation error for User
