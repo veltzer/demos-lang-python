@@ -28,8 +28,8 @@ running correctly you can incorporate its code into a larger project.
 
 chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/veltzer/mark.veltzer)
 
-## number of examples 
+## Number of examples
 
-Currently there are 983 examples in this repo.
+Currently there are 985 examples in this repo.
 
 Mark Veltzer, Copyright © 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024
