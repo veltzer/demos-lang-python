@@ -154,7 +154,10 @@ install_requires: List[str] = [
     "scikit-learn",
     # flask-web
     "flask",
-    "Flask-RESTful"
+    "Flask-RESTful",
+    # fastapi-web
+    "fastapi",
+    "uvicorn",
 ]
 build_requires: List[str] = [
     "pymakehelper",
