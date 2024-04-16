@@ -73,7 +73,6 @@ gitpython
 prompt-toolkit
 azure-cognitiveservices-search-websearch
 pygraph
-flask
 tsv
 pygments
 types-pygments
@@ -122,6 +121,8 @@ numpy
 matplotlib
 colorspacious
 scikit-learn
+flask
+Flask-RESTful
 pymakehelper
 pydmt
 pylint

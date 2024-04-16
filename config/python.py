@@ -100,7 +100,6 @@ install_requires: List[str] = [
     "prompt-toolkit",
     "azure-cognitiveservices-search-websearch",
     "pygraph",
-    "flask",
     "tsv",
     "pygments",
     "types-pygments",
@@ -153,6 +152,9 @@ install_requires: List[str] = [
     "matplotlib",
     "colorspacious",
     "scikit-learn",
+    # flask-web
+    "flask",
+    "Flask-RESTful"
 ]
 build_requires: List[str] = [
     "pymakehelper",
