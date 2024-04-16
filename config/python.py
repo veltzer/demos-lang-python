@@ -158,6 +158,7 @@ install_requires: List[str] = [
     # fastapi-web
     "fastapi",
     "uvicorn",
+    "tornado",
 ]
 build_requires: List[str] = [
     "pymakehelper",
