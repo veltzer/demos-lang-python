@@ -11,7 +11,7 @@ def measure_response_time(host="8.8.8.8", port=53, timeout=0.05):
     port: The port number to connect on (default: 80 for HTTP).
     timeout: The maximum time (seconds) to wait for a connection.
     Returns:
-        The time taken to establish a connection in seconds, or None if there's an error.
+        The time taken to establish a connection in seconds, or None if theres an error.
     """
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
