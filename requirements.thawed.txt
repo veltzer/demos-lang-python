@@ -123,6 +123,8 @@ colorspacious
 scikit-learn
 flask
 Flask-RESTful
+fastapi
+uvicorn
 pymakehelper
 pydmt
 pylint
