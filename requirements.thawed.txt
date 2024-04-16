@@ -126,6 +126,8 @@ Flask-RESTful
 fastapi
 uvicorn
 tornado
+django
+djangorestframework
 pymakehelper
 pydmt
 pylint

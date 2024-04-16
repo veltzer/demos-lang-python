@@ -159,6 +159,8 @@ install_requires: List[str] = [
     "fastapi",
     "uvicorn",
     "tornado",
+    "django",
+    "djangorestframework",
 ]
 build_requires: List[str] = [
     "pymakehelper",
