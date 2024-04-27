@@ -1,4 +1,4 @@
-This folder explores the pygments API
+# Pygments API example
 
-The quickstart is here:
-http://pygments.org/docs/quickstart/
+The quick-start is here:
+[link](http://pygments.org/docs/quickstart/)

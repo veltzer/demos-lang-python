@@ -1,4 +1,4 @@
-This is an example of building a lightweight plugin system.
+# Using `imp` to build a lightweight plugin system
 
 References:
-http://lkubuntu.wordpress.com/2012/10/02/writing-a-python-plugin-api
+* [link](http://lkubuntu.wordpress.com/2012/10/02/writing-a-python-plugin-api)

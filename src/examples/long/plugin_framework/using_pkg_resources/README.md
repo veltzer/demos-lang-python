@@ -1,1 +1,3 @@
-This still needs to be written
+# Using the `pkg_resources` module
+
+TBD

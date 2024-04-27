@@ -1,4 +1,6 @@
-There are several examples here of how to use jinja templates.
+# Jinja templating
+
+There are several examples here of how to use Jinja templates.
 
 References:
-https://realpython.com/blog/python/primer-on-jinja-templating
+[link](https://realpython.com/blog/python/primer-on-jinja-templating)
