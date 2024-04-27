@@ -2,7 +2,7 @@
 A basic example of how to use yattag.
 """
 
-from yattag import Doc
+from yattag import Doc, indent
 
 doc, tag, text = Doc().tagtext()
 
@@ -15,3 +15,5 @@ with tag("html"):
 
 result = doc.getvalue()
 print(result)
+pretty_html = indent(doc.getvalue())
+print(pretty_html)
