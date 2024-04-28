@@ -257,6 +257,11 @@ out/moved.stamp: $(ALL_FILE)
 	$(Q)pymakehelper error_on_print find src -name "*.moved"
 	$(Q)pymakehelper touch_mkdir $@
 
+.PHONY: spell_many
+spell_many:
+	$(info doing [$@])
+	$(Q)aspell_many.sh $(MD_SRC)
+
 ############
 # patterns #
 ############
