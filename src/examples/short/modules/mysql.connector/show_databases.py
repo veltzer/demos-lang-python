@@ -20,7 +20,7 @@ def main():
     cursor.execute("SHOW DATABASES")
     for row in cursor:
         for datum in row:
-            print(datum.decode())
+            print(datum)
     db.close()
 
 

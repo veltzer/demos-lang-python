@@ -1,6 +1,6 @@
 """
 This is an example showing how to use the mysql.connector
-module to select records from a mysql database.
+module to connect and interact with the mysql database.
 
 This module comes from the mysql-connection.
 """
@@ -15,13 +15,12 @@ def main():
     db = mysql.connector.connect(
         option_files=option_files,
         option_groups=option_groups,
-        database="mysql",
     )
     cursor = db.cursor()
-    cursor.execute("SELECT user FROM user WHERE host=%(host)s", {"host": "localhost"})
+    cursor.execute("SHOW TABLES")
     for row in cursor:
         for datum in row:
-            print(datum.decode())
+            print(datum)
     db.close()
 
 
