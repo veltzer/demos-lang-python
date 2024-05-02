@@ -20,7 +20,7 @@ def main():
         this is 1 indent 4"""
 
     lines = data.split("\n")
-    # lines.sort(key=indentation)
+    lines.sort(key=indentation)
     # print(lines)
     # import sys
     # sys.exit(1)
