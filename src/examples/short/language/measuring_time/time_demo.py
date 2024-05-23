@@ -10,4 +10,4 @@ import time
 time_before = time.time()
 time.sleep(2)
 time_after = time.time()
-print(f"time taken: {time_after-time_before:.3f} seconds")
+print(f"time taken: {time_after - time_before:.3f} seconds")

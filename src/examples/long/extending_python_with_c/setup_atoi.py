@@ -2,13 +2,14 @@
 setup.py file for SWIG atoi
 """
 
-# pylint: disable=deprecated-module
-import distutils.core
+from setuptools import setup, Extension
 
-atoi_module = distutils.core.Extension("_atoi",
-                                       sources=["atoi_wrap.c"],
-                                       )
-distutils.core.setup(
+atoi_module = Extension(
+    "_atoi",
+    sources=["atoi_wrap.c"],
+)
+
+setup(
     name="atoi",
     version="0.1",
     author="SWIG Docs",

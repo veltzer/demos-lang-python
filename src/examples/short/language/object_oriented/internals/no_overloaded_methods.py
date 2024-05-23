@@ -31,6 +31,7 @@ except TypeError:
 # this will pass without an exception...
 a = A()
 try:
+    # pylint: disable=no-value-for-parameter
     a.sayHello()
 except TypeError:
     print("oops,got an error")

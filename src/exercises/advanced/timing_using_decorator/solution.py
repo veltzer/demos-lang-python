@@ -25,7 +25,7 @@ def time_it(func):
 def print_timing_summary():
     for k, v in timing.items():
         acc_time, n_calls = v
-        print(f"function {k.__name__} took {acc_time/n_calls} to run on average")
+        print(f"function {k.__name__} took {acc_time / n_calls} to run on average")
 
 
 @time_it

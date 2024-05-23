@@ -77,10 +77,10 @@ time_before = time.time()
 for _ in range(num):
     a = get_a_instance()
 time_after = time.time()
-print(f"time for A: {time_after-time_before:.3f} seconds")
+print(f"time for A: {time_after - time_before:.3f} seconds")
 time_before = time.time()
 # noinspection PyRedeclaration
 for _ in range(num):
     b = getBInstance()
 time_after = time.time()
-print(f"time for B: {time_after-time_before:.3f} seconds")
+print(f"time for B: {time_after - time_before:.3f} seconds")

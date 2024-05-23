@@ -73,9 +73,9 @@ class NotebookExample:
 
         # Lets append a bunch of pages to the notebook
         for i in range(5):
-            buffer_frame = f"Append Frame {i+1}"
-            # buffer_label = f"Page {i+1}"
-            buffer_label = f"עמוד {i+1}"
+            buffer_frame = f"Append Frame {i + 1}"
+            # buffer_label = f"Page {i + 1}"
+            buffer_label = f"עמוד {i + 1}"
 
             frame = Gtk.Frame()
             frame.set_border_width(10)
@@ -99,8 +99,8 @@ class NotebookExample:
 
         # Now finally lets prepend pages to the notebook
         for i in range(5):
-            buffer_frame = f"Prepend Frame {i+1}"
-            buffer_label = f"PPage {i+1}"
+            buffer_frame = f"Prepend Frame {i + 1}"
+            buffer_label = f"PPage {i + 1}"
 
             frame = Gtk.Frame()
             frame.set_border_width(10)

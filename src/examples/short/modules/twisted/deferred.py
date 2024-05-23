@@ -40,7 +40,7 @@ def main():
 
     time_after = time.time()
 
-    print(f"Total time taken for largeFibonnaciNumber call: {time_after-time_before:.3f} seconds")
+    print(f"Total time taken for largeFibonnaciNumber call: {time_after - time_before:.3f} seconds")
 
     # add a callback to it to output the number
     print("Adding the callback now.")

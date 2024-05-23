@@ -15,5 +15,5 @@ print(f"The value of pi is approximately {pi:.2f}")
 # This prints both the expression and it's value, very useful
 a = 5
 b = 6
-print(f"{a+b=}")
+print(f"{a + b=}")
 # Output: a+b=11

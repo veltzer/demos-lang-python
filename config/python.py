@@ -78,7 +78,7 @@ install_requires: List[str] = [
     "google-auth-oauthlib",
     "google-cloud-datastore",
     # dependency injection
-    "dependency-injector",
+    # "dependency-injector",
     # misc
     "texttable",
     "dispy",
@@ -103,7 +103,7 @@ install_requires: List[str] = [
     "tsv",
     "pygments",
     "types-pygments",
-    "simpleparse",
+    # "simpleparse",
     "progressbar",
     "inject",
     "scrapy",
