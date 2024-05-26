@@ -107,6 +107,7 @@ install_requires: List[str] = [
     "progressbar",
     "inject",
     "scrapy",
+    "browser_cookie3",
     "ConfigParser",
     "unidecode",
     "paramiko",
