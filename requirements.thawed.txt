@@ -78,6 +78,7 @@ types-pygments
 progressbar
 inject
 scrapy
+browser_cookie3
 ConfigParser
 unidecode
 paramiko
