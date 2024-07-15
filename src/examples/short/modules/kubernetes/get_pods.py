@@ -17,8 +17,8 @@ def main():
 
     v1 = kubernetes.client.CoreV1Api()
     print("Listing pods with their IPs:")
-    ret = v1.list_pod_for_all_namespaces(watch=False)
-    # ret = v1.list_namespaced_pod("default")
+    #ret = v1.list_pod_for_all_namespaces(watch=False)
+    ret = v1.list_namespaced_pod("default")
     for i in ret.items:
         assert i.status is not None
         assert i.metadata is not None
