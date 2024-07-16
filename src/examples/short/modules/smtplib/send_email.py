@@ -7,18 +7,23 @@ http://stackoverflow.com/questions/23616803/smtplib-smtp-starttls-fails-with-tls
 
 import email.mime.text
 import smtplib
+import googleapiclient.discovery
+import pygooglehelper
+
+
+SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
 
 def send_email(
-        subject="default subject",
-        fr="default from",
+        subject=None,
+        content=None,
+        fr=None,
         to=None,
-        content="default content",
-        smtp_host="localhost",
+        smtp_user=None,
+        smtp_password=None,
+        smtp_host="smtp.gmail.com",
         smtp_port=587,
         use_tls=True,
-        user=None,
-        password=None,
         debug=False,
 ):
     # build the message
@@ -34,16 +39,26 @@ def send_email(
         server.set_debuglevel(1)
     if use_tls:
         server.starttls()
-    server.login(user, password)
+    server.login(smtp_user, smtp_password)
     server.sendmail(fr, to, msg.as_string())
     server.quit()
 
 
+pygooglehelper.ConfigRequest.scopes = SCOPES
+pygooglehelper.ConfigRequest.app_name = "pyemail"
+credentials = pygooglehelper.get_credentials()
+service = googleapiclient.discovery.build(
+    serviceName="gmail",
+    version="v1",
+    credentials=credentials,
+)
+
+
 send_email(
-    smtp_host="smtp.gmail.com",
-    user="myname@gmail.com",
-    to="myname@gmail.com",
-    fr="myname@gmail.com",
-    password="XXXXXXXX",
-    debug=True,
+    subject="test sujbect",
+    content="test content",
+    to="mark.veltzer@gmail.com",
+    fr="mark.veltzer@gmail.com",
+    smtp_user="mark.veltzer@gmail.com",
+    smtp_password="XXXXX",
 )
