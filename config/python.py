@@ -162,6 +162,8 @@ install_requires: List[str] = [
     "tornado",
     "django",
     "djangorestframework",
+    # my own stuff
+    "pygooglehelper",
 ]
 build_requires: List[str] = [
     "pymakehelper",

@@ -127,6 +127,7 @@ uvicorn
 tornado
 django
 djangorestframework
+pygooglehelper
 pymakehelper
 pydmt
 pylint
