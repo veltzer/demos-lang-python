@@ -83,7 +83,7 @@ class ConsoleView(View):
         print(printout)
 
     def item_not_found(self, item_type, item_name):
-        print(f"That {item_type} {item_name} does not exist in the records")
+        print(f"That {item_type} {item_name} doesnt exist in the records")
 
 
 class Controller:

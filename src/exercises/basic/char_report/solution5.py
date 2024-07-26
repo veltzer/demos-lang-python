@@ -12,4 +12,4 @@ with open("c:/tmp.txt") as f:
                     report[c] = 1
 with open("c:/tmp2.txt", "w") as f:
     for c, r in report.items():
-        f.write(f"{c} : {r}\n")
+        f.write(f"{c}: {r}\n")

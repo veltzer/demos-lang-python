@@ -13,4 +13,4 @@ with open("data.txt") as f:
 with open("c:/tmp2.txt", "w") as f:
     keys = sorted(report.keys())
     for c in keys:
-        f.write(f"{c} : {report[c]}\n")
+        f.write(f"{c}: {report[c]}\n")

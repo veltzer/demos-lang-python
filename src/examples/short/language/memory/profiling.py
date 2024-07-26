@@ -85,7 +85,7 @@ class Person():
 # print(dir(p))
 
 
-l = [0,1,2,3,4,5,6,7,8,9, list(range(10000))]
-print(f"total_size of l is [{total_size(l)}]")
+large_array = [0,1,2,3,4,5,6,7,8,9, list(range(10000))]
+print(f"total_size of arge_array is [{total_size(large_array)}]")
 
 print(psutil.virtual_memory())

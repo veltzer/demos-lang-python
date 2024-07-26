@@ -55,7 +55,7 @@ class Ui:
             quantity = product_info.get("quantity", 0)
             print(f"Name: {product.title()} Price: {price:.2f}, Quantity: {quantity}")
         else:
-            print(f"That product [{product}] does not exist in the records")
+            print(f"That product [{product}] doesnt exist in the records")
 
 
 def main():

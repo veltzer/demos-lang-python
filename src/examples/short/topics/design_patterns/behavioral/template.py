@@ -33,7 +33,7 @@ def saver() -> None:
 
 def template_function(getter, converter=False, to_save=False) -> None:
     data = getter()
-    print(f"Got `{data}`")
+    print(f"Got {repr(data)}")
 
     if len(data) <= 3 and converter:
         data = converter(data)
@@ -43,7 +43,7 @@ def template_function(getter, converter=False, to_save=False) -> None:
     if to_save:
         saver()
 
-    print(f"`{data}` was processed")
+    print(f"{repr(data)} was processed")
 
 
 def main():

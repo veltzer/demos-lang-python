@@ -35,7 +35,7 @@ if doFirst:
         filename = files[i % list_len]
         os.path.getmtime(filename)
     time_after = time.time()
-    print(f"time taken for {count} os.path.getmtime : {time_after - time_before:.3f} seconds")
+    print(f"time taken for {count} os.path.getmtime: {time_after - time_before:.3f} seconds")
 
 if doSecond:
     # now do the same with a cache
@@ -48,4 +48,4 @@ if doSecond:
     else:
         times[filename] = os.path.getmtime(filename)
     time_after = time.time()
-    print(f"time taken for {count} cache getmtime : {time_after - time_before:.3f} seconds")
+    print(f"time taken for {count} cache getmtime: {time_after - time_before:.3f} seconds")
