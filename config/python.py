@@ -52,6 +52,7 @@ install_requires: List[str] = [
     # music
     "music",
     "mingus",
+    "pyFluidSynth",
     # GUI
     "PyQt5",
     "PyQt5-stubs",

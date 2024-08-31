@@ -33,6 +33,7 @@ selenium
 selenium-wire
 music
 mingus
+pyFluidSynth
 PyQt5
 PyQt5-stubs
 webdriver-manager
