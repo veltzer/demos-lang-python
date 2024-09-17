@@ -18,15 +18,16 @@ import selenium.webdriver.firefox.options
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
-
+use_data_dir = False
 browser = "firefox"
 if browser == "chrome":
     options = selenium.webdriver.chrome.options.Options()
     options.add_argument("--headless")  # do not really open a window
     options.add_argument("--disable-gpu")  # Last I checked this was necessary.
-    user_data_dir = os.path.expanduser("~/.config/google-chrome")
-    assert os.path.isdir(user_data_dir)
-    options.add_argument(f"--user-data-dir={user_data_dir}")
+    if use_data_dir:
+        user_data_dir = os.path.expanduser("~/.config/google-chrome")
+        assert os.path.isdir(user_data_dir)
+        options.add_argument(f"--user-data-dir={user_data_dir}")
     chrome_driver = Chrome(
         service=selenium.webdriver.chrome.service.Service(ChromeDriverManager().install()),
         options=options,
