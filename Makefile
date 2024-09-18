@@ -41,7 +41,7 @@ ifndef GITHUB_WORKFLOW
 ALL+=$(ALL_SYNTAX)
 else
 ALL+=all_syntax
-endif
+endif # GITHUB_WORKFLOW
 endif # DO_SYNTAX
 
 ifeq ($(DO_LINT),1)
@@ -49,7 +49,7 @@ ifndef GITHUB_WORKFLOW
 ALL+=$(ALL_LINT)
 else
 ALL+=all_pylint
-endif
+endif # GITHUB_WORKFLOW
 endif # DO_LINT
 
 ifeq ($(DO_FLAKE8),1)
@@ -57,7 +57,7 @@ ifndef GITHUB_WORKFLOW
 ALL+=$(ALL_FLAKE8)
 else
 ALL+=all_flake8
-endif
+endif # GITHUB_WORKFLOW
 endif # DO_FLAKE8
 
 ifeq ($(DO_MYPY),1)
@@ -65,7 +65,7 @@ ifndef GITHUB_WORKFLOW
 ALL+=$(ALL_MYPY)
 else
 ALL+=all_mypy
-endif
+endif # GITHUB_WORKFLOW
 endif # DO_MYPY
 
 ifeq ($(DO_MOVED),1)
@@ -81,7 +81,7 @@ ifndef GITHUB_WORKFLOW
 ALL+=$(MD_MDL)
 else
 ALL+=all_mdl
-endif
+endif # GITHUB_WORKFLOW
 endif # DO_MD_MDL
 
 ifeq ($(DO_MD_ASPELL),1)
