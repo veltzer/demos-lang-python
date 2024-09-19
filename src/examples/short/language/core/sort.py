@@ -1,5 +1,7 @@
 """
 Example of sorting with python using the key parameter
+
+The "list.sort" function is a core python function.
 """
 
 
@@ -8,7 +10,7 @@ def compare(item):
 
 
 m = {"mark": 10, "yossi": 3, "doron": 67}
-arr = list(m.items())
-arr.sort(key=compare)
+my_list = list(m.items())
+my_list.sort(key=compare)
 
-print(arr)
+print(my_list)
