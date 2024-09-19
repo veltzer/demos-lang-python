@@ -2,6 +2,7 @@
 This example demonstrates the "match" statement in python
 """
 
+
 def check_type(value):
     match value:
         case int():
@@ -14,6 +15,7 @@ def check_type(value):
             print(f"{value} is a dictionary with {len(value)} key-value pairs")
         case _:
             print(f"{value} is of an unknown type")
+
 
 # Test the function with different types
 check_type(42)
