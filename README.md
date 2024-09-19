@@ -30,6 +30,32 @@ chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gi
 
 ## Number of examples
 
-Currently there are 988 examples in this repo.
+Currently there are 989 examples in this repo.
+
+## How to use the examples
+
+* Create a virtual env:
+
+```bash
+virtualenv my_venv
+```
+
+* Enter your virtual env:
+
+```
+source my_venv/bin/activate
+```
+
+* Install the requirements:
+
+```
+pip install -r requirements.txt
+```
+
+* Pick an example and run it:
+
+```bash
+python src/examples/short/modules/pandas/basic.py
+```
 
 Mark Veltzer, Copyright © 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024
