@@ -163,6 +163,7 @@ install_requires: List[str] = [
     "tornado",
     "django",
     "djangorestframework",
+    "cryptography",
     # my own stuff
     "pygooglehelper",
 ]
