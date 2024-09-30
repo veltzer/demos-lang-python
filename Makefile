@@ -24,7 +24,7 @@ DO_MD_ASPELL:=1
 # code #
 ########
 ALL:=
-ALL_PY:=$(shell find src -name "*.py")
+ALL_PY:=$(shell find src -type f -and -name "*.py")
 ALL_FILES=$(shell find src -type f)
 ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
