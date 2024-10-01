@@ -164,6 +164,7 @@ install_requires: List[str] = [
     "django",
     "djangorestframework",
     "cryptography",
+    "svgwrite",
     # my own stuff
     "pygooglehelper",
 ]

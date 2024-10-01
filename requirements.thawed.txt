@@ -129,6 +129,7 @@ tornado
 django
 djangorestframework
 cryptography
+svgwrite
 pygooglehelper
 pymakehelper
 pydmt
