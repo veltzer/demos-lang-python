@@ -116,7 +116,7 @@ flake8: $(ALL_FLAKE8)
 mypy: $(ALL_MYPY)
 
 .PHONY: check_all
-check_all: check_ws check_quotes check_no_python2 check_mode check_has_key check_no_future
+check_all: check_ws check_quotes check_mode check_has_key check_no_future
 
 .PHONY: check_ws
 check_ws:
@@ -127,11 +127,6 @@ check_ws:
 check_quotes:
 	$(info doing [$@])
 	$(Q)git grep "'" -- 'src/**.py' || exit 0
-
-.PHONY: check_no_python2
-check_no_python2:
-	$(info doing [$@])
-	$(Q)git grep -E "^#!/usr/bin/python2" -- 'src/**.py' || exit 0
 
 .PHONY: check_mode
 check_mode:
