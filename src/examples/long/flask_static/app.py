@@ -14,9 +14,9 @@ app.config["DEBUG"] = True
 print(f"{app.static_folder=}")
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    return app.send_static_file('index.html')
+    return app.send_static_file("index.html")
 
 
 if __name__ == "__main__":

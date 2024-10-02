@@ -11,7 +11,7 @@ import googleapiclient.discovery
 import pygooglehelper
 
 
-SCOPES = ['https://www.googleapis.com/auth/gmail.send']
+SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 
 
 def send_email(
