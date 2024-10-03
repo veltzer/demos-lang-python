@@ -241,9 +241,6 @@ all_mdl: $(MD_SRC) .mdlrc .mdl.style.rb
 	$(info doing [$@])
 	$(Q)GEM_HOME=gems gems/bin/mdl $(MD_SRC)
 
-#####################
-# single file rules #
-#####################
 out/moved.stamp: $(ALL_FILE)
 	$(Q)pymakehelper error_on_print find src -name "*.moved"
 	$(Q)pymakehelper touch_mkdir $@
