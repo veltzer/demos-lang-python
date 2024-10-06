@@ -8,7 +8,7 @@ The API is made of 3 things:
 more data be had.
 """
 
-from typing import Iterable
+from collections.abc import Iterable
 
 
 # the following two functions are the same:
