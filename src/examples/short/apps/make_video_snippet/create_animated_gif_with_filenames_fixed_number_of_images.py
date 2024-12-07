@@ -41,6 +41,7 @@ def resize_image_keep_aspect(image, width, height):
     return cv2.copyMakeBorder(resized_frame, tb_padding, tb_padding, lr_padding, lr_padding, cv2.BORDER_CONSTANT)
 
 
+# pylint: disable=too-many-positional-arguments
 def create_animated_gif_from_video(
     video_path: str,
     output_path: str,

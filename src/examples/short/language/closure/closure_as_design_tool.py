@@ -3,6 +3,7 @@ This is an example of how to use closure as a facade design pattern.
 """
 
 
+# pylint: disable=too-many-positional-arguments
 def func_with_many_args(a, b, c, d, e, f, g):
     """
     A big function which has too many variables

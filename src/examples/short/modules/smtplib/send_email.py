@@ -14,6 +14,7 @@ import pygooglehelper
 SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 
 
+# pylint: disable=too-many-positional-arguments
 def send_email(
         subject=None,
         content=None,

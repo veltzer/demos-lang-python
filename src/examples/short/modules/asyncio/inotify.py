@@ -18,6 +18,7 @@ class AsyncioNotifier(pyinotify.Notifier):
     Notifier subclass that plugs into the asyncio event loop.
     """
 
+    # pylint: disable=too-many-positional-arguments
     def __init__(self, watch_manager, loop, callback=None,
                  default_proc_fun=None, read_freq=0, threshold=0, timeout=None):
         self.loop = loop

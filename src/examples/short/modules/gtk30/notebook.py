@@ -49,6 +49,7 @@ class NotebookExample:
         Gtk.main_quit()
         return False
 
+    # pylint: disable=too-many-positional-arguments
     def add_button(self, name, table, event, p1, p2, p3, p4):
         button = Gtk.Button(label=name)
         button.connect("clicked", event)
