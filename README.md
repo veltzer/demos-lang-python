@@ -30,7 +30,7 @@ chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gi
 
 ## Number of examples
 
-Currently there are 980 examples in this repo.
+Currently there are 978 examples in this repo.
 
 ## How to use the examples
 
