@@ -50,6 +50,7 @@ dill==0.3.9
 dispy==4.15.2
 Django==5.1.4
 djangorestframework==3.15.2
+docker==7.1.0
 docutils==0.21.2
 durationpy==0.9
 elastic-transport==8.15.1
@@ -85,6 +86,7 @@ h2==4.1.0
 hpack==4.0.0
 html5lib==1.1
 httplib2==0.22.0
+humanize==4.11.0
 hyperframe==6.0.1
 hyperlink==21.0.0
 idna==3.10

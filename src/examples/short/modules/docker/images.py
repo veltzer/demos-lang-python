@@ -1,26 +1,30 @@
 #!/usr/bin/env python
 
-import docker
+import sys
 import argparse
 from datetime import datetime
+import docker
 import humanize
+
 
 def format_size(size_bytes):
     """Convert size in bytes to human readable format"""
     return humanize.naturalsize(size_bytes, binary=True)
+
 
 def format_created(timestamp):
     """Convert unix timestamp to relative time"""
     dt = datetime.fromtimestamp(timestamp)
     return humanize.naturaltime(dt)
 
+
 def list_images(show_all=False, quiet=False, digests=False):
-    """List Docker images similarly to 'docker images' command"""
+    """List Docker images similarly to [docker images] command"""
     client = docker.from_env()
-    
+
     # Get list of images
     images = client.images.list(all=show_all)
-    
+
     if quiet:
         # Only show image IDs
         for image in images:
@@ -52,28 +56,26 @@ def list_images(show_all=False, quiet=False, digests=False):
             repo,
             tag,
             image.id[7:19],  # Short ID format
-            format_created(image.attrs['Created'].timestamp()),
-            format_size(image.attrs['Size'])
+            format_created(image.attrs["Created"].timestamp()),
+            format_size(image.attrs["Size"])
         ]
-        
+
         if digests:
             line_format += " {:<15s}"
-            digest = image.attrs.get('RepoDigests', ['<none>'])[0].split('@')[-1][:12]
+            digest = image.attrs.get("RepoDigests", ["<none>"])[0].split("@")[-1][:12]
             line_data.append(digest)
-            
+
         print(line_format.format(*line_data))
 
+
 def main():
-    parser = argparse.ArgumentParser(description='List Docker images')
-    parser.add_argument('-a', '--all', action='store_true', 
-                      help='Show all images (default hides intermediate images)')
-    parser.add_argument('-q', '--quiet', action='store_true',
-                      help='Only show image IDs')
-    parser.add_argument('--digests', action='store_true',
-                      help='Show digests')
-    
+    parser = argparse.ArgumentParser(description="List Docker images")
+    parser.add_argument("-a", "--all", action="store_true", help="Show all images (default hides intermediate images)")
+    parser.add_argument("-q", "--quiet", action="store_true", help="Only show image IDs")
+    parser.add_argument("--digests", action="store_true", help="Show digests")
+
     args = parser.parse_args()
-    
+
     try:
         list_images(show_all=args.all, quiet=args.quiet, digests=args.digests)
     except docker.errors.DockerException as e:
@@ -82,8 +84,9 @@ def main():
     except KeyboardInterrupt:
         print("\nOperation cancelled by user")
         return 130
-    
+
     return 0
 
+
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())

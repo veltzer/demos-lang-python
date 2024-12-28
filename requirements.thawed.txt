@@ -130,6 +130,7 @@ django
 djangorestframework
 cryptography
 svgwrite
+jq
 pygooglehelper
 pymakehelper
 pydmt
