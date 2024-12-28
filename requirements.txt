@@ -106,6 +106,7 @@ jeepney==0.8.0
 Jinja2==3.1.4
 jmespath==1.0.1
 joblib==1.4.2
+jq==1.8.0
 jsonpickle==4.0.0
 jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
