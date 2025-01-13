@@ -30,7 +30,7 @@ chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gi
 
 ## Number of examples
 
-Currently there are 982 examples in this repo.
+Currently there are 983 examples in this repo.
 
 ## How to use the examples
 
@@ -58,4 +58,4 @@ pip install -r requirements.txt
 python src/examples/short/modules/pandas/basic.py
 ```
 
-Mark Veltzer, Copyright © 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024
+Mark Veltzer, Copyright © 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
