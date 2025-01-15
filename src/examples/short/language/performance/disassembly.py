@@ -13,4 +13,4 @@ def add(a, b):
 
 
 dis.dis(add)
-# print(inspect.getsourcelines(add))
+print(inspect.getsourcelines(add))
