@@ -131,6 +131,8 @@ djangorestframework
 cryptography
 svgwrite
 jq
+docker
+humanize
 pygooglehelper
 pymakehelper
 pydmt

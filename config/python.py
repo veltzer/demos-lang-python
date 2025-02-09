@@ -166,6 +166,8 @@ install_requires: List[str] = [
     "cryptography",
     "svgwrite",
     "jq",
+    "docker",
+    "humanize",
     # my own stuff
     "pygooglehelper",
 ]
