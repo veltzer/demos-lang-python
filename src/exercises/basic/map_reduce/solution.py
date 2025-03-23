@@ -1,3 +1,5 @@
+""" solution """
+
 from functools import reduce
 
 

@@ -1,3 +1,5 @@
+""" usemydate """
+
 import mydate  # type: ignore
 
 for i in mydate.months_name:

@@ -1,3 +1,5 @@
+""" solution to the exercise """
+
 from typing import Dict
 
 s = """To be, or not to be, that is the question:

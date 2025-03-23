@@ -1,3 +1,5 @@
+""" solution 4 """
+
 login = input("insert login: ")
 full_name = input("insert full name: ")
 password = input("insert password: ")

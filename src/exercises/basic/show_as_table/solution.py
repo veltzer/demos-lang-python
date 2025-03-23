@@ -1,3 +1,5 @@
+""" solution """
+
 import sys
 
 data = []
