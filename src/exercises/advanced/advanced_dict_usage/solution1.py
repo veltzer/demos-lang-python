@@ -1,3 +1,7 @@
+"""
+Solution1
+"""
+
 from typing import Dict
 
 places: Dict[str, Dict[str, str]] = {

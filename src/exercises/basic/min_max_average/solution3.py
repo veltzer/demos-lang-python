@@ -1,3 +1,7 @@
+"""
+Solution3
+"""
+
 def min_max_avg(num_list):
     min_value = num_list[0]
     max_value = num_list[0]

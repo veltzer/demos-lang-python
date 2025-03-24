@@ -1,3 +1,7 @@
+"""
+Solution6
+"""
+
 import functools
 
 

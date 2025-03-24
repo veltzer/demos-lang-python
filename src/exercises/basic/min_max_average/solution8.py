@@ -1,3 +1,7 @@
+"""
+Solution8
+"""
+
 def my_min(lst):
     cur_min = lst[0]
     for x in lst:

@@ -1,3 +1,7 @@
+"""
+Solution
+"""
+
 import xml.dom.minidom
 
 # parse an XML file by name

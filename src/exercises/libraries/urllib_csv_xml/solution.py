@@ -1,3 +1,7 @@
+"""
+Solution
+"""
+
 import csv
 import urllib.request
 # pylint: disable=deprecated-module

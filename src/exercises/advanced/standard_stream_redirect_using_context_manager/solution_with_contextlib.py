@@ -1,3 +1,7 @@
+"""
+solution_with_contextlib
+"""
+
 import contextlib
 import os
 import sys

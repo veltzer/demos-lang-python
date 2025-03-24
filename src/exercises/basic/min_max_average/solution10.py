@@ -1,3 +1,7 @@
+"""
+Solution10
+"""
+
 def max_min_avg(*num):
     """Return a tuple containing the maximum, minimum and average
     of the given numbers"""
