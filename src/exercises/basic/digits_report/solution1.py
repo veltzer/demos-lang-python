@@ -1,4 +1,6 @@
-# this is a solution to the digits counting exercise...
+"""
+this is a solution to the digits counting exercise...
+"""
 
 s = input("Please enter a line of digits: ")
 # lets initialize a 10 element list where all elements are 0

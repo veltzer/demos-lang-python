@@ -1,4 +1,8 @@
-# A function for each operation. You"ll see below why I do this.
+"""
+Solution
+"""
+
+# A function for each operation. Youll see below why I need these
 
 
 def add(a, b):

@@ -1,3 +1,7 @@
+"""
+Solution
+"""
+
 x = y = 1
 my_counter = 0
 my_sum = 0

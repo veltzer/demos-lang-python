@@ -1,3 +1,7 @@
+"""
+Solution8
+"""
+
 found = True
 input_string = None
 while found:

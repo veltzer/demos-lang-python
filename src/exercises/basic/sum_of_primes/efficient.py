@@ -1,3 +1,7 @@
+"""
+Efficient
+"""
+
 import math
 
 

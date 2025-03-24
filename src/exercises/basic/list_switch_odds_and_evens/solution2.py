@@ -1,3 +1,7 @@
+"""
+Solution2
+"""
+
 num = int(input("Please enter number of elements: "))
 my_list = list(range(num))
 for x in range(num):

@@ -1,3 +1,7 @@
+"""
+Solution2
+"""
+
 s = input("Please enter a line of digits: ")
 my_list = [0] * 10
 already_moron = False
