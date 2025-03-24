@@ -1,3 +1,7 @@
+"""
+Solution
+"""
+
 import sys
 import operator
 

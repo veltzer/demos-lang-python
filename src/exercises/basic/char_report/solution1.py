@@ -1,3 +1,7 @@
+"""
+Solution1
+"""
+
 from typing import Dict
 
 with open("input.txt") as f:

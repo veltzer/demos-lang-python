@@ -1,3 +1,7 @@
+"""
+Solution3
+"""
+
 from typing import Dict
 
 with open("ex4.py") as f:

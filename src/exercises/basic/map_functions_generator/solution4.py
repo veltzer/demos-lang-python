@@ -1,4 +1,6 @@
-
+"""
+Solution4
+"""
 
 import doctest
 
