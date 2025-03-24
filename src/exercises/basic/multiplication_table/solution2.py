@@ -1,3 +1,7 @@
+"""
+Solution2
+"""
+
 mysum = 0
 row = 1
 while row <= 10:

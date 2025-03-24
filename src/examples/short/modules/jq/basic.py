@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import jq
 
 json_data = {

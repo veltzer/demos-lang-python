@@ -1,7 +1,11 @@
+"""
+get_monthly_events4
+"""
+
 import sys
 from time import localtime
 
-from date3 import Calendar, Date  # type: ignore
+from date3 import Calendar, Date
 
 c = Calendar()
 with open(sys.argv[0]) as f:

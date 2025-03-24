@@ -1,3 +1,8 @@
+"""
+get_monthly_events3
+"""
+
+
 import sys
 from time import localtime
 

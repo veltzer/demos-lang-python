@@ -1,3 +1,8 @@
+"""
+Solution1
+"""
+
+
 import collections
 from time import thread_time
 

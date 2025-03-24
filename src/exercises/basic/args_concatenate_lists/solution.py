@@ -1,3 +1,7 @@
+"""
+Solution
+"""
+
 def catenate_lists(*args):
     r = []
     for e in args:

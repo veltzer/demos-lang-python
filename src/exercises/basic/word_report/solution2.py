@@ -1,3 +1,7 @@
+"""
+Solution2
+"""
+
 INPUT_NAME = "tmp.txt"
 OUTPUT = "tmp2.txt"
 word_counts = {}

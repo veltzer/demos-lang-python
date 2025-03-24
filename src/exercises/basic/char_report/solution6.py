@@ -1,3 +1,7 @@
+"""
+Solution6
+"""
+
 from typing import Dict
 
 with open("c:/tmp.txt)") as f:

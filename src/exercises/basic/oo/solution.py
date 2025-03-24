@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+"""
+Solution
+"""
 
 class Person:
     def __init__(self, socialid, name, surname):

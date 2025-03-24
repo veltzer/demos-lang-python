@@ -1,3 +1,7 @@
+"""
+Solution1
+"""
+
 row = 1
 while row <= 10:
     col = 1
