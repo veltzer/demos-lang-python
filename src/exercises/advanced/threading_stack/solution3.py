@@ -1,5 +1,9 @@
-# this example shows a synchronized stack which does not sleep
-# on pop on empty stack...
+"""
+solution3.py
+
+this example shows a synchronized stack which does not sleep
+on pop on empty stack...
+"""
 
 import time
 from threading import Condition, Thread

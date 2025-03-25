@@ -1,3 +1,7 @@
+"""
+flyweight_with_metaclass.py
+"""
+
 import weakref
 
 

@@ -1,3 +1,7 @@
+"""
+solution3.py
+"""
+
 import math
 from typing import Dict, Tuple, Any
 

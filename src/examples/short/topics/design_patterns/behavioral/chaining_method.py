@@ -1,3 +1,7 @@
+"""
+chaining_method.py
+"""
+
 from contextlib import redirect_stdout
 import io
 

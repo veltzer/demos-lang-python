@@ -1,3 +1,7 @@
+"""
+solution2.py
+"""
+
 import math
 from typing import Dict
 

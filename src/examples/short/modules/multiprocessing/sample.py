@@ -1,3 +1,7 @@
+"""
+simple.py
+"""
+
 from multiprocessing import Process, Queue
 
 

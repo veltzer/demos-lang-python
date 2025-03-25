@@ -1,3 +1,7 @@
+"""
+registry.py
+"""
+
 from typing import Dict
 
 

@@ -1,3 +1,8 @@
+"""
+solution4.py
+"""
+
+
 def line_generator():
     with open("soliloquy.txt", "rt") as stream:
         yield from stream

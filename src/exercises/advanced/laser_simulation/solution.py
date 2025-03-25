@@ -1,5 +1,9 @@
-# We represent directions by (dx, dy), so that updating (x, y) will be
-# a matter of simple addition.
+"""
+solution.py
+
+We represent directions by (dx, dy), so that updating (x, y) will be
+a matter of simple addition.
+"""
 
 emiter2dxdy = {">": (1, 0), "<": (-1, 0), "v": (0, 1), "^": (0, -1)}
 

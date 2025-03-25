@@ -1,3 +1,7 @@
+"""
+call_method_by_name.py
+"""
+
 class Person:
     def __init__(self, name, age):
         self.name = name

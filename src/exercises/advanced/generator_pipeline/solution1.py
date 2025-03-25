@@ -1,3 +1,8 @@
+"""
+solution1.py
+"""
+
+
 def line_generator(filename):
     with open(filename, "rt") as stream:
         yield from stream
