@@ -1,3 +1,7 @@
+"""
+minimize.py
+"""
+
 from scipy import integrate, optimize
 
 

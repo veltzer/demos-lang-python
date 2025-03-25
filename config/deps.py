@@ -1,3 +1,7 @@
+"""
+os level dependencies for this project
+"""
+
 packages = [
     # dbus
     "libdbus-glib-1-dev",

@@ -1,3 +1,7 @@
+"""
+predict.py
+"""
+
 from sklearn.linear_model import LinearRegression
 
 # Sample data

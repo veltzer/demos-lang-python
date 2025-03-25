@@ -1,3 +1,7 @@
+"""
+news_api.py
+"""
+
 import sys
 import requests
 import pyapikey
