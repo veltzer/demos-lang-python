@@ -1,3 +1,5 @@
+""" simple.py """
+
 import jinja2
 
 t = jinja2.Template("Hello {{ something }}!")

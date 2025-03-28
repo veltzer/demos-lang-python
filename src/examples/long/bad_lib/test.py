@@ -1,3 +1,5 @@
+""" test.py """
+
 import module_checker  # type: ignore
 
 # this works

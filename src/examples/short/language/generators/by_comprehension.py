@@ -1,3 +1,5 @@
+""" by_comprehension.py """
+
 g = (x ** 2 for x in range(6))
 
 """

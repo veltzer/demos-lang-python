@@ -1,3 +1,5 @@
+""" show_parameter.py """
+
 import os.path
 import mysql.connector
 

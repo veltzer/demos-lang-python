@@ -1,3 +1,5 @@
+""" mymod.py """
+
 import os.path
 import pkgutil
 

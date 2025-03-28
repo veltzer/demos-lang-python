@@ -1,3 +1,5 @@
+""" use_module.py """
+
 import a.b.c.mod  # type: ignore
 
 print(f"hello from [{__file__}]")

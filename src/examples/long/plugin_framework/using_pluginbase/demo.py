@@ -1,3 +1,5 @@
+""" demo.py """
+
 import inspect
 
 from pluginbase import PluginBase

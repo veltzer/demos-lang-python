@@ -263,7 +263,7 @@ $(ALL_LINT): out/%.lint: %.py .pylintrc
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_FLAKE8): out/%.flake8: %.py
 	$(info doing [$@])
-	$(Q)pymakehelper only_print_on_error flake8 $<
+	$(Q)pymakehelper error_on_print flake8 $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_MYPY): out/%.mypy: %.py .mypy.ini
 	$(info doing [$@])

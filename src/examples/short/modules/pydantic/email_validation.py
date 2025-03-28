@@ -1,3 +1,5 @@
+""" email_validation.py """
+
 from pydantic import BaseModel, EmailStr
 
 

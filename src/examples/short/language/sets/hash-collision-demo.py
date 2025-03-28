@@ -1,3 +1,5 @@
+""" hash-collision-demo.py """
+
 import random
 import string
 

@@ -1,3 +1,5 @@
+""" a.py """
+
 from . import b
 
 print(f"b.number is {b.number}")

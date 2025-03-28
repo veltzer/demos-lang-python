@@ -1,3 +1,5 @@
+""" play_better.py """
+
 import numpy as np
 import simpleaudio as sa
 

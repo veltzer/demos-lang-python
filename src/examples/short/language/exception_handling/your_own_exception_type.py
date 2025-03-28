@@ -1,3 +1,6 @@
+""" your_own_exception_type.py """
+
+
 class MyException(Exception):
     def __init__(self, url: str):
         self.url = url

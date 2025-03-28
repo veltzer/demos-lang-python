@@ -1,3 +1,5 @@
+""" write_in_code_block.py """
+
 import mako.template
 
 input_filename = "src/examples/long/templating_mako/write_in_code_block.mako"

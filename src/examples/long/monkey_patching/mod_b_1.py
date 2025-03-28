@@ -1,3 +1,5 @@
+""" mod_b_1.py """
+
 import mod_a_1  # type: ignore
 
 

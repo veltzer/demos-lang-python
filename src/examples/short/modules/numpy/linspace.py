@@ -1,3 +1,5 @@
+""" linspace.py """
+
 import numpy as np
 
 # Create a 2x3 array of all zeros

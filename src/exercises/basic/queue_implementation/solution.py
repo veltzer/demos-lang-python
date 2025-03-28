@@ -1,5 +1,6 @@
 """ first solution """
 
+
 class Queue:
     """
     Simple queue FIFO implementation using a python list

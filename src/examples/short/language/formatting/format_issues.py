@@ -1,4 +1,3 @@
-# type: ignore
 """
 This example explores issues that one may have with formatting.
 
@@ -11,6 +10,7 @@ http://stackoverflow.com/questions/5466451/how-can-i-print-a-literal-characters-
 """
 
 
+# type: ignore
 try:
     # noinspection PyStringFormat
     # pylint: disable=missing-format-argument-key, consider-using-f-string

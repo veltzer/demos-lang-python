@@ -1,3 +1,6 @@
+""" oo_vs_generator.py """
+
+
 def fib():
     a = b = 1
     while True:

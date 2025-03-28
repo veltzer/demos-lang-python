@@ -1,8 +1,10 @@
-# type: ignore
 """
 This example shows how you can manipulate via sys._getframe any stack
 frame including your own
 """
+
+# type: ignore
+
 
 import sys
 

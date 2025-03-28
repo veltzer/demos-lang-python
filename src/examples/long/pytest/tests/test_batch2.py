@@ -1,3 +1,5 @@
+""" test_batch2.py """
+
 import tests.mod  # type: ignore
 
 

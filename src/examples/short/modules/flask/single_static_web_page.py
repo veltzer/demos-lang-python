@@ -1,3 +1,5 @@
+""" single_static_web_page.py """
+
 import flask
 
 

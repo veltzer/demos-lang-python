@@ -1,3 +1,5 @@
+""" simple.py """
+
 import datetime
 import mako.template
 

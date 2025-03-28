@@ -1,4 +1,3 @@
-# type: ignore
 """
 This extended version allow selection of the arithmetic operator by
 radio boxes. Constructing them and tracking which is active is
@@ -8,6 +7,8 @@ application.
 This is a nice example how a class can encapsulate a non-trivial
 group of widgets, together with some functionality.
 """
+
+# type: ignore
 
 import operator
 

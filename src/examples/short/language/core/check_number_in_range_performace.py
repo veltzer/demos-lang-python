@@ -1,3 +1,5 @@
+""" check_number_in_range_performace.py """
+
 import timeit
 import random
 

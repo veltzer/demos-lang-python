@@ -1,3 +1,5 @@
+""" minimal.py """
+
 import mako.template
 
 input_filename = "src/examples/long/templating_mako/minimal.mako"

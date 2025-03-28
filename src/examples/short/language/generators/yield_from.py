@@ -1,3 +1,6 @@
+""" yield_from.py """
+
+
 def yield_some():
     yield 1
     yield 2

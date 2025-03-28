@@ -1,3 +1,5 @@
+""" redirect.py """
+
 from contextlib import redirect_stdout, redirect_stderr
 import sys
 from io import StringIO

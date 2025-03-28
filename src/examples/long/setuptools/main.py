@@ -1,3 +1,5 @@
+""" main.py """
+
 from pkgutil import walk_packages
 import os
 import setuptools

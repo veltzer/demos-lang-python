@@ -2,6 +2,7 @@
 solution.py
 """
 
+
 def Person(name, age):
     def data():
         pass

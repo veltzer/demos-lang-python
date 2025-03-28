@@ -1,3 +1,5 @@
+""" check_connectivity.py """
+
 import socket
 import time
 

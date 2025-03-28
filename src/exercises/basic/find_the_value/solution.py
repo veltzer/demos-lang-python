@@ -2,6 +2,7 @@
 Solution
 """
 
+
 def find_my_value(value):
     for k, v in globals().items():
         if v == value:

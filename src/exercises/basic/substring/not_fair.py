@@ -1,5 +1,6 @@
 """ not_fair.py """
 
+
 def substring(s1, s2):
     return s1 in s2
 

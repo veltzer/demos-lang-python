@@ -1,3 +1,5 @@
+""" plugin1.py """
+
 print(f"[{__file__}] loading")
 
 var = "plugin1_value"

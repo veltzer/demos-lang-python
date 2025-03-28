@@ -1,3 +1,5 @@
+""" reduce.py """
+
 import sys
 
 last = None

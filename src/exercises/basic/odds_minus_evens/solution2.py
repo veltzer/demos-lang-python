@@ -2,6 +2,7 @@
 Solution2
 """
 
+
 def odds_minus_evens(number_list):
     count = 0
     for x in number_list:

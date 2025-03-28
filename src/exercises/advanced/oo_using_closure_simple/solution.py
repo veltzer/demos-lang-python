@@ -2,6 +2,7 @@
 solution.py
 """
 
+
 def make_a_stack():
     my_list = []
 

@@ -1,3 +1,5 @@
+""" test_hello.py """
+
 import tests.mod  # type: ignore
 
 

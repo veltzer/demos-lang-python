@@ -1,3 +1,5 @@
+""" simple.py """
+
 from pydantic import BaseModel
 
 

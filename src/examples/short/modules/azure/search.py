@@ -1,3 +1,5 @@
+""" search.py """
+
 import sys
 from azure.cognitiveservices.search.websearch import WebSearchClient
 from msrest.authentication import CognitiveServicesCredentials

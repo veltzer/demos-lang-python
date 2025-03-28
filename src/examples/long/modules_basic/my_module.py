@@ -1,3 +1,5 @@
+""" my_module.py """
+
 import sys
 
 print(f"hello from [{__file__}]")

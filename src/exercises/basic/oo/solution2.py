@@ -2,6 +2,7 @@
 Solution2
 """
 
+
 class Person:
     def __init__(self, socialid, name, surname):
         self.socialid = socialid

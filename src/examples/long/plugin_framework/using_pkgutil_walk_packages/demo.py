@@ -1,4 +1,3 @@
-# type: ignore
 """
 This is an example of using pkgutil to create a lightweight plugin based system.
 
@@ -13,6 +12,7 @@ mgr.collect_and_instantiate(myBaseClass2)
 for instance in mgr.giveMe(myBaseClass1):
     ...
 """
+# type: ignore
 
 
 import importlib

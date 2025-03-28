@@ -2,6 +2,7 @@
 Solution2
 """
 
+
 def my_min(my_list):
     current_min = my_list[0]
     for x in my_list:

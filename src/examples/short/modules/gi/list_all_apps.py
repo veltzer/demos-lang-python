@@ -1,3 +1,5 @@
+""" list_all_apps.py """
+
 from gi.repository import Gio
 
 # Returns a list of DesktopAppInfo objects (see docs)

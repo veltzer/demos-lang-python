@@ -1,3 +1,5 @@
+""" list_memory_consuming_processes.py """
+
 import psutil
 
 process_list = []

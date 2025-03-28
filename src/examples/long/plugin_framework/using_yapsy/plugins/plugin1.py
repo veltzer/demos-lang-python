@@ -1,3 +1,5 @@
+""" plugin1.py """
+
 import yapsy.IPlugin
 
 print(f"[{__file__}] loading")

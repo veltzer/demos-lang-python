@@ -1,3 +1,5 @@
+""" ftp_rmdir.py """
+
 import ftplib
 import os.path
 import sys

@@ -1,3 +1,5 @@
+""" problems.py """
+
 import sys
 import codecs
 

@@ -1,3 +1,5 @@
+""" play_notes.py """
+
 import simpleaudio
 import numpy as np
 

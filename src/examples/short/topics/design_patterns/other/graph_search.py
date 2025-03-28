@@ -2,6 +2,7 @@
 graph_search.py
 """
 
+
 class GraphSearch:
 
     """Graph search emulation in python, from source

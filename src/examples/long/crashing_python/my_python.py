@@ -1,3 +1,5 @@
+""" my_python.py """
+
 from ctypes import CDLL
 import os
 so_file = os.path.join(os.getcwd(), "my_functions.so")
