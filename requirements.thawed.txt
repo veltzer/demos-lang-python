@@ -13,8 +13,6 @@ types-tqdm
 pythondialog
 psutil
 types-psutil
-PyGObject
-PyGObject-stubs
 dbus-python
 lmdb
 cachetools

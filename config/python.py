@@ -24,11 +24,12 @@ install_requires: List[str] = [
     # systems programming
     "psutil",
     "types-psutil",
+    "dbus-python",
     # problems intalling the next module on github systems
     # "systemd-python",
-    "PyGObject",
-    "PyGObject-stubs",
-    "dbus-python",
+    # gtk stuff
+    # "PyGObject",
+    # "PyGObject-stubs",
     # cache and database
     "lmdb",
     "cachetools",
