@@ -1,7 +1,7 @@
 """
 StrEnum is particularly useful when you need enumerated constants that are also strings,
 allowing you to perform string operations while maintaining the readability and type safety of enums.
-It's great for cases where you have predefined string constants, like color codes,
+Its great for cases where you have predefined string constants, like color codes,
 HTTP status messages, or configuration options.
 """
 from enum import StrEnum

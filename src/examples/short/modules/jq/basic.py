@@ -12,4 +12,4 @@ json_data = {
 
 # pylint: disable=c-extension-no-member
 urls = jq.compile(".resources[].url").input(json_data).all()
-print(urls)  # Output: ['https://example.com/1', 'https://example.com/2', 'https://example.com/3']
+print(urls)  # Output: ["https://example.com/1", "https://example.com/2", "https://example.com/3"]

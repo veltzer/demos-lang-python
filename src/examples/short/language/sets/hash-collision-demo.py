@@ -5,7 +5,7 @@ import string
 
 
 def generate_random_string(length):
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+    return "".join(random.choices(string.ascii_letters + string.digits, k=length))
 
 
 def hash_collision_demo(num_strings, string_length):
