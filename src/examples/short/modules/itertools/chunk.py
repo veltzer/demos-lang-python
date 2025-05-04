@@ -146,3 +146,7 @@ def main():
     print(f"python [{timeit.timeit(func_chunk_python, number=how_much)}]")
     print(f"itertools [{timeit.timeit(func_chunk_itertools, number=how_much)}]")
     print(f"generator [{timeit.timeit(func_chunk_generator, number=how_much)}]")
+
+
+if __name__ == "__main__":
+    main()
