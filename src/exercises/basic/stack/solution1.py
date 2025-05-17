@@ -140,16 +140,14 @@ def stress_test(s):
 
 
 class Timer:
-    def __init__(self, description):
-        self.start = None
-        self.end = None
-        self.description = description
+    def __init__(self, description: str):
+        self.description: str = description
 
     def __enter__(self):
-        self.start = thread_time()
+        self.start: float = thread_time()
 
     def __exit__(self, _type, value, traceback):
-        self.end = thread_time()
+        self.end: float = thread_time()
         print(f"{self.description}: {self.end - self.start}")
 
 

@@ -11,8 +11,12 @@ import xml.etree.cElementTree as ElementTree
 def parse_feed(feed_string):
     rss = ElementTree.fromstring(feed_string)
     for item in rss.findall("channel/item"):
-        date = item.findtext("pubDate").strip()
-        package, version = item.findtext("title").split()
+        date = item.findtext("pubDate")
+        assert date is not None
+        date=date.strip()
+        title = item.findtext("title")
+        assert title is not None
+        package, version = title.split()
         description = item.findtext("description")
         yield date, package, version, description
 
