@@ -142,6 +142,8 @@ def stress_test(s):
 class Timer:
     def __init__(self, description: str):
         self.description: str = description
+        self.start: float
+        self.end: float
 
     def __enter__(self):
         self.start: float = thread_time()
@@ -151,7 +153,7 @@ class Timer:
         print(f"{self.description}: {self.end - self.start}")
 
 
-do_time = False
+do_time = True
 if do_time:
     s1 = Stack1()
     s2 = Stack2()
@@ -178,7 +180,7 @@ def reverse_string(s):
 
 
 def main():
-    do_reverse = False
+    do_reverse = True
     if do_reverse:
         s = input("give me a string: ")
         print(reverse_string(s))

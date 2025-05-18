@@ -13,7 +13,7 @@ def parse_feed(feed_string):
     for item in rss.findall("channel/item"):
         date = item.findtext("pubDate")
         assert date is not None
-        date=date.strip()
+        date = date.strip()
         title = item.findtext("title")
         assert title is not None
         package, version = title.split()
