@@ -24,6 +24,10 @@ class A:
     def from_q(cls, q):
         return cls(-q)
 
+    @staticmethod
+    def static_from_q(q):
+        return A(-q)
+
 
 class B(A):
     pass

@@ -34,9 +34,10 @@ class Button:
         self.weight = weight
 
     def getColor(self):
-        if "color" in self.__dict__:
-            return self.color
-        return Button.color
+        return self.color
+        # if "color" in self.__dict__:
+        #     return self.color
+        # return Button.color
 
 
 if __name__ == "__main__":

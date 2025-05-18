@@ -26,5 +26,5 @@ def incorrect_divide(a, b):
         raise ValueError("b must not be zero")
 
 
-correct_divide(10, 0)
+# correct_divide(10, 0)
 incorrect_divide(10, 0)
