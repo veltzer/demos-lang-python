@@ -2,7 +2,7 @@
 *demos-python*
 ==============
 
-.. image:: https://img.shields.io/pypi/v/demos-python
+.. image:: https://img.shields.io/pypi/v/demos-lang-python
 
 .. image:: https://img.shields.io/github/license/veltzer/demos-python
 
