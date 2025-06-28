@@ -16,9 +16,9 @@ class SearchSpider(scrapy.Spider):
     allowed_domains = [
         "google.com"
     ]
-    start_urls = (
+    start_urls = [
         "https://google.com",
-    )
+    ]
 
     def __init__(self, *args, **kwargs):
         """ constructor """

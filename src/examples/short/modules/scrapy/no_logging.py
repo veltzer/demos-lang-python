@@ -23,9 +23,9 @@ class SearchSpider(scrapy.Spider):
     allowed_domains = [
         "jet.com"
     ]
-    start_urls = (
+    start_urls = [
         "https://jet.com/search/",
-    )
+    ]
 
     def __init__(self, *args, **kwargs):
         """ constructor """
