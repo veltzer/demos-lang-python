@@ -9,8 +9,6 @@ DO_ALLDEP:=1
 DO_SYNTAX:=1
 # do you want to lint python files?
 DO_LINT:=1
-# do you want to lint python files using flake8?
-DO_FLAKE8:=1
 # do you wnat to lint python fies using mypy?
 DO_MYPY:=0
 # do you want to test that there are no .moved files?
@@ -28,7 +26,6 @@ ALL_PY:=$(shell find src -type f -and -name "*.py")
 ALL_FILES=$(shell find src -type f)
 ALL_SYNTAX:=$(addprefix out/,$(addsuffix .syntax, $(basename $(ALL_PY))))
 ALL_LINT:=$(addprefix out/,$(addsuffix .lint, $(basename $(ALL_PY))))
-ALL_FLAKE8:=$(addprefix out/,$(addsuffix .flake8, $(basename $(ALL_PY))))
 ALL_MYPY:=$(addprefix out/,$(addsuffix .mypy, $(basename $(ALL_PY))))
 
 MD_SRC:=$(shell find src -type f -and -name "*.md")
@@ -51,14 +48,6 @@ else
 ALL+=all_pylint
 endif # GITHUB_WORKFLOW
 endif # DO_LINT
-
-ifeq ($(DO_FLAKE8),1)
-ifndef GITHUB_WORKFLOW
-ALL+=$(ALL_FLAKE8)
-else
-ALL+=all_flake8
-endif # GITHUB_WORKFLOW
-endif # DO_FLAKE8
 
 ifeq ($(DO_MYPY),1)
 ifndef GITHUB_WORKFLOW
@@ -105,9 +94,6 @@ syntax: $(ALL_SYNTAX)
 .PHONY: lint
 lint: $(ALL_LINT)
 
-.PHONY: flake8
-flake8: $(ALL_FLAKE8)
-
 .PHONY: mypy
 mypy: $(ALL_MYPY)
 
@@ -145,7 +131,6 @@ debug:
 	$(info ALL_PY is $(ALL_PY))
 	$(info ALL_SYNTAX is $(ALL_SYNTAX))
 	$(info ALL_LINT is $(ALL_LINT))
-	$(info ALL_FLAKE8 is $(ALL_FLAKE8))
 	$(info ALL_MYPY is $(ALL_MYPY))
 	$(info ALL is $(ALL))
 	$(info MD_SRC is $(MD_SRC))
@@ -183,10 +168,6 @@ clean_syntax:
 clean_lint:
 	$(Q)rm -f $(ALL_LINT)
 
-.PHONY: clean_flake8
-clean_flake8:
-	$(Q)rm -f $(ALL_FLAKE8)
-
 .PHONY: clean_mypy
 clean_mypy:
 	$(Q)rm -f $(ALL_MYPY)
@@ -195,7 +176,6 @@ clean_mypy:
 stats:
 	$(Q)find out -name "*.syntax" | wc -l
 	$(Q)find out -name "*.lint" | wc -l
-	$(Q)find out -name "*.flake8" | wc -l
 	$(Q)find out -name "*.mypy" | wc -l
 
 .PHONY: fix_mode
@@ -228,10 +208,6 @@ all_pylint: $(ALL_PY)
 all_mypy: $(ALL_PY)
 	$(info doing [$@])
 	$(Q)mypy --package src --no-error-summary
-.PHONY: all_flake8
-all_flake8: $(ALL_PY)
-	$(info doing [$@])
-	$(Q)flake8 $(ALL_PY)
 .PHONY: all_syntax
 all_syntax: $(ALL_PY)
 	$(info doing [$@])
@@ -260,10 +236,6 @@ $(ALL_SYNTAX): out/%.syntax: %.py scripts/syntax_check.py
 $(ALL_LINT): out/%.lint: %.py .pylintrc
 	$(info doing [$@])
 	$(Q)pymakehelper error_on_print python -m pylint --reports=n --score=n $<
-	$(Q)pymakehelper touch_mkdir $@
-$(ALL_FLAKE8): out/%.flake8: %.py
-	$(info doing [$@])
-	$(Q)pymakehelper error_on_print flake8 $<
 	$(Q)pymakehelper touch_mkdir $@
 $(ALL_MYPY): out/%.mypy: %.py .mypy.ini
 	$(info doing [$@])
