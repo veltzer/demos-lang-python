@@ -1,7 +1,6 @@
 """
 This is a basic closure example.
 """
-from typing import List
 
 
 def iterate_it(filename):
