@@ -166,6 +166,7 @@ install_requires: list[str] = [
     "humanize",
     # my own stuff
     "pygooglehelper",
+    "pylogconf",
 ]
 build_requires: list[str] = [
     "pydmt",
@@ -174,9 +175,8 @@ build_requires: list[str] = [
 test_requires: list[str] = [
     "pylint",
     "pytest",
-    "pytest-cov",
-    "pylogconf",
     "mypy",
+    "ruff",
     # types
     "types-PyYAML",
     "types-setuptools",
