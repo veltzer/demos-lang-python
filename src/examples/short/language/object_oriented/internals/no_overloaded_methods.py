@@ -11,14 +11,16 @@ class A:
 
     # noinspection PyRedeclaration
     # pylint: disable=function-redefined
-    def __init__(self):  # noqa: F811
+    # noqa: F811
+    def __init__(self):  # type: ignore[no-redef]
         self.__private_var = 5
 
     def sayHello(self):
         print(self.__private_var, "hello")
 
     # noinspection PyRedeclaration
-    def sayHello(self, name):  # noqa: F811
+    # noqa: F811
+    def sayHello(self, name):  # type: ignore[no-redef]
         print(self.__private_var, "hello", name)
 
 
@@ -29,7 +31,7 @@ except TypeError:
     print("oops,got an error")
     print("the no argument version of the constructor does not exist...")
 # this will pass without an exception...
-a = A()
+a = A()  # type: ignore[call-arg]
 try:
     # pylint: disable=no-value-for-parameter
     a.sayHello()
@@ -37,4 +39,4 @@ except TypeError:
     print("oops,got an error")
     print("the no argument version of the method \"sayHello\" does not exist")
 # pylint: disable=too-many-function-args
-a.sayHello("mark")
+a.sayHello("mark")  # type: ignore[call-arg]
