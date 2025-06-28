@@ -19,7 +19,7 @@ Allow a request to pass down a chain of receivers until it is handled.
 """
 
 from abc import ABC, abstractmethod
-from typing import Optional, Tuple, Self
+from typing import Self
 from contextlib import redirect_stdout
 import io
 

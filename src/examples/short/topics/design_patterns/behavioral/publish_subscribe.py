@@ -5,9 +5,6 @@ Author: https://github.com/HanWenfang
 """
 
 
-from typing import List, Dict
-
-
 class Subscriber:
     def __init__(self, name: str, msg_center: "Provider") -> None:
         self.name = name

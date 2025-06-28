@@ -8,7 +8,6 @@ where the solution is the sum of its parts.
 
 https://en.wikipedia.org/wiki/Blackboard_system
 """
-from typing import List, Dict
 import abc
 import random
 

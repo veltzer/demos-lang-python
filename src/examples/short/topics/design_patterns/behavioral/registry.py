@@ -2,8 +2,6 @@
 registry.py
 """
 
-from typing import Dict
-
 
 class RegistryHolder(type):
 

@@ -4,7 +4,6 @@ This is an example which shows a standard dictionary vs an ordered dict.
 
 import collections
 import os
-from typing import Dict
 
 d1 = {letter: i for i, letter in enumerate("word")}
 print(d1)

@@ -3,7 +3,6 @@ solution2.py
 """
 
 import math
-from typing import Dict
 
 # primes holds integers as keys and booleans as values
 primes: dict[int, bool] = {}

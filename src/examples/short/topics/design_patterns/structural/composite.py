@@ -27,7 +27,6 @@ Describes a group of objects that is treated as a single instance.
 """
 
 from abc import ABC, abstractmethod
-from typing import List
 
 
 class Graphic(ABC):

@@ -21,9 +21,7 @@ http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 *TL;DR
 Creates objects without having to specify the exact class.
 """
-from typing import Dict
 from typing import Protocol
-from typing import Type
 
 
 class Localizer(Protocol):

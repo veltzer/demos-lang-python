@@ -2,8 +2,6 @@
 Solution1
 """
 
-from typing import Dict
-
 with open("input.txt") as f:
     report: dict[str, int] = {}
     for line in f.readlines():

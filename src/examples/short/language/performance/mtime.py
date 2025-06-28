@@ -14,8 +14,6 @@ import glob
 import os.path
 import time
 
-from typing import Dict
-
 count = 1000000
 doFirst = True
 doSecond = True

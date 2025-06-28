@@ -8,7 +8,6 @@ Implements state as a derived class of the state pattern interface.
 Implements state transitions by invoking methods from the patterns superclass.
 """
 
-from typing import List
 import abc
 from contextlib import redirect_stdout
 import io

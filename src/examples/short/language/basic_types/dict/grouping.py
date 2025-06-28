@@ -3,7 +3,6 @@ This example shows how to group data with dictionaries
 """
 
 import collections
-from typing import Dict, List
 
 colors = [
     "red",
