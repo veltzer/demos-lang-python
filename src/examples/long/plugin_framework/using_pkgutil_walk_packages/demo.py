@@ -42,7 +42,7 @@ for importer, modname, is_package in pkgutil.walk_packages(
         for name, t in module_obj.__dict__.items():
             # if type(t) is type and issubclass(t, base.BaseClass):
             if isinstance(t, base.BaseClass):
-                instance = t()
+                instance = t()  # type: ignore[operator]
                 print(name)
                 print(t)
                 print(instance)

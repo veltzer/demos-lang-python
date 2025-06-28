@@ -4,7 +4,7 @@
 
 import unittest
 
-import Book
+import Book  # type: ignore[import-not-found]
 
 
 class BookTest(unittest.TestCase):
