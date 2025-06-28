@@ -2,7 +2,7 @@
 usedate
 """
 
-import date1
+import date1  # type: ignore[import-not-found]
 
 baddate1 = date1.Date(37, 4, 5)
 baddate2 = date1.Date(-5, 4, 5)

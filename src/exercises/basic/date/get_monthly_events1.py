@@ -5,7 +5,7 @@ get_monthly_events1
 import sys
 import time
 
-import date1
+import date1  # type: ignore[import-not-found]
 
 filename = sys.argv[0]
 c = date1.Calendar()
