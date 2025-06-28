@@ -18,7 +18,7 @@ constructor for A * without * the "getInstance" method
 as the instance (in A.instance). This can be fixed by moving
 the registration into the constructor function itself.
 """
-from typing import Union, Any
+from typing import Any
 
 
 class A:
