@@ -99,7 +99,6 @@ pymakehelper
 pymysql
 pyparsing
 pytest
-pytest-cov
 python-jenkins
 python-magic
 python-pptx
@@ -108,6 +107,7 @@ pyvardump
 reportlab
 requests
 ruamel.yaml
+ruff
 scikit-learn
 scipy
 scrapy
