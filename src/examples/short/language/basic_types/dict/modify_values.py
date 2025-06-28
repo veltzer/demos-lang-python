@@ -1,9 +1,11 @@
 """
 This example shows that you can modify dictionaries values in place
 """
+from typing import Any
+
 
 # Dictionary with complex values (lists and dictionaries)
-student_data = {
+student_data: dict[str,dict[str,Any]] = {
     "Alice": {
         "grades": [85, 92, 78],
         "contact": {"email": "alice@example.com"}

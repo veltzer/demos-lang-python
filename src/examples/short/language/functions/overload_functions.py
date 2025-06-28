@@ -18,7 +18,8 @@ def demo_foo():
 
 # noinspection PyRedeclaration
 # pylint: disable=function-redefined
-def demo_foo(a):  # noqa: F811
+# noqa: F811
+def demo_foo(a):  # type: ignore[no-redef]
     print(f"hello {a}")
 
 
@@ -28,4 +29,4 @@ try:
     demo_foo()
 except TypeError:
     print("oops, got an error")
-demo_foo("mark")
+demo_foo("mark")  # type: ignore[call-arg]

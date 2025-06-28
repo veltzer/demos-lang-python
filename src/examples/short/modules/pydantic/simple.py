@@ -1,5 +1,6 @@
 """ simple.py """
 
+from typing import Any
 from pydantic import BaseModel
 
 
@@ -12,7 +13,7 @@ class User(BaseModel):
 
 
 # Create an instance of the model from a dictionary
-user_data = {
+user_data: dict[str, Any] = {
     "name": "John Doe",
     "age": 30,
     "email": "john@example.com"
@@ -35,7 +36,12 @@ print(user)
 
 # Create an instance with validation errors
 try:
-    invalid_user = User(name="Alice", age="invalid", email="alice@example.com")
+    invalid_user_data: dict[str, Any] = {
+        "name": "Alice",
+        "age": "invalid",
+        "email": "alice@example.com"
+    }
+    invalid_user = User(**invalid_user_data)
 except ValueError as e:
     print(e)
     # Output: 1 validation error for User
