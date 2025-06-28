@@ -9,7 +9,7 @@ import yaml
 
 
 def main():
-    with open("config.yaml", "rt") as input_handle:
+    with open("config.yaml") as input_handle:
         config = yaml.safe_load(input_handle.read())
     logging.config.dictConfig(config)
     logger = logging.getLogger(__name__)

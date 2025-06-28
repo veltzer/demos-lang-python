@@ -22,7 +22,7 @@ from typing import Union, Any
 
 
 class A:
-    instance: Union[Any, None] = None
+    instance: Any | None = None
 
     def __init__(self):
         if A.instance is not None:

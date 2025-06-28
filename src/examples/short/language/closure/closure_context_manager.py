@@ -9,7 +9,7 @@ def iterate_it(filename):
         yield from f
 
 
-def iter_through_files(filenames: List[str]):
+def iter_through_files(filenames: list[str]):
     filename_list = []
     for filename in filenames:
         filename_list.append(iterate_it(filename))

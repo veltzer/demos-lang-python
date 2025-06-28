@@ -1,11 +1,6 @@
-from typing import List
+""" python deps for this project """
 
-
-config_requires: List[str] = []
-dev_requires: List[str] = [
-    "black",
-]
-install_requires: List[str] = [
+install_requires: list[str] = [
     "pydantic",
     # command line parsing
     "click",
@@ -172,18 +167,17 @@ install_requires: List[str] = [
     # my own stuff
     "pygooglehelper",
 ]
-build_requires: List[str] = [
-    "pymakehelper",
+build_requires: list[str] = [
     "pydmt",
+    "pymakehelper",
 ]
-test_requires: List[str] = [
+test_requires: list[str] = [
     "pylint",
     "pytest",
     "pytest-cov",
-    "pytest-flake8",
-    "flake8",
     "pylogconf",
     "mypy",
+    # types
     "types-PyYAML",
     "types-setuptools",
     "types-boto",
@@ -192,4 +186,4 @@ test_requires: List[str] = [
     "types-paramiko",
     "types-termcolor",
 ]
-requires = config_requires + install_requires + build_requires + test_requires
+requires = install_requires + build_requires + test_requires

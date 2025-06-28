@@ -4,7 +4,7 @@ solution3.py
 
 
 def line_generator():
-    with open("soliloquy.txt", "rt") as stream:
+    with open("soliloquy.txt") as stream:
         yield from stream
 
 

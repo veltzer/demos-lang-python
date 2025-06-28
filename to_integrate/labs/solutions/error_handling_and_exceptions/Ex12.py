@@ -5,9 +5,9 @@ import mytimer
 mytimer.start_timer()
 lines = 0
 try:
-    for row in open("words", "r"):
+    for row in open("words"):
         lines += 1
-except IOError as err: 
+except OSError as err: 
     print("Could not open:",
            err.filename, err.args[1],
            file=sys.stderr)           

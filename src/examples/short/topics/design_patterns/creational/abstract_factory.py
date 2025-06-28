@@ -65,7 +65,7 @@ class PetShop:
 
     """A pet shop"""
 
-    def __init__(self, animal_factory: Type[Pet]) -> None:
+    def __init__(self, animal_factory: type[Pet]) -> None:
         """pet_factory is our abstract factory.  We can set it at will."""
 
         self.pet_factory = animal_factory
@@ -86,7 +86,7 @@ def random_animal(name: str) -> Pet:
     return random.choice([Dog, Cat])(name)
 
 
-def random_animal_type() -> Type[Pet]:
+def random_animal_type() -> type[Pet]:
     """Lets be dynamic!"""
     return random.choice([Dog, Cat])
 

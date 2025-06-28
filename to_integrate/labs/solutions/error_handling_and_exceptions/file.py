@@ -14,7 +14,7 @@ class File:
         if not os.path.isfile(filename):
             try:
                 open(filename, 'w')
-            except IOError as err:
+            except OSError as err:
                 self._error = err.args
 
     def __len__(self):
@@ -32,14 +32,14 @@ class TextFile(File):
     @property
     def contents(self):
         """ Return the contents of the file """
-        return open(self._filename, 'rt').read()
+        return open(self._filename).read()
     
     @contents.setter
     def contents(self, value):
         """ Append to the file """
         if not value.endswith('\n'):
             value += '\n';
-        open(self._filename, 'at').write(value)
+        open(self._filename, 'a').write(value)
         return
 
 # Binary file

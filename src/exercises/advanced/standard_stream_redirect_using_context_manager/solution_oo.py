@@ -15,7 +15,7 @@ class RedirectManager:
     def __enter__(self):
         print("in __enter__", file=sys.stderr)
         self.old_output = sys.stdout
-        sys.stdout = open(self.filename, "wt")
+        sys.stdout = open(self.filename, "w")
 
     def __exit__(self, exception_type, value, traceback):
         print("in __exit__", file=sys.stderr)

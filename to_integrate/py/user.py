@@ -4,7 +4,7 @@ from country import Country
 
 countries = []
 # Question 1a, implement a constructor.
-for line in open('country.txt', 'r') :
+for line in open('country.txt') :
     countries.append(Country(line))
 
 # Question 1b, implement a print method.

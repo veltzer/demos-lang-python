@@ -3,7 +3,8 @@ This is an example of how to call a class method directly from a reference to th
 """
 
 from types import MethodType
-from typing import Callable, Any
+from typing import Any
+from collections.abc import Callable
 
 
 class Book:

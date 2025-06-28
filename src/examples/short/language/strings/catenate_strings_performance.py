@@ -29,7 +29,7 @@ function_names[concat1] = "+ operator"
 
 def concat2():
     # pylint: disable=consider-using-f-string
-    z = "%s%s" % (x, y)
+    z = "{}{}".format(x, y)
     return z
 
 
@@ -38,7 +38,7 @@ function_names[concat2] = "%s%s"
 
 def concat3():
     # pylint: disable=consider-using-f-string
-    z = "{}{}".format(x, y)
+    z = f"{x}{y}"
     return z
 
 
@@ -47,7 +47,7 @@ function_names[concat3] = "{}{}"
 
 def concat4():
     # pylint: disable=consider-using-f-string
-    z = "{0}{1}".format(x, y)
+    z = f"{x}{y}"
     return z
 
 

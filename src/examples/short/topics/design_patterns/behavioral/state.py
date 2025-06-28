@@ -18,7 +18,7 @@ class State:
     __metaclass__ = abc.ABCMeta
     """Base state. Put shared state and functionality here"""
 
-    def __init__(self, name: str, stations: List[str], radio: "Radio") -> None:
+    def __init__(self, name: str, stations: list[str], radio: "Radio") -> None:
         self.radio = radio
         self.stations = stations
         self.pos = 0

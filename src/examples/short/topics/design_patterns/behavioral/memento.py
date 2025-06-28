@@ -5,7 +5,8 @@ http://code.activestate.com/recipes/413838-memento-closure/
 Provides the ability to restore an object to its previous state.
 """
 
-from typing import Callable, List
+from typing import List
+from collections.abc import Callable
 from copy import copy, deepcopy
 
 
@@ -26,7 +27,7 @@ class Transaction:
     """
 
     deep = False
-    states: List[Callable[[], None]] = []
+    states: list[Callable[[], None]] = []
 
     def __init__(self, deep, *targets):
         self.deep = deep

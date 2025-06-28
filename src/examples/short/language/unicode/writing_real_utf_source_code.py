@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 """
 This example shows that you can put characters in different languages directly in your code.
 What you need to do is:

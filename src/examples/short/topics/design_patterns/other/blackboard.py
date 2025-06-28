@@ -15,13 +15,13 @@ import random
 
 class Blackboard:
     def __init__(self) -> None:
-        self.experts: List[AbstractExpert] = []
-        self.common_state: Dict[str, int] = {
+        self.experts: list[AbstractExpert] = []
+        self.common_state: dict[str, int] = {
             "problems": 0,
             "suggestions": 0,
             "progress": 0,  # percentage, if 100 -> task is finished
         }
-        self.contributions: List[str] = []
+        self.contributions: list[str] = []
 
     def add_expert(self, expert: "AbstractExpert") -> None:
         self.experts.append(expert)

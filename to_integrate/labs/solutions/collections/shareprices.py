@@ -17,7 +17,7 @@ while True:
         share_prices[key] = max(1.0, sp
                                 * (1 + ((random.random() - 0.5)
                                 / 0.5) * 0.05))
-        print("{:<18s} ${:05.2f}".format(key, share_prices[key]))
+        print(f"{key:<18s} ${share_prices[key]:05.2f}")
 
     print()
     time.sleep(2)

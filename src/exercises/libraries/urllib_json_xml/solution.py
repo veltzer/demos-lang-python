@@ -5,7 +5,7 @@ Solutiion
 import json
 import urllib.request
 # pylint: disable=deprecated-module
-import xml.etree.cElementTree as ElementTree
+import xml.etree.ElementTree as ElementTree
 
 URL = "http://ws.geonames.org/hierarchyJSON?geonameId=2657896"
 with urllib.request.urlopen(URL) as stream:

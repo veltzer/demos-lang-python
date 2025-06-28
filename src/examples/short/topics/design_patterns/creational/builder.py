@@ -36,8 +36,8 @@ from typing import Optional
 # Abstract Building
 class Building:
     def __init__(self) -> None:
-        self.floor: Optional[str] = None
-        self.size: Optional[str] = None
+        self.floor: str | None = None
+        self.size: str | None = None
         self.build_floor()
         self.build_size()
 
@@ -76,8 +76,8 @@ class Flat(Building):
 
 class ComplexBuilding:
     def __init__(self) -> None:
-        self.floor: Optional[str] = None
-        self.size: Optional[str] = None
+        self.floor: str | None = None
+        self.size: str | None = None
 
     def __repr__(self) -> str:
         return f"Floor: {self.floor} | Size: {self.size}"

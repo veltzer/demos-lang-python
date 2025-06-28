@@ -21,14 +21,14 @@ class TextFile(File):
     @property
     def contents(self):
         """ Return the contents of the file """
-        return open(self._filename, 'rt').read()
+        return open(self._filename).read()
     
     @contents.setter
     def contents(self, value):
         """ Append to the file """
         if not value.endswith('\n'):
             value += '\n';
-        open(self._filename, 'at').write(value)
+        open(self._filename, 'a').write(value)
         return
 
 # Binary file

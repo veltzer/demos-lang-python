@@ -5,7 +5,7 @@ import gzip
 # Using a compressed pickle.
 country_dict = {}
 
-for line in open('country.txt', 'r') :
+for line in open('country.txt') :
     row = line.split(',')
     name = row.pop(0)
     country_dict[name] = row

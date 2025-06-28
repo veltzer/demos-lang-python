@@ -6,9 +6,9 @@ import collections
 import os
 from typing import Dict
 
-d1 = dict((letter, i) for i, letter in enumerate("word"))
+d1 = {letter: i for i, letter in enumerate("word")}
 print(d1)
-d2: Dict[str,None] = {}
+d2: dict[str,None] = {}
 for x in dir(os):
     d2[x] = None
 print(d2)

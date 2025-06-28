@@ -2,7 +2,7 @@
 # Exercise 3, string formatting and regular expressions
 import re
 
-infile = open ('postcodes.txt', 'r')
+infile = open ('postcodes.txt')
 
 # Variables for counting valid and invalid codes (part b)
 valid = 0

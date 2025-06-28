@@ -40,7 +40,7 @@ class Car:
 def main():
     people = []
     id_to_person = {}
-    with open("people.csv", "rt") as stream:
+    with open("people.csv") as stream:
         next(stream)  # skip the first line
         for line in stream:
             line = line.rstrip()  # remove the newline at the end
@@ -52,7 +52,7 @@ def main():
 
     cars = []
     license_to_car = {}
-    with open("cars.csv", "rt") as stream:
+    with open("cars.csv") as stream:
         next(stream)  # skip the first line
         for line in stream:
             line = line.rstrip()  # remove the newline at the end

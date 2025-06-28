@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-fh = open("..\..\country.txt", "r")
+fh = open(r"..\..\country.txt")
 
 for line in fh.readlines():
     (country, capital) = line.split(',')[0:3:2]

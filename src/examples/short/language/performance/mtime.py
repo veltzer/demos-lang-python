@@ -39,7 +39,7 @@ if doFirst:
 
 if doSecond:
     # now do the same with a cache
-    times: Dict[str, float] = {}
+    times: dict[str, float] = {}
     time_before = time.time()
     for i in range(count):
         filename = files[i % list_len]

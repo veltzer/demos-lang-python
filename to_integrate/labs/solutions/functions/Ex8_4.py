@@ -15,6 +15,6 @@ def prep_row(row):
     return ",".join(lrow)
     
     
-for row in open("country.txt", "r"):
+for row in open("country.txt"):
     print(prep_row(row))
 

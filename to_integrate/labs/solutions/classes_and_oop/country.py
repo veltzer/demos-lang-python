@@ -24,7 +24,7 @@ class Country:
     def __str__(self):
         # return self._attr[Country.index['name']]
         # 1g) Formating the output
-        return "{0:<32} {1:>010}".format(self.name, self.population)
+        return f"{self.name:<32} {self.population:>010}"
         
     # Getter methods, using the @property decorator.
     # 1d) Implement a getter method for country name.

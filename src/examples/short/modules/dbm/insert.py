@@ -37,5 +37,5 @@ try:
     d[None] = "four"  # type: ignore
 except TypeError:
     print("yes, got exception when trying to put string as key")
-d["five"] = "five".encode()
+d["five"] = b"five"
 d.close()

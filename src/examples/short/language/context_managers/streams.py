@@ -4,7 +4,7 @@ This example shows how with works for file streams
 
 
 def count_lines_in_file(filename):
-    with open(filename, "rt") as stream:
+    with open(filename) as stream:
         counter = 0
         for _ in stream:
             counter += 1
@@ -13,7 +13,7 @@ def count_lines_in_file(filename):
 
 def count_lines_in_file_2(filename):
     # pylint: disable=consider-using-with
-    stream = open(filename, "rt")
+    stream = open(filename)
     try:
         counter = 0
         for _ in stream:

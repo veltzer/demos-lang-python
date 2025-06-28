@@ -4,7 +4,7 @@ solution2.py
 
 
 def line_generator(filename):
-    with open(filename, "rt") as stream:
+    with open(filename) as stream:
         yield from stream
 
 

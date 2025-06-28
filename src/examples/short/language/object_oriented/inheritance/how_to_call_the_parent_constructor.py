@@ -42,7 +42,7 @@ class B4(A):
     # pylint: disable=useless-super-delegation
     def __init__(self):
         # pylint: disable=super-with-arguments
-        super(B4, self).__init__()
+        super().__init__()
 
 
 class B5(A):

@@ -7,7 +7,7 @@ class MyFile:
        self._fname = filename
 
    def __str__(self):
-       s = open(self._fname, 'r').read()
+       s = open(self._fname).read()
        return s
 
    def __len__(self):

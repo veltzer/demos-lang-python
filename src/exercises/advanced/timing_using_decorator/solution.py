@@ -5,7 +5,7 @@ Solution
 import time
 from typing import Dict, Any
 
-timing: Dict[Any, Any] = {}
+timing: dict[Any, Any] = {}
 
 
 def time_it(func):

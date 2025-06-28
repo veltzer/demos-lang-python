@@ -30,7 +30,7 @@ class HideFileCommand:
 
     def __init__(self) -> None:
         # an array of files hidden, to undo them as needed
-        self._hidden_files: List[str] = []
+        self._hidden_files: list[str] = []
 
     def execute(self, filename: str) -> None:
         print(f"hiding {filename}")
@@ -48,7 +48,7 @@ class DeleteFileCommand:
 
     def __init__(self) -> None:
         # an array of deleted files, to undo them as needed
-        self._deleted_files: List[str] = []
+        self._deleted_files: list[str] = []
 
     def execute(self, filename: str) -> None:
         print(f"deleting {filename}")
@@ -64,7 +64,7 @@ class MenuItem:
     The invoker class. Here it is items in a menu.
     """
 
-    def __init__(self, command: Union[HideFileCommand, DeleteFileCommand]) -> None:
+    def __init__(self, command: HideFileCommand | DeleteFileCommand) -> None:
         self._command = command
 
     def on_do_press(self, filename: str) -> None:

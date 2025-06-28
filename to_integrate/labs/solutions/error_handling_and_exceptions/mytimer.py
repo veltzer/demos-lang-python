@@ -40,7 +40,7 @@ def end_timer(txt='End time'):
         raise SystemError("end_timer() called without a start_timer()")
     (utime, stime) = os.times()[0:2]
     end_time = utime + stime
-    print("{0:<12}: {1:01.3f} seconds".format(txt, end_time - start_time))
+    print(f"{txt:<12}: {end_time - start_time:01.3f} seconds")
         
     start_time = None
     return

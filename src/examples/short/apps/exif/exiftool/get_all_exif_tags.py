@@ -29,7 +29,7 @@ for line in lines:
     for current_line_tag in current_line_tags:
         tags_all.add(current_line_tag)
 print(f"I got [{len(tags_all)}] tags_all")
-with open("data/exif/tags_all.txt", "wt") as stream:
+with open("data/exif/tags_all.txt", "w") as stream:
     for tag in sorted(tags_all):
         stream.write(f"{tag}\n")
 
@@ -48,18 +48,18 @@ for line in lines:
     current_tag = line.split(":")[0].rstrip()
     tags_non_exif.add(current_tag)
 print(f"I got [{len(tags_non_exif)}] tags_non_exif")
-with open("data/exif/tags_non_exif.txt", "wt") as stream:
+with open("data/exif/tags_non_exif.txt", "w") as stream:
     for tag in sorted(tags_non_exif):
         stream.write(f"{tag}\n")
 
 tags_both = tags_all.intersection(tags_non_exif)
 print(f"I got [{len(tags_both)}] tags_both")
-with open("data/exif/tags_both.txt", "wt") as stream:
+with open("data/exif/tags_both.txt", "w") as stream:
     for tag in sorted(tags_both):
         stream.write(f"{tag}\n")
 
 tags_exif = tags_all - tags_non_exif
 print(f"I got [{len(tags_exif)}] tags_exif")
-with open("data/exif/tags_exif.txt", "wt") as stream:
+with open("data/exif/tags_exif.txt", "w") as stream:
     for tag in sorted(tags_exif):
         stream.write(f"{tag}\n")

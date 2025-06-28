@@ -24,7 +24,7 @@ while y > 0:
     x = x + 0.1
     y = (y0 + x*tan(theta) - (g * x**2))/(2 * ((v0 * cos(theta))**2))
 
-    print('x = {:.1f}m,     y = {:1f}m'.format(x, y))
+    print(f'x = {x:.1f}m,     y = {y:1f}m')
     x_axis.append(x)
     y_axis.append(y)
 
