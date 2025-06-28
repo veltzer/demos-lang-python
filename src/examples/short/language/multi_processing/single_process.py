@@ -22,7 +22,7 @@ def single_runner():
     try:
         fp = os.open(pid_file, os.O_WRONLY | os.O_CREAT)
         fcntl.lockf(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except IOError:
+    except OSError:
         # another instance is running
         print("this program is already running...", file=sys.stderr)
         sys.exit(1)
@@ -36,7 +36,7 @@ def single_runner_simple():
     #    os.unlink(pid_file)
     try:
         os.open(pid_file, os.O_CREAT | os.O_EXCL)
-    except IOError as e:
+    except OSError as e:
         print(e)
         # another instance is running
         print("this program is already running...", file=sys.stderr)

@@ -6,7 +6,7 @@ import math
 from typing import Dict, Tuple, Any
 
 # in cache keys are going to be (func, n) and not just n.
-the_cache: Dict[Tuple[Any, Any], int] = {}
+the_cache: dict[tuple[Any, Any], int] = {}
 
 
 def cache(func):

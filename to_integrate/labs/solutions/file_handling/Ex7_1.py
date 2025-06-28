@@ -8,7 +8,7 @@ else:
 
 count = 1
 
-for line in open(file, 'r'):
+for line in open(file):
    if line[0:1] != '#' and not line.isspace():
        name, pp = line.split(None, 1)
        port, protocol = pp.split ('/', 1)

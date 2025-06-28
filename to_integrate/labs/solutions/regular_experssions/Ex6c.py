@@ -5,7 +5,7 @@ import re
 
 # Part c
 valid_dict = {}
-valid = open('validpc.txt', 'r').read().splitlines()
+valid = open('validpc.txt').read().splitlines()
 for txt in valid:
     line = txt.split(',')
     valid_dict[line[0]] = line[1]
@@ -13,7 +13,7 @@ valid = None
 # End of valid_dict initialisation.
 
 
-infile = open('postcodes.txt', 'r')
+infile = open('postcodes.txt')
 
 # Variables for counting valid and invalid codes (part b)
 valid = 0

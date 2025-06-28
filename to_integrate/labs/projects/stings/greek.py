@@ -1,5 +1,3 @@
-
-
 greek = ['Alpha','Beta','Gamma','Delta','Epsilon','Zeta','Eta','Theta',
          'Iota','Kappa','Lamda','Mu','Nu','Xi','Omicron','Pi','Rho',
          'Final Sigma','Sigma','Tau','Upsilon','Phi','Chi','Psi','Omega']

@@ -52,7 +52,7 @@ class EnglishLocalizer:
 def get_localizer(language: str = "English") -> Localizer:
 
     """Factory"""
-    localizers: Dict[str, Type[Localizer]] = {
+    localizers: dict[str, type[Localizer]] = {
         "English": EnglishLocalizer,
         "Greek": GreekLocalizer,
     }

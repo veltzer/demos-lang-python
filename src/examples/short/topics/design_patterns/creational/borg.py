@@ -36,14 +36,14 @@ from typing import Dict, Optional
 
 
 class Borg:
-    _shared_state: Dict[str, str] = {}
+    _shared_state: dict[str, str] = {}
 
     def __init__(self) -> None:
         self.__dict__ = self._shared_state
 
 
 class YourBorg(Borg):
-    def __init__(self, state: Optional[str] = None) -> None:
+    def __init__(self, state: str | None = None) -> None:
         super().__init__()
         if state:
             self.state = state

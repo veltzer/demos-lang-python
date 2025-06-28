@@ -38,7 +38,7 @@ def ReadStockPrices():
     while True:
         csSharePrices.acquire()    # TODO
         for key,sp in SharePrices.items():
-            print("{} {:<18s} ${:05.2f}".format(sp[0], key, sp[1]))
+            print(f"{sp[0]} {key:<18s} ${sp[1]:05.2f}")
         print()
 
         csSharePrices.release()    # TODO

@@ -17,7 +17,7 @@ def diamond_lines():
         yield from sys.stdin.readlines()
     else:
         for filename in sys.argv[1:]:
-            with open(filename, "rt") as file_handle:
+            with open(filename) as file_handle:
                 yield from file_handle
 
 

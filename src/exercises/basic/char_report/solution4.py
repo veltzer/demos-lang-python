@@ -5,7 +5,7 @@ Solution4
 from typing import Dict
 
 with open("data.txt") as f:
-    report: Dict[str, int] = {}
+    report: dict[str, int] = {}
     lines = f.readlines()
     for line in lines:
         for c in line:

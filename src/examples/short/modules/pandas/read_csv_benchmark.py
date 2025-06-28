@@ -65,7 +65,7 @@ def read_it_with_pandas_chunks(input_file: str, separator: str):
 @time_it
 def read_it_with_python(input_file: str, separator: str):
     line_count = 0
-    with open(input_file, "rt") as f:
+    with open(input_file) as f:
         for line in f:
             _ = line.split(separator)
             line_count += 1

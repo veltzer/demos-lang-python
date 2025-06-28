@@ -18,7 +18,7 @@ def start_timer():
 def end_timer(txt):
     (utime, stime) = os.times()[0:2]
     end_time = utime + stime
-    print('{0:<12}: {1:01.3f} seconds'.format(txt, end_time - start_time))
+    print(f'{txt:<12}: {end_time - start_time:01.3f} seconds')
 
 def load_data():
     global words

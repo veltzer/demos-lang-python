@@ -7,7 +7,7 @@ References:
 
 import struct
 
-s_in = "my string".encode()
+s_in = b"my string"
 packed = struct.pack("s", s_in)
 s_out = struct.unpack("s", packed)
 assert s_out == s_in

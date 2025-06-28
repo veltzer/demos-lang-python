@@ -8,10 +8,7 @@ References:
 
 import sys
 
-if sys.version_info >= (3, 0):
-    print("you are in python 3")
-else:
-    print("you are in python 2")
+print("you are in python 3")
 
 
 def is_2():

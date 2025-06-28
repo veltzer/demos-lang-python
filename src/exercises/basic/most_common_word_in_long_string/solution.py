@@ -8,7 +8,7 @@ The slings and arrows of outrageous fortune,
 Or to take arms against a sea of troubles
 And by opposing end them. To die—to sleep,"""
 
-d: Dict[str, int] = {}
+d: dict[str, int] = {}
 for word in s.split(" "):
     if word in d:
         d[word] += 1

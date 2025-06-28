@@ -23,14 +23,14 @@ list_of_keys = ["red", "green", "blue"]
 list_of_values = ["red", "green", "blue"]
 
 # simplest way, built in the language syntax, empty dictionary
-d1: Dict[str, str] = {}
+d1: dict[str, str] = {}
 print(d1)
 # explicit dictionary syntax with some data
 # pylint: disable=use-dict-literal
 d2 = {"one": "two", "three": "four"}
 print(d2)
 # empty constructor -> empty dictionary
-d3: Dict[str, str] = dict()
+d3: dict[str, str] = dict()
 print(d3)
 # constructor with key, value pairs to initialize the dictionary
 d4 = dict(one="two", three="four")

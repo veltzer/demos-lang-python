@@ -4,7 +4,7 @@ Solution1
 
 from typing import Dict
 
-places: Dict[str, Dict[str, str]] = {
+places: dict[str, dict[str, str]] = {
     "Shire": {"leave": "Bree", "stay": "DEATH"},
     "DEATH": {},
     "Bree": {"with Strider": "Rivendell", "alone": "DEATH"},

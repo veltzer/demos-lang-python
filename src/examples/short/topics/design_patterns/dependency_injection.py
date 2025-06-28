@@ -24,7 +24,7 @@ class TimeDisplay(object):
 """
 
 import datetime
-from typing import Callable
+from collections.abc import Callable
 from contextlib import redirect_stdout
 import io
 

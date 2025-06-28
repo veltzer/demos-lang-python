@@ -10,14 +10,14 @@ class TextFile(MyFile):
     @property
     def contents(self):
         # Return the contents of the file
-        return open(self.get_fname(), 'rt').read()
+        return open(self.get_fname()).read()
     
     @contents.setter
     def contents(self, value):
         # Append to the file
         if not value.endswith('\n'):
             value += '\n'
-        open(self.get_fname(), 'at').write(value)
+        open(self.get_fname(), 'a').write(value)
         return
 
 # Binary file

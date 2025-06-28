@@ -18,7 +18,7 @@ class Person:
 
 people = []
 id_to_person = {}
-with open("people.csv", "rt") as stream:
+with open("people.csv") as stream:
     next(stream)  # skip the first line
     for line in stream:
         line = line.rstrip()  # remove the newline at the end

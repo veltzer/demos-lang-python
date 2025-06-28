@@ -50,7 +50,7 @@ class B(A):
         """ this is a second way to call the parent method """
         print("B.method_overloaded2")
         # pylint: disable=super-with-arguments
-        super(B, self).method_overloaded2()
+        super().method_overloaded2()
 
     def method_overloaded3(self):
         """

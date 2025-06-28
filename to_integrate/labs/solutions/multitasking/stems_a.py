@@ -24,7 +24,7 @@ if __name__ == "__main__":
     mytimer.start_timer()
     stems = {}
 
-    for row in open("words", "r"):
+    for row in open("words"):
         for count in range(1, len(row)):
             stem = row[0:count]
             if stem in stems:

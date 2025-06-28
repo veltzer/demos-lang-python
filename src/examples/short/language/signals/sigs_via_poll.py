@@ -33,7 +33,7 @@ def do_poll(poller):
     while True:
         try:
             return poller.poll()
-        except IOError as e:
+        except OSError as e:
             if e.errno != errno.EINTR:
                 raise
 

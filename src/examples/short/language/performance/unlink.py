@@ -14,7 +14,7 @@ for i in range(count):
     filename = "unknown" + str(i % 1000) + ".nosuchending"
     try:
         os.unlink(filename)
-    except IOError:
+    except OSError:
         pass
 time_after = time.time()
 print(f"time taken for {count} os.unlinks+exception handling: {time_after - time_before:.3f} seconds")

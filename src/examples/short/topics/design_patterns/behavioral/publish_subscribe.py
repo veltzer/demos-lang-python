@@ -25,8 +25,8 @@ class Subscriber:
 
 class Provider:
     def __init__(self) -> None:
-        self.msg_queue: List[str] = []
-        self.subscribers: Dict[str, List[Subscriber]] = {}
+        self.msg_queue: list[str] = []
+        self.subscribers: dict[str, list[Subscriber]] = {}
 
     def notify(self, msg: str) -> None:
         self.msg_queue.append(msg)

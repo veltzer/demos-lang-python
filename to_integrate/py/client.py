@@ -21,5 +21,5 @@ else:
 for file in argv:
     dash = int(38 - int(len(file)/2))
     print("\n", "-" * dash, file, "-" * dash)
-    for line in open(file, "r"):
+    for line in open(file):
         print(line, end="")

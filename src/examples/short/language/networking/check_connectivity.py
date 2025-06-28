@@ -22,7 +22,7 @@ def measure_response_time(host="8.8.8.8", port=53, timeout=0.05):
             sock.connect((host, port))
             end_time = time.time()
             return end_time - start_time
-    except socket.error as err:
+    except OSError as err:
         print(f"Error connecting to {host}:{port}: {err}")
         return None
 

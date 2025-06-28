@@ -16,7 +16,7 @@ if len(sys.argv) != 2:
 filename = sys.argv[1]
 
 with open("data/exif/tags_non_exif.txt") as stream:
-    tags_non_exif = set(line.strip() for line in stream)
+    tags_non_exif = {line.strip() for line in stream}
 
 output = subprocess.check_output(["exiftool", filename], shell=False)
 lines = output.decode("ascii").splitlines()

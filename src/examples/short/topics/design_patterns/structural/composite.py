@@ -38,7 +38,7 @@ class Graphic(ABC):
 
 class CompositeGraphic(Graphic):
     def __init__(self) -> None:
-        self.graphics: List[Graphic] = []
+        self.graphics: list[Graphic] = []
 
     def render(self) -> None:
         for graphic in self.graphics:

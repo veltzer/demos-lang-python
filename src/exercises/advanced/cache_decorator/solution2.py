@@ -6,7 +6,7 @@ import math
 from typing import Dict
 
 # primes holds integers as keys and booleans as values
-primes: Dict[int, bool] = {}
+primes: dict[int, bool] = {}
 
 
 def cache(func):

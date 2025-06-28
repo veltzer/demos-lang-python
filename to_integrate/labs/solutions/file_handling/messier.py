@@ -2,7 +2,7 @@
 
 # Construct an index.
 index = []
-fh_in = open('messier.txt', 'r', encoding='latin_1')
+fh_in = open('messier.txt', encoding='latin_1')
 
 while True:
     line = fh_in.readline()

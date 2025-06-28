@@ -18,7 +18,7 @@ colors = [
 ]
 
 # the simple way
-d: Dict[int, List[str]] = {}
+d: dict[int, list[str]] = {}
 for color in colors:
     key = len(color)
     if key not in d:
