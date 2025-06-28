@@ -13,7 +13,8 @@ import sys
 # pylint: disable=protected-access
 sys._getframe().f_locals["foo"] = 42
 # pylint: disable=undefined-variable
-print(foo)  # noqa: F821
+# noqa: F821
+print(foo)  # type: ignore[name-defined]
 
 
 def f():

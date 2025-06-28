@@ -30,7 +30,7 @@ print("Tuple as key works:", tuple_dict[(1, 2, 3)])
 
 try:
     tuple_dict = {
-        ([1,2], [3,4], [5,6]): "Tuple with mutable values"
+            ([1,2], [3,4], [5,6]): "Tuple with mutable values"  # type:ignore
     }
 except TypeError as e:
     print(f"Error: {e}")
