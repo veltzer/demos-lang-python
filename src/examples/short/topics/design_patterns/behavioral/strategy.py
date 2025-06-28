@@ -8,7 +8,6 @@ Enables selecting an algorithm at runtime.
 """
 
 
-from typing import Optional
 from collections.abc import Callable
 
 

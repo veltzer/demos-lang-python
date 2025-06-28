@@ -4,8 +4,7 @@ Solution
 
 import csv
 import urllib.request
-# pylint: disable=deprecated-module
-import xml.etree.ElementTree as ElementTree
+from xml.etree import ElementTree
 
 
 def parse_feed(feed_string):

@@ -1,7 +1,5 @@
 """ second solution """
 
-from typing import Dict
-
 s = """To be, or not to be, that is the question:
 Whether tis nobler in the mind to suffer
 The slings and arrows of outrageous fortune,

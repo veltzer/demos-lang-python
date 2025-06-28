@@ -2,8 +2,6 @@
 Solution2
 """
 
-from typing import List, Optional
-
 nums: list[int | None] = list(range(0, 100))
 for d in range(2, 11):
     if nums[d] is not None:

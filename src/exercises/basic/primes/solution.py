@@ -2,8 +2,6 @@
 Solution
 """
 
-from typing import List, Optional
-
 nums: list[int | None] = list(range(0, 100))
 d = 2
 while d <= 10:

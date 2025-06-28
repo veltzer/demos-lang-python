@@ -3,7 +3,7 @@ solution3.py
 """
 
 import math
-from typing import Dict, Tuple, Any
+from typing import Any
 
 # in cache keys are going to be (func, n) and not just n.
 the_cache: dict[tuple[Any, Any], int] = {}

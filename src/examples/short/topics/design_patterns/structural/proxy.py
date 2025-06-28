@@ -15,8 +15,6 @@ Add functionality or logic (e.g. logging, caching, authorization) to a resource
 without changing its interface.
 """
 
-from typing import Union
-
 
 class Subject:
     """

@@ -2,8 +2,6 @@
 This solution uses lamba and apply (advanced stuff)
 """
 
-from typing import Dict
-
 
 def my_apply(function, seq):
     """ apply a function on a sequence """

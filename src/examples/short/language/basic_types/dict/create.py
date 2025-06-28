@@ -10,8 +10,6 @@ TODO:
 from a mapping object. I need to add an example of this.
 """
 
-from typing import Dict
-
 
 def gen_tuples():
     for i in range(5):

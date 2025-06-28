@@ -31,7 +31,6 @@ Provides a way to encapsulate a group of individual factories.
 """
 
 import random
-from typing import Type
 
 
 class Pet:

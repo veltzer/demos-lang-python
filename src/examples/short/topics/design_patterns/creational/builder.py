@@ -30,7 +30,6 @@ https://sourcemaking.com/design_patterns/builder
 *TL;DR
 Decouples the creation of a complex object and its representation.
 """
-from typing import Optional
 
 
 # Abstract Building

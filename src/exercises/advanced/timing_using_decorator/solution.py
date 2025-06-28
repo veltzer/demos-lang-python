@@ -3,7 +3,7 @@ Solution
 """
 
 import time
-from typing import Dict, Any
+from typing import Any
 
 timing: dict[Any, Any] = {}
 

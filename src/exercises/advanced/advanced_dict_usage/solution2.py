@@ -2,8 +2,6 @@
 Solution2
 """
 
-from typing import Dict, List
-
 places: dict[str, dict[str, str]] = {
     "Shire": {"leave": "Bree", "stay": "DEATH"},
     "DEATH": {},

@@ -20,8 +20,6 @@ Django HttpRequest (without execute method):
 https://docs.djangoproject.com/en/2.1/ref/request-response/#httprequest-objects
 """
 
-from typing import List, Union
-
 
 class HideFileCommand:
     """
