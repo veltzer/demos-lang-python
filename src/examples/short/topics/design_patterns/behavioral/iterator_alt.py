@@ -5,6 +5,8 @@ Implementation of the iterator pattern using the iterator protocol from Python
 Traverses a container and accesses the containers elements.
 """
 
+from typing import Self
+
 
 class NumberWords:
     """Counts by word numbers, up to a maximum of five"""
@@ -21,7 +23,7 @@ class NumberWords:
         self.start = start
         self.stop = stop
 
-    def __iter__(self) -> __class__:  # this makes the class an Iterable
+    def __iter__(self) -> Self:  # this makes the class an Iterable
         return self
 
     def __next__(self) -> str:  # this makes the class an Iterator

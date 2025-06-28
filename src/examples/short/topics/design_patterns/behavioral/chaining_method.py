@@ -2,6 +2,7 @@
 chaining_method.py
 """
 
+from typing import Self
 from contextlib import redirect_stdout
 import io
 
@@ -10,7 +11,7 @@ class Action:
     def __init__(self, name: str) -> None:
         self.name = name
 
-    def amount(self, val: str) -> __class__:
+    def amount(self, val: str) -> Self:
         print(val, end=" ")
         return self
 
