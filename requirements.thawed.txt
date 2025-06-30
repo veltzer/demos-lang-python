@@ -86,6 +86,7 @@ psutil
 psycopg2
 pyFluidSynth
 pyapikey
+pyclassifiers
 pycmdtools
 pydantic
 pydmt
