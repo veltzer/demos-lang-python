@@ -43,10 +43,12 @@ def get_config():
 db = mysql.connector.Connect(**get_config())
 cursor = db.cursor()
 cursor.execute("SHOW TABLES")
-for row in cursor:
-    print(row[0])
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
 # demo with place holders
 cursor.execute("SELECT * FROM user WHERE host=%(host)s", {"host": "localhost"})
-for row in cursor:
+rows = cursor.fetchall()
+for row in rows:
     print(row)
 db.close()
