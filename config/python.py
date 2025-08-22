@@ -166,6 +166,7 @@ install_requires: list[str] = [
     "jq",
     "docker",
     "humanize",
+    "weasyprint",
     # my own stuff
     "pygooglehelper",
     "pylogconf",
