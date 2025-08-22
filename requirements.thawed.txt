@@ -145,6 +145,7 @@ types-termcolor
 types-tqdm
 unidecode
 uvicorn
+weasyprint
 webdriver-manager
 webdriver-manager
 yapsy
