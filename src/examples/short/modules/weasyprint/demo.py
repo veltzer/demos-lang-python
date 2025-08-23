@@ -1,3 +1,7 @@
+"""
+Simple demo of weasy print
+"""
+
 from weasyprint import HTML, CSS
 
 # 1. Your HTML content
