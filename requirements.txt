@@ -168,7 +168,7 @@ proto-plus==1.26.1
 protobuf==6.32.0rc2
 psutil==7.0.0
 psycopg2==2.9.10
-pyapikey==0.0.12
+pyapikey==0.0.13
 pyasn1==0.6.1
 pyasn1-modules==0.4.2
 pyclassifiers==0.0.20
@@ -224,7 +224,7 @@ pyyaml==6.0.2
 queuelib==1.8.0
 referencing==0.36.2
 reportlab==4.4.3
-requests==2.32.4
+requests==2.32.5
 requests-file==2.1.0
 requests-oauthlib==2.0.0
 rich==13.9.4
@@ -298,7 +298,7 @@ types-s3transfer==0.13.0
 types-setuptools==80.9.0.20250809
 types-termcolor==1.1.6.2
 types-tqdm==4.67.0.20250809
-typing-extensions==4.14.1
+typing-extensions==4.15.0
 typing-inspection==0.4.1
 tzdata==2025.2
 unidecode==1.4.0
