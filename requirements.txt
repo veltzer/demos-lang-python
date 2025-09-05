@@ -108,7 +108,7 @@ jmespath==1.0.1
 joblib==1.5.1
 jq==1.10.0
 jsonpickle==5.0.0rc1
-jsonschema==4.25.0
+jsonschema==4.25.1
 jsonschema-specifications==2025.4.1
 kaitaistruct==0.10
 keyring==25.6.0
@@ -179,7 +179,7 @@ pycryptodomex==3.23.0
 pydantic==2.12.0a1
 pydantic-core==2.37.2
 pydispatcher==2.0.7
-pydmt==0.3.27
+pydmt==0.3.32
 pydyf==0.11.0
 pyexiftool==0.5.6
 pyfakeuse==0.0.9
@@ -230,7 +230,7 @@ requests-oauthlib==2.0.0
 rich==13.9.4
 rich-argparse==1.7.1
 roman-numerals-py==3.1.0
-rpds-py==0.27.0
+rpds-py==0.27.1
 rsa==4.9.1
 ruamel-yaml==0.18.14
 ruamel-yaml-clib==0.2.12
