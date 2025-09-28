@@ -168,7 +168,7 @@ proto-plus==1.26.1
 protobuf==6.32.0rc2
 psutil==7.0.0
 psycopg2==2.9.10
-pyapikey==0.0.13
+pyapikey==0.0.12
 pyasn1==0.6.1
 pyasn1-modules==0.4.2
 pyclassifiers==0.0.20
