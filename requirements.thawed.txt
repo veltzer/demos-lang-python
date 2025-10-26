@@ -70,6 +70,7 @@ mypy
 mysql.connector
 networkx
 numpy
+openai-whisper
 opencv-python
 openshift
 openshift-client
