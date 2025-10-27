@@ -11,9 +11,9 @@ client = anthropic.Anthropic(
 
 models = client.models.list()
 response = client.messages.create(
-    model=models.first_id,
+    model=str(models.first_id),
     max_tokens=1000,
     messages=[{"role": "user", "content": "Who was George Washington?"}]
 )
 
-print(response.content[0].text)
+print(response.content[0].text)  # type: ignore[union-attr]
