@@ -11,6 +11,7 @@ PyQt5-stubs
 PyQt5-stubs
 PyRSS2Gen
 SortedContainers
+anthropic
 attr
 azure-cognitiveservices-search-websearch
 beautifulsoup4

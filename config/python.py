@@ -168,6 +168,7 @@ install_requires: list[str] = [
     "humanize",
     "weasyprint",
     "openai-whisper",
+    "anthropic",
     # my own stuff
     "pygooglehelper",
     "pylogconf",
