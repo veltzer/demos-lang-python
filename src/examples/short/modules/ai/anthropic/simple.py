@@ -2,13 +2,12 @@
 Issue one prompt to anthropic
 """
 
-import os
+import passpy
 import anthropic
 
-client = anthropic.Anthropic(
-    api_key=os.environ.get("ANTHROPIC_API_KEY")
-)
-
+store = passpy.Store()
+api_key = store.get_key("keys/claude.ai").rstrip()
+client = anthropic.Anthropic(api_key=api_key)
 models = client.models.list()
 response = client.messages.create(
     model=str(models.first_id),
