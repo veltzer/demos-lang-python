@@ -1,5 +1,7 @@
 """
 Simple example of whisper
+
+The module you need to install to make this work is `openai-whisper`
 """
 
 import whisper
