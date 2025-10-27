@@ -140,6 +140,7 @@ types-boto
 types-colorama
 types-jsonschema
 types-paramiko
+types-passpy
 types-psutil
 types-psycopg2
 types-pygments
