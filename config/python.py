@@ -186,5 +186,6 @@ types_requires: list[str] = [
     "types-requests",
     "types-paramiko",
     "types-termcolor",
+    "types-passpy",
 ]
 requires = install_requires + build_requires + test_requires + types_requires
