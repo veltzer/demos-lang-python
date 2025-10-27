@@ -71,6 +71,7 @@ mypy
 mysql.connector
 networkx
 numpy
+openai
 openai-whisper
 opencv-python
 openshift
@@ -79,6 +80,7 @@ oyaml
 pandas
 pandas-stubs
 paramiko
+passpy
 piexif
 plotly
 pluginbase

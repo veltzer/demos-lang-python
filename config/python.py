@@ -167,6 +167,7 @@ install_requires: list[str] = [
     "docker",
     "humanize",
     "weasyprint",
+    "passpy",
     # AI
     "openai-whisper",
     "anthropic",
