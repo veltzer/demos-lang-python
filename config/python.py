@@ -172,6 +172,7 @@ install_requires: list[str] = [
     "openai-whisper",
     "anthropic",
     "openai",
+    "google-generativeai",
     # my own stuff
     "pygooglehelper",
     "pylogconf",
