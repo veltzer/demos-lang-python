@@ -70,7 +70,6 @@ furl==2.1.4
 gcloud==0.18.3
 gitdb==4.0.12
 gitpython==3.1.45
-google-ai-generativelanguage==0.6.15
 google-api-core==2.25.1
 google-api-python-client==2.178.0
 google-auth==2.40.3
@@ -78,11 +77,10 @@ google-auth-httplib2==0.2.0
 google-auth-oauthlib==1.2.2
 google-cloud-core==2.4.3
 google-cloud-datastore==2.21.0
-google-generativeai==0.8.5
 googleapis-common-protos==1.70.0
 greenlet==3.2.4
 grpcio==1.74.0
-grpcio-status==1.71.2
+grpcio-status==1.74.0
 h11==0.16.0
 h2==4.2.0
 hpack==4.1.0
@@ -193,7 +191,7 @@ progressbar==2.5
 prompt-toolkit==2.0.10
 protego==0.5.0
 proto-plus==1.26.1
-protobuf==5.29.5
+protobuf==6.32.0rc2
 psutil==7.0.0
 psycopg2==2.9.10
 pyapikey==0.0.13
@@ -221,7 +219,7 @@ pyinotify==0.9.6
 pyjwt==2.10.1
 pylint==3.3.8
 pylogconf==0.0.38
-pymakehelper==0.0.38
+pymakehelper==0.0.37
 pymysql==1.1.1
 pynacl==1.5.0
 pyopenssl==25.1.0
@@ -235,7 +233,7 @@ pyqt5-sip==12.17.0
 pyqt5-stubs==5.15.6.0
 pyrss2gen==1.1
 pysocks==1.7.1
-pytconf==0.1.21
+pytconf==0.1.19
 pytest==8.4.1
 python-daemon==3.1.2
 python-dateutil==2.9.0.post0
@@ -249,7 +247,7 @@ pythondialog==3.5.3
 pytidylib==0.3.2
 pytz==2025.2
 pyvardump==0.0.5
-pyyaml==6.0.3
+pyyaml==6.0.2
 queuelib==1.8.0
 referencing==0.36.2
 regex==2025.9.18
@@ -295,7 +293,7 @@ statistics==3.4.0b3
 svgwrite==1.4.3
 sympy==1.14.0rc1
 tenacity==8.5.0
-termcolor==3.2.0
+termcolor==3.1.0
 texttable==1.7.0
 threadpoolctl==3.6.0
 tiktoken==0.12.0
