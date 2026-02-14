@@ -172,7 +172,9 @@ install_requires: list[str] = [
     "openai-whisper",
     "anthropic",
     "openai",
-    "google-generativeai",
+    # "google-generativeai",
+    # "google-ai-generativelanguage="
+    # "protobuf",
     # my own stuff
     "pygooglehelper",
     "pylogconf",
