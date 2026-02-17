@@ -6,7 +6,7 @@ with open("input.txt") as f:
     report: dict[str, int] = {}
     for line in f.readlines():
         for c in line:
-            if not (c in [" ", "\n", "\r", "\t"]):
+            if c not in [" ", "\n", "\r", "\t"]:
                 if c in report:
                     report[c] += 1
                 else:

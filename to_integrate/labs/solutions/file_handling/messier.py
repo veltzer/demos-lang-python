@@ -6,7 +6,8 @@ fh_in = open('messier.txt', encoding='latin_1')
 
 while True:
     line = fh_in.readline()
-    if not line: break
+    if not line:
+        break
     if line.startswith('M'):
         num = line[1:6].rstrip()
         index.append(fh_in.tell() - len(line))
@@ -20,7 +21,8 @@ while True:
     else:
         num = 0
 
-    if num < 1: break
+    if num < 1:
+        break
     num -= 1
 
     fh_in.seek(index[num])

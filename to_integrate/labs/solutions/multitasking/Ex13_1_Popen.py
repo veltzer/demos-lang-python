@@ -1,7 +1,6 @@
 #! /usr/bin/python
 
-from subprocess import *
-import os
+from subprocess import Popen, PIPE
 import sys
 
 #(a)
@@ -14,7 +13,7 @@ proc = Popen([sys.executable, 'client.py', 'words'],
              stdout=PIPE, stderr=PIPE)
 (output, error) = proc.communicate()
 
-if error != None:
+if error is not None:
     print('error:', error.decode())
     
 print('output:', output.decode())

@@ -19,7 +19,7 @@ def demo_foo():
 # noinspection PyRedeclaration
 # pylint: disable=function-redefined
 # noqa: F811
-def demo_foo(a):  # type: ignore[no-redef]
+def demo_foo(a):  # type: ignore[no-redef] # noqa: F811
     print(f"hello {a}")
 
 

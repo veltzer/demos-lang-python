@@ -11,7 +11,7 @@ import os
 
 ########################################################
 # TIMER FUNCTIONS
-start_time = 0;
+start_time = 0
 
 def start_timer():
     """
@@ -39,30 +39,32 @@ def end_timer(txt='End time'):
     return
         
 ###########################################################################
-import platform
-import sys
-import os.path
-import glob
-from multiprocessing import Process, Queue
+import platform  # noqa: E402
+import sys  # noqa: E402
+import os.path  # noqa: E402
+import glob  # noqa: E402
+from multiprocessing import Process, Queue  # noqa: E402
 ########################################################################
 
 def RemoveProcess(*args):
     TargetDir, queue = args
-    
+
     while True:
         FName = queue.get()
-        if not FName: break    
+        if not FName:
+            break
         os.remove(TargetDir + FName)
     return
         
 
 def WorkerProcess(*args):
     TargetDir, queue, rqueue = args
-    
+
     while True:
         FName = queue.get()
-        if not FName: break
-        
+        if not FName:
+            break
+
         Data = open(FName, 'rb').read()
         
         FName = os.path.basename(FName)

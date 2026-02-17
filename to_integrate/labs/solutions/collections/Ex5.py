@@ -1,5 +1,8 @@
 #!/usr/local/bin/python
-import sys, glob, os, stat
+import sys
+import glob
+import os
+import stat
 import os.path
 
 if sys.platform == 'win32':

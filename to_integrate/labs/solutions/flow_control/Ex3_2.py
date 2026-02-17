@@ -1,6 +1,5 @@
 #! /usr/local/bin/python
 
-import sys
 
 PIN = '0138'
 LIMIT = 4

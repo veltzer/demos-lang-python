@@ -38,7 +38,7 @@ class TextFile(File):
     def contents(self, value):
         """ Append to the file """
         if not value.endswith('\n'):
-            value += '\n';
+            value += '\n'
         open(self._filename, 'a').write(value)
         return
 

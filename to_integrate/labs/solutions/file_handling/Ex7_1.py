@@ -17,7 +17,9 @@ for line in open(file):
        while count < port:
            print ("Unused port: " + str(count))
            count += 1
-           if count > 200: break
+           if count > 200:
+               break
 
        count = int(port) + 1
-       if count > 200: break
+       if count > 200:
+           break

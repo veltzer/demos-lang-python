@@ -22,10 +22,10 @@ opt_port: int = int(config.get("imap", "port"))
 
 
 def imap_have_mailbox(imap, name):
-    (res, l) = imap.list(name)
+    (res, data) = imap.list(name)
     if res != "OK":
         raise ValueError("could not list", name)
-    if len(l) == 1 and l[0] is None:
+    if len(data) == 1 and data[0] is None:
         return False
     return True
 
@@ -43,9 +43,9 @@ def imap_delete(imap, name):
 
 
 def imap_logout(imap):
-    (res, l) = imap.logout()
+    (res, data) = imap.logout()
     if res != "BYE":
-        raise ValueError("could not logout", res, l)
+        raise ValueError("could not logout", res, data)
 
 
 def imap_login(imap, username, password):

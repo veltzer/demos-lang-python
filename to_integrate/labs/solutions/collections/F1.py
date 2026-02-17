@@ -39,7 +39,7 @@ while Lap <= Laps:
 
 
 # Graph
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plot  # noqa: E402
 
 x_axis = range(1,Laps+1)
 plot.ylabel('Lap time (seconds)')

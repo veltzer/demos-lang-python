@@ -2,7 +2,7 @@
 # see http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python
 # values for level are: NOTSET, DEBUG, INFO, WARN, WARNING
 version: 1
-disable_existing_loggers: True
+disable_existing_loggers: true
 formatters:
         simple:
                 format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -15,7 +15,7 @@ handlers:
 root:
         level: INFO
         handlers: [console]
-        propagate: no
+        propagate: false
 loggers:
         simple:
                 level: INFO

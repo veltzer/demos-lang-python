@@ -1,7 +1,6 @@
 #! /usr/bin/python
 
 import subprocess
-import os
 import sys
 
 #(a)
@@ -12,7 +11,7 @@ print ('Child exited with', proc.returncode)
 proc = subprocess.run([sys.executable, 'client.py', 'words'],
              capture_output=True)
 
-if proc.stderr != None:
+if proc.stderr is not None:
     print('error:', proc.stderr.decode())
     
 print('output:', proc.stdout.decode())

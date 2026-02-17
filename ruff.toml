@@ -1,0 +1,4 @@
+extend-exclude = ["not_mine"]
+
+[lint.per-file-ignores]
+"not_mine/*" = ["E402", "E702", "E741"]

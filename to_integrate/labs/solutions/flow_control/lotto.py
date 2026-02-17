@@ -4,8 +4,10 @@ import random
 # Generate seven lottery numbers
 lotto = []
 while len(lotto) < 7:
-    if len(lotto) <= 4: num = random.randint(1, 50)
-    if len(lotto) > 4:  num = random.randint(1, 12)
+    if len(lotto) <= 4:
+        num = random.randint(1, 50)
+    if len(lotto) > 4:
+        num = random.randint(1, 12)
 
     # Check for duplicates.
     if num not in lotto:

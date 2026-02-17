@@ -53,7 +53,7 @@ load_data()
 # Brute force
 start_timer()
 for i in range(1,LOOP_COUNT):
-    line = brute_force();
+    line = brute_force()
     
 end_timer("Brute_force")
 #print ("Brute_force line number:",line)
@@ -62,7 +62,7 @@ line = 0
 # index
 start_timer()
 for i in range(1,LOOP_COUNT):
-    line = index();
+    line = index()
     
 end_timer("Index")
 #print ("Index line number:",line)
@@ -71,7 +71,7 @@ line = 0
 # in
 start_timer()
 for i in range(0,LOOP_COUNT):
-    line = infunc();
+    line = infunc()
     
 end_timer("In")
 line = 0
@@ -84,7 +84,7 @@ start_timer()
 
 
 for i in range(1,LOOP_COUNT):
-    line = dictionary();
+    line = dictionary()
     
 end_timer("Dictionary")
 #print ("Dictionary line number:",line)

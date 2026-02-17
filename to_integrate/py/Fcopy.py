@@ -8,10 +8,11 @@
     The Linux VM must be able to see this as a share, called \\INSTRUCTOR
 """
 import os
+import sys
 
 ########################################################
 # TIMER FUNCTIONS
-start_time = 0;
+start_time = 0
 
 def start_timer():
     """
@@ -38,9 +39,9 @@ def end_timer(txt='End time'):
         format(txt,end_time-start_time))
         
 ###########################################################################
-import platform
-import os.path
-import glob
+import platform  # noqa: E402
+import os.path  # noqa: E402
+import glob  # noqa: E402
 
 OperSys,Host = platform.uname()[:2]
 Source = './Bitmaps'

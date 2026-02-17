@@ -19,5 +19,5 @@ for pos, chr_name in enumerate(greek, start=0x03B1):
     try:
         char = chr(pos)  
         print(chr_name, ":", char)
-    except UnicodeEncodeError as err:
+    except UnicodeEncodeError:
         print(chr_name, 'unknown')

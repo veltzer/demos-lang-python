@@ -12,7 +12,8 @@ for postcode in infile:
     # The variable 'postcode' contain the line read from the file
 
     # Ignore empty lines.
-    if postcode.isspace(): continue
+    if postcode.isspace():
+        continue
 
     # (a): Remove newlines, tabs and spaces.
     postcode = re.sub('[ \t\n]', '', postcode)
