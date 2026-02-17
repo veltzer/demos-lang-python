@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "locked_at": "2026-02-17T07:19:19Z",
+  "locked_at": "2026-02-17T12:14:23Z",
   "tools": {
     "cppcheck": {
       "path": "/usr/bin/cppcheck",
@@ -47,13 +47,6 @@
     "pylint": {
       "path": "/home/mark/.venv/bin/pylint",
       "version_output": "pylint 3.3.8\nastroid 3.3.11\nPython 3.13.7 (main, Jan 22 2026, 20:15:57) [GCC 15.2.0]",
-      "version_args": [
-        "--version"
-      ]
-    },
-    "pyrefly": {
-      "path": "/home/mark/.venv/bin/pyrefly",
-      "version_output": "pyrefly 0.52.0",
       "version_args": [
         "--version"
       ]

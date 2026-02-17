@@ -1,4 +1,5 @@
 [processor.pyrefly]
+enabled = false
 exclude_dirs = ["/not_mine/"]
 
 [processor.make]
