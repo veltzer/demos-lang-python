@@ -1,4 +1,8 @@
-#! /usr/bin/python
+#!/usr/bin/env python
+
+"""
+A single user class
+"""
 
 from country import Country
 
@@ -10,10 +14,10 @@ for line in open('country.txt') :
 # Question 1b, implement a print method.
 #for country in countries:
     #country.print()
-    
+
     # Question 1c, implement string overloading.
     #print(country)
-    
+
     # Question 1d, implement a getter function for population.
     #print(country, end=" ")
     #print(country.population)
@@ -27,7 +31,7 @@ for line in open('country.txt') :
 #print("After subtracting 3:", countries[20].population)
 
 # If time allows:
-# Question 1f, overload the == operator   
+# Question 1f, overload the == operator
 #here = countries.index('Sweden')
 #sweden = countries[here]
 #print(sweden)
@@ -37,4 +41,3 @@ for line in open('country.txt') :
 #print(sweden)
 #print(sweden + 4)
 #print(sweden - 3)
-

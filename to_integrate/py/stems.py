@@ -13,8 +13,8 @@ for row in open ("words"):
         else:
             stems[stem] = 1
         #print ("stem:",stem,"value:<",stems[stem],">")
-       
-mytimer.end_timer('Load')        
+
+mytimer.end_timer('Load')
 
 # Process the stems
 # Senarios:
@@ -29,16 +29,13 @@ for stem_size in range(2,31):
     best_count = 0
 
     for (stem,count) in stems.items():
-       if stem_size == len(stem) and count > best_count:
-           best_stem  = stem
-           best_count = count
-
-
+        if stem_size == len(stem) and count > best_count:
+            best_stem  = stem
+            best_count = count
     if best_stem:
         print ("Most popular stem of size",stem_size,"is:",
                 best_stem,"(occurs",best_count,"times)")
-                
-mytimer.end_timer('Process')  
+mytimer.end_timer('Process')
 
 
 
