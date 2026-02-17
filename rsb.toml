@@ -1,6 +1,10 @@
 [processor.pyrefly]
-enabled = false
-exclude_dirs = ["/not_mine/"]
+exclude_dirs = [
+	"config",
+	"not_mine",
+	"tests",
+	"to_integrate",
+]
 
 [processor.make]
 exclude_files = ["Makefile"]
@@ -27,6 +31,9 @@ args = [
 ]
 
 [processor.pylint]
-exclude_paths = [
+exclude_dirs = [
+	"config",
+	"not_mine",
+	"tests",
 	"to_integrate",
 ]
