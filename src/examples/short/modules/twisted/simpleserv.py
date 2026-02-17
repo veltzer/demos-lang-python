@@ -9,10 +9,10 @@ class Echo(protocol.Protocol):
     """This is just about the simplest possible protocol
     As soon as any data is received,write it back."""
     def __init__(self):
-        super().__init__(self)
+        super().__init__(self)  # pyrefly: ignore[bad-argument-count]
 
     def dataReceived(self, data):
-        self.transport.write(data)
+        self.transport.write(data)  # pyrefly: ignore[missing-attribute]
 
 
 factory = protocol.ServerFactory()

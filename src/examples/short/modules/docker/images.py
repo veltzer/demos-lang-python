@@ -28,7 +28,7 @@ def list_images(show_all=False, quiet=False, digests=False):
     if quiet:
         # Only show image IDs
         for image in images:
-            print(image.id[7:19])  # Short ID format
+            print(image.id[7:19])  # pyrefly: ignore[unsupported-operation]  # Short ID format
         return
 
     # Print header
@@ -55,7 +55,7 @@ def list_images(show_all=False, quiet=False, digests=False):
         line_data = [
             repo,
             tag,
-            image.id[7:19],  # Short ID format
+            image.id[7:19],  # pyrefly: ignore[unsupported-operation]  # Short ID format
             format_created(image.attrs["Created"].timestamp()),
             format_size(image.attrs["Size"])
         ]
@@ -78,7 +78,7 @@ def main():
 
     try:
         list_images(show_all=args.all, quiet=args.quiet, digests=args.digests)
-    except docker.errors.DockerException as e:
+    except docker.errors.DockerException as e:  # pyrefly: ignore[implicit-import]
         print(f"Error: {e}")
         return 1
     except KeyboardInterrupt:

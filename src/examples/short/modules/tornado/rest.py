@@ -7,10 +7,10 @@ import tornado.web
 
 
 class MainHandler(tornado.web.RequestHandler):
-    def get(self):
+    def get(self):  # pyrefly: ignore[bad-override]
         self.write("Hello, World!")
 
-    def data_received(self, _data):
+    def data_received(self, _data):  # pyrefly: ignore[bad-param-name-override]
         pass
 
 

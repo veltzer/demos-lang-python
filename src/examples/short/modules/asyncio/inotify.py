@@ -21,7 +21,7 @@ class AsyncioNotifier(pyinotify.Notifier):
     # pylint: disable=too-many-positional-arguments
     def __init__(self, watch_manager, loop, callback=None,
                  default_proc_fun=None, read_freq=0, threshold=0, timeout=None):
-        self.loop = loop
+        self.loop = loop  # pyrefly: ignore[bad-override]
         self.handle_read_callback = callback
         pyinotify.Notifier.__init__(
             self, watch_manager, default_proc_fun, read_freq, threshold, timeout)
@@ -48,7 +48,7 @@ main_loop = asyncio.get_event_loop()
 # set up pyinotify stuff
 wm = pyinotify.WatchManager()
 # pylint: disable=no-member
-mask = pyinotify.IN_CREATE
+mask = pyinotify.IN_CREATE  # pyrefly: ignore[missing-attribute]
 
 folder = "/tmp"
 wm.add_watch(folder, mask)

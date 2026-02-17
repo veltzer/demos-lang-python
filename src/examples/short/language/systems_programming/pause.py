@@ -28,7 +28,7 @@ stop = False
 # a small debugging function that prints the thread doing the printing...
 def debug(msg):
     # pylint: disable=deprecated-method
-    print(threading.currentThread().name, msg)
+    print(threading.currentThread().name, msg)  # pyrefly: ignore[bad-index]
 
 
 # a wrapper function to call an old signal handler

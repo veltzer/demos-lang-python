@@ -5,7 +5,7 @@ import sympy as sym
 x = sym.Symbol("x")
 y = sym.Symbol("y")
 
-expression = 3 * x**2 + 2 * x * y + y**2
+expression = 3 * x**2 + 2 * x * y + y**2  # pyrefly: ignore[unsupported-operation]
 
 print(expression)
 

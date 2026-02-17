@@ -108,7 +108,7 @@ class Console(cmd.Cmd):
             it has been interpreted. If you want to modify the input line
             before execution (for example, variable substitution) do it here.
         """
-        self._hist += [line.strip()]
+        self._hist += [line.strip()]  # pyrefly: ignore[unsupported-operation]
         return line
 
     def postcmd(self, stop, line):
@@ -117,7 +117,7 @@ class Console(cmd.Cmd):
         """
         return stop
 
-    def emptyline(self):
+    def emptyline(self):  # pyrefly: ignore[bad-override]
         """Do nothing on empty input line"""
         print("this is an empty line")
 
@@ -129,7 +129,7 @@ class Console(cmd.Cmd):
         # pylint: disable=broad-except
         try:
             # pylint: disable=exec-used
-            exec(line) in self._locals, self._globals
+            exec(line) in self._locals, self._globals  # pyrefly: ignore[not-iterable]
         except Exception as e:
             print(f"{e.__class__}:{e}")
 

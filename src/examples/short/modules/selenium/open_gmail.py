@@ -29,7 +29,7 @@ if browser == "chrome":
         assert os.path.isdir(user_data_dir)
         options.add_argument(f"--user-data-dir={user_data_dir}")
     chrome_driver = Chrome(
-        service=selenium.webdriver.chrome.service.Service(ChromeDriverManager().install()),
+        service=selenium.webdriver.chrome.service.Service(ChromeDriverManager().install()),  # pyrefly: ignore[implicit-import]
         options=options,
     )
     chrome_driver.get("https://mail.google.com")
@@ -38,7 +38,7 @@ if browser == "chrome":
 if browser == "firefox":
     firefox_options = selenium.webdriver.firefox.options.Options()
     firefox_driver = Firefox(
-        service=selenium.webdriver.firefox.service.Service(GeckoDriverManager().install()),
+        service=selenium.webdriver.firefox.service.Service(GeckoDriverManager().install()),  # pyrefly: ignore[implicit-import]
         options=firefox_options,
     )
     firefox_driver.get("https://mail.google.com")

@@ -3,5 +3,5 @@ Print the epoch
 """
 import datetime
 
-epoch = datetime.datetime.utcfromtimestamp(0)
+epoch = datetime.datetime.fromtimestamp(0, tz=datetime.timezone.utc)
 print(epoch)

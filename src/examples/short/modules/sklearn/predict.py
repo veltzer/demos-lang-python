@@ -14,4 +14,4 @@ model.fit(X, y)
 
 # Make a prediction
 x_new = [[6]]
-print(model.predict(x_new))
+print(model.predict(x_new))  # pyrefly: ignore[bad-argument-type]

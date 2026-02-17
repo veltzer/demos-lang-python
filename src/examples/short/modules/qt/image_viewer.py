@@ -19,7 +19,7 @@ class ImageWidget(QWidget):
         super().__init__(parent)
         self.picture = QPixmap(image_path)
 
-    def paintEvent(self, _event):
+    def paintEvent(self, _event):  # pyrefly: ignore[bad-param-name-override]
         painter = QPainter(self)
         painter.drawPixmap(0, 0, self.picture)
 

@@ -39,7 +39,7 @@ def parse_makefile(filename):
                 commands[target] = []
             else:
                 # command line (`target` was set by last dep line)
-                commands[target].append(line.strip())
+                commands[target].append(line.strip())  # pyrefly: ignore[bad-index]
 
     return rules, commands
 

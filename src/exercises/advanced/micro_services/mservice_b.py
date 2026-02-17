@@ -10,8 +10,8 @@ app = Flask(__name__)
 
 @app.route("/add")
 def add():
-    a = int(request.args.get("a"))
-    b = int(request.args.get("b"))
+    a = int(request.args.get("a"))  # pyrefly: ignore[no-matching-overload]
+    b = int(request.args.get("b"))  # pyrefly: ignore[no-matching-overload]
     return str(a + b)
 
 

@@ -24,7 +24,7 @@ class A:
 
 try:
     # pylint: disable=too-many-function-args
-    a = A(5)
+    a = A(5)  # pyrefly: ignore[bad-argument-count]
 except TypeError:
     print("oops,got an error")
     print("the no argument version of the constructor does not exist...")
@@ -32,7 +32,7 @@ except TypeError:
 a = A()  # type: ignore[call-arg]
 try:
     # pylint: disable=no-value-for-parameter
-    a.sayHello()
+    a.sayHello()  # pyrefly: ignore[missing-argument]
 except TypeError:
     print("oops,got an error")
     print("the no argument version of the method \"sayHello\" does not exist")

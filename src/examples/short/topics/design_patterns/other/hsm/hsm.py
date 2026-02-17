@@ -44,7 +44,7 @@ class HierachicalStateMachine:
 
     def next_state(self, state):
         try:
-            self.current_state = self.states[state]
+            self.current_state = self.states[state]  # pyrefly: ignore[bad-assignment]
         except KeyError as e:
             raise UnsupportedState from e
 
@@ -107,12 +107,12 @@ class Unit(HierachicalStateMachine):
 
 
 class Inservice(Unit):
-    def on_fault_trigger(self):
+    def on_fault_trigger(self):  # pyrefly: ignore[bad-override]
         self.hsm.next_state("suspect")
         self.hsm.send_diagnostics_request()
         self.hsm.raise_alarm()
 
-    def on_switchover(self):
+    def on_switchover(self):  # pyrefly: ignore[bad-override]
         self.hsm.perform_switchover()
         self.hsm.check_mate_status()
         self.hsm.send_switchover_response()
@@ -135,23 +135,23 @@ class Standby(Inservice):
 
 
 class OutOfService(Unit):
-    def on_operator_inservice(self):
+    def on_operator_inservice(self):  # pyrefly: ignore[bad-override]
         self.hsm.on_switchover()  # message ignored
         self.hsm.send_operator_inservice_response()
         self.hsm.next_state("suspect")
 
 
 class Suspect(OutOfService):
-    def on_diagnostics_failed(self):
+    def on_diagnostics_failed(self):  # pyrefly: ignore[bad-override]
         super().send_diagnostics_failure_report()
         super().next_state("failed")
 
-    def on_diagnostics_passed(self):
+    def on_diagnostics_passed(self):  # pyrefly: ignore[bad-override]
         super().send_diagnostics_pass_report()
         super().clear_alarm()  # loss of redundancy alarm
         super().next_state("standby")
 
-    def on_operator_inservice(self):
+    def on_operator_inservice(self):  # pyrefly: ignore[bad-override]
         super().abort_diagnostics()
         super().on_operator_inservice()  # message ignored
 

@@ -25,7 +25,7 @@ import functools
 class lazy_property:
     def __init__(self, function):
         self.function = function
-        functools.update_wrapper(self, function)
+        functools.update_wrapper(self, function)  # pyrefly: ignore[bad-argument-type]
 
     def __get__(self, obj, type_):
         if obj is None:
@@ -44,7 +44,7 @@ def lazy_property2(fn):
     """
     attr = "_lazy__" + fn.__name__
 
-    @property
+    @property  # pyrefly: ignore[invalid-decorator]
     def _lazy_property(self):
         if not hasattr(self, attr):
             setattr(self, attr, fn(self))

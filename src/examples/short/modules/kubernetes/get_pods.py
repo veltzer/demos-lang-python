@@ -13,7 +13,7 @@ def main():
     # Configs can be set in Configuration class directly or using helper utility
     # You have to read the config in order to know the address and credentials
     # by which to contact the cluster
-    kubernetes.config.load_config()
+    kubernetes.config.load_config()  # pyrefly: ignore[missing-attribute]
 
     v1 = kubernetes.client.CoreV1Api()
     print("Listing pods with their IPs:")

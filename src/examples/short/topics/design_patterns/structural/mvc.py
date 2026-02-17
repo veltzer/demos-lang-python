@@ -36,12 +36,12 @@ class ProductModel(Model):
         "cheese": {"price": Price(2.00), "quantity": 10},
     }
 
-    item_type = "product"
+    item_type = "product"  # pyrefly: ignore[bad-override]
 
-    def __iter__(self):
+    def __iter__(self):  # pyrefly: ignore[bad-override]
         yield from self.products
 
-    def get(self, item):
+    def get(self, item):  # pyrefly: ignore[bad-override]
         try:
             return self.products[item]
         except KeyError as e:

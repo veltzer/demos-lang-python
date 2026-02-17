@@ -18,6 +18,6 @@ exif_dict = piexif.load(original)
 thumbnail = exif_dict.pop("thumbnail")
 if thumbnail is not None:
     with open(target, "wb+") as f:
-        f.write(thumbnail)
+        f.write(thumbnail)  # pyrefly: ignore[bad-argument-type]
 else:
     print("The image you gave me does not have a thumbnail!")

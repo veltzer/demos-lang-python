@@ -30,7 +30,7 @@ mylookup = mako.lookup.TemplateLookup(
     #   input_encoding=input_encoding,
     #   output_encoding=output_encoding,
 )
-template = mako.template.Template(
+template = mako.template.Template(  # pyrefly: ignore[implicit-import]
     filename=p_input,
     lookup=mylookup,
     # output_encoding=output_encoding,

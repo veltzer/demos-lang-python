@@ -38,7 +38,7 @@ b.printMe()
 # but rather because such an attribute really DOES NOT exist...
 try:
     # pylint: disable=protected-access
-    print(f"price is {b.__price}")
+    print(f"price is {b.__price}")  # pyrefly: ignore[no-access]
 except AttributeError:
     print("You see,you cannot directly change an attribute which does not exist")
 # We CAN change the name since attributes that have just one _ in front of them appear AS IS

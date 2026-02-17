@@ -51,7 +51,7 @@ class B5(A):
     # pylint: disable=useless-super-delegation
     def __init__(self):
         # pylint: disable=bad-super-call
-        super(self.__class__, self).__init__()
+        super(self.__class__, self).__init__()  # pyrefly: ignore[invalid-argument]
 
 
 b1 = B1()

@@ -171,7 +171,7 @@ def demo_passwordbox(d):
 
 
 def demo_fselect(d):
-    homedir = os.getenv("HOME") + os.sep
+    homedir = os.getenv("HOME") + os.sep  # pyrefly: ignore[unsupported-operation]
     while True:
         (code, path) = d.fselect(homedir, 10, 50,
                                  title="Cute little file to show as in a [tail -f]")

@@ -33,7 +33,7 @@ def add():
     # curl "http://localhost:8081/add?a=X&b=Y"
     response = requests.get(
         url="http://localhost:8081/add",
-        params=request.args,
+        params=request.args,  # pyrefly: ignore[bad-argument-type]
         timeout=5,
     )
     response.raise_for_status()

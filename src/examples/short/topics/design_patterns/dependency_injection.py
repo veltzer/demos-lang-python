@@ -59,7 +59,7 @@ class SetterInjection:
         self.time_provider = time_provider
 
     def get_current_time_as_html_fragment(self):
-        current_time = self.time_provider()
+        current_time = self.time_provider()  # pyrefly: ignore[not-callable]
         current_time_as_html_fragment = f"<span class=\"tinyBoldText\">{current_time}</span>"
         return current_time_as_html_fragment
 

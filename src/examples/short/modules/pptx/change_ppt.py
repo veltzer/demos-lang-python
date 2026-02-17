@@ -29,8 +29,8 @@ for slide in slides:
     # shape.remove(shape)
     #         slide.shapes.remove(shape)
     # slide.remove(shape)
-    element = slide.background.element
-    element.delete()
+    element = slide.background.element  # pyrefly: ignore[missing-attribute]
+    element.delete()  # pyrefly: ignore[missing-attribute]
     # slide.background.element = None
     # print(dir(element))
     # slide.background = None

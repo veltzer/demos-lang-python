@@ -19,7 +19,7 @@ import importlib
 import pkgutil
 
 # pylint: disable=relative-beyond-top-level, no-name-in-module
-from . import base
+from . import base  # pyrefly: ignore[missing-module-attribute]
 
 do_debug = False
 do_print_members = False

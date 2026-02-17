@@ -45,7 +45,7 @@ print("setting inaccessible variable")
 b.__private_variable = 6
 b.pr()
 print("didnt work,huh ?")
-print("from outside its value looks like " + str(b.__private_variable))
+print("from outside its value looks like " + str(b.__private_variable))  # pyrefly: ignore[no-access]
 # noinspection PyProtectedMember
 print("this is our real var " + str(b._MyClass__private_variable))  # type: ignore
 print("this means that there is no real security for the __[var] in python")

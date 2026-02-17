@@ -76,9 +76,9 @@ class Adapter:
     dog = Adapter(dog, make_noise=dog.bark)
     """
 
-    def __init__(self, obj: T, **adapted_methods: Callable):
+    def __init__(self, obj: T, **adapted_methods: Callable):  # pyrefly: ignore[invalid-type-var]
         """We set the adapted methods in the objects dict."""
-        self.obj = obj
+        self.obj = obj  # pyrefly: ignore[invalid-type-var]
         self.__dict__.update(adapted_methods)
 
     def __getattr__(self, attr):

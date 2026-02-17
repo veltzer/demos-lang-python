@@ -16,4 +16,4 @@ instance = datastore.Entity(key=entity_key)
 instance["description"] = "this is a description"
 instance["list"] = list(range(10))
 datastore_client.put(instance)
-print(f"Saved {instance.key.name}")
+print(f"Saved {instance.key.name}")  # pyrefly: ignore[missing-attribute]

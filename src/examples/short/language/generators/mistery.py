@@ -7,7 +7,7 @@ What will the program print and why?
 
 def mistery(x):
     return list(range(x))
-    yield x
+    yield x  # pyrefly: ignore[unreachable]
 
 
 a_5 = mistery(5)

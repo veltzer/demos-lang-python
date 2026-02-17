@@ -25,7 +25,7 @@ class BookTest(unittest.TestCase):
         print("in testMore")
         p = Book.Book(50)
         # pylint: disable=protected-access
-        p._Book__price = 60
+        p._Book__price = 60  # pyrefly: ignore[missing-attribute]
         self.assertTrue(p.get_price() == 60)
 
     @unittest.skip("demonstrating skipping")
@@ -36,7 +36,7 @@ class BookTest(unittest.TestCase):
         print("in runTest")
         p = Book.Book(50)
         # pylint: disable=protected-access
-        p._Book__price = 60
+        p._Book__price = 60  # pyrefly: ignore[missing-attribute]
         self.assertTrue(p.get_price() == 60)
 
 

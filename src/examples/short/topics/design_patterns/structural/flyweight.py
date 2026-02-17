@@ -44,7 +44,7 @@ class Card:
             obj = object.__new__(Card)
             cls.pool[value + suit] = obj
             # This row does the part we usually see in `__init__`
-            obj.value, obj.suit = value, suit
+            obj.value, obj.suit = value, suit  # pyrefly: ignore[missing-attribute]
         return obj
 
     # If you uncomment `__init__` and comment-out `__new__` -
@@ -53,7 +53,7 @@ class Card:
     #     self.value, self.suit = value, suit
 
     def __repr__(self):
-        return f"<Card: {self.value}{self.suit}>"
+        return f"<Card: {self.value}{self.suit}>"  # pyrefly: ignore[missing-attribute]
 
 
 def main():
@@ -64,7 +64,7 @@ def main():
     assert c1 is c2
 
     # pylint: disable=attribute-defined-outside-init
-    c1.new_attr = "temp"
+    c1.new_attr = "temp"  # pyrefly: ignore[missing-attribute]
     c3 = Card("9", "h")
     assert hasattr(c3, "new_attr")
 

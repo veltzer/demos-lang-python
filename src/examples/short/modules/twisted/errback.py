@@ -12,7 +12,7 @@ from twisted.web.client import Agent
 def my_other_callback(content):
     print(f"in other_callback {content}")
     # pylint: disable=no-member
-    reactor.stop()
+    reactor.stop()  # pyrefly: ignore[missing-attribute]
 
 
 def my_callback(response):
@@ -22,15 +22,15 @@ def my_callback(response):
 def my_errback(error):
     print("in error", error)
     # pylint: disable=no-member
-    reactor.stop()
+    reactor.stop()  # pyrefly: ignore[missing-attribute]
 
 
 def main():
     agent = Agent(reactor)
 
     deferred = agent.request(
-        uri="http://localhost",
-        method="GET",
+        uri="http://localhost",  # pyrefly: ignore[bad-argument-type]
+        method="GET",  # pyrefly: ignore[bad-argument-type]
     )
     deferred.addCallback(my_callback)
     deferred.addErrback(my_errback)

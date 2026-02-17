@@ -29,8 +29,8 @@ def main():
     for x in range(100000):
         d[x] = [random.random() for _ in range(10)]
 
-    filename_json = tempfile.mktemp()
-    filename_pickle = tempfile.mktemp()
+    filename_json = tempfile.mktemp()  # pyrefly: ignore[bad-assignment]
+    filename_pickle = tempfile.mktemp()  # pyrefly: ignore[bad-assignment]
 
     with open(filename_json, "w") as fp:
         json.dump(d, fp)
