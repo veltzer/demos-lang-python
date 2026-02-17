@@ -15,11 +15,11 @@ def count_to(count: int):
 
 # Test the generator
 def count_to_two() -> None:
-    return count_to(2)
+    return count_to(2)  # pyrefly: ignore[bad-return]
 
 
 def count_to_five() -> None:
-    return count_to(5)
+    return count_to(5)  # pyrefly: ignore[bad-return]
 
 
 def main():

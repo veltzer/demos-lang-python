@@ -28,7 +28,7 @@ function_names[func2] = "list.pop(0)"
 
 
 def func3():
-    my_list.insert(0, "newelem")
+    my_list.insert(0, "newelem")  # pyrefly: ignore[bad-argument-type]
 
 
 function_names[func3] = "insert(0, newelement)"
@@ -49,7 +49,7 @@ function_names[func5] = "deque.popleft()"
 
 
 def func6():
-    d.appendleft("newelem")
+    d.appendleft("newelem")  # pyrefly: ignore[bad-argument-type]
 
 
 function_names[func6] = "deque.appendleft(newelement)"

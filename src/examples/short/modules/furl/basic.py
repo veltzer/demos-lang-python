@@ -11,6 +11,6 @@ from furl import furl
 
 url = furl("http://example.com")
 print(url)
-url.password = "password"
-url.username = "user"
+url.password = "password"  # pyrefly: ignore[bad-assignment]
+url.username = "user"  # pyrefly: ignore[bad-assignment]
 print(url)

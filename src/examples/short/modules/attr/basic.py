@@ -21,11 +21,11 @@ m1.a = 6
 m1.b = 7
 print(m1)
 
-m2 = MyObject(1, 2)
+m2 = MyObject(1, 2)  # pyrefly: ignore[bad-argument-count]
 print(m2)
 
-m3 = MyObject(b=1, a=2)
+m3 = MyObject(b=1, a=2)  # pyrefly: ignore[unexpected-keyword]
 print(m3)
 
-m4 = MyObject(b=7)
+m4 = MyObject(b=7)  # pyrefly: ignore[unexpected-keyword]
 print(m4)

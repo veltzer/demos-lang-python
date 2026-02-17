@@ -106,9 +106,9 @@ request 20 handled in handler 2
 def main():
     h0 = ConcreteHandler0()
     h1 = ConcreteHandler1()
-    h2 = ConcreteHandler2(FallbackHandler())
-    h0.successor = h1
-    h1.successor = h2
+    h2 = ConcreteHandler2(FallbackHandler())  # pyrefly: ignore[bad-argument-type]
+    h0.successor = h1  # pyrefly: ignore[bad-assignment]
+    h1.successor = h2  # pyrefly: ignore[bad-assignment]
     requests = [2, 5, 14, 22, 18, 3, 35, 27, 20]
     with redirect_stdout(io.StringIO()) as output:
         for request in requests:

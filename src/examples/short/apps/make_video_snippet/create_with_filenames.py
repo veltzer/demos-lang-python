@@ -18,12 +18,12 @@ def create_video_snippet(video_path, output_path, start_time, duration):
     frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = cap.get(cv2.CAP_PROP_FPS)
 
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")  # Define the codec for the output video
+    fourcc = cv2.VideoWriter_fourcc(*"mp4v")  # pyrefly: ignore[missing-attribute]  # Define the codec for the output video
     out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
 
     # Capture frames until the desired duration is reached
     elapsed_time = 0
-    while elapsed_time < duration * 1000:
+    while elapsed_time < duration * 1000:  # pyrefly: ignore[bad-assignment]
         ret, frame = cap.read()
         if not ret:
             break

@@ -11,7 +11,7 @@ def make_adder():
     def adder():
         # noinspection PyUnboundLocalVariable,PyUnresolvedReferences
         # pylint: disable=undefined-variable
-        x += 1  # noqa: F823
+        x += 1  # pyrefly: ignore[unbound-name]  # noqa: F823
         # noinspection PyUnresolvedReferences
         print(x)
 

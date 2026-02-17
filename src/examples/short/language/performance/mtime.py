@@ -41,9 +41,9 @@ if doSecond:
     time_before = time.time()
     for i in range(count):
         filename = files[i % list_len]
-    if filename in times:
-        t = times[filename]
+    if filename in times:  # pyrefly: ignore[unbound-name]
+        t = times[filename]  # pyrefly: ignore[unbound-name]
     else:
-        times[filename] = os.path.getmtime(filename)
+        times[filename] = os.path.getmtime(filename)  # pyrefly: ignore[unbound-name]
     time_after = time.time()
     print(f"time taken for {count} cache getmtime: {time_after - time_before:.3f} seconds")

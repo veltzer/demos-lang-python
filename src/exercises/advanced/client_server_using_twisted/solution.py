@@ -8,7 +8,7 @@ from twisted.protocols.basic import LineReceiver
 
 
 class MyProtocol(LineReceiver):
-    def rawDataReceived(self, data):
+    def rawDataReceived(self, data):  # pyrefly: ignore[bad-override]
         pass
 
     def __init__(self):
@@ -17,16 +17,16 @@ class MyProtocol(LineReceiver):
         self.loggedIn = False
 
     def end(self, reason):
-        self.transport.write("closing connection.\r\n")
-        self.transport.write("reason is [" + reason + "]\r\n")
-        self.transport.loseConnection()
+        self.transport.write("closing connection.\r\n")  # pyrefly: ignore[missing-attribute]
+        self.transport.write("reason is [" + reason + "]\r\n")  # pyrefly: ignore[missing-attribute]
+        self.transport.loseConnection()  # pyrefly: ignore[missing-attribute]
         if self.loggedIn:
-            self.factory.num_users -= 1
+            self.factory.num_users -= 1  # pyrefly: ignore[missing-attribute]
             self.loggedIn = False
 
     def handle_hello(self, line):
         if line == "hello":
-            self.transport.write("hello\r\n")
+            self.transport.write("hello\r\n")  # pyrefly: ignore[missing-attribute]
             self.curFunc = self.handle_auth
         else:
             self.end("did not get hello")
@@ -35,9 +35,9 @@ class MyProtocol(LineReceiver):
         (auth, name, password) = line.split(",")
         if auth == "auth":
             if name * 2 == password:
-                self.transport.write("auth ok\r\n")
+                self.transport.write("auth ok\r\n")  # pyrefly: ignore[missing-attribute]
                 self.curFunc = self.handle_status
-                self.factory.num_users += 1
+                self.factory.num_users += 1  # pyrefly: ignore[missing-attribute]
                 self.name = name
                 self.loggedIn = True
             else:
@@ -47,32 +47,32 @@ class MyProtocol(LineReceiver):
 
     def handle_status(self, line):
         if line == "status":
-            self.transport.write(
-                "num_users is " + str(self.factory.num_users) + "\r\n")
-            self.transport.write("your name is " + self.name + "\r\n")
+            self.transport.write(  # pyrefly: ignore[missing-attribute]
+                "num_users is " + str(self.factory.num_users) + "\r\n")  # pyrefly: ignore[missing-attribute]
+            self.transport.write("your name is " + self.name + "\r\n")  # pyrefly: ignore[missing-attribute, unsupported-operation]
             self.curFunc = self.handle_bye
         else:
             self.end("did not get status")
 
     def handle_bye(self, line):
         if line == "bye":
-            self.transport.write("bye " + self.name + "\r\n")
+            self.transport.write("bye " + self.name + "\r\n")  # pyrefly: ignore[missing-attribute, unsupported-operation]
             self.end("conversation ended")
         else:
             self.end("did not get bye")
 
     def connectionMade(self):
         print("connection made")
-        self.transport.write("Welcome to MyServer\r\n")
+        self.transport.write("Welcome to MyServer\r\n")  # pyrefly: ignore[missing-attribute]
 
-    def lineReceived(self, line):
+    def lineReceived(self, line):  # pyrefly: ignore[bad-override]
         print("got line ", line)
         self.curFunc(line)
 
     def connectionLost(self, reason=connectionDone):
         print("connection was lost")
         if self.loggedIn:
-            self.factory.num_users -= 1
+            self.factory.num_users -= 1  # pyrefly: ignore[missing-attribute]
 
 
 class MyFactory(Factory):

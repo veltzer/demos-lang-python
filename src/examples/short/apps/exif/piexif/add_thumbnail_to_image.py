@@ -17,9 +17,9 @@ with open(thumbnail, "rb") as thumbnail_stream:
     thumbnail_data = thumbnail_stream.read()
 assert not os.path.isfile(target), "target file should not exist"
 piexif_dict = piexif.load(original)
-piexif_dict["thumbnail"] = thumbnail_data
-piexif_dict["1st"][513] = 1  # JPEGInterchangeFormat
-piexif_dict["1st"][514] = 1  # JPEGInterchangeFormatLength
+piexif_dict["thumbnail"] = thumbnail_data  # pyrefly: ignore[unsupported-operation]
+piexif_dict["1st"][513] = 1  # pyrefly: ignore[unsupported-operation]  # JPEGInterchangeFormat
+piexif_dict["1st"][514] = 1  # pyrefly: ignore[unsupported-operation]  # JPEGInterchangeFormatLength
 piexif_bytes = piexif.dump(piexif_dict)
 im = Image.open(original)
 im.save(target, exif=piexif_bytes)

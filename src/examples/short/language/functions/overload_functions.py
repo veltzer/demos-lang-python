@@ -26,7 +26,7 @@ def demo_foo(a):  # type: ignore[no-redef] # noqa: F811
 try:
     # noinspection PyArgumentList
     # pylint: disable=no-value-for-parameter
-    demo_foo()
+    demo_foo()  # pyrefly: ignore[missing-argument]
 except TypeError:
     print("oops, got an error")
 demo_foo("mark")  # type: ignore[call-arg]

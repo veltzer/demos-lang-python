@@ -11,7 +11,7 @@ def Person(name, age):
         data.__dict__["name"] = name
 
     def getName():
-        return data.name
+        return data.name  # pyrefly: ignore[missing-attribute]
 
     def setAge(age):
         if age <= 0:
@@ -19,17 +19,17 @@ def Person(name, age):
         data.__dict__["age"] = age
 
     def getAge():
-        return data.age
+        return data.age  # pyrefly: ignore[missing-attribute]
 
     def printMe():
-        print("name is ", data.name)
-        print("age is ", data.age)
+        print("name is ", data.name)  # pyrefly: ignore[missing-attribute]
+        print("age is ", data.age)  # pyrefly: ignore[missing-attribute]
 
-    data.setName = setName
-    data.getName = getName
-    data.setAge = setAge
-    data.getAge = getAge
-    data.printMe = printMe
+    data.setName = setName  # pyrefly: ignore[missing-attribute]
+    data.getName = getName  # pyrefly: ignore[missing-attribute]
+    data.setAge = setAge  # pyrefly: ignore[missing-attribute]
+    data.getAge = getAge  # pyrefly: ignore[missing-attribute]
+    data.printMe = printMe  # pyrefly: ignore[missing-attribute]
     setName(name)
     setAge(age)
     return data
@@ -38,9 +38,9 @@ def Person(name, age):
 # usage...
 p1 = Person("mark", 36)
 p2 = Person("doron", 32)
-print(p1.name)
-p1.printMe()
-p2.printMe()
-p1.setName("foobar")
-p1.setAge(74)
-p1.printMe()
+print(p1.name)  # pyrefly: ignore[missing-attribute]
+p1.printMe()  # pyrefly: ignore[missing-attribute]
+p2.printMe()  # pyrefly: ignore[missing-attribute]
+p1.setName("foobar")  # pyrefly: ignore[missing-attribute]
+p1.setAge(74)  # pyrefly: ignore[missing-attribute]
+p1.printMe()  # pyrefly: ignore[missing-attribute]

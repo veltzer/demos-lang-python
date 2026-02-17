@@ -12,8 +12,8 @@ with env.begin(write=True) as txn:
     k1_b = bytes("hello", "utf8")
     v1_b = bytes("world", "utf8")
     txn.put(k1_b, v1_b)
-    v_b = txn.get(k1_b, default="what??")
-    v = str(v_b, "utf8")
+    v_b = txn.get(k1_b, default="what??")  # pyrefly: ignore[no-matching-overload]
+    v = str(v_b, "utf8")  # pyrefly: ignore[no-matching-overload]
     assert v == "world"
 
 # The next code does not work

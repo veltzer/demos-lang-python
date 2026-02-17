@@ -28,13 +28,13 @@ class MTimeMixin:
 
     def complete(self):
 
-        if not all(os.path.exists(out.path) for out in to_list(self.output())):
+        if not all(os.path.exists(out.path) for out in to_list(self.output())):  # pyrefly: ignore[missing-attribute]
             return False
 
-        self_mtime = min(mtime(out.path) for out in to_list(self.output()))
+        self_mtime = min(mtime(out.path) for out in to_list(self.output()))  # pyrefly: ignore[missing-attribute]
 
         # the below assumes a list of requirements, each with a list of outputs. YMMV
-        for el in to_list(self.requires()):
+        for el in to_list(self.requires()):  # pyrefly: ignore[missing-attribute]
             if not el.complete():
                 return False
             for output in to_list(el.output()):
@@ -47,7 +47,7 @@ class MTimeMixin:
 class FileExists(luigi.Task):
     filename = luigi.Parameter()
 
-    def output(self):
+    def output(self):  # pyrefly: ignore[bad-override]
         return luigi.LocalTarget(self.filename)
 
     def run(self):
@@ -63,7 +63,7 @@ class CountLines(MTimeMixin, luigi.Task):
         """
         return [FileExists(filename="input.txt")]
 
-    def output(self):
+    def output(self):  # pyrefly: ignore[bad-override]
         """
         Where will this Task produce output?
         This is just a single output.

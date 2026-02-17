@@ -71,7 +71,7 @@ print(f"Runtime is: {info_runtime}")
 
 info_directors = movie.get("director")
 print(info_directors)
-for n, d in enumerate(info_directors):
+for n, d in enumerate(info_directors):  # pyrefly: ignore[bad-argument-type]
     print(dir(d))
     for k, v in d.items():
         print(k, v)

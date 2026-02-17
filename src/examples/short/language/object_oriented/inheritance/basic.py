@@ -59,7 +59,7 @@ class B(A):
         """
         print("B.method_overloaded3")
         # pylint: disable=bad-super-call
-        super(self.__class__, self).method_overloaded3()
+        super(self.__class__, self).method_overloaded3()  # pyrefly: ignore[invalid-argument]
 
     def method_overloaded4(self):
         """ This is going back to the first way """

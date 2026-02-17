@@ -59,11 +59,11 @@ def example_of_use():
     test_list.add_tail_element(6)
 
     print("starting forward iteration")
-    for element in test_list.yield_elements_head_to_tail():
+    for element in test_list.yield_elements_head_to_tail():  # pyrefly: ignore[not-iterable]
         print(element)
 
     print("starting backward iteration")
-    for element in test_list.yield_elements_tail_to_head():
+    for element in test_list.yield_elements_tail_to_head():  # pyrefly: ignore[not-iterable]
         print(element)
 
     print("popping elements")
@@ -71,7 +71,7 @@ def example_of_use():
     test_list.pop_tail_element()
 
     print("starting forward iteration")
-    for element in test_list.yield_elements_head_to_tail():
+    for element in test_list.yield_elements_head_to_tail():  # pyrefly: ignore[not-iterable]
         print(element)
 
     print("popping all remaining elements")
@@ -79,7 +79,7 @@ def example_of_use():
         test_list.pop_head_element()
 
     print("starting forward iteration")
-    for element in test_list.yield_elements_head_to_tail():
+    for element in test_list.yield_elements_head_to_tail():  # pyrefly: ignore[not-iterable]
         print(element)
 
 

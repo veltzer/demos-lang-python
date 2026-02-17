@@ -19,7 +19,7 @@ def main():
             if not inspect.isclass(v):
                 continue
             print(type(v))
-            if issubclass(v.__class__, BaseClass.__class__):
+            if issubclass(v.__class__, BaseClass.__class__):  # pyrefly: ignore[invalid-argument]
                 print(k)
 
 

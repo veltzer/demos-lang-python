@@ -17,7 +17,7 @@ def aSillyBlockingMethod(t, stop):
     # instead we must do:
     if stop:
         # pylint: disable=no-member
-        reactor.callFromThread(reactor.stop)
+        reactor.callFromThread(reactor.stop)  # pyrefly: ignore[missing-attribute]
 
 
 # run method in thread

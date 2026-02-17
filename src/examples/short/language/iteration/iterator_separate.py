@@ -30,7 +30,7 @@ class Reverse:
 
 def main():
     # And now lets use the iterator...
-    for x in Reverse(range(7)):
+    for x in Reverse(range(7)):  # pyrefly: ignore[not-iterable]
         print(x)
 
     # notice that Reverse(x) is NOT an iterator,at least by pythons understanding of it.

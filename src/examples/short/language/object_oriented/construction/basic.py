@@ -60,7 +60,7 @@ n = NoCons()
 print(type(n))
 try:
     # pylint: disable=too-many-function-args
-    a = A()
+    a = A()  # pyrefly: ignore[bad-argument-count]
 except TypeError:
     print("oh,no. Cant construct an object. Must pass self")
 b = B()

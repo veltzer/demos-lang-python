@@ -15,17 +15,17 @@ class A:
 
 
 def make_something(cls=None):
-    t = cls()
+    t = cls()  # pyrefly: ignore[not-callable]
     return t
 
 
 def make_something_2(cls=None):
-    t = cls.__new__(cls)
+    t = cls.__new__(cls)  # pyrefly: ignore[bad-argument-type]
     return t
 
 
 def make_something_3(cls=None):
-    t = cls.__new__(cls)
+    t = cls.__new__(cls)  # pyrefly: ignore[bad-argument-type]
     # pylint: disable=unnecessary-dunder-call
     t.__init__()
     return t

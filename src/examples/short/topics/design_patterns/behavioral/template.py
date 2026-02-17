@@ -36,7 +36,7 @@ def template_function(getter, converter=False, to_save=False) -> None:
     print(f"Got {repr(data)}")
 
     if len(data) <= 3 and converter:
-        data = converter(data)
+        data = converter(data)  # pyrefly: ignore[not-callable]
     else:
         print("Skip conversion")
 

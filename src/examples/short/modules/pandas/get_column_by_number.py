@@ -9,22 +9,22 @@ df = pandas.read_csv(
     "/etc/passwd",
     sep=":",
     header=None, )
-assert isinstance(df, pandas.core.frame.DataFrame)
+assert isinstance(df, pandas.core.frame.DataFrame)  # pyrefly: ignore[implicit-import]
 num_rows = df.shape[0]
 
 # lets get a series
 # pylint: disable=unsubscriptable-object, no-member
 c1 = df[0]
-assert isinstance(c1, pandas.core.series.Series)
+assert isinstance(c1, pandas.core.series.Series)  # pyrefly: ignore[implicit-import]
 assert c1.shape == (num_rows,)
 
 # another way
 c2 = df[df.columns[0]]
-assert isinstance(c2, pandas.core.series.Series)
+assert isinstance(c2, pandas.core.series.Series)  # pyrefly: ignore[implicit-import]
 assert c2.shape == (num_rows,)
 
 # another way
 c3 = df.loc[0]
-assert isinstance(c3, pandas.core.series.Series)
+assert isinstance(c3, pandas.core.series.Series)  # pyrefly: ignore[implicit-import]
 print(c3.shape)
 assert c3.shape == (num_rows,)

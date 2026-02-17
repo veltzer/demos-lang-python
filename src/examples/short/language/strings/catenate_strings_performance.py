@@ -79,7 +79,7 @@ functions = [
 
 number = 2000000
 
-results = [(timeit.timeit(f, number=number), function_names[f]) for f in functions]
+results = [(timeit.timeit(f, number=number), function_names[f]) for f in functions]  # pyrefly: ignore[bad-index]
 sorted_results = sorted(results, key=lambda tup: tup[0])
 for r in sorted_results:
     print(f"{r[0]:.4f}: {r[1]}")

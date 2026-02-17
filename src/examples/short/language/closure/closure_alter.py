@@ -68,8 +68,8 @@ print("f_min is", f_min())
 print("""
 lets use the third method mentioned above. the __closure__ property.
 """)
-f_max.__closure__[0].cell_contents[3] = 7
-f_max.__closure__[0].cell_contents[2] = -2
+f_max.__closure__[0].cell_contents[3] = 7  # pyrefly: ignore[unsupported-operation]
+f_max.__closure__[0].cell_contents[2] = -2  # pyrefly: ignore[unsupported-operation]
 print("f_max is", f_max())
 print("f_min is", f_min())
 

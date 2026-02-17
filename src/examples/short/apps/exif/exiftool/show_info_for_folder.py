@@ -40,8 +40,8 @@ for root, directories, files in os.walk(folder_name):
         print(f"scanning [{full}]")
         tag_number = get_number_of_exiftool_tags(full)
         tag_numbers.append(tag_number)
-print(f"min: {min(tag_numbers)}")
-print(f"max: {max(tag_numbers)}")
-print(f"mean: {statistics.mean(tag_numbers)}")
-print(f"stdev: {statistics.stdev(tag_numbers)}")
-print(f"median: {statistics.median(tag_numbers)}")
+print(f"min: {min(tag_numbers)}")  # pyrefly: ignore[unbound-name]
+print(f"max: {max(tag_numbers)}")  # pyrefly: ignore[unbound-name]
+print(f"mean: {statistics.mean(tag_numbers)}")  # pyrefly: ignore[unbound-name]
+print(f"stdev: {statistics.stdev(tag_numbers)}")  # pyrefly: ignore[unbound-name]
+print(f"median: {statistics.median(tag_numbers)}")  # pyrefly: ignore[unbound-name]

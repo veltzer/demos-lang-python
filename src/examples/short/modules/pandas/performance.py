@@ -89,10 +89,10 @@ def more_stuff():
     print("after creation")
     print(type(random_words))
     print(len(random_words))
-    print_data(df)
+    print_data(df)  # pyrefly: ignore[bad-argument-type]
     for _ in range(size):
-        df.set_value()
-    df.set_value(0, "A", "mark")
-    df.set_value(0, "B", "veltzer")
+        df.set_value()  # pyrefly: ignore[missing-attribute]
+    df.set_value(0, "A", "mark")  # pyrefly: ignore[missing-attribute]
+    df.set_value(0, "B", "veltzer")  # pyrefly: ignore[missing-attribute]
 
-    print(df.get_values())
+    print(df.get_values())  # pyrefly: ignore[missing-attribute]

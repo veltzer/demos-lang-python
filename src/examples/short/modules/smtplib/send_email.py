@@ -28,9 +28,9 @@ def send_email(
         debug=False,
 ):
     # build the message
-    msg = email.mime.text.MIMEText(content)
-    msg["Subject"] = subject
-    msg["From"] = fr
+    msg = email.mime.text.MIMEText(content)  # pyrefly: ignore[bad-argument-type]
+    msg["Subject"] = subject  # pyrefly: ignore[unsupported-operation]
+    msg["From"] = fr  # pyrefly: ignore[unsupported-operation]
     # send the message via our own SMTP server,but dont include the envelope header.
     # server=smtplib.SMTP()
     server = smtplib.SMTP(host=smtp_host, port=smtp_port)
@@ -40,8 +40,8 @@ def send_email(
         server.set_debuglevel(1)
     if use_tls:
         server.starttls()
-    server.login(smtp_user, smtp_password)
-    server.sendmail(fr, to, msg.as_string())
+    server.login(smtp_user, smtp_password)  # pyrefly: ignore[bad-argument-type]
+    server.sendmail(fr, to, msg.as_string())  # pyrefly: ignore[bad-argument-type]
     server.quit()
 
 

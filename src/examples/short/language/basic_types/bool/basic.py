@@ -18,7 +18,7 @@ if True:
 if 0:
     print("You shouldnt see this")
 # pylint: disable=using-constant-test
-if 1:
+if 1:  # pyrefly: ignore[redundant-condition]
     print("You should see this")
 # pylint: disable=using-constant-test
 if []:

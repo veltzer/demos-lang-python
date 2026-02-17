@@ -17,10 +17,10 @@ that.
 def my_mystery_function():
     # global g
     # pylint: disable=redefined-outer-name,used-before-assignment
-    print(g)  # noqa: F823
+    print(g)  # pyrefly: ignore[unbound-name]  # noqa: F823
     # pylint: disable=using-constant-test
     if True:
-        g += 17  # noqa: F823
+        g += 17  # pyrefly: ignore[unbound-name]  # noqa: F823
     print(g)
 
 

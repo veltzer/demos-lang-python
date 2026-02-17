@@ -33,7 +33,7 @@ class SearchSpider(scrapy.Spider):
         # important, call the parent
         self.logger.info("in __init__")
 
-    def parse(self, _response, **_kwargs):
+    def parse(self, _response, **_kwargs):  # pyrefly: ignore[bad-override]
         """ This method is called whenever you get a response """
         self.logger.info("in parse")
 

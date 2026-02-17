@@ -52,7 +52,7 @@ def main():
     for _ in range(3):
         threads.append(Producer(stack))
     for _ in range(3):
-        threads.append(Consumer(stack))
+        threads.append(Consumer(stack))  # pyrefly: ignore[bad-argument-type]
     for thread in threads:
         thread.start()
 
