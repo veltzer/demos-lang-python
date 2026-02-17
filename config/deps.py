@@ -24,6 +24,7 @@ packages = [
     # python
     "python3-distutils-extra",
     "python3-pip",
+    "libpython3.13-dev",
     # swig
     "swig",
     "swig-doc",

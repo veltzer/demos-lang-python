@@ -3,3 +3,18 @@ exclude_files = ["Makefile"]
 
 [processor.spellcheck]
 use_words_file = true
+
+[processor.cc_single_file]
+include_paths = [
+	"/usr/include/python3.13",
+]
+
+[analyzer.cpp]
+include_paths = [
+	"/usr/include/python3.13",
+]
+
+[processor.pylint]
+exclude_paths = [
+	"to_integrate",
+]
