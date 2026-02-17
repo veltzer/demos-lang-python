@@ -2,6 +2,9 @@
 interfaces to be implemented
 """
 
+from collections.abc import Generator
+from typing import Any
+
 
 class Node:
     """
@@ -33,8 +36,9 @@ class SingleLinkedList:
     def pop_head_element(self):
         """ pop the element the head of the list """
 
-    def yield_elements(self):
+    def yield_elements(self) -> Generator[Any, None, None]:
         """ yield all elements from the list """
+        yield
 
 
 def example_of_use():
