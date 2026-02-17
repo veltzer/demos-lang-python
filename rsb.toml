@@ -1,3 +1,6 @@
+[processor.pyrefly]
+exclude_dirs = ["/not_mine/"]
+
 [processor.make]
 exclude_files = ["Makefile"]
 
@@ -8,10 +11,18 @@ use_words_file = true
 include_paths = [
 	"/usr/include/python3.13",
 ]
+exclude_dirs = ["/bad_lib/", "/crashing_python/", "/embedding_python_in_c/", "/extending_python_with_c/"]
 
 [analyzer.cpp]
 include_paths = [
 	"/usr/include/python3.13",
+]
+
+[processor.cppcheck]
+args = [
+	"--error-exitcode=1",
+	"--enable=warning,style,performance,portability",
+	"--inline-suppr",
 ]
 
 [processor.pylint]

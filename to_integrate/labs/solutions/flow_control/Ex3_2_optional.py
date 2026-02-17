@@ -2,7 +2,6 @@
 # Note: You will have to execute this program in a windows console to test the
 # getpass functionality.
 
-import sys
 import getpass
 
 PIN = '0138'

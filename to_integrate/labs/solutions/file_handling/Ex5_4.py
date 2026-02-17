@@ -120,7 +120,7 @@ end_timer('Shelve creation')
 start_timer()
 
 for i in range(0, LOOP_COUNT):
-    line = shelve_func();
+    line = shelve_func()
 
 shelve_dict.close()
 end_timer('Shelved dictionary')

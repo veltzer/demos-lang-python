@@ -12,7 +12,8 @@ for line in open(file):
    m = re.search(r'(\d+)/(udp|tcp)',line)
    if m:
        port = int(m.groups()[0])
-       if port > 200: break
+       if port > 200:
+           break
        ports.add(port)
 
 

@@ -10,8 +10,9 @@ myfunc1(99)
 
 
 def myfunc2(val, lista=None):
-    if lista == None: lista = []
-    
+    if lista is None:
+        lista = []
+
     lista.append(val)
     print("value of lista is:", lista)
     return

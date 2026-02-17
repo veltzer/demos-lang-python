@@ -3,7 +3,6 @@
 # CBD October 2011 - delegate version.
 
 import time
-import random
 
 SharePrices = {'Global Motors':50,
                'Big Blue Inc.':50,

@@ -20,7 +20,7 @@ class A:
 a_instance = None
 
 
-def get_a_instance():
+def get_a_instance():  # noqa: F811
     # noinspection PyGlobalUndefined
     # pylint: disable=global-statement
     global a_instance, get_a_instance

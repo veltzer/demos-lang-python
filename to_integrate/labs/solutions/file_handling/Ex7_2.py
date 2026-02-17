@@ -15,7 +15,7 @@ pickle.dump(country_dict, outp)
 outp.close()
 
 # Using a shelve.
-import shelve
+import shelve  # noqa: E402
 db = shelve.open('country')
 for country in country_dict.keys():
     db[country] = country_dict[country]

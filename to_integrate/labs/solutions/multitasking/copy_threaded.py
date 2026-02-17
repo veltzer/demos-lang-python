@@ -8,10 +8,11 @@
     The Linux VM must be able to see this as a share, called \\INSTRUCTOR
 """
 import os
+import sys
 
 ########################################################
 # TIMER FUNCTIONS
-start_time = 0;
+start_time = 0
 
 def start_timer():
     """
@@ -37,31 +38,33 @@ def end_timer(txt='End time'):
     print (f"{txt:<12}: {end_time - start_time:01.3f} seconds")
         
 ###########################################################################
-import platform
-import os.path
-import glob
-from threading import Thread
-from queue import Queue
+import platform  # noqa: E402
+import os.path  # noqa: E402
+import glob  # noqa: E402
+from threading import Thread  # noqa: E402
+from queue import Queue  # noqa: E402
 
 ########################################################################
 
 def RemoveThread(*args):
     TargetDir,queue = args
-    
+
     while True:
         FName = queue.get()
-        if not FName: break    
+        if not FName:
+            break
         os.remove(TargetDir + FName)
     return
         
 
 def WorkerThread(*args):
     TargetDir,queue,rqueue = args
-    
+
     while True:
         FName = queue.get()
-        if not FName: break
-        
+        if not FName:
+            break
+
         Data = open(FName, 'rb').read()
         
         FName = os.path.basename(FName)

@@ -15,5 +15,5 @@ for cname in greek:
         char = chr(pos)  
         print(cname,":",char)
         pos += 1 
-    except UnicodeEncodeError as err:
+    except UnicodeEncodeError:
         print (cname, 'unknown')

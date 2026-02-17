@@ -21,7 +21,8 @@ class Frange:
             self.len = 0
         else:
             self.len = math.ceil((self.stop - self.start)/self.step)
-            if self.len < 0: self.len = 0
+            if self.len < 0:
+                self.len = 0
 
 
     def __len__(self):

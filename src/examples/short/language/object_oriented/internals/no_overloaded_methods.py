@@ -11,16 +11,14 @@ class A:
 
     # noinspection PyRedeclaration
     # pylint: disable=function-redefined
-    # noqa: F811
-    def __init__(self):  # type: ignore[no-redef]
+    def __init__(self):  # type: ignore[no-redef] # noqa: F811
         self.__private_var = 5
 
     def sayHello(self):
         print(self.__private_var, "hello")
 
     # noinspection PyRedeclaration
-    # noqa: F811
-    def sayHello(self, name):  # type: ignore[no-redef]
+    def sayHello(self, name):  # type: ignore[no-redef] # noqa: F811
         print(self.__private_var, "hello", name)
 
 

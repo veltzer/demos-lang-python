@@ -1,5 +1,5 @@
 import os
-start_time = 0;
+start_time = 0
 
 ########################################################
 # TIMER FUNCTIONS

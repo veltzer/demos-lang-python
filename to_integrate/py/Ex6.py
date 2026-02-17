@@ -1,6 +1,5 @@
 #! /usr/bin/python
 # Exercise 6, string formatting and regular expressions.
-import re
 
 infile = open('postcodes.txt')
 
@@ -10,10 +9,11 @@ invalid = 0
 
 for postcode in infile:
     # The variable 'postcode' contain the line read from the file.
-    
+
     # Ignore empty lines.
-    if postcode.isspace(): continue
-    
+    if postcode.isspace():
+        continue
+
     # TODO (a): Remove newlines, tabs and spaces.
     
     

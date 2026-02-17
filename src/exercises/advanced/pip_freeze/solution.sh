@@ -4,6 +4,7 @@ rm -rf venv venv.frozen
 # create a new virtual env
 virtualenv venv
 # enter the new virtual env
+# shellcheck source=/dev/null
 source venv/bin/activate
 # show that I dont have flask and requests
 pip show flask requests || true
@@ -16,6 +17,7 @@ pip freeze > requirements.freeze.txt
 # create a new virtual env
 virtualenv venv.frozen
 # enter the new virtual env
+# shellcheck source=/dev/null
 source venv.frozen/bin/activate
 # show that I dont have flask and requests
 pip show flask requests || true
