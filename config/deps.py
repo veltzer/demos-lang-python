@@ -2,6 +2,28 @@
 os level dependencies for this project
 """
 
+import platform
+
+
+desktop = platform.freedesktop_os_release()
+VERSION_ID = desktop["VERSION_ID"]
+ver_python = None
+if VERSION_ID == "22.04":
+    ver_python = "3.10"
+if VERSION_ID == "22.10":
+    ver_python = "3.10"
+if VERSION_ID == "23.04":
+    ver_python = "3.11"
+if VERSION_ID == "23.10":
+    ver_python = "3.11"
+if VERSION_ID == "24.04":
+    ver_python = "3.12"
+if VERSION_ID == "24.10":
+    ver_python = "3.12"
+if VERSION_ID == "25.10":
+    ver_python = "3.13"
+assert ver_python is not None
+
 packages = [
     # dbus
     "libdbus-glib-1-dev",
@@ -24,7 +46,6 @@ packages = [
     # python
     "python3-distutils-extra",
     "python3-pip",
-    "libpython3.13-dev",
     # swig
     "swig",
     "swig-doc",
@@ -38,6 +59,8 @@ packages = [
     # ruby stuff
     "ruby-bundler",
     "rbenv",
+    # c libs for python
+    f"libpython{ver_python}-dev",
 ]
 
 dev_packages = [
