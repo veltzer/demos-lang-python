@@ -36,4 +36,5 @@ exclude_dirs = [
 	"not_mine",
 	"tests",
 	"to_integrate",
+	"src/examples/long",
 ]
