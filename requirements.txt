@@ -434,7 +434,6 @@ pythondialog==3.5.3
 pytidylib==0.3.2
 pytimeparse==1.1.8
 pytube==15.0.0
--e git+ssh://git@github.com/veltzer/pytubekit.git@8f6716abf67abb3a20651588ecdfc0150613ae42#egg=pytubekit
 pytz==2025.2
 pyvardump==0.0.5
 PyYAML==6.0.2
