@@ -41,10 +41,12 @@ flask
 furl
 gcloud
 gitpython
+google-ai-generativelanguagepygooglehelper
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
 google-cloud-datastore
+google-generativeai
 html5lib
 humanize
 imageio
@@ -96,7 +98,6 @@ pydantic
 pydmt
 pygame
 pygments
-pygooglehelper
 pygraph
 pyinotify
 pylint
