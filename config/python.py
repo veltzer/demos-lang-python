@@ -172,8 +172,11 @@ install_requires: list[str] = [
     "openai-whisper",
     "anthropic",
     "openai",
-    "google-generativeai",
-    "google-ai-generativelanguage"
+    # this is the new google generative google module
+    "google-genai",
+    # deprecated (do not use)
+    # "google-generativeai",
+    # "google-ai-generativelanguage"
     # "protobuf",
     # my own stuff
     "pygooglehelper",
