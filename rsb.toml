@@ -9,9 +9,6 @@ exclude_dirs = [
 [processor.make]
 exclude_files = ["Makefile"]
 
-[processor.spellcheck]
-use_words_file = true
-
 [processor.cc_single_file]
 include_paths = [
 	"/usr/include/python3.13",
