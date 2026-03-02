@@ -1,4 +1,5 @@
 [processor.pyrefly]
+enabled = false
 exclude_dirs = [
 	"config",
 	"not_mine",
@@ -35,3 +36,32 @@ exclude_dirs = [
 	"to_integrate",
 	"src/examples/long",
 ]
+
+[processor.mypy]
+exclude_dirs = [
+	"config",
+	"not_mine",
+	"tests",
+	"to_integrate",
+]
+
+[processor.ascii_check]
+enabled = false
+
+[processor.rumdl]
+enabled = false
+
+[processor.markdownlint]
+enabled = false
+
+[processor.clang_tidy]
+enabled = false
+
+[processor.mdl]
+enabled = false
+
+[processor.marp]
+enabled = false
+
+[processor.a2x]
+enabled = false
