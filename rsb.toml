@@ -65,3 +65,9 @@ enabled = false
 
 [processor.a2x]
 enabled = false
+
+[processor.checkpatch]
+enabled = false
+
+[processor.cpplint]
+enabled = false
