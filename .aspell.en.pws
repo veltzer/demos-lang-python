@@ -1,4 +1,9 @@
-personal_ws-1.1 en 996
+personal_ws-1.1 en 1002 
+APIs
+ElementTree
+MacOSX
+PyTest
+UnitTest
 aarrr
 accessors
 ack
@@ -248,7 +253,6 @@ elasticsearch
 elb
 elbit
 elementtree
-ElementTree
 elif
 emp
 employability
@@ -308,6 +312,7 @@ gdb
 gdbserver
 geospatial
 gerrit
+getStatus
 getpid
 getstatus
 getters
@@ -810,6 +815,7 @@ ssl
 sso
 ssrf
 stackdriver
+startListening
 startlistening
 stateful
 statefulset
