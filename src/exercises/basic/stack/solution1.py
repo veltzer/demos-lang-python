@@ -146,10 +146,10 @@ class Timer:
         self.end: float
 
     def __enter__(self):
-        self.start: float = thread_time()
+        self.start: float = thread_time() # type: ignore
 
     def __exit__(self, _type, value, traceback):
-        self.end: float = thread_time()
+        self.end: float = thread_time() # type: ignore
         print(f"{self.description}: {self.end - self.start}")
 
 
