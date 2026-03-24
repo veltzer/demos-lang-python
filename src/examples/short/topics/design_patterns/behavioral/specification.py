@@ -40,8 +40,8 @@ class CompositeSpecification(Specification):
 
 class AndSpecification(CompositeSpecification):
     def __init__(self, one, other):
-        self._one: Specification = one
-        self._other: Specification = other
+        self._one: Specification = one # type: ignore
+        self._other: Specification = other # type: ignore
 
     def is_satisfied_by(self, candidate):  # pyrefly: ignore[bad-override]
         return bool(
@@ -52,8 +52,8 @@ class AndSpecification(CompositeSpecification):
 
 class OrSpecification(CompositeSpecification):
     def __init__(self, one, other):
-        self._one: Specification = one
-        self._other: Specification = other
+        self._one: Specification = one # type: ignore
+        self._other: Specification = other # type:ignore
 
     def is_satisfied_by(self, candidate):  # pyrefly: ignore[bad-override]
         return bool(
@@ -64,7 +64,7 @@ class OrSpecification(CompositeSpecification):
 
 class NotSpecification(CompositeSpecification):
     def __init__(self, wrapped):
-        self._wrapped: Specification = wrapped
+        self._wrapped: Specification = wrapped # type: ignore
 
     def is_satisfied_by(self, candidate):  # pyrefly: ignore[bad-override]
         return bool(not self._wrapped.is_satisfied_by(candidate))
