@@ -36,10 +36,10 @@ exclude_dirs = [
 	"src/examples/long",
 ]
 
-[processor.mypy]
-exclude_dirs = [
-	"config",
-	"not_mine",
-	"tests",
-	"to_integrate",
-]
+# [processor.mypy]
+# exclude_dirs = [
+# 	"config",
+# 	"not_mine",
+# 	"tests",
+# 	"to_integrate",
+# ]
