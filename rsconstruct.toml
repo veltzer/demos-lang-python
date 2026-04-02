@@ -1,11 +1,10 @@
-[processor.pyrefly]
-enabled = false
-exclude_dirs = [
-	"config",
-	"not_mine",
-	"tests",
-	"to_integrate",
-]
+# [processor.pyrefly]
+# exclude_dirs = [
+# 	"config",
+# 	"not_mine",
+# 	"tests",
+# 	"to_integrate",
+# ]
 
 [processor.make]
 exclude_files = ["Makefile"]
@@ -44,42 +43,3 @@ exclude_dirs = [
 	"tests",
 	"to_integrate",
 ]
-
-[processor.ascii_check]
-enabled = false
-
-[processor.rumdl]
-enabled = false
-
-[processor.markdownlint]
-enabled = false
-
-[processor.clang_tidy]
-enabled = false
-
-[processor.mdl]
-enabled = false
-
-[processor.marp]
-enabled = false
-
-[processor.a2x]
-enabled = false
-
-[processor.checkpatch]
-enabled = false
-
-[processor.cpplint]
-enabled = false
-
-[processor.slidev]
-enabled = false
-
-[processor.tidy]
-enabled = false
-
-[processor.htmlhint]
-enabled = false
-
-[processor.htmllint]
-enabled = false
