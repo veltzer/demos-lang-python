@@ -8,6 +8,7 @@
 
 [processor.make]
 exclude_files = ["Makefile"]
+scan_dirs = ["src"]
 
 [processor.cc_single_file]
 include_paths = [
@@ -27,7 +28,11 @@ args = [
 	"--inline-suppr",
 ]
 
+[processor.ruff]
+scan_dirs = ["src"]
+
 [processor.pylint]
+scan_dirs = ["src"]
 exclude_dirs = [
 	"config",
 	"not_mine",
