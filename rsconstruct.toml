@@ -10,12 +10,12 @@ exclude_dirs = [
 [processor.make]
 scan_dirs = ["src"]
 
-[processor.cc_single_file]
-scan_dirs = ["src"]
-include_paths = [
-	"/usr/include/python3.13",
-]
-exclude_dirs = ["/bad_lib/", "/crashing_python/", "/embedding_python_in_c/", "/extending_python_with_c/"]
+# [processor.cc_single_file]
+# scan_dirs = ["src"]
+# include_paths = [
+# 	"/usr/include/python3.13",
+# ]
+# exclude_dirs = ["/bad_lib/", "/crashing_python/", "/embedding_python_in_c/", "/extending_python_with_c/"]
 
 [analyzer.cpp]
 include_paths = [
