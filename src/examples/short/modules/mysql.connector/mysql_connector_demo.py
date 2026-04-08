@@ -44,11 +44,11 @@ db = mysql.connector.Connect(**get_config())
 cursor = db.cursor()
 cursor.execute("SHOW TABLES")
 rows = cursor.fetchall()
-for row in rows:
+for row in rows:  # pyrefly: ignore[not-iterable]
     print(row)
 # demo with place holders
 cursor.execute("SELECT * FROM user WHERE host=%(host)s", {"host": "localhost"})
 rows = cursor.fetchall()
-for row in rows:
+for row in rows:  # pyrefly: ignore[not-iterable]
     print(row)
 db.close()
