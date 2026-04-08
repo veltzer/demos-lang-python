@@ -33,7 +33,7 @@ ref_to_method = Book.increment_num
 ref_to_method()
 
 # this ref is also bound and so can be called
-ref_to_method_2: Callable[[type[Book]], Any] = Book.ref_full  # pyrefly: ignore[bad-assignment]
+ref_to_method_2: Callable[[type[Book]], Any] = Book.ref_full  # type: ignore[assignment]  # pyrefly: ignore[bad-assignment]
 ref_to_method_2()  # type: ignore
 
 # this ref is an unbloud method, and so cannot be called
