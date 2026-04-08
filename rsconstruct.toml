@@ -8,7 +8,6 @@ exclude_dirs = [
 ]
 
 [processor.make]
-exclude_files = ["Makefile"]
 scan_dirs = ["src"]
 
 [processor.cc_single_file]
