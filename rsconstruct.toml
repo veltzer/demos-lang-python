@@ -1,16 +1,18 @@
-# [processor.pyrefly]
-# exclude_dirs = [
-# 	"config",
-# 	"not_mine",
-# 	"tests",
-# 	"to_integrate",
-# ]
+[processor.pyrefly]
+scan_dirs = ["src"]
+exclude_dirs = [
+	"config",
+	"not_mine",
+	"tests",
+	"to_integrate",
+]
 
 [processor.make]
 exclude_files = ["Makefile"]
 scan_dirs = ["src"]
 
 [processor.cc_single_file]
+scan_dirs = ["src"]
 include_paths = [
 	"/usr/include/python3.13",
 ]
@@ -41,10 +43,11 @@ exclude_dirs = [
 	"src/examples/long",
 ]
 
-# [processor.mypy]
-# exclude_dirs = [
-# 	"config",
-# 	"not_mine",
-# 	"tests",
-# 	"to_integrate",
-# ]
+[processor.mypy]
+scan_dirs = ["src"]
+exclude_dirs = [
+	"config",
+	"not_mine",
+	"tests",
+	"to_integrate",
+]
