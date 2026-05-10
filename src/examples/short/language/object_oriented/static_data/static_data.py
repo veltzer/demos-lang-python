@@ -47,8 +47,8 @@ print(g())
 
 
 def give_me_a_unique_value2():
-    give_me_a_unique_value2.counter += 1
-    return give_me_a_unique_value2.counter
+    give_me_a_unique_value2.counter += 1  # pyrefly: ignore[missing-attribute]
+    return give_me_a_unique_value2.counter  # pyrefly: ignore[missing-attribute]
 
 
 give_me_a_unique_value2.counter = 0  # type: ignore

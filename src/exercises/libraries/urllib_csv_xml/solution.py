@@ -21,7 +21,7 @@ def parse_feed(feed_string):
 
 
 def write_csv(filename, parsed_feed_string):
-    with open(filename, "wb") as f:
+    with open(filename, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerows(parsed_feed_string)
 

@@ -59,7 +59,15 @@ ignore-patterns=^\.#
 # (useful for modules/projects where namespaces are manipulated during runtime
 # and thus existing member attributes cannot be deduced by static analysis). It
 # supports qualified module names, as well as Unix pattern matching.
-ignored-modules=cv2,google.generativeai
+ignored-modules=cv2,google.generativeai,
+	anthropic,azure,bitmath,browser_cookie3,cmd2,colored,dialog,django,docker,
+	exif,exifread,exiftool,fastapi,fastparquet,fire,flask_restful,fluidsynth,
+	furl,google,humanize,imageio,imdb,inject,jenkins,jq,jsonpickle,kubernetes,
+	lmdb,magic,mingus,mpmath,msrest,mysql,openai,paramiko,passpy,piexif,plotly,
+	pptx,progressbar,prompt_toolkit,psycopg2,pydantic,pygame,pyinotify,pymysql,
+	PyQt5,PyRSS2Gen,pyvardump,reportlab,rest_framework,ruamel,scrapy,selenium,
+	seleniumwire,simpleaudio,sklearn,sortedcontainers,sqlalchemy,svgwrite,sympy,
+	texttable,tornado,tsv,twisted,uvicorn,weasyprint,webdriver_manager,whisper
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
