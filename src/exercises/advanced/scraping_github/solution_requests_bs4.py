@@ -18,4 +18,4 @@ my_list = doc.find_all(name="h1", attrs={"class": "h0-mktg"})
 assert len(my_list) == 1, "found more than 1 element, please narrow your search"
 my_element = my_list[0]
 # print(dir(my_element))
-print(my_element.contents[0].strip())
+print(str(my_element.contents[0]).strip())

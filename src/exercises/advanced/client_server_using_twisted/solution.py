@@ -69,7 +69,7 @@ class MyProtocol(LineReceiver):
         print("got line ", line)
         self.curFunc(line)
 
-    def connectionLost(self, reason=connectionDone):
+    def connectionLost(self, reason=connectionDone):  # pylint: disable=unused-argument
         print("connection was lost")
         if self.loggedIn:
             self.factory.num_users -= 1  # pyrefly: ignore[missing-attribute]
