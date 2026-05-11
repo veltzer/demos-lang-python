@@ -1,3 +1,5 @@
+""" project definitions """
+
 name = "demos-python"
 description_short = "Demos for the Python programming language"
 description_long = """This project explores the python programming language.
