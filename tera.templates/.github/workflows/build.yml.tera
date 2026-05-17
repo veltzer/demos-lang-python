@@ -8,10 +8,10 @@ jobs:
     strategy:
       matrix:
         include:
-{% for pair in gh.workflows_platforms -%}
+{%- for pair in gh.workflows_platforms %}
           - os: "{{ pair[0] }}"
             python-version: "{{ pair[1] }}"
-{% endfor -%}
+{%- endfor %}
     steps:
     - name: checkout
       uses: actions/checkout@v4
