@@ -33,3 +33,9 @@ src_dirs = ["src", "config"]
 
 [processor.mypy]
 src_dirs = ["src", "config"]
+
+[processor.mdl]
+src_dirs = ["src"]
+
+[processor.zspell]
+src_dirs = ["src"]
