@@ -7,9 +7,9 @@ jobs:
     strategy:
       matrix:
         include:
-- os: "ubuntu-24.04"
+          - os: "ubuntu-24.04"
             python-version: "3.12"
-steps:
+    steps:
     - name: checkout
       uses: actions/checkout@v4
     - name: python ${{ matrix.python-version }}
