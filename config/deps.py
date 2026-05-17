@@ -54,11 +54,6 @@ packages = [
     "libsystemd0",
     # TODO: cannot install this at this moment because of a problem in ubuntu repos
     # "libsystemd-dev",
-    # for checking spelling
-    "aspell",
-    # ruby stuff
-    "ruby-bundler",
-    "rbenv",
     # c libs for python
     f"libpython{ver_python}-dev",
 ]

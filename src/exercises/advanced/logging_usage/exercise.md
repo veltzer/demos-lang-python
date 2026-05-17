@@ -9,8 +9,8 @@ The first logger object:
 
 The second logger object:
 * will only send all of his messages to the system logger.
-    (Eventlog in windows, syslog in Linux/MacOSX).
-    So it shouldn't log to the screen
+  (Eventlog in windows, syslog in Linux/MacOSX).
+  So it shouldn't log to the screen
 * will have severity "DEBUG"
 
 Demonstrate that your loggers work as expected.

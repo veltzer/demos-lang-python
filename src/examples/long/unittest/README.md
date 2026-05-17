@@ -8,4 +8,4 @@ minimal writing of code at the individual module level.
 There is also a bash script here to run all of your tests for you...
 
 See more documentation here:
-[link](http://docs.python.org/library/unittest.html)
+[Python unittest library documentation](http://docs.python.org/library/unittest.html)

@@ -8,7 +8,7 @@
     import os.path
     import glob
     import yaml
-%>## ${pydmt.helpers.project.get_name()}
+%># ${pydmt.helpers.project.get_name()}
 
 version: ${pydmt.helpers.misc.get_version_str()}
 

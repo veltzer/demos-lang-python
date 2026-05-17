@@ -6,4 +6,4 @@ There are three ways shown here:
 * `pkgutil` which is in the standard library.
 
 References:
-* [link](http://stackoverflow.com/questions/6028000/python-how-to-read-a-static-file-from-inside-a-package)
+* [Stack Overflow: Python — how to read a static file from inside a package](http://stackoverflow.com/questions/6028000/python-how-to-read-a-static-file-from-inside-a-package)

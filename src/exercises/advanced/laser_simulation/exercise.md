@@ -1,6 +1,6 @@
 # Laser Simulation
 
-Credit: this exercise is shamelessly stolen from [here](http://stackoverflow.com/questions/1480023/code-golf-lasers)
+Credit: this exercise is shamelessly stolen from [Stack Overflow: Code Golf — Lasers](http://stackoverflow.com/questions/1480023/code-golf-lasers)
 
 You are given a file such as `lasers_hit.txt`:
 

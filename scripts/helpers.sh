@@ -77,11 +77,6 @@ cmd_remove_stamp() {
 	find . -type f -and -name "*.stamp" -delete
 }
 
-cmd_spell_many() {
-	mapfile -t md_src < <(find src -type f -and -name "*.md")
-	aspell_many.sh "${md_src[@]}"
-}
-
 usage() {
 	cat <<EOF
 Usage: $0 <command>
@@ -101,7 +96,6 @@ Available commands:
   clean              Remove build artifacts (delegates to rsconstruct clean)
   clean_hard         git clean -qffxd
   remove_stamp       Delete all *.stamp files in the tree
-  spell_many         Run aspell_many.sh over src/**.md
 EOF
 }
 
