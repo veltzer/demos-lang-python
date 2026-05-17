@@ -52,7 +52,7 @@ cmd_fix_mode() {
 }
 
 cmd_todo() {
-	git grep @TODO -- ':!/Makefile' ':!scripts/helpers.sh'
+	git grep @TODO -- ':!scripts/helpers.sh'
 }
 
 cmd_stats() {

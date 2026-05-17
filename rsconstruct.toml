@@ -39,3 +39,16 @@ src_dirs = ["src"]
 
 [processor.zspell]
 src_dirs = ["src"]
+
+[processor.shellcheck]
+src_dirs = ["scripts", "src", "misc"]
+
+[processor.tera]
+dep_inputs = [
+    "config/project.py",
+    "config/personal.py",
+    "config/version.py",
+    "config/github.py",
+    "config/python.py",
+    "config/shared.py",
+]
