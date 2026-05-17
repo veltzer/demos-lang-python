@@ -1,4 +1,4 @@
-# Pyrefly type-checker configuration.
+[tool.pyrefly]
 # Third-party packages that are not installed in the build environment
 # (or ship without type information) are treated as Any so pyrefly does not
 # emit missing-import / missing-attribute errors for them.
