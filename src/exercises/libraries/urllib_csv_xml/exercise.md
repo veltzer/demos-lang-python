@@ -1,6 +1,6 @@
 # Urllib CSV and XML
 
-Fetch the feed of fresh Python packages from [here](http://pypi.python.org/pypi?:action=rss)
+Fetch the feed of fresh Python packages from [the PyPI fresh-packages RSS feed](http://pypi.python.org/pypi?:action=rss)
 
 Hint: use urllib.urlopen()
 

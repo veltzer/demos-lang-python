@@ -1,4 +1,4 @@
-## demos-python
+# demos-python
 
 version: 0.0.3
 
@@ -42,13 +42,13 @@ virtualenv my_venv
 
 * Enter your virtual env:
 
-```
+```text
 source my_venv/bin/activate
 ```
 
 * Install the requirements:
 
-```
+```text
 pip install -r requirements.txt
 ```
 

@@ -22,7 +22,7 @@ both a and b have a pointer to the SAME X!!!!
 That is a "shared closure".
 
 And now for the exercise:
-create a `stack`  like data structure without using object oriented programming and
+create a `stack` like data structure without using object oriented programming and
 by using only shared closures.
 
 a stack is just a list with two operations: push and pop

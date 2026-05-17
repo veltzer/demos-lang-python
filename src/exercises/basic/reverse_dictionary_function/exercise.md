@@ -1,6 +1,6 @@
 # Reverse Dictionary Function
 
-Write a function that receives a dictionary and returns a new dictionary with 'switched sides'. 
+Write a function that receives a dictionary and returns a new dictionary with 'switched sides'.
 
 Write a doc string that describes your function.
 

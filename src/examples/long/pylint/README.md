@@ -21,4 +21,4 @@ sudo -H pip install pylint
 ```
 
 URL for the project:
-[link](http://www.pylint.org/)
+[Pylint homepage](http://www.pylint.org/)

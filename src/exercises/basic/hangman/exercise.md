@@ -19,7 +19,7 @@ No such letter
 The original game limits the number of mistakes you can make - ignore it for now.
 
 For simplicity, the module should implement just a single game, initialized with a constant
-word.  It should use global variables to store state between guess() calls.
+word. It should use global variables to store state between guess() calls.
 Yes, this is bad design - we'll fix all this when we learn classes.
 
 Hint: for simpler design, have a separate function that prints the partially-revealed "?a?a?a"

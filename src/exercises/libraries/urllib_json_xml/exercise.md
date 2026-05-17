@@ -14,3 +14,4 @@ Hint
 * special-case the first element, loop over the rest.
 
 * Don't worry about the ugly "Kanton [junk]". That's a bug of geonames.org - they should proper use Unicode in their JSON.
+```
