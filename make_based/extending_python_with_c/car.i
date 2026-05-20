@@ -12,5 +12,5 @@ class Car {
     void setNumber(int number);
     int getNumber(void);
     void printSelf(void);
-    int add(int a,int b);
+    //int add(int a,int b);
 };
