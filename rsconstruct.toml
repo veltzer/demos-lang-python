@@ -5,6 +5,7 @@
 system = [
 	"pkg-config",
 	"libdbus-1-dev",     # dbus-python
+	"libdbus-glib-1-dev", # dbus-python (dbus-gmain)
 	"libglib2.0-dev",    # dbus-python (gobject)
 	"libpq-dev",         # psycopg2
 	"libasound2-dev",    # simpleaudio
