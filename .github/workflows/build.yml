@@ -30,6 +30,11 @@ jobs:
     - name: install-tools
       run: rsconstruct tools install --yes
     - name: install-python-deps
+      # setup-python exports PKG_CONFIG_PATH pointing only at the Python dir,
+      # which hides the system .pc files (glib-2.0, dbus-1) that source builds
+      # like dbus-python need. Restore the system pkg-config search path.
+      env:
+        PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
       run: python -m pip install -r requirements.txt
     - name: build
       run: rsconstruct build
