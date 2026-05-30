@@ -9,6 +9,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    env:
+      # setup-python points PKG_CONFIG_PATH only at the Python dir, hiding the
+      # system .pc files (glib-2.0, dbus-1) that source builds like dbus-python
+      # need. Set the system search path job-wide so every build subprocess
+      # (incl. pip's PEP517 meson) inherits it.
+      PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
     steps:
     - name: checkout
       uses: actions/checkout@v4
