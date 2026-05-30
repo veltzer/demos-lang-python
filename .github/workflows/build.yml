@@ -19,16 +19,18 @@ jobs:
         cache: "pip"
     - name: bootstrap-pip
       run: python -m pip install --upgrade pip
-    - name: install-deps
-      run: python -m pip install -r requirements.txt
     - name: install-rsconstruct
       run: |
         curl -fsSL "https://github.com/veltzer/rsconstruct/releases/latest/download/rsconstruct-linux-x86_64" \
           -o /usr/local/bin/rsconstruct
         chmod +x /usr/local/bin/rsconstruct
         rsconstruct version
+    - name: install-system-deps
+      run: rsconstruct tools install-deps --yes
     - name: install-tools
       run: rsconstruct tools install --yes
+    - name: install-python-deps
+      run: python -m pip install -r requirements.txt
     - name: build
       run: rsconstruct build
     - name: status

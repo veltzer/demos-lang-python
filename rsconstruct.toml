@@ -1,3 +1,20 @@
+# System (apt) dev libraries required to build the source-only python
+# packages in requirements.txt on a clean CI runner. Installed by
+# `rsconstruct tools install-deps --yes`.
+[dependencies]
+system = [
+	"pkg-config",
+	"libdbus-1-dev",     # dbus-python
+	"libglib2.0-dev",    # dbus-python (gobject)
+	"libpq-dev",         # psycopg2
+	"libasound2-dev",    # simpleaudio
+	"libmysqlclient-dev", # mysql-connector / mysqlclient
+	"libffi-dev",        # cffi
+	"libxml2-dev",       # lxml / pytidylib helpers
+	"libxslt1-dev",      # lxml
+	"libtidy-dev",       # pytidylib
+]
+
 [processor.pyrefly]
 src_dirs = ["src"]
 # src_dirs = ["src", "config"]
