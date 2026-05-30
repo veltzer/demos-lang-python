@@ -20,6 +20,10 @@ system = [
 	"qttools5-dev",      # pyqt5
 	"sip-tools",         # pyqt5 (sip)
 ]
+pip = [
+	"-r",
+	"requirements.txt", # demo libs, so pyrefly resolves imports
+]
 
 [processor.pyrefly]
 src_dirs = ["src"]
