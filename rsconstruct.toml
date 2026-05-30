@@ -7,6 +7,7 @@ system = [
 	"libdbus-1-dev",     # dbus-python
 	"libdbus-glib-1-dev", # dbus-python (dbus-gmain)
 	"libglib2.0-dev",    # dbus-python (gobject)
+	"libgirepository1.0-dev", # pygobject / dbus-python introspection
 	"libpq-dev",         # psycopg2
 	"libasound2-dev",    # simpleaudio
 	"libmysqlclient-dev", # mysql-connector / mysqlclient
