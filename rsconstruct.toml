@@ -13,6 +13,10 @@ system = [
 	"libxml2-dev",       # lxml / pytidylib helpers
 	"libxslt1-dev",      # lxml
 	"libtidy-dev",       # pytidylib
+	"qtbase5-dev",       # pyqt5
+	"qtbase5-dev-tools", # pyqt5 (qmake)
+	"qttools5-dev",      # pyqt5
+	"sip-tools",         # pyqt5 (sip)
 ]
 
 [processor.pyrefly]
