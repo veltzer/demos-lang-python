@@ -1,7 +1,7 @@
 """
 Issue one prompt to anthropic
 
-The module you need to install to make this work is `anthropic`
+The modules you need to install to make this work are `passpy` and `anthropic`
 """
 
 import passpy

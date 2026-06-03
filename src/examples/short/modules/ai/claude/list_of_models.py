@@ -1,5 +1,7 @@
 """
 List all anthropic model names
+
+The modules you need to install to make this work are `passpy` and `anthropic`
 """
 
 import passpy

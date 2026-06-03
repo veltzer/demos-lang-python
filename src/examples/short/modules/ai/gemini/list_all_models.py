@@ -1,8 +1,8 @@
 """
 List all models behind gemini
 
-The `google-generativeai` module is deprecated.
-Install `google-genai` so that this example runs.
+The modules you need to install to make this work are `passpy` and `google-genai`.
+Note that the `google-generativeai` module is deprecated, so install `google-genai`.
 """
 
 import passpy

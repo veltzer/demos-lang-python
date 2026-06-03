@@ -1,7 +1,7 @@
 """
 Submit a simple query to openai
 
-The module you need to install to make this work is `openai`
+The modules you need to install to make this work are `passpy` and `openai`
 """
 
 import passpy

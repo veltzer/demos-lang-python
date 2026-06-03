@@ -1,5 +1,7 @@
 """
 List all openai models
+
+The modules you need to install to make this work are `passpy` and `openai`
 """
 
 
