@@ -16,7 +16,9 @@ api_key = api_key.rstrip()
 client = genai.Client(api_key=api_key)
 question = "What are the benefits of renewable energy?"
 response = client.models.generate_content(
-    model="gemini-2.5-flash",
+    # model="gemini-2.5-flash",
+    # model="gemini-2.5-pro",
+    model="gemini-2.0-flash",
     contents=question,
 )
 print(f"Question: {question}")
