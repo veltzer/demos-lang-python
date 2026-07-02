@@ -1,7 +1,7 @@
 """
 An example showing how, to some extent closure can be seen as a replacement
 for object oriented programming. The "Person" function below could
-be seen as a sort of a constructor
+be seen as a sort of constructor.
 """
 
 
