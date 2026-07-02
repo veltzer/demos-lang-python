@@ -6,11 +6,9 @@ This is a basic closure example.
 def make_counter(x):
     val = [ x ]
     def tick():
-        l = val[0]
-        l = l + 1
-        val[0] = l
-        return l
-    return tick 
+        val[0] = val[0] +1
+        return val[0]
+    return tick
 
 
 counter = make_counter(5)

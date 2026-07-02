@@ -3,11 +3,11 @@ This is a basic closure example.
 """
 
 
-def make_counter(object):
+def make_counter(o):
     def tick():
-        object["data"] = object["data"] + 1
-        return object["data"]
-    return tick 
+        o["data"] = o["data"] + 1
+        return o["data"]
+    return tick
 
 
 counter = make_counter({"data": 5})
