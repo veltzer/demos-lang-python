@@ -1,5 +1,5 @@
 """
-lambda and apply again...
+This solution uses lambda and apply (advanced stuff)
 """
 
 
@@ -19,6 +19,16 @@ def reverse_hash(my_dict):
     return target
 
 
+def reverse_hash_map(my_dict):
+    """ reverse a hash table using map
+    note that map is lazy in python 3, so we must consume the
+    resulting iterator (e.g. with list) for the side effects to happen """
+    target: dict[str, str] = {}
+    # pylint: disable=unnecessary-dunder-call
+    list(map(lambda k: target.__setitem__(my_dict[k], k), my_dict))
+    return target
+
+
 def main():
     """ the main function """
     orig = {
@@ -28,6 +38,7 @@ def main():
         "Egypt": "Cairo",
     }
     print(reverse_hash(orig))
+    print(reverse_hash_map(orig))
 
 
 main()
