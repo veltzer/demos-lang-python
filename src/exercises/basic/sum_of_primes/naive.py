@@ -15,7 +15,7 @@ def is_prime(x):
 
 
 my_sum = 0
-for i in range(1000000):
+for i in range(2,1000000):
     if is_prime(i):
         my_sum += i
 print(my_sum)
