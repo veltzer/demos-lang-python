@@ -23,6 +23,8 @@ with open("people.csv") as stream:
     for line in stream:
         line = line.rstrip()  # remove the newline at the end
         values = line.split(",")
+        # socialid, name, surname = line.split(",")
+        # p = Person(socialid, name, surname)
         p = Person(*values)
         print(p)
         id_to_person[p.socialid] = p
