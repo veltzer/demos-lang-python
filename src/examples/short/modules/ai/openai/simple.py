@@ -13,7 +13,7 @@ assert api_key is not None
 api_key = api_key.rstrip()
 
 client = openai.OpenAI(api_key=api_key)
-models = client.models.list()
+# models = client.models.list()
 response = client.chat.completions.create(
     # model="gpt-5",
     model="gpt-4.1",
