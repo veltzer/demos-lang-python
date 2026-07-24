@@ -6,7 +6,7 @@ We are looking for the following html fragment:
 """
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 
 url = "http://github.com"
@@ -17,5 +17,6 @@ doc = BeautifulSoup(r.text, "html.parser")
 my_list = doc.find_all(name="h1", attrs={"class": "h0-mktg"})
 assert len(my_list) == 1, "found more than 1 element, please narrow your search"
 my_element = my_list[0]
+assert isinstance(my_element, Tag)
 # print(dir(my_element))
 print(str(my_element.contents[0]).strip())
