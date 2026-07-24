@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 
+"""
+A classic oo example
+"""
+
 class Book:
     def __init__(self, name, author, year) -> None:
         self.name = name
         self.author = author
         self.year = year
-        self.__publisher = "Simon and Shuschter"
     def print_myself(self):
         print(f"name is {self.name}")
         print(f"author is {self.author}")
