@@ -1,41 +1,25 @@
 # THIS IS AN AUTO-GENERATED FILE. DO NOT EDIT!
 name: build
 on: [push, pull_request, workflow_dispatch]
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   build:
-    runs-on: ubuntu-24.04
-    env:
-      # setup-python points PKG_CONFIG_PATH only at the Python dir, hiding the
-      # system .pc files (glib-2.0, dbus-1) that source builds like dbus-python
-      # need. Set the system search path job-wide so every build subprocess
-      # (incl. pip's PEP517 meson) inherits it.
-      PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: "ubuntu-24.04"
+            python-version: "3.12"
     steps:
     - name: checkout
       uses: actions/checkout@v4
-    - name: python
+    - name: python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
-        python-version: "3.12"
+        python-version: ${{ matrix.python-version }}
         cache: "pip"
     - name: bootstrap-pip
       run: python -m pip install --upgrade pip
-    - name: install-rsconstruct
-      run: |
-        curl -fsSL "https://github.com/veltzer/rsconstruct/releases/latest/download/rsconstruct-linux-x86_64" \
-          -o /usr/local/bin/rsconstruct
-        chmod +x /usr/local/bin/rsconstruct
-        rsconstruct version
-    - name: install-deps
-      run: rsconstruct tools install-deps --yes
-    - name: install-tools
-      run: rsconstruct tools install --yes
-    - name: build
-      run: rsconstruct build
-    - name: status
-      run: rsconstruct status
+    - name: bootstrap
+      run: python -m pip install pydmt
+    - name: pydmt
+      run: pydmt build
