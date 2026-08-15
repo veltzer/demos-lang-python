@@ -16,7 +16,7 @@ class Book:
     def setPrice(self, newprice):
         self.__price = newprice
 
-    def getNumBooks(self=None):
+    def getNumBooks(self=None):  # pyrefly: ignore[bad-function-definition]
         return Book.num
 
 
