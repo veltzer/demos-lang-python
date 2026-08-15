@@ -82,7 +82,7 @@ def partial_pattern_wrong():
     handlers = []
     for i in range(10):
         # pylint: disable=cell-var-from-loop,unnecessary-lambda-assignment
-        f = lambda: i  # noqa: B023
+        f = lambda: i  # noqa: B023,E731
         good_f = partial(f)
         handlers.append(good_f)
     print([h() for h in handlers])
@@ -93,7 +93,7 @@ def partial_pattern():
     handlers = []
     for i in range(10):
         # pylint: disable=unnecessary-lambda-assignment
-        f = lambda i: i
+        f = lambda i: i  # noqa: E731
         good_f = partial(f, i)
         handlers.append(good_f)
     print([h() for h in handlers])
