@@ -3,8 +3,9 @@ Demos of how to create a context manager that
 that hides prints
 """
 
-import sys
 import os
+import sys
+
 
 class SuppressPrint:
     def __init__(self):

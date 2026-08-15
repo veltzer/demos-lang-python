@@ -53,7 +53,7 @@ for i in range(10):
 visited_keys = set()
 try:
     # pylint: disable=consider-iterating-dictionary
-    for x in d.keys():
+    for x in d.keys():  # noqa: SIM118
         if x == 3:
             del d[5]
         visited_keys.add(x)
@@ -68,7 +68,7 @@ for i in range(10):
 # what if we pass over d.keys() and make sure to keep the same amount of elements?
 visited_keys = set()
 # pylint: disable=consider-iterating-dictionary
-for x in d.keys():
+for x in d.keys():  # noqa: SIM118
     if x == 3:
         del d[5]
         d[10] = 10

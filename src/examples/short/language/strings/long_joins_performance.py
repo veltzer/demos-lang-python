@@ -5,7 +5,6 @@ the right way to go.
 
 import timeit
 
-
 function_names = {}
 
 

@@ -10,6 +10,7 @@ References:
 - http://boto.cloudhackers.com/en/latest/ref/
 """
 import itertools
+
 import boto3
 
 do_print = True

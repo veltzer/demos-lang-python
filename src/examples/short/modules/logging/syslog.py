@@ -7,8 +7,8 @@ the output...
 and who the message came from
 """
 
-import time
 import logging.handlers
+import time
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)

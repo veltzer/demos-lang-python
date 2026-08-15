@@ -25,7 +25,7 @@ def reverse_hash_map(my_dict):
     resulting iterator (e.g. with list) for the side effects to happen """
     target: dict[str, str] = {}
     # pylint: disable=unnecessary-dunder-call
-    list(map(lambda k: target.__setitem__(my_dict[k], k), my_dict))
+    list(map(lambda k: target.__setitem__(my_dict[k], k), my_dict))  # noqa: C417
     return target
 
 

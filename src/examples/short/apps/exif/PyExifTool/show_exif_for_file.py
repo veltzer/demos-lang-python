@@ -6,7 +6,6 @@ import sys
 
 import exiftool
 
-
 if len(sys.argv) != 2:
     print(f"{sys.argv[0]}: usage: {sys.argv[0]} [FILENAME]")
     sys.exit(1)

@@ -5,5 +5,5 @@ of code you execute with the "exec" function.
 
 d = {}  # type: ignore
 # pylint: disable=exec-used
-exec("ret=7", {}, d)
+exec("ret=7", {}, d)  # noqa: S102
 print(d["ret"])

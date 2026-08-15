@@ -48,7 +48,9 @@ class Card2(metaclass=FlyweightMeta):
 
 
 if __name__ == "__main__":
-    instances_pool = getattr(Card2, "pool")
+    # getattr, not Card2.pool: `pool` is injected by FlyweightMeta, so a
+    # static attribute access does not type-check.
+    instances_pool = getattr(Card2, "pool")  # noqa: B009
     cm1 = Card2("10", "h", a=1)
     cm2 = Card2("10", "h", a=1)
     cm3 = Card2("10", "h", a=2)

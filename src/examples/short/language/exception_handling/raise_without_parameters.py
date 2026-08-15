@@ -17,7 +17,7 @@ def raise_without_exception():
     """
     try:
         # pylint: disable=misplaced-bare-raise
-        raise
+        raise  # noqa: PLE0704
     except RuntimeError as e:
         print(f"All is ok. you cannot raise without a prior active exception [{e}]")
 
@@ -36,7 +36,7 @@ def main():
         try:
             raise ValueError("hello")
         # pylint: disable=try-except-raise
-        except ValueError:
+        except ValueError:  # noqa: TRY203
             raise
     except ValueError as e:
         tb = e.__traceback__
@@ -46,9 +46,9 @@ def main():
     try:
         try:
             raise ValueError("hello")
-        except ValueError as e:
+        except ValueError as e:  # noqa: TRY203
             # pylint: disable=try-except-raise
-            raise e
+            raise e  # noqa: TRY201
     except ValueError as e:
         tb = e.__traceback__
         assert traceback_len(tb) == 1

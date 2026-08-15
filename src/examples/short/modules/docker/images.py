@@ -1,8 +1,9 @@
 """ images.py """
 
-import sys
 import argparse
+import sys
 from datetime import datetime
+
 import docker
 import humanize
 
@@ -14,7 +15,7 @@ def format_size(size_bytes):
 
 def format_created(timestamp):
     """Convert unix timestamp to relative time"""
-    dt = datetime.fromtimestamp(timestamp)
+    dt = datetime.fromtimestamp(timestamp)  # noqa: DTZ006
     return humanize.naturaltime(dt)
 
 

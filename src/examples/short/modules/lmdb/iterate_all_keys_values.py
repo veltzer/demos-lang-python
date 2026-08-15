@@ -6,6 +6,7 @@ References:
 """
 
 import os
+
 import lmdb
 
 # first lets create the mdb file
@@ -24,11 +25,10 @@ with env.begin(write=True) as txn:
 env.close()
 
 env = lmdb.open(filename, subdir=False, map_size=1000000000000)
-with env.begin() as txn:
-    with txn.cursor() as curs:
-        for key, value in curs:
-            print(f"key is: {key.decode(encoding)}")
-            print(f"value is: {value.decode(encoding)}")
+with env.begin() as txn, txn.cursor() as curs:
+    for key, value in curs:
+        print(f"key is: {key.decode(encoding)}")
+        print(f"value is: {value.decode(encoding)}")
 
 # finally lets remove the file
 os.unlink(filename)

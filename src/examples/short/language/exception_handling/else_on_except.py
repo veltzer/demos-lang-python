@@ -15,7 +15,6 @@ technical notes:
 
 import random
 
-
 try:
     if random.random() < 0.5:
         print("in raise")

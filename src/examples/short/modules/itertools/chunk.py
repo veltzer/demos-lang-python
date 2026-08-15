@@ -19,9 +19,9 @@ it seems that the second catches more than the second and that it
 what we use here.
 """
 
+import inspect
 import itertools
 import timeit
-import inspect
 
 # lets compare the performance
 range_limit = 1000000

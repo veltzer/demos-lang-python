@@ -5,10 +5,11 @@ We can see that the size of the first array is about 4Mb
 which makes sense if each int is 4 bytes.
 """
 
-from itertools import chain
-from collections import deque
 import reprlib
 import sys
+from collections import deque
+from itertools import chain
+
 import psutil
 
 
@@ -69,7 +70,7 @@ def total_size(o, handlers=None, verbose=False):
 # my_list = list(range(1000000))
 
 
-class Person():
+class Person:
 
     def __init__(self, name, surname, age):
         self.name = name

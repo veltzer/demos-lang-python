@@ -5,6 +5,7 @@ using the "piexif" python module.
 
 import os.path
 import sys
+
 import piexif
 
 if len(sys.argv) != 3:

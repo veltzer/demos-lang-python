@@ -63,8 +63,7 @@ def edit_a_name(mypb):
 
 def save(mypb):
     with open("data.txt", "w") as f:
-        for name in mypb:
-            f.write(name + "," + mypb[name] + "\n")
+        f.writelines(name + "," + mypb[name] + "\n" for name in mypb)
 
 
 def print_phonebook(mypb):

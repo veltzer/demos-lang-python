@@ -1,7 +1,7 @@
 """ play_notes.py """
 
-import simpleaudio
 import numpy as np
+import simpleaudio
 
 # Define the note frequency
 note_freq = 440.0  # A4 note

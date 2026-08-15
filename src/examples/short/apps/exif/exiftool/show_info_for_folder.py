@@ -5,10 +5,9 @@ It only scans ".mkv" files in that folder.
 
 import os
 import os.path
-import sys
-import subprocess
-
 import statistics
+import subprocess
+import sys
 
 
 def get_suffix(filename:str) -> str:

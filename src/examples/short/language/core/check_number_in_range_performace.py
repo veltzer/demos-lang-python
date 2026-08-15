@@ -1,13 +1,13 @@
 """ check_number_in_range_performace.py """
 
-import timeit
 import random
+import timeit
 
 check_from = 37
 check_to = 51
 num_checks = 1000000
 
-random_list = [random.randrange(0, 100) for _i in range(0, num_checks)]
+random_list = [random.randrange(0, 100) for _i in range(num_checks)]
 
 
 def func_naive() -> int:

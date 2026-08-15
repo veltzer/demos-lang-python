@@ -7,9 +7,9 @@ http://stackoverflow.com/questions/23616803/smtplib-smtp-starttls-fails-with-tls
 
 import email.mime.text
 import smtplib
+
 import googleapiclient.discovery
 import pygooglehelper
-
 
 SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 

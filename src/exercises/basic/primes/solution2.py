@@ -2,7 +2,7 @@
 Solution2
 """
 
-nums: list[int | None] = list(range(0, 100))
+nums: list[int | None] = list(range(100))
 for d in range(2, 11):
     if nums[d] is not None:
         for x in range(d + d, 100, d):

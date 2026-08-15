@@ -13,6 +13,6 @@ try:
 # back...
 except ValueError as e:
     print("in except", e)
-    raise e
+    raise e  # noqa: TRY201
 finally:
     print("finally is here")

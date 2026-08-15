@@ -3,12 +3,12 @@ This is an image viewer application
 """
 
 
-import sys
 import signal
-# pylint: disable=no-name-in-module
-from PyQt5.QtGui import QPixmap, QPainter
-from PyQt5.QtWidgets import QWidget, QApplication, QTableWidget
+import sys
 
+# pylint: disable=no-name-in-module
+from PyQt5.QtGui import QPainter, QPixmap
+from PyQt5.QtWidgets import QApplication, QTableWidget, QWidget
 
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 

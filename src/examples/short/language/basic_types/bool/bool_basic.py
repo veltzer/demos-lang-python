@@ -3,7 +3,7 @@ A basic demo of booleans
 """
 
 # create a boolean
-b = bool()
+b = bool()  # noqa: UP018 - demonstrating the bool() constructor
 assert b is False
 # pylint: disable=unidiomatic-typecheck
 assert type(b) is bool

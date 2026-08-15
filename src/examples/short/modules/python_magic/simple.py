@@ -3,6 +3,7 @@ A simple exapmle of how to use python-magic to identify file types by content
 """
 
 import glob
+
 import magic
 
 magic_obj = magic.Magic(mime=True)

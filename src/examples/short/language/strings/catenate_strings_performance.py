@@ -29,7 +29,7 @@ function_names[concat1] = "+ operator"
 
 def concat2():
     # pylint: disable=consider-using-f-string
-    z = "{}{}".format(x, y)
+    z = f"{x}{y}"
     return z
 
 
@@ -55,7 +55,7 @@ function_names[concat4] = "{0}{1}"
 
 
 def concat5():
-    return "".join([x, y])
+    return "".join([x, y])  # noqa: FLY002
 
 
 function_names[concat4] = "join"

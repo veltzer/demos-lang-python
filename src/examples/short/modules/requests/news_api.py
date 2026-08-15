@@ -3,8 +3,9 @@ news_api.py
 """
 
 import sys
-import requests
+
 import pyapikey
+import requests
 
 key = pyapikey.get_key("newsapi.org")
 

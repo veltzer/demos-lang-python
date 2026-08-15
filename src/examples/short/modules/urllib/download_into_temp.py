@@ -8,11 +8,10 @@ References:
 """
 
 
-import shutil
-import urllib.request
-import tempfile
 import os.path
-
+import shutil
+import tempfile
+import urllib.request
 
 url = "http://google.com"
 filename = None

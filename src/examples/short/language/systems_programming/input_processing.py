@@ -5,6 +5,6 @@ both from standard input and from command line arguments.
 
 import fileinput
 
-for line in fileinput.input():
+for line in fileinput.input():  # noqa: SIM115
     line = line.rstrip()
     print(line)

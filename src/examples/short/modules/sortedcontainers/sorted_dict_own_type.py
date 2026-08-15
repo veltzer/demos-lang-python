@@ -34,7 +34,7 @@ d[Range(40, 50)] = None
 d[Range(10, 20)] = None
 d[Range(80, 90)] = None
 d[Range(110, 120)] = None
-for k in d.keys():
+for k in d.keys():  # noqa: SIM118
     print(k)
 print("==============================")
 print("85", d.iloc[d.index(85)])

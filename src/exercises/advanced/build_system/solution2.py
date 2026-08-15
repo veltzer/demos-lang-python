@@ -4,8 +4,8 @@ Doesnt support comments, variables, patterns or anything complex...
 Doesnt check file system. all targets are always built.
 """
 
-import os
 import doctest
+import os
 
 
 def parse_makefile(filename):

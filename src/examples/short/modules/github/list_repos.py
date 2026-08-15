@@ -2,8 +2,9 @@
 list_repos.py
 """
 
-import sys
 import json
+import sys
+
 import github
 import pyapikey
 

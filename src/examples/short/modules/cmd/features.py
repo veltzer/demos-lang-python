@@ -76,7 +76,7 @@ class Console(cmd.Cmd):
 
     def do_return_none(self, _args):
         """ return None """
-        return None
+        return
 
     def do_help(self, arg):
         """Get help on commands
@@ -129,8 +129,8 @@ class Console(cmd.Cmd):
         # pylint: disable=broad-except
         try:
             # pylint: disable=exec-used
-            exec(line) in self._locals, self._globals  # pyrefly: ignore[not-iterable]
-        except Exception as e:
+            exec(line) in self._locals, self._globals  # pyrefly: ignore[not-iterable]  # noqa: S102
+        except Exception as e:  # noqa: BLE001
             print(f"{e.__class__}:{e}")
 
 

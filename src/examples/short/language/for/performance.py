@@ -6,8 +6,9 @@ References:
 - https://towardsdatascience.com/a-super-fast-way-to-loop-in-python-6e58ba377a00
 """
 
-import timeit
 import functools
+import timeit
+
 import numpy as np
 
 

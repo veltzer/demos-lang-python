@@ -6,9 +6,9 @@ References:
 - https://stackoverflow.com/questions/3223604/how-to-create-a-temporary-directory-and-get-the-path-file-name-in-python
 """
 
-import tempfile
-import shutil
 import os.path
+import shutil
+import tempfile
 
 dir_path = tempfile.mkdtemp()
 print(f"dir_path is [{dir_path}]")

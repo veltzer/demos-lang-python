@@ -13,12 +13,14 @@ the human is satisfied, at which point the model calls the `done` tool.
 The modules you need to install to make this work are `passpy` and `anthropic`
 """
 
-import sys
 import itertools
-from typing import TypedDict, Callable, Any
-import passpy
+import sys
+from collections.abc import Callable
+from typing import Any, TypedDict
+
 import anthropic
-from anthropic.types import ToolParam, MessageParam, ToolResultBlockParam
+import passpy
+from anthropic.types import MessageParam, ToolParam, ToolResultBlockParam
 
 MODEL = "claude-opus-4-8"
 SYSTEM = """

@@ -26,7 +26,7 @@ class Transaction:
     """
 
     deep = False
-    states: list[Callable[[], None]] = []
+    states: list[Callable[[], None]] = []  # noqa: RUF012
 
     def __init__(self, deep, *targets):
         self.deep = deep
@@ -63,7 +63,7 @@ class Transactional:
                 return self.method(obj, *args, **kwargs)
             except Exception as e:
                 state()
-                raise e
+                raise e  # noqa: TRY201
 
         return transaction
 

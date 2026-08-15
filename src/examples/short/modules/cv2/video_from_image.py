@@ -8,8 +8,8 @@ References:
 
 
 import sys
-import cv2
 
+import cv2
 
 if len(sys.argv) != 3:
     print(f"{sys.argv[0]}: usage: {sys.argv[0]} [IMAGE] [VIDEO]")

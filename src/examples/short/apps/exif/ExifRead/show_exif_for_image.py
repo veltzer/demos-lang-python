@@ -3,6 +3,7 @@ This is an example of how to read EXIF data using the ExifRead python module
 """
 
 import sys
+
 import exifread
 
 if len(sys.argv) != 2:

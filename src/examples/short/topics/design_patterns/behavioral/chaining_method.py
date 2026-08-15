@@ -2,9 +2,9 @@
 chaining_method.py
 """
 
-from typing import Self
-from contextlib import redirect_stdout
 import io
+from contextlib import redirect_stdout
+from typing import Self
 
 
 class Action:

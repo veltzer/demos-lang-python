@@ -1,7 +1,7 @@
 """ redirect.py """
 
-from contextlib import redirect_stdout, redirect_stderr
 import sys
+from contextlib import redirect_stderr, redirect_stdout
 from io import StringIO
 
 

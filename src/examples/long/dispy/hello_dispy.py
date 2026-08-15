@@ -4,9 +4,10 @@ cluster
 """
 
 
-import time
-import socket
 import random
+import socket
+import time
+
 import dispy
 
 

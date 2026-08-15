@@ -1,6 +1,7 @@
 """ dict_to_yaml.py """
 
 import sys
+
 import yaml
 
 dict_file = {

@@ -4,8 +4,8 @@ This example shows how to connect to a mysql database using the
 """
 
 import os.path
-import pymysql.cursors
 
+import pymysql.cursors
 
 # Connect to the database
 connection = pymysql.connect(

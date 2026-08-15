@@ -32,14 +32,14 @@ try:
     a = A()  # type: ignore
     assert isinstance(a, A)
 except TypeError as e:
-    print(f"yes, got exception [{str(e)}]...")
+    print(f"yes, got exception [{e!s}]...")
 
 try:
     # pylint: disable=abstract-class-instantiated
     b = B()  # type: ignore
     assert isinstance(b, B)
 except TypeError as e:
-    print(f"yes, got exception [{str(e)}]...")
+    print(f"yes, got exception [{e!s}]...")
 
 c = C()
 assert isinstance(c, C)

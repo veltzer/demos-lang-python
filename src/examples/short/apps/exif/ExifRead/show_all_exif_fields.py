@@ -10,6 +10,6 @@ import exifread
 # print(dir(exifread.tags.exif))
 # print(type(exifread.tags.EXIF_TAGS))
 # print(exifread.tags.EXIF_TAGS)
-for k,v in exifread.tags.exif.EXIF_TAGS.items():  # pyrefly: ignore[implicit-import]
+for k,v in exifread.tags.exif.EXIF_TAGS.items():  # pyrefly: ignore[implicit-import]  # noqa: PERF102
     print(v[0])
     # print(k, v)

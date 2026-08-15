@@ -2,10 +2,10 @@
 This is an example of debugging python with pdb.
 """
 
-import pdb
+import pdb  # noqa: T100
 
 # pylint: disable=forgotten-debug-statement
-pdb.set_trace()
+pdb.set_trace()  # noqa: T100
 
 
 def calc():

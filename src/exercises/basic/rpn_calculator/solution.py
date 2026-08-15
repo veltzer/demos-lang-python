@@ -43,4 +43,4 @@ def rpn_calc(expression):
         print(stack)
 
 
-rpn_calc(" ".join(["2", "2", "+", "5", "*"]))
+rpn_calc(" ".join(["2", "2", "+", "5", "*"]))  # noqa: FLY002

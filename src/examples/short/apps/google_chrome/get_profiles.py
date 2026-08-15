@@ -3,8 +3,8 @@ This is an example of how to list google profiles in the current unix account.
 """
 
 
-import os.path
 import json
+import os.path
 
 
 def main():

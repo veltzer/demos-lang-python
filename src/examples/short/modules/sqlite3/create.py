@@ -3,8 +3,8 @@ An example of how to create an sqlite3 database using python
 """
 
 
-import sqlite3
 import os
+import sqlite3
 import tempfile
 
 # Create a temporary file in /tmp

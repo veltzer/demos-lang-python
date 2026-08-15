@@ -5,7 +5,6 @@ A simple web server
 
 import flask
 
-
 app = flask.Flask("app")
 app.config["DEBUG"] = True
 # static_folder = app.config["STATIC_FOLDER"]

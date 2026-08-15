@@ -7,7 +7,7 @@ At runtime you can add the missing data.
 - you can construct an "attrs" based instance with partial data.
 """
 
-from attr import attrs, attrib
+from attr import attrib, attrs
 
 
 @attrs

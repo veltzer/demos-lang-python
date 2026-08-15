@@ -18,10 +18,10 @@ in several directions, forming a `tree of responsibility`.
 Allow a request to pass down a chain of receivers until it is handled.
 """
 
-from abc import ABC, abstractmethod
-from typing import Self
-from contextlib import redirect_stdout
 import io
+from abc import ABC, abstractmethod
+from contextlib import redirect_stdout
+from typing import Self
 
 
 class Handler(ABC):

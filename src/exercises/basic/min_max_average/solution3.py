@@ -14,4 +14,4 @@ def min_max_avg(num_list):
     return min_value, max_value, sum_value / len(num_list)
 
 
-print(min_max_avg(range(0, 100000)))
+print(min_max_avg(range(100000)))

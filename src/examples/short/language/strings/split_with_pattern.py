@@ -13,7 +13,7 @@ re_comma = r"(,)(?!\d)|(?<!\d)(,)"
 re_dots = r"(\.)(?!\d)|(?<!\d)(\.)"
 re_space = r"\s"
 
-re_full = "|".join([re_comma, re_dots, re_space])
+re_full = "|".join([re_comma, re_dots, re_space])  # noqa: FLY002
 
 my_list = re.split(re_full, s)
 my_list = [x for x in my_list if x]

@@ -2,9 +2,8 @@
 simple.py
 """
 
-from fastapi import FastAPI
 import uvicorn
-
+from fastapi import FastAPI
 
 app = FastAPI()
 

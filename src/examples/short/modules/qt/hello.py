@@ -4,6 +4,7 @@ A simple hello world application in pyqt
 # pylint: disable=c-extension-no-member
 
 import sys
+
 import PyQt5.QtWidgets
 
 app = PyQt5.QtWidgets.QApplication(sys.argv)

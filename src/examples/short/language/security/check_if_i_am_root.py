@@ -8,5 +8,5 @@ References:
 import os
 import sys
 
-if not os.geteuid() == 0:
+if not os.geteuid() == 0:  # noqa: SIM201
     sys.exit("Script must be run as root")

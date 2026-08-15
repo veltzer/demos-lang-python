@@ -6,8 +6,8 @@ References:
 - https://stackoverflow.com/questions/60576891/how-to-read-exif-data-of-movies-in-python
 """
 
-import sys
 import subprocess
+import sys
 
 if len(sys.argv) != 2:
     print(f"{sys.argv[0]}: usage: {sys.argv[0]} [FILENAME]")

@@ -2,7 +2,7 @@
 Simple demo of weasy print
 """
 
-from weasyprint import HTML, CSS
+from weasyprint import CSS, HTML
 
 # 1. Your HTML content
 html_content = """

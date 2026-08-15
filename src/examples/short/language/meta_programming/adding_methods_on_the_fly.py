@@ -5,8 +5,8 @@ This exercise shows how to:
     - add a method to an instance.
 """
 
-from types import MethodType
 import pprint
+from types import MethodType
 
 
 class Person:

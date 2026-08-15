@@ -42,7 +42,7 @@ random_strings = []
 def create_random_strings():
     # pylint: disable=global-statement
     global random_strings
-    random_strings = list(str(i) for i in range(1000000, 1000000 + large_table_size))
+    random_strings = list(str(i) for i in range(1000000, 1000000 + large_table_size))  # noqa: C400
 
 
 df = None
@@ -85,7 +85,7 @@ input("press any key...")
 
 def more_stuff():
     size = 15000000
-    random_words = list(map(lambda _: random_word(10), range(size)))
+    random_words = list(map(lambda _: random_word(10), range(size)))  # noqa: C417
     print("after creation")
     print(type(random_words))
     print(len(random_words))

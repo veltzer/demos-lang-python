@@ -2,7 +2,6 @@
 
 from functools import reduce
 
-
 # imperative coding
 mysum = 0
 for x in range(100):
@@ -10,6 +9,6 @@ for x in range(100):
 print(f"mysum is {mysum}")
 
 # functional , declarative coding
-m = map(lambda x: x * x, range(100))
+m = map(lambda x: x * x, range(100))  # noqa: C417
 result = reduce(lambda a,b: a + b, m)
 print(f"result is {result}")

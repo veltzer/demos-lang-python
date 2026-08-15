@@ -4,8 +4,9 @@ This is an example of how to read EXIF data using the "piexif" python module
 
 import os.path
 import sys
-from PIL import Image
+
 import piexif
+from PIL import Image
 
 if len(sys.argv) != 4:
     print(f"{sys.argv[0]}: usage: {sys.argv[0]} [ORIGINAL_IMAGE] [THUMBNAIL] [TARGET_IMAGE]")

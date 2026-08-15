@@ -51,14 +51,14 @@ print(f"str(None) has type {type(s)} and has value [{s}]")
 h = {
     None: "value for None",
     "": "value for \"\"",
-    False: "value for False",  # noqa: F601
+    False: "value for False",
     0: "value for 0",  # noqa: F601
 }
 print(h)
 
 # lets compare None to various things...
 # pylint: disable=singleton-comparison,comparison-of-constants
-if None == 0:  # noqa: E711
+if None == 0:  # noqa: PLR0133
     print("None==0")
 else:
     print("!None==0")
@@ -70,11 +70,11 @@ if None:
     print("None==True")
 else:
     print("None!=True")
-if None == "":
+if None == "":  # noqa: PLR0133
     print("None==\"\"")
 else:
     print("None!=\"\"")
-if None == "None":
+if None == "None":  # noqa: PLR0133
     print("None==\"None\"")
 else:
     print("None!=\"None\"")

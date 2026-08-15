@@ -8,8 +8,8 @@ NOTES:
 """
 
 import sys
-import imdb
 
+import imdb
 
 if len(sys.argv) != 2:
     print(f"{sys.argv[0]}: usage: {sys.argv[0]} [personID]", file=sys.stderr)

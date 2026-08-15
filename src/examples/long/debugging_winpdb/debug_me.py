@@ -13,7 +13,7 @@ def simple_func(x):
     # k = set(range(5, 99))
 
     try:
-        x.invalid
+        x.invalid  # noqa: B018
     except AttributeError:
         pass
 

@@ -13,6 +13,6 @@ target_file = "/tmp/passwd"
 
 if os.path.isfile(target_file):
     os.unlink(target_file)
-with open(source_file) as source_file_handle:
+with open(source_file) as source_file_handle:  # noqa: SIM117
     with open(target_file, "w") as target_file_handle:
         shutil.copyfileobj(source_file_handle, target_file_handle)

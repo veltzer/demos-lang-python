@@ -1,7 +1,7 @@
 """ problems.py """
 
-import sys
 import codecs
+import sys
 
 ENCODING = "utf-8"
 assert sys.stdout.encoding == ENCODING

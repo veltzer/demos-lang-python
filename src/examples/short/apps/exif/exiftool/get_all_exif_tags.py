@@ -30,8 +30,7 @@ for line in lines:
         tags_all.add(current_line_tag)
 print(f"I got [{len(tags_all)}] tags_all")
 with open("data/exif/tags_all.txt", "w") as stream:
-    for tag in sorted(tags_all):
-        stream.write(f"{tag}\n")
+    stream.writelines(f"{tag}\n" for tag in sorted(tags_all))
 
 # run exiftool on an image without exif tags and record all non exif tags
 output = subprocess.check_output(["exiftool", "data/exif/image_stripped_by_exiftool.jpg"], shell=False)
@@ -49,17 +48,14 @@ for line in lines:
     tags_non_exif.add(current_tag)
 print(f"I got [{len(tags_non_exif)}] tags_non_exif")
 with open("data/exif/tags_non_exif.txt", "w") as stream:
-    for tag in sorted(tags_non_exif):
-        stream.write(f"{tag}\n")
+    stream.writelines(f"{tag}\n" for tag in sorted(tags_non_exif))
 
 tags_both = tags_all.intersection(tags_non_exif)
 print(f"I got [{len(tags_both)}] tags_both")
 with open("data/exif/tags_both.txt", "w") as stream:
-    for tag in sorted(tags_both):
-        stream.write(f"{tag}\n")
+    stream.writelines(f"{tag}\n" for tag in sorted(tags_both))
 
 tags_exif = tags_all - tags_non_exif
 print(f"I got [{len(tags_exif)}] tags_exif")
 with open("data/exif/tags_exif.txt", "w") as stream:
-    for tag in sorted(tags_exif):
-        stream.write(f"{tag}\n")
+    stream.writelines(f"{tag}\n" for tag in sorted(tags_exif))

@@ -16,7 +16,7 @@ def redirect_output_to(filename):
     finishes.
     """
     old_stdout = sys.stdout
-    sys.stdout = open(filename, "a")
+    sys.stdout = open(filename, "a")  # noqa: SIM115
     try:
         yield
     finally:

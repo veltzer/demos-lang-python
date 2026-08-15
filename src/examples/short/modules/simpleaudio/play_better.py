@@ -29,7 +29,7 @@ byte_array = []
 for b in tone.tobytes():
     if i % 4 != 3:
         byte_array.append(b)
-    i += 1
+    i += 1  # noqa: SIM113
 audio = bytearray(byte_array)
 
 # start playback

@@ -16,6 +16,6 @@ try:
 # this next line catches all exceptions, logs and throws them back...
 except Exception as e:
     print("in except", e)
-    raise e
+    raise e  # noqa: TRY201
 finally:
     print("finally is here")

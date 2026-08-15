@@ -54,7 +54,7 @@ for i, x in enumerate(my_list):
         my_list.pop(0)
     try:
         # pylint: disable=unnecessary-list-index-lookup
-        elements_visited2.add(my_list[i])
+        elements_visited2.add(x)
     except IndexError:
         print("yes,got errors when accessing l[i]")
 if len(elements_visited2) != size:
@@ -83,11 +83,11 @@ try:
     all_elements4 = set(d.keys())  # type: ignore
     elements_visited4 = set()
     i = 0
-    for k, v in d.items():
+    for k, v in d.items():  # noqa: PERF102
         if i == 1:
             d["four"] = "arba"
         elements_visited4.add(k)
-        i += 1
+        i += 1  # noqa: SIM113
 except RuntimeError as e:
     print(f"yes,got runtime error when trying to modify the exception: {e}")
 
@@ -97,11 +97,11 @@ try:
     all_elements5 = set(d.keys())
     elements_visited5 = set()
     i = 0
-    for k, v in d.items():
+    for k, v in d.items():  # noqa: PERF102
         if i == 1:
             del d["one"]
         elements_visited5.add(k)
-        i += 1
+        i += 1  # noqa: SIM113
 except RuntimeError as e:
     print(f"yes,got runtime error when trying to modify the exception: {e}")
 
@@ -114,7 +114,7 @@ d = {"one": "ehad", "two": "shnaim", "three": "shalosh"}
 all_elements6 = set(d.keys())
 elements_visited6 = set()
 i = 0
-for k, v in d.items():
+for k, v in d.items():  # noqa: PERF102
     if i == 1:
         d["four"] = "arba"
         d["five"] = "hamesh"
@@ -123,7 +123,7 @@ for k, v in d.items():
         del d["two"]
         del d["three"]
     elements_visited6.add(k)
-    i += 1
+    i += 1  # noqa: SIM113
 print(f"elements not visited are {all_elements6 - elements_visited6}")
 print(f"elements visited are {elements_visited6}")
 print("and you can see we have old and new elements visited")

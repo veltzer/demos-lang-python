@@ -10,7 +10,7 @@ and them "items" iterator.
 import dbm.gnu
 
 filename = "/tmp/test.gdbm"
-d = dbm.gnu.open(filename)
+d = dbm.gnu.open(filename)  # noqa: SIM115
 
 # lets try iterating with .items()
 try:

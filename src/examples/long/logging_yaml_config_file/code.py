@@ -3,8 +3,8 @@ This is how to load a yaml file as configuration for python logging
 """
 
 import logging.config
-import yaml
 
+import yaml
 
 with open("logging.yaml") as f:
     config = yaml.safe_load(f.read())

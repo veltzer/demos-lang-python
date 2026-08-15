@@ -4,7 +4,7 @@ date8
 
 
 class Date:
-    days_in_months = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    days_in_months = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  # noqa: RUF012
 
     def __init__(self, day, month, year):
         if not isinstance(day, int) or not isinstance(month, int) or not isinstance(year, int):
@@ -27,7 +27,7 @@ class Date:
         if self.year == other.year:
             if self.month > other.month:
                 return True
-            if self.month == other.month:
+            if self.month == other.month:  # noqa: SIM102
                 if self.day > other.day:
                     return True
         return False

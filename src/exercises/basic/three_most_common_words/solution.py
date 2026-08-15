@@ -2,8 +2,8 @@
 Solution
 """
 
-import sys
 import operator
+import sys
 
 
 def get_second_item(t):

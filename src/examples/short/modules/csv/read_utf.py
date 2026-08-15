@@ -24,7 +24,6 @@ References:
 import csv
 import locale
 
-
 print(locale.getpreferredencoding())
 
 # open a regular file with the utf-8 encoding works

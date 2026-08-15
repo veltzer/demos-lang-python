@@ -5,6 +5,7 @@ Basic coloring with pygments
 import sys
 
 from pygments import highlight
+
 # pylint: disable=no-name-in-module
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import PythonLexer

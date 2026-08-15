@@ -6,7 +6,7 @@ the instances. The attribute is accessible from outside
 and from within the object and is seen in dir(object).
 """
 
-from attr import attrs, attrib
+from attr import attrib, attrs
 
 
 @attrs

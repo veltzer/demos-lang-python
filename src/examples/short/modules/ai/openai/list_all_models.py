@@ -5,8 +5,8 @@ The modules you need to install to make this work are `passpy` and `openai`
 """
 
 
-import passpy
 import openai
+import passpy
 
 store = passpy.Store()
 api_key = store.get_key("keys/openai")

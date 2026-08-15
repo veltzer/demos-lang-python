@@ -4,7 +4,6 @@ This example explores how jsonpickle serializes the most basic types
 
 import jsonpickle
 
-
 o1 = {
     "France": "Paris",
     "Italy": "Rome",

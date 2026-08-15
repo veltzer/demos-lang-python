@@ -23,7 +23,7 @@ places: dict[str, dict[str, str]] = {
 
 reachable = {"Rivendell"}
 for i in range(7):
-    for place in list(reachable):
+    for place in reachable:
         reachable.update(places[place].values())
 
 print("Mordor" in reachable)

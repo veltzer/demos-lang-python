@@ -10,11 +10,11 @@ I tried with both firefox and chrome (see below) but to no avail.
 import os.path
 import time
 
-from selenium.webdriver import Chrome, Firefox
 import selenium.webdriver.chrome
-import selenium.webdriver.firefox
 import selenium.webdriver.chrome.options
+import selenium.webdriver.firefox
 import selenium.webdriver.firefox.options
+from selenium.webdriver import Chrome, Firefox
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 

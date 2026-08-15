@@ -28,7 +28,7 @@ def digest(filename: str) -> str:
 
 def main():
     print("The default way - non identical outputs")
-    for x in range(0, 3):
+    for x in range(3):
         output_filename = output_template.format(x)
         with open(f_name, "rb") as input_handle, gzip.open(output_filename, "wb") as my_zip:
             # pylint: disable=cell-var-from-loop

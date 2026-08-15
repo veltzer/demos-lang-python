@@ -88,7 +88,7 @@ class Date:
         if self.year == other.year:
             if self.month > other.month:
                 return True
-            if self.month == other.month:
+            if self.month == other.month:  # noqa: SIM102
                 if self.day > other.day:
                     return True
         return False

@@ -6,8 +6,9 @@ References:
 - http://python-jenkins.readthedocs.io/en/latest/
 """
 
-import os
 import configparser
+import os
+
 import jenkins
 
 

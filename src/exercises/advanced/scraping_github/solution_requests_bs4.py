@@ -8,7 +8,6 @@ We are looking for the following html fragment:
 import requests
 from bs4 import BeautifulSoup, Tag
 
-
 url = "http://github.com"
 r = requests.get(url, timeout=5)
 r.raise_for_status()
