@@ -4,6 +4,7 @@ This is an example of how to read EXIF data using the "exif" python module
 
 import os.path
 import sys
+
 from exif import Image
 
 if len(sys.argv) != 3:

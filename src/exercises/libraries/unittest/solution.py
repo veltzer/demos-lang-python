@@ -10,7 +10,7 @@ import unittest
 
 
 class TestGlob(unittest.TestCase):
-    fnames = ["foo.txt", "bar.txt", "baz.py"]
+    fnames = ["foo.txt", "bar.txt", "baz.py"]  # noqa: RUF012
 
     def setUp(self):
         """Create some files in a temp dir."""

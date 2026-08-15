@@ -20,7 +20,7 @@ class A:
     # noinspection PyReturnFromInit
     # pylint: disable=return-in-init
     def __init__(self):
-        return 0
+        return 0  # noqa: PLE0101
 
 
 class B:
@@ -34,7 +34,7 @@ class C:
     # noinspection PyReturnFromInit
     # pylint: disable=return-in-init
     def __init__(self):
-        return self
+        return self  # noqa: PLE0101
 
 
 class D:

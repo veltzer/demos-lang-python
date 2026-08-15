@@ -4,7 +4,6 @@ This is an example of creating a thread and passing it data via its closure
 
 import threading
 
-
 # this function was written with NO consideratiion of threading...
 
 

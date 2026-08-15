@@ -2,7 +2,7 @@
 A simple twisted server doing echo on two ports.
 """
 
-from twisted.internet import reactor, protocol
+from twisted.internet import protocol, reactor
 
 
 class Echo(protocol.Protocol):

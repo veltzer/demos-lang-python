@@ -7,7 +7,6 @@ References:
 
 import requests
 
-
 owner = "veltzer"
 repo = "pyflexebs"
 

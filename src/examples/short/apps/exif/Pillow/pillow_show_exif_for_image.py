@@ -6,8 +6,9 @@ References:
 """
 
 import sys
-import PIL.Image
+
 import PIL.ExifTags
+import PIL.Image
 
 if len(sys.argv) != 2:
     print(f"{sys.argv[0]}: usage: {sys.argv[0]} [IMAGE_FILENAME]")

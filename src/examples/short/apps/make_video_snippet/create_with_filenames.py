@@ -7,6 +7,7 @@ The code was originally created by chatGPT
 
 
 import sys
+
 import cv2
 
 

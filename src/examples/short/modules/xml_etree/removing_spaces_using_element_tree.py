@@ -8,7 +8,6 @@ http://stackoverflow.com/questions/1098118/stripping-spaces-between-xml-nodes-wi
 import re
 import xml.etree.ElementTree
 
-
 whitespaces = re.compile(r"\s+")
 
 """

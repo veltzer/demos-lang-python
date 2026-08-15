@@ -9,7 +9,7 @@ on purpose.
 
 
 # pylint: disable=dangerous-default-value,inconsistent-return-statements,unused-argument
-def op(o, x=None, items=[], s=set()):       # the [] is created once, at def time
+def op(o, x=None, items=[], s=set()):       # the [] is created once, at def time  # noqa: B006
     if o == "push":
         items.append(x)
         return None

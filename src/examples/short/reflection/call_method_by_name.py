@@ -17,7 +17,7 @@ class Person:
 
 p = Person("yossi", 24)
 
-t = getattr(p, "get_name")
+t = p.get_name
 print(t)
 print(t())
 u = Person.get_name

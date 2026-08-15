@@ -3,12 +3,12 @@ This example shows how to create a database with sqlalchemy
 """
 
 import os
-from sqlalchemy import Column, ForeignKey, Integer, String
+
+import sqlalchemy
+from sqlalchemy import Column, ForeignKey, Integer, String, create_engine
+from sqlalchemy.engine.url import URL
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchemy import create_engine
-from sqlalchemy.engine.url import URL
-import sqlalchemy
 
 Base = declarative_base()
 STRING_LENGTH = 250

@@ -5,8 +5,9 @@ The modules you need to install to make this work are `passpy` and `anthropic`
 """
 
 import json
-import passpy
+
 import anthropic
+import passpy
 
 QUERY = """
 What is the capitol of France and how many residents are there?

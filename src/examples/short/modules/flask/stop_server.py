@@ -9,8 +9,8 @@ References:
 
 import os
 import signal
-from flask import Flask
-from flask import request
+
+from flask import Flask, request
 
 app = Flask("app")
 

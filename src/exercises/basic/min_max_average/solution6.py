@@ -21,4 +21,4 @@ def min_max_avg(number_list):
     return tup[0], tup[1], tup[2] / len(number_list)
 
 
-print(min_max_avg(range(0, 100000)))
+print(min_max_avg(range(100000)))

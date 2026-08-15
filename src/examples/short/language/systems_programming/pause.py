@@ -18,7 +18,6 @@ import os
 import signal
 import threading
 
-
 old_sig_usr1 = signal.getsignal(signal.SIGUSR1)
 old_sig_usr2 = signal.getsignal(signal.SIGUSR2)
 old_sig_int = signal.getsignal(signal.SIGINT)

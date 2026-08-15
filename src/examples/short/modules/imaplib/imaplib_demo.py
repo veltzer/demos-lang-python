@@ -8,10 +8,9 @@ This thing started from me wanting to import my old mail to gmail and seeing
 this blog post: http://scott.yang.id.au/2009/01/migrate-emails-maildir-gmail.html
 """
 
+import configparser
 import imaplib
 import os.path
-
-import configparser
 
 config = configparser.ConfigParser()
 config.read(os.path.expanduser("~/.passwords.ini"))
@@ -25,7 +24,7 @@ def imap_have_mailbox(imap, name):
     (res, data) = imap.list(name)
     if res != "OK":
         raise ValueError("could not list", name)
-    if len(data) == 1 and data[0] is None:
+    if len(data) == 1 and data[0] is None:  # noqa: SIM103
         return False
     return True
 

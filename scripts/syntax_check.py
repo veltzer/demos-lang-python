@@ -8,8 +8,8 @@ Its basically a more sophisticated version of something like this:
     python2 -m py_compile $< || python3 -m py_compile $<
 """
 
-import sys
 import subprocess
+import sys
 
 
 def check_file(filename: str):

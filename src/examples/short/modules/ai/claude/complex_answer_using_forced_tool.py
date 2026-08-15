@@ -4,9 +4,9 @@ Issue one prompt to anthropic and force the answer through a strict tool call
 The modules you need to install to make this work are `passpy` and `anthropic`
 """
 
-import passpy
 import anthropic
-from anthropic.types import ToolParam, ToolChoiceToolParam
+import passpy
+from anthropic.types import ToolChoiceToolParam, ToolParam
 
 QUERY = """
 What is the capitol of France and how many residents are there?

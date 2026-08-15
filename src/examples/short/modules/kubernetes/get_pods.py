@@ -5,8 +5,8 @@ References:
 - https://github.com/kubernetes-client/python
 """
 
-import kubernetes.config
 import kubernetes.client
+import kubernetes.config
 
 
 def main():

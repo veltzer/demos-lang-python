@@ -2,9 +2,9 @@
 This is an example of how to call a class method directly from a reference to the method.
 """
 
+from collections.abc import Callable
 from types import MethodType
 from typing import Any
-from collections.abc import Callable
 
 
 class Book:
@@ -20,7 +20,7 @@ class Book:
         return cls.num
 
     ref_full = increment_num
-    ref = [increment_num]
+    ref = [increment_num]  # noqa: RUF012
 
     @classmethod
     def call_it(cls):

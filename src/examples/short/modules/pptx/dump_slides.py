@@ -6,8 +6,8 @@ References:
 - https://python-pptx.readthedocs.io/en/latest/#user-guide
 """
 import sys
-from pptx import Presentation
 
+from pptx import Presentation
 from pyvardump import dump_json
 
 input_filename = sys.argv[1]

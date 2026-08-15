@@ -1,7 +1,8 @@
 """ main.py """
 
-from pkgutil import walk_packages
 import os
+from pkgutil import walk_packages
+
 import setuptools
 
 # this finds the config package too, no good

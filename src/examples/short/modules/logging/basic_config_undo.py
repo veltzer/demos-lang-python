@@ -3,8 +3,8 @@ This example explores how to undo what basicConfig does
 """
 
 import logging
-import logging_tree
 
+import logging_tree
 
 logging_tree.printout()
 

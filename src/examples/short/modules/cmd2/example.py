@@ -2,7 +2,7 @@
 A sample application for cmd2
 """
 
-from cmd2 import Cmd2ArgumentParser, Cmd, with_argparser
+from cmd2 import Cmd, Cmd2ArgumentParser, with_argparser
 
 argparser = Cmd2ArgumentParser()
 argparser.add_argument("-p", "--piglatin", action="store_true", help="atinLay")

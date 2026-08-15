@@ -64,7 +64,7 @@ class CatalogInstance:
     def _instance_method_2(self) -> str:
         return f"Value {self.x2}"
 
-    _instance_method_choices = {
+    _instance_method_choices = {  # noqa: RUF012
         "param_value_1": _instance_method_1,
         "param_value_2": _instance_method_2,
     }
@@ -99,7 +99,7 @@ class CatalogClass:
     def _class_method_2(cls) -> str:
         return f"Value {cls.x2}"
 
-    _class_method_choices = {
+    _class_method_choices = {  # noqa: RUF012
         "param_value_1": _class_method_1,
         "param_value_2": _class_method_2,
     }
@@ -137,7 +137,7 @@ class CatalogStatic:
     def _static_method_2() -> str:
         return "executed method 2!"
 
-    _static_method_choices = {
+    _static_method_choices = {  # noqa: RUF012
         "param_value_1": _static_method_1,
         "param_value_2": _static_method_2,
     }

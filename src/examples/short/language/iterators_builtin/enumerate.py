@@ -14,7 +14,7 @@ def simple_enumerate(value_list):
     i = 0
     for val in value_list:
         yield i, val
-        i += 1
+        i += 1  # noqa: SIM113
 
 
 def main():

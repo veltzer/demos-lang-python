@@ -30,7 +30,7 @@ class ProductModel(Model):
         def __str__(self):
             return f"{self:.2f}"
 
-    products = {
+    products = {  # noqa: RUF012
         "milk": {"price": Price(1.50), "quantity": 10},
         "eggs": {"price": Price(0.20), "quantity": 100},
         "cheese": {"price": Price(2.00), "quantity": 10},
@@ -68,7 +68,7 @@ class ConsoleView(View):
         print(item_type.upper() + " LIST:")
         for item in item_list:
             print(item)
-        print("")
+        print()
 
     @staticmethod
     def capitalizer(string):

@@ -5,7 +5,7 @@ References:
 - https://docs.python.org/3/library/random.html
 """
 
-from random import seed, random, randint, sample
+from random import randint, random, sample, seed
 
 seed(1)
 

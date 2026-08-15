@@ -40,7 +40,7 @@ def basic():
     handlers = []
     for i in range(10):
         # pylint: disable=cell-var-from-loop
-        handlers.append(lambda: i)
+        handlers.append(lambda: i)  # noqa: B023
     print([h() for h in handlers])
 
 
@@ -50,7 +50,7 @@ def wrong():
     for i in range(10):
         def f():
             # pylint: disable=cell-var-from-loop
-            return i
+            return i  # noqa: B023
         handlers.append(f)
     print([h() for h in handlers])
 
@@ -82,7 +82,7 @@ def partial_pattern_wrong():
     handlers = []
     for i in range(10):
         # pylint: disable=cell-var-from-loop,unnecessary-lambda-assignment
-        f = lambda: i  # noqa: E731
+        f = lambda: i  # noqa: B023
         good_f = partial(f)
         handlers.append(good_f)
     print([h() for h in handlers])
@@ -93,7 +93,7 @@ def partial_pattern():
     handlers = []
     for i in range(10):
         # pylint: disable=unnecessary-lambda-assignment
-        f = lambda i: i  # noqa: E731
+        f = lambda i: i
         good_f = partial(f, i)
         handlers.append(good_f)
     print([h() for h in handlers])

@@ -20,10 +20,10 @@ logger = logging.getLogger(__name__)
 
 class SearchSpider(scrapy.Spider):
     name = __name__
-    allowed_domains = [
+    allowed_domains = [  # noqa: RUF012
         "jet.com"
     ]
-    start_urls = [
+    start_urls = [  # noqa: RUF012
         "https://jet.com/search/",
     ]
 
@@ -47,8 +47,8 @@ class SearchSpider(scrapy.Spider):
 
 
 if __name__ == "__main__":
-    logging.getLogger("scrapy").setLevel(logging.WARN)
-    logging.getLogger(__name__).setLevel(logging.WARN)
+    logging.getLogger("scrapy").setLevel(logging.WARNING)
+    logging.getLogger(__name__).setLevel(logging.WARNING)
     process = scrapy.crawler.CrawlerProcess({
         "LOG_ENABLED": False,
     })

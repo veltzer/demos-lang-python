@@ -13,10 +13,10 @@ import scrapy.crawler
 
 class SearchSpider(scrapy.Spider):
     name = __name__
-    allowed_domains = [
+    allowed_domains = [  # noqa: RUF012
         "google.com"
     ]
-    start_urls = [
+    start_urls = [  # noqa: RUF012
         "https://google.com",
     ]
 

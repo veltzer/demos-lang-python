@@ -9,5 +9,4 @@ References:
 
 import urllib.request
 
-
 urllib.request.urlretrieve("http://google.com", "/tmp/google.html")

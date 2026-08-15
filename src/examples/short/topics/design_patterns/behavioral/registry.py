@@ -5,7 +5,7 @@ registry.py
 
 class RegistryHolder(type):
 
-    REGISTRY: dict[str, "RegistryHolder"] = {}
+    REGISTRY: dict[str, "RegistryHolder"] = {}  # noqa: RUF012
 
     def __new__(cls, name, bases, attrs):
         """

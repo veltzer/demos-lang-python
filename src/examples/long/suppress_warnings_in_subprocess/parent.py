@@ -2,9 +2,8 @@
 An example of how a parents can suppress warnings in a child process
 """
 
-import subprocess
 import os
-
+import subprocess
 
 print("one")
 subprocess.check_call(["python3", "child.py"])

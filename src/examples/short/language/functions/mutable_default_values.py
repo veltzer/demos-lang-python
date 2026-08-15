@@ -8,7 +8,7 @@ variable which is mutable.
 
 
 # pylint: disable=dangerous-default-value
-def add_name(name: str, target: list[str] = []) -> list[str]:
+def add_name(name: str, target: list[str] = []) -> list[str]:  # noqa: B006
     target.append(name)
     return target
 

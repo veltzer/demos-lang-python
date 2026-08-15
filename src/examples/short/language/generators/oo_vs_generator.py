@@ -27,5 +27,5 @@ i = 0
 for x in fib():
     if i >= 10:
         break
-    i += 1
+    i += 1  # noqa: SIM113
     print(x)

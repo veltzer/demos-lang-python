@@ -6,9 +6,9 @@ The code was originally created by chatGPT
 """
 
 
-import sys
 import io
 import os.path
+import sys
 
 import cv2
 

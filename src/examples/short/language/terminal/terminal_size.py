@@ -13,7 +13,6 @@ import struct
 import termios
 import timeit
 
-
 function_names = {}
 
 

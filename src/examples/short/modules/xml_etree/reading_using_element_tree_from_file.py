@@ -5,7 +5,6 @@ xml.etree module
 
 import xml.etree.ElementTree
 
-
 # both of these will work
 doc_from_constructor = xml.etree.ElementTree.ElementTree(file="data/xml/data.xml")
 for e in doc_from_constructor.findall(".//bar"):

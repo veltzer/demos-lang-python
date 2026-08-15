@@ -1,9 +1,9 @@
 """ scale.py """
 
 import time
-from mingus.midi import fluidsynth
-from mingus.containers import Note
 
+from mingus.containers import Note
+from mingus.midi import fluidsynth
 
 # the soundfont arugment is required and does not have a default
 # the second argument "driver" is the driver and could be "pulseaudio" but is autodetected properly.

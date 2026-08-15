@@ -5,8 +5,8 @@ modules in python.
 
 import importlib
 import time
-from .my_module import a
 
+from .my_module import a
 
 while True:
     importlib.reload(a)

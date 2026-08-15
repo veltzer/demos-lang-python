@@ -9,7 +9,7 @@ import subprocess
 
 def date_to_mysql(output: str):
     format_str = "%a %b %d %H:%M:%S %Z %Y"
-    mysql_str = datetime.datetime.strptime(output, format_str)
+    mysql_str = datetime.datetime.strptime(output, format_str)  # noqa: DTZ007
     # print("mysql_str is [{0}]".format(mysql_str))
     return mysql_str
 

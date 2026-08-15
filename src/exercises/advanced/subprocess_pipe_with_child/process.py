@@ -4,7 +4,6 @@ process
 
 import random
 
-
 for i in range(100000):
     r = random.random()
     print(f"junk {r}")

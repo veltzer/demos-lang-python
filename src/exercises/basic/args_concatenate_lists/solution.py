@@ -14,7 +14,7 @@ def catenate_lists_2(*args):
     r = []
     for e in args:
         for x in e:
-            r.append(x)
+            r.append(x)  # noqa: PERF402
     return r
 
 

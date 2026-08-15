@@ -5,12 +5,12 @@ Results:
 - pickle is much faster in python3 (the opposite of python2).
 """
 
-import timeit
-import os
 import json
+import os
 import pickle
-import tempfile
 import random
+import tempfile
+import timeit
 
 
 def load_json(filename_json):

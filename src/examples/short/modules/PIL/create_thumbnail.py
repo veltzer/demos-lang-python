@@ -7,6 +7,7 @@ References:
 """
 
 import sys
+
 from PIL import Image
 
 SIZE_OF_THUMBNAIL = 75

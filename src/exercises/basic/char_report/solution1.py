@@ -4,7 +4,7 @@ Solution1
 
 with open("input.txt") as f:
     report: dict[str, int] = {}
-    for line in f.readlines():
+    for line in f:
         for c in line:
             if c not in [" ", "\n", "\r", "\t"]:
                 if c in report:

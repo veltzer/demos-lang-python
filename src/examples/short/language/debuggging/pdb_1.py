@@ -4,8 +4,7 @@ just run this application and you will enter debug mode
 as soon as you start the trace...
 """
 
-import pdb
-
+import pdb  # noqa: T100
 
 # This will make you enter debug start right from the start...
 # pdb.set_trace()
@@ -18,7 +17,7 @@ def calc():
         current_sum += i
         if i == 600:
             # pylint: disable=forgotten-debug-statement
-            pdb.set_trace()
+            pdb.set_trace()  # noqa: T100
         i += 1
 
 

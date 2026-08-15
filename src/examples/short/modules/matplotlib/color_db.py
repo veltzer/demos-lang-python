@@ -2,8 +2,7 @@
 This example shows you the color database that comes with matplotlib.
 """
 
-from matplotlib import pyplot
-from matplotlib import colors
+from matplotlib import colors, pyplot
 
 color_maps = pyplot.colormaps()
 for color_map in color_maps:

@@ -7,8 +7,8 @@ References:
 """
 
 import kubernetes.client
-import kubernetes.watch
 import kubernetes.config
+import kubernetes.watch
 
 
 def main():

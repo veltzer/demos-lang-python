@@ -13,14 +13,14 @@ def count_lines_in_file(filename):
 
 def count_lines_in_file_2(filename):
     # pylint: disable=consider-using-with
-    stream = open(filename)
+    stream = open(filename)  # noqa: SIM115
     try:
         counter = 0
         for _ in stream:
             counter += 1
         return counter
-    except Exception as e:
-        raise e
+    except Exception as e:  # noqa: TRY203
+        raise e  # noqa: TRY201
     finally:
         stream.close()
 

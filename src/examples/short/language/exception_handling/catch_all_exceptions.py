@@ -12,7 +12,7 @@ try:
 # this next line catches only ValueError exceptions, logs and throws them
 # back...
 # pylint: disable=broad-exception-caught
-except Exception as e:
+except Exception as e:  # noqa: BLE001
     print("in except", e)
     # raise e
 finally:

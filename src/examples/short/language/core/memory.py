@@ -16,6 +16,6 @@ counter = 0
 while True:
     print("counter is " + str(counter))
     counter += 1
-    x = range(0, 1024)
+    x = range(1024)
     acc.append(x)
     time.sleep(2)

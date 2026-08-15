@@ -24,9 +24,9 @@ class TimeDisplay(object):
 """
 
 import datetime
+import io
 from collections.abc import Callable
 from contextlib import redirect_stdout
-import io
 
 
 class ConstructorInjection:
@@ -69,7 +69,7 @@ def production_code_time_provider() -> str:
     Production code version of the time provider (just a wrapper for formatting
     datetime for this example).
     """
-    current_time = datetime.datetime.now()
+    current_time = datetime.datetime.now()  # noqa: DTZ005
     current_time_formatted = f"{current_time.hour}:{current_time.minute}"
     return current_time_formatted
 

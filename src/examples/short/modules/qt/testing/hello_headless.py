@@ -7,6 +7,7 @@ References:
 # pylint: disable=c-extension-no-member
 
 import sys
+
 import PyQt5.QtWidgets
 
 sys.argv.extend(["-platform", "minimal"])

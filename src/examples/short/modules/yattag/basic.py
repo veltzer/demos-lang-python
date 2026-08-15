@@ -6,12 +6,11 @@ from yattag import Doc, indent
 
 doc, tag, text = Doc().tagtext()
 
-with tag("html"):
-    with tag("body"):
-        with tag("p", id="main"):
-            text("some text")
-        with tag("a", href="/my-url"):
-            text("some link")
+with tag("html"), tag("body"):
+    with tag("p", id="main"):
+        text("some text")
+    with tag("a", href="/my-url"):
+        text("some link")
 
 result = doc.getvalue()
 print(result)

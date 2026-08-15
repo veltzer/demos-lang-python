@@ -1,8 +1,8 @@
 """
 grep implemented as three stacked generator expressions.
 """
-import sys
 import re
+import sys
 
 
 def _iter_lines(filenames):

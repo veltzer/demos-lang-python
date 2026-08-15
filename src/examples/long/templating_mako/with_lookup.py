@@ -11,7 +11,7 @@ import mako.lookup
 
 
 def years(x):
-    curr_year = datetime.datetime.now().year
+    curr_year = datetime.datetime.now().year  # noqa: DTZ005
     return ",".join(map(str, range(x, curr_year + 1)))
 
 

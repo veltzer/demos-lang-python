@@ -6,7 +6,7 @@ on pop on empty stack...
 """
 
 import time
-from threading import Thread, RLock
+from threading import RLock, Thread
 
 number_of_elements = 400
 

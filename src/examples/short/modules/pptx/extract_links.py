@@ -10,7 +10,6 @@ from itertools import islice
 
 from pptx import Presentation
 
-
 input_filename = sys.argv[1]
 
 presentation = Presentation(input_filename)
@@ -22,6 +21,6 @@ for slide_number, slide in enumerate(islice(slides, None)):
         if target.startswith(".."):
             continue
         refs.add(target)
-refs_l = sorted(list(refs))
+refs_l = sorted(list(refs))  # noqa: C414
 for ref in refs_l:
     print(ref)

@@ -10,6 +10,5 @@ This is for efficiency reasons.
 
 import sys
 
-
 print(sys.stdout.line_buffering)
 print("Hello, World!")

@@ -20,7 +20,7 @@ if os.path.isfile(filename):
     os.unlink(filename)
 
 # n means create a new database and open for reading and writing
-d = dbm.gnu.open(filename, "n")
+d = dbm.gnu.open(filename, "n")  # noqa: SIM115
 d["one"] = "ehad"
 d["two"] = "shtaim"
 d[b""] = b"emptybytes"

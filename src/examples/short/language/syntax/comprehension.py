@@ -17,7 +17,7 @@ list3 = []
 for x in range(10):
     for y in range(10):
         list3.append((x, y))
-print(map(lambda t: t[0] * t[1], list3))
+print(map(lambda t: t[0] * t[1], list3))  # noqa: C417
 
 # sets
 print({x * 2 for x in range(10)})

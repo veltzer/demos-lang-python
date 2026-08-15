@@ -11,7 +11,7 @@ print(list1)
 
 # empty list with constructur
 # pylint: disable=use-list-literal
-list2 = list()  # type: ignore
+list2 = list()  # type: ignore  # noqa: C408
 print(list2)
 
 # empty list explicit
@@ -19,9 +19,9 @@ list3 = []  # type: ignore
 print(list3)
 
 # from another list
-list4 = list([1,2,3])
+list4 = list([1,2,3])  # noqa: C410
 print(list4)
 
 # from a tuple
-list5 = list((1,2,3))
+list5 = list((1,2,3))  # noqa: C410
 print(list5)

@@ -5,7 +5,6 @@ This example shows how to buffer stdout
 import sys
 import time
 
-
 i = 0
 print(sys.stdout.line_buffering)
 while True:

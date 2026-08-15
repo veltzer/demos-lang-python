@@ -3,7 +3,6 @@ This example shows that you can modify dictionaries values in place
 """
 from typing import Any
 
-
 # Dictionary with complex values (lists and dictionaries)
 student_data: dict[str,dict[str,Any]] = {
     "Alice": {

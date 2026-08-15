@@ -47,7 +47,7 @@ try:
     a = A()  # type: ignore
     assert isinstance(a, A)
 except TypeError as e:
-    print(f"yes, got exception [{str(e)}]...")
+    print(f"yes, got exception [{e!s}]...")
 
 b = B()
 assert isinstance(b, B)
@@ -57,7 +57,7 @@ try:
     c = C()  # type: ignore
     assert issubclass(c, C)  # type: ignore
 except TypeError as e:
-    print(f"yes, got exception [{str(e)}]...")
+    print(f"yes, got exception [{e!s}]...")
 
 assert issubclass(D, C)
 d = D()

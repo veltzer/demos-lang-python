@@ -4,8 +4,8 @@ List all anthropic model names
 The modules you need to install to make this work are `passpy` and `anthropic`
 """
 
-import passpy
 import anthropic
+import passpy
 
 store = passpy.Store()
 api_key = store.get_key("keys/claude.ai")

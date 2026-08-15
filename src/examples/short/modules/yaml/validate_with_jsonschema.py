@@ -36,5 +36,5 @@ testing: ["this", "is", "a", "bad", "test"]
 
 try:
     validate(yaml.load(bad_instance, Loader=yaml.SafeLoader), yaml.load(schema, Loader=yaml.SafeLoader))
-except ValidationError as e:
-    raise e
+except ValidationError as e:  # noqa: TRY203
+    raise e  # noqa: TRY201

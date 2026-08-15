@@ -9,7 +9,7 @@ from collections.abc import KeysView
 class Data:
     """Data Store Class"""
 
-    products = {
+    products = {  # noqa: RUF012
         "milk": {"price": 1.50, "quantity": 10},
         "eggs": {"price": 0.20, "quantity": 100},
         "cheese": {"price": 2.00, "quantity": 10},
@@ -45,7 +45,7 @@ class Ui:
         print("PRODUCT LIST:")
         for product in self.business_logic.product_list():
             print(product)
-        print("")
+        print()
 
     def get_product_information(self, product: str) -> None:
         product_info = self.business_logic.product_information(product)

@@ -20,7 +20,7 @@ def my_mystery_function():
     print(g)  # pyrefly: ignore[unbound-name]  # noqa: F823
     # pylint: disable=using-constant-test
     if True:
-        g += 17  # pyrefly: ignore[unbound-name]  # noqa: F823
+        g += 17  # pyrefly: ignore[unbound-name]
     print(g)
 
 

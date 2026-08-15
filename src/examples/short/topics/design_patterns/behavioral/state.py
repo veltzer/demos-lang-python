@@ -9,8 +9,8 @@ Implements state transitions by invoking methods from the patterns superclass.
 """
 
 import abc
-from contextlib import redirect_stdout
 import io
+from contextlib import redirect_stdout
 
 
 class State:

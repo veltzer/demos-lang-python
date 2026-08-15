@@ -9,7 +9,6 @@ efficient.
 import collections
 import timeit
 
-
 function_names = {}
 
 

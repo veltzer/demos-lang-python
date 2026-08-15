@@ -20,7 +20,7 @@ def with_output_to_outfile(f):
     def decorated_f(*args, **kw):
         old_stdout = sys.stdout
         # pylint: disable=consider-using-with
-        new_stdout = sys.stdout = open(outfile, "a")
+        new_stdout = sys.stdout = open(outfile, "a")  # noqa: SIM115
         try:
             return f(*args, **kw)
         finally:

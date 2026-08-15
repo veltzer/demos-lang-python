@@ -9,8 +9,8 @@ References:
 - https://stackoverflow.com/questions/4990718/how-can-i-write-a-try-except-block-that-catches-all-exceptions
 """
 
-import os.path
 import os
+import os.path
 import time
 
 filename = "/tmp/test"
@@ -26,4 +26,4 @@ try:
 except (Exception, KeyboardInterrupt, SystemError) as e:
     print("unliking...")
     os.unlink(filename)
-    raise e
+    raise e  # noqa: TRY201

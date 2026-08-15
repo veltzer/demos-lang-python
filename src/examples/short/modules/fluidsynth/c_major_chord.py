@@ -1,6 +1,7 @@
 """ c_major_chord.py """
 
 import time
+
 import fluidsynth
 
 # Initialize FluidSynth

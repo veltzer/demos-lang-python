@@ -2,9 +2,10 @@
 Solution
 """
 
-import os
 import logging
 import logging.handlers
+import os
+
 import logging_tree
 
 logging.basicConfig()

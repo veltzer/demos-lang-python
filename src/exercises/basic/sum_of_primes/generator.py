@@ -2,8 +2,8 @@
 Generator based solution
 """
 
-import math
 import itertools
+import math
 
 
 def primes():

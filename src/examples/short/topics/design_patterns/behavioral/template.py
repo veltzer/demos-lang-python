@@ -33,7 +33,7 @@ def saver() -> None:
 
 def template_function(getter, converter=False, to_save=False) -> None:
     data = getter()
-    print(f"Got {repr(data)}")
+    print(f"Got {data!r}")
 
     if len(data) <= 3 and converter:
         data = converter(data)  # pyrefly: ignore[not-callable]
@@ -43,7 +43,7 @@ def template_function(getter, converter=False, to_save=False) -> None:
     if to_save:
         saver()
 
-    print(f"{repr(data)} was processed")
+    print(f"{data!r} was processed")
 
 
 def main():

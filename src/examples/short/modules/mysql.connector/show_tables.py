@@ -6,6 +6,7 @@ This module comes from the mysql-connection.
 """
 
 import os.path
+
 import mysql.connector
 
 

@@ -5,6 +5,7 @@ This context manager prevents printing
 import sys
 from contextlib import contextmanager
 
+
 @contextmanager
 def suppress_print():
     with open("/dev/null", "w") as devnull:

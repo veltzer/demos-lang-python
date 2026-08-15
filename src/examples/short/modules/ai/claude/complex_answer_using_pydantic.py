@@ -4,8 +4,8 @@ Issue one prompt to anthropic and get back a validated pydantic object
 The modules you need to install to make this work are `passpy`, `anthropic` and `pydantic`
 """
 
-import passpy
 import anthropic
+import passpy
 from pydantic import BaseModel
 
 QUERY = """

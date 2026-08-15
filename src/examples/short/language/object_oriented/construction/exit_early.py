@@ -22,7 +22,7 @@ class Book:
         self.__price = price
         # return None
         # noinspection PyTypeChecker
-        return 7  # type: ignore
+        return 7  # type: ignore  # noqa: PLE0101
         # return
 
     def setPrice(self, val):

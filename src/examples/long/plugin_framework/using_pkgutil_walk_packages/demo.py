@@ -46,5 +46,5 @@ for importer, modname, is_package in pkgutil.walk_packages(
                 print(name)
                 print(t)
                 print(instance)
-    except Exception as e:
-        raise e
+    except Exception as e:  # noqa: TRY203
+        raise e  # noqa: TRY201

@@ -1,8 +1,8 @@
 """ my_memory_consuption_using_psutil.py """
 
 import os
-import psutil
 
+import psutil
 
 _big_list = [0] * 1000000
 pid = os.getpid()
