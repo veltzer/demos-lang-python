@@ -36,7 +36,7 @@ def create_large_table():
     del data_frames
 
 
-random_strings = []
+random_strings: list[str] = []
 
 
 def create_random_strings():

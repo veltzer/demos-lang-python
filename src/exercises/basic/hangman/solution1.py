@@ -11,7 +11,7 @@ Bzzz! No "x" there.
 
 # Initialization
 WORD = "secret"
-open_letters = set()
+open_letters: set[str] = set()
 
 
 def print_known_parts():
