@@ -8,7 +8,7 @@ import typing
 
 
 class A:
-    instance = None  # type: A
+    instance: typing.Union["A", None] = None
 
     def __init__(self):
         if A.instance is not None:
