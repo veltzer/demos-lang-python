@@ -1,5 +1,5 @@
-{% set py = load_python(path="config/python.py") -%}
+{% set py = load_lua(path="config/python.lua") -%}
 # THIS IS AN AUTO-GENERATED FILE. DO NOT EDIT!
-{% for a in py.requires | sort -%}
+{% for a in py.REQUIRES | sort -%}
 {{ a }}
 {% endfor -%}
