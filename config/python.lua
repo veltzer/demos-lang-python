@@ -1,84 +1,92 @@
-""" python deps for this project """
+-- python deps for this project
 
-import config.shared
+dofile("config/shared.lua")
 
-install_requires: list[str] = [
+-- append every element of "src" onto "dst"
+local function extend(dst, src)
+    for _, value in ipairs(src) do
+        table.insert(dst, value)
+    end
+    return dst
+end
+
+INSTALL_REQUIRES = {
     "pydantic",
-    # command line parsing
+    -- command line parsing
     "click",
     "cmd2",
-    # web
+    -- web
     "furl",
     "requests",
     "beautifulsoup4",
     "types-beautifulsoup4",
     "html5lib",
     "lxml",
-    # progress and tui
+    -- progress and tui
     "tqdm",
     "types-tqdm",
     "pythondialog",
-    # systems programming
+    -- systems programming
     "psutil",
     "types-psutil",
     "dbus-python",
-    # problems intalling the next module on github systems
-    # "systemd-python",
-    # gtk stuff
-    # "PyGObject",
-    # "PyGObject-stubs",
-    # cache and database
+    -- problems intalling the next module on github systems
+    -- "systemd-python",
+    -- gtk stuff
+    -- "PyGObject",
+    -- "PyGObject-stubs",
+    -- cache and database
     "lmdb",
     "cachetools",
-    # databases
+    -- databases
     "pymysql",
     "mysql.connector",
     "sqlalchemy",
     "psycopg2",
     "types-psycopg2",
-    # data languages
+    -- data languages
     "jsonschema",
     "types-jsonschema",
     "jsonpickle",
-    # GUI
+    -- GUI
     "PyQt5",
     "PyQt5-stubs",
-    # selenium stuff
+    -- selenium stuff
     "webdriver-manager",
     "selenium",
     "selenium-wire",
-    # music
+    -- music
     "music",
     "mingus",
     "pyFluidSynth",
-    # GUI
+    -- GUI
     "PyQt5",
     "PyQt5-stubs",
-    # selenium stuff
+    -- selenium stuff
     "webdriver-manager",
     "selenium",
     "selenium-wire",
-    # music
+    -- music
     "music",
     "mingus",
     "simpleaudio",
     "pygame",
-    # terminal color stuff
+    -- terminal color stuff
     "termcolor",
     "colored",
     "colorama",
     "types-colorama",
-    # yaml
+    -- yaml
     "oyaml",
     "ruamel.yaml",
-    # google cloud
+    -- google cloud
     "google-api-python-client",
     "google-auth-httplib2",
     "google-auth-oauthlib",
     "google-cloud-datastore",
-    # dependency injection
-    # "dependency-injector",
-    # misc
+    -- dependency injection
+    -- "dependency-injector",
+    -- misc
     "texttable",
     "dispy",
     "mako",
@@ -102,7 +110,7 @@ install_requires: list[str] = [
     "tsv",
     "pygments",
     "types-pygments",
-    # "simpleparse",
+    -- "simpleparse",
     "progressbar",
     "inject",
     "scrapy",
@@ -126,22 +134,22 @@ install_requires: list[str] = [
     "opencv-python",
     "python-magic",
     "imageio",
-    # my stuff
+    -- my stuff
     "pyapikey",
     "pyvardump",
-    # EXIF and image related libraries
+    -- EXIF and image related libraries
     "Pillow",
     "types-Pillow",
     "ExifRead",
     "exif",
     "piexif",
     "PyExifTool",
-    # k8s
+    -- k8s
     "kubernetes",
     "kubernetes-stubs",
     "openshift-client",
     "openshift",
-    # math and machine learning
+    -- math and machine learning
     "bitmath",
     "mpmath",
     "sympy",
@@ -152,10 +160,10 @@ install_requires: list[str] = [
     "matplotlib",
     "colorspacious",
     "scikit-learn",
-    # flask-web
+    -- flask-web
     "flask",
     "Flask-RESTful",
-    # fastapi-web
+    -- fastapi-web
     "fastapi",
     "uvicorn",
     "tornado",
@@ -168,23 +176,23 @@ install_requires: list[str] = [
     "humanize",
     "weasyprint",
     "passpy",
-    # AI
+    -- AI
     "openai-whisper",
     "anthropic",
     "openai",
-    # this is the new google generative google module
+    -- this is the new google generative google module
     "google-genai",
-    # deprecated (do not use)
-    # "google-generativeai",
-    # "google-ai-generativelanguage"
-    # "protobuf",
-    # my own stuff
+    -- deprecated (do not use)
+    -- "google-generativeai",
+    -- "google-ai-generativelanguage"
+    -- "protobuf",
+    -- my own stuff
     "pygooglehelper",
     "pylogconf",
-]
-build_requires: list[str] = config.shared.BUILD
-test_requires: list[str] = config.shared.TEST
-types_requires: list[str] = [
+}
+BUILD_REQUIRES = BUILD
+TEST_REQUIRES = TEST
+TYPES_REQUIRES = {
     "types-PyYAML",
     "types-setuptools",
     "types-boto",
@@ -193,5 +201,10 @@ types_requires: list[str] = [
     "types-paramiko",
     "types-termcolor",
     "types-passpy",
-]
-requires = install_requires + build_requires + test_requires + types_requires
+}
+
+REQUIRES = {}
+extend(REQUIRES, INSTALL_REQUIRES)
+extend(REQUIRES, BUILD_REQUIRES)
+extend(REQUIRES, TEST_REQUIRES)
+extend(REQUIRES, TYPES_REQUIRES)
