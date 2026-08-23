@@ -1,14 +1,15 @@
-# demos-python
+## demos-python
 
 version: 0.0.3
 
 description: Demos for the Python programming language
 
-website: [website](https://veltzer.github.io/demos-python)
+website: https://veltzer.github.io/demos-python
 
 ## Build
 
 ![build](https://github.com/veltzer/demos-python/workflows/build/badge.svg)
+
 This project explores the python programming language.
 The idea is that when you are programming you may find many examples
 over the Internet but you always need to tweak them a bit to see
@@ -22,9 +23,6 @@ This is a much better way of programming since you are not doing
 the experiments on your full system but rather on a small example
 that is easy to run, debug and manage. Once you have the example ready and
 running correctly you can incorporate its code into a larger project.
-## Contact
-
-chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/veltzer/mark.veltzer)
 ## Number of examples
 
 Currently there are 990 examples in this repo.
@@ -55,4 +53,8 @@ Currently there are 990 examples in this repo.
     python src/examples/short/modules/pandas/basic.py
     ```
 
-Mark Veltzer [mark.veltzer@gmail.com](mailto:mark.veltzer@gmail.com), © 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
+## Contact
+
+chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/veltzer/mark.veltzer)
+
+Mark Veltzer, Copyright © 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026
