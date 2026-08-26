@@ -203,7 +203,6 @@ debug
 
 # claude
 /.claude/
-claude/
 .claude/projects/
 .claude/settings.local.json
 
