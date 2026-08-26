@@ -36,7 +36,7 @@ class SingleLinkedList:
     def pop_head_element(self):
         """ pop the element the head of the list """
 
-    def yield_elements(self) -> Generator[Any, None, None]:
+    def yield_elements(self) -> Generator[Any]:
         """ yield all elements from the list """
         yield
 

@@ -22,7 +22,7 @@ class Blackboard:
         }
         self.contributions: list[str] = []
 
-    def add_expert(self, expert: "AbstractExpert") -> None:
+    def add_expert(self, expert: AbstractExpert) -> None:
         self.experts.append(expert)
 
 

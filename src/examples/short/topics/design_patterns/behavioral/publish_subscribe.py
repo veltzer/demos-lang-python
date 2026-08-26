@@ -4,9 +4,11 @@ http://www.slideshare.net/ishraqabd/publish-subscribe-model-overview-13368808
 Author: https://github.com/HanWenfang
 """
 
+from __future__ import annotations
+
 
 class Subscriber:
-    def __init__(self, name: str, msg_center: "Provider") -> None:
+    def __init__(self, name: str, msg_center: Provider) -> None:
         self.name = name
         self.provider = msg_center
 

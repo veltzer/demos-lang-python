@@ -2,10 +2,12 @@
 registry.py
 """
 
+from __future__ import annotations
+
 
 class RegistryHolder(type):
 
-    REGISTRY: dict[str, "RegistryHolder"] = {}  # noqa: RUF012
+    REGISTRY: dict[str, RegistryHolder] = {}  # noqa: RUF012
 
     def __new__(cls, name, bases, attrs):
         """

@@ -9,6 +9,7 @@ Django Signals: https://docs.djangoproject.com/en/3.1/topics/signals/
 Flask Signals: https://flask.palletsprojects.com/en/1.1.x/signals/
 """
 
+from __future__ import annotations
 
 from contextlib import suppress
 from typing import Protocol
@@ -16,7 +17,7 @@ from typing import Protocol
 
 # define a generic observer type
 class Observer(Protocol):
-    def update(self, subject: "Subject") -> None:
+    def update(self, subject: Subject) -> None:
         pass
 
 

@@ -14,11 +14,13 @@ of the class then you can override the __new__ method. But that
 is a different story.
 """
 
+from __future__ import annotations
+
 
 class Book:
     # noinspection PyReturnFromInit,PyTypeChecker
     # pylint: disable=return-in-init
-    def __init__(self, price) -> "Book":  # type: ignore
+    def __init__(self, price) -> Book:  # type: ignore
         self.__price = price
         # return None
         # noinspection PyTypeChecker

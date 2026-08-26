@@ -3,12 +3,13 @@ This is an improvement on the previous singleton example.
 This time we protect against concurrent access.
 """
 
+from __future__ import annotations
+
 import threading
-import typing
 
 
 class A:
-    instance: typing.Union["A", None] = None
+    instance: A | None = None
 
     def __init__(self):
         if A.instance is not None:
@@ -20,7 +21,7 @@ class A:
     lock = threading.Lock()
 
     @staticmethod
-    def getInstance() -> typing.Union["A", None]:
+    def getInstance() -> A | None:
         with A.lock:
             if A.instance is None:
                 A.instance = A()
