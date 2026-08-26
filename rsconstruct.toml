@@ -19,6 +19,17 @@ system = [
 	"qtbase5-dev-tools", # pyqt5 (qmake)
 	"qttools5-dev",      # pyqt5
 	"sip-tools",         # pyqt5 (sip)
+	# pygame 2.6.1 (its latest release) ships no cp314 wheel, and the runner is
+	# ubuntu-26.04 / Python 3.14, so pip builds it from source and needs the SDL
+	# headers. Drop these once pygame ships a cp314 wheel.
+	"libsdl2-dev",       # pygame
+	"libsdl2-image-dev", # pygame
+	"libsdl2-mixer-dev", # pygame
+	"libsdl2-ttf-dev",   # pygame
+	"libfreetype6-dev",  # pygame (font)
+	"libportmidi-dev",   # pygame (midi)
+	"libjpeg-dev",       # pygame (image)
+	"libpng-dev",        # pygame (image)
 ]
 pip = [
 	"-r",
