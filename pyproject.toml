@@ -1,3 +1,16 @@
+[project]
+name = "demos-lang-python"
+version = "0.0.0"
+description = "Python language demos"
+requires-python = ">=3.14"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.thawed.txt"] }
+
+[tool.uv]
+package = false
+
 [tool.pyrefly]
 # Third-party packages that are not installed in the build environment
 # (or ship without type information) are treated as Any so pyrefly does not
