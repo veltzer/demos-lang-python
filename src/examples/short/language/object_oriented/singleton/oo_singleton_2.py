@@ -7,11 +7,11 @@ Notes:
 - In this example we do not protect against concurrent access.
 """
 
-import typing
+from __future__ import annotations
 
 
 class A:
-    instance: typing.Union["A", None] = None
+    instance: A | None = None
 
     def __init__(self):
         if A.instance is not None:
@@ -21,7 +21,7 @@ class A:
         self.my_attribute = "value"
 
     @classmethod
-    def get_instance(cls) -> typing.Union["A", None]:
+    def get_instance(cls) -> A | None:
         if cls.instance is None:
             cls.instance = cls()
         return cls.instance
