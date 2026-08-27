@@ -1,6 +1,6 @@
 # System (apt) dev libraries required to build the source-only python
-# packages in requirements.txt on a clean CI runner. Installed by
-# `rsconstruct tools install-deps --yes`.
+# packages from pyproject.toml's [project].dependencies on a clean CI
+# runner. Installed by `rsconstruct tools install-deps --yes`.
 [dependencies]
 system = [
 	"pkg-config",
@@ -30,10 +30,6 @@ system = [
 	"libportmidi-dev",   # pygame (midi)
 	"libjpeg-dev",       # pygame (image)
 	"libpng-dev",        # pygame (image)
-]
-pip = [
-	"-r",
-	"requirements.txt", # demo libs, so pyrefly resolves imports
 ]
 
 [processor.pyrefly]
