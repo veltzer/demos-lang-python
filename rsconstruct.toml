@@ -83,9 +83,6 @@ dep_inputs = [
     "config/project.lua",
     "config/personal.lua",
     "config/version.lua",
-    "config/github.lua",
-    "config/python.lua",
-    "config/shared.lua",
 ]
 
 # lint the GitHub Actions workflow files with actionlint
