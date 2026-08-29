@@ -155,6 +155,15 @@ dependencies = [
     "yapsy",
 ]
 
+[dependency-groups]
+dev = [
+    "mypy",
+    "pylint",
+    "pyrefly",
+    "pytest",
+    "ruff",
+]
+
 [tool.uv]
 package = false
 
