@@ -1067,7 +1067,6 @@ dependencies = [
     { name = "bitmath" },
     { name = "boto" },
     { name = "boto3" },
-    { name = "boto3-stubs" },
     { name = "browser-cookie3" },
     { name = "cachetools" },
     { name = "click" },
@@ -1108,7 +1107,6 @@ dependencies = [
     { name = "jsonschema" },
     { name = "keyring" },
     { name = "kubernetes" },
-    { name = "kubernetes-stubs" },
     { name = "lmdb" },
     { name = "logging-tree" },
     { name = "luigi" },
@@ -1129,7 +1127,6 @@ dependencies = [
     { name = "openshift-client" },
     { name = "oyaml" },
     { name = "pandas" },
-    { name = "pandas-stubs" },
     { name = "paramiko" },
     { name = "passpy" },
     { name = "piexif" },
@@ -1159,7 +1156,6 @@ dependencies = [
     { name = "pymysql" },
     { name = "pyparsing" },
     { name = "pyqt5" },
-    { name = "pyqt5-stubs" },
     { name = "pyrss2gen" },
     { name = "pytest" },
     { name = "python-jenkins" },
@@ -1188,6 +1184,24 @@ dependencies = [
     { name = "tqdm" },
     { name = "tsv" },
     { name = "twisted" },
+    { name = "unidecode" },
+    { name = "uvicorn" },
+    { name = "weasyprint" },
+    { name = "webdriver-manager" },
+    { name = "yapsy" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "boto3-stubs" },
+    { name = "kubernetes-stubs" },
+    { name = "mypy" },
+    { name = "pandas-stubs" },
+    { name = "pylint" },
+    { name = "pyqt5-stubs" },
+    { name = "pyrefly" },
+    { name = "pytest" },
+    { name = "ruff" },
     { name = "types-beautifulsoup4" },
     { name = "types-boto" },
     { name = "types-colorama" },
@@ -1204,20 +1218,6 @@ dependencies = [
     { name = "types-setuptools" },
     { name = "types-termcolor" },
     { name = "types-tqdm" },
-    { name = "unidecode" },
-    { name = "uvicorn" },
-    { name = "weasyprint" },
-    { name = "webdriver-manager" },
-    { name = "yapsy" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "mypy" },
-    { name = "pylint" },
-    { name = "pyrefly" },
-    { name = "pytest" },
-    { name = "ruff" },
 ]
 
 [package.metadata]
@@ -1229,7 +1229,6 @@ requires-dist = [
     { name = "bitmath" },
     { name = "boto" },
     { name = "boto3" },
-    { name = "boto3-stubs" },
     { name = "browser-cookie3" },
     { name = "cachetools" },
     { name = "click" },
@@ -1270,7 +1269,6 @@ requires-dist = [
     { name = "jsonschema" },
     { name = "keyring" },
     { name = "kubernetes" },
-    { name = "kubernetes-stubs" },
     { name = "lmdb" },
     { name = "logging-tree" },
     { name = "luigi" },
@@ -1291,7 +1289,6 @@ requires-dist = [
     { name = "openshift-client" },
     { name = "oyaml" },
     { name = "pandas" },
-    { name = "pandas-stubs" },
     { name = "paramiko" },
     { name = "passpy" },
     { name = "piexif" },
@@ -1321,7 +1318,6 @@ requires-dist = [
     { name = "pymysql" },
     { name = "pyparsing" },
     { name = "pyqt5" },
-    { name = "pyqt5-stubs" },
     { name = "pyrss2gen" },
     { name = "pytest" },
     { name = "python-jenkins" },
@@ -1350,6 +1346,24 @@ requires-dist = [
     { name = "tqdm" },
     { name = "tsv" },
     { name = "twisted" },
+    { name = "unidecode" },
+    { name = "uvicorn" },
+    { name = "weasyprint" },
+    { name = "webdriver-manager" },
+    { name = "yapsy" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "boto3-stubs" },
+    { name = "kubernetes-stubs" },
+    { name = "mypy" },
+    { name = "pandas-stubs" },
+    { name = "pylint" },
+    { name = "pyqt5-stubs" },
+    { name = "pyrefly" },
+    { name = "pytest" },
+    { name = "ruff" },
     { name = "types-beautifulsoup4" },
     { name = "types-boto" },
     { name = "types-colorama" },
@@ -1366,20 +1380,6 @@ requires-dist = [
     { name = "types-setuptools" },
     { name = "types-termcolor" },
     { name = "types-tqdm" },
-    { name = "unidecode" },
-    { name = "uvicorn" },
-    { name = "weasyprint" },
-    { name = "webdriver-manager" },
-    { name = "yapsy" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "mypy" },
-    { name = "pylint" },
-    { name = "pyrefly" },
-    { name = "pytest" },
-    { name = "ruff" },
 ]
 
 [[package]]
