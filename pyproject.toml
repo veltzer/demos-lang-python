@@ -11,7 +11,6 @@ dependencies = [
     "bitmath",
     "boto",
     "boto3",
-    "boto3-stubs",
     "browser_cookie3",
     "cachetools",
     "click",
@@ -52,7 +51,6 @@ dependencies = [
     "jsonschema",
     "keyring",
     "kubernetes",
-    "kubernetes-stubs",
     "lmdb",
     "logging_tree",
     "luigi",
@@ -73,7 +71,6 @@ dependencies = [
     "openshift-client",
     "oyaml",
     "pandas",
-    "pandas-stubs",
     "paramiko",
     "passpy",
     "piexif",
@@ -103,7 +100,6 @@ dependencies = [
     "pymysql",
     "pyparsing",
     "PyQt5",
-    "PyQt5-stubs",
     "PyRSS2Gen",
     "pytest",
     "python-jenkins",
@@ -132,6 +128,24 @@ dependencies = [
     "tqdm",
     "tsv",
     "twisted",
+    "unidecode",
+    "uvicorn",
+    "weasyprint",
+    "webdriver-manager",
+    "yapsy",
+]
+
+[dependency-groups]
+dev = [
+    "boto3-stubs",
+    "kubernetes-stubs",
+    "mypy",
+    "pandas-stubs",
+    "pylint",
+    "PyQt5-stubs",
+    "pyrefly",
+    "pytest",
+    "ruff",
     "types-beautifulsoup4",
     "types-boto",
     "types-colorama",
@@ -148,20 +162,6 @@ dependencies = [
     "types-setuptools",
     "types-termcolor",
     "types-tqdm",
-    "unidecode",
-    "uvicorn",
-    "weasyprint",
-    "webdriver-manager",
-    "yapsy",
-]
-
-[dependency-groups]
-dev = [
-    "mypy",
-    "pylint",
-    "pyrefly",
-    "pytest",
-    "ruff",
 ]
 
 [tool.uv]
