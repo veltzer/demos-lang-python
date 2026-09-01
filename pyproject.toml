@@ -85,7 +85,6 @@ dependencies = [
     "pyclassifiers",
     "pycmdtools",
     "pydantic",
-    "pydmt",
     "PyExifTool",
     "pyFluidSynth",
     "pygame",
