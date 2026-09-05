@@ -69,7 +69,8 @@ src_dirs = ["src"]
 src_dirs = ["src"]
 
 [processor.rumdl]
-src_dirs = ["src"]
+src_dirs = ["src", "make_based", "misc/two_versions_same_lib"]
+src_files = ["README.md"]
 
 [processor.zspell]
 src_dirs = ["src"]
@@ -88,3 +89,18 @@ dep_inputs = [
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
 src_dirs = [".github/workflows"]
+
+# ─── yaml ────────────────────────────────────────────────────────────────────
+
+[processor.yamllint]
+src_dirs = ["src/examples/long"]
+
+# ─── lua ─────────────────────────────────────────────────────────────────────
+
+[processor.luacheck]
+src_dirs = ["config"]
+
+# ─── html ────────────────────────────────────────────────────────────────────
+
+[processor.htmlhint]
+src_dirs = ["src/examples/long"]

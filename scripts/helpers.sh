@@ -106,12 +106,12 @@ main() {
 	fi
 	local cmd="$1"
 	shift
-	if ! declare -F "cmd_$cmd" >/dev/null; then
-		echo "unknown command: $cmd" >&2
+	if ! declare -F "cmd_${cmd}" >/dev/null; then
+		echo "unknown command: ${cmd}" >&2
 		usage
 		exit 1
 	fi
-	"cmd_$cmd" "$@"
+	"cmd_${cmd}" "$@"
 }
 
 main "$@"
