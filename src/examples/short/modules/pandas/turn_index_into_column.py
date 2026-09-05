@@ -7,7 +7,7 @@ References:
 
 import pandas
 
-filename = "shared-samples/2_by_2.tsv"
+filename = "shared-samples/tsv/2_by_2.tsv"
 df = pandas.read_csv(
     filename,
     sep="\t",
