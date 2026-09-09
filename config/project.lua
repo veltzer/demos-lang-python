@@ -1,5 +1,5 @@
 -- project definitions
-NAME = "demos-python"
+NAME = "demos-lang-python"
 DESCRIPTION_SHORT = "Demos for the Python programming language"
 DESCRIPTION_LONG = [[
 This project explores the python programming language.

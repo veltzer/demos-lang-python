@@ -1,11 +1,11 @@
 <!-- This file is generated. Do not edit it by hand: your changes will be
      lost on the next build. Edit the template it is rendered from, or the
      values that template reads, and build again. -->
-# *demos-python* project by Mark Veltzer
+# *demos-lang-python* project by Mark Veltzer
 
 description: Demos for the Python programming language
 
-project website: https://veltzer.github.io/demos-python
+project website: https://veltzer.github.io/demos-lang-python
 
 author: Mark Veltzer
 
@@ -15,11 +15,11 @@ version: 0.0.3
 
 ## github
 
-![License](https://img.shields.io/github/license/veltzer/demos-python)
+![License](https://img.shields.io/github/license/veltzer/demos-lang-python)
 
 ## build
 
-![build](https://github.com/veltzer/demos-python/workflows/build/badge.svg)
+![build](https://github.com/veltzer/demos-lang-python/workflows/build/badge.svg)
 ## Number of examples
 
 Currently there are 990 examples in this repo.
