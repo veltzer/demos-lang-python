@@ -161,6 +161,7 @@ dev = [
     "types-setuptools",
     "types-termcolor",
     "types-tqdm",
+    "yamllint",
 ]
 
 [tool.uv]
