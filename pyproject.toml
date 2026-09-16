@@ -249,6 +249,8 @@ replace-imports-with-any = [
     "msrest.*",
     "mysql",
     "mysql.*",
+    "networkx",
+    "networkx.*",
     "openai",
     "openai.*",
     "paramiko",
