@@ -62,8 +62,6 @@ args = [
 [processor.ruff]
 src_dirs = ["src"]
 
-[processor.pylint]
-src_dirs = ["src"]
 
 [processor.mypy]
 src_dirs = ["src"]
