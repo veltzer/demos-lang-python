@@ -32,14 +32,14 @@ system = [
 	"libpng-dev",        # pygame (image)
 ]
 
-[processor.pyrefly]
+[processor.checker.pyrefly]
 src_dirs = ["src"]
 # src_dirs = ["src", "config"]
 
-[processor.make]
+[processor.checker.make]
 src_dirs = ["make_based"]
 
-# [processor.cc_single_file]
+# [processor.generator.cc_single_file]
 # src_dirs = ["src"]
 # include_paths = [
 # 	"/usr/include/python3.13",
@@ -51,7 +51,7 @@ include_paths = [
 	"/usr/include/python3.14",
 ]
 
-[processor.cppcheck]
+[processor.checker.cppcheck]
 src_dirs = ["make_based"]
 args = [
 	"--error-exitcode=1",
@@ -59,24 +59,24 @@ args = [
 	"--inline-suppr",
 ]
 
-[processor.ruff]
+[processor.checker.ruff]
 src_dirs = ["src"]
 
 
-[processor.mypy]
+[processor.checker.mypy]
 src_dirs = ["src"]
 
-[processor.rumdl]
+[processor.checker.rumdl]
 src_dirs = ["src", "make_based", "misc/two_versions_same_lib"]
 src_files = ["README.md"]
 
-[processor.zspell]
+[processor.checker.zspell]
 src_dirs = ["src"]
 
-[processor.shellcheck]
+[processor.checker.shellcheck]
 src_dirs = ["scripts", "src", "misc"]
 
-[processor.tera]
+[processor.generator.tera]
 src_dirs = ["tera.templates"]
 dep_inputs = [
     "config/project.lua",
@@ -85,20 +85,20 @@ dep_inputs = [
 ]
 
 # lint the GitHub Actions workflow files with actionlint
-[processor.actionlint]
+[processor.checker.actionlint]
 src_dirs = [".github/workflows"]
 
 # ─── yaml ────────────────────────────────────────────────────────────────────
 
-[processor.yamllint]
+[processor.checker.yamllint]
 src_dirs = ["src/examples/long"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
-[processor.luacheck]
+[processor.checker.luacheck]
 src_dirs = ["config"]
 
 # ─── html ────────────────────────────────────────────────────────────────────
 
-[processor.tidy]
+[processor.checker.tidy]
 src_dirs = ["src/examples/long"]
