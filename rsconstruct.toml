@@ -1,6 +1,6 @@
 # System (apt) dev libraries required to build the source-only python
 # packages from pyproject.toml's [project].dependencies on a clean CI
-# runner. Installed by `rsconstruct tools install-deps --yes`.
+# runner. Installed by `rsconstruct tool install-deps --yes`.
 [dependencies]
 system = [
 	"pkg-config",
