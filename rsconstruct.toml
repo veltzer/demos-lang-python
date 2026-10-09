@@ -63,9 +63,6 @@ args = [
 src_dirs = ["src"]
 
 
-[processor.checker.mypy]
-src_dirs = ["src"]
-
 [processor.checker.rumdl]
 src_dirs = ["src", "make_based", "misc/two_versions_same_lib"]
 src_files = ["README.md"]
