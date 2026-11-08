@@ -38,6 +38,8 @@ src_dirs = ["src"]
 
 [processor.checker.make]
 src_dirs = ["make_based"]
+# the makefiles run Python, which writes bytecode
+required_tools = ["python"]
 
 # [processor.generator.cc_single_file]
 # src_dirs = ["src"]
