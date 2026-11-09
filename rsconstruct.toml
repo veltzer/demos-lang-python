@@ -40,6 +40,15 @@ src_dirs = ["src"]
 src_dirs = ["make_based"]
 # the makefiles run Python, which writes bytecode
 required_tools = ["python"]
+# these makefiles build their demos in place (shared libraries, an embedding
+# executable, SWIG wrappers and a setuptools build/ tree); make tracks those
+# artifacts itself, so each demo directory is make's to write
+sandbox_writable = [
+	"make_based/bad_lib",
+	"make_based/crashing_python",
+	"make_based/embedding_python_in_c",
+	"make_based/extending_python_with_c",
+]
 
 # [processor.generator.cc_single_file]
 # src_dirs = ["src"]
