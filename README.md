@@ -5,7 +5,7 @@
 
 description: Demos for the Python programming language
 
-project website: https://veltzer.github.io/demos-lang-python
+project website: <https://veltzer.github.io/demos-lang-python>
 
 author: Mark Veltzer
 
