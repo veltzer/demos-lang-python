@@ -18,6 +18,7 @@ version: 0.0.3
 ## build
 
 ![build](https://github.com/veltzer/demos-lang-python/workflows/build/badge.svg)
+
 ## Number of examples
 
 Currently there are 990 examples in this repo.

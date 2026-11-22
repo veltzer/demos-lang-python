@@ -35,6 +35,7 @@ wget "localhost:8081/add?a=5&b=7"
 You will get the result (12)
 
 ## Dependencies
+
 Both web services will be written in python with the "flask" framework.
 So make sure you install the "flask" package in both micro-services.
 
@@ -42,5 +43,6 @@ In order for service A to access service B you will need to issue an HTTP
 request from A to B. You will do this using the "requests" python library.
 
 ## Advice
+
 Work slowly! First do only service B and test it on it's own.
 Only then add service A.
