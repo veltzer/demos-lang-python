@@ -16,4 +16,5 @@ disable_existing_loggers: True
 which, by the way, it should as this is the right configuration.
 
 References:
+
 - [Good logging practice in Python (Victor Lin)](http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python)

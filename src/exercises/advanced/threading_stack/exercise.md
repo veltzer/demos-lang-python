@@ -9,6 +9,7 @@ Pop(self)
 ```
 
 Any thread could push or pop from the stack.
+
 * in the first variant a pop from an empty stack simply returns.
 * in the second variant a pop from an empty stack sleeps until data is available.
 

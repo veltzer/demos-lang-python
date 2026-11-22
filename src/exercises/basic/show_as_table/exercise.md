@@ -16,6 +16,7 @@ Doron Java   5
 ```
 
 Note that:
+
 * the output is tabular
 * the widths of the columns were calculated to match the data.
 

@@ -3,6 +3,7 @@
 This example shows how to do tests using pytest
 
 The idea is
+
 * create a folder named `tests`
 * create files called `test_*.py` files in the `tests` folder.
 * in those `test_*.py` files create functions called `test_*()`

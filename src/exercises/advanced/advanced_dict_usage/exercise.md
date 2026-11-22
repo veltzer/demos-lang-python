@@ -35,6 +35,7 @@ Bonuses: present a nice interface, don't crush on illegal input, allow
 exiting the game.
 
 ## Hints(1)
+
 * `input()` reads a line from the user and returns it.
 
 Solution: `solution1.py`

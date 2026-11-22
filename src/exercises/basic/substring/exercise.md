@@ -13,6 +13,7 @@ Ships, Ship -> False (s2 is a substring of s1 but s1 is NOT a substring of s2)
 ```
 
 ## hints
+
 * You can iterate the characters of string with a for loop.
 For example:
 

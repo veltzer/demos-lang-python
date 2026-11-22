@@ -8,6 +8,7 @@ The "source" generator, the one that gives you the data to work on, will simply 
 all the lines in the attached soliloquy.
 
 Here are other generators to be implemented:
+
 * splitter - gets a strings from another generator and splits the strings according to space
 * punctuation remover - removes things like commas, period etc..
 * lower-caser - lower cases everything that it gets

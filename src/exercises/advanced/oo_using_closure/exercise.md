@@ -14,4 +14,5 @@ Create two persons and show that they have different attributes.
 Use only closures to implement your person objects.
 
 ## Extra credit
+
 * make your object *look like* an object to the outside world.

@@ -59,11 +59,13 @@ dependencies (Make handles that smartly, building each file at most
 once; you don't have to).
 
 ## Hints(2)
+
 * This is a classical use case for recursion. There are 2 cases:
     * Source files (no rule to build): ``plan('a.c') == []``
     * Generated files: ``plan('app') == plan('a.o') + plan('b.o') + ['app']``
 
 ## Bonus
+
 * if you also parsed the commands, after computing the plan, show which commands would be executed.
 
 Solutions: `solution1.py`, `solution2.py`

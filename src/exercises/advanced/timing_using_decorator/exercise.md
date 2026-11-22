@@ -17,4 +17,5 @@ def my_function(...):
 make your decorator work on more than one function.
 
 ## Hint
+
 * you will need the `time` module to actually know what the time is.
