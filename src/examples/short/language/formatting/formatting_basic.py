@@ -2,7 +2,6 @@
 This shows some basic formatting.
 """
 
-# pylint: disable=consider-using-f-string
 
 name = "mark"
 

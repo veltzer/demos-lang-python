@@ -13,14 +13,14 @@ import kubernetes.watch
 
 def main():
     # Configs can be set in Configuration class directly or using helper utility
-    kubernetes.config.load_config()  # pyrefly: ignore[missing-attribute]
+    kubernetes.config.load_config()
 
     v1 = kubernetes.client.CoreV1Api()
     count = 10
     w = kubernetes.watch.Watch()
     for event in w.stream(v1.list_namespace, _request_timeout=60):
-        f_type = event["type"]  # pyrefly: ignore[bad-index, unsupported-operation]
-        f_object = event["object"]  # pyrefly: ignore[bad-index, unsupported-operation]
+        f_type = event["type"]
+        f_object = event["object"]
         print(f"Event: {f_type} {f_object.metadata.name}")
         count -= 1
         if not count:

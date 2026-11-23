@@ -16,12 +16,12 @@ def redirect_output_to(filename):
     finishes.
     """
     old_stdout = sys.stdout
-    sys.stdout = open(filename, "a")  # noqa: SIM115
-    try:
-        yield
-    finally:
-        sys.stdout.close()
-        sys.stdout = old_stdout
+    with open(filename, "a") as stream:
+        sys.stdout = stream
+        try:
+            yield
+        finally:
+            sys.stdout = old_stdout
 
 
 # Running this will destroy [outfile]!

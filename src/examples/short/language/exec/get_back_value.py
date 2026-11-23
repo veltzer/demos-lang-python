@@ -4,6 +4,5 @@ of code you execute with the "exec" function.
 """
 
 d = {}
-# pylint: disable=exec-used
 exec("ret=7", {}, d)
 print(d["ret"])

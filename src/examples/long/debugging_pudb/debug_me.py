@@ -15,7 +15,7 @@ def simple_func(x):
     # k = set(range(5, 99))
 
     with contextlib.suppress(AttributeError):
-        x.invalid  # noqa: B018
+        _ = x.invalid
 
     # import sys
     # sys.exit(1)

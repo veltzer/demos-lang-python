@@ -7,6 +7,17 @@ Conclusions:
 iteration.
 """
 
+import pytest
+
+
+def delete_while_visiting(iterable, d, visited_keys):
+    """ iterate over iterable, deleting a key of d on the way, and record what was visited """
+    for x in iterable:
+        if x == 3:
+            del d[5]
+        visited_keys.add(x)
+
+
 d = {i: i for i in range(10)}
 
 # if the dictionary changes size during iteration you get a RuntimeError
@@ -15,14 +26,9 @@ d = {i: i for i in range(10)}
 # this means that the iterator saves the size of the dictionary and
 # compares the size of the dictionary with its own size every iteration.
 visited_keys = set()
-try:
-    for x in d:
-        if x == 3:
-            del d[5]
-        visited_keys.add(x)
-except RuntimeError as e:
-    assert str(e) == "dictionary changed size during iteration"
-    assert len(visited_keys) == 4
+with pytest.raises(RuntimeError, match="dictionary changed size during iteration"):
+    delete_while_visiting(d, d, visited_keys)
+assert len(visited_keys) == 4
 
 d = {}
 for i in range(10):
@@ -35,7 +41,6 @@ visited_keys = set()
 for x in d:
     if x == 3:
         del d[5]
-        # pylint: disable=modified-iterating-dict
         d[10] = 10
     visited_keys.add(x)
 assert len(visited_keys) == 10
@@ -49,15 +54,9 @@ for i in range(10):
 # what if we pass over d.keys() and not just d?
 # we still get the exception if we change the number of elements
 visited_keys = set()
-try:
-    # pylint: disable=consider-iterating-dictionary
-    for x in d.keys():  # noqa: SIM118
-        if x == 3:
-            del d[5]
-        visited_keys.add(x)
-except RuntimeError as e:
-    assert str(e) == "dictionary changed size during iteration"
-    assert len(visited_keys) == 4
+with pytest.raises(RuntimeError, match="dictionary changed size during iteration"):
+    delete_while_visiting(d.keys(), d, visited_keys)
+assert len(visited_keys) == 4
 
 d = {}
 for i in range(10):
@@ -65,8 +64,7 @@ for i in range(10):
 
 # what if we pass over d.keys() and make sure to keep the same amount of elements?
 visited_keys = set()
-# pylint: disable=consider-iterating-dictionary
-for x in d.keys():  # noqa: SIM118
+for x in d.keys():  # noqa: SIM118  teaching: demonstrating iteration with d.keys()
     if x == 3:
         del d[5]
         d[10] = 10
@@ -87,14 +85,9 @@ for i in range(10):
 my_list1 = d.keys()
 assert my_list1.__class__.__name__ == "dict_keys"
 visited_keys = set()
-try:
-    for x in my_list1:
-        if x == 3:
-            del d[5]
-        visited_keys.add(x)
-except RuntimeError as e:
-    assert str(e) == "dictionary changed size during iteration"
-    assert len(visited_keys) == 4
+with pytest.raises(RuntimeError, match="dictionary changed size during iteration"):
+    delete_while_visiting(my_list1, d, visited_keys)
+assert len(visited_keys) == 4
 
 d = {}
 for i in range(10):

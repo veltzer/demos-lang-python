@@ -8,7 +8,7 @@ ENCODING = "utf-8"
 assert sys.stdout.encoding == ENCODING
 
 # To make redirection work you need one of the following:
-if sys.stdout.encoding is None:  # pyrefly: ignore[bad-index]
+if sys.stdout.encoding is None:  # pyrefly: ignore[unnecessary-comparison]  teaching: the redirected-stdout case is the lesson
     sys.stdout = codecs.getwriter(ENCODING)(sys.stdout)
 # or this:
 # $ export PYTHONIOENCODING=UTF-8

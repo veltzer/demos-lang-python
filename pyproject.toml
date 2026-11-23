@@ -142,6 +142,7 @@ dev = [
     "pyrefly",
     "pytest",
     "ruff",
+    "scipy-stubs",
     "types-beautifulsoup4",
     "types-boto",
     "types-colorama",
@@ -166,6 +167,8 @@ package = false
 [tool.pyrefly]
 # Directories whose scripts import sibling modules (the demos run from their own
 # directory), so pyrefly resolves those imports the way Python does at runtime.
+# Warnings fail the check like errors (pyrefly lets them pass by default).
+min-severity = "warn"
 search-path = [
     "make_based/bad_lib",
     "make_based/extending_python_with_c",

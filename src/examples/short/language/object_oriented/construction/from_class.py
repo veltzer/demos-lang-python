@@ -24,7 +24,6 @@ def make_something_2(cls: type[A]):
 
 def make_something_3(cls: type[A]):
     t = cls.__new__(cls)
-    # pylint: disable=unnecessary-dunder-call
     t.__init__()
     return t
 

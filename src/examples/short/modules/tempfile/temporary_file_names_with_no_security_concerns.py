@@ -13,5 +13,5 @@ References:
 import tempfile
 
 for _i in range(10):
-    print(tempfile.mktemp())  # pyrefly: ignore[bad-argument-type]
+    print(tempfile.mktemp())  # pyrefly: ignore[deprecated]  teaching: mktemp is the lesson (racy temporary names)
     print(tempfile.mkstemp())

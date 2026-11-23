@@ -6,10 +6,10 @@ The idea is to:
   pass sep="\t",
 """
 
-import pandas
+import pandas as pd
 
 filename = "shared-samples/tsv/2_by_2.tsv"
-df = pandas.read_csv(
+df = pd.read_csv(
     filename,
     sep="\t",
     header=None,

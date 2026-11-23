@@ -41,7 +41,7 @@ def apply_funcs3(funcs, x):
     [9, 4]
     """
     # Note that we are mapping over the `funcs`, not over `x`.
-    return map(lambda f: f(x), funcs)  # noqa: C417
+    return map(lambda f: f(x), funcs)  # noqa: C417  teaching: demonstrating map with a lambda
 
 
 # Bonus: With any number of arguments

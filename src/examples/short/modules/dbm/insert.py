@@ -20,22 +20,21 @@ if os.path.isfile(filename):
     os.unlink(filename)
 
 # n means create a new database and open for reading and writing
-d = dbm.gnu.open(filename, "n")  # noqa: SIM115
-d["one"] = "ehad"
-d["two"] = "shtaim"
-d[b""] = b"emptybytes"
-d[b"emptybytes"] = b""
-d[""] = "emptystring"
-d["emptystring"] = ""
-try:
-    # noinspection PyTypeChecker
-    d["three"] = None  # pyrefly: ignore[unsupported-operation]  teaching: None is not a valid gdbm key or value
-except TypeError:
-    print("yes, got exception when trying to put None as value")
-try:
-    # noinspection PyTypeChecker
-    d[None] = "four"  # pyrefly: ignore[unsupported-operation]  teaching: None is not a valid gdbm key or value
-except TypeError:
-    print("yes, got exception when trying to put string as key")
-d["five"] = b"five"
-d.close()
+with dbm.gnu.open(filename, "n") as d:
+    d["one"] = "ehad"
+    d["two"] = "shtaim"
+    d[b""] = b"emptybytes"
+    d[b"emptybytes"] = b""
+    d[""] = "emptystring"
+    d["emptystring"] = ""
+    try:
+        # noinspection PyTypeChecker
+        d["three"] = None  # pyrefly: ignore[unsupported-operation]  teaching: None is not a valid gdbm key or value
+    except TypeError:
+        print("yes, got exception when trying to put None as value")
+    try:
+        # noinspection PyTypeChecker
+        d[None] = "four"  # pyrefly: ignore[unsupported-operation]  teaching: None is not a valid gdbm key or value
+    except TypeError:
+        print("yes, got exception when trying to put string as key")
+    d["five"] = b"five"

@@ -6,7 +6,7 @@ import luigi
 class FileExists(luigi.Task):
     filename = luigi.Parameter()
 
-    def output(self):  # pyrefly: ignore[bad-override]
+    def output(self):
         return luigi.LocalTarget(self.filename)
 
     def run(self):
@@ -22,7 +22,7 @@ class CountLines(luigi.Task):
         """
         return [FileExists(filename="input.txt")]
 
-    def output(self):  # pyrefly: ignore[bad-override]
+    def output(self):
         """
         Where will this Task produce output?
         This is just a single output.

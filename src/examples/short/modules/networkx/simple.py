@@ -10,9 +10,9 @@ References:
 http://www.python-course.eu/networkx.php
 """
 
-import networkx
+import networkx as nx
 
-G = networkx.Graph()
+G = nx.Graph()
 G.add_node("a")
 G.add_nodes_from(["b", "c"])
 

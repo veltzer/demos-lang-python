@@ -6,7 +6,6 @@ is really local
 
 # noinspection PyShadowingNames
 def my_function():
-    # pylint: disable=redefined-outer-name
     x = 5
     print(x)
 

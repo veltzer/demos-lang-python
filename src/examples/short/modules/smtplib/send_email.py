@@ -14,23 +14,23 @@ import pygooglehelper
 SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 
 
-# pylint: disable=too-many-positional-arguments
 def send_email(
-        subject=None,
-        content=None,
-        fr=None,
-        to=None,
-        smtp_user=None,
-        smtp_password=None,
-        smtp_host="smtp.gmail.com",
-        smtp_port=587,
-        use_tls=True,
-        debug=False,
+        *,
+        subject: str,
+        content: str,
+        fr: str,
+        to: str,
+        smtp_user: str,
+        smtp_password: str,
+        smtp_host: str = "smtp.gmail.com",
+        smtp_port: int = 587,
+        use_tls: bool = True,
+        debug: bool = False,
 ):
     # build the message
-    msg = email.mime.text.MIMEText(content)  # pyrefly: ignore[bad-argument-type]
-    msg["Subject"] = subject  # pyrefly: ignore[unsupported-operation]
-    msg["From"] = fr  # pyrefly: ignore[unsupported-operation]
+    msg = email.mime.text.MIMEText(content)
+    msg["Subject"] = subject
+    msg["From"] = fr
     # send the message via our own SMTP server,but dont include the envelope header.
     # server=smtplib.SMTP()
     server = smtplib.SMTP(host=smtp_host, port=smtp_port)
@@ -40,8 +40,8 @@ def send_email(
         server.set_debuglevel(1)
     if use_tls:
         server.starttls()
-    server.login(smtp_user, smtp_password)  # pyrefly: ignore[bad-argument-type]
-    server.sendmail(fr, to, msg.as_string())  # pyrefly: ignore[bad-argument-type]
+    server.login(smtp_user, smtp_password)
+    server.sendmail(fr, to, msg.as_string())
     server.quit()
 
 

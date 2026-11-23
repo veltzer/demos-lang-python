@@ -3,28 +3,27 @@ This example shows how to get a column by number from a pandas
 DataFrame.
 """
 
-import pandas
+import pandas as pd
 
-df = pandas.read_csv(
+df = pd.read_csv(
     "/etc/passwd",
     sep=":",
     header=None, )
-assert isinstance(df, pandas.DataFrame)
+assert isinstance(df, pd.DataFrame)
 num_rows = df.shape[0]
 
 # lets get a series
-# pylint: disable=unsubscriptable-object, no-member
 c1 = df[0]
-assert isinstance(c1, pandas.Series)
+assert isinstance(c1, pd.Series)
 assert c1.shape == (num_rows,)
 
 # another way
 c2 = df[df.columns[0]]
-assert isinstance(c2, pandas.Series)
+assert isinstance(c2, pd.Series)
 assert c2.shape == (num_rows,)
 
 # another way
 c3 = df.loc[0]
-assert isinstance(c3, pandas.Series)
+assert isinstance(c3, pd.Series)
 print(c3.shape)
 assert c3.shape == (num_rows,)

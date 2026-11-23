@@ -16,11 +16,9 @@ that.
 # noinspection PyUnboundLocalVariable
 def my_mystery_function():
     # global g
-    # pylint: disable=redefined-outer-name,used-before-assignment
-    print(g)  # pyrefly: ignore[unbound-name]  # noqa: F823
-    # pylint: disable=using-constant-test
+    print(g)  # noqa: F823  teaching: shows a local name used before its assignment  # pyrefly: ignore[unbound-name]  teaching: g is local because it is assigned later in the function
     if True:
-        g += 17  # pyrefly: ignore[unbound-name]
+        g += 17
     print(g)
 
 

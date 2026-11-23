@@ -10,7 +10,7 @@ import random
 import string
 import timeit
 
-import numpy
+import numpy as np
 from pandas import DataFrame
 
 
@@ -32,7 +32,7 @@ def create_large_table():
         "B",
         "C",
     ]
-    data_frames = DataFrame("", index=numpy.arange(large_table_size), columns=columns)
+    data_frames = DataFrame("", index=np.arange(large_table_size), columns=columns)
     del data_frames
 
 
@@ -81,12 +81,12 @@ input("press any key...")
 
 def more_stuff():
     size = 15000000
-    random_words = list(map(lambda _: random_word(10), range(size)))  # noqa: C417
+    random_words = [random_word(10) for _ in range(size)]
     df = tables["df"]
     print("after creation")
     print(type(random_words))
     print(len(random_words))
-    print_data(df)  # pyrefly: ignore[bad-argument-type]
+    print_data(df)
     df.iloc[0, 0] = "mark"
     df.iloc[0, 1] = "veltzer"
 

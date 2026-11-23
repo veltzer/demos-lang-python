@@ -14,7 +14,6 @@ class SuppressAll:
 with SuppressAll():
     print("This will run")
     raise ValueError("This error will be suppressed")
-    # pylint: disable=unreachable
     print("This won't run because of the exception above")
 
 print("This will run - exception was suppressed")

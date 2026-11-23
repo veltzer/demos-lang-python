@@ -13,5 +13,4 @@ def do_something():
 
 print("hi")
 # time.sleep(3600)
-# pylint: disable=undefined-variable
-do_somethin()  # noqa: F821  teaching: the typo is only found at runtime  # pyrefly: ignore[unknown-name]
+do_somethin()  # noqa: F821  teaching: the typo is only found at runtime  # pyrefly: ignore[unknown-name]  teaching: the typo is only found at runtime

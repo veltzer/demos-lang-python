@@ -4,6 +4,7 @@ This is a mixin solution to the modification time stamps mentioned before.
 
 import os.path
 import time
+from typing import cast
 
 import luigi
 
@@ -27,14 +28,16 @@ class MTimeMixin:
     """
 
     def complete(self):
+        # the mixin is only ever mixed into luigi tasks, which supply output() and requires()
+        task = cast(luigi.Task, self)
 
-        if not all(os.path.exists(out.path) for out in to_list(self.output())):  # pyrefly: ignore[missing-attribute]
+        if not all(os.path.exists(out.path) for out in to_list(task.output())):
             return False
 
-        self_mtime = min(mtime(out.path) for out in to_list(self.output()))  # pyrefly: ignore[missing-attribute]
+        self_mtime = min(mtime(out.path) for out in to_list(task.output()))
 
         # the below assumes a list of requirements, each with a list of outputs. YMMV
-        for el in to_list(self.requires()):  # pyrefly: ignore[missing-attribute]
+        for el in to_list(task.requires()):
             if not el.complete():
                 return False
             for output in to_list(el.output()):
@@ -47,7 +50,7 @@ class MTimeMixin:
 class FileExists(luigi.Task):
     filename = luigi.Parameter()
 
-    def output(self):  # pyrefly: ignore[bad-override]
+    def output(self):
         return luigi.LocalTarget(self.filename)
 
     def run(self):
@@ -63,7 +66,7 @@ class CountLines(MTimeMixin, luigi.Task):
         """
         return [FileExists(filename="input.txt")]
 
-    def output(self):  # pyrefly: ignore[bad-override]
+    def output(self):
         """
         Where will this Task produce output?
         This is just a single output.

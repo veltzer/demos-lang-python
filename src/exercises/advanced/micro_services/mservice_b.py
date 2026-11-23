@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 @app.route("/add")
 def add():
-    a = int(request.args.get("a"))  # pyrefly: ignore[bad-argument-type]
-    b = int(request.args.get("b"))  # pyrefly: ignore[bad-argument-type]
+    a = int(request.args["a"])
+    b = int(request.args["b"])
     return str(a + b)
 
 

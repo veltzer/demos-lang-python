@@ -20,10 +20,9 @@ class A:
 a_instance = None
 
 
-def get_a_instance():  # noqa: F811  # pylint: disable=function-redefined
+def get_a_instance():  # noqa: F811  teaching: the function replaces itself through the global
     # noinspection PyGlobalUndefined
-    # pylint: disable=global-statement
-    global a_instance, get_a_instance  # noqa: PLW0603  teaching: the function replaces itself through the global
+    global a_instance, get_a_instance  # noqa: PLW0603  teaching: the singleton is kept in a global
     if a_instance is None:
         a_instance = A()
 
@@ -53,7 +52,6 @@ b_instance = None
 
 
 def get_b_instance():
-    # pylint: disable=global-statement
     global b_instance  # noqa: PLW0603  teaching: the singleton is kept in a global
     if b_instance is None:
         b_instance = B()

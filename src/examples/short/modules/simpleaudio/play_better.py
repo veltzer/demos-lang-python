@@ -24,12 +24,10 @@ tone = tone.astype(np.int32)
 
 # convert from 32-bit to 24-bit by building a new byte buffer, skipping every fourth bit
 # note: this also works for 2-channel audio
-i = 0
 byte_array = []
-for b in tone.tobytes():
+for i, b in enumerate(tone.tobytes()):
     if i % 4 != 3:
         byte_array.append(b)
-    i += 1  # noqa: SIM113
 audio = bytearray(byte_array)
 
 # start playback

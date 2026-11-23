@@ -14,11 +14,9 @@ def download_file(url: str, filename: str, chunk_size=8192):
     with requests.get(url, stream=True, timeout=5) as request:
         request.raise_for_status()
         with open(filename, "wb") as stream:
-            for chunk in request.iter_content(chunk_size=chunk_size):  # noqa: FURB122
-                # If you have chunk encoded response uncomment if
-                # and set chunk_size parameter to None.
-                # if chunk:
-                stream.write(chunk)
+            # If you have chunk encoded response filter out empty chunks
+            # and set chunk_size parameter to None.
+            stream.writelines(request.iter_content(chunk_size=chunk_size))
 
 
 download_file(

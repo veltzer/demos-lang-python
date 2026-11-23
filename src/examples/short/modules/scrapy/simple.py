@@ -8,15 +8,17 @@ of running scrapy when all you are doing is scraping with a full
 project structure and all. This is not that way.
 """
 
+from typing import ClassVar
+
 import scrapy.crawler
 
 
 class SearchSpider(scrapy.Spider):
     name = __name__
-    allowed_domains = [  # noqa: RUF012
+    allowed_domains: ClassVar = [
         "google.com"
     ]
-    start_urls = [  # noqa: RUF012
+    start_urls: ClassVar = [
         "https://google.com",
     ]
 

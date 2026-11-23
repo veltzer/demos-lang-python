@@ -7,8 +7,7 @@ def rev_dict(d):
     rev_d = {}
     # The next loop is critical to extract the values from the map function
     # if you dont extract the values map will not actually do anything.
-    # pylint: disable=unnecessary-dunder-call
-    for _ in map(lambda t: rev_d.__setitem__(t[1], t[0]), d.items()):  # noqa: C417
+    for _ in map(lambda t: rev_d.__setitem__(t[1], t[0]), d.items()):  # noqa: C417  teaching: demonstrating map with a lambda
         pass
     # the next version does not work because lambda does not support assignment
     # for _ in map(lambda t: rev_d[t[1]]=t[0], d.items())

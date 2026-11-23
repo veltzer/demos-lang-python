@@ -10,6 +10,7 @@ http://stackoverflow.com/questions/566746/how-to-get-console-window-width-in-pyt
 import fcntl
 import os
 import struct
+import subprocess
 import termios
 import timeit
 
@@ -25,7 +26,7 @@ function_names[terminal_size1] = "ioctl"
 
 
 def terminal_size2():
-    ret = os.popen("stty size").read().split()
+    ret = subprocess.run(["stty", "size"], capture_output=True, text=True, check=False).stdout.split()
     return int(ret[1]), int(ret[0])
 
 
@@ -33,8 +34,8 @@ function_names[terminal_size2] = "stty"
 
 
 def terminal_size3():
-    x = int(os.popen("tput cols").read())
-    y = int(os.popen("tput lines").read())
+    x = int(subprocess.run(["tput", "cols"], capture_output=True, text=True, check=False).stdout)
+    y = int(subprocess.run(["tput", "lines"], capture_output=True, text=True, check=False).stdout)
     return x, y
 
 

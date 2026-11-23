@@ -11,8 +11,7 @@ try:
     raise ValueError("hello")
 # this next line catches only ValueError exceptions, logs and throws them
 # back...
-# pylint: disable=broad-exception-caught
-except Exception as e:  # noqa: BLE001
+except Exception as e:  # noqa: BLE001  teaching: demonstrating catching every exception
     print("in except", e)
     # raise e
 finally:

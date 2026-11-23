@@ -8,7 +8,6 @@ import sys
 
 sys.path.append(sys.argv[1])
 
-# pylint: disable=wrong-import-position,import-error
 import car
 
 c = car.Car()

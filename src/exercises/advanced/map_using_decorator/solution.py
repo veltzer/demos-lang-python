@@ -23,5 +23,4 @@ def square(x):
     return x * x
 
 
-# pylint: disable=too-many-function-args
 print(square(3, 2, 1))

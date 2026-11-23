@@ -27,7 +27,7 @@ function_names[func2] = "list.pop(0)"
 
 
 def func3():
-    my_list.insert(0, "newelem")  # pyrefly: ignore[bad-argument-type]
+    my_list.insert(0, "newelem")
 
 
 function_names[func3] = "insert(0, newelement)"
@@ -48,13 +48,13 @@ function_names[func5] = "deque.popleft()"
 
 
 def func6():
-    d.appendleft("newelem")  # pyrefly: ignore[bad-argument-type]
+    d.appendleft("newelem")
 
 
 function_names[func6] = "deque.appendleft(newelement)"
 
-my_list = list(range(1000000))
-d = collections.deque(range(1000000))
+my_list: list[int | str] = list(range(1000000))
+d: collections.deque[int | str] = collections.deque(range(1000000))
 
 functions = [
     func1,

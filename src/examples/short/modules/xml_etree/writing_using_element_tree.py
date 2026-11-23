@@ -8,21 +8,21 @@ the bottom.
 """
 
 import io
-import xml
-from xml.etree import ElementTree
+import xml.dom.minidom
+from xml.etree import ElementTree as ET
 
-root = ElementTree.Element("root")
-doc = ElementTree.SubElement(root, "doc")
+root = ET.Element("root")
+doc = ET.SubElement(root, "doc")
 
-field1 = ElementTree.SubElement(doc, "field1")
+field1 = ET.SubElement(doc, "field1")
 field1.set("name", "name of field1")
 field1.text = "field 1 free text"
 
-field1 = ElementTree.SubElement(doc, "field2")
+field1 = ET.SubElement(doc, "field2")
 field1.set("name", "name of field2")
 field1.text = "field 2 free text"
 
-tree = ElementTree.ElementTree(root)
+tree = ET.ElementTree(root)
 f = io.BytesIO()
 tree.write(f)
 f.seek(0)

@@ -7,5 +7,5 @@ d["b"] = "c"
 d["c"] = "c"
 d["y"] = "c"
 d["a"] = "c"
-for k in d.keys():  # noqa: SIM118
+for k in d:
     print(k)

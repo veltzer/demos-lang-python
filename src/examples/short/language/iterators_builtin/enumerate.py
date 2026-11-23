@@ -14,13 +14,12 @@ def simple_enumerate(value_list):
     i = 0
     for val in value_list:
         yield i, val
-        i += 1  # noqa: SIM113
+        i += 1  # noqa: SIM113  teaching: demonstrating a manual counter next to enumerate
 
 
 def main():
     value_list = ["a", "b", "c"]
     # the non pythonic way to do this
-    # pylint: disable=consider-using-enumerate
     for i in range(len(value_list)):
         print(i, value_list[i])
     # the pythonic way to do this

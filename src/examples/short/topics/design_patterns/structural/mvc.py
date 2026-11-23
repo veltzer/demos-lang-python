@@ -4,21 +4,23 @@ Separates data in GUIs from the ways it is presented, and accepted.
 """
 
 from abc import ABC, abstractmethod
+from collections.abc import Iterator
+from typing import Any, ClassVar
 
 
 class Model(ABC):
     @abstractmethod
-    def __iter__(self):
+    def __iter__(self) -> Iterator[str]:
         pass
 
     @abstractmethod
-    def get(self, item):
+    def get(self, item) -> Any:
         """Returns an object with a .items() call method
         that iterates over key,value pairs of its information."""
 
     @property
     @abstractmethod
-    def item_type(self):
+    def item_type(self) -> str:
         pass
 
 
@@ -30,18 +32,20 @@ class ProductModel(Model):
         def __str__(self):
             return f"{self:.2f}"
 
-    products = {  # noqa: RUF012
+    products: ClassVar = {
         "milk": {"price": Price(1.50), "quantity": 10},
         "eggs": {"price": Price(0.20), "quantity": 100},
         "cheese": {"price": Price(2.00), "quantity": 10},
     }
 
-    item_type = "product"  # pyrefly: ignore[bad-override]
+    @property
+    def item_type(self) -> str:
+        return "product"
 
-    def __iter__(self):  # pyrefly: ignore[bad-override]
+    def __iter__(self) -> Iterator[str]:
         yield from self.products
 
-    def get(self, item):  # pyrefly: ignore[bad-override]
+    def get(self, item) -> Any:
         try:
             return self.products[item]
         except KeyError as e:

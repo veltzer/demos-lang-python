@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 """
 A class that uses different static function depending of a parameter passed in
 init. Note the use of a single dictionary instead of multiple conditions
@@ -63,7 +65,7 @@ class CatalogInstance:
     def _instance_method_2(self) -> str:
         return f"Value {self.x2}"
 
-    _instance_method_choices = {  # noqa: RUF012
+    _instance_method_choices: ClassVar = {
         "param_value_1": _instance_method_1,
         "param_value_2": _instance_method_2,
     }
@@ -98,7 +100,7 @@ class CatalogClass:
     def _class_method_2(cls) -> str:
         return f"Value {cls.x2}"
 
-    _class_method_choices = {  # noqa: RUF012
+    _class_method_choices: ClassVar = {
         "param_value_1": _class_method_1,
         "param_value_2": _class_method_2,
     }
@@ -110,7 +112,6 @@ class CatalogClass:
         """
         f = CatalogClass._class_method_choices[self.param]
         m = f.__get__(None, CatalogClass)
-        # pylint: disable=not-callable
         return m()
 
 
@@ -136,7 +137,7 @@ class CatalogStatic:
     def _static_method_2() -> str:
         return "executed method 2!"
 
-    _static_method_choices = {  # noqa: RUF012
+    _static_method_choices: ClassVar = {
         "param_value_1": _static_method_1,
         "param_value_2": _static_method_2,
     }

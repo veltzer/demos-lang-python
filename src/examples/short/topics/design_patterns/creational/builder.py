@@ -52,18 +52,18 @@ class Building:
 
 # Concrete Buildings
 class House(Building):
-    def build_floor(self) -> None:  # pyrefly: ignore[bad-override]
+    def build_floor(self) -> None:
         self.floor = "One"
 
-    def build_size(self) -> None:  # pyrefly: ignore[bad-override]
+    def build_size(self) -> None:
         self.size = "Big"
 
 
 class Flat(Building):
-    def build_floor(self) -> None:  # pyrefly: ignore[bad-override]
+    def build_floor(self) -> None:
         self.floor = "More than One"
 
-    def build_size(self) -> None:  # pyrefly: ignore[bad-override]
+    def build_size(self) -> None:
         self.size = "Small"
 
 

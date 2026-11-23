@@ -1,7 +1,6 @@
 """
 A simple hello world application in pyqt
 """
-# pylint: disable=c-extension-no-member
 
 import signal
 import sys

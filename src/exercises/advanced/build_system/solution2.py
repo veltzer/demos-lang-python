@@ -26,9 +26,9 @@ def parse_makefile(filename):
     - rules is a dict {"target": ["dependency1", ...], ...}
     - commands is a dict {"target": ["command1", ...], ...}
     """
-    rules = {}
-    commands = {}
-    target = None
+    rules: dict[str, list[str]] = {}
+    commands: dict[str, list[str]] = {}
+    target: str | None = None
     with open(filename) as f:
         for line in f:
             if not line[0].isspace():
@@ -39,7 +39,8 @@ def parse_makefile(filename):
                 commands[target] = []
             else:
                 # command line (`target` was set by last dep line)
-                commands[target].append(line.strip())  # pyrefly: ignore[bad-index]
+                assert target is not None
+                commands[target].append(line.strip())
 
     return rules, commands
 

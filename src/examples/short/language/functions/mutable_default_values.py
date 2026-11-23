@@ -7,8 +7,7 @@ variable which is mutable.
 """
 
 
-# pylint: disable=dangerous-default-value
-def add_name(name: str, target: list[str] = []) -> list[str]:  # noqa: B006
+def add_name(name: str, target: list[str] = []) -> list[str]:  # noqa: B006  teaching: the shared mutable default is the lesson
     target.append(name)
     return target
 

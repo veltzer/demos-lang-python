@@ -6,7 +6,7 @@ from pandas import DataFrame
 
 df = DataFrame(["a", "b", "c"], index=[("0", "1"), ("1", "2"), ("2", "3")])
 try:
-    print(df.ix[("0", "1")])
+    print(df.ix[("0", "1")])  # noqa: PD007  teaching: .ix is removed, the example shows the resulting error
 except AttributeError:
     print("yes, accessing .ix with tuple does not work")
 print(df.xs(("0", "1")))

@@ -12,8 +12,8 @@ References:
 - https://docs.scipy.org/doc/numpy-1.12.0/reference/generated/numpy.histogram.html
 """
 
-import numpy
+import numpy as np
 
 a = [1, 2, 3, 4, 11, 16, 17, 18, 20.5]
 
-print(numpy.histogram(a, bins=3))
+print(np.histogram(a, bins=3))

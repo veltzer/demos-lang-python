@@ -20,10 +20,11 @@ def my_func():
     print("===================")
     print(f"inspect.stack()[0][0].f_code.co_name is [{inspect.stack()[0][0].f_code.co_name}]")
     print(f"inspect.stack()[0][3] is [{inspect.stack()[0][3]}]")
-    print(f"inspect.currentframe().f_code.co_name is [{inspect.currentframe().f_code.co_name}]")  # pyrefly: ignore[missing-attribute]
+    frame = inspect.currentframe()
+    assert frame is not None
+    print(f"inspect.currentframe().f_code.co_name is [{frame.f_code.co_name}]")
     # noinspection PyProtectedMember
-    # pylint: disable=protected-access
-    print(f"sys._getframe().f_code.co_name is [{sys._getframe().f_code.co_name}]")
+    print(f"sys._getframe().f_code.co_name is [{sys._getframe().f_code.co_name}]")  # noqa: SLF001  teaching: demonstrating sys._getframe
 
 
 print("outside the function")

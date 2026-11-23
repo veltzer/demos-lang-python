@@ -29,9 +29,6 @@ Allows the interface of an existing class to be used as another interface.
 """
 
 from collections.abc import Callable
-from typing import TypeVar
-
-T = TypeVar("T")
 
 
 class Dog:
@@ -76,9 +73,9 @@ class Adapter:
     dog = Adapter(dog, make_noise=dog.bark)
     """
 
-    def __init__(self, obj: T, **adapted_methods: Callable):  # pyrefly: ignore[invalid-type-var]
+    def __init__(self, obj: object, **adapted_methods: Callable):
         """We set the adapted methods in the objects dict."""
-        self.obj = obj  # pyrefly: ignore[invalid-type-var]
+        self.obj = obj
         self.__dict__.update(adapted_methods)
 
     def __getattr__(self, attr):

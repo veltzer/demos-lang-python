@@ -43,17 +43,15 @@ class D(C):
 
 
 try:
-    # pylint: disable=abstract-class-instantiated
     a = A()  # pyrefly: ignore[bad-instantiation]  teaching: abstract classes cannot be instantiated
     assert isinstance(a, A)
 except TypeError as e:
     print(f"yes, got exception [{e!s}]...")
 
-b = B()
+b = B()  # pyrefly: ignore[direct-abstract-base-instantiation]  teaching: an ABC without abstract methods can be instantiated
 assert isinstance(b, B)
 
 try:
-    # pylint: disable=abstract-class-instantiated
     c = C()  # pyrefly: ignore[bad-instantiation]  teaching: abstract classes cannot be instantiated
     assert isinstance(c, C)
 except TypeError as e:

@@ -5,10 +5,10 @@ References:
 - https://github.com/dask/fastparquet
 """
 
-import pandas
+import pandas as pd
 from fastparquet import write
 
-df = pandas.read_csv("/etc/passwd", sep=":")
+df = pd.read_csv("/etc/passwd", sep=":")
 
 # this is uncompressed write (I think!)
 write("/tmp/file.parquet", df)

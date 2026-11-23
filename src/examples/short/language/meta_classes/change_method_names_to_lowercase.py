@@ -27,5 +27,4 @@ class MyClass:
 
 
 # Look! we now call the method in lowercase...
-# pylint: disable=no-member
 MyClass.sayhello()  # pyrefly: ignore[missing-attribute]  teaching: the metaclass adds the lowercase method at runtime

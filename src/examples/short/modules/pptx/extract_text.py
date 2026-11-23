@@ -26,15 +26,14 @@ for slide_number, slide in enumerate(islice(slides, None)):
             continue
         print(v.target_ref)
     for shape in slide.shapes:
-        # pylint: disable=no-member
         if shape.shape_type == MSO_SHAPE_TYPE.PLACEHOLDER:
             print(shape.shape_type)
-            print(shape.text)  # pyrefly: ignore[missing-attribute]
+            print(shape.text)
         if shape.shape_type == MSO_SHAPE_TYPE.TEXT_BOX:
             print(shape.shape_type)
-            print(shape.text)  # pyrefly: ignore[missing-attribute]
+            print(shape.text)
         if shape.shape_type == MSO_SHAPE_TYPE.TABLE:
             print(shape.shape_type)
-            for row in shape.table.rows:  # pyrefly: ignore[missing-attribute]
+            for row in shape.table.rows:
                 for cell in row.cells:
                     print(cell.text)

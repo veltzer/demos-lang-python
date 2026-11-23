@@ -19,7 +19,6 @@ with subprocess.Popen(
     print(f"return code is [{p.returncode}]")
 
 # This next examples does not work
-# pylint: disable=using-constant-test
 if False:
     with subprocess.Popen(
         ["ls","-l"],

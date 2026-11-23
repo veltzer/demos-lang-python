@@ -10,8 +10,7 @@ import ctypes
 def check_lib(name):
     x = ctypes.cdll.LoadLibrary(name)
     # noinspection PyProtectedMember
-    # pylint: disable=protected-access
-    libdl.dlclose(x._handle)
+    libdl.dlclose(x._handle)  # noqa: SLF001  teaching: ctypes exposes the library handle only as _handle
 
 
 def load_lib(name):

@@ -75,7 +75,6 @@ def chunk_itertools(data, n):
         # first = next(i)
         # second version is faster...
         # yield itertools.islice(itertools.chain((first,), i), n)
-        # pylint: disable=stop-iteration-return
         yield itertools.chain((next(i),), itertools.islice(i, n - 1))
 
 

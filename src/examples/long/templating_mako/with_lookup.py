@@ -5,13 +5,14 @@ templates or plain files in templates.
 I need to ascertain this
 """
 
-import datetime
+import datetime as dt
 
 import mako.lookup
+import mako.template
 
 
 def years(x):
-    curr_year = datetime.datetime.now().astimezone().year
+    curr_year = dt.datetime.now().astimezone().year
     return ",".join(map(str, range(x, curr_year + 1)))
 
 
@@ -30,7 +31,7 @@ mylookup = mako.lookup.TemplateLookup(
     #   input_encoding=input_encoding,
     #   output_encoding=output_encoding,
 )
-template = mako.template.Template(  # pyrefly: ignore[implicit-import]
+template = mako.template.Template(
     filename=p_input,
     lookup=mylookup,
     # output_encoding=output_encoding,

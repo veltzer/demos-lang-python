@@ -3,13 +3,13 @@ example of how to convert the output of date(1) on the command line
 to mysql type dates.
 """
 
-import datetime
+import datetime as dt
 import subprocess
 
 
 def date_to_mysql(output: str):
     format_str = "%a %b %d %H:%M:%S %Z %Y"
-    return datetime.datetime.strptime(output, format_str).astimezone()
+    return dt.datetime.strptime(output, format_str).astimezone()
     # print("mysql_str is [{0}]".format(mysql_str))
 
 

@@ -20,12 +20,14 @@ Delays the eval of an expr until its value is needed and avoids repeated evals.
 """
 
 import functools
+from typing import Any, cast
 
 
 class LazyProperty:
     def __init__(self, function):
         self.function = function
-        functools.update_wrapper(self, function)  # pyrefly: ignore[bad-argument-type]
+        # update_wrapper only needs to set attributes on its target, a descriptor is fine
+        functools.update_wrapper(cast(Any, self), function)
 
     def __get__(self, obj, type_):
         if obj is None:
@@ -44,13 +46,12 @@ def lazy_property2(fn):
     """
     attr = "_lazy__" + fn.__name__
 
-    @property  # pyrefly: ignore[invalid-decorator]
     def _lazy_property(self):
         if not hasattr(self, attr):
             setattr(self, attr, fn(self))
         return getattr(self, attr)
 
-    return _lazy_property
+    return property(_lazy_property)
 
 
 class Person:

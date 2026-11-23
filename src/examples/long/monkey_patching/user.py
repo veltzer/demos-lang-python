@@ -18,9 +18,8 @@ def hacked1():
 mod_a_1.func_a_1 = hacked1
 mod_b_1.func_b_1()
 
-# pylint: disable=wrong-import-position
-import mod_a_2  # noqa: E402  teaching: the import comes after the patch, so the patch order matters
-import mod_b_2  # noqa: E402  teaching: the import comes after the patch, so the patch order matters
+import mod_a_2  # noqa: E402  teaching: the import deliberately comes after other code
+import mod_b_2  # noqa: E402  teaching: the import deliberately comes after other code
 
 # lets call the regular version of the function
 print("before hacking")

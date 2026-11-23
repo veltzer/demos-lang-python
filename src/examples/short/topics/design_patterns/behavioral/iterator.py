@@ -6,6 +6,8 @@ Implementation of the iterator pattern with a generator
 Traverses a container and accesses the containers elements.
 """
 
+from collections.abc import Iterator
+
 
 def count_to(count: int):
     """Counts by word numbers, up to a maximum of five"""
@@ -14,12 +16,12 @@ def count_to(count: int):
 
 
 # Test the generator
-def count_to_two() -> None:
-    return count_to(2)  # pyrefly: ignore[bad-return]
+def count_to_two() -> Iterator[str]:
+    return count_to(2)
 
 
-def count_to_five() -> None:
-    return count_to(5)  # pyrefly: ignore[bad-return]
+def count_to_five() -> Iterator[str]:
+    return count_to(5)
 
 
 def main():

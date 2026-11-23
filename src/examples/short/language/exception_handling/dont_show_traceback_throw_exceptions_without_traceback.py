@@ -14,12 +14,16 @@ import sys
 class NoTraceBackWithLineNumberError(Exception):
     def __init__(self, msg):
         super().__init__()
-        try:
-            ln = sys.exc_info()[-1].tb_lineno  # pyrefly: ignore[missing-attribute]
-        except AttributeError:
-            ln = inspect.currentframe().f_back.f_lineno  # pyrefly: ignore[missing-attribute]
-        self.args = f"{type(self).__name__} (line {ln}): {msg}"  # pyrefly: ignore[bad-assignment]
-        sys.exit(self)  # pyrefly: ignore[bad-argument-type]
+        traceback = sys.exc_info()[-1]
+        if traceback is not None:
+            ln = traceback.tb_lineno
+        else:
+            frame = inspect.currentframe()
+            assert frame is not None
+            assert frame.f_back is not None
+            ln = frame.f_back.f_lineno
+        self.args = (f"{type(self).__name__} (line {ln}): {msg}",)
+        sys.exit(str(self))
 
 
 class MyNewError(NoTraceBackWithLineNumberError):

@@ -8,10 +8,10 @@ References:
 - https://stackoverflow.com/questions/15943769/how-do-i-get-the-row-count-of-a-pandas-dataframe
 """
 
-import pandas
+import pandas as pd
 
 filename = "shared-samples/tsv/3_by_2.tsv"
-df = pandas.read_csv(
+df = pd.read_csv(
     filename,
     sep="\t",
     header=None,

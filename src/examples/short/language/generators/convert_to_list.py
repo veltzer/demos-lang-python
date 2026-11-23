@@ -16,7 +16,6 @@ def generate_items():
 y = list(generate_items())
 print(y)
 
-# pylint: disable=unnecessary-comprehension
 z = list(generate_items())
 print(z)
 

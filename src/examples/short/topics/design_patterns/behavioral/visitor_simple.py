@@ -17,12 +17,12 @@ class Node(VisitInterface):
 
 
 class A(Node):
-    def visit(self):  # pyrefly: ignore[bad-override]
+    def visit(self):
         print("in A")
 
 
 class B(Node):
-    def visit(self):  # pyrefly: ignore[bad-override]
+    def visit(self):
         print("in B")
 
 
@@ -31,7 +31,7 @@ class C(VisitInterface):
         self.a = A()
         self.b = B()
 
-    def visit(self):  # pyrefly: ignore[bad-override]
+    def visit(self):
         print("in C")
         self.a.visit()
         self.b.visit()

@@ -7,7 +7,6 @@ import signal
 import sys
 import typing
 
-# pylint: disable=no-name-in-module
 from PyQt5.QtGui import QPainter, QPaintEvent, QPixmap
 from PyQt5.QtWidgets import QApplication, QTableWidget, QWidget
 

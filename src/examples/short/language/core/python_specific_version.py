@@ -26,11 +26,11 @@ if sys.version_info[0:2] != (2, 7):
     print("version!=2,7")
 else:
     print("version is not!=2,7")
-if sys.version_info[0:2] > (2, 5):  # noqa: UP036
+if sys.version_info[0:2] > (2, 5):  # noqa: UP036  teaching: demonstrating a runtime version check
     print("version>2,5")
-if sys.version_info[0:2] < (3, 0):  # noqa: UP036
+if sys.version_info[0:2] < (3, 0):  # noqa: UP036  teaching: demonstrating a runtime version check
     print("version<3,0")
-if sys.version_info[0:2] > (2, 7):  # noqa: UP036
+if sys.version_info[0:2] > (2, 7):  # noqa: UP036  teaching: demonstrating a runtime version check
     print("version>2,7")
 else:
     print("version is not>2,7")

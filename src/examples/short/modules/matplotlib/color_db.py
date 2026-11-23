@@ -2,9 +2,10 @@
 This example shows you the color database that comes with matplotlib.
 """
 
-from matplotlib import colors, pyplot
+from matplotlib import colors
+from matplotlib import pyplot as plt
 
-color_maps = pyplot.colormaps()
+color_maps = plt.colormaps()
 for color_map in color_maps:
     print(color_map)
 

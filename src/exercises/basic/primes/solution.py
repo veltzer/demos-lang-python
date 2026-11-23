@@ -5,10 +5,8 @@ Solution
 nums: list[int | None] = list(range(100))
 d = 2
 while d <= 10:
-    i = 0
-    for x in nums:
+    for i, x in enumerate(nums):
         if x is not None and x % d == 0 and x != d:
             nums[i] = None
-        i += 1  # noqa: SIM113
     d += 1
 print(nums)

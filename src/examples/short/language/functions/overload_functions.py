@@ -17,15 +17,13 @@ def demo_foo():
 
 
 # noinspection PyRedeclaration
-# pylint: disable=function-redefined
-def demo_foo(a):  # type: ignore[no-redef] # noqa: F811
+def demo_foo(a):  # noqa: F811  teaching: the second definition deliberately replaces the first
     print(f"hello {a}")
 
 
 try:
     # noinspection PyArgumentList
-    # pylint: disable=no-value-for-parameter
-    demo_foo()  # pyrefly: ignore[missing-argument]
+    demo_foo()  # pyrefly: ignore[missing-argument]  teaching: the second def replaced the one-argument version, so the call fails
 except TypeError:
     print("oops, got an error")
-demo_foo("mark")  # type: ignore[call-arg]
+demo_foo("mark")

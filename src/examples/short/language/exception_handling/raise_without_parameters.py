@@ -16,8 +16,7 @@ def raise_without_exception():
     way that there will be a prior exception and so this must be an error.
     """
     try:
-        # pylint: disable=misplaced-bare-raise
-        raise  # noqa: PLE0704
+        raise  # noqa: PLE0704  teaching: demonstrating a bare raise outside a handler
     except RuntimeError as e:
         print(f"All is ok. you cannot raise without a prior active exception [{e}]")
 
@@ -35,7 +34,6 @@ def main():
     try:
         try:
             raise ValueError("hello")
-        # pylint: disable=try-except-raise
         except ValueError:
             raise
     except ValueError as e:
@@ -47,7 +45,6 @@ def main():
         try:
             raise ValueError("hello")
         except ValueError as e:
-            # pylint: disable=try-except-raise
             raise e
     except ValueError as e:
         tb = e.__traceback__

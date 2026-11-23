@@ -12,6 +12,7 @@ this example "no_logging".
 """
 
 import logging
+from typing import ClassVar
 
 import scrapy.crawler
 
@@ -20,10 +21,10 @@ logger = logging.getLogger(__name__)
 
 class SearchSpider(scrapy.Spider):
     name = __name__
-    allowed_domains = [  # noqa: RUF012
+    allowed_domains: ClassVar = [
         "jet.com"
     ]
-    start_urls = [  # noqa: RUF012
+    start_urls: ClassVar = [
         "https://jet.com/search/",
     ]
 
@@ -33,7 +34,7 @@ class SearchSpider(scrapy.Spider):
         # important, call the parent
         self.logger.info("in __init__")
 
-    def parse(self, _response, **_kwargs):  # pyrefly: ignore[bad-override]
+    def parse(self, _response, **_kwargs):
         """ This method is called whenever you get a response """
         self.logger.info("in parse")
 

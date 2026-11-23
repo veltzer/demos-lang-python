@@ -27,8 +27,7 @@ def get_http_status_string(code: int):
     :return:
     """
     # noinspection PyProtectedMember,PyUnresolvedReferences
-    # pylint: disable=protected-access
-    return f"http code [{code}], [{requests.status_codes._codes[code][0]}]"  # pyrefly: ignore[missing-attribute]  teaching: this file shows the protected _codes access
+    return f"http code [{code}], [{requests.status_codes._codes[code][0]}]"  # pyrefly: ignore[missing-attribute]  teaching: this file shows the protected _codes access  # noqa: SLF001  teaching: this file shows the protected _codes access
 
 
 url = "http://www.google.com/does_not_exist"

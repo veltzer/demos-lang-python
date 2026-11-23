@@ -41,9 +41,8 @@ def get_comments_seq(self, idx):
 
 def yield_comments(data):
     if isinstance(data, CommentedMap):
-        if isinstance(data.ca.comment, list):  # noqa: SIM102
-            if isinstance(data.ca.comment[1], list):
-                yield "", data.ca.comment[1][0].value.rstrip()
+        if isinstance(data.ca.comment, list) and isinstance(data.ca.comment[1], list):
+            yield "", data.ca.comment[1][0].value.rstrip()
         for k, v in data.items():
             for comment in get_comments_map(data, k):
                 for frag in comment.value.split("\n"):
@@ -52,9 +51,8 @@ def yield_comments(data):
                     yield k, frag.rstrip()
             yield from yield_comments(v)
     elif isinstance(data, CommentedSeq):
-        if isinstance(data.ca.comment, list):  # noqa: SIM102
-            if isinstance(data.ca.comment[1], list):
-                yield "", data.ca.comment[1][0].value.rstrip()
+        if isinstance(data.ca.comment, list) and isinstance(data.ca.comment[1], list):
+            yield "", data.ca.comment[1][0].value.rstrip()
         for idx, item in enumerate(data):
             for comment in get_comments_seq(data, idx):
                 for frag in comment.value.split("\n"):

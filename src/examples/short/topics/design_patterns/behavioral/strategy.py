@@ -26,7 +26,6 @@ class DiscountStrategyValidator:  # Descriptor class for check perform
         return True
 
     def __set_name__(self, owner, name: str) -> None:
-        # pylint: disable=attribute-defined-outside-init
         self.private_name = f"_{name}"
 
     def __set__(self, obj: Order, value: Callable | None = None) -> None:

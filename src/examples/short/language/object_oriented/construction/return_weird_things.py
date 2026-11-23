@@ -18,23 +18,20 @@ even returned to the programmer).
 
 class A:
     # noinspection PyReturnFromInit
-    # pylint: disable=return-in-init
     def __init__(self):
-        return 0  # noqa: PLE0101
+        return 0  # noqa: PLE0101  teaching: __init__ must not return a value
 
 
 class B:
     # noinspection PyReturnFromInit
-    # pylint: disable=return-in-init
     def __init__(self):
         return None
 
 
 class C:
     # noinspection PyReturnFromInit
-    # pylint: disable=return-in-init
     def __init__(self):
-        return self  # noqa: PLE0101
+        return self  # noqa: PLE0101  teaching: __init__ must not return a value
 
 
 class D:

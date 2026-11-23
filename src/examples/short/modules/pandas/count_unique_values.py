@@ -5,10 +5,10 @@ References:
 - https://stackoverflow.com/questions/38309729/count-unique-values-with-pandas
 """
 
-import pandas
+import pandas as pd
 
 filename = "shared-samples/tsv/3_by_2.tsv"
-df = pandas.read_csv(
+df = pd.read_csv(
     filename,
     sep="\t",
     header=None,

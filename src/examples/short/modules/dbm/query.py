@@ -11,20 +11,18 @@ if os.path.isfile(filename):
     os.unlink(filename)
 
 # lets put in some data
-d = dbm.gnu.open(filename, "n")  # noqa: SIM115
-d["one"] = "yes!"
-d.close()
+with dbm.gnu.open(filename, "n") as d:
+    d["one"] = "yes!"
 
 # lets open for read
-d = dbm.gnu.open(filename)  # noqa: SIM115
+with dbm.gnu.open(filename) as d:
 
-print("one in db", "one" in d)
-print("two in db", "two" in d)
+    print("one in db", "one" in d)
+    print("two in db", "two" in d)
 
-# lets query a key which isnt there
-try:
-    print(d["one"])
-except KeyError:
-    print("yes!, got KeyError")
+    # lets query a key which isnt there
+    try:
+        print(d["one"])
+    except KeyError:
+        print("yes!, got KeyError")
 
-d.close()

@@ -4,12 +4,13 @@ Separates presentation, application processing, and data management functions.
 """
 
 from collections.abc import KeysView
+from typing import ClassVar
 
 
 class Data:
     """Data Store Class"""
 
-    products = {  # noqa: RUF012
+    products: ClassVar = {
         "milk": {"price": 1.50, "quantity": 10},
         "eggs": {"price": 0.20, "quantity": 100},
         "cheese": {"price": 2.00, "quantity": 10},

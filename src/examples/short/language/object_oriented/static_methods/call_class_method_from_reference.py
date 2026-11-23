@@ -4,7 +4,7 @@ This is an example of how to call a class method directly from a reference to th
 
 from collections.abc import Callable
 from types import MethodType
-from typing import Any
+from typing import Any, ClassVar
 
 
 class Book:
@@ -20,11 +20,10 @@ class Book:
         return cls.num
 
     ref_full = increment_num
-    ref = [increment_num]  # noqa: RUF012
+    ref: ClassVar = [increment_num]
 
     @classmethod
     def call_it(cls):
-        # pylint: disable=not-callable
         MethodType(cls.ref[0], Book)()
 
 
@@ -33,8 +32,8 @@ ref_to_method = Book.increment_num
 ref_to_method()
 
 # this ref is also bound and so can be called
-ref_to_method_2: Callable[[type[Book]], Any] = Book.ref_full  # type: ignore[assignment]  # pyrefly: ignore[bad-assignment]
-ref_to_method_2()  # pyrefly: ignore[bad-argument-count]  teaching: an unbound class method needs its class argument
+ref_to_method_2: Callable[[], Any] = Book.ref_full
+ref_to_method_2()
 
 # this ref is an unbloud method, and so cannot be called
 ref_to_method_3: Callable[[type[Book]], Any] = Book.ref[0]
@@ -43,5 +42,4 @@ try:
 except TypeError as e:
     print(e)
 # this is how we bind the method back to the class
-# pylint: disable=not-callable
 MethodType(ref_to_method_3.__func__, Book)()  # pyrefly: ignore[missing-attribute]  teaching: __func__ is how the method is bound back

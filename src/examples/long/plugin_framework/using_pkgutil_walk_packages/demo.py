@@ -18,8 +18,7 @@ for instance in mgr.giveMe(myBaseClass1):
 import importlib
 import pkgutil
 
-# pylint: disable=relative-beyond-top-level, no-name-in-module
-from . import base  # pyrefly: ignore[missing-module-attribute]
+from . import base
 
 do_debug = False
 do_print_members = False
@@ -40,9 +39,8 @@ for _importer, modname, _is_package in pkgutil.walk_packages(
         print(done)
         print(f"imported {modname}")
         for name, t in module_obj.__dict__.items():
-            # if type(t) is type and issubclass(t, base.BaseClass):
-            if isinstance(t, base.BaseClass):
-                instance = t()  # type: ignore[operator]
+            if isinstance(t, type) and issubclass(t, base.BaseClass):
+                instance = t()
                 print(name)
                 print(t)
                 print(instance)

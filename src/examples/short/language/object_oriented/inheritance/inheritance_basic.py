@@ -49,7 +49,6 @@ class B(A):
     def method_overloaded2(self):
         """ this is a second way to call the parent method """
         print("B.method_overloaded2")
-        # pylint: disable=super-with-arguments
         super().method_overloaded2()
 
     def method_overloaded3(self):
@@ -58,8 +57,7 @@ class B(A):
         (no hard coding of the class name as above)
         """
         print("B.method_overloaded3")
-        # pylint: disable=bad-super-call
-        super(self.__class__, self).method_overloaded3()  # pyrefly: ignore[invalid-argument]
+        super(self.__class__, self).method_overloaded3()
 
     def method_overloaded4(self):
         """ This is going back to the first way """

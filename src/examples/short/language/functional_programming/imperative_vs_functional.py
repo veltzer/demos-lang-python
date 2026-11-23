@@ -5,11 +5,11 @@
 # this style of programming is called "imperative programming"
 l1 = []
 for x in range(2,8):
-    l1.append(x * x)  # noqa: PERF401  teaching: imperative style vs functional style
+    l1.append(x * x)  # noqa: PERF401  teaching: the loop form that the comprehension replaces
 print(l1)
 
 # now we will write a "functional" style version of the above code
-l2 = list(map(lambda x: x * x, range(2,8)))  # noqa: C417
+l2 = list(map(lambda x: x * x, range(2,8)))  # noqa: C417  teaching: demonstrating map with a lambda
 print(l2)
 
 # THE SECOND VERSION IS MUCH MUCH MUCH BETTER FOR OPTIMIZATION!

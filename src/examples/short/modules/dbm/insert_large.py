@@ -20,15 +20,13 @@ with open(large_text_filename) as f:
     large_text = f.read()
 
 # n means create a new database and open for reading and writing
-d = dbm.gnu.open(filename, "n")  # noqa: SIM115
-d["large"] = large_text
-d[large_text] = "is this possible"
-d.close()
+with dbm.gnu.open(filename, "n") as d:
+    d["large"] = large_text
+    d[large_text] = "is this possible"
 
 # lets open the file
-d = dbm.gnu.open(filename)  # noqa: SIM115
-value = d["large"].decode()
-assert value == large_text
-value = d[large_text].decode()
-assert value == "is this possible"
-d.close()
+with dbm.gnu.open(filename) as d:
+    value = d["large"].decode()
+    assert value == large_text
+    value = d[large_text].decode()
+    assert value == "is this possible"

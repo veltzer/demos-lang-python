@@ -52,7 +52,6 @@ def main():
     # exit every time the signal is received...
     signal.signal(signal.SIGUSR1, lambda _x, _y: None)
 
-    # pylint: disable=no-member
     poller = select.epoll()
     poller.register(pipe_r, select.EPOLLIN)
 

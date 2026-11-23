@@ -19,11 +19,9 @@ class Person:
 
 
 p = Person("Mark", "Veltzer")
-# pylint: disable=not-callable
 p.print_me()
 
 b = Person("James", "Bond")
-# pylint: disable=not-callable
 b.print_me()
 
 
@@ -40,9 +38,7 @@ def secret_agent_output(self):
 # this works! turning a function into a method...
 b.print_me = MethodType(secret_agent_output, b)
 print("Only James is a secret agent...")
-# pylint: disable=not-callable
 p.print_me()
-# pylint: disable=not-callable
 b.print_me()
 
 # now lets make everyone a secret agent...
@@ -51,9 +47,7 @@ b.print_me()
 # Person.printMe=secret_agent_output
 # Person.print_me = instancemethod(secret_agent_output, None, Person)
 print("Now we are both secret agents...")
-# pylint: disable=not-callable
 b.print_me()
-# pylint: disable=not-callable
 p.print_me()
 
 

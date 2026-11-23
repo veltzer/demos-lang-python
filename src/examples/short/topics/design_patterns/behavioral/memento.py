@@ -26,11 +26,11 @@ class Transaction:
     """
 
     deep = False
-    states: list[Callable[[], None]] = []  # noqa: RUF012
 
     def __init__(self, deep, *targets):
         self.deep = deep
         self.targets = targets
+        self.states: list[Callable[[], None]] = []
         self.commit()
 
     def commit(self):

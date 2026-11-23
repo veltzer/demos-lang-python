@@ -10,6 +10,9 @@ class RevIter:
         self.data = data
         self.index = len(data)
 
+    def __iter__(self):
+        return self
+
     def __next__(self):
         if self.index == 0:
             raise StopIteration
@@ -30,7 +33,7 @@ class Reverse:
 
 def main():
     # And now lets use the iterator...
-    for x in Reverse(range(7)):  # pyrefly: ignore[not-iterable]
+    for x in Reverse(range(7)):
         print(x)
 
     # notice that Reverse(x) is NOT an iterator,at least by pythons understanding of it.

@@ -26,4 +26,4 @@ response = client.messages.create(
     # messages=[{"role": "user", "content": "Who was George Washington?"}]
 )
 
-print(response.content[0].text)  # type: ignore[union-attr]
+print(response.content[0].text)

@@ -13,7 +13,6 @@ counter = 0
 
 
 def give_me_a_unique_value():
-    # pylint: disable=global-statement
     global counter  # noqa: PLW0603  teaching: the simple global variable way of keeping state
     counter += 1
     return counter

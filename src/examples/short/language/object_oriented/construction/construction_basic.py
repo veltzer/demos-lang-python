@@ -27,7 +27,6 @@ class NoCons:
 class A:
     # wrong! dont do this...
     # noinspection PyMethodParameters
-    # pylint: disable=no-method-argument
     def __init__():  # pyrefly: ignore[bad-function-definition]  teaching: __init__ without self is wrong
         print("in A constructor")
 
@@ -59,8 +58,7 @@ class E:
 n = NoCons()
 print(type(n))
 try:
-    # pylint: disable=too-many-function-args
-    a = A()  # pyrefly: ignore[bad-argument-count]
+    a = A()  # pyrefly: ignore[bad-argument-count]  teaching: constructing a class whose __init__ takes no args wrongly is the lesson
 except TypeError:
     print("oh,no. Cant construct an object. Must pass self")
 b = B()

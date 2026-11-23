@@ -15,7 +15,7 @@ def get_num_of_days_in_month(month_name):
     """ Given a month name,
     return the number of days in this month"""
     if month_name in name_to_days_num:
-        return name_to_days_num[months_names]  # pyrefly: ignore[bad-index]
+        return name_to_days_num[month_name]
     raise DateError("No such month name")
 
 
@@ -81,9 +81,8 @@ class Date:
         if self.year == other.year:
             if self.month > other.month:
                 return True
-            if self.month == other.month:  # noqa: SIM102
-                if self.day > other.day:
-                    return True
+            if self.month == other.month and self.day > other.day:
+                return True
         return False
 
     def __lt__(self, other):

@@ -20,7 +20,7 @@ def main():
         do_error()
     # the parenthesis in the next line are essential
     except (ValueError, KeyboardInterrupt) as e:
-        while e.__cause__:  # pyrefly: ignore[bad-assignment]
+        while e.__cause__:
             e = e.__cause__
         print(e)
 

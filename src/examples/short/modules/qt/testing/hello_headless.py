@@ -4,7 +4,6 @@ This is an example of how to run a PyQt application headless.
 References:
 - https://stackoverflow.com/questions/13215120/how-do-i-make-python-qt-and-webkit-work-on-a-headless-server
 """
-# pylint: disable=c-extension-no-member
 
 import sys
 

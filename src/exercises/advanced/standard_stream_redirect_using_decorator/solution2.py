@@ -18,13 +18,12 @@ def with_output_to(fname):
         @functools.wraps(f)
         def decorated_f(*args, **kw):
             old_stdout = sys.stdout
-            # pylint: disable=consider-using-with
-            new_stdout = sys.stdout = open(fname, "a")  # noqa: SIM115
-            try:
-                return f(*args, **kw)
-            finally:
-                sys.stdout = old_stdout
-                new_stdout.close()
+            with open(fname, "a") as new_stdout:
+                sys.stdout = new_stdout
+                try:
+                    return f(*args, **kw)
+                finally:
+                    sys.stdout = old_stdout
 
         return decorated_f
 

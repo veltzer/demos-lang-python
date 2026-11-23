@@ -9,6 +9,8 @@ steps to subclasses.
 Django class based views: https://docs.djangoproject.com/en/2.1/topics/class-based-views/
 """
 
+from collections.abc import Callable
+
 
 def get_text() -> str:
     return "plain-text"
@@ -31,12 +33,12 @@ def saver() -> None:
     print("[SAVE]")
 
 
-def template_function(getter, converter=False, to_save=False) -> None:
+def template_function(getter, converter: Callable[[str], str] | None = None, to_save: bool = False) -> None:
     data = getter()
     print(f"Got {data!r}")
 
     if len(data) <= 3 and converter:
-        data = converter(data)  # pyrefly: ignore[not-callable]
+        data = converter(data)
     else:
         print("Skip conversion")
 

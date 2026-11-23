@@ -8,8 +8,7 @@ be global).
 
 
 def return_inc(val_to_increment):
-    # pylint: disable=unused-variable
-    val_to_incremnt = val_to_increment + 1  # noqa: F841
+    val_to_incremnt = val_to_increment + 1  # noqa: F841  teaching: the typo creates a new unused variable
     return val_to_increment
 
 

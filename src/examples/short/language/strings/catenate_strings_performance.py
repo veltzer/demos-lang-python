@@ -27,7 +27,6 @@ function_names[concat1] = "+ operator"
 
 
 def concat2():
-    # pylint: disable=consider-using-f-string
     return f"{x}{y}"
 
 
@@ -35,7 +34,6 @@ function_names[concat2] = "%s%s"
 
 
 def concat3():
-    # pylint: disable=consider-using-f-string
     return f"{x}{y}"
 
 
@@ -43,7 +41,6 @@ function_names[concat3] = "{}{}"
 
 
 def concat4():
-    # pylint: disable=consider-using-f-string
     return f"{x}{y}"
 
 
@@ -51,7 +48,7 @@ function_names[concat4] = "{0}{1}"
 
 
 def concat5():
-    return "".join([x, y])  # noqa: FLY002
+    return "".join([x, y])  # noqa: FLY002  teaching: demonstrating string join
 
 
 function_names[concat4] = "join"
@@ -75,7 +72,7 @@ functions = [
 
 number = 2000000
 
-results = [(timeit.timeit(f, number=number), function_names[f]) for f in functions]  # pyrefly: ignore[bad-index]
+results = [(timeit.timeit(f, number=number), function_names[f]) for f in functions]
 sorted_results = sorted(results, key=lambda tup: tup[0])
 for r in sorted_results:
     print(f"{r[0]:.4f}: {r[1]}")

@@ -62,13 +62,17 @@ include_paths = [
 	"/usr/include/python3.14",
 ]
 
+# Each directory is one demo program/library built from all its C/C++ files, so one run per directory.
 [processor.checker.cppcheck]
+dep_inputs = ["cppcheck.cfg"]
+batch_by_dir = true
 src_dirs = ["make_based"]
 args = [
 	"--error-exitcode=1",
-	"--enable=warning,style,performance,portability",
+	"--enable=warning,style,performance,portability,information,unusedFunction",
 	"--check-level=exhaustive",
 	"--inline-suppr",
+	"--library=cppcheck.cfg",
 ]
 
 [processor.checker.ruff]

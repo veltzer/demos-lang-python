@@ -37,15 +37,13 @@ b.print_me()
 # Notice that we get an exception not because the attribute is "private"
 # but rather because such an attribute really DOES NOT exist...
 try:
-    # pylint: disable=protected-access
-    print(f"price is {b.__price}")  # pyrefly: ignore[no-access]
+    print(f"price is {b.__price}")  # pyrefly: ignore[no-access]  teaching: shows that name mangling is not real privacy  # noqa: SLF001  teaching: shows that underscore names are not real privacy
 except AttributeError:
     print("You see,you cannot directly change an attribute which does not exist")
 # We CAN change the name since attributes that have just one _ in front of them appear AS IS
 # in the object
 print("if you see hobbit below it means we changed the attribute even though it has _ in front of it")
-# pylint: disable=protected-access
-b._name = "hobbit"
+b._name = "hobbit"  # noqa: SLF001  teaching: shows that underscore names are not real privacy
 b.print_me()
 
 # Now lets see what the object really has...
@@ -54,6 +52,5 @@ print(dir(b))
 # OK. I got it,the object really has the "_Book__price" attribute. Lets see if we can change
 # that... YES WE CAN...
 print("if you see price=70 it means we changed the attribute even though it has __ in front of it")
-# pylint: disable=attribute-defined-outside-init
-b._Book__price = 70  # pyrefly: ignore[missing-attribute]  teaching: name mangling is not security
+b._Book__price = 70  # pyrefly: ignore[missing-attribute]  teaching: name mangling is not security  # noqa: SLF001  teaching: shows that underscore names are not real privacy
 b.print_me()

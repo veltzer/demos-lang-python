@@ -19,12 +19,11 @@ from __future__ import annotations
 
 class Book:
     # noinspection PyReturnFromInit,PyTypeChecker
-    # pylint: disable=return-in-init
     def __init__(self, price) -> Book:
         self.__price = price
         # return None
         # noinspection PyTypeChecker
-        return 7  # noqa: PLE0101  teaching: __init__ must not return a value  # pyrefly: ignore[bad-return]
+        return 7  # noqa: PLE0101  teaching: __init__ must not return a value  # pyrefly: ignore[bad-return]  teaching: __init__ must not return a value
         # return
 
     def set_price(self, val):

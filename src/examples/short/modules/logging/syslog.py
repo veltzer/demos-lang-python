@@ -20,8 +20,8 @@ logger.addHandler(handler)
 print("please run [tail -f /var/log/syslog] to see the logs...")
 counter = 0
 while True:
-    logger.debug(f"this is debug {counter}")
-    logger.critical(f"this is critical {counter}")
+    logger.debug("this is debug %s", counter)
+    logger.critical("this is critical %s", counter)
     counter += 1
     time.sleep(1)
 

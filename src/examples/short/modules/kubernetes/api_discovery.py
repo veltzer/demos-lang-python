@@ -21,7 +21,7 @@ def main():
         versions = []
         for v in api.versions:
             name = ""
-            if v.version == api.preferred_version.version and len(  # pyrefly: ignore[missing-attribute]
+            if v.version == api.preferred_version.version and len(
                     api.versions) > 1:
                 name += "*"
             name += v.version

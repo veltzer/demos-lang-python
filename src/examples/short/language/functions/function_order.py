@@ -8,15 +8,14 @@ This means that a function cannot be used until after it has been defined.
 # noinspection PyBroadException
 try:
     # noinspection PyUnboundLocalVariable
-    # pylint: disable=used-before-assignment
-    demo_foo()  # type: ignore[used-before-def]
+    demo_foo()  # pyrefly: ignore[unbound-name]  teaching: shows that a name must be defined before the call that uses it runs
 except NameError:
     print("yep, this failed")
 
 
 def demo_foo():
     print("this is demo_foo")
-    demo_bar()  # noqa: F821
+    demo_bar()  # noqa: F821  teaching: demo_bar is called before it is defined
 
 
 # this will call foo but will fail once foo tried to call bar

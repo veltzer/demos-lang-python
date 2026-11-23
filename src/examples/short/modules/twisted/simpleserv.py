@@ -9,21 +9,18 @@ class Echo(protocol.Protocol):
     """This is just about the simplest possible protocol
     As soon as any data is received,write it back."""
     def __init__(self):
-        super().__init__(self)  # pyrefly: ignore[bad-argument-count]
+        super().__init__(self)
 
     def dataReceived(self, data):
-        self.transport.write(data)  # pyrefly: ignore[missing-attribute]
+        self.transport.write(data)
 
 
 factory = protocol.ServerFactory()
 factory.protocol = Echo
 
 # This runs the protocol on port 8000
-# pylint: disable=no-member
 reactor.listenTCP(8000, factory)
 # And again on port 8002
-# pylint: disable=no-member
 reactor.listenTCP(8002, factory)
 # run the main loop of the reactor
-# pylint: disable=no-member
 reactor.run()

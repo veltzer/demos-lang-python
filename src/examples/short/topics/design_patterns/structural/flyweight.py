@@ -37,6 +37,9 @@ class Card:
     # when there are no other references to it.
     pool: ClassVar[weakref.WeakValueDictionary] = weakref.WeakValueDictionary()
 
+    value: str
+    suit: str
+
     def __new__(cls, value, suit):
         # If the object exists in the pool - just return it
         obj = cls.pool.get(value + suit)
@@ -45,7 +48,7 @@ class Card:
             obj = object.__new__(Card)
             cls.pool[value + suit] = obj
             # This row does the part we usually see in `__init__`
-            obj.value, obj.suit = value, suit  # pyrefly: ignore[missing-attribute]
+            obj.value, obj.suit = value, suit
         return obj
 
     # If you uncomment `__init__` and comment-out `__new__` -
@@ -54,7 +57,7 @@ class Card:
     #     self.value, self.suit = value, suit
 
     def __repr__(self):
-        return f"<Card: {self.value}{self.suit}>"  # pyrefly: ignore[missing-attribute]
+        return f"<Card: {self.value}{self.suit}>"
 
 
 def main():
@@ -64,8 +67,7 @@ def main():
     assert c1 == c2
     assert c1 is c2
 
-    # pylint: disable=attribute-defined-outside-init
-    c1.new_attr = "temp"  # pyrefly: ignore[missing-attribute]
+    c1.new_attr = "temp"  # pyrefly: ignore[missing-attribute]  teaching: a flyweight is shared, so an attribute added through one reference shows up on all
     c3 = Card("9", "h")
     assert hasattr(c3, "new_attr")
 

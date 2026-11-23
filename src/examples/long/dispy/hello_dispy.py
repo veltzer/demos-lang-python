@@ -29,7 +29,7 @@ def main():
         jobs.append(job)
     # cluster.wait() # waits for all scheduled jobs to finish
     for job in jobs:
-        host, n = job()  # pyrefly: ignore  # waits for job to finish and returns results
+        host, n = job()  # waits for job to finish and returns results
         print(f"{host} executed job {job.id} at {job.start_time} with {n}")
         # other fields of "job" that may be useful:
         # print(job.stdout, job.stderr, job.exception, job.ip_addr, job.start_time, job.end_time)

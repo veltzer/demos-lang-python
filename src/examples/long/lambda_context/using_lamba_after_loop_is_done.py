@@ -37,7 +37,7 @@ from functools import partial
 
 def basic():
     """ This is the basic example. What does this produce? """
-    handlers = [lambda: i for i in range(10)]  # noqa: B023  teaching: all lambdas see the final value of the loop variable
+    handlers = [lambda: i for i in range(10)]  # noqa: B023  teaching: the closure sees only the final loop value
     print([h() for h in handlers])
 
 
@@ -46,7 +46,6 @@ def wrong():
     handlers = []
     for i in range(10):
         def f():
-            # pylint: disable=cell-var-from-loop
             return i  # noqa: B023  teaching: the closure sees only the final loop value
         handlers.append(f)
     print([h() for h in handlers])
@@ -76,9 +75,8 @@ def partial_pattern_wrong():
     """ This is using the partial python standard function, but without arguments it does not work """
     handlers = []
     for i in range(10):
-        # pylint: disable=cell-var-from-loop,unnecessary-lambda-assignment
         def f():
-            return i  # noqa: B023  teaching: partial of a late-binding function still sees the final loop value
+            return i  # noqa: B023  teaching: the closure sees only the final loop value
         good_f = partial(f)
         handlers.append(good_f)
     print([h() for h in handlers])
@@ -88,7 +86,6 @@ def partial_pattern():
     """ This is using the partial python standard function """
     handlers = []
     for i in range(10):
-        # pylint: disable=unnecessary-lambda-assignment
         def f(i):
             return i
         good_f = partial(f, i)

@@ -2,9 +2,9 @@
 A demo of how to load a csv file
 """
 
-import pandas
+import pandas as pd
 
-df = pandas.read_csv(
+df = pd.read_csv(
     "/etc/passwd",
     sep=":",
     header=None, )

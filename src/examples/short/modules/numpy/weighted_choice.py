@@ -12,11 +12,13 @@ References:
 - https://stackoverflow.com/questions/10803135/weighted-choice-short-and-simple
 """
 
-from numpy.random import choice
+import numpy as np
+
+rng = np.random.default_rng()
 
 elements = ["one", "two", "three"]
 weights = [0.2, 0.3, 0.5]
 
 # replate=True is the default
-print(choice(elements, p=weights, size=20, replace=True))
-print(choice(elements, p=weights, size=20, replace=False))
+print(rng.choice(elements, p=weights, size=20, replace=True))
+print(rng.choice(elements, p=weights, size=20, replace=False))

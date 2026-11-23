@@ -8,7 +8,7 @@ import gzip
 import random
 import time
 
-import pandas
+import pandas as pd
 
 
 def time_it(f):
@@ -38,7 +38,7 @@ def prepare_large_tsv_file(input_file: str, size: int):
 
 @time_it
 def read_it_with_pandas(input_file: str, separator: str):
-    df = pandas.read_csv(
+    df = pd.read_csv(
         input_file,
         sep=separator,
         header=None,
@@ -49,7 +49,7 @@ def read_it_with_pandas(input_file: str, separator: str):
 
 @time_it
 def read_it_with_pandas_chunks(input_file: str, separator: str):
-    reader = pandas.read_csv(
+    reader = pd.read_csv(
         input_file,
         sep=separator,
         chunksize=10000,
@@ -75,9 +75,10 @@ def read_it_with_python(input_file: str, separator: str):
 @time_it
 def read_it_with_python_gzip(input_file: str, separator: str):
     line_count = 0
-    for line in gzip.open(input_file, "rt"):  # noqa: SIM115
-        _ = line.split(separator)
-        line_count += 1
+    with gzip.open(input_file, "rt") as stream:
+        for line in stream:
+            _ = line.split(separator)
+            line_count += 1
     return line_count
 
 

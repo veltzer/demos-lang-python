@@ -10,19 +10,18 @@ and them "items" iterator.
 import dbm.gnu
 
 filename = "/tmp/test.gdbm"
-d = dbm.gnu.open(filename)  # noqa: SIM115
+with dbm.gnu.open(filename) as d:
 
-# lets try iterating with .items()
-try:
-    for _k, _v in d.items():  # pyrefly: ignore[missing-attribute]  teaching: a gdbm handle has no items()
-        pass
-except AttributeError:
-    print("nope, you cannot use items on a gdbm handle")
+    # lets try iterating with .items()
+    try:
+        for _k, _v in d.items():  # pyrefly: ignore[missing-attribute]  teaching: a gdbm handle has no items()
+            pass
+    except AttributeError:
+        print("nope, you cannot use items on a gdbm handle")
 
-# show all key value pairs
-k = d.firstkey()
-while k is not None:
-    print(k.decode(), d[k].decode())
-    k = d.nextkey(k)
+    # show all key value pairs
+    k = d.firstkey()
+    while k is not None:
+        print(k.decode(), d[k].decode())
+        k = d.nextkey(k)
 
-d.close()

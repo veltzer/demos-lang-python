@@ -26,8 +26,7 @@ stop_event = threading.Event()
 
 # a small debugging function that prints the thread doing the printing...
 def debug(msg):
-    # pylint: disable=deprecated-method
-    print(threading.currentThread().name, msg)  # pyrefly: ignore[bad-index]
+    print(threading.current_thread().name, msg)
 
 
 # a wrapper function to call an old signal handler

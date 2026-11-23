@@ -27,7 +27,7 @@ class HierachicalStateMachine:
         self.standby_state = Standby(self)  # Unit.Inservice.Standby()
         self.suspect_state = Suspect(self)  # Unit.OutOfService.Suspect()
         self.failed_state = Failed(self)  # Unit.OutOfService.Failed()
-        self.current_state = self.standby_state
+        self.current_state: Unit = self.standby_state
         self.states = {
             "active": self.active_state,
             "standby": self.standby_state,
@@ -44,7 +44,7 @@ class HierachicalStateMachine:
 
     def next_state(self, state):
         try:
-            self.current_state = self.states[state]  # pyrefly: ignore[bad-assignment]
+            self.current_state = self.states[state]
         except KeyError as e:
             raise UnsupportedState from e
 
@@ -90,29 +90,29 @@ class Unit(HierachicalStateMachine):
         super().__init__()
         self.hsm = hierachical_state_machine
 
-    def on_switchover(self):
+    def on_switchover(self) -> None:
         raise UnsupportedTransition
 
-    def on_fault_trigger(self):
+    def on_fault_trigger(self) -> None:
         raise UnsupportedTransition
 
-    def on_diagnostics_failed(self):
+    def on_diagnostics_failed(self) -> None:
         raise UnsupportedTransition
 
-    def on_diagnostics_passed(self):
+    def on_diagnostics_passed(self) -> None:
         raise UnsupportedTransition
 
-    def on_operator_inservice(self):
+    def on_operator_inservice(self) -> None:
         raise UnsupportedTransition
 
 
 class Inservice(Unit):
-    def on_fault_trigger(self):  # pyrefly: ignore[bad-override]
+    def on_fault_trigger(self):
         self.hsm.next_state("suspect")
         self.hsm.send_diagnostics_request()
         self.hsm.raise_alarm()
 
-    def on_switchover(self):  # pyrefly: ignore[bad-override]
+    def on_switchover(self):
         self.hsm.perform_switchover()
         self.hsm.check_mate_status()
         self.hsm.send_switchover_response()
@@ -135,23 +135,23 @@ class Standby(Inservice):
 
 
 class OutOfService(Unit):
-    def on_operator_inservice(self):  # pyrefly: ignore[bad-override]
+    def on_operator_inservice(self):
         self.hsm.on_switchover()  # message ignored
         self.hsm.send_operator_inservice_response()
         self.hsm.next_state("suspect")
 
 
 class Suspect(OutOfService):
-    def on_diagnostics_failed(self):  # pyrefly: ignore[bad-override]
+    def on_diagnostics_failed(self):
         super().send_diagnostics_failure_report()
         super().next_state("failed")
 
-    def on_diagnostics_passed(self):  # pyrefly: ignore[bad-override]
+    def on_diagnostics_passed(self):
         super().send_diagnostics_pass_report()
         super().clear_alarm()  # loss of redundancy alarm
         super().next_state("standby")
 
-    def on_operator_inservice(self):  # pyrefly: ignore[bad-override]
+    def on_operator_inservice(self):
         super().abort_diagnostics()
         super().on_operator_inservice()  # message ignored
 

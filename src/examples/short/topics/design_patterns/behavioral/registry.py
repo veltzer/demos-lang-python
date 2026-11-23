@@ -1,13 +1,16 @@
+
 """
 registry.py
 """
 
 from __future__ import annotations
 
+from typing import ClassVar
+
 
 class RegistryHolder(type):
 
-    REGISTRY: dict[str, RegistryHolder] = {}  # noqa: RUF012
+    REGISTRY: ClassVar[dict[str, RegistryHolder]] = {}
 
     def __new__(cls, name, bases, attrs):
         """

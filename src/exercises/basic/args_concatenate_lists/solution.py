@@ -13,8 +13,7 @@ def catenate_lists(*args):
 def catenate_lists_2(*args):
     r = []
     for e in args:
-        for x in e:
-            r.append(x)  # noqa: PERF402
+        r.extend(e)
     return r
 
 

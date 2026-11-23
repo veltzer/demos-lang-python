@@ -27,14 +27,14 @@ class CmdLineApp(Cmd):
         # set_use_arg_list(False)
 
     @with_argparser(argparser)
-    def do_speak(self, arg, opts=None):
+    def do_speak(self, arg, opts):
         """Repeats what you tell me to."""
         arg = "".join(arg)
-        if opts.piglatin:  # pyrefly: ignore[missing-attribute]
+        if opts.piglatin:
             arg = f"{arg[1:]}{arg[0]}ay"
-        if opts.shout:  # pyrefly: ignore[missing-attribute]
+        if opts.shout:
             arg = arg.upper()
-        repetitions = opts.repeat or 1  # pyrefly: ignore[missing-attribute]
+        repetitions = opts.repeat or 1
         for _ in range(min(repetitions, self.maxrepeats)):
             self.stdout.write(arg)
             self.stdout.write("\n")

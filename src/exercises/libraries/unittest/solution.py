@@ -7,10 +7,11 @@ import os
 import shutil
 import tempfile
 import unittest
+from typing import ClassVar
 
 
 class TestGlob(unittest.TestCase):
-    fnames = ["foo.txt", "bar.txt", "baz.py"]  # noqa: RUF012
+    fnames: ClassVar = ["foo.txt", "bar.txt", "baz.py"]
 
     def setUp(self):
         """Create some files in a temp dir."""
@@ -27,7 +28,7 @@ class TestGlob(unittest.TestCase):
         shutil.rmtree(self.dir)
 
     def assert_glob(self, pattern, fnames):
-        self.assertEqual(sorted(glob.glob(pattern)), sorted(fnames))
+        assert sorted(glob.glob(pattern)) == sorted(fnames)
 
     def test_current_dir_glob(self):
         """Test globbing in current dir."""

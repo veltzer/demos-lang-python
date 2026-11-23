@@ -19,7 +19,7 @@ def main():
     )
     cursor = db.cursor()
     cursor.execute("SHOW TABLES")
-    for row in cursor:  # pyrefly: ignore[not-iterable]
+    for row in cursor:
         for datum in row:
             print(datum)
     db.close()

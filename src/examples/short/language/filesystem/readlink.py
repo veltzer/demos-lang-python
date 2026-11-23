@@ -55,7 +55,8 @@ def main():
     # link = "/tmp/foo"
     link = "/etc/resolv.conf"
     real_link_target = find_link_target_rec(link)
-    assert os.path.exists(real_link_target) and not os.path.islink(real_link_target)
+    assert os.path.exists(real_link_target)
+    assert not os.path.islink(real_link_target)
 
     print(os.path.realpath(link))
     print(find_link_target_better(link))

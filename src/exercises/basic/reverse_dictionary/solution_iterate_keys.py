@@ -11,7 +11,6 @@ d1 = {
 }
 d2 = {}
 # the next line is equivalent to: for key in d1.keys():
-# pylint: disable=consider-using-dict-items
-for key in d1:  # noqa: PLC0206
+for key in d1:  # noqa: PLC0206  teaching: demonstrating iteration over the keys and indexing for the value
     d2[d1[key]] = key
 print(d2)

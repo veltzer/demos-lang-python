@@ -4,11 +4,11 @@ Solution
 
 import csv
 import urllib.request
-from xml.etree import ElementTree
+from xml.etree import ElementTree as ET
 
 
 def parse_feed(feed_string):
-    rss = ElementTree.fromstring(feed_string)
+    rss = ET.fromstring(feed_string)
     for item in rss.findall("channel/item"):
         date = item.findtext("pubDate")
         assert date is not None

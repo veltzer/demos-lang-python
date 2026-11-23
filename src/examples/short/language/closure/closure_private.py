@@ -44,10 +44,11 @@ if func_mul3.__closure__ is not func_mul5.__closure__:
     print(
         "yes,the closure object of the 3 family is not the closure object of the 5 family")
 # here is how we can get to the closure object from the outside:
+assert func_add3.__closure__ is not None
 print("the closure for the 3 family of functions holds the value",
-      func_add3.__closure__[0].cell_contents)  # pyrefly: ignore[unsupported-operation]
+      func_add3.__closure__[0].cell_contents)
 try:
-    func_add3.__closure__[0].cell_contents = 8  # pyrefly: ignore[unsupported-operation]
+    func_add3.__closure__[0].cell_contents = 8
 except AttributeError as e:
     print(
         "no, I cannot set the closure data from the outside. It is indeed private...")

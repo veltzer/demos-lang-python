@@ -6,7 +6,6 @@ This example shows that you cannot use mutable objects as keys in a dict
 try:
     # Attempting to use a list as a key
     my_dict = {
-        # pylint: disable=unhashable-member
         [1, 2, 3]: "This is a list key"
     }
     print("This won't execute")
@@ -37,7 +36,6 @@ except TypeError as e:
 
 try:
     dict_key = {"name": "John"}
-    # pylint: disable=unhashable-member
     bad_dict = {dict_key: "Using dict as key"}
     print("This won't execute")
 except TypeError as e:

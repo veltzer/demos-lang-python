@@ -48,6 +48,6 @@ def do_stats_numpy(random_scores):
 print(timeit.timeit(do_sum_range, number=1))
 print(timeit.timeit(do_sum_functional, number=1))
 print(timeit.timeit(do_sum_numpy, number=1))
-random_scs = np.random.randint(1, 100, size=100000010)
+random_scs = np.random.default_rng().integers(1, 100, size=100000010)
 print(timeit.timeit(functools.partial(do_stats_for, random_scs), number=1))
 print(timeit.timeit(functools.partial(do_stats_numpy, random_scs), number=1))

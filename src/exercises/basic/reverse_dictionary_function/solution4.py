@@ -28,7 +28,6 @@ def rev_dict3(d):
     True
     """
     # list comprehension
-    # pylint: disable=consider-using-dict-comprehension
     return {v: k for k, v in d.items()}
 
 

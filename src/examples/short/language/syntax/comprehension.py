@@ -17,7 +17,7 @@ list3 = []
 for x in range(10):
     for y in range(10):
         list3.append((x, y))  # noqa: PERF401  teaching: the loop form that the comprehension replaces
-print(map(lambda t: t[0] * t[1], list3))  # noqa: C417
+print(map(lambda t: t[0] * t[1], list3))  # noqa: C417  teaching: demonstrating map with a lambda
 
 # sets
 print({x * 2 for x in range(10)})

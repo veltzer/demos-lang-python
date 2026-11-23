@@ -21,6 +21,6 @@ for _slide_number, slide in enumerate(islice(slides, None)):
         if target.startswith(".."):
             continue
         refs.add(target)
-refs_l = sorted(list(refs))  # noqa: C414
+refs_l = sorted(refs)
 for ref in refs_l:
     print(ref)

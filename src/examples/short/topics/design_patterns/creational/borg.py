@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 """
 *What is this pattern about?
 The Borg pattern (also known as the Monostate pattern) is a way to
@@ -35,7 +37,7 @@ Provides singleton-like behavior sharing state between instances.
 
 
 class Borg:
-    _shared_state: dict[str, str] = {}  # noqa: RUF012
+    _shared_state: ClassVar[dict[str, str]] = {}
 
     def __init__(self) -> None:
         self.__dict__ = self._shared_state

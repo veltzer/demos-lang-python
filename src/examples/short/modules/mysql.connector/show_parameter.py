@@ -16,7 +16,7 @@ def main():
     mycursor = db.cursor()
     mycursor.execute("SELECT @@general_log")
     result = mycursor.fetchone()
-    general_log_enabled = result[0]  # pyrefly: ignore[unsupported-operation, bad-index]
+    general_log_enabled = result[0]
     print("General log enabled:", general_log_enabled)
 
 

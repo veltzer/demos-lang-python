@@ -5,13 +5,11 @@ This is an example that shows that you cannot change primitives in closures.
 
 def make_adder():
     # noinspection PyUnusedLocal
-    # pylint: disable=unused-variable
     x = 0
 
     def adder():
         # noinspection PyUnboundLocalVariable,PyUnresolvedReferences
-        # pylint: disable=undefined-variable
-        x += 1  # pyrefly: ignore[unbound-name]  # noqa: F823
+        x += 1  # noqa: F823  teaching: shows a local name used before its assignment  # pyrefly: ignore[unbound-name]  teaching: x += 1 makes x local, so it is read before assignment
         # noinspection PyUnresolvedReferences
         print(x)
 

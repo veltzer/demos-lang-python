@@ -1,7 +1,7 @@
 """
 Print the epoch
 """
-import datetime
+import datetime as dt
 
-epoch = datetime.datetime.fromtimestamp(0, tz=datetime.UTC)
+epoch = dt.datetime.fromtimestamp(0, tz=dt.UTC)
 print(epoch)

@@ -31,5 +31,4 @@ def main(count, name, required, output, hash_type):
 
 
 if __name__ == "__main__":
-    # pylint: disable=no-value-for-parameter
     main()

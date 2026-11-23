@@ -3,7 +3,7 @@ A calendar of events, has an entry for every event,
 which is a mapping from event name to Date object
 """
 
-import mydate  # type: ignore[import-not-found]
+import mydate
 
 
 class Calendar:
@@ -51,9 +51,8 @@ class Date:
         if self.year == other.year:
             if self.month > other.month:
                 return True
-            if self.month == other.month:  # noqa: SIM102
-                if self.day > other.day:
-                    return True
+            if self.month == other.month and self.day > other.day:
+                return True
         return False
 
     def __lt__(self, other):

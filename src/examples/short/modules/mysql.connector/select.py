@@ -20,7 +20,7 @@ def main():
     )
     cursor = db.cursor()
     cursor.execute("SELECT user FROM user WHERE host=%(host)s", {"host": "localhost"})
-    for row in cursor:  # pyrefly: ignore[not-iterable]
+    for row in cursor:
         for datum in row:
             print(datum)
     db.close()

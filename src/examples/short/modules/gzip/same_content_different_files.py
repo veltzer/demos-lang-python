@@ -31,7 +31,6 @@ def main():
     for x in range(3):
         output_filename = output_template.format(x)
         with open(f_name, "rb") as input_handle, gzip.open(output_filename, "wb") as my_zip:
-            # pylint: disable=cell-var-from-loop
             for chunk in iter(lambda: input_handle.read(block_size), b""):
                 my_zip.write(chunk)
         print(digest(output_filename))

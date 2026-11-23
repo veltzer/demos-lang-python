@@ -49,9 +49,8 @@ class GraphSearch:
         for node in self.graph.get(start, []):
             if node not in path:
                 newpath = self.find_shortest_path_dfs(node, end, path[:])
-                if newpath:  # noqa: SIM102
-                    if not shortest or len(newpath) < len(shortest):
-                        shortest = newpath
+                if newpath and (not shortest or len(newpath) < len(shortest)):
+                    shortest = newpath
         return shortest
 
     def find_shortest_path_bfs(self, start, end):

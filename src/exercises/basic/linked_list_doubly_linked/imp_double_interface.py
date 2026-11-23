@@ -2,6 +2,9 @@
 solution
 """
 
+from collections.abc import Iterator
+from typing import Any
+
 
 class Node:
     """
@@ -41,11 +44,13 @@ class DoubleLinkedList:
     def pop_tail_element(self):
         """ pop element at the tail """
 
-    def yield_elements_head_to_tail(self):
+    def yield_elements_head_to_tail(self) -> Iterator[Any]:
         """ yield elements from head to tail """
+        yield from ()
 
-    def yield_elements_tail_to_head(self):
+    def yield_elements_tail_to_head(self) -> Iterator[Any]:
         """ yield elements from tail to head """
+        yield from ()
 
 
 def example_of_use():
@@ -59,11 +64,11 @@ def example_of_use():
     test_list.add_tail_element(6)
 
     print("starting forward iteration")
-    for element in test_list.yield_elements_head_to_tail():  # pyrefly: ignore[not-iterable]
+    for element in test_list.yield_elements_head_to_tail():
         print(element)
 
     print("starting backward iteration")
-    for element in test_list.yield_elements_tail_to_head():  # pyrefly: ignore[not-iterable]
+    for element in test_list.yield_elements_tail_to_head():
         print(element)
 
     print("popping elements")
@@ -71,7 +76,7 @@ def example_of_use():
     test_list.pop_tail_element()
 
     print("starting forward iteration")
-    for element in test_list.yield_elements_head_to_tail():  # pyrefly: ignore[not-iterable]
+    for element in test_list.yield_elements_head_to_tail():
         print(element)
 
     print("popping all remaining elements")
@@ -79,7 +84,7 @@ def example_of_use():
         test_list.pop_head_element()
 
     print("starting forward iteration")
-    for element in test_list.yield_elements_head_to_tail():  # pyrefly: ignore[not-iterable]
+    for element in test_list.yield_elements_head_to_tail():
         print(element)
 
 

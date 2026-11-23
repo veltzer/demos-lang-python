@@ -43,6 +43,6 @@ response = client.messages.create(
 )
 
 # `strict` guarantees the input validates against the schema, already parsed
-data = next(b.input for b in response.content if b.type == "tool_use")  # type: ignore[union-attr]
+data = next(b.input for b in response.content if b.type == "tool_use")
 print(data)
 print(f"{data['city']}, {data['country']}: {data['residents']} residents")

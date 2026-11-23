@@ -9,13 +9,12 @@ def with_output_to_outfile(filename):
     def creator(f):
         def decorated_f(*args, **kw):
             old_stdout = sys.stdout
-            # pylint: disable=consider-using-with
-            sys.stdout = open(filename, "a")  # noqa: SIM115
-            try:
-                return f(*args, **kw)
-            finally:
-                sys.stdout.close()
-                sys.stdout = old_stdout
+            with open(filename, "a") as new_stdout:
+                sys.stdout = new_stdout
+                try:
+                    return f(*args, **kw)
+                finally:
+                    sys.stdout = old_stdout
         return decorated_f
     return creator
 

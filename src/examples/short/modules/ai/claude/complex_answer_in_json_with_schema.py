@@ -36,7 +36,7 @@ response = client.messages.create(
     output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
 )
 
-text = next(b.text for b in response.content if b.type == "text")  # type: ignore[union-attr]
+text = next(b.text for b in response.content if b.type == "text")
 data = json.loads(text)
 print(data)
 print(f"{data['city']}, {data['country']}: {data['residents']} residents")

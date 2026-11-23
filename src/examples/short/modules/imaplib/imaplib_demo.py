@@ -24,9 +24,7 @@ def imap_have_mailbox(imap, name):
     (res, data) = imap.list(name)
     if res != "OK":
         raise ValueError("could not list", name)
-    if len(data) == 1 and data[0] is None:  # noqa: SIM103
-        return False
-    return True
+    return not (len(data) == 1 and data[0] is None)
 
 
 def imap_create(imap, name):

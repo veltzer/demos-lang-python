@@ -23,7 +23,7 @@ try:
             print(f"writing line {i}...")
             file_handle.write(f"line {i}\n".encode())
             file_handle.flush()
-except (Exception, KeyboardInterrupt, SystemError) as e:
+except (Exception, KeyboardInterrupt) as e:
     print("unliking...")
     os.unlink(filename)
     raise e

@@ -19,10 +19,7 @@ def main():
             if not inspect.isclass(v):
                 continue
             print(type(v))
-            # The error code here differs between pyrefly versions (invalid-argument
-            # vs bad-argument-type) and so does the argument blamed, so suppress
-            # without naming a code: CI installs whatever pyrefly is newest.
-            if issubclass(v.__class__, BaseClass.__class__):  # pyrefly: ignore
+            if issubclass(v, BaseClass):
                 print(k)
 
 

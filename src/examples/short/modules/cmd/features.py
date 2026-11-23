@@ -135,11 +135,9 @@ class Console(cmd.Cmd):
         Called on an input line when the command prefix is not recognized.
         In that case we execute the line as Python code.
         """
-        # pylint: disable=broad-except
         try:
-            # pylint: disable=exec-used
             exec(line, self._globals, self._locals)
-        except Exception as e:  # noqa: BLE001
+        except Exception as e:  # noqa: BLE001  teaching: the console must survive any error in the executed line
             print(f"{e.__class__}:{e}")
 
 

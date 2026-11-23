@@ -5,7 +5,7 @@ from prompt_toolkit.shortcuts import yes_no_dialog
 
 
 def main():
-    result = yes_no_dialog(  # pyrefly: ignore[missing-attribute]
+    result = yes_no_dialog(
         title="Yes/No dialog example", text="Do you want to confirm?",
     ).run()
 
