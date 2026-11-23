@@ -1,39 +1,39 @@
 """
 An example showing how, to some extent closure can be seen as a replacement
-for object oriented programming. The "Person" function below could
+for object oriented programming. The "person" function below could
 be seen as a sort of constructor.
 """
 
 
-def Person(initial_name, initial_age):
+def person(initial_name, initial_age):
     o = {
         "name": initial_name,
         "age": initial_age,
     }
 
-    def getName():
+    def get_name():
         return o["name"]
 
-    def setName(name):
+    def set_name(name):
         o["name"] = name
 
-    def getAge():
+    def get_age():
         return o["age"]
 
-    def setAge(age):
+    def set_age(age):
         o["age"] = age
 
     return {
-        "getName": getName,
-        "setName": setName,
-        "getAge": getAge,
-        "setAge": setAge,
+        "get_name": get_name,
+        "set_name": set_name,
+        "get_age": get_age,
+        "set_age": set_age,
     }
 
 
-p = Person("Bilbo", 111)
-p["setAge"](112)
-print("age is", p["getAge"]())
-p2 = Person("Frodo", 77)
-p2["setAge"](78)
-print("age is", p2["getAge"]())
+p = person("Bilbo", 111)
+p["set_age"](112)
+print("age is", p["get_age"]())
+p2 = person("Frodo", 77)
+p2["set_age"](78)
+print("age is", p2["get_age"]())

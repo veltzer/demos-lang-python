@@ -5,10 +5,7 @@ solution
 
 def right_align_to(lines, width):
     """Right-align all lines to given width."""
-    result = []
-    for line in lines:
-        result.append(line.rjust(width))
-    return result
+    return [line.rjust(width) for line in lines]
 
 
 def main():

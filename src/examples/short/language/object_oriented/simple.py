@@ -21,12 +21,12 @@ class Book:
         """ initializer """
         self.price = price
 
-    def printMe(self):
+    def print_me(self):
         print("price is", self.price)
 
 
 # Lets show how we use our object
 b = Book(50)
-b.printMe()
+b.print_me()
 b.price = 60
-b.printMe()
+b.print_me()

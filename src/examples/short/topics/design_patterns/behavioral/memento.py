@@ -50,7 +50,7 @@ class Transactional:
     def __init__(self, method):
         self.method = method
 
-    def __get__(self, obj, T):
+    def __get__(self, obj, owner):
         """
         A decorator that makes a function transactional.
 
@@ -63,7 +63,7 @@ class Transactional:
                 return self.method(obj, *args, **kwargs)
             except Exception as e:
                 state()
-                raise e  # noqa: TRY201
+                raise e
 
         return transaction
 

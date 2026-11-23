@@ -1,6 +1,6 @@
 """ use_module.py """
 
-import a.b.c.mod  # type: ignore
+import a.b.c.mod
 
 print(f"hello from [{__file__}]")
 

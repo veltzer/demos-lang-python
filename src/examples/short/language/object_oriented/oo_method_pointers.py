@@ -11,10 +11,10 @@ class MyObj:
     def handle_hello(self, line):
         print("hello got line", line, self.a)
 
-    def doTheCall(self, line):
+    def do_the_call(self, line):
         print("got line", line)
         self.curFunc(line)
 
 
 o = MyObj()
-o.doTheCall("foobar")
+o.do_the_call("foobar")

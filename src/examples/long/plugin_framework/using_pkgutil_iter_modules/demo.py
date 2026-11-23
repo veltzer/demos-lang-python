@@ -2,6 +2,7 @@
 This is an example of using pkgutil to create a lightweight plugin based system.
 """
 
+import importlib.util
 import pkgutil
 
 do_debug = False
@@ -11,8 +12,11 @@ for module_loader, name, ispkg in pkgutil.iter_modules(path=["plugins"]):
     if do_debug:
         print(module_loader, name, ispkg)
     if not ispkg:
-        ml = module_loader.find_loader(name)[0]  # type: ignore
-        m = ml.load_module()  # type: ignore
+        spec = module_loader.find_spec(name, None)
+        assert spec is not None
+        assert spec.loader is not None
+        m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m)
         if do_debug:
             print(type(m))
             print(dir(m))

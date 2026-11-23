@@ -48,11 +48,8 @@ class Consumer(Thread):
 
 def main():
     stack = Stack()
-    threads = []
-    for _ in range(3):
-        threads.append(Producer(stack))
-    for _ in range(3):
-        threads.append(Consumer(stack))  # pyrefly: ignore[bad-argument-type]
+    threads: list[Thread] = [Producer(stack) for _ in range(3)]
+    threads.extend(Consumer(stack) for _ in range(3))
     for thread in threads:
         thread.start()
 

@@ -2,7 +2,7 @@
 This example plainly shows that you cannot have two methods in a class by the same
 name. This is true for constructors as well as for regular methods.
 """
-# type: ignore
+
 
 
 class A:
@@ -14,11 +14,11 @@ class A:
     def __init__(self):  # type: ignore[no-redef] # noqa: F811
         self.__private_var = 5
 
-    def sayHello(self):
+    def say_hello(self):
         print(self.__private_var, "hello")
 
     # noinspection PyRedeclaration
-    def sayHello(self, name):  # type: ignore[no-redef] # noqa: F811
+    def say_hello(self, name):  # noqa: F811  teaching: python has no overloading, the second def replaces the first
         print(self.__private_var, "hello", name)
 
 
@@ -32,9 +32,9 @@ except TypeError:
 a = A()  # type: ignore[call-arg]
 try:
     # pylint: disable=no-value-for-parameter
-    a.sayHello()  # pyrefly: ignore[missing-argument]
+    a.say_hello()  # pyrefly: ignore[missing-argument]  teaching: the no argument version does not exist
 except TypeError:
     print("oops,got an error")
-    print("the no argument version of the method \"sayHello\" does not exist")
+    print("the no argument version of the method \"say_hello\" does not exist")
 # pylint: disable=too-many-function-args
-a.sayHello("mark")  # type: ignore[call-arg]
+a.say_hello("mark")

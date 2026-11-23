@@ -3,11 +3,11 @@ get_movie.py
 
 Convert this script to imdbpy https://imdbpy.github.io/downloads/
 
-Usage: get_movie "movieID"
+Usage: get_movie "movie_id"
 
-Show some info about the movie with the given movieID (e.g. "0133093"
+Show some info about the movie with the given movie_id (e.g. "0133093"
 for "The Matrix", using "http" or "mobile").
-Notice that movieID, using "sql", are not the same IDs used on the web.
+Notice that movie_id, using "sql", are not the same IDs used on the web.
 
 NOTES:
 - this script is python2 on purpose because the imdb module is currently only available for python2 in ubuntu.
@@ -23,14 +23,14 @@ if len(sys.argv) != 2:
     print(f"{sys.argv[0]}: example: {sys.argv[0]} 0120591")
     sys.exit(1)
 
-movieID = sys.argv[1]
+movie_id = sys.argv[1]
 i = imdb.IMDb()
 out_encoding = sys.stdout.encoding or sys.getdefaultencoding()
 
 try:
     # Get a Movie object with the data about the movie identified by
-    # the given movieID.
-    movie = i.get_movie(movieID)
+    # the given movie_id.
+    movie = i.get_movie(movie_id)
 except imdb.IMDbError as e:
     print(f"Probably youre not connected to Internet. Complete error report: {e}")
     sys.exit(3)
@@ -43,10 +43,10 @@ for k, v in movie.items():
     print(v)
 
 title = movie["title"]
-print(f"==== [{title}] movieID: [{movieID}] ====")
-imdbURL = i.get_imdbURL(movie)
-if imdbURL:
-    print(f"IMDb URL: [{imdbURL}]")
+print(f"==== [{title}] movie_id: [{movie_id}] ====")
+imdb_url = i.get_imdbURL(movie)
+if imdb_url:
+    print(f"IMDb URL: [{imdb_url}]")
 genres = movie.get("genres")
 if genres:
     print(f"Genres: {genres}")

@@ -4,17 +4,15 @@ calls, `log` swaps itself in globals() for a cheaper no-op implementation,
 so the check inside it no longer runs on subsequent calls.
 """
 
-counter = 0
+import itertools
 
-def log_empty(m):
-    # pylint: disable=unused-argument
+counter = itertools.count(1)
+
+def log_empty(_m):
     print("going through the cheap function")
 
 def log(m):
-    # pylint: disable=global-statement
-    global counter
-    counter = counter + 1
-    if counter < 4:
+    if next(counter) < 4:
         print(m)
     else:
         globals()["log"] = log_empty

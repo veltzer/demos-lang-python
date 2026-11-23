@@ -6,5 +6,5 @@ you get the same random numbers
 import random
 
 random.seed(0)
-for i in range(10):
+for _i in range(10):
     print(random.randrange(10))

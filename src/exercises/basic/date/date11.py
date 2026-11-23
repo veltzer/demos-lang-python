@@ -15,7 +15,7 @@ def get_num_of_days_in_month(month_name):
     return the number of days in this month"""
     if month_name in name_to_days_num:
         return name_to_days_num[months_names]  # pyrefly: ignore[bad-index]
-    raise DateException(month_name + " is not a valid month")
+    raise DateError(month_name + " is not a valid month")
 
 
 def get_following_month(month_name):
@@ -24,7 +24,7 @@ def get_following_month(month_name):
     if month_name in name_to_days_num:
         i = months_names.index(month_name)
         return months_names[(i + 1) % 12]
-    raise DateException(month_name + " is not a valid month")
+    raise DateError(month_name + " is not a valid month")
 
 
 def is_leap_year(year):
@@ -56,26 +56,21 @@ class Calendar:
     def get_all_events_in_month(self, month):
         """ Return a dictionary with all the events in the given month
         month is the number of the month """
-        month_events = {}
-        for name, e in self.events.items():
-            if e.month == month:
-                month_events[name] = e
+        return {name: e for name, e in self.events.items() if e.month == month}
 
-        return month_events
 
 
 class Date:
     def __init__(self, day, month, year):
         if not isinstance(day, int) or not isinstance(month, int) or not isinstance(year, int):
-            raise DateException("Date must be initialized with numbers")
+            raise DateError("Date must be initialized with numbers")
         if month < 1 or month > 12:
-            raise DateException("Month must be between 1 and 12")
+            raise DateError("Month must be between 1 and 12")
         if is_leap_year(year) and (month == 2):
             if day < 0 or day > 29:
-                raise DateException(f"Day must be between 1 and {days_in_months[month - 1]}")
-        else:
-            if day < 0 or day > days_in_months[month - 1]:
-                raise DateException(f"Day must be between 1 and {days_in_months[month - 1]}")
+                raise DateError(f"Day must be between 1 and {days_in_months[month - 1]}")
+        elif day < 0 or day > days_in_months[month - 1]:
+            raise DateError(f"Day must be between 1 and {days_in_months[month - 1]}")
         self.day = day
         self.month = month
         self.year = year
@@ -100,6 +95,9 @@ class Date:
         """ Overloading operator==for dates """
         return self.year == other.year and self.month == other.month and self.day == other.day
 
+    def __hash__(self):
+        return hash((self.year, self.month, self.day))
+
     def __ne__(self, other):
         """ Overloading operator!=for dates """
         return not self == other
@@ -116,5 +114,5 @@ class Date:
         return str(self.day) + "." + str(self.month) + "." + str(self.year)
 
 
-class DateException(Exception):
+class DateError(Exception):
     pass

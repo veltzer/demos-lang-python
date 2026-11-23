@@ -5,6 +5,7 @@
 Run:  python demo.py
 """
 
+import importlib
 from pathlib import Path
 
 from dual_loader import load_package
@@ -62,7 +63,7 @@ def main():
 
     # And the original site-packages `requests`, if any, is untouched:
     try:
-        import requests as system_requests
+        system_requests = importlib.import_module("requests")
         print(f"\nMeanwhile a plain `import requests` still gives: "
               f"{system_requests.__version__} ({system_requests.__file__})")
     except ImportError:

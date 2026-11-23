@@ -8,8 +8,8 @@ import re
 def read_phonebook():
     pb = {}
     with open("data.txt") as f:
-        for line in f:
-            line = line.rstrip()
+        for raw_line in f:
+            line = raw_line.rstrip()
             mylist = line.split(",")
             pb[mylist[0]] = mylist[1]
     return pb
@@ -23,8 +23,7 @@ def print_the_menu():
     print("5) save and exit")
     print("6) show the phonebook")
     print("7) find entries in phonebook")
-    selection = input("please give me your choice: ")
-    return selection
+    return input("please give me your choice: ")
 
 
 def search_for_name(mypb):

@@ -16,6 +16,7 @@ http://code.activestate.com/recipes/280500-console-built-with-cmd-object/
 
 import cmd
 import os
+from typing import Any
 
 
 class Console(cmd.Cmd):
@@ -23,9 +24,9 @@ class Console(cmd.Cmd):
         cmd.Cmd.__init__(self)
         self.prompt = "=>> "
         self.intro = "Welcome to console!"  # defaults to None
-        self._hist = None
-        self._locals = None
-        self._globals = None
+        self._hist: list[str] = []
+        self._locals: dict[str, Any] = {}
+        self._globals: dict[str, Any] = {}
 
     # Command definitions
     # noinspection PyUnusedLocal
@@ -39,7 +40,7 @@ class Console(cmd.Cmd):
         return -1
 
     # Command definitions to support Cmd object functionality
-    def do_EOF(self, args):
+    def do_eof(self, args):
         """Exit on system end of file character"""
         return self.do_exit(args)
 
@@ -108,20 +109,28 @@ class Console(cmd.Cmd):
             it has been interpreted. If you want to modify the input line
             before execution (for example, variable substitution) do it here.
         """
-        self._hist += [line.strip()]  # pyrefly: ignore[unsupported-operation]
+        self._hist += [line.strip()]
         return line
 
     def postcmd(self, stop, line):
         """If you want to stop the console, return something that evaluates to true.
            If you want to do some post command processing, do it here.
         """
+        del line  # not needed here
         return stop
 
-    def emptyline(self):  # pyrefly: ignore[bad-override]
+    def emptyline(self) -> bool:
         """Do nothing on empty input line"""
         print("this is an empty line")
+        return False
 
-    def default(self, line):
+    def onecmd(self, line: str) -> bool:
+        """The end of file character arrives as the line "EOF" (cmd would look for "do_EOF")."""
+        if line == "EOF":
+            return bool(self.do_eof(line))
+        return super().onecmd(line)
+
+    def default(self, line: str) -> None:
         """
         Called on an input line when the command prefix is not recognized.
         In that case we execute the line as Python code.
@@ -129,7 +138,7 @@ class Console(cmd.Cmd):
         # pylint: disable=broad-except
         try:
             # pylint: disable=exec-used
-            exec(line) in self._locals, self._globals  # pyrefly: ignore[not-iterable]  # noqa: S102
+            exec(line, self._globals, self._locals)
         except Exception as e:  # noqa: BLE001
             print(f"{e.__class__}:{e}")
 

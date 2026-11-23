@@ -1,6 +1,6 @@
 """ mod_b_1.py """
 
-import mod_a_1  # type: ignore
+import mod_a_1
 
 
 def func_b_1():

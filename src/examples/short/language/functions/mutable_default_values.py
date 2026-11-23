@@ -13,7 +13,7 @@ def add_name(name: str, target: list[str] = []) -> list[str]:  # noqa: B006
     return target
 
 
-def add_name_fixed(name: str, target: None | list[str] = None) -> list[str]:
+def add_name_fixed(name: str, target: list[str] | None = None) -> list[str]:
     if target is None:
         target = []
     target.append(name)

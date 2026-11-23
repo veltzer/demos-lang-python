@@ -23,7 +23,7 @@ place = "Shire"
 while True:
     print(f"You are in: {place}. Possible actions:")
     # Print actions with numbers, so user only has to type a number
-    actions = sorted(places[place].keys()) + ["EXIT GAME"]
+    actions = [*sorted(places[place].keys()), "EXIT GAME"]
     for i, action in enumerate(actions):
         print(f" ({i}) {action}")
     choice = input("Your action? ")

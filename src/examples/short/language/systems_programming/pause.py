@@ -21,7 +21,7 @@ import threading
 old_sig_usr1 = signal.getsignal(signal.SIGUSR1)
 old_sig_usr2 = signal.getsignal(signal.SIGUSR2)
 old_sig_int = signal.getsignal(signal.SIGINT)
-stop = False
+stop_event = threading.Event()
 
 
 # a small debugging function that prints the thread doing the printing...
@@ -32,7 +32,7 @@ def debug(msg):
 
 # a wrapper function to call an old signal handler
 def call_old(old_val, signum, frame):
-    if old_val is not None and old_val != signal.SIG_IGN and old_val != signal.SIG_DFL:
+    if old_val is not None and old_val not in (signal.SIG_IGN, signal.SIG_DFL):
         old_val(signum, frame)
 
 
@@ -47,10 +47,8 @@ def signal_handler(signum, frame):
         # lets call the old signal handler
         call_old(old_sig_usr2, signum, frame)
         # lets signal the main thread to stop
-        debug("signal_handler: setting stop to True")
-        # pylint: disable=global-statement
-        global stop
-        stop = True
+        debug("signal_handler: setting the stop event")
+        stop_event.set()
     if signum == signal.SIGINT:
         # here we do not call the old function
         debug("signal_handler: dont press CTRL+C. Kill me using SIGUSR2")
@@ -66,7 +64,7 @@ def main():
     while True:
         debug("main: going to pause()")
         signal.pause()
-        if stop:
+        if stop_event.is_set():
             debug("main: I was asked to stop")
             break
     debug("main: program ending")

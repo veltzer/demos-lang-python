@@ -22,4 +22,4 @@ print(map(square, generate_items()))
 print(list(map(square, generate_items())))
 # right, using list comprehension
 # pylint: disable=unnecessary-comprehension
-print([x for x in map(square, generate_items())])
+print(list(map(square, generate_items())))

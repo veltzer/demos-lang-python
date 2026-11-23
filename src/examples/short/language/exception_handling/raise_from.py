@@ -23,7 +23,7 @@ def incorrect_divide(a, b):
         return a / b
     except ZeroDivisionError:
         # pylint: disable=raise-missing-from
-        raise ValueError("b must not be zero")
+        raise ValueError("b must not be zero")  # noqa: B904  teaching: shows the missing "from" pitfall
 
 
 # correct_divide(10, 0)

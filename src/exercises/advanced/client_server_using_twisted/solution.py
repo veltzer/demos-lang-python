@@ -2,12 +2,15 @@
 solution.py
 """
 
+import typing
+
 from twisted.internet import reactor
 from twisted.internet.protocol import Factory, connectionDone
 from twisted.protocols.basic import LineReceiver
 
 
 class MyProtocol(LineReceiver):
+    @typing.override
     def rawDataReceived(self, data):  # pyrefly: ignore[bad-override]
         pass
 
@@ -65,12 +68,13 @@ class MyProtocol(LineReceiver):
         print("connection made")
         self.transport.write("Welcome to MyServer\r\n")  # pyrefly: ignore[missing-attribute]
 
+    @typing.override
     def lineReceived(self, line):  # pyrefly: ignore[bad-override]
         print("got line ", line)
         self.curFunc(line)
 
     def connectionLost(self, reason=connectionDone):  # pylint: disable=unused-argument
-        print("connection was lost")
+        print("connection was lost:", reason)
         if self.loggedIn:
             self.factory.num_users -= 1  # pyrefly: ignore[missing-attribute]
 
@@ -83,7 +87,7 @@ class MyFactory(Factory):
         self.port = 8007
 
 
-myFactory = MyFactory()
+my_factory = MyFactory()
 # pylint: disable=no-member
-reactor.listenTCP(myFactory.port, myFactory)  # type: ignore
-reactor.run()  # type: ignore
+reactor.listenTCP(my_factory.port, my_factory)
+reactor.run()

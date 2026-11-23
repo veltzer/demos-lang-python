@@ -7,5 +7,5 @@ So what are type annotations for?
 - for linter tools like pylint and mypy.
 """
 
-x: int = "hello"  # type: ignore
+x: int = "hello"  # pyrefly: ignore[bad-assignment]  teaching: the wrong annotation is ignored at runtime
 print(x)

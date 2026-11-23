@@ -2,45 +2,46 @@
 solution.py
 """
 
+from types import SimpleNamespace
 
-def Person(name, age):
-    def data():
-        pass
 
-    def setName(name):
+def person(name, age):
+    data = SimpleNamespace()
+
+    def set_name(name):
         data.__dict__["name"] = name
 
-    def getName():
-        return data.name  # pyrefly: ignore[missing-attribute]
+    def get_name():
+        return data.name
 
-    def setAge(age):
+    def set_age(age):
         if age <= 0:
             raise ValueError("age error")
         data.__dict__["age"] = age
 
-    def getAge():
-        return data.age  # pyrefly: ignore[missing-attribute]
+    def get_age():
+        return data.age
 
-    def printMe():
-        print("name is ", data.name)  # pyrefly: ignore[missing-attribute]
-        print("age is ", data.age)  # pyrefly: ignore[missing-attribute]
+    def print_me():
+        print("name is ", data.name)
+        print("age is ", data.age)
 
-    data.setName = setName  # pyrefly: ignore[missing-attribute]
-    data.getName = getName  # pyrefly: ignore[missing-attribute]
-    data.setAge = setAge  # pyrefly: ignore[missing-attribute]
-    data.getAge = getAge  # pyrefly: ignore[missing-attribute]
-    data.printMe = printMe  # pyrefly: ignore[missing-attribute]
-    setName(name)
-    setAge(age)
+    data.set_name = set_name
+    data.get_name = get_name
+    data.set_age = set_age
+    data.get_age = get_age
+    data.print_me = print_me
+    set_name(name)
+    set_age(age)
     return data
 
 
 # usage...
-p1 = Person("mark", 36)
-p2 = Person("doron", 32)
-print(p1.name)  # pyrefly: ignore[missing-attribute]
-p1.printMe()  # pyrefly: ignore[missing-attribute]
-p2.printMe()  # pyrefly: ignore[missing-attribute]
-p1.setName("foobar")  # pyrefly: ignore[missing-attribute]
-p1.setAge(74)  # pyrefly: ignore[missing-attribute]
-p1.printMe()  # pyrefly: ignore[missing-attribute]
+p1 = person("mark", 36)
+p2 = person("doron", 32)
+print(p1.name)
+p1.print_me()
+p2.print_me()
+p1.set_name("foobar")
+p1.set_age(74)
+p1.print_me()

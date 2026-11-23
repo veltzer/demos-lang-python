@@ -38,7 +38,7 @@ def secret_agent_output(self):
 # this line does not work!
 # b.printMe=secret_agent_output
 # this works! turning a function into a method...
-b.print_me = MethodType(secret_agent_output, b)  # type: ignore
+b.print_me = MethodType(secret_agent_output, b)
 print("Only James is a secret agent...")
 # pylint: disable=not-callable
 p.print_me()
@@ -64,12 +64,12 @@ def fire_your_gun(self):
     print(self.name + " is firing!")
 
 
-Person.fire = fire_your_gun  # type: ignore
+Person.fire = fire_your_gun
 
 # lets kill some people
 print("Now we both have firing capabilities...")
-b.fire()  # type: ignore
-p.fire()  # type: ignore
+b.fire()  # pyrefly: ignore[missing-attribute]  teaching: the method is added to the class at runtime
+p.fire()  # pyrefly: ignore[missing-attribute]  teaching: the method is added to the class at runtime
 
 print("Here is some debug info:")
 print("here is james...")

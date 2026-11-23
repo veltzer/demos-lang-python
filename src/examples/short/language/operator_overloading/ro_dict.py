@@ -3,7 +3,7 @@ This example shows how to create a read only dictionary
 """
 
 
-class ReadOnlyException(Exception):
+class ReadOnlyError(Exception):
     pass
 
 
@@ -17,7 +17,7 @@ class RoDict:
 
     def __setitem__(self, key, val):
         if self.ro:
-            raise ReadOnlyException()
+            raise ReadOnlyError
         self.d[key] = val
 
 
@@ -29,5 +29,5 @@ d["a"] = "e"
 d.ro = True
 try:
     d["a"] = "u"
-except ReadOnlyException:
+except ReadOnlyError:
     print("yes, got exception. Dictionary is read only")

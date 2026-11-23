@@ -27,7 +27,7 @@ if len(sys.argv) != 2:
 folder_name = sys.argv[1]
 
 # recursively traverse all files in the folder
-for root, directories, files in os.walk(folder_name):
+for root, _directories, files in os.walk(folder_name):
     tag_numbers = []
     for file in files:
         full = os.path.join(root, file)

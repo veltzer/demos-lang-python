@@ -1,6 +1,6 @@
 """ BookTest.py """
 
-# type: ignore
+
 
 import unittest
 
@@ -16,24 +16,24 @@ class BookTest(unittest.TestCase):
     def tearDown(self):
         print("in tearDown")
 
-    def testBasic(self):
-        print("in testBasic")
+    def test_basic(self):
+        print("in test_basic")
         p = Book.Book(50)
         self.assertTrue(p.get_price() == 50)
 
-    def testMore(self):
-        print("in testMore")
+    def test_more(self):
+        print("in test_more")
         p = Book.Book(50)
         # pylint: disable=protected-access
         p._Book__price = 60  # pyrefly: ignore[missing-attribute]
         self.assertTrue(p.get_price() == 60)
 
     @unittest.skip("demonstrating skipping")
-    def testSkipped(self):
-        print("in testSkipped")
+    def test_skipped(self):
+        print("in test_skipped")
 
-    def runTest(self):
-        print("in runTest")
+    def run_test(self):
+        print("in run_test")
         p = Book.Book(50)
         # pylint: disable=protected-access
         p._Book__price = 60  # pyrefly: ignore[missing-attribute]

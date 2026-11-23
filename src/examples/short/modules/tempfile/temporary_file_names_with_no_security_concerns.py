@@ -12,6 +12,6 @@ References:
 
 import tempfile
 
-for i in range(10):
+for _i in range(10):
     print(tempfile.mktemp())  # pyrefly: ignore[bad-argument-type]
     print(tempfile.mkstemp())

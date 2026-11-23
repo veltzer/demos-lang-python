@@ -22,10 +22,10 @@ class MyClass:
     __metaclass__ = MetaClass
 
     @classmethod
-    def SayHello(cls):
+    def say_hello(cls):
         print("hello")
 
 
 # Look! we now call the method in lowercase...
 # pylint: disable=no-member
-MyClass.sayhello()  # type: ignore
+MyClass.sayhello()  # pyrefly: ignore[missing-attribute]  teaching: the metaclass adds the lowercase method at runtime

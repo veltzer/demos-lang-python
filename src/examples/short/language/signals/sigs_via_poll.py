@@ -50,7 +50,7 @@ def main():
 
     # write a signal handler for our signal, otherwise we will
     # exit every time the signal is received...
-    signal.signal(signal.SIGUSR1, lambda x, y: None)
+    signal.signal(signal.SIGUSR1, lambda _x, _y: None)
 
     # pylint: disable=no-member
     poller = select.epoll()

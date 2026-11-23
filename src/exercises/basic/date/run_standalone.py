@@ -2,6 +2,6 @@
 run_standalone
 """
 
-import date_standalone  # type: ignore
+import date_standalone
 
 print(date_standalone.get_following_month("January"))

@@ -36,7 +36,7 @@ def main():
         try:
             raise ValueError("hello")
         # pylint: disable=try-except-raise
-        except ValueError:  # noqa: TRY203
+        except ValueError:
             raise
     except ValueError as e:
         tb = e.__traceback__
@@ -46,9 +46,9 @@ def main():
     try:
         try:
             raise ValueError("hello")
-        except ValueError as e:  # noqa: TRY203
+        except ValueError as e:
             # pylint: disable=try-except-raise
-            raise e  # noqa: TRY201
+            raise e
     except ValueError as e:
         tb = e.__traceback__
         assert traceback_len(tb) == 1

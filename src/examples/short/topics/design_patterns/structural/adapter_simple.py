@@ -42,13 +42,13 @@ class Toaster:
 
 class ElectricAppliance:
     def __init__(self) -> None:
-        raise NotImplementedError()
+        raise NotImplementedError
 
     def on(self) -> None:
-        raise NotImplementedError()
+        raise NotImplementedError
 
     def off(self) -> None:
-        raise NotImplementedError()
+        raise NotImplementedError
 
 
 class ToasterToElectricApplianceAdapter:

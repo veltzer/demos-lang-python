@@ -9,12 +9,13 @@ on purpose.
 
 
 # pylint: disable=dangerous-default-value,inconsistent-return-statements,unused-argument
-def op(o, x=None, items=[], s=set()):       # the [] is created once, at def time  # noqa: B006
+def op(o, x=None, items=[]):       # the [] is created once, at def time  # noqa: B006  teaching: the shared mutable default is the object state
     if o == "push":
         items.append(x)
         return None
     if o == "pop":
         return items.pop()
+    return None
 
 
 op("push", 2)

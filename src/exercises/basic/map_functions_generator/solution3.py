@@ -6,10 +6,7 @@ relevant unary function on the single argument
 
 
 def map_like(func_list, *extra, **named_extra):
-    result = []
-    for func in func_list:
-        result.append(func(*extra, **named_extra))
-    return result
+    return [func(*extra, **named_extra) for func in func_list]
 
 
 def add(x, y, _correction_factor=7):

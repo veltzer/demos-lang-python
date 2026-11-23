@@ -5,7 +5,7 @@
 # this style of programming is called "imperative programming"
 l1 = []
 for x in range(2,8):
-    l1.append(x * x)
+    l1.append(x * x)  # noqa: PERF401  teaching: imperative style vs functional style
 print(l1)
 
 # now we will write a "functional" style version of the above code

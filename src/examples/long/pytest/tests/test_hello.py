@@ -1,6 +1,6 @@
 """ test_hello.py """
 
-import tests.mod  # type: ignore
+import tests.mod
 
 
 def test_hello():

@@ -30,7 +30,7 @@ def stop_using_wekzeug():
 
 
 @app.route("/crash")
-def stopServer():
+def stop_server():
     os.kill(os.getpid(), signal.SIGINT)
     return "Server is shutting down..."
 

@@ -6,7 +6,7 @@ get_monthly_events2
 import sys
 from time import localtime
 
-from date5 import Calendar, Date, DateException  # type: ignore[import-not-found]
+from date5 import Calendar, Date, DateError
 
 c = Calendar()
 with open("calendar.txt") as f:
@@ -20,7 +20,7 @@ with open("calendar.txt") as f:
                 date = Date(int(date_values[0]), int(
                     date_values[1]), int(date_values[2]))
                 c.add_event(name, date)
-            except DateException as e:
+            except DateError as e:
                 sys.stderr.write(str(e))
                 print(e)
         else:

@@ -21,10 +21,7 @@ def cache(func):
 @cache
 def is_prime(n):
     print("in called")
-    for i in range(2, int(math.sqrt(n) + 1)):
-        if n % i == 0:
-            return False
-    return True
+    return all(n % i != 0 for i in range(2, int(math.sqrt(n) + 1)))
 
 
 def main():

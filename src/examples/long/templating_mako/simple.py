@@ -6,7 +6,7 @@ import mako.template
 
 
 def years(x):
-    curr_year = datetime.datetime.now().year
+    curr_year = datetime.datetime.now().astimezone().year
     return ",".join(map(str, range(x, curr_year + 1)))
 
 

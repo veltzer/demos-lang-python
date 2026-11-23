@@ -85,10 +85,10 @@ class GraphSearch:
                     queue.append(node)
                     if end in edge_to:
                         path = []
-                        node = end
-                        while dist_to[node] != 0:
-                            path.insert(0, node)
-                            node = edge_to[node]
+                        step = end
+                        while dist_to[step] != 0:
+                            path.insert(0, step)
+                            step = edge_to[step]
                         path.insert(0, start)
                         return path
         raise ValueError("I should not be here")

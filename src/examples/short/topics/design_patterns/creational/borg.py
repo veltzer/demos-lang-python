@@ -46,10 +46,9 @@ class YourBorg(Borg):
         super().__init__()
         if state:
             self.state = state
-        else:
-            # initiate the first instance with default state
-            if not hasattr(self, "state"):
-                self.state = "Init"
+        # initiate the first instance with default state
+        elif not hasattr(self, "state"):
+            self.state = "Init"
 
     def __str__(self) -> str:
         return self.state

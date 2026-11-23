@@ -164,12 +164,26 @@ dev = [
 package = false
 
 [tool.pyrefly]
+# Directories whose scripts import sibling modules (the demos run from their own
+# directory), so pyrefly resolves those imports the way Python does at runtime.
+search-path = [
+    "make_based/bad_lib",
+    "make_based/extending_python_with_c",
+    "make_based/modules_deep",
+    "misc/two_versions_same_lib",
+    "src/examples/long/logging_correct",
+    "src/examples/long/monkey_patching",
+    "src/examples/long/plugin_framework/using_pkgutil_walk_packages",
+    "src/examples/long/pytest",
+    "src/examples/short/language/modules_reloading",
+    "src/exercises/advanced/pytest_with_server_setup_teardown",
+    "src/exercises/basic/date",
+    "src/exercises/basic/hangman",
+]
 # Third-party packages that are not installed in the build environment
 # (or ship without type information) are treated as Any so pyrefly does not
 # emit missing-import / missing-attribute errors for them.
 replace-imports-with-any = [
-    "PyQt5",
-    "PyQt5.*",
     "PyRSS2Gen",
     "PyRSS2Gen.*",
     "anthropic",

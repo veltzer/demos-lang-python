@@ -21,15 +21,15 @@ class A:
     lock = threading.Lock()
 
     @staticmethod
-    def getInstance() -> A | None:
+    def get_instance() -> A | None:
         with A.lock:
             if A.instance is None:
                 A.instance = A()
             return A.instance
 
 
-a1 = A.getInstance()
-a2 = A.getInstance()
+a1 = A.get_instance()
+a2 = A.get_instance()
 if a1 is a2:
     print("yes,they are the same instance")
 print(a1)

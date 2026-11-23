@@ -36,7 +36,7 @@ class Visitor:
     def visit(self, node, *args, **kwargs):
         meth = None
         for cls in node.__class__.__mro__:
-            meth_name = "visit_" + cls.__name__
+            meth_name = "visit_" + cls.__name__.lower()
             meth = getattr(self, meth_name, None)
             if meth:
                 break
@@ -48,14 +48,14 @@ class Visitor:
     def generic_visit(self, node, *_args, **_kwargs):
         print("generic_visit " + node.__class__.__name__)
 
-    def visit_B(self, node, *_args, **_kwargs):
-        print("visit_B " + node.__class__.__name__)
+    def visit_b(self, node, *_args, **_kwargs):
+        print("visit_b " + node.__class__.__name__)
 
 
 EXPECTED_OUTOUT = """
 generic_visit A
-visit_B B
-visit_B C
+visit_b B
+visit_b C
 """
 
 

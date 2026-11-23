@@ -3,7 +3,6 @@ A class that uses different static function depending of a parameter passed in
 init. Note the use of a single dictionary instead of multiple conditions
 """
 
-from types import MethodType
 
 
 class Catalog:
@@ -110,7 +109,7 @@ class CatalogClass:
         depending on self.param value
         """
         f = CatalogClass._class_method_choices[self.param]
-        m = MethodType(f.__func__, CatalogClass)  # type: ignore
+        m = f.__get__(None, CatalogClass)
         # pylint: disable=not-callable
         return m()
 

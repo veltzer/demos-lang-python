@@ -11,10 +11,10 @@ If you want to catch all exceptions then use:
 """
 
 try:
-    raise KeyboardInterrupt()
+    raise KeyboardInterrupt
 # this next line catches all exceptions, logs and throws them back...
 except (Exception, KeyboardInterrupt) as e:
     print("in except", e)
-    raise e  # noqa: TRY201
+    raise e
 finally:
     print("finally is here")

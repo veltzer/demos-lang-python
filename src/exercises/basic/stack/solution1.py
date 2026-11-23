@@ -135,7 +135,7 @@ def stress_test(s):
         num_elems = i % 900
         for j in range(num_elems):
             s.push(j)
-        for j in range(num_elems):
+        for _ in range(num_elems):
             s.pop()
 
 
@@ -146,10 +146,10 @@ class Timer:
         self.end: float
 
     def __enter__(self):
-        self.start: float = thread_time() # type: ignore
+        self.start: float = thread_time()
 
     def __exit__(self, _type, value, traceback):
-        self.end: float = thread_time() # type: ignore
+        self.end: float = thread_time()
         print(f"{self.description}: {self.end - self.start}")
 
 

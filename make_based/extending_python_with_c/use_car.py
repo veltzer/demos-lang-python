@@ -5,10 +5,12 @@ If we had this would not have been neccessary.
 """
 
 import sys
+
 sys.path.append(sys.argv[1])
 
 # pylint: disable=wrong-import-position,import-error
-import car  # type: ignore # noqa: E402
+import car
+
 c = car.Car()
 print(c)
 c.printSelf()

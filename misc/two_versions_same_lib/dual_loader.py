@@ -22,7 +22,7 @@ from __future__ import annotations
 import importlib
 import sys
 import types
-from contextlib import contextmanager
+from contextlib import contextmanager, suppress
 from pathlib import Path
 
 
@@ -80,10 +80,8 @@ def load_package(package_name: str, install_dir: str | Path) -> types.ModuleType
         # environment is active, so their submodule references are wired up to
         # this version before we restore sys.modules.
         for sub in ("sessions", "models", "exceptions", "adapters", "api"):
-            try:
+            with suppress(ModuleNotFoundError):
                 importlib.import_module(f"{package_name}.{sub}")
-            except ModuleNotFoundError:
-                pass
         return module
 
 

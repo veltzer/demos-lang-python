@@ -31,8 +31,7 @@ else:
         buf = lines[-1]
         del lines[-1]
         for line in lines:
-            line += "\n"
-            print(f"got line [{line}]")
+            print(f"got line [{line}\n]")
         try:
             buf += os.read(fd, buffer_size).decode()
         except OSError:

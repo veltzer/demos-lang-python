@@ -23,14 +23,14 @@ a_instance = None
 def get_a_instance():  # noqa: F811  # pylint: disable=function-redefined
     # noinspection PyGlobalUndefined
     # pylint: disable=global-statement
-    global a_instance, get_a_instance
+    global a_instance, get_a_instance  # noqa: PLW0603  teaching: the function replaces itself through the global
     if a_instance is None:
         a_instance = A()
 
-    def getAInstanceFast():
+    def get_a_instance_fast():
         return a_instance
 
-    get_a_instance = getAInstanceFast
+    get_a_instance = get_a_instance_fast
     return a_instance
 
 
@@ -52,16 +52,16 @@ class B:
 b_instance = None
 
 
-def getBInstance():
+def get_b_instance():
     # pylint: disable=global-statement
-    global b_instance
+    global b_instance  # noqa: PLW0603  teaching: the singleton is kept in a global
     if b_instance is None:
         b_instance = B()
     return b_instance
 
 
-B1 = getBInstance()
-B2 = getBInstance()
+B1 = get_b_instance()
+B2 = get_b_instance()
 print(type(B1))
 print(type(B2))
 print(B1)
@@ -81,6 +81,6 @@ print(f"time for A: {time_after - time_before:.3f} seconds")
 time_before = time.time()
 # noinspection PyRedeclaration
 for _ in range(num):
-    b = getBInstance()
+    b = get_b_instance()
 time_after = time.time()
 print(f"time for B: {time_after - time_before:.3f} seconds")

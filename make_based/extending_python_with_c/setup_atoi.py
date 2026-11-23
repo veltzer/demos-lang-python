@@ -2,7 +2,7 @@
 setup.py file for SWIG atoi
 """
 
-from setuptools import setup, Extension
+from setuptools import Extension, setup
 
 atoi_module = Extension(
     "_atoi",

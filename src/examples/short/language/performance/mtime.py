@@ -15,8 +15,8 @@ import os.path
 import time
 
 count = 1000000
-doFirst = True
-doSecond = True
+do_first = True
+do_second = True
 
 # get the list of all files accessible from /etc
 files = [f for f in glob.glob("/etc/*") if os.path.isfile(f)]
@@ -27,7 +27,7 @@ print(f"file list length is {list_len}...")
 filename: str
 
 # now do lots of os.path.getmtime() ops on them
-if doFirst:
+if do_first:
     time_before = time.time()
     for i in range(count):
         filename = files[i % list_len]
@@ -35,7 +35,7 @@ if doFirst:
     time_after = time.time()
     print(f"time taken for {count} os.path.getmtime: {time_after - time_before:.3f} seconds")
 
-if doSecond:
+if do_second:
     # now do the same with a cache
     times: dict[str, float] = {}
     time_before = time.time()

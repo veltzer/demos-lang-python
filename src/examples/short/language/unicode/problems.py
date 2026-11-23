@@ -1,6 +1,7 @@
 """ problems.py """
 
 import codecs
+import contextlib
 import sys
 
 ENCODING = "utf-8"
@@ -16,10 +17,8 @@ if sys.stdout.encoding is None:  # pyrefly: ignore[bad-index]
 # lets show how to decode strings to bytes
 data = "\xe9"
 assert isinstance(data, str)
-try:
+with contextlib.suppress(UnicodeEncodeError):
     bytes(data, encoding=ENCODING)
-except UnicodeEncodeError:
-    pass
 
 # this is the right way to decode data
 t = data.encode(ENCODING)

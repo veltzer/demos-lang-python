@@ -14,11 +14,11 @@ class Book:
     def printit(self):
         print("price is", self.__price)
 
-    def setPrice(self, newprice):
+    def set_price(self, newprice):
         self.__price = newprice
 
 
-def getNumBooks():
+def get_num_books():
     return Book.num
 
 
@@ -28,9 +28,9 @@ b2 = Book(13)
 
 # lets access the static member and the static methods...
 print(f"Book.num (direct access) is {Book.num}")
-print(f"getNumBooks() is {getNumBooks()}")
+print(f"get_num_books() is {get_num_books()}")
 try:
-    print(b1.getNumBooks())  # type: ignore
+    print(b1.get_num_books())  # pyrefly: ignore[missing-attribute]  teaching: static methods are not reachable through the instance
 except AttributeError:
     print("no, cannot access the static method via the instance")
 # access the static member through an instance...

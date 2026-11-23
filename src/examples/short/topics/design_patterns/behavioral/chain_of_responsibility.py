@@ -3,7 +3,7 @@
 
 The Chain of responsibility is an object oriented version of the
 `if ... elif ... elif ... else ...` idiom, with the
-benefit that the condition–action blocks can be dynamically rearranged
+benefit that the condition-action blocks can be dynamically rearranged
 and reconfigured at runtime.
 
 This pattern aims to decouple the senders of a request from its

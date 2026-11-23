@@ -19,16 +19,16 @@ ll1 = [1, 2, 3, 4, 5]
 ll2 = [10, 11, 12, 13, 14]
 ll3 = [20, 21, 22, 23, 24]
 
-for l1, l2 in zip(ll1, ll2):
+for l1, l2 in zip(ll1, ll2, strict=False):
     print(l1, l2)
 
-for l1, l2, l3 in zip(ll1, ll2, ll3):
+for l1, l2, l3 in zip(ll1, ll2, ll3, strict=False):
     print(l1, l2, l3)
 
 lll1 = [1, 2, 3]
 lll2 = [4, 5]
 
-for x, y in zip(lll1, lll2):
+for x, y in zip(lll1, lll2, strict=False):
     print(x, y)
 
 for x, y in itertools.zip_longest(lll1, lll2):

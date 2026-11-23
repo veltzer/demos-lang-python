@@ -7,7 +7,7 @@ import time
 from twisted.internet import reactor
 
 
-def aSillyBlockingMethod(t, stop):
+def a_silly_blocking_method(t, stop):
     print("starting...")
     time.sleep(t)
     print(t, "seconds have passed")
@@ -22,11 +22,11 @@ def aSillyBlockingMethod(t, stop):
 
 # run method in thread
 # pylint: disable=no-member
-reactor.callInThread(aSillyBlockingMethod, 10, True)  # type: ignore
+reactor.callInThread(a_silly_blocking_method, 10, True)
 # pylint: disable=no-member
-reactor.callInThread(aSillyBlockingMethod, 5, False)  # type: ignore
+reactor.callInThread(a_silly_blocking_method, 5, False)
 print("before suggestThreadPoolSize")
-reactor.suggestThreadPoolSize(2)  # type: ignore
+reactor.suggestThreadPoolSize(2)
 time.sleep(10)
 print("finished sleeping...")
-reactor.run()  # type: ignore
+reactor.run()

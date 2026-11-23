@@ -39,7 +39,7 @@ class ObjectPool:
             self.item = self._queue.get()
         return self.item
 
-    def __exit__(self, Type, value, traceback):
+    def __exit__(self, exc_type, value, traceback):
         if self.item is not None:
             self._queue.put(self.item)
             self.item = None

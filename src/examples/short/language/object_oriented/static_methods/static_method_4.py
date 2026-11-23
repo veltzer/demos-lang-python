@@ -14,11 +14,11 @@ class Book:
     def printit(self):
         print("price is", self.__price)
 
-    def setPrice(self, newprice):
+    def set_price(self, newprice):
         self.__price = newprice
 
     @staticmethod
-    def getNumBooks():
+    def get_num_books():
         return Book.num
 
 
@@ -26,8 +26,8 @@ b1 = Book(14)
 b2 = Book(13)
 
 print(Book.num)
-print(b1.getNumBooks())
-print(Book.getNumBooks())
+print(b1.get_num_books())
+print(Book.get_num_books())
 
 
 class FictionBook(Book):
@@ -37,5 +37,5 @@ class FictionBook(Book):
 b3 = FictionBook(15)
 print(Book.num)
 print(FictionBook.num)
-print(Book.getNumBooks())
-print(FictionBook.getNumBooks())
+print(Book.get_num_books())
+print(FictionBook.get_num_books())

@@ -28,6 +28,6 @@ tree.write(f)
 f.seek(0)
 
 # lets fixup the xml by overwriting the file with the pretty version
-xml = xml.dom.minidom.parse(f)  # type: ignore
-pretty_xml = xml.toprettyxml()  # type: ignore
+xml = xml.dom.minidom.parse(f)
+pretty_xml = xml.toprettyxml()
 print(pretty_xml)

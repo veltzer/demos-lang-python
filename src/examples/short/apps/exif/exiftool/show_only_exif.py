@@ -20,8 +20,8 @@ with open("data/exif/tags_non_exif.txt") as stream:
 
 output = subprocess.check_output(["exiftool", filename], shell=False)
 lines = output.decode("ascii").splitlines()
-for line in lines:
-    line = line.rstrip()
+for raw_line in lines:
+    line = raw_line.rstrip()
     current_tag = line.split(":")[0].rstrip()
     if current_tag in tags_non_exif:
         continue

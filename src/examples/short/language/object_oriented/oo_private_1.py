@@ -19,10 +19,10 @@ class MyClass:
     # this demonstrates that you dont have to call "self" as "self",its just
     # a convention
 
-    def setPrivate(self, val):
+    def set_private(self, val):
         self.__private_variable = val
 
-    def setPublic(self, val):
+    def set_public(self, val):
         self.public_variable = val
 
 
@@ -34,10 +34,10 @@ print("setting accessible variable")
 b.public_variable = 4
 b.pr()
 print("and with a method")
-b.setPublic(9)
+b.set_public(9)
 b.pr()
 print("and another way to call the same method")
-MyClass.setPublic(b, 11)
+MyClass.set_public(b, 11)
 b.pr()
 print("here is how you access the accessible variable " + str(b.public_variable))
 print("setting inaccessible variable")
@@ -47,11 +47,11 @@ b.pr()
 print("didnt work,huh ?")
 print("from outside its value looks like " + str(b.__private_variable))  # pyrefly: ignore[no-access]
 # noinspection PyProtectedMember
-print("this is our real var " + str(b._MyClass__private_variable))  # type: ignore
+print("this is our real var " + str(b._MyClass__private_variable))  # pyrefly: ignore[missing-attribute]  teaching: name mangling is not security
 print("this means that there is no real security for the __[var] in python")
 print("lets look at our class")
 # pylint: disable=attribute-defined-outside-init
-b._MyClass__private_variable = 666  # type: ignore
+b._MyClass__private_variable = 666  # pyrefly: ignore[missing-attribute]  teaching: name mangling is not security
 b.pr()
 b.pr()
 print(dir(MyClass))

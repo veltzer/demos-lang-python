@@ -4,6 +4,8 @@ An example of how to extract type hints from a class
 
 from typing import get_type_hints
 
+import __main__
+
 
 class Data:
     # a: ClassVar[int] = 0
@@ -14,10 +16,6 @@ class Data:
 def func(param: int) -> int:
     return param + 1
 
-
-# from . import __main__
-# pylint: disable=wrong-import-position
-import __main__
 
 a = 1  # type: int
 print(get_type_hints(__main__))

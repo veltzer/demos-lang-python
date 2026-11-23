@@ -9,8 +9,8 @@ NOTES:
 import os.path
 import sys
 
-for line in sys.stdin:
-    line = line.strip()
+for raw_line in sys.stdin:
+    line = raw_line.strip()
     print(f"basename is [{os.path.basename(line)}]")
     print(f"dirname is [{os.path.dirname(line)}]")
     print(f"splitext is [{os.path.splitext(line)}]")

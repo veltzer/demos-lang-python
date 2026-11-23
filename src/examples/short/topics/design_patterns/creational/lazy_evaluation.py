@@ -22,7 +22,7 @@ Delays the eval of an expr until its value is needed and avoids repeated evals.
 import functools
 
 
-class lazy_property:
+class LazyProperty:
     def __init__(self, function):
         self.function = function
         functools.update_wrapper(self, function)  # pyrefly: ignore[bad-argument-type]
@@ -59,11 +59,10 @@ class Person:
         self.occupation = occupation
         self.call_count2 = 0
 
-    @lazy_property
+    @LazyProperty
     def relatives(self):
         # Get all relatives, lets assume that it costs much time.
-        relatives = "Many relatives."
-        return relatives
+        return "Many relatives."
 
     @lazy_property2
     def parents(self):

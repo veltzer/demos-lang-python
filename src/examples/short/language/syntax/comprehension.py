@@ -10,13 +10,13 @@ print(list1)
 list2 = []
 for x in range(10):
     for y in range(10):
-        list2.append(x * y)
+        list2.append(x * y)  # noqa: PERF401  teaching: the loop form that the comprehension replaces
 print(list2)
 
 list3 = []
 for x in range(10):
     for y in range(10):
-        list3.append((x, y))
+        list3.append((x, y))  # noqa: PERF401  teaching: the loop form that the comprehension replaces
 print(map(lambda t: t[0] * t[1], list3))  # noqa: C417
 
 # sets

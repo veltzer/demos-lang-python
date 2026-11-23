@@ -4,10 +4,7 @@ import math
 
 
 def is_prime(n):
-    for i in range(2, int(math.sqrt(n))):
-        if n % i == 0:
-            return False
-    return True
+    return all(n % i != 0 for i in range(2, int(math.sqrt(n))))
 
 
 def is_prime_functional(n):

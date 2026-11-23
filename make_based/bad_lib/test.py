@@ -1,6 +1,6 @@
 """ test.py """
 
-import module_checker  # type: ignore
+import module_checker
 
 # this works
 # module_checker.check_lib("libacl.so")

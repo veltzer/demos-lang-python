@@ -8,8 +8,8 @@ import textwrap
 def lines2paragraphs(lines):
     """Group lines into paragraphs as lists of lines."""
     paragraph = []
-    for line in lines:
-        line = line.strip()
+    for raw_line in lines:
+        line = raw_line.strip()
         if line == "":
             yield paragraph
             paragraph = []

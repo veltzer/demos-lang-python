@@ -25,11 +25,7 @@ class Calendar:
     def get_all_events_in_month(self, month):
         """ Return a dictionary with all the events in the given month
         month is the number of the month """
-        month_events = {}
-        for name, e in self.events.items():
-            if e.month == month:
-                month_events[name] = e
-        return month_events
+        return {name: e for name, e in self.events.items() if e.month == month}
 
 
 class Date:
@@ -40,10 +36,7 @@ class Date:
         if month < 1 or month > 12:
             print("Month must be between 1 and 12")
             return
-        if mydate.is_leap_year(year):
-            days = mydate.days_in_months_leap_year[month - 1]
-        else:
-            days = mydate.days_in_months[month - 1]
+        days = mydate.days_in_months_leap_year[month - 1] if mydate.is_leap_year(year) else mydate.days_in_months[month - 1]
         if day < 1 or day > days:
             print("Day must be between 1 and ", days)
             return
@@ -70,6 +63,9 @@ class Date:
     def __eq__(self, other):
         """ Overloading operator==for dates """
         return self.year == other.year and self.month == other.month and self.day == other.day
+
+    def __hash__(self):
+        return hash((self.year, self.month, self.day))
 
     def __ne__(self, other):
         """ Overloading operator!=for dates """

@@ -1,6 +1,6 @@
 """ plugin1.py """
 
-import base  # type: ignore
+import base
 
 print(f"[{__file__}] loading")
 

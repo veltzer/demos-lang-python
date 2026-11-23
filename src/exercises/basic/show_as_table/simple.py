@@ -2,6 +2,6 @@
 
 import sys
 
-for line in sys.stdin:
-    line = line.rstrip()
+for raw_line in sys.stdin:
+    line = raw_line.rstrip()
     print(f"got line {line}")

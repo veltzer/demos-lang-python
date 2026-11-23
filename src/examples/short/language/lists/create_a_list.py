@@ -11,11 +11,11 @@ print(list1)
 
 # empty list with constructur
 # pylint: disable=use-list-literal
-list2 = list()  # type: ignore  # noqa: C408
+list2 = list()  # noqa: C408  teaching: the list() constructor is one way to create a list
 print(list2)
 
 # empty list explicit
-list3 = []  # type: ignore
+list3 = []
 print(list3)
 
 # from another list

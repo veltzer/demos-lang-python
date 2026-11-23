@@ -13,7 +13,7 @@ class RWL:
         self._readersInside = 0
         self.c = threading.Condition()
 
-    def ReaderEnter(self):
+    def reader_enter(self):
         with self.c:
             self._readersWaiting += 1
             while self._writersInside:
@@ -21,14 +21,14 @@ class RWL:
             self._readersWaiting -= 1
             self._readersInside += 1
 
-    def ReaderLeave(self):
+    def reader_leave(self):
         with self.c:
             self._readersInside -= 1
             # self.c.notifyAll()
             if self._readersInside == 0:
                 self.c.notify()
 
-    def WriterEnter(self):
+    def writer_enter(self):
         with self.c:
             self._writersWaiting += 1
             while self._readersInside or self._writersInside:
@@ -36,7 +36,7 @@ class RWL:
             self._writersWaiting -= 1
             self._writersInside += 1
 
-    def WriterLeave(self):
+    def writer_leave(self):
         with self.c:
             self._writersInside -= 1
             self.c.notify_all()

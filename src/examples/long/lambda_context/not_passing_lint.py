@@ -38,5 +38,5 @@ for c in my_list:
     print(f"{max_person}")
 # this exapmle does pass lint
 for c in my_list:
-    max_person = max(c.keys(), key=lambda x, d=c: d[x])  # type: ignore
+    max_person = max(c.keys(), key=lambda x, d=c: d[x])
     print(f"{max_person}")

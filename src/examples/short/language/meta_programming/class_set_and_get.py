@@ -17,7 +17,7 @@ class ValidString:
 
     def __set__(self, instance, value):
         if not isinstance(value, str):
-            raise ValueError(f"{self.name} must be a string")  # noqa: TRY004
+            raise ValueError(f"{self.name} must be a string")
         if len(value) < self.minlen:
             raise ValueError(f"{self.name} must be at least {self.minlen} characters long")
         if self.maxlen is not None and len(value) > self.maxlen:

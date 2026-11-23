@@ -10,11 +10,11 @@ References:
 
 import random
 
-for i in range(10):
+for _i in range(10):
     print(random.randrange(10))
 print("=========")
-for i in range(10):
+for _i in range(10):
     print(random.randrange(15, 20))
 print("=========")
-for i in range(10):
+for _i in range(10):
     print(random.randrange(-20, -10, 2))

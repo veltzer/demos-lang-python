@@ -36,7 +36,7 @@ print("bool(None) is", b)
 # some arithmetic with it.
 try:
     # noinspection PyTypeChecker
-    i = int(None)  # type: ignore
+    i = int(None)  # pyrefly: ignore[bad-argument-type]  teaching: int(None) is a type error
 except TypeError as e:
     print("yes,got exception from converting None to int", e)
 
@@ -58,7 +58,7 @@ print(h)
 
 # lets compare None to various things...
 # pylint: disable=singleton-comparison,comparison-of-constants
-if None == 0:  # noqa: PLR0133
+if None == 0:
     print("None==0")
 else:
     print("!None==0")
@@ -70,11 +70,11 @@ if None:
     print("None==True")
 else:
     print("None!=True")
-if None == "":  # noqa: PLR0133
+if None == "":
     print("None==\"\"")
 else:
     print("None!=\"\"")
-if None == "None":  # noqa: PLR0133
+if None == "None":
     print("None==\"None\"")
 else:
     print("None!=\"None\"")

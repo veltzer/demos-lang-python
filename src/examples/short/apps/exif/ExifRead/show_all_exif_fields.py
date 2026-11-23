@@ -3,6 +3,7 @@ This is an example that shows all EXIF fields that the ExifRead python module kn
 """
 
 import exifread
+import exifread.tags.exif
 
 # print(dir(exifread))
 # print(dir(exifread.tags))
@@ -10,6 +11,6 @@ import exifread
 # print(dir(exifread.tags.exif))
 # print(type(exifread.tags.EXIF_TAGS))
 # print(exifread.tags.EXIF_TAGS)
-for k,v in exifread.tags.exif.EXIF_TAGS.items():  # pyrefly: ignore[implicit-import]  # noqa: PERF102
+for v in exifread.tags.exif.EXIF_TAGS.values():
     print(v[0])
     # print(k, v)

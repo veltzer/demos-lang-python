@@ -11,7 +11,7 @@ import random
 import shelve
 
 with shelve.open("/tmp/shelve.db") as d:
-    for i in range(10):
+    for _i in range(10):
         d[str(random.randrange(100))] = random.randrange(100)
     for k, v in d.items():
         print(k, v)

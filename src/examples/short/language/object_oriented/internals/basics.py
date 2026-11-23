@@ -15,7 +15,7 @@ class A:
         print("in A constructor")
         self.a = val
 
-    def printMe(self):
+    def print_me(self):
         print("a is", self.a)
 
 

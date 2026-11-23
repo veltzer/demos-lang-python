@@ -16,8 +16,8 @@ def check_file(filename: str):
     # read the first line of the file
     check_with = None
     with open(filename) as f:
-        for line in f:
-            line = line.rstrip()
+        for raw_line in f:
+            line = raw_line.rstrip()
             if line == "#!/usr/bin/python2":
                 check_with = "python2"
                 break

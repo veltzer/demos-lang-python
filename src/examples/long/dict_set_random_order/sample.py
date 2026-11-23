@@ -11,7 +11,7 @@ d2: dict[str,None] = {}
 for x in dir(os):
     d2[x] = None
 print(d2)
-d3 = {x:None for x in dir(os)}
+d3 = dict.fromkeys(dir(os))
 print(d3)
 ud = {}
 od = collections.OrderedDict()

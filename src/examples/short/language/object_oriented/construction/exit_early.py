@@ -20,29 +20,29 @@ from __future__ import annotations
 class Book:
     # noinspection PyReturnFromInit,PyTypeChecker
     # pylint: disable=return-in-init
-    def __init__(self, price) -> Book:  # type: ignore
+    def __init__(self, price) -> Book:
         self.__price = price
         # return None
         # noinspection PyTypeChecker
-        return 7  # type: ignore  # noqa: PLE0101
+        return 7  # noqa: PLE0101  teaching: __init__ must not return a value  # pyrefly: ignore[bad-return]
         # return
 
-    def setPrice(self, val):
+    def set_price(self, val):
         self.__price = val
 
-    def getPrice(self):
+    def get_price(self):
         return self.__price
 
-    def printMe(self):
-        print("printMe: price is", self.__price)
+    def print_me(self):
+        print("print_me: price is", self.__price)
 
 
 try:
     b = Book(50)
     print(b)
-    b.setPrice(60)
+    b.set_price(60)
     print(type(b))
     print(dir(b))
-    b.printMe()
+    b.print_me()
 except TypeError:
     print("yes, got an exception")

@@ -9,7 +9,7 @@ import time
 
 import tqdm
 
-for i in tqdm.tqdm(range(1000)):
+for _i in tqdm.tqdm(range(1000)):
     time.sleep(0.01)
-    for j in tqdm.tqdm(range(1000)):
+    for _j in tqdm.tqdm(range(1000)):
         time.sleep(0.0001)

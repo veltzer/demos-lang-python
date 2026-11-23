@@ -13,10 +13,10 @@ class Book:
     def printit(self):
         print("price is", self.__price)
 
-    def setPrice(self, newprice):
+    def set_price(self, newprice):
         self.__price = newprice
 
-    def getNumBooks(self=None):  # pyrefly: ignore[bad-function-definition]
+    def get_num_books(self=None):  # pyrefly: ignore[bad-function-definition]  teaching: self=None lets the method be called without an instance
         return Book.num
 
 
@@ -25,8 +25,8 @@ b1 = Book(14)
 b2 = Book(13)
 # lets output the static data in various ways...
 print(Book.num)
-print(b1.getNumBooks())  # type: ignore
-print(Book.getNumBooks(b1))
+print(b1.get_num_books())
+print(Book.get_num_books(b1))
 # these will throw an exception since you must pass an instance...
-# print(Book.getNumBooks())
-# print(Book.getNumBooks(None))
+# print(Book.get_num_books())
+# print(Book.get_num_books(None))

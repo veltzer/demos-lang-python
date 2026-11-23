@@ -1,5 +1,7 @@
 """ debug_me.py """
 
+import contextlib
+
 
 def simple_func(x):
     x += 1
@@ -12,10 +14,8 @@ def simple_func(x):
 
     # k = set(range(5, 99))
 
-    try:
+    with contextlib.suppress(AttributeError):
         x.invalid  # noqa: B018
-    except AttributeError:
-        pass
 
     # import sys
     # sys.exit(1)

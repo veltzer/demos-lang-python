@@ -15,10 +15,8 @@ def worker(number):
     print(f"thread {number} is waking up...")
 
 
-threads = []
 print("creating the threads")
-for i in range(10):
-    threads.append(threading.Thread(target=worker, args=(i,)))
+threads = [threading.Thread(target=worker, args=(i,)) for i in range(10)]
 print("launching the threads")
 for thread in threads:
     thread.start()

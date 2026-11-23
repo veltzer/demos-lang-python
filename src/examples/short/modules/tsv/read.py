@@ -6,8 +6,8 @@ import tsv
 
 with open("data/tsv/file.tsv") as f:
     reader = tsv.TsvReader(f)
-    for parts in reader:
-        parts = list(parts)
+    for raw_parts in reader:
+        parts = list(raw_parts)
         # Here parts is a list of strings, one per tab-separated column.
         # Make sure you handle not having enough fields, or not being able to
         # parse numbers where you expect them.

@@ -2,7 +2,7 @@
 
 import argparse
 import sys
-from datetime import datetime
+from datetime import UTC, datetime
 
 import docker
 import humanize
@@ -15,7 +15,7 @@ def format_size(size_bytes):
 
 def format_created(timestamp):
     """Convert unix timestamp to relative time"""
-    dt = datetime.fromtimestamp(timestamp)
+    dt = datetime.fromtimestamp(timestamp, tz=UTC)
     return humanize.naturaltime(dt)
 
 

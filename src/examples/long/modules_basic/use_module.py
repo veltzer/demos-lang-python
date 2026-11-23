@@ -1,7 +1,7 @@
 """ use_module.py """
 
 # pylint: disable=relative-beyond-top-level,no-name-in-module
-# type: ignore
+
 from . import my_module
 
 print(f"hello from [{__file__}]")

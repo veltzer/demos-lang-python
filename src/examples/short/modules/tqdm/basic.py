@@ -9,5 +9,5 @@ import time
 
 import tqdm
 
-for i in tqdm.tqdm(range(1000), desc="some job"):
+for _i in tqdm.tqdm(range(1000), desc="some job"):
     time.sleep(1)

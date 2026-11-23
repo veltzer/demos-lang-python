@@ -22,12 +22,11 @@ def grep(pattern, filenames):
         (filename, lineno, line.rstrip("\n"))
         for filename, lineno, line in lines
     )
-    matches = (
+    return (
         (filename, lineno, text)
         for filename, lineno, text in stripped
         if pat.search(text)
     )
-    return matches
 
 
 def main():

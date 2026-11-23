@@ -5,17 +5,12 @@ solution
 
 def right_align_to(lines, width):
     """Right-align all lines to given width."""
-    result = []
-    for line in lines:
-        result.append(line.rjust(width))
-    return result
+    return [line.rjust(width) for line in lines]
 
 
 def max_len(lines):
     """Return the length of the longest string."""
-    lengths = []
-    for line in lines:
-        lengths.append(len(line))
+    lengths = [len(line) for line in lines]
     return max(lengths)
 
 

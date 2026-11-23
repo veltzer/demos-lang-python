@@ -12,7 +12,7 @@ mgr.collect_and_instantiate(myBaseClass2)
 for instance in mgr.giveMe(myBaseClass1):
     ...
 """
-# type: ignore
+
 
 
 import importlib
@@ -28,7 +28,7 @@ folder = "plugins"
 namespace = "plugins."
 
 done = set()
-for importer, modname, is_package in pkgutil.walk_packages(
+for _importer, modname, _is_package in pkgutil.walk_packages(
         path=[folder],
         prefix=namespace,
 ):
@@ -46,5 +46,5 @@ for importer, modname, is_package in pkgutil.walk_packages(
                 print(name)
                 print(t)
                 print(instance)
-    except Exception as e:  # noqa: TRY203
-        raise e  # noqa: TRY201
+    except Exception as e:
+        raise e

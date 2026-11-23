@@ -26,7 +26,7 @@ class TimeDisplay(object):
 import datetime
 import io
 from collections.abc import Callable
-from contextlib import redirect_stdout
+from contextlib import redirect_stdout, suppress
 
 
 class ConstructorInjection:
@@ -35,8 +35,7 @@ class ConstructorInjection:
 
     def get_current_time_as_html_fragment(self) -> str:
         current_time = self.time_provider()
-        current_time_as_html_fragment = f"<span class=\"tinyBoldText\">{current_time}</span>"
-        return current_time_as_html_fragment
+        return f"<span class=\"tinyBoldText\">{current_time}</span>"
 
 
 class ParameterInjection:
@@ -45,8 +44,7 @@ class ParameterInjection:
 
     def get_current_time_as_html_fragment(self, time_provider: Callable) -> str:
         current_time = time_provider()
-        current_time_as_html_fragment = f"<span class=\"tinyBoldText\">{current_time}</span>"
-        return current_time_as_html_fragment
+        return f"<span class=\"tinyBoldText\">{current_time}</span>"
 
 
 class SetterInjection:
@@ -60,8 +58,7 @@ class SetterInjection:
 
     def get_current_time_as_html_fragment(self):
         current_time = self.time_provider()  # pyrefly: ignore[not-callable]
-        current_time_as_html_fragment = f"<span class=\"tinyBoldText\">{current_time}</span>"
-        return current_time_as_html_fragment
+        return f"<span class=\"tinyBoldText\">{current_time}</span>"
 
 
 def production_code_time_provider() -> str:
@@ -69,9 +66,8 @@ def production_code_time_provider() -> str:
     Production code version of the time provider (just a wrapper for formatting
     datetime for this example).
     """
-    current_time = datetime.datetime.now()
-    current_time_formatted = f"{current_time.hour}:{current_time.minute}"
-    return current_time_formatted
+    current_time = datetime.datetime.now().astimezone()
+    return f"{current_time.hour}:{current_time.minute}"
 
 
 def midnight_time_provider() -> str:
@@ -100,10 +96,8 @@ def main():
         print(time_with_si.get_current_time_as_html_fragment())
     assert output.getvalue() == CORRECT_OUTPUT
 
-    try:
+    with suppress(TypeError):
         time_with_si.get_current_time_as_html_fragment()
-    except TypeError:
-        pass
 
 
 if __name__ == "__main__":

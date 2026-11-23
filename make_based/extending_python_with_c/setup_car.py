@@ -3,8 +3,7 @@ setup.py file for SWIG car
 """
 
 
-from setuptools import setup, Extension
-
+from setuptools import Extension, setup
 
 car_module = Extension(
     "_car",

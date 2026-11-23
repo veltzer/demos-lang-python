@@ -1,7 +1,7 @@
 """
 We are looking for the following html fragment:
      <h1 class="h0-mktg mt-sm-6 ...">
-        Let’s build from here
+        Let's build from here
     </h1>
 """
 

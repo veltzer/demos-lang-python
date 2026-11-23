@@ -36,7 +36,7 @@ for object_summary in gen:
         # stream = io.TextIOWrapper(stream)
         stream = codecs.getreader(encoding=locale.getpreferredencoding())(stream)
         lines = 0
-        for line in tqdm.tqdm(stream):
+        for _line in tqdm.tqdm(stream):
             # print(line, end="")
             lines += 1
         print(f"got [{lines}] lines...")

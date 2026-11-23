@@ -12,8 +12,8 @@ TODO:
 
 
 class MyResource:
-    enterCallsCounter = 0
-    exitCallsCounter = 0
+    enter_calls_counter = 0
+    exit_calls_counter = 0
 
     def __init__(self, suppress=False):
         """ this is the constructor (the thing we call at the "with") """
@@ -22,13 +22,13 @@ class MyResource:
     def __enter__(self):
         """ this method will be called at the begining of the "with" block """
         print("doing __enter__")
-        MyResource.enterCallsCounter += 1
+        MyResource.enter_calls_counter += 1
         return self
 
     def __exit__(self, itype, value, traceback):
         """ this method will be called at the end of the "with" block """
         print("doing __exit__", itype, value, traceback)
-        MyResource.exitCallsCounter += 1
+        MyResource.exit_calls_counter += 1
         return self.suppress
 
 
@@ -36,8 +36,8 @@ class MyResource:
 with MyResource() as r:
     print(r)
     print("in block of code")
-assert MyResource.enterCallsCounter == 1
-assert MyResource.exitCallsCounter == 1
+assert MyResource.enter_calls_counter == 1
+assert MyResource.exit_calls_counter == 1
 print(
     "yes,if we got this far it means that both enter and exit were called exactly one time during the last attempt")
 
@@ -48,8 +48,8 @@ try:
         raise ValueError("foobar")
 except ValueError:
     pass
-assert MyResource.enterCallsCounter == 2
-assert MyResource.exitCallsCounter == 2
+assert MyResource.enter_calls_counter == 2
+assert MyResource.exit_calls_counter == 2
 print(
     "yes,if we got this far it means that both enter and exit were called exactly one time during the last attempt")
 
@@ -57,7 +57,7 @@ print(
 with MyResource(suppress=True) as r:
     print(r)
     raise ValueError("foobar")
-assert MyResource.enterCallsCounter == 3
-assert MyResource.exitCallsCounter == 3
+assert MyResource.enter_calls_counter == 3
+assert MyResource.exit_calls_counter == 3
 print(
     "yes,if we got this far it means that both enter and exit were called exactly one time during the last attempt")

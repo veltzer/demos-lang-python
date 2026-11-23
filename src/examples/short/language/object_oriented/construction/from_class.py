@@ -14,18 +14,16 @@ class A:
         print("in A constructor")
 
 
-def make_something(cls=None):
-    t = cls()  # pyrefly: ignore[not-callable]
-    return t
+def make_something(cls: type[A]):
+    return cls()
 
 
-def make_something_2(cls=None):
-    t = cls.__new__(cls)  # pyrefly: ignore[bad-argument-type]
-    return t
+def make_something_2(cls: type[A]):
+    return cls.__new__(cls)
 
 
-def make_something_3(cls=None):
-    t = cls.__new__(cls)  # pyrefly: ignore[bad-argument-type]
+def make_something_3(cls: type[A]):
+    t = cls.__new__(cls)
     # pylint: disable=unnecessary-dunder-call
     t.__init__()
     return t

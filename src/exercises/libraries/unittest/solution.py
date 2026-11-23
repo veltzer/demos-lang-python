@@ -26,17 +26,17 @@ class TestGlob(unittest.TestCase):
         """Delete the temp dir."""
         shutil.rmtree(self.dir)
 
-    def assertGlob(self, pattern, fnames):
+    def assert_glob(self, pattern, fnames):
         self.assertEqual(sorted(glob.glob(pattern)), sorted(fnames))
 
-    def testCurrentDirGlob(self):
+    def test_current_dir_glob(self):
         """Test globbing in current dir."""
         os.chdir(self.dir)
-        self.assertGlob("ba?.*", ["bar.txt", "baz.py"])
+        self.assert_glob("ba?.*", ["bar.txt", "baz.py"])
 
-    def testAbsoluteGlob(self):
+    def test_absolute_glob(self):
         """Test globbing with full path."""
-        self.assertGlob(self.absolute("*xt"), map(
+        self.assert_glob(self.absolute("*xt"), map(
             self.absolute, ["foo.txt", "bar.txt"]))
 
 

@@ -1,6 +1,6 @@
 """ usemydate """
 
-import mydate  # type: ignore
+import mydate
 
 for i in mydate.months_name:
     print("month is ", i)

@@ -1,8 +1,10 @@
 """ plugin2.py """
 
-# type: ignore
-# pylint: disable=relative-beyond-top-level
-from .. import demo
+
+import importlib
+
+# the parent package of the plugins package (the same as "from .. import demo")
+demo = importlib.import_module("..demo", package=__package__)
 
 print(f"[{__file__}] loading")
 

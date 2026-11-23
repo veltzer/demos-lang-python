@@ -14,7 +14,7 @@ Base = declarative_base()
 STRING_LENGTH = 250
 
 
-class Person(Base):  # type: ignore
+class Person(Base):
     __tablename__ = "person"
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
@@ -22,7 +22,7 @@ class Person(Base):  # type: ignore
     name = Column(String(STRING_LENGTH), nullable=False)
 
 
-class Address(Base):  # type: ignore
+class Address(Base):
     __tablename__ = "address"
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
@@ -41,16 +41,16 @@ class Address(Base):  # type: ignore
 
 # for the next line to work you need the "pymysql" module installed
 
-myDB = URL(
+my_db = URL(
     username=None,
     password=None,
     port=None,
     drivername="mysql+pymysql",
     host="localhost",
     database="test",
-    query={"read_default_file": os.path.expanduser("~/.my.cnf")},  # type: ignore
+    query={"read_default_file": os.path.expanduser("~/.my.cnf")},
 )
-engine = create_engine(url=myDB)
+engine = create_engine(url=my_db)
 # engine = create_engine("mysql+pymysql://localhost/test?charset=utf8")
 
 # lets drop all tables in the database, whatever they are:

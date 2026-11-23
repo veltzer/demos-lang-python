@@ -37,10 +37,7 @@ from functools import partial
 
 def basic():
     """ This is the basic example. What does this produce? """
-    handlers = []
-    for i in range(10):
-        # pylint: disable=cell-var-from-loop
-        handlers.append(lambda: i)  # noqa: B023
+    handlers = [lambda: i for i in range(10)]  # noqa: B023  teaching: all lambdas see the final value of the loop variable
     print([h() for h in handlers])
 
 
@@ -50,7 +47,7 @@ def wrong():
     for i in range(10):
         def f():
             # pylint: disable=cell-var-from-loop
-            return i  # noqa: B023
+            return i  # noqa: B023  teaching: the closure sees only the final loop value
         handlers.append(f)
     print([h() for h in handlers])
 
@@ -71,9 +68,7 @@ def creator_pattern():
         def f():
             return i
         return f
-    handlers = []
-    for i in range(10):
-        handlers.append(create_f(i))
+    handlers = [create_f(i) for i in range(10)]
     print([h() for h in handlers])
 
 
@@ -82,7 +77,8 @@ def partial_pattern_wrong():
     handlers = []
     for i in range(10):
         # pylint: disable=cell-var-from-loop,unnecessary-lambda-assignment
-        f = lambda: i  # noqa: B023
+        def f():
+            return i  # noqa: B023  teaching: partial of a late-binding function still sees the final loop value
         good_f = partial(f)
         handlers.append(good_f)
     print([h() for h in handlers])
@@ -93,7 +89,8 @@ def partial_pattern():
     handlers = []
     for i in range(10):
         # pylint: disable=unnecessary-lambda-assignment
-        f = lambda i: i
+        def f(i):
+            return i
         good_f = partial(f, i)
         handlers.append(good_f)
     print([h() for h in handlers])

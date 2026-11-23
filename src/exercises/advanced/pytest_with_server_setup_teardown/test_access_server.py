@@ -6,7 +6,7 @@ import subprocess
 import time
 
 # pylint: disable=relative-beyond-top-level
-from our_code import our_function_to_test  # type: ignore
+from our_code import our_function_to_test
 
 
 class TestSomething:

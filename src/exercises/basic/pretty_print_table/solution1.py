@@ -19,7 +19,7 @@ def main():
 
     # A better way to write it would be: zip(*columns)
     # but you probably havent seen that syntax yet.
-    for row in zip(columns[0], columns[1], columns[2]):
+    for row in zip(columns[0], columns[1], columns[2], strict=False):
         line = "|"
         for text in row:
             line += text.ljust(10) + "|"

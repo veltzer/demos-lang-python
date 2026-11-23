@@ -16,8 +16,8 @@ if len(sys.argv) != 2:
 filename = sys.argv[1]
 words = {}
 with open(filename) as f:
-    for line in f:
-        line = line.rstrip()
+    for raw_line in f:
+        line = raw_line.rstrip()
         for word in line.split(" "):
             if word not in words:
                 words[word] = 0

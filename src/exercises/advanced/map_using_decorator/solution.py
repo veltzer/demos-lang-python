@@ -10,18 +10,15 @@ def add1(f):
     return inner
 
 
-def makeAList(f):
+def make_a_list(f):
     def inner(*args, **_kw):
         #    return [f(x) for x in args]
-        my_list = []
-        for x in args:
-            my_list.append(f(x))
-        return my_list
+        return [f(x) for x in args]
 
     return inner
 
 
-@makeAList
+@make_a_list
 def square(x):
     return x * x
 

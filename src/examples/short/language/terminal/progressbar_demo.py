@@ -12,7 +12,7 @@ import progressbar
 
 pbar = progressbar.ProgressBar(maxval=10)
 pbar.start()
-for i in range(10):
+for _i in range(10):
     # do something
     time.sleep(1)
     # pbar.update(i+1)

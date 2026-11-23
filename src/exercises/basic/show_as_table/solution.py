@@ -10,8 +10,8 @@ data = []
 #         line = line.rstrip()
 #         data.append(line.split(" "))
 
-for line in sys.stdin:
-    line = line.rstrip()
+for raw_line in sys.stdin:
+    line = raw_line.rstrip()
     data.append(line.split(" "))
 
 # print(data)

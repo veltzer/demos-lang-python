@@ -13,13 +13,13 @@ class Book:
     def __init__(self, price):
         self.__price = price
 
-    def getPrice(self):
+    def get_price(self):
         return self.__price
 
-    def setPrice(self, val):
+    def set_price(self, val):
         self.__price = val
 
-    price = property(getPrice, setPrice)
+    price = property(get_price, set_price)
 
     def print_via_prop(self):
         print("printMe: price is", self.price)
@@ -28,7 +28,7 @@ class Book:
         print("printMe: price is", self.__price)
 
     def print_via_get(self):
-        print("printMe: price is", self.getPrice())
+        print("printMe: price is", self.get_price())
 
 
 print("this is the type(Book.price)", type(Book.price))

@@ -40,6 +40,9 @@ class Date:
         """ Overloading operator==for dates """
         return self.year == other.year and self.month == other.month and self.day == other.day
 
+    def __hash__(self):
+        return hash((self.year, self.month, self.day))
+
     def __ne__(self, other):
         """ Overloading operator!=for dates """
         return not self == other

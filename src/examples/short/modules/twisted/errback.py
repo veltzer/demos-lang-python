@@ -34,7 +34,7 @@ def main():
     deferred.addCallback(my_callback)
     deferred.addErrback(my_errback)
     # pylint: disable=no-member
-    reactor.run()  # type: ignore
+    reactor.run()
 
 
 if __name__ == "__main__":

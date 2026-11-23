@@ -26,4 +26,4 @@ try:
 except (Exception, KeyboardInterrupt, SystemError) as e:
     print("unliking...")
     os.unlink(filename)
-    raise e  # noqa: TRY201
+    raise e

@@ -27,7 +27,7 @@ class Subject:
     """
 
     def do_the_job(self, user: str) -> None:
-        raise NotImplementedError()
+        raise NotImplementedError
 
 
 class RealSubject(Subject):

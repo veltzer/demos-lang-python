@@ -10,10 +10,7 @@ def rev_dict1(d):
     >>> rev_dict1({"a": 2, "b": 3})=={2: "a", 3: "b"}
     True
     """
-    rev_d = {}
-    for k, v in d.items():
-        rev_d[v] = k
-    return rev_d
+    return {v: k for k, v in d.items()}
 
 
 def rev_dict2(d):
@@ -22,7 +19,7 @@ def rev_dict2(d):
     True
     """
     # recall that zip(d.keys(), d.values())==d.items()
-    return dict(zip(d.values(), d.keys()))
+    return dict(zip(d.values(), d.keys(), strict=False))
 
 
 def rev_dict3(d):

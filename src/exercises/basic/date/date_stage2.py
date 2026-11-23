@@ -40,10 +40,9 @@ class Date:
             if day < 0 or day > days_in_months_leap_year[month - 1]:
                 print("Day must be between 1 and ", days_in_months[month - 1])
                 return
-        else:
-            if day < 0 or day > days_in_months[month - 1]:
-                print("Day must be between 1 and ", days_in_months[month - 1])
-                return
+        elif day < 0 or day > days_in_months[month - 1]:
+            print("Day must be between 1 and ", days_in_months[month - 1])
+            return
         self.day = day
         self.month = month
         self.year = year
@@ -67,6 +66,9 @@ class Date:
     def __eq__(self, other):
         """ Overloading operator==for dates """
         return self.year == other.year and self.month == other.month and self.day == other.day
+
+    def __hash__(self):
+        return hash((self.year, self.month, self.day))
 
     def __ne__(self, other):
         """ Overloading operator!=for dates """

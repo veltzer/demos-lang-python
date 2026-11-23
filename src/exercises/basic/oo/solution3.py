@@ -42,8 +42,8 @@ def main():
     id_to_person = {}
     with open("people.csv") as stream:
         next(stream)  # skip the first line
-        for line in stream:
-            line = line.rstrip()  # remove the newline at the end
+        for raw_line in stream:
+            line = raw_line.rstrip()  # remove the newline at the end
             values = line.split(",")
             p = Person(*values)
             id_to_person[p.socialid] = p
@@ -54,8 +54,8 @@ def main():
     license_to_car = {}
     with open("cars.csv") as stream:
         next(stream)  # skip the first line
-        for line in stream:
-            line = line.rstrip()  # remove the newline at the end
+        for raw_line in stream:
+            line = raw_line.rstrip()  # remove the newline at the end
             values = line.split(",")
             c = Car(values[0], values[1], values[3])
             license_to_car[c.licenseid] = c

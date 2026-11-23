@@ -14,16 +14,15 @@ import requests
 def get_http_status_string(code: int):
     """
     This function returns a description of an HTTP status code (404 - not found etc).
-    Unfortunately, the requests module does not provide a clean API for this so
-    we must access a protected member (underscore member) of "requests.status_code".
+    The requests module has no direct API for this so we look the code up
+    in the public "requests.codes" table.
     See:
     https://stackoverflow.com/questions/24718557/get-the-description-of-a-status-code-in-python-requests
     :param code:
     :return:
     """
-    # noinspection PyProtectedMember,PyUnresolvedReferences
-    # pylint: disable=protected-access
-    return f"http code [{code}], [{requests.status_codes._codes[code][0]}]"  # type: ignore
+    name = next(n for n, c in vars(requests.codes).items() if c == code)
+    return f"http code [{code}], [{name}]"
 
 
 url = "http://google.com"

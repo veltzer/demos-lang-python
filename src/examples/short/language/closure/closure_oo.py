@@ -2,7 +2,7 @@
 This is an example of how to use the closure feature to do some
 oo work.
 Notice:
-- We treat the "Person" function as a constructor.
+- We treat the "person" function as a constructor.
 - We call it with a capital first letter.
 - We pass arguments to it needed to create the instance.
 - In order to have lots of data in the closure we simply
@@ -17,42 +17,41 @@ position in some returned tuple.
 
 
 # noinspection PyPep8Naming
-def Person(initial_name, initial_age):
+def person(initial_name, initial_age):
     data = {
         "name": initial_name,
         "age": initial_age,
     }
 
-    def setName(name):
+    def set_name(name):
         data["name"] = name
 
-    def getName():
+    def get_name():
         return data["name"]
 
-    def setAge(age):
+    def set_age(age):
         data["age"] = age
 
-    def getAge():
+    def get_age():
         return data["age"]
 
-    def printMe():
+    def print_me():
         print("name", data["name"])
         print("age", data["age"])
 
-    methods = {
-        "setName": setName,
-        "getName": getName,
-        "setAge": setAge,
-        "getAge": getAge,
-        "printMe": printMe,
+    return {
+        "set_name": set_name,
+        "get_name": get_name,
+        "set_age": set_age,
+        "get_age": get_age,
+        "print_me": print_me,
     }
-    return methods
 
 
-p1 = Person("Bilbo", 111)
-p1["setName"]("Sam")
-p1["printMe"]()
-p2 = Person("Frodo", 33)
-p2["setName"]("Mary")
-p2["printMe"]()
-p1["printMe"]()
+p1 = person("Bilbo", 111)
+p1["set_name"]("Sam")
+p1["print_me"]()
+p2 = person("Frodo", 33)
+p2["set_name"]("Mary")
+p2["print_me"]()
+p1["print_me"]()

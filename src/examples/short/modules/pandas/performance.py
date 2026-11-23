@@ -40,23 +40,19 @@ random_strings: list[str] = []
 
 
 def create_random_strings():
-    # pylint: disable=global-statement
-    global random_strings
-    random_strings = list(str(i) for i in range(1000000, 1000000 + large_table_size))  # noqa: C400
+    random_strings[:] = [str(i) for i in range(1000000, 1000000 + large_table_size)]
 
 
-df = None
+tables: dict[str, DataFrame] = {}
 
 
 def create_string_table():
-    # pylint: disable=global-statement
-    global df
     columns = [
         "A",
         "B",
         "C",
     ]
-    df = DataFrame("", index=random_strings, columns=columns)
+    tables["df"] = DataFrame("", index=random_strings, columns=columns)
 
 
 def create_set_from_strings():
@@ -86,13 +82,12 @@ input("press any key...")
 def more_stuff():
     size = 15000000
     random_words = list(map(lambda _: random_word(10), range(size)))  # noqa: C417
+    df = tables["df"]
     print("after creation")
     print(type(random_words))
     print(len(random_words))
     print_data(df)  # pyrefly: ignore[bad-argument-type]
-    for _ in range(size):
-        df.set_value()  # pyrefly: ignore[missing-attribute]
-    df.set_value(0, "A", "mark")  # pyrefly: ignore[missing-attribute]
-    df.set_value(0, "B", "veltzer")  # pyrefly: ignore[missing-attribute]
+    df.iloc[0, 0] = "mark"
+    df.iloc[0, 1] = "veltzer"
 
-    print(df.get_values())  # pyrefly: ignore[missing-attribute]
+    print(df.to_numpy())

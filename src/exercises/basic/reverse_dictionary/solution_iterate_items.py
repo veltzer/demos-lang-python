@@ -11,7 +11,5 @@ orig = {
     "Egypt": "Cairo",
 }
 
-rev = {}
-for k, v in orig.items():
-    rev[v] = k
+rev = {v: k for k, v in orig.items()}
 print(rev)

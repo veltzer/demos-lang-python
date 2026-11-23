@@ -6,10 +6,7 @@ relevant unary function on the single argument
 
 
 def map_like(func_list, arg):
-    result = []
-    for func in func_list:
-        result.append(func(arg))
-    return result
+    return [func(arg) for func in func_list]
 
 
 def square(x):

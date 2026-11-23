@@ -11,7 +11,7 @@ import inspect
 import sys
 
 
-class NoTraceBackWithLineNumber(Exception):
+class NoTraceBackWithLineNumberError(Exception):
     def __init__(self, msg):
         super().__init__()
         try:
@@ -22,7 +22,7 @@ class NoTraceBackWithLineNumber(Exception):
         sys.exit(self)  # pyrefly: ignore[bad-argument-type]
 
 
-class MyNewError(NoTraceBackWithLineNumber):
+class MyNewError(NoTraceBackWithLineNumberError):
     pass
 
 

@@ -9,10 +9,7 @@ and performs much better.
 
 
 def my_map(f, seq):
-    y = []
-    for x in seq:
-        y.append(f(x))
-    return y
+    return [f(x) for x in seq]
 
 
 print(my_map(lambda x: x * x, range(10)))

@@ -14,10 +14,7 @@ def apply_funcs1(funcs, x):
     >>> apply_funcs1([lambda x:x**2, lambda x:x+1], 3)
     [9, 4]
     """
-    results = []
-    for f in funcs:
-        results.append(f(x))
-    return results
+    return [f(x) for f in funcs]
 
 
 def apply_funcs2(funcs, x):

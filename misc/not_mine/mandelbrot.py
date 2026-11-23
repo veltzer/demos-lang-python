@@ -1,21 +1,45 @@
-_                                      =   (
-                                        255,
-                                      lambda
-                               V       ,B,c
-                             :c   and Y(V*V+B,B,  c
-                               -1)if(abs(V)<6)else
-               (              2+c-4*abs(V)**-0.4)/i
-                 )  ;v,      x=1500,1000;C=range(v*x
-                  );import  struct;P=struct.pack;M,\
-            j  ='<QIIHHHH',open('M.bmp','wb').write
-for X in j('BM'+P(M,v*x*3+26,26,12,v,x,1,24))or C:
-            i  ,Y=_;j(P('BBB',*(lambda T:(T*80+T**9
-                  *i-950*T  **99,T*70-880*T**18+701*
-                 T  **9     ,T*i**(1-T**45*2)))(sum(
-               [              Y(0,(A%3/3.+X%v+(X/v+
-                               A/3/3.-x/2)/1j)*2.5
-                             /x   -2.7,i)**2 for  \
-                               A       in C
-                                      [:9]])
-                                        /9)
-                                       )   )
+"""
+Writes a Mandelbrot set picture to M.bmp.
+
+This is a readable rewrite of a well known obfuscated one-liner Mandelbrot generator.
+"""
+
+import struct
+
+MAX_ITERATIONS = 255
+WIDTH = 1500
+HEIGHT = 1000
+
+
+def escape_value(z, c, iterations_left):
+    """Iterate z -> z*z + c and return a value in [0, 1) saying how fast z escapes."""
+    if abs(z) < 6:
+        if iterations_left == 0:
+            return 0
+        return escape_value(z * z + c, c, iterations_left - 1)
+    return (2 + iterations_left - 4 * abs(z) ** -0.4) / MAX_ITERATIONS
+
+
+def color(value):
+    """Map an escape value to a (blue, green, red) tuple of bytes."""
+    values = (
+        value * 80 + value**9 * MAX_ITERATIONS - 950 * value**99,
+        value * 70 - 880 * value**18 + 701 * value**9,
+        value * MAX_ITERATIONS ** (1 - value**45 * 2),
+    )
+    return tuple(max(0, min(255, int(v))) for v in values)
+
+
+def main():
+    with open("M.bmp", "wb") as bmp:
+        bmp.write(b"BM" + struct.pack("<QIIHHHH", WIDTH * HEIGHT * 3 + 26, 26, 12, WIDTH, HEIGHT, 1, 24))
+        for pixel in range(WIDTH * HEIGHT):
+            # average 9 sub pixel samples (3x3 anti aliasing)
+            total = 0
+            for sample in range(9):
+                point = (sample % 3 / 3.0 + pixel % WIDTH + (pixel / WIDTH + sample / 3 / 3.0 - HEIGHT / 2) * 1j) * 2.5 / HEIGHT - 2.7
+                total += escape_value(0, point, MAX_ITERATIONS) ** 2
+            bmp.write(struct.pack("BBB", *color(total / 9)))
+
+
+main()

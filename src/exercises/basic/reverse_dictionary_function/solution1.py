@@ -10,10 +10,7 @@ def rev_dict(d):
     >>> rev_dict({"Israel":"Jerusalem","France":"Paris","Italy":"Rome","Egypt":"Cairo"})
     {"Jerusalem": "Israel", "Paris": "France", "Rome": "Italy", "Cairo": "Egypt"}
     """
-    rev_d = {}
-    for k, v in d.items():
-        rev_d[v] = k
-    return rev_d
+    return {v: k for k, v in d.items()}
 
 
 doctest.testmod()

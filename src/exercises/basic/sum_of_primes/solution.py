@@ -6,10 +6,7 @@ import math
 
 
 def is_prime(n):
-    for j in range(2, int(math.sqrt(n)) + 1):
-        if n % j == 0:
-            return False
-    return True
+    return all(n % j != 0 for j in range(2, int(math.sqrt(n)) + 1))
 
 
 my_sum = 0

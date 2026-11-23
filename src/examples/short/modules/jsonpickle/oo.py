@@ -16,6 +16,9 @@ class Person:
     def __eq__(self, other):
         return self.name == other.name and self.age == other.age
 
+    def __hash__(self):
+        return hash((self.name, self.age))
+
 
 # Create an instance of the class
 o1 = Person("John", 30)

@@ -22,7 +22,7 @@ places: dict[str, dict[str, str]] = {
 # Only checking reachability:
 
 reachable = {"Rivendell"}
-for i in range(7):
+for _i in range(7):
     for place in reachable:
         reachable.update(places[place].values())
 
@@ -37,6 +37,6 @@ for _ in range(7):
             # If we already knew a way to place2, the new way must be longer.
             # So only set ways to places that were previously unreachable.
             if place2 not in way_to:
-                way_to[place2] = way_to_place + [action]
+                way_to[place2] = [*way_to_place, action]
 
 print(way_to["Mordor"])

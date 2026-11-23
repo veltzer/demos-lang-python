@@ -9,10 +9,7 @@ def iterate_it(filename):
 
 
 def iter_through_files(filenames: list[str]):
-    filename_list = []
-    for filename in filenames:
-        filename_list.append(iterate_it(filename))
-    return filename_list
+    return [iterate_it(filename) for filename in filenames]
 
 
 def main():

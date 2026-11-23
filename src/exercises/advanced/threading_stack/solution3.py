@@ -61,9 +61,7 @@ class ProduceOrConsume(Thread):
 
 def main():
     stack = Stack()
-    threads = []
-    for i in range(6):
-        threads.append(ProduceOrConsume(stack, i % 2 == 0, i))
+    threads = [ProduceOrConsume(stack, i % 2 == 0, i) for i in range(6)]
     for thread in threads:
         thread.start()
     for thread in threads:

@@ -8,12 +8,12 @@ class VisitInterface:
     pure interface to the visit method
     """
     def visit(self):
-        raise NotImplementedError()
+        raise NotImplementedError
 
 
 class Node(VisitInterface):
     def visit(self):
-        raise NotImplementedError()
+        raise NotImplementedError
 
 
 class A(Node):

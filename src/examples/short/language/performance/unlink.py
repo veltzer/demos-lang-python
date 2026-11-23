@@ -5,6 +5,7 @@ paradigm or rather via the os.path.isfile paradigm.
 it proves that maintaining a cache in user space is the best approach.
 """
 
+import contextlib
 import os.path
 import time
 
@@ -12,10 +13,8 @@ count = 1000000
 time_before = time.time()
 for i in range(count):
     filename = "unknown" + str(i % 1000) + ".nosuchending"
-    try:
+    with contextlib.suppress(OSError):
         os.unlink(filename)
-    except OSError:
-        pass
 time_after = time.time()
 print(f"time taken for {count} os.unlinks+exception handling: {time_after - time_before:.3f} seconds")
 
@@ -37,11 +36,10 @@ for i in range(count):
             files[filename] = False
         else:
             files[filename] = False
+    elif files[filename]:
+        os.unlink(filename)
+        files[filename] = False
     else:
-        if files[filename]:
-            os.unlink(filename)
-            files[filename] = False
-        else:
-            pass
+        pass
 time_after = time.time()
 print(f"time taken for {count} cached unlink ops: {time_after - time_before:.3f} seconds")

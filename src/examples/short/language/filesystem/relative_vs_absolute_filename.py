@@ -6,9 +6,9 @@ that you get is realtive or absolute
 import os.path
 import sys
 
-for line in sys.stdin:
+for raw_line in sys.stdin:
     # remove white space
-    line = line.rstrip()
+    line = raw_line.rstrip()
     if os.path.isabs(line):
         print("absolute")
     else:

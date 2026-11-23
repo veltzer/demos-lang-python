@@ -7,9 +7,7 @@ Conclusions:
 iteration.
 """
 
-d = {}
-for i in range(10):
-    d[i] = i
+d = {i: i for i in range(10)}
 
 # if the dictionary changes size during iteration you get a RuntimeError
 # you get the exception as soon as you use the iterator after modifying

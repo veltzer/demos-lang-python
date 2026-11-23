@@ -39,9 +39,7 @@ print(f"time taken for single thread: {time_after - time_before:.3f} seconds")
 
 # now two threads
 time_before = time.time()
-threads = []
-for _ in range(number_of_threads):
-    threads.append(threading.Thread(target=count, args=(limit,)))
+threads = [threading.Thread(target=count, args=(limit,)) for _ in range(number_of_threads)]
 for t in threads:
     t.start()
 for t in threads:

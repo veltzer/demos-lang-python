@@ -14,7 +14,7 @@ d = dbm.gnu.open(filename)  # noqa: SIM115
 
 # lets try iterating with .items()
 try:
-    for _k, _v in d.items():  # type: ignore
+    for _k, _v in d.items():  # pyrefly: ignore[missing-attribute]  teaching: a gdbm handle has no items()
         pass
 except AttributeError:
     print("nope, you cannot use items on a gdbm handle")

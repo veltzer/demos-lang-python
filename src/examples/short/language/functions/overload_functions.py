@@ -9,7 +9,7 @@ Functions also share the same namespace with regular variables. So,
 in this example,defining a variable named "foo" would override the
 function so that it cannot be used.
 """
-# type: ignore
+
 
 
 def demo_foo():

@@ -28,7 +28,7 @@ class A:
     # wrong! dont do this...
     # noinspection PyMethodParameters
     # pylint: disable=no-method-argument
-    def __init__():  # type: ignore
+    def __init__():  # pyrefly: ignore[bad-function-definition]  teaching: __init__ without self is wrong
         print("in A constructor")
 
 

@@ -25,7 +25,7 @@ class A(abc.ABC):
         pass
 
 
-class B(metaclass=abc.ABCMeta):
+class B(metaclass=abc.ABCMeta):  # noqa: B024  teaching: an ABC without abstract methods can be instantiated
     pass
 
 
@@ -44,7 +44,7 @@ class D(C):
 
 try:
     # pylint: disable=abstract-class-instantiated
-    a = A()  # type: ignore
+    a = A()  # pyrefly: ignore[bad-instantiation]  teaching: abstract classes cannot be instantiated
     assert isinstance(a, A)
 except TypeError as e:
     print(f"yes, got exception [{e!s}]...")
@@ -54,8 +54,8 @@ assert isinstance(b, B)
 
 try:
     # pylint: disable=abstract-class-instantiated
-    c = C()  # type: ignore
-    assert issubclass(c, C)  # type: ignore
+    c = C()  # pyrefly: ignore[bad-instantiation]  teaching: abstract classes cannot be instantiated
+    assert isinstance(c, C)
 except TypeError as e:
     print(f"yes, got exception [{e!s}]...")
 

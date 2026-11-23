@@ -6,7 +6,7 @@ import unittest
 
 
 class MyUnitTest(unittest.TestCase):
-    def testThis(self):
+    def test_this(self):
         current_sum = 0
         for x in range(100):
             current_sum += x

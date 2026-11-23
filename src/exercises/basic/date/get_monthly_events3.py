@@ -6,7 +6,7 @@ get_monthly_events3
 import sys
 from time import localtime
 
-from date3 import Calendar, Date  # type: ignore
+from date3 import Calendar, Date
 
 filename = sys.argv[0]
 c = Calendar()

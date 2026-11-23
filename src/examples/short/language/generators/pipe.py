@@ -18,9 +18,7 @@ def square_it(input_generator):
 
 
 def main():
-    result = []
-    for x in square_it(list_input):
-        result.append(x + 1)
+    result = [x + 1 for x in square_it(list_input)]
     print(result)
 
 

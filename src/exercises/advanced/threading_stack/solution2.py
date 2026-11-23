@@ -39,7 +39,7 @@ class ProduceOrConsume(Thread):
 
     def run(self):
         if self.consume:
-            for i in range(number_of_elements):
+            for _ in range(number_of_elements):
                 number = self.stack.pop()
                 while number is None:
                     number = self.stack.pop()
@@ -52,9 +52,7 @@ class ProduceOrConsume(Thread):
 
 def main():
     stack = Stack()
-    threads = []
-    for i in range(6):
-        threads.append(ProduceOrConsume(stack, i % 2 == 0, i))
+    threads = [ProduceOrConsume(stack, i % 2 == 0, i) for i in range(6)]
     for thread in threads:
         thread.start()
     for thread in threads:

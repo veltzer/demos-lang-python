@@ -19,8 +19,8 @@ import subprocess
 output = subprocess.check_output(["exiftool", "-list"], shell=False)
 lines = output.decode("ascii").splitlines()
 tags_all = set()
-for line in lines:
-    line = line.rstrip()
+for raw_line in lines:
+    line = raw_line.rstrip()
     if line == "Available tags:":
         continue
     if line == "Command-line shortcuts:":
@@ -36,14 +36,14 @@ with open("data/exif/tags_all.txt", "w") as stream:
 output = subprocess.check_output(["exiftool", "data/exif/image_stripped_by_exiftool.jpg"], shell=False)
 lines = output.decode("ascii").splitlines()
 tags_non_exif = set()
-for line in lines:
-    line = line.rstrip()
+for raw_line in lines:
+    line = raw_line.rstrip()
     current_tag = line.split(":")[0].rstrip()
     tags_non_exif.add(current_tag)
 output = subprocess.check_output(["exiftool", "data/exif/video_stripped_by_exiftool.mp4"], shell=False)
 lines = output.decode("ascii").splitlines()
-for line in lines:
-    line = line.rstrip()
+for raw_line in lines:
+    line = raw_line.rstrip()
     current_tag = line.split(":")[0].rstrip()
     tags_non_exif.add(current_tag)
 print(f"I got [{len(tags_non_exif)}] tags_non_exif")

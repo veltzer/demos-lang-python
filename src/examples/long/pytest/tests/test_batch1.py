@@ -1,6 +1,6 @@
 """ test_batch1.py """
 
-import tests.mod  # type: ignore
+import tests.mod
 
 
 def test_batch1_test1():

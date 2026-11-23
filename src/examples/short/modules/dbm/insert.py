@@ -29,12 +29,12 @@ d[""] = "emptystring"
 d["emptystring"] = ""
 try:
     # noinspection PyTypeChecker
-    d["three"] = None  # type: ignore
+    d["three"] = None  # pyrefly: ignore[unsupported-operation]  teaching: None is not a valid gdbm key or value
 except TypeError:
     print("yes, got exception when trying to put None as value")
 try:
     # noinspection PyTypeChecker
-    d[None] = "four"  # type: ignore
+    d[None] = "four"  # pyrefly: ignore[unsupported-operation]  teaching: None is not a valid gdbm key or value
 except TypeError:
     print("yes, got exception when trying to put string as key")
 d["five"] = b"five"

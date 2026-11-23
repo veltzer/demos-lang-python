@@ -34,14 +34,14 @@ ref_to_method()
 
 # this ref is also bound and so can be called
 ref_to_method_2: Callable[[type[Book]], Any] = Book.ref_full  # type: ignore[assignment]  # pyrefly: ignore[bad-assignment]
-ref_to_method_2()  # type: ignore
+ref_to_method_2()  # pyrefly: ignore[bad-argument-count]  teaching: an unbound class method needs its class argument
 
 # this ref is an unbloud method, and so cannot be called
 ref_to_method_3: Callable[[type[Book]], Any] = Book.ref[0]
 try:
-    ref_to_method_3()  # type: ignore
+    ref_to_method_3()  # pyrefly: ignore[bad-argument-count]  teaching: an unbound class method needs its class argument
 except TypeError as e:
     print(e)
 # this is how we bind the method back to the class
 # pylint: disable=not-callable
-MethodType(ref_to_method_3.__func__, Book)()  # type: ignore
+MethodType(ref_to_method_3.__func__, Book)()  # pyrefly: ignore[missing-attribute]  teaching: __func__ is how the method is bound back

@@ -2,7 +2,6 @@
 
 import sys
 
-
 print(f"hello from [{__file__}]")
 my_global = 42
 

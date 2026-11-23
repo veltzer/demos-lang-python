@@ -15,7 +15,7 @@ input_filename = sys.argv[1]
 presentation = Presentation(input_filename)
 slides = presentation.slides
 refs = set()
-for slide_number, slide in enumerate(islice(slides, None)):
+for _slide_number, slide in enumerate(islice(slides, None)):
     for v in slide.part.rels.values():
         target: str = v.target_ref
         if target.startswith(".."):

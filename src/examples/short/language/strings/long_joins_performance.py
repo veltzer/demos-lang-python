@@ -24,9 +24,7 @@ def func2():
 
 function_names[func2] = "join"
 
-names = []
-for i in range(1000000):
-    names.append("name" + str(i))
+names = ["name" + str(i) for i in range(1000000)]
 
 functions = [
     func1,

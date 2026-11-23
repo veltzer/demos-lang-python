@@ -23,9 +23,7 @@ def sleep_a_little(num):
 
 
 with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
-    results = []
-    for i in range(10):
-        results.append(pool.apply_async(sleep_a_little, [i]))
+    results = [pool.apply_async(sleep_a_little, [i]) for i in range(10)]
     pool.join()
 for i, result in enumerate(results):
     try:

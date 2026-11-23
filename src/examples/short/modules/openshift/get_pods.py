@@ -9,12 +9,11 @@ import openshift.dynamic
 
 
 def get_project():
-    project = subprocess.check_output([
+    return subprocess.check_output([
         "oc",
         "project",
         "-q",
     ]).decode().rstrip()
-    return project
 
 
 def main():

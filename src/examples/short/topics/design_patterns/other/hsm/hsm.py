@@ -86,9 +86,9 @@ class HierachicalStateMachine:
 
 
 class Unit(HierachicalStateMachine):
-    def __init__(self, hierachicalStateMachine):
+    def __init__(self, hierachical_state_machine):
         super().__init__()
-        self.hsm = hierachicalStateMachine
+        self.hsm = hierachical_state_machine
 
     def on_switchover(self):
         raise UnsupportedTransition

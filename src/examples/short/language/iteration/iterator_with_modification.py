@@ -80,10 +80,10 @@ if len(elements_visited3) != len(my_list):
 print("example number 4: adding elements to a dictionary while iterating it")
 try:
     d = {"one": "ehad", "two": "shnaim", "three": "shalosh"}
-    all_elements4 = set(d.keys())  # type: ignore
+    all_elements4 = set(d.keys())
     elements_visited4 = set()
     i = 0
-    for k, v in d.items():  # noqa: PERF102
+    for k in d:
         if i == 1:
             d["four"] = "arba"
         elements_visited4.add(k)
@@ -97,7 +97,7 @@ try:
     all_elements5 = set(d.keys())
     elements_visited5 = set()
     i = 0
-    for k, v in d.items():  # noqa: PERF102
+    for k in d:
         if i == 1:
             del d["one"]
         elements_visited5.add(k)
@@ -114,7 +114,7 @@ d = {"one": "ehad", "two": "shnaim", "three": "shalosh"}
 all_elements6 = set(d.keys())
 elements_visited6 = set()
 i = 0
-for k, v in d.items():  # noqa: PERF102
+for k in d:
     if i == 1:
         d["four"] = "arba"
         d["five"] = "hamesh"

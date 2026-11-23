@@ -17,7 +17,7 @@ y = list(generate_items())
 print(y)
 
 # pylint: disable=unnecessary-comprehension
-z = [x for x in generate_items()]
+z = list(generate_items())
 print(z)
 
 # wrong examples

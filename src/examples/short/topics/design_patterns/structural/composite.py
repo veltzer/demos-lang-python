@@ -7,7 +7,7 @@ part-whole hierarchies. Implementing the composite pattern lets clients
 treat individual objects and compositions uniformly.
 
 *What does this example do?
-The example implements a graphic class，which can be either an ellipse
+The example implements a graphic class,which can be either an ellipse
 or a composition of several graphics. Every graphic can be printed.
 
 *Where is the pattern used practically?

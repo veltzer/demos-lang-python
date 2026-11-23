@@ -6,10 +6,7 @@ in C and is a lot faster than this one...
 
 
 def my_map(func, val_list):
-    result = []
-    for value in val_list:
-        result.append(func(value))
-    return result
+    return [func(value) for value in val_list]
 
 
 def square(x):

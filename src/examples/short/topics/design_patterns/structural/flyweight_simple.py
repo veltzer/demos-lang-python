@@ -19,21 +19,21 @@ class Button:
         # look! nothing in init...
         pass
 
-    def printMe(self):
+    def print_me(self):
         print(f"text {self.text}")
         print(f"color {self.color}")
         print(f"weight {self.weight}")
 
-    def setText(self, text):
+    def set_text(self, text):
         self.text = text
 
-    def setColor(self, color):
+    def set_color(self, color):
         self.color = color
 
-    def setWeight(self, weight):
+    def set_weight(self, weight):
         self.weight = weight
 
-    def getColor(self):
+    def get_color(self):
         return self.color
         # if "color" in self.__dict__:
         #     return self.color
@@ -50,8 +50,8 @@ if __name__ == "__main__":
     b1.text = "b1 text"
     b1.color = "red"
     b1.weight = 4
-    b1.printMe()
+    b1.print_me()
     b2 = Button()
-    b2.printMe()
+    b2.print_me()
     b2.text = "b2 text"
-    b2.printMe()
+    b2.print_me()

@@ -49,7 +49,7 @@ print(d8)
 d9 = dict(list_of_tuples)
 print(d9)
 # use zip to construct a dictionary from anything iterable as keys and anything iterable as values
-d10 = dict(zip(list_of_keys, range(3)))
+d10 = dict(zip(list_of_keys, range(3), strict=False))
 print(d10)
 # use enumerate to create a dictionary with the indexes as keys for something iterable
 # there is a type problem here and that"s why we override pycharm"s type checking

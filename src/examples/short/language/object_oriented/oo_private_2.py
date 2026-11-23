@@ -14,25 +14,25 @@ class Book:
         self.__price = price
         self._name = name
 
-    def printMe(self):
+    def print_me(self):
         print("price is", self.__price)
         print("name is", self._name)
 
-    def setPrice(self, price):
+    def set_price(self, price):
         self.__price = price
 
-    def getPrice(self):
+    def get_price(self):
         return self.__price
 
-    def setName(self, name):
+    def set_name(self, name):
         self._name = name
 
-    def getName(self):
+    def get_name(self):
         return self._name
 
 
 b = Book(50, "Lord of the Rings")
-b.printMe()
+b.print_me()
 # lets try to change the __price attribute directly...
 # Notice that we get an exception not because the attribute is "private"
 # but rather because such an attribute really DOES NOT exist...
@@ -46,7 +46,7 @@ except AttributeError:
 print("if you see hobbit below it means we changed the attribute even though it has _ in front of it")
 # pylint: disable=protected-access
 b._name = "hobbit"
-b.printMe()
+b.print_me()
 
 # Now lets see what the object really has...
 print(dir(b))
@@ -55,5 +55,5 @@ print(dir(b))
 # that... YES WE CAN...
 print("if you see price=70 it means we changed the attribute even though it has __ in front of it")
 # pylint: disable=attribute-defined-outside-init
-b._Book__price = 70  # type: ignore
-b.printMe()
+b._Book__price = 70  # pyrefly: ignore[missing-attribute]  teaching: name mangling is not security
+b.print_me()

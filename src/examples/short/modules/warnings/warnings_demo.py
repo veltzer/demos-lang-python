@@ -17,7 +17,7 @@ def fxn():
     print("in the function")
     # warnings.warn("deprecated", DeprecationWarning)
     # warnings.warn("this is a warning", Warning)
-    warnings.warn("this is a problem")
+    warnings.warn("this is a problem", stacklevel=2)
 
 
 # with warnings.catch_warnings():

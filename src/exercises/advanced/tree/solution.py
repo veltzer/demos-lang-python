@@ -11,10 +11,7 @@ def print_tree(fullpath: str, filename: str, print_str_under="", print_str_conti
         print(f"{print_str_under}{filename}")
         files = list(os.listdir(fullpath))
         for i, f in enumerate(files):
-            if i == len(files) - 1:
-                cont = "└──"
-            else:
-                cont = "├──"
+            cont = "└──" if i == len(files) - 1 else "├──"
             flow_cont = "│  "
             print_tree(os.path.join(fullpath, f), f, print_str_continue + cont, print_str_continue + flow_cont)
     if os.path.isfile(fullpath):

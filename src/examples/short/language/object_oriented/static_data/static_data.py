@@ -14,7 +14,7 @@ counter = 0
 
 def give_me_a_unique_value():
     # pylint: disable=global-statement
-    global counter
+    global counter  # noqa: PLW0603  teaching: the simple global variable way of keeping state
     counter += 1
     return counter
 
@@ -47,11 +47,11 @@ print(g())
 
 
 def give_me_a_unique_value2():
-    give_me_a_unique_value2.counter += 1  # pyrefly: ignore[missing-attribute]
-    return give_me_a_unique_value2.counter  # pyrefly: ignore[missing-attribute]
+    give_me_a_unique_value2.counter += 1  # pyrefly: ignore[missing-attribute]  teaching: function attribute as static data
+    return give_me_a_unique_value2.counter  # pyrefly: ignore[missing-attribute]  teaching: function attribute as static data
 
 
-give_me_a_unique_value2.counter = 0  # type: ignore
+give_me_a_unique_value2.counter = 0  # pyrefly: ignore[missing-attribute]  teaching: function attribute as static data
 print(give_me_a_unique_value2())
 print(give_me_a_unique_value2())
 print(give_me_a_unique_value2())
