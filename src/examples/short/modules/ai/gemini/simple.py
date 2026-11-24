@@ -9,7 +9,7 @@ import google.genai
 import passpy
 
 store = passpy.Store()
-api_key = store.get_key("keys/ai.google.dev")
+api_key = store.get_key("gcp/gen-lang-client-0554486917/api-key")
 assert api_key is not None
 api_key = api_key.rstrip()
 
