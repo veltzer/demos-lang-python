@@ -123,6 +123,11 @@ src_dirs = ["src/examples/long"]
 
 [analyzer.tera]
 
+# run the tests of the examples with pytest (policy: [tool.pytest.ini_options])
+[processor.checker.pytest]
+src_dirs = ["src/examples/long/pytest/tests"]
+src_files = ["src/examples/short/modules/enum/test_membership.py", "src/exercises/advanced/pytest_with_server_setup_teardown/test_access_server.py"]
+
 # lint the TOML files of the repo with taplo
 [processor.checker.taplo]
 src_files = [".ruff.toml", ".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]

@@ -164,6 +164,19 @@ dev = [
 [tool.uv]
 package = false
 
+[tool.pytest.ini_options]
+# Every strictness check pytest has (strict_config, strict_markers,
+# strict_xfail, strict_parametrization_ids), and every warning fails the
+# test that raised it rather than scrolling past in the summary.
+strict = true
+filterwarnings = ["error"]
+# each example is a project of its own: its directory is its import root
+pythonpath = [
+    "src/examples/long/pytest",
+    "src/examples/short/modules/enum",
+    "src/exercises/advanced/pytest_with_server_setup_teardown",
+]
+
 [tool.pyrefly]
 # Directories whose scripts import sibling modules (the demos run from their own
 # directory), so pyrefly resolves those imports the way Python does at runtime.
