@@ -3,8 +3,8 @@ revision = 5
 requires-python = ">=3.14"
 resolution-markers = [
     "python_full_version >= '3.15' and sys_platform == 'win32'",
-    "python_full_version < '3.15' and sys_platform == 'win32'",
     "python_full_version >= '3.15' and sys_platform != 'win32'",
+    "python_full_version < '3.15' and sys_platform == 'win32'",
     "python_full_version < '3.15' and sys_platform != 'win32'",
 ]
 
@@ -4142,11 +4142,11 @@ wheels = [
 
 [[package]]
 name = "pyapikey"
-version = "0.0.13"
+version = "0.0.14"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/fa/08/b9db63065e1cd182e3da0f8c1d8900196bfefba9d87bbceaf3c29fafa6ec/pyapikey-0.0.13.tar.gz", hash = "sha256:7c35fb3471fb070129d0f854c55ab3a007d670b85eea131c91db647ad344691b", size = 3984, upload-time = "2025-08-30T03:53:21.755Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/56/03/48a2a49378b3ec00d6af93efc431228d3504da661075590f535944ae6dbc/pyapikey-0.0.14.tar.gz", hash = "sha256:f1900b34fbfa936487158fa941cd9e58e985191af894f6b9d897e9cec0db3e32", size = 5674, upload-time = "2026-11-26T17:04:18.025Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bc/6d/f5c35748d77a1a80a6ed502543f0eebe04067c80a9f7192ef32801db0c91/pyapikey-0.0.13-py3-none-any.whl", hash = "sha256:593b3fcd292a045971dd9962d9de01e55a4d99fc78e45fa71268958ca6c1a934", size = 3856, upload-time = "2025-08-30T03:53:20.76Z" },
+    { url = "https://files.pythonhosted.org/packages/72/d4/b7747b489f98f2a015f05076679b48a4a72d00fd27f6ba1f7ec7a5c76427/pyapikey-0.0.14-py3-none-any.whl", hash = "sha256:082a87de85218754102383736cfbf24eea916ef750681acb846c69112166e0be", size = 4099, upload-time = "2026-11-26T17:04:16.636Z" },
 ]
 
 [[package]]
@@ -4492,7 +4492,7 @@ wheels = [
 
 [[package]]
 name = "pygooglehelper"
-version = "0.0.11"
+version = "0.0.12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "google-api-python-client" },
@@ -4501,9 +4501,9 @@ dependencies = [
     { name = "google-auth-oauthlib" },
     { name = "pytconf" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3a/12/65e75efc22732be7a00bc391c4b9828a6c1fac0e5c280c2c60f54697dafb/pygooglehelper-0.0.11.tar.gz", hash = "sha256:cd1c21460deee7bfe3f2f3fdc545dba7cb4cd152d7643de3d7efe472b3a9de18", size = 9207, upload-time = "2026-11-24T09:23:45.98Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/82/43/c6e88894fad5f6446e6aac499b8ab7a23f53290e605fac6a9f425bfadb6f/pygooglehelper-0.0.12.tar.gz", hash = "sha256:33c35ab330bc19d24b44e7cf5bc1c7700d26d2eba84c0691f429c6be5d6307e6", size = 9228, upload-time = "2026-11-26T17:04:08.197Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/22/8c/6f2529f7ce2459d8c800fe0570c18bb00b2aad8d8eddff1eec8375639d5a/pygooglehelper-0.0.11-py3-none-any.whl", hash = "sha256:22be7765c78f10767b1c3c37858458de70e593e1d248160cfe246e97f312af6d", size = 8500, upload-time = "2026-11-24T09:23:44.861Z" },
+    { url = "https://files.pythonhosted.org/packages/af/92/a56f9f78f5cce7eff59c9463dd0fb59ea2c0de0835c67ef98d9552d8083c/pygooglehelper-0.0.12-py3-none-any.whl", hash = "sha256:b90985c04b3159dd3abc281ae65a0679921a799dabfe62ffce69e624de75bace", size = 8670, upload-time = "2026-11-26T17:04:07.03Z" },
 ]
 
 [[package]]
@@ -4534,16 +4534,16 @@ crypto = [
 
 [[package]]
 name = "pylogconf"
-version = "0.0.38"
+version = "0.0.39"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "logging-tree" },
     { name = "pyfakeuse" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2c/37/8ead85d08c8124f659ebf7ea3efe7a973a371f2aa9831299aaded8679b3a/pylogconf-0.0.38.tar.gz", hash = "sha256:75108ff8daee387213d441d7cde44fd50819c904a48ff060ccec2a79f3d2024b", size = 4964, upload-time = "2024-10-12T12:02:38.451Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a4/71/25ba4e0da7831f59f56833285b48a8d42c48c73063f56307db82c03228bc/pylogconf-0.0.39.tar.gz", hash = "sha256:1a5bde419b0a0cc56f6431ce7599287f02550a250df30896185e8e89edd4a39c", size = 7158, upload-time = "2026-11-26T17:04:03.43Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2c/59/f828383d74308ffa726e36b196067576ddd0412e5e67886800ec236e72f8/pylogconf-0.0.38-py3-none-any.whl", hash = "sha256:d55113b4ada574173a99f56ff54272e2d66558b5d3002319d1ae2ebd14ca8320", size = 5255, upload-time = "2024-10-12T12:02:37.47Z" },
+    { url = "https://files.pythonhosted.org/packages/f0/7f/16e0b78c4efc49fa11e42023ea924a1abd1aa4c3cd40c24efd5f0561183f/pylogconf-0.0.39-py3-none-any.whl", hash = "sha256:07d9838a9157a321b479247213785d14e937853e6442f10bf9f56bf22e2e686a", size = 5596, upload-time = "2026-11-26T17:04:02.191Z" },
 ]
 
 [[package]]
@@ -4885,11 +4885,11 @@ wheels = [
 
 [[package]]
 name = "pyvardump"
-version = "0.0.5"
+version = "0.0.6"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/2a/58/06ce7a00bb21558ee825163b59adfcac421375ed11bc59034eb9672a93a2/pyvardump-0.0.5.tar.gz", hash = "sha256:9a41797463b5359a211eae54d910886ce429ce455a109df15063db5059dccb82", size = 3213, upload-time = "2024-10-12T12:00:26.048Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/18/95/187647ee792bfc03ddcba22f7dcc9336725a8bebb1a240c2d1cb989b5f18/pyvardump-0.0.6.tar.gz", hash = "sha256:60d472872534ad2a0e5a3010b19a62c442f38b5ccdcef147317601216988b23b", size = 5635, upload-time = "2026-11-26T17:04:13.23Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cc/09/f37ee94faf576c8463b2953f7565c3e125bf398567b41cfb4ea83efbcc34/pyvardump-0.0.5-py3-none-any.whl", hash = "sha256:5b51cc0073e35511390521686230370273310a7331fad37fe5a67ca20f882f25", size = 3599, upload-time = "2024-10-12T12:00:24.418Z" },
+    { url = "https://files.pythonhosted.org/packages/73/b5/5dbecbf6127392390402dce2ae762fb6d5a27dc06e41904805cf93d52834/pyvardump-0.0.6-py3-none-any.whl", hash = "sha256:781d7a5367407698d582e2c58e86cf255fcd367c63fc8efa6ffb26712e1b6ea6", size = 4088, upload-time = "2026-11-26T17:04:11.849Z" },
 ]
 
 [[package]]
