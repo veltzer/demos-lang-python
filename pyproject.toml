@@ -61,7 +61,7 @@ dependencies = [
     "mpmath",
     "music",
     "mypy",
-    "mysql.connector",
+    "mysql-connector-python",
     "networkx",
     "numpy",
     "openai",
