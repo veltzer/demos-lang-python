@@ -65,7 +65,7 @@ class NotSpecification(CompositeSpecification):
 
 
 class User:
-    def __init__(self, super_user=False):
+    def __init__(self, *, super_user=False):
         self.super_user = super_user
 
 

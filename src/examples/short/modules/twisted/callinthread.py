@@ -20,8 +20,8 @@ def a_silly_blocking_method(t, stop):
 
 
 # run method in thread
-reactor.callInThread(a_silly_blocking_method, 10, True)
-reactor.callInThread(a_silly_blocking_method, 5, False)
+reactor.callInThread(a_silly_blocking_method, 10, stop=True)
+reactor.callInThread(a_silly_blocking_method, 5, stop=False)
 print("before suggestThreadPoolSize")
 reactor.suggestThreadPoolSize(2)
 time.sleep(10)

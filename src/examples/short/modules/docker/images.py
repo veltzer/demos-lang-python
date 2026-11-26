@@ -19,7 +19,7 @@ def format_created(timestamp):
     return humanize.naturaltime(dt)
 
 
-def list_images(show_all=False, quiet=False, digests=False):
+def list_images(*, show_all=False, quiet=False, digests=False):
     """List Docker images similarly to [docker images] command"""
     client = docker.from_env()
 

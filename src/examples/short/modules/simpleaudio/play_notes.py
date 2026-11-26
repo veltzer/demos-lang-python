@@ -12,7 +12,7 @@ sample_rate = 44100
 duration = 2  # in seconds
 
 # Generate a sine wave for the note
-t = np.linspace(0, duration, int(sample_rate * duration), False)
+t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
 note = np.sin(2.0 * np.pi * note_freq * t)
 audio_data = note.astype(np.int16)
 

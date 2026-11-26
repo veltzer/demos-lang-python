@@ -13,7 +13,7 @@ from itertools import chain
 import psutil
 
 
-def total_size(o, handlers=None, verbose=False):
+def total_size(o, handlers=None, *, verbose=False):
     """ Returns the approximate memory footprint an object and all of its contents.
 
     Automatically finds the contents of the following builtin containers and

@@ -15,7 +15,7 @@ class MyResource:
     enter_calls_counter = 0
     exit_calls_counter = 0
 
-    def __init__(self, suppress=False):
+    def __init__(self, *, suppress=False):
         """ this is the constructor (the thing we call at the "with") """
         self.suppress = suppress
 

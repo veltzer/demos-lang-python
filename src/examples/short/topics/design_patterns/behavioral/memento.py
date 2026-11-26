@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from collections.abc import Callable
 
 
-def memento(obj, deep=False):
+def memento(obj, *, deep=False):
     state = deepcopy(obj.__dict__) if deep else copy(obj.__dict__)
 
     def restore():
@@ -37,7 +37,7 @@ class Transaction:
         self.commit()
 
     def commit(self):
-        self.states = [memento(target, self.deep) for target in self.targets]
+        self.states = [memento(target, deep=self.deep) for target in self.targets]
 
     def rollback(self):
         for a_state in self.states:

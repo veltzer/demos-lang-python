@@ -36,7 +36,7 @@ def saver() -> None:
     print("[SAVE]")
 
 
-def template_function(getter, converter: Callable[[str], str] | None = None, to_save: bool = False) -> None:
+def template_function(getter, converter: Callable[[str], str] | None = None, *, to_save: bool = False) -> None:
     data = getter()
     print(f"Got {data!r}")
 

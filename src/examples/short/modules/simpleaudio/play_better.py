@@ -11,7 +11,7 @@ E_freq = A_freq * 2 ** (7 / 12)
 # get timesteps for each sample, T is note duration in seconds
 sample_rate = 44100
 T = 0.5
-t = np.linspace(0, T, int(T * sample_rate), False)
+t = np.linspace(0, T, int(T * sample_rate), endpoint=False)
 
 # generate sine wave tone
 tone = np.sin(440 * t * 2 * np.pi)

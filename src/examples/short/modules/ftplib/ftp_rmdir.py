@@ -14,7 +14,7 @@ def ftp_rmdir(ftp, folder, remove_toplevel, dont_remove):
                 print(f"removing file [{filename}] from folder [{folder}]")
             ftp.delete(os.path.join(folder, filename))
         if attr["type"] == "dir":
-            ftp_rmdir(ftp, filename, True, dont_remove)
+            ftp_rmdir(ftp, filename, remove_toplevel=True, dont_remove=dont_remove)
     if remove_toplevel:
         if p_debug:
             print(f"removing folder [{folder}]")
@@ -35,7 +35,7 @@ def main():
     ftp = ftplib.FTP(p_host)
     ftp.login(user=p_user, passwd=p_pass)
     # ftp_rmdir(ftp, p_dir, False, set([".ftpquota"]))
-    ftp_rmdir(ftp, p_dir, False, set())
+    ftp_rmdir(ftp, p_dir, remove_toplevel=False, dont_remove=set())
     ftp.quit()
 
 
