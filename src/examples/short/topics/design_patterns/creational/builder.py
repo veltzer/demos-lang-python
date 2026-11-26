@@ -90,7 +90,7 @@ class ComplexHouse(ComplexBuilding):
         self.size = "Big and fancy"
 
 
-def construct_building(cls) -> Building:
+def construct_building(cls: type[Building]) -> Building:
     building = cls()
     building.build_floor()
     building.build_size()

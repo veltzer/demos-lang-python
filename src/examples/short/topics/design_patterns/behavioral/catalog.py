@@ -112,7 +112,8 @@ class CatalogClass:
         """
         f = CatalogClass._class_method_choices[self.param]
         m = f.__get__(None, CatalogClass)
-        return m()
+        result: str = m()
+        return result
 
 
 class CatalogStatic:

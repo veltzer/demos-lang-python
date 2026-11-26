@@ -338,3 +338,6 @@ replace-imports-with-any = [
     "yapsy",
     "yapsy.*",
 ]
+
+[tool.pyrefly.errors]
+no-any-return = "error"
