@@ -122,3 +122,7 @@ src_dirs = ["config"]
 src_dirs = ["src/examples/long"]
 
 [analyzer.tera]
+
+# lint the TOML files of the repo with taplo
+[processor.checker.taplo]
+src_files = [".ruff.toml", ".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
