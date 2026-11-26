@@ -131,3 +131,8 @@ src_files = ["src/examples/short/modules/enum/test_membership.py", "src/exercise
 # lint the TOML files of the repo with taplo
 [processor.checker.taplo]
 src_files = [".ruff.toml", ".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
+
+# every lint suppression names a rule and says why (see the fleet's CLAUDE.md)
+[processor.checker.suppressions]
+src_dirs = [".github", "config", "make_based", "misc", "scripts", "src"]
+src_files = [".yamllint.yaml", "README.md"]
