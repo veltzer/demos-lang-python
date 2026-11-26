@@ -108,7 +108,8 @@ args = ["--offline", "--no-progress", "--persona=pedantic"]
 # ─── yaml ────────────────────────────────────────────────────────────────────
 
 [processor.checker.iyamllint]
-src_dirs = ["src/examples/long"]
+src_files = [".yamllint.yaml"]
+src_dirs = [".github", "src/examples/long"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
