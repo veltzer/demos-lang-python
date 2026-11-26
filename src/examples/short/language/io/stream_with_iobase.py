@@ -2,7 +2,10 @@
 This is an example of a simple stream in Python
 """
 
-import io
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    import io
 
 
 def count_lines(s: io.IOBase) -> int:

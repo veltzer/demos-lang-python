@@ -6,7 +6,10 @@ Implementation of the iterator pattern with a generator
 Traverses a container and accesses the containers elements.
 """
 
-from collections.abc import Iterator
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Iterator
 
 
 def count_to(count: int):

@@ -2,9 +2,11 @@
 This is an example of how to call a class method directly from a reference to the method.
 """
 
-from collections.abc import Callable
 from types import MethodType
-from typing import Any, ClassVar
+from typing import TYPE_CHECKING, Any, ClassVar
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 class Book:

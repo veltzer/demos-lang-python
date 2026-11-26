@@ -9,7 +9,10 @@ steps to subclasses.
 Django class based views: https://docs.djangoproject.com/en/2.1/topics/class-based-views/
 """
 
-from collections.abc import Callable
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 def get_text() -> str:

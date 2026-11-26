@@ -6,8 +6,10 @@ Author: https://github.com/IuryAlves
 Allows object composition to achieve the same code reuse as inheritance.
 """
 
-from collections.abc import Callable
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 class Delegate:

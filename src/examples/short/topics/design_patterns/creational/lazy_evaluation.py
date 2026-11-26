@@ -27,7 +27,7 @@ class LazyProperty:
     def __init__(self, function):
         self.function = function
         # update_wrapper only needs to set attributes on its target, a descriptor is fine
-        functools.update_wrapper(cast(Any, self), function)
+        functools.update_wrapper(cast("Any", self), function)
 
     def __get__(self, obj, type_):
         if obj is None:

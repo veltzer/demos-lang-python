@@ -25,8 +25,11 @@ class TimeDisplay(object):
 
 import datetime as dt
 import io
-from collections.abc import Callable
 from contextlib import redirect_stdout, suppress
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 class ConstructorInjection:

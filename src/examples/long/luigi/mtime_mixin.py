@@ -29,7 +29,7 @@ class MTimeMixin:
 
     def complete(self):
         # the mixin is only ever mixed into luigi tasks, which supply output() and requires()
-        task = cast(luigi.Task, self)
+        task = cast("luigi.Task", self)
 
         if not all(os.path.exists(out.path) for out in to_list(task.output())):
             return False

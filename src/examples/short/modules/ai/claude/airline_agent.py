@@ -15,12 +15,15 @@ The modules you need to install to make this work are `passpy` and `anthropic`
 
 import itertools
 import sys
-from collections.abc import Callable
-from typing import Any, TypedDict
+from typing import TYPE_CHECKING, Any, TypedDict
 
 import anthropic
 import passpy
-from anthropic.types import MessageParam, ToolParam, ToolResultBlockParam
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+    from anthropic.types import MessageParam, ToolParam, ToolResultBlockParam
 
 MODEL = "claude-opus-4-8"
 SYSTEM = """

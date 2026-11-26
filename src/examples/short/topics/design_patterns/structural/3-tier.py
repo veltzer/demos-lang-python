@@ -3,8 +3,10 @@
 Separates presentation, application processing, and data management functions.
 """
 
-from collections.abc import KeysView
-from typing import ClassVar
+from typing import TYPE_CHECKING, ClassVar
+
+if TYPE_CHECKING:
+    from collections.abc import KeysView
 
 
 class Data:

@@ -4,8 +4,10 @@ Separates data in GUIs from the ways it is presented, and accepted.
 """
 
 from abc import ABC, abstractmethod
-from collections.abc import Iterator
-from typing import Any, ClassVar
+from typing import TYPE_CHECKING, Any, ClassVar
+
+if TYPE_CHECKING:
+    from collections.abc import Iterator
 
 
 class Model(ABC):
