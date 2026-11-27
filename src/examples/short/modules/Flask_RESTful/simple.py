@@ -8,7 +8,7 @@ api = Api(app)
 
 
 class HelloWorld(Resource):
-    def get(self):
+    def get(self) -> dict[str, str]:
         return {"message": "Hello, World!"}
 
 

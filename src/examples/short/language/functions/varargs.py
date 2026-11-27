@@ -5,7 +5,14 @@ or the arguments that it is supposed to receive.
 """
 
 
-def call_many_times(func, times, *args, **kwargs):
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+
+def call_many_times(func: Callable[..., None], times: int, *args: Any, **kwargs: Any) -> None:
     for _ in range(times):
         func(*args, **kwargs)
 

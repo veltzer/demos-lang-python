@@ -9,9 +9,10 @@ There are two ways to solve this:
 """
 
 import builtins
+from typing import Any
 
 
-def my_max(*args):
+def my_max(*args: Any):
     print("hey, I am here...")
     # now call the builtin "max" function
     return builtins.max(args)
@@ -22,7 +23,7 @@ print(my_max(1, 2))
 original_min = min
 
 
-def my_min(*args):
+def my_min(*args: Any):
     print("hey, I am here...")
     # now call the builtin "min" function
     return original_min(args)

@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 # the following two functions are the same:
-def print_all_values_api(i: Iterable[object]):
+def print_all_values_api(i: Iterable[object]) -> None:
     iterator = iter(i)
     while True:
         try:
@@ -24,7 +24,7 @@ def print_all_values_api(i: Iterable[object]):
             break
 
 
-def print_all_values_loop(i: Iterable[object]):
+def print_all_values_loop(i: Iterable[object]) -> None:
     for x in i:
         print(x)
 

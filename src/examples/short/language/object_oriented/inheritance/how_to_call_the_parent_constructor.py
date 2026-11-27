@@ -13,14 +13,14 @@ References:
 
 
 class A:
-    def __init__(self):
+    def __init__(self) -> None:
         self.a = 5
 
 
 class B1(A):
     """ most standard and short way """
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
 
@@ -31,21 +31,21 @@ class B2(A):
 class B3(A):
     """ This works but hardcodes the parent class yet again """
 
-    def __init__(self):
+    def __init__(self) -> None:
         A.__init__(self)
 
 
 class B4(A):
     """ python2 way """
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
 
 class B5(A):
     """ python2 way but without coding the class name yet again """
 
-    def __init__(self):
+    def __init__(self) -> None:
         super(self.__class__, self).__init__()
 
 

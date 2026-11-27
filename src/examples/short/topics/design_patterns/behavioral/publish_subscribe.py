@@ -51,7 +51,7 @@ class Publisher:
         self.provider.notify(msg)
 
 
-def main():
+def main() -> None:
     """
     >>> message_center = Provider()
 

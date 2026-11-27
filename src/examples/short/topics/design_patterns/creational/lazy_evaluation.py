@@ -24,12 +24,12 @@ from typing import Any, cast
 
 
 class LazyProperty:
-    def __init__(self, function):
+    def __init__(self, function: Any) -> None:
         self.function = function
         # update_wrapper only needs to set attributes on its target, a descriptor is fine
         functools.update_wrapper(cast("Any", self), function)
 
-    def __get__(self, obj, type_):
+    def __get__(self, obj: Any, type_: Any):
         if obj is None:
             return self
         val = self.function(obj)
@@ -37,7 +37,7 @@ class LazyProperty:
         return val
 
 
-def lazy_property2(fn):
+def lazy_property2(fn: Any):
     """
     A lazy property decorator.
 
@@ -46,7 +46,7 @@ def lazy_property2(fn):
     """
     attr = "_lazy__" + fn.__name__
 
-    def _lazy_property(self):
+    def _lazy_property(self: Any):
         if not hasattr(self, attr):
             setattr(self, attr, fn(self))
         return getattr(self, attr)
@@ -55,23 +55,23 @@ def lazy_property2(fn):
 
 
 class Person:
-    def __init__(self, name, occupation):
+    def __init__(self, name: str, occupation: str) -> None:
         self.name = name
         self.occupation = occupation
         self.call_count2 = 0
 
     @LazyProperty
-    def relatives(self):
+    def relatives(self) -> str:
         # Get all relatives, lets assume that it costs much time.
         return "Many relatives."
 
     @lazy_property2
-    def parents(self):
+    def parents(self) -> str:
         self.call_count2 += 1
         return "Father and mother"
 
 
-def main():
+def main() -> None:
     """
     >>> Jhon = Person("Jhon", "Coder")
 

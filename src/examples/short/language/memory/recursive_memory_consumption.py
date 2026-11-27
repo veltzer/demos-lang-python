@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from collections.abc import Callable, Iterable
 
 
-def total_size(o, handlers: dict[type, Callable[[Any], Iterable[Any]]] | None = None, *, verbose=False):
+def total_size(o: list[int | list[int]], handlers: dict[type, Callable[[Any], Iterable[Any]]] | None = None, *, verbose: bool = False) -> int:
     """ Returns the approximate memory footprint an object and all of its contents.
 
     Automatically finds the contents of the following builtin containers and
@@ -31,13 +31,13 @@ def total_size(o, handlers: dict[type, Callable[[Any], Iterable[Any]]] | None = 
     if handlers is None:
         handlers = {}
 
-    def dict_handler(d):
+    def dict_handler(d: Any):
         return chain.from_iterable(d.items())
 
     # def object_handler(o):
     #     return o.__dict__.keys()  # noqa: ERA001  teaching: kept in the comment for the reader
 
-    def str_handler(s):
+    def str_handler(s: str):
         return s
 
     all_handlers: dict[type, Callable[[Any], Iterable[Any]]] = {
@@ -54,7 +54,7 @@ def total_size(o, handlers: dict[type, Callable[[Any], Iterable[Any]]] | None = 
     seen = set()                      # track which object ids have already been seen
     default_size = sys.getsizeof(0)       # estimate sizeof object without __sizeof__
 
-    def sizeof(o):
+    def sizeof(o: Any) -> int:
         if id(o) in seen:       # do not double count the same object
             return 0
         seen.add(id(o))
@@ -76,7 +76,7 @@ def total_size(o, handlers: dict[type, Callable[[Any], Iterable[Any]]] | None = 
 
 class Person:
 
-    def __init__(self, name, surname, age):
+    def __init__(self, name: str, surname: str, age: int) -> None:
         self.name = name
         self.surname = surname
         self.age = age

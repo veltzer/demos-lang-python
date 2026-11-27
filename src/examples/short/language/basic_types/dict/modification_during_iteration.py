@@ -7,10 +7,15 @@ Conclusions:
 iteration.
 """
 
+from typing import TYPE_CHECKING
+
 import pytest
 
+if TYPE_CHECKING:
+    from _collections_abc import dict_keys
 
-def delete_while_visiting(iterable, d, visited_keys):
+
+def delete_while_visiting(iterable: dict[int, int] | dict_keys[int, int], d: dict[int, int], visited_keys: set[int]) -> None:
     """ iterate over iterable, deleting a key of d on the way, and record what was visited """
     for x in iterable:
         if x == 3:

@@ -9,15 +9,14 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 
-def sum_digits(n):
-    n = str(n)
+def sum_digits(n: int) -> int:
     my_sum = 0
-    for c in n:
+    for c in str(n):
         my_sum += ord(c) - ord("0")
     return my_sum
 
 
-def main():
+def main() -> None:
     n = int(sys.argv[1])
     print(sum_digits(n))
 

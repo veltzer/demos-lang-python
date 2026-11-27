@@ -5,19 +5,19 @@ Solution
 # A function for each operation. Youll see below why I need these
 
 
-def add(a, b):
+def add(a: float, b: float):
     return a + b
 
 
-def sub(a, b):
+def sub(a: float, b: float):
     return a - b
 
 
-def mul(a, b):
+def mul(a: float, b: float):
     return a * b
 
 
-def div(a, b):
+def div(a: float, b: float):
     return a / b
 
 
@@ -27,7 +27,7 @@ def div(a, b):
 operators = {"+": add, "-": sub, "*": mul, "/": div}
 
 
-def rpn_calc(expression):
+def rpn_calc(expression: str) -> None:
     stack: list[float] = []
     print(stack)
     for word in expression.split():

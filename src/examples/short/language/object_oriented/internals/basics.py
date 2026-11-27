@@ -11,11 +11,11 @@ from outside the class.
 class A:
     pi = 3.14
 
-    def __init__(self, val):
+    def __init__(self, val: int) -> None:
         print("in A constructor")
         self.a = val
 
-    def print_me(self):
+    def print_me(self) -> None:
         print("a is", self.a)
 
 

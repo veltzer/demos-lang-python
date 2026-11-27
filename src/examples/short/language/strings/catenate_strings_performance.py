@@ -19,42 +19,42 @@ y = "def"
 function_names = {}
 
 
-def concat1():
+def concat1() -> str:
     return x + y
 
 
 function_names[concat1] = "+ operator"
 
 
-def concat2():
+def concat2() -> str:
     return f"{x}{y}"
 
 
 function_names[concat2] = "%s%s"
 
 
-def concat3():
+def concat3() -> str:
     return f"{x}{y}"
 
 
 function_names[concat3] = "{}{}"
 
 
-def concat4():
+def concat4() -> str:
     return f"{x}{y}"
 
 
 function_names[concat4] = "{0}{1}"
 
 
-def concat5():
+def concat5() -> str:
     return "".join([x, y])  # noqa: FLY002  teaching: demonstrating string join
 
 
 function_names[concat4] = "join"
 
 
-def concat6():
+def concat6() -> str:
     return f"{x}{y}"
 
 

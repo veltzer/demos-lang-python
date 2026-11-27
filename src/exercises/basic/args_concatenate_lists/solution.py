@@ -2,15 +2,17 @@
 Solution
 """
 
+from typing import Any
 
-def catenate_lists(*args):
+
+def catenate_lists(*args: Any) -> list[object]:
     r: list[object] = []
     for e in args:
         r.extend(e)
     return r
 
 
-def catenate_lists_2(*args):
+def catenate_lists_2(*args: Any) -> list[object]:
     r: list[object] = []
     for e in args:
         r.extend(e)

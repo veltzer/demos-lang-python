@@ -2,6 +2,8 @@
 This checks whether the order of options and arguments in click matters
 """
 
+from typing import Any
+
 import click
 
 
@@ -10,7 +12,7 @@ import click
 @click.option("--count", default=1, help="Number of greetings.", show_default=True)
 @click.option("--output", required=False, help="output file", type=click.File("w", lazy=False))
 @click.option("--hash-type", required=False, type=click.Choice(["md5", "sha1"]))
-def main(arg, count, output, hash_type):
+def main(arg: Any, count: int, output: str, hash_type: str) -> None:
     """Simple program that greets NAME for a total of COUNT times."""
     print(arg)
     print(count)

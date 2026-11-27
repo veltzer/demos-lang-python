@@ -11,33 +11,33 @@ NOTES:
 """
 
 
-from typing import override
+from typing import Self, override
 
 
 class A:
-    def __init__(self, p_a):
+    def __init__(self, p_a: int | Self) -> None:
         print("A.__init__")
         self.a = p_a
 
-    def method_overloaded1(self):
+    def method_overloaded1(self) -> None:
         print("A.method_overloaded1")
 
-    def method_overloaded2(self):
+    def method_overloaded2(self) -> None:
         print("A.method_overloaded2")
 
-    def method_overloaded3(self):
+    def method_overloaded3(self) -> None:
         print("A.method_overloaded3")
 
-    def method_overloaded4(self):
+    def method_overloaded4(self) -> None:
         print("A.method_overloaded4")
 
-    def method_only_a(self):
+    def method_only_a(self) -> None:
         print("A.method_only_a")
         print(f"a is {self.a}")
 
 
 class B(A):
-    def __init__(self, p_b, p_a):
+    def __init__(self, p_b: int, p_a: int) -> None:
         print("B.__init__")
         # this is one way to call the parent constructor
         A.__init__(self, p_a)
@@ -45,19 +45,19 @@ class B(A):
         self.b = p_b
 
     @override
-    def method_overloaded1(self):
+    def method_overloaded1(self) -> None:
         """ the best way """
         print("B.method_overloaded1")
         super().method_overloaded1()
 
     @override
-    def method_overloaded2(self):
+    def method_overloaded2(self) -> None:
         """ this is a second way to call the parent method """
         print("B.method_overloaded2")
         super().method_overloaded2()
 
     @override
-    def method_overloaded3(self):
+    def method_overloaded3(self) -> None:
         """
         The old way to call the parent method
         (no hard coding of the class name as above)
@@ -66,12 +66,12 @@ class B(A):
         super(self.__class__, self).method_overloaded3()
 
     @override
-    def method_overloaded4(self):
+    def method_overloaded4(self) -> None:
         """ This is going back to the first way """
         print("B.method_overloaded4")
         A.method_overloaded4(self)
 
-    def method_only_b(self):
+    def method_only_b(self) -> None:
         print("B.method_only_b")
         print(f"a is {self.a}")
         print(f"b is {self.b}")

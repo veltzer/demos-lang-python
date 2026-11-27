@@ -23,12 +23,12 @@ HTML = """
 
 
 @app.route("/")
-def form():
+def form() -> str:
     return HTML
 
 
 @app.route("/add")
-def add():
+def add() -> str:
     # curl "http://localhost:8081/add?a=X&b=Y"
     response = requests.get(
         url="http://localhost:8081/add",

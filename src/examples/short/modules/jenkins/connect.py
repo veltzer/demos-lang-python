@@ -12,7 +12,7 @@ import os
 import jenkins
 
 
-def get_data():
+def get_data() -> tuple[str, str, str]:
     inifile = os.path.expanduser("~/.jenkins.cnf")
     config = configparser.ConfigParser()
     config.read(inifile)

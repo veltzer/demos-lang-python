@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 
 
-def apply_funcs(funcs: list[Callable[[int], int]], x: int):
+def apply_funcs(funcs: list[Callable[[int], int]], x: int) -> list[int]:
     """ a different version with an iteration """
     return [f(x) for f in funcs]
 

@@ -4,6 +4,7 @@ solution
 
 
 import random
+from typing import Any
 
 
 class Node:
@@ -11,7 +12,7 @@ class Node:
     This is a single element of the singly linked list
     """
 
-    def __init__(self, data, next_element):
+    def __init__(self, data: Any, next_element: Node | None) -> None:
         """ constructor """
         self.data = data
         self.next = next_element
@@ -30,15 +31,15 @@ class SingleLinkedList:
     This is the list implementation
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """ constructor """
         self.first_element: Node | None = None
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """ is the list empty """
         return self.first_element is None
 
-    def add_head_element(self, data):
+    def add_head_element(self, data: Any) -> None:
         """ add element at the head """
         node = Node(data, self.first_element)
         self.first_element = node
@@ -58,7 +59,7 @@ class SingleLinkedList:
             yield pointer.data
             pointer = pointer.next
 
-    def add_sorted(self, data):
+    def add_sorted(self, data: int) -> None:
         """ add an element to a sorted list """
         prev = None
         pointer = self.first_element
@@ -72,7 +73,7 @@ class SingleLinkedList:
             self.first_element = node
 
 
-def main():
+def main() -> None:
     """ the main function """
     the_list = SingleLinkedList()
     for _ in range(50):

@@ -4,7 +4,7 @@
 from decimal import Decimal, getcontext
 
 
-def main():
+def main() -> None:
     # First, let's compare regular float vs Decimal
     print("COMPARING FLOAT VS DECIMAL")
     print("-" * 40)

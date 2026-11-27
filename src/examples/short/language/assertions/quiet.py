@@ -6,7 +6,7 @@ The python "assert" cannot be overloaded as it is not a function but a language 
 import sys
 
 
-def my_assert(cond, msg=None):
+def my_assert(cond: object, msg: str | None = None) -> None:
     if not cond:
         print(f"Assertion failed message={msg}", file=sys.stderr)
         sys.exit(1)

@@ -3,11 +3,11 @@
 import math
 
 
-def is_prime(n):
+def is_prime(n: int) -> bool:
     return all(n % i != 0 for i in range(2, int(math.sqrt(n))))
 
 
-def is_prime_functional(n):
+def is_prime_functional(n: int) -> bool:
     return not any(n % i == 0 for i in range(2, int(math.sqrt(n))))
 
 

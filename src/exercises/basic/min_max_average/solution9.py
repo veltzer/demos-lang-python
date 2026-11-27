@@ -7,7 +7,7 @@ calculate the average is done in float.
 """
 
 
-def min_max_avg(num_list):
+def min_max_avg(num_list: range):
     """return a tuple containing the maximnum_list, minimum and avrage of the given num_listbrs"""
     return min(num_list), max(num_list), sum(num_list) / len(num_list)
 

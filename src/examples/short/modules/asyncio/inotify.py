@@ -9,6 +9,7 @@ http://stackoverflow.com/questions/26414052/watch-for-a-file-with-asyncio
 """
 
 import asyncio
+from typing import Any
 
 import pyinotify
 
@@ -18,15 +19,15 @@ class AsyncioNotifier(pyinotify.Notifier):
     Notifier subclass that plugs into the asyncio event loop.
     """
 
-    def __init__(self, watch_manager, loop, callback=None,
-                 default_proc_fun=None, read_freq=0, threshold=0, timeout=None):
+    def __init__(self, watch_manager: Any, loop: Any, callback: Any = None,
+                 default_proc_fun: Any = None, read_freq: int = 0, threshold: int = 0, timeout: Any = None) -> None:
         self.loop = loop
         self.handle_read_callback = callback
         pyinotify.Notifier.__init__(
             self, watch_manager, default_proc_fun, read_freq, threshold, timeout)
         loop.add_reader(self._fd, self.handle_read)
 
-    def handle_read(self):
+    def handle_read(self) -> None:
         self.read_events()
         self.process_events()
         if self.handle_read_callback is not None:
@@ -34,11 +35,11 @@ class AsyncioNotifier(pyinotify.Notifier):
 
 
 class EventHandler(pyinotify.ProcessEvent):
-    def __init__(self, loop=None):
+    def __init__(self, loop: Any = None) -> None:
         super().__init__()
         self.loop = loop
 
-    def process_IN_CREATE(self, event):
+    def process_IN_CREATE(self, event: Any) -> None:
         print("Creating:", event.pathname)
 
 

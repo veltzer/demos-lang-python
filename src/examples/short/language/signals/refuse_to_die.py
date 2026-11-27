@@ -7,7 +7,7 @@ import signal
 import time
 
 
-def signal_handler(_sig, _frame):
+def signal_handler(_sig, _frame) -> None:
     print("You send me SIGTERM, I Refuse to die!")
 
 

@@ -7,7 +7,7 @@ import json
 import os.path
 
 
-def main():
+def main() -> None:
     path = os.path.expanduser("~/.config/google-chrome/Local State")
     with open(path) as file_handle:
         data = json.load(file_handle)

@@ -4,11 +4,11 @@ import random
 import string
 
 
-def generate_random_string(length):
+def generate_random_string(length: int) -> str:
     return "".join(random.choices(string.ascii_letters + string.digits, k=length))
 
 
-def hash_collision_demo(num_strings, string_length):
+def hash_collision_demo(num_strings: int, string_length: int) -> tuple[int, int]:
     hashes = {}
     collisions = 0
     for _ in range(num_strings):
@@ -21,7 +21,7 @@ def hash_collision_demo(num_strings, string_length):
     return collisions, len(hashes)
 
 
-def main():
+def main() -> None:
     num_strings = 1_000_000  # Number of strings to generate
     string_length = 10       # Length of each string
     collisions, unique_hashes = hash_collision_demo(num_strings, string_length)

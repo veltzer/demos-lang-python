@@ -22,20 +22,21 @@ what we use here.
 import inspect
 import itertools
 import timeit
+from typing import Any
 
 # lets compare the performance
 range_limit = 1000000
 jump = 7
 
 
-def chunk_groupby(data, n):
+def chunk_groupby(data: range, n: int):
     return ((d for _, d in dd) for _, dd in itertools.groupby(enumerate(data), key=lambda v: v[0] // n))
 
 
-def chunk_groupby_closure(data, n):
+def chunk_groupby_closure(data: range, n: int):
     counter = [-1, 0]
 
-    def group_classifier(__):
+    def group_classifier(__: Any) -> int:
         counter[0] += 1
         if counter[0] == n:
             counter[0] = 0
@@ -45,12 +46,12 @@ def chunk_groupby_closure(data, n):
     return (dd for _, dd in itertools.groupby(data, key=group_classifier))
 
 
-def chunk_python(data, n):
+def chunk_python(data: range, n: int):
     class __CancellationToken:
-        def __init__(self):
+        def __init__(self) -> None:
             self.is_cancelled = False
 
-        def cancel(self):
+        def cancel(self) -> None:
             self.is_cancelled = True
 
     i = iter(data)
@@ -69,7 +70,7 @@ def chunk_python(data, n):
         yield return_n()
 
 
-def chunk_itertools(data, n):
+def chunk_itertools(data: range, n: int):
     i = iter(data)
     while True:
         # first = next(i)  # noqa: ERA001  teaching: kept in the comment for the reader
@@ -78,37 +79,37 @@ def chunk_itertools(data, n):
         yield itertools.chain((next(i),), itertools.islice(i, n - 1))
 
 
-def chunk_generator(data, n):
+def chunk_generator(data: range, n: int):
     it = iter(data)
     return (itertools.chain((i,), itertools.islice(it, n - 1)) for i in it)
 
 
-def func_chunk_groupby():
+def func_chunk_groupby() -> None:
     for d in chunk_groupby(range(range_limit), jump):
         _ = list(d)
 
 
-def func_chunk_groupby_closure():
+def func_chunk_groupby_closure() -> None:
     for d in chunk_groupby_closure(range(range_limit), jump):
         _ = list(d)
 
 
-def func_chunk_python():
+def func_chunk_python() -> None:
     for d in chunk_python(range(range_limit), jump):
         _ = list(d)
 
 
-def func_chunk_itertools():
+def func_chunk_itertools() -> None:
     for d in chunk_itertools(range(range_limit), jump):
         _ = list(d)
 
 
-def func_chunk_generator():
+def func_chunk_generator() -> None:
     for d in chunk_generator(range(range_limit), jump):
         _ = list(d)
 
 
-def main():
+def main() -> None:
     count = 0
     for d in chunk_groupby(range(range_limit), jump):
         inspect.isgeneratorfunction(d)

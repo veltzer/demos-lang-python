@@ -18,6 +18,8 @@ If you dont write an explicit "__init__" initializer for your
 class then your class still works. It"s just that its empty.
 """
 
+from typing import Any
+
 
 # class without a constructor
 class NoCons:
@@ -27,30 +29,30 @@ class NoCons:
 class A:
     # wrong! dont do this...
     # noinspection PyMethodParameters
-    def __init__():  # pyrefly: ignore[bad-function-definition]  teaching: __init__ without self is wrong
+    def __init__() -> None:  # pyrefly: ignore[bad-function-definition]  teaching: __init__ without self is wrong
         print("in A constructor")
 
 
 class B:
-    def __init__(self):
+    def __init__(self) -> None:
         print("in B constructor")
         print(type(self))
 
 
 class C:
-    def __init__(self, _arg1, _arg2):
+    def __init__(self, _arg1: int, _arg2: int) -> None:
         print("in C constructor")
         print(type(self))
 
 
 class D:
-    def __init__(self, *_args):
+    def __init__(self, *_args) -> None:
         print("in D constructor")
         print(type(self))
 
 
 class E:
-    def __init__(self, *_args, **__kwargs):
+    def __init__(self, *_args, **__kwargs: Any) -> None:
         print("in E constructor")
         print(type(self))
 

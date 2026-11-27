@@ -10,14 +10,14 @@ is more beautiful.
 
 
 # our own "enumerate"
-def simple_enumerate(value_list):
+def simple_enumerate(value_list: list[str]):
     i = 0
     for val in value_list:
         yield i, val
         i += 1  # noqa: SIM113  teaching: demonstrating a manual counter next to enumerate
 
 
-def main():
+def main() -> None:
     value_list = ["a", "b", "c"]
     # the non pythonic way to do this
     for i in range(len(value_list)):

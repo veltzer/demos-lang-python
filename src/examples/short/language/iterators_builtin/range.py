@@ -17,7 +17,7 @@ for i in range(11, 2, -3):
 
 
 # lets write our own range function
-def simple_range(stop, start=0, step=1):
+def simple_range(stop: int, start: int = 0, step: int = 1):
     count = start
     while count < stop:
         yield count

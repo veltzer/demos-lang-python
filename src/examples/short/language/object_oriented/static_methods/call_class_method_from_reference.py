@@ -12,11 +12,11 @@ if TYPE_CHECKING:
 class Book:
     num = 0
 
-    def __init__(self, title):
+    def __init__(self, title: str) -> None:
         self.title = title
 
     @classmethod
-    def increment_num(cls):
+    def increment_num(cls) -> int:
         print("in increment_num")
         cls.num += 1
         return cls.num
@@ -25,7 +25,7 @@ class Book:
     ref: ClassVar = [increment_num]
 
     @classmethod
-    def call_it(cls):
+    def call_it(cls) -> None:
         MethodType(cls.ref[0], Book)()
 
 

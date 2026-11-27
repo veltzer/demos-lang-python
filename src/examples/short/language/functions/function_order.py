@@ -13,7 +13,7 @@ except NameError:
     print("yep, this failed")
 
 
-def demo_foo():
+def demo_foo() -> None:
     print("this is demo_foo")
     demo_bar()  # noqa: F821  teaching: demo_bar is called before it is defined
 
@@ -26,7 +26,7 @@ except NameError:
     print("yep, this failed")
 
 
-def demo_bar():
+def demo_bar() -> None:
     print("this is bar")
 
 

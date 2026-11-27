@@ -2,27 +2,29 @@
 An example of using errbacks in twisted.
 """
 
+from typing import Any
+
 from twisted.internet import reactor
 from twisted.web.client import Agent
 
 # from twisted.protocols.basic import LineReceiver  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
-def my_other_callback(content):
+def my_other_callback(content: Any) -> None:
     print(f"in other_callback {content}")
     reactor.stop()
 
 
-def my_callback(response):
+def my_callback(response: Any) -> None:
     print(f"in callback {response}")
 
 
-def my_errback(error):
+def my_errback(error: Any) -> None:
     print("in error", error)
     reactor.stop()
 
 
-def main():
+def main() -> None:
     agent = Agent(reactor)
 
     deferred = agent.request(

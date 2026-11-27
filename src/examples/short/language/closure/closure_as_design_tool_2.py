@@ -3,8 +3,14 @@ This is an example of information hiding in functions
 """
 
 
-def make_print_something(s):
-    def inner():
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+def make_print_something(s: str) -> Callable[[], None]:
+    def inner() -> None:
         print(s)
 
     return inner

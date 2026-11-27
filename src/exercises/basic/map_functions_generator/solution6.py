@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 
 
 
-def apply_funcs(funcs: list[Callable[[int], int]], x: int):
+def apply_funcs(funcs: list[Callable[[int], int]], x: int) -> map[int]:
     """Apply a list of unary functions on an argument,
     Return the result"""
     return map(lambda f: f(x), funcs)  # noqa: C417  teaching: demonstrating map with a lambda

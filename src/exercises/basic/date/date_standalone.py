@@ -14,13 +14,13 @@ for i in range(12):
     month_name_to_index[months_names[i]] = i
 
 
-def get_num_of_days_in_month(month_name):
+def get_num_of_days_in_month(month_name: str) -> int:
     if month_name in name_to_days_num:
         return name_to_days_num[month_name]
     raise ValueError("No such month")
 
 
-def get_following_month(month_name):
+def get_following_month(month_name: str) -> str:
     if month_name in name_to_days_num:
         index = month_name_to_index[month_name]
         return months_names[(index + 1) % 12]
@@ -30,5 +30,5 @@ def get_following_month(month_name):
 # the definition here is not accurate for intersetellar time...
 
 
-def is_leap_year(year):
+def is_leap_year(year: int):
     return year % 4 == 0 and year % 100 != 0

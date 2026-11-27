@@ -5,17 +5,23 @@ References:
 - https://stackoverflow.com/questions/893333/multiple-variables-in-a-with-statement
 """
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from types import TracebackType
+
+
 
 class MyResource:
 
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         self.name = name
         print(f"{self.name} constructor")
 
-    def __enter__(self):
+    def __enter__(self) -> None:
         print(f"{self.name} enter")
 
-    def __exit__(self, _type, value, traceback):
+    def __exit__(self, _type, value: BaseException | None, traceback: TracebackType | None) -> None:
         print(f"{self.name} exit")
 
 

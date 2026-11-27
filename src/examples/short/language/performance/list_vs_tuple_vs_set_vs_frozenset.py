@@ -13,19 +13,19 @@ f = frozenset(x)
 t = tuple(x)
 
 
-def demo_list():
+def demo_list() -> list[bool]:
     return [value in x for value in x]
 
 
-def demo_set():
+def demo_set() -> list[bool]:
     return [value in s for value in x]
 
 
-def demo_frozenset():
+def demo_frozenset() -> list[bool]:
     return [value in f for value in x]
 
 
-def demo_tuple():
+def demo_tuple() -> list[bool]:
     return [value in t for value in x]
 
 

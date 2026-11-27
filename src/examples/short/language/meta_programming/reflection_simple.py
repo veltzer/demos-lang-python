@@ -5,10 +5,10 @@ and the list of stuff you can request of it.
 
 
 class A:
-    def __init__(self):
+    def __init__(self) -> None:
         self.myfield = 7
 
-    def my_method(self):
+    def my_method(self) -> None:
         print("Hello")
 
 

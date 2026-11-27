@@ -17,9 +17,10 @@ import fcntl
 import os
 import select
 import signal
+from select import epoll
 
 
-def do_poll(poller):
+def do_poll(poller: epoll):
     """
         We need this functions since python, unlike glibc, does not restart system
         calls.

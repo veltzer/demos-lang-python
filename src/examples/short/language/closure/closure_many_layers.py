@@ -7,8 +7,8 @@ the closure of the closure.
 z = 2
 
 
-def make_adder(x):
-    def adder(y):
+def make_adder(x: int):
+    def adder(y: int):
         return x + y + z
 
     return adder

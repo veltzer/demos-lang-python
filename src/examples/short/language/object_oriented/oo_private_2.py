@@ -10,21 +10,21 @@ difference as to this point.
 
 
 class Book:
-    def __init__(self, price, name):
+    def __init__(self, price: int, name: str) -> None:
         self.__price = price
         self._name = name
 
-    def print_me(self):
+    def print_me(self) -> None:
         print("price is", self.__price)
         print("name is", self._name)
 
-    def set_price(self, price):
+    def set_price(self, price: int) -> None:
         self.__price = price
 
     def get_price(self):
         return self.__price
 
-    def set_name(self, name):
+    def set_name(self, name: str) -> None:
         self._name = name
 
     def get_name(self):

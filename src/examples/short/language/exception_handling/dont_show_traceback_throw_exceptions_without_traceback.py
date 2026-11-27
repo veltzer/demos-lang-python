@@ -12,7 +12,7 @@ import sys
 
 
 class NoTraceBackWithLineNumberError(Exception):
-    def __init__(self, msg):
+    def __init__(self, msg: str):
         super().__init__()
         traceback = sys.exc_info()[-1]
         if traceback is not None:

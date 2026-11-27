@@ -3,10 +3,11 @@ flyweight_with_metaclass.py
 """
 
 import weakref
+from typing import Any
 
 
 class FlyweightMeta(type):
-    def __new__(cls, name, parents, dct):
+    def __new__(cls, name: str, parents: tuple[type, ...], dct: dict[str, Any]):
         """
         Set up object pool
 
@@ -20,7 +21,7 @@ class FlyweightMeta(type):
         return super().__new__(cls, name, parents, dct)
 
     @classmethod
-    def _serialize_params(cls, *args, **kwargs):
+    def _serialize_params(cls, *args: Any, **kwargs: Any) -> str:
         """
         Serialize input parameters to a key.
         Simple implementation is just to serialize it as a string
@@ -29,7 +30,7 @@ class FlyweightMeta(type):
         args_list.extend([str(kwargs), cls.__name__])
         return "".join(args_list)
 
-    def __call__(cls, *args, **kwargs):
+    def __call__(cls, *args: Any, **kwargs: Any):
         key = FlyweightMeta._serialize_params(cls, *args, **kwargs)
         pool = getattr(cls, "pool", {})
 
@@ -41,7 +42,7 @@ class FlyweightMeta(type):
 
 
 class Card2(metaclass=FlyweightMeta):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
         # print("Init {}: {}".format(self.__class__, (args, kwargs)))  # noqa: ERA001  teaching: kept in the comment for the reader
         pass
 

@@ -3,9 +3,10 @@ simple.py
 """
 
 from multiprocessing import Process, Queue
+from typing import Any
 
 
-def f(m):
+def f(m: Any) -> None:
     m.put([42, None, "hello"])
 
 

@@ -66,7 +66,7 @@ def client(job_doer: RealSubject | Proxy, user: str) -> None:
     job_doer.do_the_job(user)
 
 
-def main():
+def main() -> None:
     """
     >>> proxy = Proxy()
 

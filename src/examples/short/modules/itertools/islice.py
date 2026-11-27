@@ -8,14 +8,14 @@ It also shows how to write your own islice implementation....
 from itertools import islice
 
 
-def simple_islice(iterable, size: int):
+def simple_islice(iterable: range, size: int):
     for i, x in enumerate(iterable):
         if i == size:
             break
         yield x
 
 
-def main():
+def main() -> None:
     # This is the most basic example: getting only the first n elements
     # from an iterable. When islice gets one argument its meaning is "stop".
     for i in islice(range(10), 5):

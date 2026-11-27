@@ -13,12 +13,12 @@ import struct
 
 
 class DataToPack:
-    def __init__(self, v1, v2, s):
+    def __init__(self, v1: int, v2: int, s: str) -> None:
         self.v1 = v1
         self.v2 = v2
         self.s = s
 
-    def pack(self):
+    def pack(self) -> bytes:
         return struct.pack(
             "iis",
             self.v1,
@@ -26,10 +26,10 @@ class DataToPack:
             self.s,
         )
 
-    def unpack(self, b):
+    def unpack(self, b: int) -> None:
         """ unpack into self """
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"DataToPack: {self.v1}, {self.v2}, {self.s}"
 
 

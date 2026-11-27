@@ -3,11 +3,12 @@ This is a classic thread creation example.
 """
 
 import threading
+from typing import Any
 
 # this function was written with NO consideratiion of threading...
 
 
-def func(data):
+def func(data: Any) -> None:
     print(data)
 
 

@@ -3,7 +3,7 @@ Solution2
 """
 
 
-def odds_minus_evens(number_list):
+def odds_minus_evens(number_list: range):
     count = 0
     for x in number_list:
         if x % 2 == 0:

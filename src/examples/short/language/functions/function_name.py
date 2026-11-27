@@ -15,7 +15,7 @@ import inspect
 import sys
 
 
-def my_func():
+def my_func() -> None:
     print("inside the function")
     print("===================")
     print(f"inspect.stack()[0][0].f_code.co_name is [{inspect.stack()[0][0].f_code.co_name}]")

@@ -14,14 +14,15 @@ from the import "apply_async" call.
 
 import multiprocessing
 import time
+from typing import Any
 
 
-def sleep_a_little(num):
+def sleep_a_little(num: int):
     time.sleep(1)
     raise ValueError("this is bad " + str(num))
 
 
-def print_exception(e):
+def print_exception(e: Any) -> None:
     print("exception happened", e)
 
 

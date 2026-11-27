@@ -11,13 +11,13 @@ This is based on the loop
 class MyClass:
     var_member = 14
 
-    def __init__(self, member):
+    def __init__(self, member: int | None) -> None:
         if member:
             self.var_member = member
         else:
             self.var_member = self.var_member
 
-    def do_print(self):
+    def do_print(self) -> None:
         print(f"var_member is {self.var_member}")
 
 

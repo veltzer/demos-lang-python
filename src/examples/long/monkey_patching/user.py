@@ -11,7 +11,7 @@ mod_b_1.func_b_1()
 print("after hacking")
 
 
-def hacked1():
+def hacked1() -> None:
     print("hacked1")
 
 
@@ -29,7 +29,7 @@ mod_b_2.func_b_2()
 print("after hacking")
 
 
-def hacked2():
+def hacked2() -> None:
     print("hacked2")
 
 

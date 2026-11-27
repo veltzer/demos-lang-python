@@ -12,7 +12,7 @@ from typing import ClassVar
 class A:
     instance: ClassVar[A | None] = None
 
-    def __init__(self):
+    def __init__(self) -> None:
         if A.instance is not None:
             raise ValueError("you called the constructor twice!!")
         # constructor code goes here

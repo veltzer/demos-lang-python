@@ -62,7 +62,7 @@ class ItalicWrapper(TextTag):
         return f"<i>{self._wrapped.render()}</i>"
 
 
-def main():
+def main() -> None:
     """
     >>> simple_hello = TextTag("hello, world!")
     >>> special_hello = ItalicWrapper(BoldWrapper(simple_hello))

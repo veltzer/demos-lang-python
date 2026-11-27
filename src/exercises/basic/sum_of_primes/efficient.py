@@ -5,7 +5,7 @@ Efficient
 import math
 
 
-def collect_all_primes(num):
+def collect_all_primes(num: int) -> list[int]:
     primes_found: list[int] = []
     for i in range(2,num):
         for p in primes_found:

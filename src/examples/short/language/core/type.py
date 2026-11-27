@@ -8,17 +8,17 @@ difference in detail.
 import math
 
 
-def my_func():
+def my_func() -> None:
     pass
 
 
 class A:
-    def __init__(self, val):
+    def __init__(self, val: int) -> None:
         self.privar = val
 
 
 class B:
-    def __init__(self, val):
+    def __init__(self, val: int) -> None:
         self.privar = val
 
 

@@ -18,7 +18,7 @@ def give_me_some_data():
     yield "this is data from the end"
 
 
-def main():
+def main() -> None:
     for x in give_me_some_data():
         print("outer loop", x)
 

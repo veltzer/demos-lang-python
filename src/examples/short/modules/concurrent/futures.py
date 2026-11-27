@@ -13,14 +13,14 @@ TODO:
 import concurrent.futures
 
 
-def work(n):
+def work(n: int):
     # raise ValueError("this is an error")  # noqa: ERA001  teaching: kept in the comment for the reader
     for _ in range(n):
         pass
     return n
 
 
-def main():
+def main() -> None:
     with concurrent.futures.ProcessPoolExecutor() as executor:
         for r in executor.map(work, [100000000] * 8):
             print(r)

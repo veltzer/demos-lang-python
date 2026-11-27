@@ -7,7 +7,11 @@ exception that you create
 """
 
 
-def raise_without_exception():
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from types import TracebackType
+def raise_without_exception() -> None:
     """
     you cannot just raise without a prior exception being active
 
@@ -21,15 +25,15 @@ def raise_without_exception():
         print(f"All is ok. you cannot raise without a prior active exception [{e}]")
 
 
-def traceback_len(tb):
+def traceback_len(tb: TracebackType | None) -> int:
     count = 0
-    while tb.tb_next:
+    while tb is not None and tb.tb_next:
         count += 1
         tb = tb.tb_next
     return count
 
 
-def main():
+def main() -> None:
     # lets try to raise without an exception
     try:
         try:

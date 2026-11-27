@@ -13,13 +13,13 @@ class Node:
     This is a single element of the doubly linked list
     """
 
-    def __init__(self, _data, _next_element, _prev_element):
+    def __init__(self, _data, _next_element, _prev_element) -> None:
         """ constructor """
 
-    def get_data(self):
+    def get_data(self) -> None:
         """ get data from the node """
 
-    def get_next(self):
+    def get_next(self) -> None:
         """ get the next element """
 
 
@@ -28,22 +28,22 @@ class DoubleLinkedList:
     This is the list implementation
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """ constructor """
 
-    def is_empty(self):
+    def is_empty(self) -> None:
         """ is the list empty """
 
-    def add_head_element(self, data):
+    def add_head_element(self, data: int) -> None:
         """ add element at the head """
 
-    def add_tail_element(self, data):
+    def add_tail_element(self, data: int) -> None:
         """ add element at the tail """
 
-    def pop_head_element(self):
+    def pop_head_element(self) -> None:
         """ pop element at the head """
 
-    def pop_tail_element(self):
+    def pop_tail_element(self) -> None:
         """ pop element at the tail """
 
     def yield_elements_head_to_tail(self) -> Iterator[Any]:
@@ -55,7 +55,7 @@ class DoubleLinkedList:
         yield from ()
 
 
-def example_of_use():
+def example_of_use() -> None:
     """ example of how to use the API """
     test_list = DoubleLinkedList()
     test_list.add_head_element(3)

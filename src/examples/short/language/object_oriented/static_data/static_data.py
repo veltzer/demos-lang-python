@@ -9,10 +9,15 @@ since a primitive will be a local variable in "give_me_unique".
 """
 
 # first example
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
 counter = 0
 
 
-def give_me_a_unique_value():
+def give_me_a_unique_value() -> int:
     global counter  # noqa: PLW0603  teaching: the simple global variable way of keeping state
     counter += 1
     return counter
@@ -26,10 +31,10 @@ print(give_me_a_unique_value())
 # second example
 
 
-def give_me_unique_generator():
+def give_me_unique_generator() -> Callable[[], int]:
     my_list = [0]
 
-    def give_me_unique():
+    def give_me_unique() -> int:
         my_list[0] += 1
         return my_list[0]
 

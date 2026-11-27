@@ -2,8 +2,10 @@
 This is an example of how to write complex functions as key
 """
 
+from typing import Any
 
-def my_func(employee_data):
+
+def my_func(employee_data: Any):
     return employee_data["salary"]
 
 

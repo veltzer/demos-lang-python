@@ -9,21 +9,21 @@ import abc
 # This is the right way to do it
 class A(abc.ABC):
     @abc.abstractmethod
-    def method1(self):
+    def method1(self) -> None:
         pass
 
     @abc.abstractmethod
-    def method2(self):
+    def method2(self) -> None:
         pass
 
 
 class B(A):
-    def method1(self):
+    def method1(self) -> None:
         pass
 
 
 class C(B):
-    def method2(self):
+    def method2(self) -> None:
         pass
 
 

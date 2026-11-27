@@ -21,7 +21,7 @@ import abc
 # This is the right way to do it
 class A(abc.ABC):
     @abc.abstractmethod
-    def method(self):
+    def method(self) -> None:
         pass
 
 
@@ -33,12 +33,12 @@ class C(metaclass=abc.ABCMeta):
     __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
-    def method(self):
+    def method(self) -> None:
         pass
 
 
 class D(C):
-    def method(self):
+    def method(self) -> None:
         pass
 
 

@@ -3,8 +3,8 @@ This is a basic closure example.
 """
 
 
-def make_adder(x):
-    def adder(y):
+def make_adder(x: int):
+    def adder(y: int):
         return x + y
     return adder
 

@@ -5,7 +5,7 @@ A basic python functional "reduce" example
 import functools
 
 
-def add(x, y):
+def add(x: int, y: int):
     return x + y
 
 

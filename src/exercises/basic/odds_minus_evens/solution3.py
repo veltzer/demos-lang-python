@@ -3,13 +3,13 @@ Solution3
 """
 
 
-def my_map(x):
+def my_map(x: int):
     if x % 2 == 0:
         return -x
     return x
 
 
-def odds_minus_evens(my_list):
+def odds_minus_evens(my_list: range):
     """ Returns the sum of odd numbers in the list minus the sum of evns """
     return sum(map(my_map, my_list))
 

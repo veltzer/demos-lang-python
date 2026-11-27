@@ -4,9 +4,10 @@ Solution
 
 import operator
 import sys
+from typing import Any
 
 
-def get_second_item(t):
+def get_second_item(t: Any):
     return t[1]
 
 

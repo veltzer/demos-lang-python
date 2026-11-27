@@ -13,17 +13,17 @@ import tempfile
 import timeit
 
 
-def load_json(filename_json):
+def load_json(filename_json: str) -> None:
     with open(filename_json) as f:
         json.load(f)
 
 
-def load_pickle(filename_pickle):
+def load_pickle(filename_pickle: str) -> None:
     with open(filename_pickle, "rb") as f:
         pickle.load(f)
 
 
-def main():
+def main() -> None:
     # first lets create a large dictionary and save it as json and pickle
     d = {}
     for x in range(100000):
@@ -40,7 +40,7 @@ def main():
         pickle.dump(d, fp, protocol=pickle.HIGHEST_PROTOCOL)
     repetitions = 10
 
-    def my_load_json():
+    def my_load_json() -> None:
         load_json(filename_json)
     json_time = timeit.timeit(my_load_json, number=repetitions)
 

@@ -7,11 +7,11 @@ from typing import override
 
 
 class Stack:
-    def __init__(self):
+    def __init__(self) -> None:
         self.lock = RLock()
         self.numbers = []
 
-    def push(self, number):
+    def push(self, number: int) -> None:
         with self.lock:
             self.numbers.append(number)
         print(f"{number} pushed to stack")
@@ -26,30 +26,30 @@ class Stack:
 
 
 class Producer(Thread):
-    def __init__(self, stack):
+    def __init__(self, stack: Stack) -> None:
         Thread.__init__(self)
         self.stack = stack
 
     @override
-    def run(self):
+    def run(self) -> None:
         for i in range(20):
             self.stack.push(i)
 
 
 class Consumer(Thread):
-    def __init__(self, stack):
+    def __init__(self, stack: Stack) -> None:
         Thread.__init__(self)
         self.stack = stack
 
     @override
-    def run(self):
+    def run(self) -> None:
         for _ in range(20):
             number = self.stack.pop()
             while number is None:
                 number = self.stack.pop()
 
 
-def main():
+def main() -> None:
     stack = Stack()
     threads: list[Thread] = [Producer(stack) for _ in range(3)]
     threads.extend(Consumer(stack) for _ in range(3))

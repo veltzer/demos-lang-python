@@ -14,14 +14,14 @@ sys._getframe().f_locals["foo"] = 42  # noqa: SLF001  teaching: demonstrating sy
 print(foo)  # noqa: F821  teaching: foo is defined through the frame locals  # pyrefly: ignore[unknown-name]  teaching: foo is defined through the frame locals
 
 
-def f():
+def f() -> None:
     x = ["one"]
     print(f"val before is {x[0]}")
     g()
     print(f"val after is {x[0]}")
 
 
-def g():
+def g() -> None:
     # noinspection PyProtectedMember
     sys._getframe(1).f_locals["x"][0] = 42  # noqa: SLF001  teaching: demonstrating sys._getframe
 

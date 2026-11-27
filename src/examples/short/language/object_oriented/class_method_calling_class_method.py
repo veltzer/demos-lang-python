@@ -5,11 +5,11 @@ This is an exploration of how one class method calls another.
 
 class A:
     @classmethod
-    def method_bar(cls, p):
+    def method_bar(cls, p: str) -> None:
         print("method_bar", p)
 
     @classmethod
-    def method_foo(cls, p):
+    def method_foo(cls, p: str) -> None:
         print("method_foo", p)
         cls.method_bar("param for method_bar")
 

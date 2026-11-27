@@ -12,7 +12,7 @@ def generate_items():
     yield from range(10)
 
 
-def square(x):
+def square(x: int):
     return x ** 2
 
 

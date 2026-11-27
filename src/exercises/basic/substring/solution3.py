@@ -3,7 +3,7 @@ solution to the substring exercise
 """
 
 
-def substring(string1, string2):
+def substring(string1: str, string2: str) -> bool:
     """ substring implemenetation """
     if len(string2) < len(string1):
         return False

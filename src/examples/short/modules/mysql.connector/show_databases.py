@@ -10,7 +10,7 @@ import os.path
 import mysql.connector
 
 
-def main():
+def main() -> None:
     option_files = os.path.expanduser("~/.my.cnf")
     option_groups = "clientmyworld"
     db = mysql.connector.connect(

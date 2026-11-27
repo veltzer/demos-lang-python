@@ -3,6 +3,6 @@
 import logging
 
 
-def demo():
+def demo() -> None:
     logger = logging.getLogger(__name__)
     logger.info("in demo")

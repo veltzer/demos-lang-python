@@ -18,7 +18,7 @@ class Event(enum.Enum):
     node_post_build = 10
 
 
-def is_enum(member):
+def is_enum(member: Event | int) -> None:
     if isinstance(member, Event):
         print("yes")
     else:

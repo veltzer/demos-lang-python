@@ -12,7 +12,7 @@ print(setuptools.find_packages())
 print(setuptools.find_packages(exclude=["config.*", "config"]))
 
 
-def find_packages_walk(path="", prefix=""):
+def find_packages_walk(path: str = "", prefix: str = ""):
     yield prefix
     prefix = prefix + "."
     for _, name, ispkg in walk_packages(path, prefix):
@@ -24,7 +24,7 @@ def find_packages_walk(path="", prefix=""):
 print(list(find_packages_walk(path="my_pkg", prefix="my_pkg")))
 
 
-def find_packages_os(path="."):
+def find_packages_os(path: str = "."):
     for root, _dirs, files in os.walk(path):
         if "__init__.py" in files:
             yield root.replace("/", ".")

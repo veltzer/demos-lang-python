@@ -4,10 +4,11 @@ Solution
 
 import csv
 import urllib.request
+from typing import Any
 from xml.etree import ElementTree as ET
 
 
-def parse_feed(feed_string):
+def parse_feed(feed_string: str):
     rss = ET.fromstring(feed_string)
     for item in rss.findall("channel/item"):
         date = item.findtext("pubDate")
@@ -20,7 +21,7 @@ def parse_feed(feed_string):
         yield date, package, version, description
 
 
-def write_csv(filename, parsed_feed_string):
+def write_csv(filename: str, parsed_feed_string: Any) -> None:
     with open(filename, "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerows(parsed_feed_string)

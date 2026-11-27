@@ -6,18 +6,23 @@ References:
 - https://stackoverflow.com/questions/14023864/flask-url-route-route-all-other-urls-to-some-function
 """
 
+from typing import TYPE_CHECKING
+
 import flask
+
+if TYPE_CHECKING:
+    from werkzeug.wrappers.response import Response
 
 app = flask.Flask(__name__)
 
 
 @app.route("/")
-def empty():
+def empty() -> Response:
     return flask.redirect("/index.html")
 
 
 @app.route("/<path:path>")
-def all_routes(path):
+def all_routes(path: str) -> str:
     return f"path is [{path}]"
 
 

@@ -16,7 +16,7 @@ class Model(ABC):
         pass
 
     @abstractmethod
-    def get(self, item) -> Any:
+    def get(self, item: Any) -> Any:
         """Returns an object with a .items() call method
         that iterates over key,value pairs of its information."""
 
@@ -31,7 +31,7 @@ class ProductModel(Model):
         """A polymorphic way to pass a float with a particular
         __str__ functionality."""
 
-        def __str__(self):
+        def __str__(self) -> str:
             return f"{self:.2f}"
 
     products: ClassVar = {
@@ -47,7 +47,7 @@ class ProductModel(Model):
     def __iter__(self) -> Iterator[str]:
         yield from self.products
 
-    def get(self, item) -> Any:
+    def get(self, item: Any) -> Any:
         try:
             return self.products[item]
         except KeyError as e:
@@ -56,53 +56,53 @@ class ProductModel(Model):
 
 class View(ABC):
     @abstractmethod
-    def show_item_list(self, item_type, item_list):
+    def show_item_list(self, item_type: str, item_list: list[Any]) -> None:
         pass
 
     @abstractmethod
-    def show_item_information(self, item_type, item_name, item_info):
+    def show_item_information(self, item_type: str, item_name: str, item_info: dict[str, Any]) -> None:
         """Will look for item information by iterating over key,value pairs
         yielded by item_info.items()"""
 
     @abstractmethod
-    def item_not_found(self, item_type, item_name):
+    def item_not_found(self, item_type: str, item_name: str) -> None:
         pass
 
 
 class ConsoleView(View):
-    def show_item_list(self, item_type, item_list):
+    def show_item_list(self, item_type: str, item_list: list[Any]) -> None:
         print(item_type.upper() + " LIST:")
         for item in item_list:
             print(item)
         print()
 
     @staticmethod
-    def capitalizer(string):
+    def capitalizer(string: str):
         return string[0].upper() + string[1:].lower()
 
-    def show_item_information(self, item_type, item_name, item_info):
+    def show_item_information(self, item_type: str, item_name: str, item_info: dict[str, Any]) -> None:
         print(item_type.upper() + " INFORMATION:")
         printout = f"Name: {item_name}"
         for key, value in item_info.items():
-            printout += ", " + self.capitalizer(str(key)) + ": " + str(value)
+            printout += ", " + self.capitalizer(key) + ": " + str(value)
         printout += "\n"
         print(printout)
 
-    def item_not_found(self, item_type, item_name):
+    def item_not_found(self, item_type: str, item_name: str) -> None:
         print(f"That {item_type} {item_name} doesnt exist in the records")
 
 
 class Controller:
-    def __init__(self, model, view):
+    def __init__(self, model: Any, view: Any) -> None:
         self.model = model
         self.view = view
 
-    def show_items(self):
+    def show_items(self) -> None:
         items = list(self.model)
         item_type = self.model.item_type
         self.view.show_item_list(item_type, items)
 
-    def show_item_information(self, item_name):
+    def show_item_information(self, item_name: str) -> None:
         """
         Show information about a {item_type} item.
         :param str item_name: the name of the {item_type} item to show information about
@@ -117,7 +117,7 @@ class Controller:
             self.view.show_item_information(item_type, item_name, item_info)
 
 
-def main():
+def main() -> None:
     """
     >>> model = ProductModel()
     >>> view = ConsoleView()

@@ -11,7 +11,7 @@ if TYPE_CHECKING:
 
 
 # Function to integrate
-def f(z):
+def f(z: float):
     return z**2
 
 

@@ -3,6 +3,7 @@ This example how to quickly use key and partial to achieve custom sorting.
 """
 
 import operator
+from typing import Any
 
 # we want to sort according to the second element of the tuple
 
@@ -10,7 +11,7 @@ import operator
 mylist = [(1, 7), (2, 5), (0, 0), (3, 8), (1, 8), (2, 8)]
 
 
-def get_second(t):
+def get_second(t: Any):
     return t[1]
 
 

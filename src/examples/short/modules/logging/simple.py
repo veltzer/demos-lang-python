@@ -11,7 +11,7 @@ Strange...
 import logging
 
 
-def my_function():
+def my_function() -> None:
     my_logger = logging.getLogger(__name__)
     my_logger.setLevel(logging.WARNING)
     my_logger.warning("from the function: this is a warning message")

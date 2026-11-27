@@ -6,7 +6,7 @@ import multiprocessing.pool
 import time
 
 
-def sleep_a_little(num):
+def sleep_a_little(num: int) -> None:
     print("before", num)
     time.sleep(1)
     print("after", num)

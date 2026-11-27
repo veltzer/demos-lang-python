@@ -5,5 +5,5 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def demo():
+def demo() -> None:
     logger.info("in demo")

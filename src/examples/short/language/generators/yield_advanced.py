@@ -25,7 +25,7 @@ def odds():
         yield
 
 
-def main():
+def main() -> None:
     c1 = evens()
     c1.__next__()
     c2 = odds()

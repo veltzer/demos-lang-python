@@ -15,7 +15,7 @@ os.environ["FLASK_ENV"] = "development"
 
 
 @app.route("/")
-def hello():
+def hello() -> str:
     return "Hello, World!"
 
 

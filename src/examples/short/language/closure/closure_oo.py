@@ -17,25 +17,25 @@ position in some returned tuple.
 
 
 # noinspection PyPep8Naming
-def person(initial_name, initial_age):
+def person(initial_name: str, initial_age: int):
     data = {
         "name": initial_name,
         "age": initial_age,
     }
 
-    def set_name(name):
+    def set_name(name: str) -> None:
         data["name"] = name
 
     def get_name():
         return data["name"]
 
-    def set_age(age):
+    def set_age(age: int) -> None:
         data["age"] = age
 
     def get_age():
         return data["age"]
 
-    def print_me():
+    def print_me() -> None:
         print("name", data["name"])
         print("age", data["age"])
 

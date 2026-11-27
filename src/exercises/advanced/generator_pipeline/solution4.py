@@ -2,29 +2,31 @@
 solution4.py
 """
 
+from typing import Any
+
 
 def line_generator():
     with open("soliloquy.txt") as stream:
         yield from stream
 
 
-def line_splitter(g):
+def line_splitter(g: Any):
     for x in g:
         yield from x.split(" ")
 
 
-def lowercase_generator(g):
+def lowercase_generator(g: Any):
     for x in g:
         yield x.lower()
 
 
-def remove_empty_strings(g):
+def remove_empty_strings(g: Any):
     for x in g:
         if x != "":
             yield x
 
 
-def newline_remover(g):
+def newline_remover(g: Any):
     for x in g:
         if x.endswith("\n"):
             yield x[:-1]
@@ -32,7 +34,7 @@ def newline_remover(g):
             yield x
 
 
-def punctuation_remover(g):
+def punctuation_remover(g: Any):
     punctuation_signs = [".", ",", ":", "?", ";"]
     for x in g:
         if x[-1] in punctuation_signs:
@@ -41,7 +43,7 @@ def punctuation_remover(g):
             yield x
 
 
-def extension_remover(g):
+def extension_remover(g: Any):
     extensions = ["ed", "ing", "ion"]
     for x in g:
         found = False
@@ -53,7 +55,7 @@ def extension_remover(g):
             yield x
 
 
-def main():
+def main() -> None:
     list_generators = []
     list_of_all_geneators = [
         line_splitter,

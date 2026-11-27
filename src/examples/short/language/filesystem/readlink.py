@@ -21,7 +21,7 @@ import os
 import os.path
 
 
-def find_link_target(link):
+def find_link_target(link: str):
     assert os.path.islink(link)
     link_folder = os.path.dirname(link)
     link_target = os.readlink(link)
@@ -34,20 +34,20 @@ def find_link_target(link):
     return real_link_target
 
 
-def find_link_target_rec(link):
+def find_link_target_rec(link: str):
     while os.path.islink(link):
         link = find_link_target(link)
     return link
 
 
-def find_link_target_better(link):
+def find_link_target_better(link: str):
     assert os.path.islink(link)
     real = os.path.realpath(link)
     assert os.path.exists(real)
     return real
 
 
-def main():
+def main() -> None:
     """
     this is a file name which is a symbolic name on most linux
     systems

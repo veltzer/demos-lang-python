@@ -17,11 +17,11 @@ is really an initializer.
 
 
 class Book:
-    def __init__(self, price):
+    def __init__(self, price: int) -> None:
         """ initializer """
         self.price = price
 
-    def print_me(self):
+    def print_me(self) -> None:
         print("price is", self.price)
 
 

@@ -17,6 +17,10 @@ This is typical UNIX behaviour.
 import os
 import signal
 import threading
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from types import FrameType
 
 old_sig_usr1 = signal.getsignal(signal.SIGUSR1)
 old_sig_usr2 = signal.getsignal(signal.SIGUSR2)
@@ -25,18 +29,18 @@ stop_event = threading.Event()
 
 
 # a small debugging function that prints the thread doing the printing...
-def debug(msg):
+def debug(msg: str) -> None:
     print(threading.current_thread().name, msg)
 
 
 # a wrapper function to call an old signal handler
-def call_old(old_val, signum, frame):
+def call_old(old_val: Any, signum: int, frame: FrameType | None) -> None:
     if old_val is not None and old_val not in (signal.SIG_IGN, signal.SIG_DFL):
         old_val(signum, frame)
 
 
 # this is my signal handler
-def signal_handler(signum, frame):
+def signal_handler(signum: int, frame: FrameType | None) -> None:
     debug(f"signal_handler: got signal {signum}")
     if signum == signal.SIGUSR1:
         # lets call the old signal handler
@@ -53,7 +57,7 @@ def signal_handler(signum, frame):
         debug("signal_handler: dont press CTRL+C. Kill me using SIGUSR2")
 
 
-def main():
+def main() -> None:
     signal.signal(signal.SIGUSR1, signal_handler)
     signal.signal(signal.SIGUSR2, signal_handler)
     signal.signal(signal.SIGINT, signal_handler)

@@ -11,7 +11,7 @@ import sys
 import cv2
 
 
-def create_video_snippet(video_path, output_path, start_time, duration):
+def create_video_snippet(video_path: str, output_path: str, start_time: int, duration: int) -> None:
     cap = cv2.VideoCapture(video_path)
     cap.set(cv2.CAP_PROP_POS_MSEC, start_time * 1000)  # Set the start time in milliseconds
 

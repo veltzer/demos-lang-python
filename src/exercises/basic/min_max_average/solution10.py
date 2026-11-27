@@ -3,7 +3,7 @@ Solution10
 """
 
 
-def max_min_avg(*num):
+def max_min_avg(*num: int):
     """Return a tuple containing the maximum, minimum and average
     of the given numbers"""
     return max(num), min(num), sum(num) / len(num)
@@ -12,7 +12,7 @@ def max_min_avg(*num):
 print(max_min_avg(3, 4, 5))
 
 
-def max_min_avg_2(lst):
+def max_min_avg_2(lst: list[int] | tuple[int, int, int]):
     """Return a tuple containing the maximum, minimum and average
     of the given numbers"""
     return max(lst), min(lst), sum(lst) / len(lst)
@@ -22,7 +22,7 @@ print(max_min_avg_2([3, 4, 5]))
 print(max_min_avg_2((3, 4, 5)))
 
 
-def max_min_avg_3(seq):
+def max_min_avg_3(seq: list[int]):
     mysum = 0
     mymin = None
     mymax = None

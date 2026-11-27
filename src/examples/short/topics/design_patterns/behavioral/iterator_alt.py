@@ -37,7 +37,7 @@ class NumberWords:
 # Test the iterator
 
 
-def main():
+def main() -> None:
     """
     # Counting to two...
     >>> for number in NumberWords(start=1, stop=2):

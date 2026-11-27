@@ -8,18 +8,18 @@ import docker
 import humanize
 
 
-def format_size(size_bytes):
+def format_size(size_bytes: int):
     """Convert size in bytes to human readable format"""
     return humanize.naturalsize(size_bytes, binary=True)
 
 
-def format_created(timestamp):
+def format_created(timestamp: float):
     """Convert unix timestamp to relative time"""
     dt = datetime.fromtimestamp(timestamp, tz=UTC)
     return humanize.naturaltime(dt)
 
 
-def list_images(*, show_all=False, quiet=False, digests=False):
+def list_images(*, show_all: bool = False, quiet: bool = False, digests: bool = False) -> None:
     """List Docker images similarly to [docker images] command"""
     client = docker.from_env()
 
@@ -69,7 +69,7 @@ def list_images(*, show_all=False, quiet=False, digests=False):
         print(line_format.format(*line_data))
 
 
-def main():
+def main() -> int:
     parser = argparse.ArgumentParser(description="List Docker images")
     parser.add_argument("-a", "--all", action="store_true", help="Show all images (default hides intermediate images)")
     parser.add_argument("-q", "--quiet", action="store_true", help="Only show image IDs")

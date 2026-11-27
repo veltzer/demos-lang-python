@@ -21,7 +21,7 @@ import click
 @click.option("--output", required=True, help="output file", type=click.File("w", lazy=False))
 @click.option("--hash-type", required=True, type=click.Choice(["md5", "sha1"]))
 @click.option("--foo/--bar", required=False, help="this is foo")
-def main(count, name, required, output, hash_type):
+def main(count: int, name: str, required: str, output: str, hash_type: str) -> None:
     """Simple program that greets NAME for a total of COUNT times."""
     print(required)
     print(output)

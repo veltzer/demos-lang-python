@@ -3,9 +3,10 @@ Excercise: write a function to inverse a dictionary.
 Assume that all values are different.
 """
 import doctest
+from typing import Any
 
 
-def rev_dict1(d):
+def rev_dict1(d: Any):
     """
     >>> rev_dict1({"a": 2, "b": 3})=={2: "a", 3: "b"}
     True
@@ -13,7 +14,7 @@ def rev_dict1(d):
     return {v: k for k, v in d.items()}
 
 
-def rev_dict2(d):
+def rev_dict2(d: Any):
     """
     >>> rev_dict2({"a": 2, "b": 3})=={2: "a", 3: "b"}
     True
@@ -22,7 +23,7 @@ def rev_dict2(d):
     return dict(zip(d.values(), d.keys(), strict=False))
 
 
-def rev_dict3(d):
+def rev_dict3(d: Any):
     """
     >>> rev_dict3({"a": 2, "b": 3})=={2: "a", 3: "b"}
     True
@@ -31,7 +32,7 @@ def rev_dict3(d):
     return {v: k for k, v in d.items()}
 
 
-def rev_dict4(d):
+def rev_dict4(d: Any):
     """
     >>> rev_dict4({"a": 2, "b": 3})=={2: "a", 3: "b"}
     True
@@ -40,7 +41,7 @@ def rev_dict4(d):
     return {v: k for k, v in d.items()}
 
 
-def rev_dict5(d):
+def rev_dict5(d: Any):
     """
     >>> rev_dict5({"a": 2, "b": 3})=={2: "a", 3: "b"}
     True

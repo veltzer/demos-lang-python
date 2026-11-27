@@ -10,11 +10,11 @@ import os.path
 import sys
 
 
-def is_exe(path):
+def is_exe(path: str) -> bool:
     return os.path.isfile(path) and os.access(path, os.X_OK)
 
 
-def which(program):
+def which(program: str):
     """
     returns the absolute path of a program
 

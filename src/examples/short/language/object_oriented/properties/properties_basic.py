@@ -8,26 +8,28 @@ the magical "x.price" property.
 - This idea is similar to ideas in languages such as C#.
 """
 
+from typing import Any
+
 
 class Book:
-    def __init__(self, price):
+    def __init__(self, price: int) -> None:
         self.__price = price
 
     def get_price(self):
         return self.__price
 
-    def set_price(self, val):
+    def set_price(self, val: Any) -> None:
         self.__price = val
 
     price = property(get_price, set_price)
 
-    def print_via_prop(self):
+    def print_via_prop(self) -> None:
         print("printMe: price is", self.price)
 
-    def print_via_direct(self):
+    def print_via_direct(self) -> None:
         print("printMe: price is", self.__price)
 
-    def print_via_get(self):
+    def print_via_get(self) -> None:
         print("printMe: price is", self.get_price())
 
 

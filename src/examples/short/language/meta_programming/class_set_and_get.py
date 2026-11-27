@@ -1,21 +1,23 @@
 """ class_set_and_get.py """
 
+from typing import Any
+
 
 class ValidString:
-    def __init__(self, minlen=0, maxlen=None):
+    def __init__(self, minlen: int = 0, maxlen: int | None = None) -> None:
         self.minlen = minlen
         self.maxlen = maxlen
         self.name: str = ""
 
-    def __set_name__(self, owner, name):
+    def __set_name__(self, owner: type, name: str) -> None:
         self.name = name
 
-    def __get__(self, instance, owner):
+    def __get__(self, instance: Any, owner: Any):
         if instance is None:
             return self
         return instance.__dict__.get(self.name, None)
 
-    def __set__(self, instance, value):
+    def __set__(self, instance: Any, value: Any) -> None:
         if not isinstance(value, str):
             raise TypeError(f"{self.name} must be a string")
         if len(value) < self.minlen:
@@ -29,7 +31,7 @@ class Person:
     name = ValidString(minlen=2, maxlen=30)
     email = ValidString(minlen=5, maxlen=100)
 
-    def __init__(self, name, email):
+    def __init__(self, name: str, email: int | str) -> None:
         self.name = name
         self.email = email
 

@@ -30,7 +30,7 @@ class Controller:
     def __init__(self, blackboard: Blackboard) -> None:
         self.blackboard = blackboard
 
-    def run_loop(self):
+    def run_loop(self) -> int:
         """
         This function is a loop that runs until the progress reaches 100.
         It checks if an expert is eager to contribute and then calls its contribute method.
@@ -92,7 +92,7 @@ class Professor(AbstractExpert):
         self.blackboard.contributions += [self.__class__.__name__]
 
 
-def main():
+def main() -> None:
     """
     >>> blackboard = Blackboard()
     >>> blackboard.add_expert(Student(blackboard))

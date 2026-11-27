@@ -3,7 +3,7 @@ solution2.py
 """
 
 
-def line_generator(filename):
+def line_generator(filename: str):
     with open(filename) as stream:
         yield from stream
 

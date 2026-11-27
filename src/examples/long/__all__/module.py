@@ -3,9 +3,9 @@
 __all__ = ("a",)
 
 
-def a():
+def a() -> None:
     print("a")
 
 
-def b():
+def b() -> None:
     print("b")

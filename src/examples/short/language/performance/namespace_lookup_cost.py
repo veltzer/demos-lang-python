@@ -12,14 +12,14 @@ global_var = 5
 global_var_2 = 7
 
 
-def regular_func():
+def regular_func() -> int:
     current_sum = 0
     for _ in range(limit):
         current_sum += global_var * global_var_2
     return current_sum
 
 
-def caching_func():
+def caching_func() -> int:
     current_sum = 0
     local = global_var
     local_2 = global_var_2

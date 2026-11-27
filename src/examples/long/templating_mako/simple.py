@@ -5,7 +5,7 @@ import datetime as dt
 import mako.template
 
 
-def years(x):
+def years(x: int) -> str:
     curr_year = dt.datetime.now().astimezone().year
     return ",".join(map(str, range(x, curr_year + 1)))
 

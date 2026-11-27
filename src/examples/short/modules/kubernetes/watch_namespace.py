@@ -11,7 +11,7 @@ import kubernetes.config
 import kubernetes.watch
 
 
-def main():
+def main() -> None:
     # Configs can be set in Configuration class directly or using helper utility
     kubernetes.config.load_config()
 

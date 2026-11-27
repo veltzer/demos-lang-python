@@ -6,11 +6,11 @@ and then just apply the "()" or "__call__" method on it.
 """
 
 
-def add(x, y):
+def add(x: int, y: int):
     return x + y
 
 
-def sub(x, y):
+def sub(x: int, y: int):
     return x - y
 
 

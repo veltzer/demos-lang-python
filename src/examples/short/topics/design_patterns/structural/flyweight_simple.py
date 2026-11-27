@@ -15,25 +15,25 @@ class Button:
     color = "blue"
     weight = 3
 
-    def __init__(self):
+    def __init__(self) -> None:
         # look! nothing in init...
         pass
 
-    def print_me(self):
+    def print_me(self) -> None:
         print(f"text {self.text}")
         print(f"color {self.color}")
         print(f"weight {self.weight}")
 
-    def set_text(self, text):
+    def set_text(self, text: str) -> None:
         self.text = text
 
-    def set_color(self, color):
+    def set_color(self, color: str) -> None:
         self.color = color
 
-    def set_weight(self, weight):
+    def set_weight(self, weight: int) -> None:
         self.weight = weight
 
-    def get_color(self):
+    def get_color(self) -> str:
         return self.color
         # if "color" in self.__dict__:
         #     return self.color  # noqa: ERA001  teaching: kept in the comment for the reader

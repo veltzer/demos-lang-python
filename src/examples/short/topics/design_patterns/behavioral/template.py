@@ -9,7 +9,7 @@ steps to subclasses.
 Django class based views: https://docs.djangoproject.com/en/2.1/topics/class-based-views/
 """
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -36,7 +36,7 @@ def saver() -> None:
     print("[SAVE]")
 
 
-def template_function(getter, converter: Callable[[str], str] | None = None, *, to_save: bool = False) -> None:
+def template_function(getter: Any, converter: Callable[[str], str] | None = None, *, to_save: bool = False) -> None:
     data = getter()
     print(f"Got {data!r}")
 
@@ -51,7 +51,7 @@ def template_function(getter, converter: Callable[[str], str] | None = None, *, 
     print(f"{data!r} was processed")
 
 
-def main():
+def main() -> None:
     """
     >>> template_function(get_text, to_save=True)
     Got `plain-text`

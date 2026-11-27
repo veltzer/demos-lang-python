@@ -3,9 +3,13 @@ Solution4
 """
 
 import doctest
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
-def apply_funcs_gen1(funcs, x):
+def apply_funcs_gen1(funcs: list[Callable[..., Any]], x: int):
     """Generate results of functions applied to an argument.
     >>> def print_a(x):
     ...     print("a")
@@ -24,7 +28,7 @@ def apply_funcs_gen1(funcs, x):
         yield f(x)
 
 
-def apply_funcs_gen2(funcs, x):
+def apply_funcs_gen2(funcs: list[Callable[..., Any]], x: int):
     """Generate results of functions applied to an argument.
     >>> def print_a(x):
     ...     print("a")

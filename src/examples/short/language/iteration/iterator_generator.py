@@ -7,7 +7,7 @@ in python.
 """
 
 
-def my_reverse(data):
+def my_reverse(data: str):
     for index in range(len(data) - 1, -1, -1):
         yield data[index]
 

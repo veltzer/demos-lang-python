@@ -3,7 +3,7 @@ Solution
 """
 
 
-def find_my_value(value):
+def find_my_value(value: float) -> str:
     for k, v in globals().items():
         if v == value:
             return k

@@ -56,7 +56,7 @@ class YourBorg(Borg):
         return self.state
 
 
-def main():
+def main() -> None:
     """
     >>> rm1 = YourBorg()
     >>> rm2 = YourBorg()

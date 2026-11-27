@@ -6,16 +6,16 @@ class Queue:
     Simple queue FIFO implementation using a python list
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.data = []
 
-    def push(self, item):
+    def push(self, item: int) -> None:
         self.data.append(item)
 
     def pop(self):
         return self.data.pop(0)
 
-    def len(self):
+    def len(self) -> int:
         return len(self.data)
 
 

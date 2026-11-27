@@ -9,13 +9,13 @@ if TYPE_CHECKING:
 
 
 
-def my_apply(function: Callable[[str], object], seq: Iterable[str]):
+def my_apply(function: Callable[[str], object], seq: Iterable[str]) -> None:
     """ apply a function on a sequence """
     for item in seq:
         function(item)
 
 
-def reverse_hash(my_dict):
+def reverse_hash(my_dict: dict[str, str]):
     """ reverse a hash table """
     target = {}
     my_apply(lambda k: target.__setitem__(my_dict[k], k), my_dict)
@@ -24,7 +24,7 @@ def reverse_hash(my_dict):
     return target
 
 
-def reverse_hash_map(my_dict):
+def reverse_hash_map(my_dict: dict[str, str]) -> dict[str, str]:
     """ reverse a hash table using map
     note that map is lazy in python 3, so we must consume the
     resulting iterator (e.g. with list) for the side effects to happen """
@@ -33,7 +33,7 @@ def reverse_hash_map(my_dict):
     return target
 
 
-def main():
+def main() -> None:
     """ the main function """
     orig = {
         "Israel": "Jerusalem",

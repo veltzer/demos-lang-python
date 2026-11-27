@@ -11,7 +11,7 @@ Things to notice:
 
 
 # noinspection PyShadowingNames
-def func(x):
+def func(x: int) -> None:
     y = 7
     print("x is ", x)
     print("y is ", y)

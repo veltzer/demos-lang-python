@@ -9,7 +9,7 @@ from dataclasses import dataclass
 
 # without dataclass
 class PersonManual:
-    def __init__(self, name: str, address: str):
+    def __init__(self, name: str, address: str) -> None:
         self.name = name
         self.address = address
 

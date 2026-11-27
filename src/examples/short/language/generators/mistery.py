@@ -5,7 +5,7 @@ What will the program print and why?
 """
 
 
-def mistery(x):
+def mistery(x: int):
     return list(range(x))
     yield x
 

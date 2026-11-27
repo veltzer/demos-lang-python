@@ -3,9 +3,10 @@ This example shows how to catch all exceptions, and exit the software in any cas
 """
 
 import sys
+from typing import Any
 
 
-def excepthook(_type, value, _traceback):
+def excepthook(_type, value: Any, _traceback):
     # this loop will drill to the core of the problem
     # use only if this is what you want to show...
     # traceback.print_exception(value=value, tb=_traceback, etype=_type)  # noqa: ERA001  teaching: kept in the comment for the reader

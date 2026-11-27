@@ -6,18 +6,18 @@ name. This is true for constructors as well as for regular methods.
 
 
 class A:
-    def __init__(self, val):
+    def __init__(self, val: int) -> None:
         self.__private_var = val
 
     # noinspection PyRedeclaration
-    def __init__(self):  # noqa: F811  teaching: the second definition deliberately replaces the first
+    def __init__(self) -> None:  # noqa: F811  teaching: the second definition deliberately replaces the first
         self.__private_var = 5
 
-    def say_hello(self):
+    def say_hello(self) -> None:
         print(self.__private_var, "hello")
 
     # noinspection PyRedeclaration
-    def say_hello(self, name):  # noqa: F811  teaching: the second definition deliberately replaces the first
+    def say_hello(self, name: str) -> None:  # noqa: F811  teaching: the second definition deliberately replaces the first
         print(self.__private_var, "hello", name)
 
 

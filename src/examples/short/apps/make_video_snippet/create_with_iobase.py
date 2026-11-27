@@ -9,8 +9,13 @@ The code was originally created by chatGPT
 import io
 import os.path
 import sys
+from io import IOBase
+from typing import TYPE_CHECKING
 
 import cv2
+
+if TYPE_CHECKING:
+    from _io import BufferedReader, BufferedWriter
 
 TEMP_FILE_IN = "/tmp/temp_in"
 # the file MUST be called *.mp4 because otherwise opencv will not be able to open it
@@ -18,7 +23,7 @@ TEMP_FILE_IN = "/tmp/temp_in"
 TEMP_FILE_OUT = "/tmp/temp_out.mp4"
 
 
-def write_stream_to_disk(stream, filename):
+def write_stream_to_disk(stream: IOBase, filename: str) -> None:
     assert isinstance(stream, io.IOBase)
     assert isinstance(filename, str)
     with open(TEMP_FILE_IN, "wb") as out:
@@ -26,7 +31,7 @@ def write_stream_to_disk(stream, filename):
             out.write(b)
 
 
-def read_file_to_stream(filename, stream):
+def read_file_to_stream(filename: str, stream: IOBase) -> None:
     assert isinstance(filename, str)
     assert isinstance(stream, io.IOBase)
     with open(filename, "rb") as in_stream:
@@ -34,7 +39,7 @@ def read_file_to_stream(filename, stream):
             stream.write(b)
 
 
-def create_video_snippet_streams(video_stream, snippet_stream, start_time, duration):
+def create_video_snippet_streams(video_stream: BufferedReader, snippet_stream: BufferedWriter, start_time: int, duration: int) -> None:
     assert isinstance(video_stream, io.IOBase)
     assert isinstance(snippet_stream, io.IOBase)
     if os.path.isfile(TEMP_FILE_IN):
@@ -49,7 +54,7 @@ def create_video_snippet_streams(video_stream, snippet_stream, start_time, durat
     os.unlink(TEMP_FILE_OUT)
 
 
-def create_video_snippet(video_path, output_path, start_time, duration):
+def create_video_snippet(video_path: str, output_path: str, start_time: int, duration: int) -> None:
     assert isinstance(video_path, str)
     assert isinstance(output_path, str)
     cap = cv2.VideoCapture(video_path)

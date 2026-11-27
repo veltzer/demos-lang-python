@@ -9,11 +9,13 @@ TODO:
 - show how to inject by name instead of by type.
 """
 
+from typing import Any
+
 import inject
 
 
 @inject.params(var=list)
-def doit(a, b, var):
+def doit(a: int, b: int, var: Any) -> None:
     print(a, b, var)
 
 
@@ -24,15 +26,15 @@ def my_config(binder: inject.Binder) -> None:
 inject.configure(config=my_config)
 
 
-def f1():
+def f1() -> None:
     f2()
 
 
-def f2():
+def f2() -> None:
     f3()
 
 
-def f3():
+def f3() -> None:
     doit(a=5, b=7)
 
 

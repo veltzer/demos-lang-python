@@ -3,7 +3,7 @@ Solution
 """
 
 
-def my_sum(lst):
+def my_sum(lst: list[int]):
     """A function receiving a list of integers and returning the sum
     of the integers on the list"""
     s = 0

@@ -4,14 +4,14 @@ This example shows how to store method pointers and call them
 
 
 class MyObj:
-    def __init__(self):
+    def __init__(self) -> None:
         self.curFunc = self.handle_hello
         self.a = 5
 
-    def handle_hello(self, line):
+    def handle_hello(self, line: str) -> None:
         print("hello got line", line, self.a)
 
-    def do_the_call(self, line):
+    def do_the_call(self, line: str) -> None:
         print("got line", line)
         self.curFunc(line)
 

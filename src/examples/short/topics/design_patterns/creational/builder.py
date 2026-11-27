@@ -104,7 +104,7 @@ def construct_building(cls: type[Building]) -> Building:
     return building
 
 
-def main():
+def main() -> None:
     """
     >>> house = House()
     >>> house

@@ -58,7 +58,7 @@ class Ellipse(Graphic):
         print(f"Ellipse: {self.name}")
 
 
-def main():
+def main() -> None:
     """
     >>> ellipse1 = Ellipse("1")
     >>> ellipse2 = Ellipse("2")

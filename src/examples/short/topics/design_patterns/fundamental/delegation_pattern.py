@@ -46,7 +46,7 @@ class Delegator:
         if not callable(attr):
             return attr
 
-        def wrapper(*args, **kwargs):
+        def wrapper(*args: Any, **kwargs: Any):
             return attr(*args, **kwargs)
 
         return wrapper

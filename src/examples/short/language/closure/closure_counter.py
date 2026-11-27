@@ -3,7 +3,7 @@ This is a basic closure example.
 """
 
 
-def make_counter(o):
+def make_counter(o: dict[str, int]):
     def tick():
         o["data"] = o["data"] + 1
         return o["data"]

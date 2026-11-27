@@ -17,11 +17,11 @@ static_file_content = (
 print(f"static_file_content is [{static_file_content}]")
 
 
-def get_real_filename(filename):
+def get_real_filename(filename: str) -> str:
     return os.path.join(os.path.dirname(__file__), filename)
 
 
-def get_data(filename):
+def get_data(filename: str) -> bytes:
     return open(get_real_filename(filename), "rb").read()
 
 

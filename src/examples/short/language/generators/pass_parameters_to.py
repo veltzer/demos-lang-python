@@ -4,7 +4,7 @@ function...
 """
 
 
-def generate_items(start, stop):
+def generate_items(start: int, stop: int):
     yield from range(start, stop)
 
 

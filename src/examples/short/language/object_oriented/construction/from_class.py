@@ -10,19 +10,19 @@ hook. flexible.
 
 
 class A:
-    def __init__(self):
+    def __init__(self) -> None:
         print("in A constructor")
 
 
-def make_something(cls: type[A]):
+def make_something(cls: type[A]) -> A:
     return cls()
 
 
-def make_something_2(cls: type[A]):
+def make_something_2(cls: type[A]) -> A:
     return cls.__new__(cls)
 
 
-def make_something_3(cls: type[A]):
+def make_something_3(cls: type[A]) -> A:
     t = cls.__new__(cls)
     t.__init__()
     return t

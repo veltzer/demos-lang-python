@@ -6,13 +6,16 @@ chosen to return another object.
 """
 
 
+from typing import Self
+
+
 class Reverse:
     """ Iterator for looping over a sequence backwards """
-    def __init__(self, data):
+    def __init__(self, data: range | str) -> None:
         self.data = data
         self.index = len(data)
 
-    def __iter__(self):
+    def __iter__(self) -> Self:
         return self
 
     def __next__(self):
@@ -22,7 +25,7 @@ class Reverse:
         return self.data[self.index]
 
 
-def main():
+def main() -> None:
     # And now lets use the iterator...
     for x in Reverse(range(10)):
         print(x)

@@ -10,7 +10,7 @@ name_to_days_num = {
 }
 
 
-def get_num_of_days_in_month(month_name, year):
+def get_num_of_days_in_month(month_name: str, year: int) -> int:
     """ Given a month name,
     return the number of days in this month"""
     if month_name in name_to_days_num:
@@ -20,7 +20,7 @@ def get_num_of_days_in_month(month_name, year):
     raise ValueError("No such month")
 
 
-def get_following_month(month_name):
+def get_following_month(month_name: str) -> str:
     """ Given a month name,
     return the name of the following month"""
     if month_name in name_to_days_num:
@@ -29,6 +29,6 @@ def get_following_month(month_name):
     raise ValueError("No such month")
 
 
-def is_leap_year(year):
+def is_leap_year(year: int):
     """ Return True if the year is a leap year, False otherwise"""
     return year % 4 == 0 and (year % 100 != 0 or year % 1000 == 0)

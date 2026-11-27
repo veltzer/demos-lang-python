@@ -6,14 +6,14 @@ Provides recombination business logic by chaining together using boolean logic.
 """
 
 from abc import abstractmethod
-from typing import override
+from typing import Any, override
 
 
 class Specification:
-    def and_specification(self, candidate):
+    def and_specification(self, candidate: Any):
         raise NotImplementedError
 
-    def or_specification(self, candidate):
+    def or_specification(self, candidate: Any):
         raise NotImplementedError
 
     def not_specification(self):
@@ -30,20 +30,20 @@ class CompositeSpecification(Specification):
         raise NotImplementedError
 
     @override
-    def and_specification(self, candidate):
+    def and_specification(self, candidate: Any) -> AndSpecification:
         return AndSpecification(self, candidate)
 
     @override
-    def or_specification(self, candidate):
+    def or_specification(self, candidate: Any) -> OrSpecification:
         return OrSpecification(self, candidate)
 
     @override
-    def not_specification(self):
+    def not_specification(self) -> NotSpecification:
         return NotSpecification(self)
 
 
 class AndSpecification(CompositeSpecification):
-    def __init__(self, one, other):
+    def __init__(self, one: Specification, other: Specification) -> None:
         self._one: Specification = one
         self._other: Specification = other
 
@@ -52,7 +52,7 @@ class AndSpecification(CompositeSpecification):
 
 
 class OrSpecification(CompositeSpecification):
-    def __init__(self, one, other):
+    def __init__(self, one: Specification, other: Specification) -> None:
         self._one: Specification = one
         self._other: Specification = other
 
@@ -61,7 +61,7 @@ class OrSpecification(CompositeSpecification):
 
 
 class NotSpecification(CompositeSpecification):
-    def __init__(self, wrapped):
+    def __init__(self, wrapped: Specification) -> None:
         self._wrapped: Specification = wrapped
 
     def is_satisfied_by(self, candidate: object) -> bool:
@@ -69,7 +69,7 @@ class NotSpecification(CompositeSpecification):
 
 
 class User:
-    def __init__(self, *, super_user=False):
+    def __init__(self, *, super_user: bool = False) -> None:
         self.super_user = super_user
 
 
@@ -83,7 +83,7 @@ class SuperUserSpecification(CompositeSpecification):
         return bool(getattr(candidate, "super_user", False))
 
 
-def main():
+def main() -> None:
     """
     >>> andrey = User()
     >>> ivan = User(super_user=True)

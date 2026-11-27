@@ -7,7 +7,7 @@ print(f"hello from [{__file__}]")
 my_global = 42
 
 
-def print_module_info():
+def print_module_info() -> None:
     # noinspection PyUnusedLocal
     my_local = 42  # noqa: F841  teaching: the local appears in vars() output
     print(f"module variables are [{vars()}]")

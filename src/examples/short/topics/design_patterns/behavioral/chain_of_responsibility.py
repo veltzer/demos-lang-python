@@ -24,7 +24,7 @@ from contextlib import redirect_stdout
 
 
 class Handler(ABC):
-    def __init__(self, successor: Handler | None = None):
+    def __init__(self, successor: Handler | None = None) -> None:
         self.successor = successor
 
     def handle(self, request: int) -> None:
@@ -102,7 +102,7 @@ request 20 handled in handler 2
 """
 
 
-def main():
+def main() -> None:
     h0 = ConcreteHandler0()
     h1 = ConcreteHandler1()
     h2 = ConcreteHandler2(FallbackHandler())

@@ -21,7 +21,7 @@ def diamond_lines():
                 yield from file_handle
 
 
-def main():
+def main() -> None:
     for line in diamond_lines():
         print(line, end="")
 

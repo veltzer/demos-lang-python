@@ -3,7 +3,7 @@ This example shows how with works for file streams
 """
 
 
-def count_lines_in_file(filename):
+def count_lines_in_file(filename: str) -> int:
     with open(filename) as stream:
         counter = 0
         for _ in stream:
@@ -11,7 +11,7 @@ def count_lines_in_file(filename):
     return counter
 
 
-def count_lines_in_file_2(filename):
+def count_lines_in_file_2(filename: str) -> int:
     stream = open(filename)  # noqa: SIM115  teaching: demonstrating manual open and close without a context manager
     try:
         counter = 0

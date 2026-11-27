@@ -8,7 +8,7 @@ import subprocess
 import openshift.dynamic
 
 
-def get_project():
+def get_project() -> str:
     return subprocess.check_output([
         "oc",
         "project",
@@ -16,7 +16,7 @@ def get_project():
     ]).decode().rstrip()
 
 
-def main():
+def main() -> None:
     # you can use "default" in the next line
     # with openshift.project("kube-system"):
     client = openshift.dynamic.client.DynamicClient(client="default")

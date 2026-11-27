@@ -4,9 +4,13 @@ Using a for loop
 
 
 import doctest
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
-def apply_funcs1(funcs, x):
+def apply_funcs1(funcs: list[Callable[..., Any]], x: int):
     """Apply a list of unary functions on an argument.
 
     Return a list of the results.
@@ -17,7 +21,7 @@ def apply_funcs1(funcs, x):
     return [f(x) for f in funcs]
 
 
-def apply_funcs2(funcs, x):
+def apply_funcs2(funcs: list[Callable[..., Any]], x: int):
     """Apply a list of unary functions on an argument.
 
     Return a list of the results.
@@ -30,7 +34,7 @@ def apply_funcs2(funcs, x):
     return [f(x) for f in funcs]
 
 
-def apply_funcs3(funcs, x):
+def apply_funcs3(funcs: list[Callable[..., Any]], x: int):
     """Apply a list of unary functions on an argument.
 
     Return a list of the results.
@@ -48,7 +52,7 @@ def apply_funcs3(funcs, x):
 # ===================================
 
 
-def apply_funcs4(funcs, *args, **kw):
+def apply_funcs4(funcs: list[Callable[..., Any]], *args: Any, **kw: Any):
     """Apply a list of functions on the same arguments.
 
     Return a list of the results.

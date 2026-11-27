@@ -58,7 +58,7 @@ def get_localizer(language: str = "English") -> Localizer:
     return localizers[language]()
 
 
-def main():
+def main() -> None:
     """
     # Create our localizers
     >>> e, g = get_localizer(language="English"), get_localizer(language="Greek")

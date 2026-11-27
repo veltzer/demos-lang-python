@@ -5,7 +5,7 @@ solution.py
 import re
 
 
-def read_phonebook():
+def read_phonebook() -> dict[str, str]:
     pb = {}
     with open("data.txt") as f:
         for raw_line in f:
@@ -15,7 +15,7 @@ def read_phonebook():
     return pb
 
 
-def print_the_menu():
+def print_the_menu() -> str:
     print("1) search for a name in the phonebook")
     print("2) delete a name in the phonebook")
     print("3) add a name to the phonebook")
@@ -26,7 +26,7 @@ def print_the_menu():
     return input("please give me your choice: ")
 
 
-def search_for_name(mypb):
+def search_for_name(mypb: dict[str, str]) -> None:
     name = input("please give me a name to search for: ")
     if name in mypb:
         print("the number is", mypb[name])
@@ -34,7 +34,7 @@ def search_for_name(mypb):
         print("the name", name, "is not in the phonebook")
 
 
-def delete_a_name(mypb):
+def delete_a_name(mypb: dict[str, str]) -> None:
     name = input("please give me a name to search for: ")
     if name in mypb:
         del mypb[name]
@@ -42,7 +42,7 @@ def delete_a_name(mypb):
         print(f"the name {name} is not in the phonebook")
 
 
-def add_a_name(mypb):
+def add_a_name(mypb: dict[str, str]) -> None:
     name = input("please give me a name: ")
     if name in mypb:
         print("sorry, name", name, "is already in the phonebook...")
@@ -51,7 +51,7 @@ def add_a_name(mypb):
     mypb[name] = phone
 
 
-def edit_a_name(mypb):
+def edit_a_name(mypb: dict[str, str]) -> None:
     name = input("please give me a name to edit: ")
     if name not in mypb:
         print("sorry, name", name, "is not in the phonebook...")
@@ -60,25 +60,25 @@ def edit_a_name(mypb):
     mypb[name] = phone
 
 
-def save(mypb):
+def save(mypb: dict[str, str]) -> None:
     with open("data.txt", "w") as f:
         f.writelines(name + "," + mypb[name] + "\n" for name in mypb)
 
 
-def print_phonebook(mypb):
-    for name in mypb:
-        print("name", name, "phone", mypb[name])
+def print_phonebook(mypb: dict[str, str]) -> None:
+    for name, phone in mypb.items():
+        print("name", name, "phone", phone)
 
 
-def find_in_phonebook(mypb):
+def find_in_phonebook(mypb: dict[str, str]) -> None:
     regexp = input("please give me a regexp: ")
-    for name in mypb:
+    for name, phone in mypb.items():
         m = re.search(regexp, name)
         if m is not None:
-            print("found", name, "with phone", mypb[name])
+            print("found", name, "with phone", phone)
 
 
-def main():
+def main() -> None:
     mypb = read_phonebook()
     done = False
     while not done:

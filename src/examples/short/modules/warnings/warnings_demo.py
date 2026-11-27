@@ -13,7 +13,7 @@ If you cannot continue to run, raise an exception.
 import warnings
 
 
-def fxn():
+def fxn() -> None:
     print("in the function")
     # warnings.warn("deprecated", DeprecationWarning)  # noqa: ERA001  teaching: kept in the comment for the reader
     # warnings.warn("this is a warning", Warning)  # noqa: ERA001  teaching: kept in the comment for the reader

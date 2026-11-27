@@ -15,7 +15,7 @@ def do_error():
         raise ValueError("outer") from e
 
 
-def main():
+def main() -> None:
     try:
         do_error()
     # the parenthesis in the next line are essential

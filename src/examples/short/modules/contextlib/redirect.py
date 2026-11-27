@@ -5,7 +5,7 @@ from contextlib import redirect_stderr, redirect_stdout
 from io import StringIO
 
 
-def function_with_outputs():
+def function_with_outputs() -> None:
     # Regular print goes to stdout
     print("This is printed to stdout")
 

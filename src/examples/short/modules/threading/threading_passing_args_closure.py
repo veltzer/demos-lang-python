@@ -3,11 +3,15 @@ This is an example of creating a thread and passing it data via its closure
 """
 
 import threading
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 # this function was written with NO consideratiion of threading...
 
 
-def func(data):
+def func(data: Any) -> None:
     print(data)
 
 
@@ -15,8 +19,8 @@ def func(data):
 # that runs any other function with arguments
 
 
-def create_func(func_to_run, data):
-    def wrapper():
+def create_func(func_to_run: Callable[..., Any], data: str) -> Callable[[], None]:
+    def wrapper() -> None:
         func_to_run(data)
 
     return wrapper

@@ -85,7 +85,7 @@ Scanning... Station is 1380 AM
 """
 
 
-def main():
+def main() -> None:
     radio = Radio()
     actions = [radio.scan] * 2 + [radio.toggle_amfm] + [radio.scan] * 2
     actions *= 2

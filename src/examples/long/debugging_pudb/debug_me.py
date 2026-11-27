@@ -1,9 +1,10 @@
 """ debug_me.py """
 
 import contextlib
+from typing import Any
 
 
-def simple_func(x):
+def simple_func(x: Any):
     x += 1
 
     # s = range(20)  # noqa: ERA001  teaching: kept in the comment for the reader
@@ -23,7 +24,7 @@ def simple_func(x):
     return 2 * x
 
 
-def fermat(n):
+def fermat(n: int):
     """
     Returns triplets of the form x^n+y^n=z^n.
     Warning! Untested with n>2.

@@ -6,7 +6,7 @@ import os
 import os.path
 
 
-def print_tree(fullpath: str, filename: str, print_str_under="", print_str_continue=""):
+def print_tree(fullpath: str, filename: str, print_str_under: str = "", print_str_continue: str = "") -> None:
     if os.path.isdir(fullpath):
         print(f"{print_str_under}{filename}")
         files = list(os.listdir(fullpath))

@@ -2,7 +2,7 @@
 
 
 class MyError(Exception):
-    def __init__(self, url: str):
+    def __init__(self, url: str) -> None:
         self.url = url
 
 

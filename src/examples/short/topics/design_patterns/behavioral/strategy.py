@@ -28,7 +28,7 @@ class DiscountStrategyValidator:  # Descriptor class for check perform
             return False
         return True
 
-    def __set_name__(self, owner, name: str) -> None:
+    def __set_name__(self, owner: type, name: str) -> None:
         self.private_name = f"_{name}"
 
     def __set__(self, obj: Order, value: Callable[..., Any] | None = None) -> None:
@@ -66,7 +66,7 @@ def on_sale_discount(order: Order) -> float:
     return order.price * 0.25 + 20
 
 
-def main():
+def main() -> None:
     """
     >>> order = Order(100, discount_strategy=ten_percent_discount)
     >>> print(order)

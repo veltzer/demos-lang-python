@@ -5,7 +5,7 @@ is really local
 
 
 # noinspection PyShadowingNames
-def my_function():
+def my_function() -> None:
     x = 5
     print(x)
 

@@ -11,6 +11,8 @@ References:
 - http://click.pocoo.org/5/arguments/#variadic-arguments
 """
 
+from typing import Any
+
 import click
 
 
@@ -20,7 +22,7 @@ import click
     nargs=-1,
     required=True,
 )
-def main(args):
+def main(args: Any) -> None:
     """Simple program that greets NAME for a total of COUNT times."""
     print(args)
 

@@ -11,7 +11,7 @@ import sys
 print("you are in python 3")
 
 
-def is_2():
+def is_2() -> bool:
     return sys.version_info[0] == 2
 
 

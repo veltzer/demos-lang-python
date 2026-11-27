@@ -5,12 +5,15 @@ This is a nicer design.
 """
 
 
+from typing import Any, Self
+
+
 class RevIter:
-    def __init__(self, data):
+    def __init__(self, data: Any) -> None:
         self.data = data
         self.index = len(data)
 
-    def __iter__(self):
+    def __iter__(self) -> Self:
         return self
 
     def __next__(self):
@@ -24,14 +27,14 @@ class Reverse:
     """
     Iterator for looping over a sequence backwards
     """
-    def __init__(self, data):
+    def __init__(self, data: range) -> None:
         self.data = data
 
-    def __iter__(self):
+    def __iter__(self) -> RevIter:
         return RevIter(self.data)
 
 
-def main():
+def main() -> None:
     # And now lets use the iterator...
     for x in Reverse(range(7)):
         print(x)

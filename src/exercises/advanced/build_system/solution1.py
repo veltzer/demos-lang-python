@@ -8,7 +8,7 @@ Doesn"t check file system, all targets are always built.
 import doctest
 
 
-def parse_makefile(filename):
+def parse_makefile(filename: str) -> dict[str, list[str]]:
     """Parses a file of lines of the form::
 
             target: dependency1 dependency2...
@@ -47,7 +47,7 @@ def build_plan(target: str, rules: dict[str, list[str]]) -> list[str]:
     return plan
 
 
-def main():
+def main() -> None:
     doctest.testmod()
     rules = parse_makefile("make.txt")
     print(build_plan("all", rules))

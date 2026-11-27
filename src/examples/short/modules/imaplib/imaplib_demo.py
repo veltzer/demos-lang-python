@@ -11,6 +11,7 @@ this blog post: http://scott.yang.id.au/2009/01/migrate-emails-maildir-gmail.htm
 import configparser
 import imaplib
 import os.path
+from imaplib import IMAP4_SSL
 
 config = configparser.ConfigParser()
 config.read(os.path.expanduser("~/.passwords.ini"))
@@ -20,38 +21,38 @@ opt_hostname: str = config.get("imap", "hostname")
 opt_port: int = int(config.get("imap", "port"))
 
 
-def imap_have_mailbox(imap, name):
+def imap_have_mailbox(imap: IMAP4_SSL, name: str) -> bool:
     (res, data) = imap.list(name)
     if res != "OK":
         raise ValueError("could not list", name)
     return not (len(data) == 1 and data[0] is None)
 
 
-def imap_create(imap, name):
+def imap_create(imap: IMAP4_SSL, name: str) -> None:
     (res, _) = imap.create(name)
     if res != "OK":
         raise ValueError("could not create", name)
 
 
-def imap_delete(imap, name):
+def imap_delete(imap: IMAP4_SSL, name: str) -> None:
     (res, _) = imap.delete(name)
     if res != "OK":
         raise ValueError("could not delete", name)
 
 
-def imap_logout(imap):
+def imap_logout(imap: IMAP4_SSL) -> None:
     (res, data) = imap.logout()
     if res != "BYE":
         raise ValueError("could not logout", res, data)
 
 
-def imap_login(imap, username, password):
+def imap_login(imap: IMAP4_SSL, username: str, password: str) -> None:
     (res, _) = imap.login(username, password)
     if res != "OK":
         raise ValueError("could not login")
 
 
-def main():
+def main() -> None:
     """
     imap = imaplib.IMAP4(
         host=opt_hostname,

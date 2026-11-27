@@ -5,11 +5,11 @@ Solution10
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
+    from collections.abc import Callable, Generator
 
 
 
-def apply_funcs(funcs: list[Callable[[int], int]], x: int):
+def apply_funcs(funcs: list[Callable[[int], int]], x: int) -> Generator[int]:
     return (f(x) for f in funcs)
 
 

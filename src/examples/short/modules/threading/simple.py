@@ -9,7 +9,7 @@ import threading
 import time
 
 
-def worker(number):
+def worker(number: int) -> None:
     print(f"thread {number} is going to sleep...")
     time.sleep(1)
     print(f"thread {number} is waking up...")

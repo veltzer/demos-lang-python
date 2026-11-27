@@ -28,11 +28,11 @@ def large_fibonnaci_number():
     return d
 
 
-def print_number(number):
+def print_number(number: int) -> None:
     print(f"The {TARGET}th Fibonacci number is {number}")
 
 
-def main():
+def main() -> None:
     time_before = time.time()
 
     # call the function and get our Deferred

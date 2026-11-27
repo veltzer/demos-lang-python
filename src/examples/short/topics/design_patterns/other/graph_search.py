@@ -11,10 +11,10 @@ class GraphSearch:
     dfs stands for Depth First Search
     bfs stands for Breadth First Search"""
 
-    def __init__(self, graph):
+    def __init__(self, graph: dict[str, list[str]]) -> None:
         self.graph = graph
 
-    def find_path_dfs(self, start, end, path=None):
+    def find_path_dfs(self, start: str, end: str, path: list[str] | None = None):
         path = path or []
 
         path.append(start)
@@ -27,7 +27,7 @@ class GraphSearch:
                     return newpath
         return path
 
-    def find_all_paths_dfs(self, start, end, path=None):
+    def find_all_paths_dfs(self, start: str, end: str, path: list[str] | None = None):
         path = path or []
         path.append(start)
         if start == end:
@@ -39,7 +39,7 @@ class GraphSearch:
                 paths.extend(newpaths)
         return paths
 
-    def find_shortest_path_dfs(self, start, end, path=None):
+    def find_shortest_path_dfs(self, start: str, end: str, path: list[str] | None = None):
         path = path or []
         path.append(start)
 
@@ -53,7 +53,7 @@ class GraphSearch:
                     shortest = newpath
         return shortest
 
-    def find_shortest_path_bfs(self, start, end):
+    def find_shortest_path_bfs(self, start: str, end: str):
         """
         Finds the shortest path between two nodes in a graph using breadth-first search.
 
@@ -93,7 +93,7 @@ class GraphSearch:
         raise ValueError("I should not be here")
 
 
-def main():
+def main() -> None:
     """
     # example of graph usage
     >>> graph = {

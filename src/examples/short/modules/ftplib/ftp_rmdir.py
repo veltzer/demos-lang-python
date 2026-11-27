@@ -3,11 +3,12 @@
 import ftplib
 import os.path
 import sys
+from ftplib import FTP
 
 p_debug = False
 
 
-def ftp_rmdir(ftp, folder, remove_toplevel, dont_remove):
+def ftp_rmdir(ftp: FTP, folder: str, *, remove_toplevel: bool, dont_remove: set[str]) -> None:
     for filename, attr in ftp.mlsd(folder):
         if attr["type"] == "file" and filename not in dont_remove:
             if p_debug:
@@ -21,7 +22,7 @@ def ftp_rmdir(ftp, folder, remove_toplevel, dont_remove):
         ftp.rmd(folder)
 
 
-def main():
+def main() -> None:
     p_host = sys.argv[1]
     p_user = sys.argv[2]
     p_pass = sys.argv[3]

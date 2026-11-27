@@ -10,7 +10,7 @@ from functools import cache
 
 
 @cache
-def calc_sum(i):
+def calc_sum(i: int) -> int:
     my_sum = 0
     for j in range(i):
         time.sleep(0.5)

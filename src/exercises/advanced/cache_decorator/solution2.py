@@ -3,13 +3,17 @@ solution2.py
 """
 
 import math
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 # primes holds integers as keys and booleans as values
 primes: dict[int, bool] = {}
 
 
-def cache(func):
-    def new_is_prime(n):
+def cache(func: Callable[..., Any]):
+    def new_is_prime(n: int):
         if n in primes:
             return primes[n]
         b = func(n)
@@ -19,12 +23,12 @@ def cache(func):
 
 
 @cache
-def is_prime(n):
+def is_prime(n: int) -> bool:
     print("in called")
     return all(n % i != 0 for i in range(2, int(math.sqrt(n) + 1)))
 
 
-def main():
+def main() -> None:
     while True:
         n = int(input("give me a number, -1 to end: "))
         if n == -1:

@@ -7,7 +7,7 @@ import time
 from twisted.internet import reactor
 
 
-def a_silly_blocking_method(t, stop):
+def a_silly_blocking_method(t: int, *, stop: bool) -> None:
     print("starting...")
     time.sleep(t)
     print(t, "seconds have passed")

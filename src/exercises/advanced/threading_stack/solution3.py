@@ -13,11 +13,11 @@ number_of_elements = 400
 
 
 class Stack:
-    def __init__(self):
+    def __init__(self) -> None:
         self.cv = Condition()
         self.data = []
 
-    def push(self, number):
+    def push(self, number: int) -> None:
         self.cv.acquire()
         self.data.append(number)
         self.cv.notify_all()
@@ -42,14 +42,14 @@ class Stack:
 
 
 class ProduceOrConsume(Thread):
-    def __init__(self, stack, consume, number):
+    def __init__(self, stack: Stack, number: int, *, consume: bool) -> None:
         Thread.__init__(self)
         self.stack = stack
         self.consume = consume
         self.number = number
 
     @override
-    def run(self):
+    def run(self) -> None:
         if self.consume:
             for _i in range(number_of_elements):
                 pass
@@ -61,9 +61,9 @@ class ProduceOrConsume(Thread):
                 time.sleep(4.0 * 1.0 / (self.number + 1))
 
 
-def main():
+def main() -> None:
     stack = Stack()
-    threads = [ProduceOrConsume(stack, i % 2 == 0, i) for i in range(6)]
+    threads = [ProduceOrConsume(stack, i, consume=i % 2 == 0) for i in range(6)]
     for thread in threads:
         thread.start()
     for thread in threads:

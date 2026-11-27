@@ -7,15 +7,15 @@ This is implemented the same in python2.7 and python3.
 import functools
 
 
-def print_it(x):
+def print_it(x: object) -> None:
     print(x)
 
 
-def print_them(x, y):
+def print_them(x: object, y: object) -> None:
     print(x, y)
 
 
-def print_times(text="hello", times=1):
+def print_times(text: str = "hello", times: int = 1) -> None:
     for _ in range(times):
         print(text)
 

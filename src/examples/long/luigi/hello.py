@@ -9,13 +9,13 @@ class FileExists(luigi.Task):
     def output(self):
         return luigi.LocalTarget(self.filename)
 
-    def run(self):
+    def run(self) -> None:
         pass
 
 
 # noinspection PyMethodMayBeStatic
 class CountLines(luigi.Task):
-    def requires(self):
+    def requires(self) -> list[FileExists]:
         """
         What is the input to this task?
         This is an array because there could be many inputs to one task.
@@ -29,7 +29,7 @@ class CountLines(luigi.Task):
         """
         return luigi.LocalTarget("output.txt")
 
-    def run(self):
+    def run(self) -> None:
         """
         How do I run this Task?
         """

@@ -11,16 +11,16 @@ from attr import attrib, attrs
 
 @attrs
 class MyObject:
-    def __init__(self):
+    def __init__(self) -> None:
         self.another: int | None = None
     a = attrib(default=None)  # type: int
     b = attrib(default=None)  # type: int
 
-    def add_attribute(self, val):
+    def add_attribute(self, val: int) -> None:
         # noinspection PyAttributeOutsideInit
         self.another = val
 
-    def print(self):
+    def print(self) -> None:
         print(self.another)
 
 

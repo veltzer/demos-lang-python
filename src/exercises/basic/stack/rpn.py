@@ -11,27 +11,27 @@ class Stack:
     Simple stack implementation using a python list
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.data = []
 
-    def push(self, item):
+    def push(self, item: float) -> None:
         self.data.append(item)
 
     def pop(self):
         return self.data.pop()
 
-    def len(self):
+    def len(self) -> int:
         return len(self.data)
 
     def top(self):
         return self.data[len(self.data) - 1]
 
 
-def is_operator(c):
+def is_operator(c: str) -> bool:
     return c in "+-*/"
 
 
-def apply_operator(c, a, b):
+def apply_operator(c: str, a: float, b: float):
     if c == "+":
         return a + b
     if c == "-":
@@ -43,7 +43,7 @@ def apply_operator(c, a, b):
     raise ValueError(f"strange operator {c} you have")
 
 
-def evaluate(exp):
+def evaluate(exp: str):
     s = Stack()
     for c in exp.split(" "):
         if is_operator(c):

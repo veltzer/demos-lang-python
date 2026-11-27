@@ -2,34 +2,36 @@
 Solution2
 """
 
+from typing import Any
+
 
 class Person:
-    def __init__(self, socialid, name, surname):
+    def __init__(self, socialid: str, name: str, surname: str) -> None:
         self.socialid = socialid
         self.name = name
         self.surname = surname
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"repr <socialid {self.socialid}, name {self.name}, surname {self.surname}>"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"str <socialid {self.socialid}, name {self.name}, surname {self.surname}>"
 
 
 class Car:
-    def __init__(self, licenseid, color, cartype):
+    def __init__(self, licenseid: str, color: str, cartype: str) -> None:
         self.licenseid = licenseid
         self.color = color
         self.cartype = cartype
         self.owners = []
 
-    def add_owner(self, owner):
+    def add_owner(self, owner: Any) -> None:
         self.owners.append(owner)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"repr <licenseid {self.licenseid}, color {self.color}, cartype {self.cartype}>"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"str <licenseid {self.licenseid}, color {self.color}, cartype {self.cartype}>"
 
 

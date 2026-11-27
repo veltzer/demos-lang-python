@@ -4,8 +4,10 @@ Example of sorting with python using the key parameter
 The "list.sort" function is a core python function.
 """
 
+from typing import Any
 
-def compare(item):
+
+def compare(item: Any):
     return item[1]
 
 

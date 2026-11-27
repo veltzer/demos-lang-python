@@ -7,12 +7,16 @@ import gc
 import gzip
 import random
 import time
+from typing import TYPE_CHECKING, Any
 
 import pandas as pd
 
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
-def time_it(f):
-    def inner(*args, **kwargs):
+
+def time_it(f: Callable[..., Any]):
+    def inner(*args: Any, **kwargs: Any):
         time1 = time.perf_counter()
         gc.disable()
         r = f(*args, **kwargs)
@@ -25,7 +29,7 @@ def time_it(f):
 
 
 @time_it
-def prepare_large_tsv_file(input_file: str, size: int):
+def prepare_large_tsv_file(input_file: str, size: int) -> None:
     with gzip.open(input_file, "wt") as output_handle:
         for _ in range(size):
             output_handle.write("\t".join([
@@ -37,7 +41,7 @@ def prepare_large_tsv_file(input_file: str, size: int):
 
 
 @time_it
-def read_it_with_pandas(input_file: str, separator: str):
+def read_it_with_pandas(input_file: str, separator: str) -> int:
     df = pd.read_csv(
         input_file,
         sep=separator,
@@ -48,7 +52,7 @@ def read_it_with_pandas(input_file: str, separator: str):
 
 
 @time_it
-def read_it_with_pandas_chunks(input_file: str, separator: str):
+def read_it_with_pandas_chunks(input_file: str, separator: str) -> int:
     reader = pd.read_csv(
         input_file,
         sep=separator,
@@ -63,7 +67,7 @@ def read_it_with_pandas_chunks(input_file: str, separator: str):
 
 
 @time_it
-def read_it_with_python(input_file: str, separator: str):
+def read_it_with_python(input_file: str, separator: str) -> int:
     line_count = 0
     with open(input_file) as f:
         for line in f:
@@ -73,7 +77,7 @@ def read_it_with_python(input_file: str, separator: str):
 
 
 @time_it
-def read_it_with_python_gzip(input_file: str, separator: str):
+def read_it_with_python_gzip(input_file: str, separator: str) -> int:
     line_count = 0
     with gzip.open(input_file, "rt") as stream:
         for line in stream:
@@ -83,13 +87,13 @@ def read_it_with_python_gzip(input_file: str, separator: str):
 
 
 @time_it
-def loop_with_python(_input_file: str, _separator: str):
+def loop_with_python(_input_file: str, _separator: str) -> None:
     for i in range(1000000):
         if i == 2:
             pass
 
 
-def main():
+def main() -> None:
     input_file = "/tmp/large.tsv"
     # size = 1000000  # noqa: ERA001  teaching: kept in the comment for the reader
     # prepare_large_tsv_file(input_file, size)  # noqa: ERA001  teaching: kept in the comment for the reader

@@ -2,13 +2,15 @@
 solution
 """
 
+from typing import Any
+
 
 class Node:
     """
     This is a single element of the doubly linked list
     """
 
-    def __init__(self, data, next_element, prev):
+    def __init__(self, data: Any, next_element: Node | None, prev: Node | None) -> None:
         """ constructor """
         self.data = data
         self.next = next_element
@@ -28,16 +30,16 @@ class DoubleLinkedList:
     This is the list implementation
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """ constructor """
         self.first_element: Node | None = None
         self.last_element: Node | None = None
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """ is the list empty """
         return self.first_element is None
 
-    def add_head_element(self, data):
+    def add_head_element(self, data: int) -> None:
         """ add element at the head """
         node = Node(data, self.first_element, None)
         self.first_element = node
@@ -46,7 +48,7 @@ class DoubleLinkedList:
         if node.next is not None:
             node.next.prev = node
 
-    def add_tail_element(self, data):
+    def add_tail_element(self, data: int) -> None:
         """ add element at the tail """
         node = Node(data, None, self.last_element)
         self.last_element = node
@@ -94,7 +96,7 @@ class DoubleLinkedList:
             pointer = pointer.prev
 
 
-def example_of_use():
+def example_of_use() -> None:
     """ example of using the API """
     the_list = DoubleLinkedList()
     the_list.add_head_element(3)

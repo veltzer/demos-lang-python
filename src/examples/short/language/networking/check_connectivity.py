@@ -4,7 +4,7 @@ import socket
 import time
 
 
-def measure_response_time(host="8.8.8.8", port=53, timeout=0.05):
+def measure_response_time(host: str = "8.8.8.8", port: int = 53, timeout: float = 0.05) -> float | None:
     """
     Check your connectivity to the internet by trying to connect to 8.8.8.8
     at port 53 (DNS).

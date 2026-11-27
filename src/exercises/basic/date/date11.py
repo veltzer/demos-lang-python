@@ -2,6 +2,8 @@
 date11
 """
 
+from typing import Any, Self
+
 days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 months_names = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"]
@@ -10,7 +12,7 @@ name_to_days_num = {
 }
 
 
-def get_num_of_days_in_month(month_name):
+def get_num_of_days_in_month(month_name: str) -> int:
     """ Given a month name,
     return the number of days in this month"""
     if month_name in name_to_days_num:
@@ -18,7 +20,7 @@ def get_num_of_days_in_month(month_name):
     raise DateError(month_name + " is not a valid month")
 
 
-def get_following_month(month_name):
+def get_following_month(month_name: str) -> str:
     """ Given a month name,
     return the name of the following month"""
     if month_name in name_to_days_num:
@@ -27,7 +29,7 @@ def get_following_month(month_name):
     raise DateError(month_name + " is not a valid month")
 
 
-def is_leap_year(year):
+def is_leap_year(year: int):
     """ Return True if the year is a leap year, False otherwise"""
     return year % 4 == 0 and (year % 100 != 0 or year % 1000 == 0)
 
@@ -38,22 +40,22 @@ class Calendar:
     which is a mapping from event name to Date object
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.events = {}
 
-    def add_event(self, name, date):
+    def add_event(self, name: str, date: Any) -> None:
         """ Add a new entry to the calender"""
         self.events[name] = date
 
-    def is_event(self, date):
+    def is_event(self, date: Any) -> bool:
         """ Check if the given date appears in the calender"""
         return date in self.events.values()
 
-    def get_date(self, name):
+    def get_date(self, name: str):
         """ Return the date of the given event name"""
         return self.events[name]
 
-    def get_all_events_in_month(self, month):
+    def get_all_events_in_month(self, month: int):
         """ Return a dictionary with all the events in the given month
         month is the number of the month """
         return {name: e for name, e in self.events.items() if e.month == month}
@@ -61,7 +63,7 @@ class Calendar:
 
 
 class Date:
-    def __init__(self, day, month, year):
+    def __init__(self, day: int, month: int, year: int) -> None:
         if not isinstance(day, int) or not isinstance(month, int) or not isinstance(year, int):
             raise DateError("Date must be initialized with numbers")
         if month < 1 or month > 12:
@@ -75,7 +77,7 @@ class Date:
         self.month = month
         self.year = year
 
-    def __gt__(self, other):
+    def __gt__(self, other: Self) -> bool:
         """ Overloading operator>for dates """
         if self.year > other.year:
             return True
@@ -86,30 +88,32 @@ class Date:
                 return True
         return False
 
-    def __lt__(self, other):
+    def __lt__(self, other: Self):
         """ Overloading operator<for dates """
         return other > self
 
-    def __eq__(self, other):
+    def __eq__(self, other: object):
         """ Overloading operator==for dates """
+        if not isinstance(other, Date):
+            return NotImplemented
         return self.year == other.year and self.month == other.month and self.day == other.day
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         return hash((self.year, self.month, self.day))
 
-    def __ne__(self, other):
+    def __ne__(self, other: object) -> bool:
         """ Overloading operator!=for dates """
         return not self == other
 
-    def __le__(self, other):
+    def __le__(self, other: Self):
         """ Overloading operator<=for dates """
         return self < other or self == other
 
-    def __ge__(self, other):
+    def __ge__(self, other: Self):
         """ Overloading operator>=for dates """
         return self > other or self == other
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.day) + "." + str(self.month) + "." + str(self.year)
 
 

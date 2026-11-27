@@ -3,9 +3,14 @@ Solution
 """
 
 import textwrap
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from _io import TextIOWrapper
+    from collections.abc import Iterable
 
 
-def lines2paragraphs(lines):
+def lines2paragraphs(lines: TextIOWrapper):
     """Group lines into paragraphs as lists of lines."""
     paragraph: list[str] = []
     for raw_line in lines:
@@ -21,7 +26,7 @@ def lines2paragraphs(lines):
         yield paragraph
 
 
-def reformat(lines, chars):
+def reformat(lines: Iterable[list[str]], chars: int):
     """
     Bonus: streaming lines->lines reformatter
     Generate lines of reformatted paragraphs.

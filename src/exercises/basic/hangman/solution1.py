@@ -14,7 +14,7 @@ WORD = "secret"
 open_letters: set[str] = set()
 
 
-def print_known_parts():
+def print_known_parts() -> None:
     """Reveal guessed letters, ? for hidden letters."""
     res = []
     for current in WORD:
@@ -25,7 +25,7 @@ def print_known_parts():
     print("".join(res))
 
 
-def guess(letter):
+def guess(letter: str) -> None:
     """Call this to play."""
     open_letters.add(letter)
     if letter in WORD:

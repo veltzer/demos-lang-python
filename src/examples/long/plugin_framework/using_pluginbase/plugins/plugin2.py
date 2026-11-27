@@ -13,7 +13,7 @@ var = "plugin2_value"
 extra_var_only_for_plugin2 = "extra_value_only_for_plugin2"
 
 
-def do_something():
+def do_something() -> None:
     print(f"[{__file__}] running")
 
 

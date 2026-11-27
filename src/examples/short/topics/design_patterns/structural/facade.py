@@ -68,19 +68,19 @@ class ComputerFacade:
     Represents a facade for various computer parts.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.cpu = CPU()
         self.memory = Memory()
         self.ssd = SolidStateDrive()
 
-    def start(self):
+    def start(self) -> None:
         self.cpu.freeze()
         self.memory.load("0x00", self.ssd.read("100", "1024"))
         self.cpu.jump("0x00")
         self.cpu.execute()
 
 
-def main():
+def main() -> None:
     """
     >>> computer_facade = ComputerFacade()
     >>> computer_facade.start()

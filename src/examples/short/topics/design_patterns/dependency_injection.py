@@ -53,13 +53,13 @@ class ParameterInjection:
 class SetterInjection:
     """Setter Injection"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.time_provider: Callable[..., Any] | None = None
 
-    def set_time_provider(self, time_provider: Callable[..., Any]):
+    def set_time_provider(self, time_provider: Callable[..., Any]) -> None:
         self.time_provider = time_provider
 
-    def get_current_time_as_html_fragment(self):
+    def get_current_time_as_html_fragment(self) -> str:
         if self.time_provider is None:
             raise TypeError("no time provider was set")
         current_time = self.time_provider()
@@ -88,7 +88,7 @@ CORRECT_OUTPUT = """\
 """
 
 
-def main():
+def main() -> None:
     with redirect_stdout(io.StringIO()) as output:
         time_with_ci1 = ConstructorInjection(midnight_time_provider)
         print(time_with_ci1.get_current_time_as_html_fragment())

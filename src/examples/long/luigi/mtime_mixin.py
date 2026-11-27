@@ -4,16 +4,16 @@ This is a mixin solution to the modification time stamps mentioned before.
 
 import os.path
 import time
-from typing import cast
+from typing import Any, cast
 
 import luigi
 
 
-def mtime(path):
+def mtime(path: str) -> str:
     return time.ctime(os.path.getmtime(path))
 
 
-def to_list(obj):
+def to_list(obj: Any):
     if type(obj) in (type(()), type([])):
         return obj
     return [obj]
@@ -27,7 +27,7 @@ class MTimeMixin:
         it to support multiple input / output dependencies.
     """
 
-    def complete(self):
+    def complete(self) -> bool:
         # the mixin is only ever mixed into luigi tasks, which supply output() and requires()
         task = cast("luigi.Task", self)
 
@@ -53,13 +53,13 @@ class FileExists(luigi.Task):
     def output(self):
         return luigi.LocalTarget(self.filename)
 
-    def run(self):
+    def run(self) -> None:
         pass
 
 
 # take heed - mixin order in python is SUPER critical...
 class CountLines(MTimeMixin, luigi.Task):
-    def requires(self):
+    def requires(self) -> list[FileExists]:
         """
         What is the input to this task?
         This is an array because there could be many inputs to one task.
@@ -73,7 +73,7 @@ class CountLines(MTimeMixin, luigi.Task):
         """
         return luigi.LocalTarget("output.txt")
 
-    def run(self):
+    def run(self) -> None:
         """
         How do I run this Task?
         """

@@ -5,7 +5,7 @@ This is a simple doctest example.
 import doctest
 
 
-def triple(x):
+def triple(x: int):
     """ return x*3
 
     >>> triple(7)
@@ -14,7 +14,7 @@ def triple(x):
     return x * 3
 
 
-def square(x):
+def square(x: int):
     """ return the square of x
 
     >>> square(7)

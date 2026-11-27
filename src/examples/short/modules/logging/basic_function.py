@@ -13,7 +13,7 @@ is shown without other info such as:
 import logging
 
 
-def my_func():
+def my_func() -> None:
     logger = logging.getLogger()
     logger.error("hello")
 

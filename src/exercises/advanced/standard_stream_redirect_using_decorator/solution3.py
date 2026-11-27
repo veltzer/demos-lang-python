@@ -4,12 +4,16 @@ solution3.py
 
 import os
 import sys
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 outfile = "/tmp/out.txt"
 
 
-def with_output_to_outfile(f):
-    def decorated_f(*args, **kw):
+def with_output_to_outfile(f: Callable[..., Any]):
+    def decorated_f(*args: Any, **kw: Any):
         old_stdout = sys.stdout
         with open(outfile, "a") as new_stdout:
             sys.stdout = new_stdout
@@ -22,11 +26,11 @@ def with_output_to_outfile(f):
 
 
 @with_output_to_outfile
-def hello(name):
+def hello(name: str) -> None:
     print(f"Hello, {name}!")
 
 
-def main():
+def main() -> None:
     # Running this will destroy [outfile]!
     # make sure file is empty
     with open(outfile, "w"):

@@ -22,29 +22,29 @@ class Node(VisitInterface):
 
 class A(Node):
     @override
-    def visit(self):
+    def visit(self) -> None:
         print("in A")
 
 
 class B(Node):
     @override
-    def visit(self):
+    def visit(self) -> None:
         print("in B")
 
 
 class C(VisitInterface):
-    def __init__(self):
+    def __init__(self) -> None:
         self.a = A()
         self.b = B()
 
     @override
-    def visit(self):
+    def visit(self) -> None:
         print("in C")
         self.a.visit()
         self.b.visit()
 
 
-def main():
+def main() -> None:
     c = C()
     c.visit()
 

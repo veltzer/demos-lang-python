@@ -6,8 +6,10 @@ Note: in python2 you could sort lists usnig the "cmp" function.
 This no longer works and was removed in python3 (see Hettinger for reasons why...).
 """
 
+from typing import Any
 
-def my_tup_reverse(t1, t2):
+
+def my_tup_reverse(t1: Any, t2: Any) -> int:
     if (t1[1], t1[0]) < (t2[1], t2[0]):
         return -1
     if (t1[1], t1[0]) > (t2[1], t2[0]):
@@ -17,7 +19,7 @@ def my_tup_reverse(t1, t2):
     return 0
 
 
-def my_reverse(t1, t2):
+def my_reverse(t1: Any, t2: Any) -> int:
     if t2 < t1:
         return -1
     if t2 > t1:
@@ -26,12 +28,12 @@ def my_reverse(t1, t2):
     return 0
 
 
-def my_second_cor_key(t):
+def my_second_cor_key(t: Any):
     return t[1]
 
 
 # this is a WRONG default function since it does not take into accout both co-ordinates
-def the_default_function_wrong(t):
+def the_default_function_wrong(t: Any):
     return t[0]
 
 
@@ -41,11 +43,11 @@ def the_default_function_wrong(t):
 # def the_default_function(t):
 #    return t[0], t[1]  # noqa: ERA001  teaching: kept in the comment for the reader
 
-def the_default_function(t):
+def the_default_function(t: Any):
     return t[0] * 1000 + t[1]
 
 
-def by_y_x(t):
+def by_y_x(t: Any):
     return t[1], t[0]
 
 

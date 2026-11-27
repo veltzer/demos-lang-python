@@ -5,13 +5,15 @@ The end result is that you can override both _ and __ values in
 python.
 """
 
+from typing import Any
+
 
 class MyClass:
-    def __init__(self):
+    def __init__(self) -> None:
         self.public_variable = 5
         self.__private_variable = 5
 
-    def pr(self):
+    def pr(self) -> None:
         print("printing")
         print(f"public_variable is {self.public_variable}")
         print(f"__private_variable is {self.__private_variable}")
@@ -19,10 +21,10 @@ class MyClass:
     # this demonstrates that you dont have to call "self" as "self",its just
     # a convention
 
-    def set_private(self, val):
+    def set_private(self, val: Any) -> None:
         self.__private_variable = val
 
-    def set_public(self, val):
+    def set_public(self, val: int) -> None:
         self.public_variable = val
 
 

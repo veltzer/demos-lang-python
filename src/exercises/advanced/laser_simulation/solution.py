@@ -8,7 +8,7 @@ a matter of simple addition.
 emiter2dxdy = {">": (1, 0), "<": (-1, 0), "v": (0, 1), "^": (0, -1)}
 
 
-def find_emitter(room):
+def find_emitter(room: list[str]) -> tuple[int, int, int, int]:
     """Return (x, y, dx, dy)"""
     for y, line in enumerate(room):
         for x, char in enumerate(line):
@@ -18,7 +18,7 @@ def find_emitter(room):
     raise ValueError("not found")
 
 
-def lasers(fname):
+def lasers(fname: str) -> bool:
     with open(fname) as f:
         room = f.readlines()
 
@@ -43,7 +43,7 @@ def lasers(fname):
             return char == "x"
 
 
-def main():
+def main() -> None:
     for fname in ["lasers_hit.txt", "lasers_miss.txt"]:
         with open(fname) as f:
             print(f.read())

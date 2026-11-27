@@ -7,7 +7,7 @@ import kubernetes.client
 import kubernetes.config
 
 
-def main():
+def main() -> None:
     # Configs can be set in Configuration class directly or using helper
     # utility. If no argument provided, the config will be loaded from
     # default location.

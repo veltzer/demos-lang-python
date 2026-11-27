@@ -10,7 +10,7 @@ class SampleEnum(enum.Enum):
     two = 2
     three = 3
 
-    def do_something(self):
+    def do_something(self) -> None:
         print(self)
 
 

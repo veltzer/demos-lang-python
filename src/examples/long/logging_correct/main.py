@@ -8,7 +8,7 @@ import incorrect
 import yaml
 
 
-def main():
+def main() -> None:
     with open("config.yaml") as input_handle:
         config = yaml.safe_load(input_handle.read())
     logging.config.dictConfig(config)

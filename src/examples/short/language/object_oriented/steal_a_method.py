@@ -2,16 +2,18 @@
 Example of stealing a method from another object
 """
 
+from typing import Any
+
 
 class Book:
-    def __init__(self, price):
+    def __init__(self, price: int) -> None:
         """ initializer """
         self.price = price
 
-    def print_me(self):
+    def print_me(self) -> None:
         print(f"price is {self.price}")
 
-    def set_price(self, price):
+    def set_price(self, price: int) -> None:
         self.price = price
 
 
@@ -26,7 +28,7 @@ m(55)
 b.print_me()
 
 
-def my_func(self):
+def my_func(self: Any) -> None:
     print(f"in myfunc {self.price}")
 
 

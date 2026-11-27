@@ -7,17 +7,17 @@ Once set, subclass properties shadows properties on the base class.
 class Book:
     num = 0
 
-    def __init__(self, title):
+    def __init__(self, title: str) -> None:
         self.title = title
         self.id = self.increment_num()
         print(f"Created: {self}")
 
     @classmethod
-    def increment_num(cls):
+    def increment_num(cls) -> int:
         cls.num += 1
         return cls.num
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"<{self.__class__.__name__} #{self.id}: {self.title}>"
 
 

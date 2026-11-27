@@ -7,6 +7,8 @@ You can see that all the prints are interleaved which proves that the elements a
 one at a time.
 """
 
+from typing import Any
+
 
 def my_gen():
     for i in range(10):
@@ -14,7 +16,7 @@ def my_gen():
         yield i ** 2
 
 
-def plus1(t):
+def plus1(t: Any):
     print("plus1")
     return t + 1
 

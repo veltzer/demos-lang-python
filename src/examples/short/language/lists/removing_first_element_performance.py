@@ -12,42 +12,42 @@ import timeit
 function_names = {}
 
 
-def func1():
+def func1() -> None:
     del my_list[0]
 
 
 function_names[func1] = "del list[0]"
 
 
-def func2():
+def func2() -> None:
     my_list.pop(0)
 
 
 function_names[func2] = "list.pop(0)"
 
 
-def func3():
+def func3() -> None:
     my_list.insert(0, "newelem")
 
 
 function_names[func3] = "insert(0, newelement)"
 
 
-def func4():
+def func4() -> None:
     del d[0]
 
 
 function_names[func4] = "del deque[0]"
 
 
-def func5():
+def func5() -> None:
     d.popleft()
 
 
 function_names[func5] = "deque.popleft()"
 
 
-def func6():
+def func6() -> None:
     d.appendleft("newelem")
 
 

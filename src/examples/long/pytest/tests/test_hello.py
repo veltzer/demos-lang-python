@@ -3,5 +3,5 @@
 import tests.mod
 
 
-def test_hello():
+def test_hello() -> None:
     tests.mod.shared_method()

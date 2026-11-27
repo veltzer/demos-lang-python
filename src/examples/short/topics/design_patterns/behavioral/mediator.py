@@ -30,7 +30,7 @@ class ChatRoom:
         print(f"[{user} says]: {message}")
 
 
-def main():
+def main() -> None:
     """
     >>> molly = User("Molly")
     >>> mark = User("Mark")

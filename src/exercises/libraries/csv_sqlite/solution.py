@@ -6,7 +6,7 @@ import csv
 import sqlite3
 
 
-def read_csv(filename):
+def read_csv(filename: str):
     """Generate dictionaries, drop the descriptions."""
     with open(filename) as f:
         for date, package, version, _description in csv.reader(f):

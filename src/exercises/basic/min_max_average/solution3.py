@@ -3,7 +3,7 @@ Solution3
 """
 
 
-def min_max_avg(num_list):
+def min_max_avg(num_list: range):
     min_value = num_list[0]
     max_value = num_list[0]
     sum_value = num_list[0]

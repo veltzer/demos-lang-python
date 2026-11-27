@@ -14,10 +14,10 @@ from cmd2 import Cmd
 
 
 class CmdLineApp(Cmd):
-    def __init__(self):
+    def __init__(self) -> None:
         Cmd.__init__(self)
 
-    def do_quit(self, _arg):
+    def do_quit(self, _arg) -> bool:
         """ quit the app """
         return True
 

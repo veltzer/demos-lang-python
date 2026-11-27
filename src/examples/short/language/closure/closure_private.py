@@ -11,14 +11,14 @@ of another *** local *** variable "x".
 """
 
 
-def make_mul_add_print(x):
-    def f_mul(y):
+def make_mul_add_print(x: int):
+    def f_mul(y: int):
         return x * y
 
-    def f_add(y):
+    def f_add(y: int):
         return x + y
 
-    def f_print():
+    def f_print() -> None:
         print(x)
 
     return f_mul, f_add, f_print

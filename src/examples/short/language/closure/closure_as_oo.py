@@ -5,7 +5,7 @@ be seen as a sort of constructor.
 """
 
 
-def person(initial_name, initial_age):
+def person(initial_name: str, initial_age: int):
     o = {
         "name": initial_name,
         "age": initial_age,
@@ -14,13 +14,13 @@ def person(initial_name, initial_age):
     def get_name():
         return o["name"]
 
-    def set_name(name):
+    def set_name(name: str) -> None:
         o["name"] = name
 
     def get_age():
         return o["age"]
 
-    def set_age(age):
+    def set_age(age: int) -> None:
         o["age"] = age
 
     return {

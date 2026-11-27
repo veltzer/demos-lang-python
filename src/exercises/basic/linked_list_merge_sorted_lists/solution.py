@@ -3,6 +3,7 @@ solution
 """
 
 import random
+from typing import Any
 
 
 class Node:
@@ -10,12 +11,12 @@ class Node:
     This is a single element of the singly linked list
     """
 
-    def __init__(self, data, next_data):
+    def __init__(self, data: Any, next_data: Node | None) -> None:
         """ constructor """
         self.data = data
         self.next = next_data
 
-    def print(self):
+    def print(self) -> None:
         """ print the current object """
         print(self.data, self.next)
 
@@ -29,14 +30,14 @@ class SingleLinkedList:
     This is the list implementation
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.first_element: Node | None = None
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """ is the list empty """
         return self.first_element is None
 
-    def add_head_element(self, data):
+    def add_head_element(self, data: Any) -> None:
         """ add element at the head """
         node = Node(data, self.first_element)
         self.first_element = node
@@ -56,7 +57,7 @@ class SingleLinkedList:
             yield pointer.data
             pointer = pointer.next
 
-    def add_sorted(self, data):
+    def add_sorted(self, data: int) -> None:
         """ add element to a sorted list """
         prev = None
         pointer = self.first_element
@@ -70,7 +71,7 @@ class SingleLinkedList:
             self.first_element = node
 
 
-def reverse(a_list):
+def reverse(a_list: SingleLinkedList) -> SingleLinkedList:
     """ reverse a list """
     rev = SingleLinkedList()
     while not a_list.is_empty():
@@ -78,7 +79,7 @@ def reverse(a_list):
     return rev
 
 
-def merge(list1, list2):
+def merge(list1: SingleLinkedList, list2: SingleLinkedList) -> SingleLinkedList:
     """ merge two lists """
     merged = SingleLinkedList()
     pointer1 = list1.first_element
@@ -99,7 +100,7 @@ def merge(list1, list2):
     return reverse(merged)
 
 
-def main():
+def main() -> None:
     """ the main function """
     list1 = SingleLinkedList()
     for _ in range(10):

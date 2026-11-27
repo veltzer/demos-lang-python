@@ -6,14 +6,20 @@ References:
 """
 
 
-def decor(_func):
-    def inner():
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+def decor(_func) -> Callable[[], None]:
+    def inner() -> None:
         print("goodbye")
     return inner
 
 
 @decor
-def demo_bar():
+def demo_bar() -> None:
     print("hello")
 
 

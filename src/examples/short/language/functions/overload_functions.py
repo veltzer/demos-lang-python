@@ -12,12 +12,12 @@ function so that it cannot be used.
 
 
 
-def demo_foo():
+def demo_foo() -> None:
     print("hello")
 
 
 # noinspection PyRedeclaration
-def demo_foo(a):  # noqa: F811  teaching: the second definition deliberately replaces the first
+def demo_foo(a: str) -> None:  # noqa: F811  teaching: the second definition deliberately replaces the first
     print(f"hello {a}")
 
 

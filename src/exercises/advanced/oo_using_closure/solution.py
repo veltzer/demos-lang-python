@@ -5,16 +5,16 @@ solution.py
 from types import SimpleNamespace
 
 
-def person(name, age):
+def person(name: str, age: int) -> SimpleNamespace:
     data = SimpleNamespace()
 
-    def set_name(name):
+    def set_name(name: str) -> None:
         data.__dict__["name"] = name
 
     def get_name():
         return data.name
 
-    def set_age(age):
+    def set_age(age: int) -> None:
         if age <= 0:
             raise ValueError("age error")
         data.__dict__["age"] = age
@@ -22,7 +22,7 @@ def person(name, age):
     def get_age():
         return data.age
 
-    def print_me():
+    def print_me() -> None:
         print("name is ", data.name)
         print("age is ", data.age)
 

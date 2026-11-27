@@ -20,7 +20,7 @@ from typing import Any, override
 
 
 class Console(cmd.Cmd):
-    def __init__(self):
+    def __init__(self) -> None:
         cmd.Cmd.__init__(self)
         self.prompt = "=>> "
         self.intro = "Welcome to console!"  # defaults to None
@@ -30,57 +30,57 @@ class Console(cmd.Cmd):
 
     # Command definitions
     # noinspection PyUnusedLocal
-    def do_hist(self, _args):
+    def do_hist(self, _args) -> None:
         """Print a list of commands that have been entered"""
         print(self._hist)
 
     # noinspection PyMethodMayBeStatic, PyUnusedLocal
-    def do_exit(self, _args):
+    def do_exit(self, _args) -> int:
         """Exits from the console"""
         return -1
 
     # Command definitions to support Cmd object functionality
-    def do_eof(self, args):
+    def do_eof(self, args: str) -> int:
         """Exit on system end of file character"""
         return self.do_exit(args)
 
     # noinspection PyMethodMayBeStatic
-    def do_shell(self, args):
+    def do_shell(self, args: Any) -> None:
         """Pass command to a system shell when line begins with !"""
         os.system(args)
 
     # noinspection PyMethodMayBeStatic
-    def do_a_plus_b(self, args):
+    def do_a_plus_b(self, args: Any) -> bool:
         """ add two numbers """
         args = args.split(" ")
         print(int(args[0]) + int(args[1]))
         return True
 
     # noinspection PyMethodMayBeStatic
-    def do_return_true(self, _args):
+    def do_return_true(self, _args) -> bool:
         """ return True """
         return True
 
     # noinspection PyMethodMayBeStatic
-    def do_return_false(self, _args):
+    def do_return_false(self, _args) -> bool:
         """ return False """
         return False
 
     # noinspection PyMethodMayBeStatic
-    def do_return(self, _args):
+    def do_return(self, _args) -> None:
         """ return """
         return
 
-    def do_return_m1(self, _args):
+    def do_return_m1(self, _args) -> int:
         """ return -1 """
         return -1
 
-    def do_return_none(self, _args):
+    def do_return_none(self, _args) -> None:
         """ return None """
         return
 
     @override
-    def do_help(self, arg):
+    def do_help(self, arg: Any) -> None:
         """Get help on commands
            "help" or "?" with no arguments prints a list of commands for which help is available
            "help <command>" or "? <command>" gives help on <command>
@@ -90,7 +90,7 @@ class Console(cmd.Cmd):
 
     # Override methods in Cmd object
     @override
-    def preloop(self):
+    def preloop(self) -> None:
         """Initialization before prompting user for commands.
            Despite the claims in the Cmd documentation, Cmd.preloop() is not a stub.
         """
@@ -100,7 +100,7 @@ class Console(cmd.Cmd):
         self._globals = {}
 
     @override
-    def postloop(self):
+    def postloop(self) -> None:
         """Take care of any unfinished business.
            Despite the claims in the Cmd documentation, Cmd.postloop() is not a stub.
         """
@@ -108,7 +108,7 @@ class Console(cmd.Cmd):
         print("Exiting...")
 
     @override
-    def precmd(self, line):
+    def precmd(self, line: str) -> str:
         """ This method is called after the line has been input but before
             it has been interpreted. If you want to modify the input line
             before execution (for example, variable substitution) do it here.
@@ -117,7 +117,7 @@ class Console(cmd.Cmd):
         return line
 
     @override
-    def postcmd(self, stop, line):
+    def postcmd(self, stop: bool, line: str) -> bool:
         """If you want to stop the console, return something that evaluates to true.
            If you want to do some post command processing, do it here.
         """

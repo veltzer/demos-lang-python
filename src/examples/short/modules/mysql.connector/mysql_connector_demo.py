@@ -12,7 +12,7 @@ import os.path
 import mysql.connector
 
 
-def get_config():
+def get_config() -> dict[str, str]:
     """
     get the configuration, including user and password from the ~/.my.cnf
     file of the user

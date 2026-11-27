@@ -1,7 +1,7 @@
 """ not_fair_2.py """
 
 
-def substring(s1, s2):
+def substring(s1: str, s2: str):
     return s2.find(s1) != -1
 
 

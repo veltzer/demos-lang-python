@@ -15,7 +15,7 @@ import time
 do_fork = False
 
 
-def single_runner():
+def single_runner() -> None:
     program_name = os.path.splitext(os.path.basename(sys.argv[0]))[0]
     pid_file = f"/tmp/{program_name}.pid"
     try:
@@ -28,7 +28,7 @@ def single_runner():
 
 
 # this does not work
-def single_runner_simple():
+def single_runner_simple() -> None:
     program_name = os.path.splitext(os.path.basename(sys.argv[0]))[0]
     pid_file = f"/tmp/{program_name}.pid"
     # if os.path.isfile(pid_file):

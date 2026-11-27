@@ -2,12 +2,14 @@
 solution
 """
 
+from typing import Any
+
 
 class Node:
     """
     This is a single element of the singly linked list
     """
-    def __init__(self, data, next_element):
+    def __init__(self, data: Any, next_element: Node | None) -> None:
         """ constructor """
         self.data = data
         self.next = next_element
@@ -25,15 +27,15 @@ class SingleLinkedList:
     """
     This is the list implementation
     """
-    def __init__(self):
+    def __init__(self) -> None:
         """ constructor """
         self.first_element: Node | None = None
 
-    def is_empty(self):
+    def is_empty(self) -> bool:
         """ is the list empty """
         return self.first_element is None
 
-    def add_head_element(self, data):
+    def add_head_element(self, data: int) -> None:
         """ add element at the head """
         node = Node(data, self.first_element)
         self.first_element = node
@@ -54,7 +56,7 @@ class SingleLinkedList:
             pointer = pointer.next
 
 
-def get_reverse(the_list):
+def get_reverse(the_list: SingleLinkedList) -> SingleLinkedList:
     """
     Get a list and return a list with all of its elements in reverse order
     """
@@ -64,7 +66,7 @@ def get_reverse(the_list):
     return reverse
 
 
-def main():
+def main() -> None:
     """ the main function """
     the_list = SingleLinkedList()
     the_list.add_head_element(3)

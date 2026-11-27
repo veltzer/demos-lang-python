@@ -2,6 +2,12 @@
 Example of generators using generators
 """
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Callable, Iterable
+
+
 
 def list_input():
     counter = 0
@@ -12,12 +18,12 @@ def list_input():
             break
 
 
-def square_it(input_generator):
+def square_it(input_generator: Callable[[], Iterable[int]]):
     for x in input_generator():
         yield x ** 2
 
 
-def main():
+def main() -> None:
     result = [x + 1 for x in square_it(list_input)]
     print(result)
 

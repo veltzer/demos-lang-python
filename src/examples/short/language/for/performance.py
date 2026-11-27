@@ -8,28 +8,29 @@ References:
 
 import functools
 import timeit
+from typing import Any
 
 import numpy as np
 
 
-def do_sum_range():
+def do_sum_range() -> None:
     total_sum = 0
     for i in range(100000000):
         total_sum += i
     print(f"Sum: {total_sum}")
 
 
-def do_sum_functional():
+def do_sum_functional() -> None:
     total_sum = sum(range(100000000))
     print(f"Sum: {total_sum}")
 
 
-def do_sum_numpy():
+def do_sum_numpy() -> None:
     total_sum = np.sum(np.arange(100000000))
     print(f"Sum: {total_sum}")
 
 
-def do_stats_for(random_scores):
+def do_stats_for(random_scores: Any) -> None:
     count_failed = 0
     sum_failed = 0
     for score in random_scores:
@@ -40,7 +41,7 @@ def do_stats_for(random_scores):
     print(f"mean is {mean}")
 
 
-def do_stats_numpy(random_scores):
+def do_stats_numpy(random_scores: Any) -> None:
     mean = (random_scores[random_scores < 70]).mean()
     print(f"mean is {mean}")
 

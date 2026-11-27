@@ -12,22 +12,22 @@ import click
 
 
 @click.group()
-def cli():
+def cli() -> None:
     pass
 
 
 @cli.command()
-def say_hello():
+def say_hello() -> None:
     print("hello")
 
 
 @cli.command()
-def say_goodbye():
+def say_goodbye() -> None:
     print("goodbye")
 
 
 @cli.command(name="foo")
-def demo():
+def demo() -> None:
     print("foo")
 
 

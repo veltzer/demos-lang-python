@@ -6,19 +6,19 @@ solution.py
 def make_a_stack():
     my_list = []
 
-    def push(x):
+    def push(x: int) -> None:
         my_list.append(x)
 
     def pop():
         return my_list.pop()
 
-    def show():
+    def show() -> None:
         print(my_list)
 
     return (push, pop, show)
 
 
-def main():
+def main() -> None:
     push_function, pop_function, show_function = make_a_stack()
     show_function()
     push_function(5)

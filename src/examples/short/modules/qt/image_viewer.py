@@ -15,7 +15,7 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 class ImageWidget(QWidget):
 
-    def __init__(self, image_path, parent):
+    def __init__(self, image_path: str, parent: QWidget) -> None:
         super().__init__(parent)
         self.picture = QPixmap(image_path)
 
@@ -27,7 +27,7 @@ class ImageWidget(QWidget):
 
 class TableWidget(QTableWidget):
 
-    def set_image(self, row, col, image_path):
+    def set_image(self, row: int, col: int, image_path: str) -> None:
         image = ImageWidget(image_path, self)
         self.setCellWidget(row, col, image)
 

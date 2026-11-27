@@ -15,7 +15,7 @@ import multiprocessing
 import time
 
 
-def sleep_a_little(num):
+def sleep_a_little(num: int):
     time.sleep(1)
     if num % 2 == 1:
         raise ValueError("this is bad " + str(num))

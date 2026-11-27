@@ -10,6 +10,7 @@ in-python-how-do-i-print-an-error-message-without-printing-a-traceback-and-clos
 """
 
 import sys
+from typing import Any
 
 
 def do_error():
@@ -19,7 +20,7 @@ def do_error():
         raise ValueError("outer") from e
 
 
-def excepthook(_type, value, _traceback):
+def excepthook(_type, value: Any, _traceback) -> None:
     # this loop will drill to the core of the problem
     # use only if this is what you want to show...
     # traceback.print_exception(value=value, tb=_traceback, etype=_type)  # noqa: ERA001  teaching: kept in the comment for the reader

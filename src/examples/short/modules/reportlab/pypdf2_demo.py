@@ -13,7 +13,7 @@ inch = 72
 TEXT = """%s    page %d of %d a wonderful file created with python"""
 
 
-def make_pdf_file(output_filename, np):
+def make_pdf_file(output_filename: str, np: int) -> None:
     # title = output_filename  # noqa: ERA001  teaching: kept in the comment for the reader
     c = reportlab.pdfgen.canvas.Canvas(output_filename, pagesize=(8.5 * inch, 11 * inch))
     c.setStrokeColorRGB(0, 0, 0)

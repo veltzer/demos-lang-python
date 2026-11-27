@@ -15,7 +15,7 @@ References:
 """
 
 
-def chomp(x):
+def chomp(x: str):
     if x.endswith("\r\n"):
         return x[:-2]
     if x.endswith("\n"):

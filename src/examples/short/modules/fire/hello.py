@@ -5,7 +5,7 @@ https://google.github.io/python-fire
 import fire
 
 
-def hello(name="World"):
+def hello(name: str = "World") -> str:
     return f"Hello {name}!"
 
 

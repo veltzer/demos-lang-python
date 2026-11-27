@@ -65,7 +65,7 @@ class DecimalViewer:
         print(f"DecimalViewer: Subject {subject.name} has data {subject.data}")
 
 
-def main():
+def main() -> None:
     """
     >>> data1 = Data("Data 1")
     >>> data2 = Data("Data 2")

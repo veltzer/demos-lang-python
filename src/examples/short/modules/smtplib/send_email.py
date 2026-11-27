@@ -26,7 +26,7 @@ def send_email(
         smtp_port: int = 587,
         use_tls: bool = True,
         debug: bool = False,
-):
+) -> None:
     # build the message
     msg = email.mime.text.MIMEText(content)
     msg["Subject"] = subject

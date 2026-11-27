@@ -3,7 +3,12 @@ A simple web server
 """
 
 
+from typing import TYPE_CHECKING
+
 import flask
+
+if TYPE_CHECKING:
+    from flask.wrappers import Response
 
 app = flask.Flask("app")
 app.config["DEBUG"] = True
@@ -12,7 +17,7 @@ print(f"{app.static_folder=}")
 
 
 @app.route("/")
-def index():
+def index() -> Response:
     return app.send_static_file("index.html")
 
 

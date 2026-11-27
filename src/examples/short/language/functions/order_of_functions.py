@@ -9,11 +9,11 @@
 """
 
 
-def f():
+def f() -> None:
     g()
 
 
-def g():
+def g() -> None:
     print("hello")
 
 

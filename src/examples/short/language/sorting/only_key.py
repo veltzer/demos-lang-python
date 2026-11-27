@@ -3,13 +3,15 @@ This is an example of how to sort lists in python
 using the "key" function.
 """
 
+from typing import Any
 
-def my_second_cor_key(t):
+
+def my_second_cor_key(t: Any):
     return t[1]
 
 
 # this is a WRONG default function since it does not take into accout both co-ordinates
-def the_default_function_wrong(t):
+def the_default_function_wrong(t: Any):
     return t[0]
 
 
@@ -21,11 +23,11 @@ def the_default_function_wrong(t):
 #    return t[0], t[1]  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
-def the_default_function(t):
+def the_default_function(t: Any):
     return t[0] * 1000 + t[1]
 
 
-def by_y_x(t):
+def by_y_x(t: Any):
     return t[1], t[0]
 
 

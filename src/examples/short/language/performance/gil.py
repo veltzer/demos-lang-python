@@ -25,7 +25,7 @@ limit = 100000000
 number_of_threads = 5
 
 
-def count(n):
+def count(n: int) -> None:
     while n > 0:
         n -= 1
 

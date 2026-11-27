@@ -9,7 +9,7 @@ References:
 import subprocess
 
 
-def get_exitcode_stdout_stderr(args):
+def get_exitcode_stdout_stderr(args: list[str]):
     """
     Execute the external command and get its exitcode, stdout and stderr.
     """
@@ -19,7 +19,7 @@ def get_exitcode_stdout_stderr(args):
         return exitcode, out, err
 
 
-def main():
+def main() -> None:
     exitcode, out, err = get_exitcode_stdout_stderr(["ls", "-l"])
     print(f"exitcode is [{exitcode}]")
     print(f"out is [{out.decode()}]")

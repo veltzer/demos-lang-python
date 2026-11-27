@@ -6,8 +6,14 @@ References:
 """
 
 
-def run_3_times(func):
-    def inner():
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+def run_3_times(func: Callable[..., Any]) -> Callable[[], None]:
+    def inner() -> None:
         func()
         func()
         func()
@@ -15,7 +21,7 @@ def run_3_times(func):
 
 
 @run_3_times
-def demo_bar():
+def demo_bar() -> None:
     print("hello")
 
 

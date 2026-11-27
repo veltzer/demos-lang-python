@@ -19,20 +19,20 @@ from __future__ import annotations
 
 class Book:
     # noinspection PyReturnFromInit,PyTypeChecker
-    def __init__(self, price) -> Book:
+    def __init__(self, price: int) -> Book:
         self.__price = price
         # return None  # noqa: ERA001  teaching: kept in the comment for the reader
         # noinspection PyTypeChecker
         return 7  # noqa: PLE0101  teaching: __init__ must not return a value  # pyrefly: ignore[bad-return]  teaching: __init__ must not return a value
         # return  # noqa: ERA001  teaching: kept in the comment for the reader
 
-    def set_price(self, val):
+    def set_price(self, val: int) -> None:
         self.__price = val
 
     def get_price(self):
         return self.__price
 
-    def print_me(self):
+    def print_me(self) -> None:
         print("print_me: price is", self.__price)
 
 

@@ -16,27 +16,30 @@ even returned to the programmer).
 """
 
 
+from typing import Self
+
+
 class A:
     # noinspection PyReturnFromInit
-    def __init__(self):
+    def __init__(self) -> int:
         return 0  # noqa: PLE0101  teaching: __init__ must not return a value
 
 
 class B:
     # noinspection PyReturnFromInit
-    def __init__(self):
+    def __init__(self) -> None:
         return None
 
 
 class C:
     # noinspection PyReturnFromInit
-    def __init__(self):
+    def __init__(self) -> Self:
         return self  # noqa: PLE0101  teaching: __init__ must not return a value
 
 
 class D:
     # noinspection PyReturnFromInit
-    def __init__(self):
+    def __init__(self) -> None:
         return
 
 

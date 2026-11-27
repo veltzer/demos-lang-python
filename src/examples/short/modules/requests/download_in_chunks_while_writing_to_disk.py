@@ -9,7 +9,7 @@ References:
 import requests
 
 
-def download_file(url: str, filename: str, chunk_size=8192):
+def download_file(url: str, filename: str, chunk_size: int = 8192) -> None:
     # NOTE the stream=True parameter below
     with requests.get(url, stream=True, timeout=5) as request:
         request.raise_for_status()

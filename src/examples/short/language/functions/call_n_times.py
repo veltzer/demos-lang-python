@@ -3,13 +3,19 @@ This example shows how to generically call a function you know nothing about
 and get the arguments for it from the outside
 """
 
+from typing import TYPE_CHECKING, Any
 
-def call_n_times(n, f, *args, **kwargs):
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+
+def call_n_times(n: int, f: Callable[..., Any], *args: Any, **kwargs: Any) -> None:
     for _ in range(n):
         f(*args, **kwargs)
 
 
-def print_string(s):
+def print_string(s: str) -> None:
     print(s)
 
 

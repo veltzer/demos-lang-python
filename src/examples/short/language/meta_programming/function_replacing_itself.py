@@ -8,10 +8,10 @@ import itertools
 
 counter = itertools.count(1)
 
-def log_empty(_m):
+def log_empty(_m) -> None:
     print("going through the cheap function")
 
-def log(m):
+def log(m: int) -> None:
     if next(counter) < 4:
         print(m)
     else:

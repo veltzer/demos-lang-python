@@ -12,7 +12,7 @@ this example "no_logging".
 """
 
 import logging
-from typing import ClassVar
+from typing import Any, ClassVar
 
 import scrapy.crawler
 
@@ -28,17 +28,17 @@ class SearchSpider(scrapy.Spider):
         "https://jet.com/search/",
     ]
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
         """ constructor """
         super().__init__(*args, **kwargs)
         # important, call the parent
         self.logger.info("in __init__")
 
-    def parse(self, _response, **_kwargs):
+    def parse(self, _response, **_kwargs) -> None:
         """ This method is called whenever you get a response """
         self.logger.info("in parse")
 
-    def closed(self, _reason):
+    def closed(self, _reason) -> None:
         """
         This method is called automatically when the crawler finishes
         Note that because of python tricks this methods signature is different

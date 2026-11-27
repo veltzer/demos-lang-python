@@ -57,7 +57,7 @@ class SimpleHangman:
     ?e??e?
     """
 
-    def __init__(self, word):
+    def __init__(self, word: str) -> None:
         # Private don"t look here!
         self._word = word
         # Public
@@ -80,7 +80,7 @@ class SimpleHangman:
         """Describe current game state."""
         return self.known_parts()
 
-    def guess(self, letter):
+    def guess(self, letter: str) -> None:
         """Call this to play."""
         self.open_letters.add(letter)
         if letter in self._word:
@@ -115,14 +115,14 @@ class Hangman(SimpleHangman):
     ?e??e?: GAME OVER
     """
 
-    def __init__(self, word, mistakes_allowed=5):
+    def __init__(self, word: str, mistakes_allowed: int = 5) -> None:
         self.mistakes_allowed = mistakes_allowed
         # SimpleHangman.__init__ prints self, so self.mistakes_allowed
         # must be defined before we call it.
         SimpleHangman.__init__(self, word)
 
     @override
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Describe current game state."""
         if set(self._word) <= self.open_letters:
             return f"{self._word}: YOU WON!"
@@ -131,7 +131,7 @@ class Hangman(SimpleHangman):
         return f"{self.known_parts()}: {self.mistakes_allowed} mistakes allowed"
 
     @override
-    def guess(self, letter):
+    def guess(self, letter: str) -> None:
         """Call this to play."""
         # bells and whistles
         if set(self._word) <= self.open_letters:

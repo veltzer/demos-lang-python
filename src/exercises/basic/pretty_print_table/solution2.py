@@ -3,13 +3,13 @@ solution
 """
 
 
-def max_len(lines):
+def max_len(lines: list[str]) -> int:
     """Return the length of the longest string."""
     lengths = [len(line) for line in lines]
     return max(lengths)
 
 
-def main():
+def main() -> None:
     """ main function """
     columns = [
         ["H", "He", "Li", "Be"],

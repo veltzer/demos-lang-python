@@ -3,11 +3,14 @@ this is an example of a context manager whose __enter__
 does not return self
 """
 
-from typing import IO, Any
+from typing import IO, TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from types import TracebackType
 
 
 class FileManager:
-    def __init__(self, filename, mode):
+    def __init__(self, filename: str, mode: str) -> None:
         self.filename = filename
         self.mode = mode
         self.file: IO[Any] | None = None
@@ -16,7 +19,7 @@ class FileManager:
         self.file = open(self.filename, self.mode)
         return self.file  # Return the file object, not self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def __exit__(self, exc_type: type[BaseException] | None, exc_val: BaseException | None, exc_tb: TracebackType | None) -> None:
         if self.file:
             self.file.close()
 

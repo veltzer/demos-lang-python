@@ -151,7 +151,7 @@ class CatalogStatic:
         return self._static_method_choices[self.param]()
 
 
-def main():
+def main() -> None:
     test = Catalog("param_value_2")
     assert test.main_method() == "executed method 2!"
 

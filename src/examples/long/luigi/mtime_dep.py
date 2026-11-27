@@ -17,12 +17,12 @@ import time
 import luigi
 
 
-def mtime(path):
+def mtime(path: str) -> str:
     return time.ctime(os.path.getmtime(path))
 
 
 class DepTask(luigi.Task):
-    def complete(self):
+    def complete(self) -> bool:
         """Flag this task as incomplete if any requirement is incomplete or has been updated more
         recently than this task"""
 
@@ -49,12 +49,12 @@ class FileExists(luigi.Task):
     def output(self):
         return luigi.LocalTarget(self.filename)
 
-    def run(self):
+    def run(self) -> None:
         pass
 
 
 class CountLines(DepTask):
-    def requires(self):
+    def requires(self) -> list[FileExists]:
         """
         What is the input to this task?
         This is an array because there could be many inputs to one task.
@@ -68,7 +68,7 @@ class CountLines(DepTask):
         """
         return luigi.LocalTarget("output.txt")
 
-    def run(self):
+    def run(self) -> None:
         """
         How do I run this Task?
         """

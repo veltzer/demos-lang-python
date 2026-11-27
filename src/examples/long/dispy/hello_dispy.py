@@ -11,14 +11,14 @@ import time
 import dispy
 
 
-def compute(n):
+def compute(n: int):
     """ "compute" is distributed to each node running "dispynode" """
     time.sleep(n)
     host = socket.gethostname()
     return host, n
 
 
-def main():
+def main() -> None:
     cluster = dispy.JobCluster(compute)
     jobs = []
     for i in range(10):

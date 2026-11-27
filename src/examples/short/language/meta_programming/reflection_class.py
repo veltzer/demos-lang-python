@@ -4,7 +4,7 @@ This shows how to know the class that you are in...
 
 
 class A:
-    def print_my_class(self):
+    def print_my_class(self) -> None:
         print(self.__class__)
 
 

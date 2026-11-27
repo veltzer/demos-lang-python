@@ -14,7 +14,7 @@ import struct
 
 
 class Encoder:
-    def __init__(self, size):
+    def __init__(self, size: int) -> None:
         super().__init__()
         self.dict = {
             "i": struct.Struct("i").size,

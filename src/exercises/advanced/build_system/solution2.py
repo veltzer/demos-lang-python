@@ -8,7 +8,7 @@ import doctest
 import os
 
 
-def parse_makefile(filename):
+def parse_makefile(filename: str):
     """Parses a makefile.
 
     Input consists of only 2 kinds of lines::
@@ -45,7 +45,7 @@ def parse_makefile(filename):
     return rules, commands
 
 
-def build(target, rules, commands):
+def build(target: str, rules: dict[str, list[str]], commands: dict[str, list[str]]) -> None:
     """Compute order in which things should be built for target.
 
     >>> build("a", {"a": ["b", "c"], "b": ["d"]}, {"a": [], "b": []})
@@ -65,7 +65,7 @@ def build(target, rules, commands):
     build_one(target, rules, commands)
 
 
-def build_one(target, rules, commands):
+def build_one(target: str, rules: dict[str, list[str]], commands: dict[str, list[str]]) -> None:
     """Execute commands for one target."""
     source = ", ".join(rules[target])
     print(f"== Building {source} -> {target} ==")
@@ -74,7 +74,7 @@ def build_one(target, rules, commands):
         os.system(command)
 
 
-def main():
+def main() -> None:
     doctest.testmod()
 
     rules, commands = parse_makefile("make_bonus.txt")

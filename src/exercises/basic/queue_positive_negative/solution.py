@@ -11,27 +11,27 @@ class Queue:
     Simple queue FIFO implementation using a python list
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.data = []
 
-    def push(self, item):
+    def push(self, item: int) -> None:
         self.data.append(item)
 
     def pop(self):
         return self.data.pop(0)
 
-    def len(self):
+    def len(self) -> int:
         return len(self.data)
 
 
-def create_queue_from_string(exp):
+def create_queue_from_string(exp: str) -> Queue:
     q = Queue()
     for c in exp.split(" "):
         q.push(int(c))
     return q
 
 
-def process(q):
+def process(q: Queue) -> Queue:
     r = Queue()
     for _ in range(q.len()):
         c = q.pop()
@@ -44,7 +44,7 @@ def process(q):
     return r
 
 
-def main():
+def main() -> None:
     q = create_queue_from_string(sys.argv[1])
     r = process(q)
     print(r.data)

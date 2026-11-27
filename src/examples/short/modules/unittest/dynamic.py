@@ -7,10 +7,14 @@ References:
 """
 
 import unittest
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
-def test_generator(a):
-    def test():
+def test_generator(a: int) -> Callable[[], None]:
+    def test() -> None:
         assert a % 2 == 0
 
     return test

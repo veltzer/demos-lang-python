@@ -3,7 +3,7 @@ This is a basic closure example.
 """
 
 
-def make_counter(x):
+def make_counter(x: int):
     val = [ x ]
     def tick():
         val[0] = val[0] +1

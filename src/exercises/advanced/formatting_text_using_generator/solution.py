@@ -5,7 +5,7 @@ solution.py
 import textwrap
 
 
-def lines2paragraphs(lines):
+def lines2paragraphs(lines: list[str]):
     """Group lines into paragraphs: as lists of lines."""
     paragraph: list[str] = []
     for line in lines:
@@ -20,7 +20,7 @@ def lines2paragraphs(lines):
         yield paragraph
 
 
-def reformat(lines):
+def reformat(lines: list[str]):
     """Generate lines of reformatted paragraphs.
 
     Paragraph in input and output are separated by empty lines.

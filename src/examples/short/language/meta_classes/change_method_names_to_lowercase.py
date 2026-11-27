@@ -9,8 +9,11 @@ References:
 """
 
 
+from typing import Any
+
+
 class MetaClass(type):
-    def __new__(cls, name, bases, cls_dict):
+    def __new__(cls, name: str, bases: tuple[type, ...], cls_dict: Any):
         # super().__new__(cls, name, bases, cls_dict)  # noqa: ERA001  teaching: kept in the comment for the reader
         new_dict = {}
         for k, v in cls_dict.iteritems():
@@ -22,7 +25,7 @@ class MyClass:
     __metaclass__ = MetaClass
 
     @classmethod
-    def say_hello(cls):
+    def say_hello(cls) -> None:
         print("hello")
 
 

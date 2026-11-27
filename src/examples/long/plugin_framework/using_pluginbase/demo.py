@@ -9,7 +9,7 @@ class BaseClass:
     pass
 
 
-def main():
+def main() -> None:
     plugin_base = PluginBase(package="plugins")
     plugin_source = plugin_base.make_plugin_source(searchpath=["plugins"])
     for plugin in plugin_source.list_plugins():

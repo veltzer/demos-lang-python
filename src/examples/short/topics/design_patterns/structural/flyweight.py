@@ -40,7 +40,7 @@ class Card:
     value: str
     suit: str
 
-    def __new__(cls, value, suit):
+    def __new__(cls, value: str, suit: str):
         # If the object exists in the pool - just return it
         obj = cls.pool.get(value + suit)
         # otherwise - create new one (and add it to the pool)
@@ -56,11 +56,11 @@ class Card:
     # def __init__(self, value, suit):
     #     self.value, self.suit = value, suit  # noqa: ERA001  teaching: kept in the comment for the reader
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<Card: {self.value}{self.suit}>"
 
 
-def main():
+def main() -> None:
     c1 = Card("9", "h")
     c2 = Card("9", "h")
     print(c1, c2)

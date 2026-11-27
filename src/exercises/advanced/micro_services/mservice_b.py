@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 @app.route("/add")
-def add():
+def add() -> str:
     a = int(request.args["a"])
     b = int(request.args["b"])
     return str(a + b)

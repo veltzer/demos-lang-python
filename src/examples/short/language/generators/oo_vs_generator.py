@@ -9,10 +9,10 @@ def fib():
 
 
 class Fib:
-    def __init__(self):
+    def __init__(self) -> None:
         self.a = self.b = 1
 
-    def get(self):
+    def get(self) -> int:
         res = self.a
         self.a, self.b = self.b, self.a + self.b
         return res

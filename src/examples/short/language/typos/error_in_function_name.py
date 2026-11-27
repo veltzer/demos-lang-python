@@ -7,7 +7,7 @@ until it reaches that line at runtime.
 # import time  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
-def do_something():
+def do_something() -> None:
     print("Hello")
 
 

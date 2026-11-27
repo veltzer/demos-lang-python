@@ -11,21 +11,27 @@ TODO:
 """
 
 
+from typing import TYPE_CHECKING, Self
+
+if TYPE_CHECKING:
+    from types import TracebackType
+
+
 class MyResource:
     enter_calls_counter = 0
     exit_calls_counter = 0
 
-    def __init__(self, *, suppress=False):
+    def __init__(self, *, suppress: bool = False) -> None:
         """ this is the constructor (the thing we call at the "with") """
         self.suppress = suppress
 
-    def __enter__(self):
+    def __enter__(self) -> Self:
         """ this method will be called at the begining of the "with" block """
         print("doing __enter__")
         MyResource.enter_calls_counter += 1
         return self
 
-    def __exit__(self, itype, value, traceback):
+    def __exit__(self, itype: type[BaseException] | None, value: BaseException | None, traceback: TracebackType | None):
         """ this method will be called at the end of the "with" block """
         print("doing __exit__", itype, value, traceback)
         MyResource.exit_calls_counter += 1

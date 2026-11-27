@@ -14,7 +14,7 @@ class Request:
     mobile_type = "mobile"
     tablet_type = "tablet"
 
-    def __init__(self, request):
+    def __init__(self, request: str) -> None:
         self.type: str | None = None
         request = request.lower()
         if request == self.mobile_type:
@@ -69,7 +69,7 @@ class RequestController:
             print("request must be a Request object")
 
 
-def main():
+def main() -> None:
     """
     >>> front_controller = RequestController()
 

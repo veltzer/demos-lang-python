@@ -27,7 +27,7 @@ def count_to_five() -> Iterator[str]:
     return count_to(5)
 
 
-def main():
+def main() -> None:
     """
     # Counting to two...
     >>> for number in count_to_two():

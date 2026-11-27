@@ -11,7 +11,7 @@ import hashlib
 import subprocess
 
 
-def hex_digest(filename, algo):
+def hex_digest(filename: str, algo: str):
     block_size = 65536
     hash_object = hashlib.new(algo)
     with open(filename, "rb") as afile:

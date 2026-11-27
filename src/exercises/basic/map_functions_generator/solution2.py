@@ -4,20 +4,26 @@ the function returns a list where each element is the application of the
 relevant unary function on the single argument
 """
 
+from typing import TYPE_CHECKING, Any
 
-def map_like(func_list, arg):
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+
+def map_like(func_list: list[Callable[..., Any]], arg: int):
     return [func(arg) for func in func_list]
 
 
-def square(x):
+def square(x: int):
     return x * x
 
 
-def triple(x):
+def triple(x: int):
     return x * 3
 
 
-def plusone(x):
+def plusone(x: int):
     return x + 1
 
 

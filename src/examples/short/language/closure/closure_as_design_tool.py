@@ -3,15 +3,18 @@ This is an example of how to use closure as a facade design pattern.
 """
 
 
-def func_with_many_args(a, b, c, d, e, f, g):
+
+
+
+def func_with_many_args(a: str, b: str, c: str, d: str, e: str, f: str, g: str) -> None:
     """
     A big function which has too many variables
     """
     print(a, b, c, d, e, f, g)
 
 
-def wrap_it(a, c, d, e, g):
-    def inner_func(b, f):
+def wrap_it(a: str, c: str, d: str, e: str, g: str):
+    def inner_func(b: str, f: str) -> None:
         return func_with_many_args(a, b, c, d, e, f, g)
 
     return inner_func

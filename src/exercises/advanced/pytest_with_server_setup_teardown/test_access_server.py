@@ -13,7 +13,7 @@ from our_code import our_function_to_test
 class TestSomething:
 
     @classmethod
-    def setup_class(cls):
+    def setup_class(cls) -> None:
         # setup - bring the server up
         # the server sits next to this file, wherever the tests are run from
         cls.proc = subprocess.Popen([sys.executable, Path(__file__).with_name("server.py")])
@@ -21,8 +21,8 @@ class TestSomething:
         time.sleep(2)
 
     @classmethod
-    def teardown_class(cls):
+    def teardown_class(cls) -> None:
         cls.proc.kill()
 
-    def test_server(self):
+    def test_server(self) -> None:
         our_function_to_test()

@@ -9,11 +9,11 @@ class A:
     var_bar = "value_bar"
 
     @classmethod
-    def do_i_have_it(cls, prop):
+    def do_i_have_it(cls, prop: str) -> bool:
         return prop in cls.__dict__
 
     @classmethod
-    def do_i_have_it2(cls, prop):
+    def do_i_have_it2(cls, prop: str) -> bool:
         return hasattr(cls, prop)
 
 

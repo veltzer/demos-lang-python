@@ -15,21 +15,23 @@ alter them from the outside.
 the data through that.
 """
 
+from typing import Any
 
-def make_funcs(number_list):
-    def func_max():
+
+def make_funcs(number_list: list[int]):
+    def func_max() -> int:
         current_max = 0
         for x in number_list:
             current_max = max(current_max, x)
         return current_max
 
-    def func_min():
+    def func_min() -> int:
         current_min = 10000
         for x in number_list:
             current_min = min(current_min, x)
         return current_min
 
-    def func_set(index, val):
+    def func_set(index: int, val: Any) -> None:
         number_list[index] = val
 
     def func_int():

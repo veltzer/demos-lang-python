@@ -28,9 +28,15 @@ https://sourcemaking.com/design_patterns/object_pool
 Stores a set of initialized objects kept ready to use.
 """
 
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from types import TracebackType
+
+
 
 class ObjectPool:
-    def __init__(self, queue, *, auto_get=False):
+    def __init__(self, queue: Any, *, auto_get: bool = False) -> None:
         self._queue = queue
         self.item = self._queue.get() if auto_get else None
 
@@ -39,18 +45,18 @@ class ObjectPool:
             self.item = self._queue.get()
         return self.item
 
-    def __exit__(self, exc_type, value, traceback):
+    def __exit__(self, exc_type: type[BaseException] | None, value: BaseException | None, traceback: TracebackType | None) -> None:
         if self.item is not None:
             self._queue.put(self.item)
             self.item = None
 
-    def __del__(self):
+    def __del__(self) -> None:
         if self.item is not None:
             self._queue.put(self.item)
             self.item = None
 
 
-def main():
+def main() -> None:
     """
     >>> import queue
 

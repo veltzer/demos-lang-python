@@ -10,12 +10,12 @@ app = flask.Flask(__name__)
 
 
 @app.route("/")
-def hello():
+def hello() -> str:
     return "<html><body>Hello World!</body></html>"
 
 
 @app.route("/shutdown")
-def shutdown():
+def shutdown() -> str:
     # suicide
     os.kill(os.getpid(), 9)
     return ""

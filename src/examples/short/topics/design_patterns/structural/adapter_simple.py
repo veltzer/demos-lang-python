@@ -28,12 +28,14 @@ http://python-3-patterns-idioms-test.readthedocs.io/en/latest/ChangeInterface.ht
 Allows the interface of an existing class to be used as another interface.
 """
 
+from typing import Any
+
 
 class Toaster:
     def __init__(self) -> None:
         pass
 
-    def toast(self, intensity) -> None:
+    def toast(self, intensity: int) -> None:
         print(f"toasting! {intensity}")
 
     def stop(self) -> None:
@@ -52,7 +54,7 @@ class ElectricAppliance:
 
 
 class ToasterToElectricApplianceAdapter:
-    def __init__(self, toaster) -> None:
+    def __init__(self, toaster: Any) -> None:
         self.toaster = toaster
 
     def on(self) -> None:

@@ -5,8 +5,8 @@ contains the list "function_list" which can be very long indeed.
 """
 
 
-def create_func(function_list):
-    def inner_func(x):
+def create_func(function_list: list[int]):
+    def inner_func(x: int) -> None:
         function_list.append(x)
         print(sum(function_list))
 

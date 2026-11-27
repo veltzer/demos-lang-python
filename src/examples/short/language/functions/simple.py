@@ -3,7 +3,7 @@ This is a simple example of a function in python3
 """
 
 
-def add(a, b):
+def add(a: int, b: int):
     return a + b
 
 

@@ -8,7 +8,7 @@ of running scrapy when all you are doing is scraping with a full
 project structure and all. This is not that way.
 """
 
-from typing import ClassVar
+from typing import Any, ClassVar
 
 import scrapy.crawler
 
@@ -22,7 +22,7 @@ class SearchSpider(scrapy.Spider):
         "https://google.com",
     ]
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
         """ constructor """
         # important, call the parent
         super().__init__(*args, **kwargs)
@@ -36,7 +36,7 @@ class SearchSpider(scrapy.Spider):
         # self.start_urls.append("https://safety.google/security-privacy/")  # noqa: ERA001  teaching: kept in the comment for the reader
         yield scrapy.Request(url="https://google.com/maps", callback=self.parse)
 
-    def closed(self, _reason):
+    def closed(self, _reason) -> None:
         """
         This method is called automatically when the crawler finishes
         """

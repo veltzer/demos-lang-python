@@ -11,7 +11,7 @@ that method.
 import requests
 
 
-def get_http_status_string(code: int):
+def get_http_status_string(code: int) -> str:
     """
     This function returns a description of an HTTP status code (404 - not found etc).
     The requests module has no direct API for this so we look the code up

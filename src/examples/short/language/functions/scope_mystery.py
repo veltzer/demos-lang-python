@@ -14,7 +14,7 @@ that.
 
 
 # noinspection PyUnboundLocalVariable
-def my_mystery_function():
+def my_mystery_function() -> None:
     # global g
     print(g)  # noqa: F823  teaching: shows a local name used before its assignment  # pyrefly: ignore[unbound-name]  teaching: g is local because it is assigned later in the function
     if True:

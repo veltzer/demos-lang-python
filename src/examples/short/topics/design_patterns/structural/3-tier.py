@@ -3,7 +3,7 @@
 Separates presentation, application processing, and data management functions.
 """
 
-from typing import TYPE_CHECKING, ClassVar
+from typing import TYPE_CHECKING, Any, ClassVar
 
 if TYPE_CHECKING:
     from collections.abc import KeysView
@@ -18,7 +18,7 @@ class Data:
         "cheese": {"price": 2.00, "quantity": 10},
     }
 
-    def __get__(self, obj, klas):
+    def __get__(self, obj: Any, klas: Any) -> dict[str, dict[str, dict[str, float | int]]]:
 
         print("(Fetching from Data Store)")
         return {"products": self.products}
@@ -61,7 +61,7 @@ class Ui:
             print(f"That product [{product}] doesnt exist in the records")
 
 
-def main():
+def main() -> None:
     """
     >>> ui = Ui()
     >>> ui.get_product_list()

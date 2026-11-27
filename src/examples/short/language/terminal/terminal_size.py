@@ -25,7 +25,7 @@ def terminal_size1():
 function_names[terminal_size1] = "ioctl"
 
 
-def terminal_size2():
+def terminal_size2() -> tuple[int, int]:
     ret = subprocess.run(["stty", "size"], capture_output=True, text=True, check=False).stdout.split()
     return int(ret[1]), int(ret[0])
 
@@ -33,7 +33,7 @@ def terminal_size2():
 function_names[terminal_size2] = "stty"
 
 
-def terminal_size3():
+def terminal_size3() -> tuple[int, int]:
     x = int(subprocess.run(["tput", "cols"], capture_output=True, text=True, check=False).stdout)
     y = int(subprocess.run(["tput", "lines"], capture_output=True, text=True, check=False).stdout)
     return x, y
@@ -42,7 +42,7 @@ def terminal_size3():
 function_names[terminal_size3] = "tput"
 
 
-def terminal_size4():
+def terminal_size4() -> tuple[int, int]:
     d = {}
     for tc_entry in os.environ["TERMCAP"].split(":"):
         if tc_entry.find("#") != -1:
@@ -54,7 +54,7 @@ def terminal_size4():
 function_names[terminal_size4] = "TERMCAP"
 
 
-def terminal_size5():
+def terminal_size5() -> tuple[int, int]:
     """ this function does not work since LINES and COLUMNS are not exported"""
     x = int(os.environ["LINES"])
     y = int(os.environ["COLUMNS"])

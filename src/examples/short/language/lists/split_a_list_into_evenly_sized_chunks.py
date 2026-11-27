@@ -6,13 +6,13 @@ References:
 """
 
 
-def chunks(a_list, n):
+def chunks(a_list: range, n: int):
     """Yield successive n-sized chunks from l."""
     for i in range(0, len(a_list), n):
         yield a_list[i:i + n]
 
 
-def main():
+def main() -> None:
     for sublist in chunks(range(5, 28), 7):
         print(sublist)
 

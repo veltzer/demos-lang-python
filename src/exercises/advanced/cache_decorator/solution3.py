@@ -3,14 +3,17 @@ solution3.py
 """
 
 import math
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 # in cache keys are going to be (func, n) and not just n.
 the_cache: dict[tuple[Any, Any], int] = {}
 
 
-def cache(func):
-    def new_func(n):
+def cache(func: Callable[..., Any]):
+    def new_func(n: int):
         if (func, n) in the_cache:
             return the_cache[(func, n)]
         r = func(n)
@@ -20,18 +23,18 @@ def cache(func):
 
 
 @cache
-def is_prime(n):
+def is_prime(n: int) -> bool:
     print("in called")
     return all(n % i != 0 for i in range(2, int(math.sqrt(n) + 1)))
 
 
 @cache
-def is_even(n):
+def is_even(n: int):
     print("in called")
     return n % 2 == 0
 
 
-def main():
+def main() -> None:
     while True:
         n = int(input("give me a number, -1 to end: "))
         if n == -1:

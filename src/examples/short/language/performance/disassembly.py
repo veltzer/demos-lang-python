@@ -6,7 +6,7 @@ import dis
 import inspect
 
 
-def add(a, b):
+def add(a: int, b: int):
     if a % 2 == 1:
         a = a - 7
     return a + b

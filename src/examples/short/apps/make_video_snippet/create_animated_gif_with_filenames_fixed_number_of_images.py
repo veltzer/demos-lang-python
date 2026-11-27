@@ -10,12 +10,13 @@ References:
 
 import os
 import sys
+from typing import Any
 
 import cv2
 import imageio
 
 
-def resize_image_keep_aspect(image, width, height):
+def resize_image_keep_aspect(image: Any, width: int, height: int):
     """
     This functin will receive an image, and will create a smaller version of it with dimentions:
     width, height while *** keeping the orignal aspect ratio of the image ***.

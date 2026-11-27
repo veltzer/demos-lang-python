@@ -5,7 +5,7 @@ This example shows how to create two processes in python that communicate via a 
 import subprocess
 
 
-def system_pipe(list1, list2):
+def system_pipe(list1: list[str], list2: list[str]) -> tuple[bytes, bytes]:
     """
     This function receives two lists to serve as the new processes
     """
@@ -31,7 +31,7 @@ def system_pipe(list1, list2):
         return s_output2, s_error2
 
 
-def main():
+def main() -> None:
     try:
         # test error in first command
         print(system_pipe(

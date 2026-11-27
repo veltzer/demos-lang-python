@@ -3,7 +3,7 @@ this is a simple solution to the reverse dict function exercise
 """
 
 
-def rev_dict(d):
+def rev_dict(d: dict[str, str]):
     rev_d = {}
     # The next loop is critical to extract the values from the map function
     # if you dont extract the values map will not actually do anything.

@@ -33,7 +33,7 @@ Jack move 5m then stop
 """
 
 
-def main():
+def main() -> None:
     move = Action("move")
     person = Person("Jack")
     with redirect_stdout(io.StringIO()) as output:

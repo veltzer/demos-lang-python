@@ -6,22 +6,22 @@ This method shows the types of regular methods vs the types of real static metho
 class Book:
     num = 0
 
-    def __init__(self, price):
+    def __init__(self, price: int) -> None:
         self.__price = price
         Book.num += 1
 
-    def printit(self):
+    def printit(self) -> None:
         print("price is", self.__price)
 
-    def set_price(self, newprice):
+    def set_price(self, newprice: int) -> None:
         self.__price = newprice
 
     @staticmethod
-    def get_num_books():
+    def get_num_books() -> int:
         return Book.num
 
     @classmethod
-    def get_num_books2(cls):
+    def get_num_books2(cls) -> int:
         return cls.num
 
 

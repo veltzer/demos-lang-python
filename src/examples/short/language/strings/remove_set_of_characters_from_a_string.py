@@ -22,13 +22,13 @@ line = "this 2342 is56 is the 2line"
 function_names = {}
 
 
-def remove_many(s, list_of_chars):
+def remove_many(s: str, list_of_chars: str):
     for x in list_of_chars:
         s = s.replace(x, "")
     return s
 
 
-def using_re():
+def using_re() -> str:
     return remove_re.sub("", line)
 
 

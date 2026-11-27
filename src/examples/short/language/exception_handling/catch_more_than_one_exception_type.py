@@ -9,7 +9,7 @@ References:
 """
 
 
-def raise_it(a_type):
+def raise_it(a_type: type[RuntimeError | ValueError]):
     raise a_type("hello")
 
 

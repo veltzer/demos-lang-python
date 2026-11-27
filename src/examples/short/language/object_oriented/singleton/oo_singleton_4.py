@@ -13,20 +13,20 @@ import time
 
 
 class A:
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
 
 a_instance = None
 
 
-def get_a_instance():  # noqa: F811  teaching: the function replaces itself through the global
+def get_a_instance() -> A:  # noqa: F811  teaching: the function replaces itself through the global
     # noinspection PyGlobalUndefined
     global a_instance, get_a_instance  # noqa: PLW0603  teaching: the singleton is kept in a global
     if a_instance is None:
         a_instance = A()
 
-    def get_a_instance_fast():
+    def get_a_instance_fast() -> A:
         return a_instance
 
     get_a_instance = get_a_instance_fast
@@ -44,14 +44,14 @@ if A1 is A2:
 
 
 class B:
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
 
 b_instance = None
 
 
-def get_b_instance():
+def get_b_instance() -> B:
     global b_instance  # noqa: PLW0603  teaching: the singleton is kept in a global
     if b_instance is None:
         b_instance = B()

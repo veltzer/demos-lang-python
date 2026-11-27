@@ -43,7 +43,7 @@ import time
 import timeit
 
 
-def my_sleep():
+def my_sleep() -> None:
     time.sleep(2)
 
 

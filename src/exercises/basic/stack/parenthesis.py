@@ -2,37 +2,39 @@
 parenthesis
 """
 
+from typing import Any
+
 
 class Stack:
     """
     Simple stack implementation using a python list
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.data = []
 
-    def push(self, item):
+    def push(self, item: Any) -> None:
         self.data.append(item)
 
     def pop(self):
         return self.data.pop()
 
-    def len(self):
+    def len(self) -> int:
         return len(self.data)
 
     def top(self):
         return self.data[len(self.data) - 1]
 
 
-def is_open(c):
+def is_open(c: Any) -> bool:
     return c in ["(", "[", "{"]
 
 
-def is_close(c):
+def is_close(c: Any) -> bool:
     return c in [")", "]", "}"]
 
 
-def check_match(open_braces, close_braces, pos):
+def check_match(open_braces: str, close_braces: str, pos: int) -> None:
     if open_braces == "(" and close_braces == ")":
         return
     if open_braces == "[" and close_braces == "]":
@@ -42,7 +44,7 @@ def check_match(open_braces, close_braces, pos):
     raise ValueError(f"problem with parenthesis at pos {pos}")
 
 
-def check_expression(exp):
+def check_expression(exp: str) -> None:
     s = Stack()
     for pos, c in enumerate(exp):
         if is_open(c):

@@ -2,6 +2,8 @@
 date_stage1
 """
 
+from typing import Self
+
 days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 days_in_months_leap_year = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 months_names = ["January", "February", "March", "April", "May", "June",
@@ -11,25 +13,25 @@ name_to_days_num = {
 }
 
 
-def get_num_of_days_in_month(month_name):
+def get_num_of_days_in_month(month_name: str) -> int:
     if month_name in name_to_days_num:
         return name_to_days_num[month_name]
     raise ValueError("No such month")
 
 
-def get_following_month(month_name):
+def get_following_month(month_name: str) -> str:
     if month_name in name_to_days_num:
         i = months_names.index(month_name)
         return months_names[(i + 1) % 12]
     raise ValueError("No such month")
 
 
-def is_leap_year(year):
+def is_leap_year(year: int):
     return year % 4 == 0 and year % 1000 != 0
 
 
 class Date:
-    def __init__(self, day, month, year):
+    def __init__(self, day: int, month: int, year: int) -> None:
         if not isinstance(day, int) or not isinstance(month, int) or not isinstance(year, int):
             print("Date must be initialized with numbers")
             return
@@ -47,7 +49,7 @@ class Date:
         self.month = month  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: before exceptions, a bad date prints and returns
         self.year = year  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: before exceptions, a bad date prints and returns
 
-    def __gt__(self, other):
+    def __gt__(self, other: Self) -> bool:
         """ Overloading operator>for dates """
         if self.year > other.year:
             return True
@@ -58,28 +60,30 @@ class Date:
                 return True
         return False
 
-    def __lt__(self, other):
+    def __lt__(self, other: Self):
         """ Overloading operator<for dates """
         return other > self
 
-    def __eq__(self, other):
+    def __eq__(self, other: object):
         """ Overloading operator==for dates """
+        if not isinstance(other, Date):
+            return NotImplemented
         return self.year == other.year and self.month == other.month and self.day == other.day
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         return hash((self.year, self.month, self.day))
 
-    def __ne__(self, other):
+    def __ne__(self, other: object) -> bool:
         """ Overloading operator!=for dates """
         return not self == other
 
-    def __le__(self, other):
+    def __le__(self, other: Self):
         """ Overloading operator<=for dates """
         return self < other or self == other
 
-    def __ge__(self, other):
+    def __ge__(self, other: Self):
         """ Overloading operator>=for dates """
         return self > other or self == other
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.day) + "." + str(self.month) + "." + str(self.year)

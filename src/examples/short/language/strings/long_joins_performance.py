@@ -8,7 +8,7 @@ import timeit
 function_names = {}
 
 
-def func1():
+def func1() -> str:
     s = names[0]
     for name in names[1:]:
         s += ", " + name
@@ -18,7 +18,7 @@ def func1():
 function_names[func1] = "plus"
 
 
-def func2():
+def func2() -> str:
     return ",".join(names)
 
 

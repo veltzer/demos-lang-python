@@ -6,7 +6,7 @@ import os
 import os.path
 
 
-def print_tree(fullpath: str, filename: str, depth=0):
+def print_tree(fullpath: str, filename: str, depth: int = 0) -> None:
     print_str = " " * 3 * depth
     print(f"{print_str}{filename}")
     if os.path.isdir(fullpath):

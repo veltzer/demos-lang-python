@@ -5,7 +5,7 @@
 """
 
 
-def myfunc(s):
+def myfunc(s: list[int] | range | str | tuple[int, int, int]) -> None:
     for i in s:
         print(i, end="")
     print()

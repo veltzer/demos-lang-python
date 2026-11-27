@@ -13,19 +13,22 @@ called on the class and not on an instance.
 """
 
 
+from typing import Self
+
+
 class A:
-    def __init__(self, p):
+    def __init__(self, p: int) -> None:
         self.p = p
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.p)
 
     @classmethod
-    def from_q(cls, q):
+    def from_q(cls, q: int) -> Self:
         return cls(-q)
 
     @staticmethod
-    def static_from_q(q):
+    def static_from_q(q: int) -> A:
         return A(-q)
 
 

@@ -11,14 +11,14 @@ References:
 """
 
 
-def correct_divide(a, b):
+def correct_divide(a: int, b: int):
     try:
         return a / b
     except ZeroDivisionError as ex:
         raise ValueError("b must not be zero") from ex
 
 
-def incorrect_divide(a, b):
+def incorrect_divide(a: int, b: int):
     try:
         return a / b
     except ZeroDivisionError:

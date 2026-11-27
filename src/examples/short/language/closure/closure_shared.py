@@ -3,11 +3,11 @@ This is an example of a shared closure. All three functions share the same closu
 """
 
 
-def create_funcs(number_list):
-    def append_f(x):
+def create_funcs(number_list: list[int]):
+    def append_f(x: int) -> None:
         number_list.append(x)
 
-    def print_f():
+    def print_f() -> None:
         print(number_list)
 
     def sum_f():

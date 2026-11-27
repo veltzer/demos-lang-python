@@ -4,40 +4,40 @@ Solution3
 
 
 class Person:
-    def __init__(self, socialid, name, surname):
+    def __init__(self, socialid: str, name: str, surname: str) -> None:
         self.socialid = socialid
         self.name = name
         self.surname = surname
         self.cars = []
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<socialid {self.socialid}, name {self.name}, surname {self.surname}>"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.__repr__()
 
-    def add_car(self, c):
+    def add_car(self, c: Car) -> None:
         self.cars.append(c)
 
 
 class Car:
-    def __init__(self, licenseid, color, cartype):
+    def __init__(self, licenseid: str, color: str, cartype: str) -> None:
         self.licenseid = licenseid
         self.color = color
         self.cartype = cartype
         self.owners = []
 
-    def add_owner(self, owner):
+    def add_owner(self, owner: Person) -> None:
         self.owners.append(owner)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"<licenseid {self.licenseid}, color {self.color}, cartype {self.cartype} owners {self.owners}>"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.__repr__()
 
 
-def main():
+def main() -> None:
     people = []
     id_to_person = {}
     with open("people.csv") as stream:

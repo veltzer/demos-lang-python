@@ -72,7 +72,7 @@ class MenuItem:
         self._command.undo()
 
 
-def main():
+def main() -> None:
     """
     >>> item1 = MenuItem(DeleteFileCommand())
 

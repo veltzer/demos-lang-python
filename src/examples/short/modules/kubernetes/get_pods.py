@@ -9,7 +9,7 @@ import kubernetes.client
 import kubernetes.config
 
 
-def main():
+def main() -> None:
     # Configs can be set in Configuration class directly or using helper utility
     # You have to read the config in order to know the address and credentials
     # by which to contact the cluster

@@ -3,13 +3,16 @@ Solution
 """
 
 import time
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 timing: dict[Any, Any] = {}
 
 
-def time_it(func):
-    def inner(*args, **kwargs):
+def time_it(func: Callable[..., Any]):
+    def inner(*args: Any, **kwargs: Any):
         t_before = time.time()
         r = func(*args, **kwargs)
         t_after = time.time()
@@ -26,24 +29,24 @@ def time_it(func):
     return inner
 
 
-def print_timing_summary():
+def print_timing_summary() -> None:
     for k, v in timing.items():
         acc_time, n_calls = v
         print(f"function {k.__name__} took {acc_time / n_calls} to run on average")
 
 
 @time_it
-def add(a, b):
+def add(a: int, b: int):
     return a + b
 
 
 @time_it
-def sub(a, b):
+def sub(a: int, b: int):
     return a - b
 
 
 @time_it
-def wait_1_sec():
+def wait_1_sec() -> None:
     time.sleep(1)
 
 

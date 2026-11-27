@@ -9,16 +9,22 @@ You can see the basic flow of code:
 - then your __exit__ code is called.
 """
 
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from types import TracebackType
+
+
 
 class MyResource:
 
-    def __init__(self):
+    def __init__(self) -> None:
         print("constructor")
 
-    def __enter__(self):
+    def __enter__(self) -> None:
         print("enter")
 
-    def __exit__(self, exception_type, value, traceback):
+    def __exit__(self, exception_type: type[BaseException] | None, value: BaseException | None, traceback: TracebackType | None) -> None:
         if value is not None:
             print("there was an exception")
             print(f"exception_type is {exception_type}")

@@ -76,12 +76,12 @@ class Adapter:
     dog = Adapter(dog, make_noise=dog.bark)
     """
 
-    def __init__(self, obj: object, **adapted_methods: Callable[..., Any]):
+    def __init__(self, obj: object, **adapted_methods: Callable[..., Any]) -> None:
         """We set the adapted methods in the objects dict."""
         self.obj = obj
         self.__dict__.update(adapted_methods)
 
-    def __getattr__(self, attr):
+    def __getattr__(self, attr: str):
         """All non-adapted calls are passed to the object."""
         return getattr(self.obj, attr)
 
@@ -90,7 +90,7 @@ class Adapter:
         return self.obj.__dict__
 
 
-def main():
+def main() -> None:
     """
     >>> objects = []
     >>> dog = Dog()

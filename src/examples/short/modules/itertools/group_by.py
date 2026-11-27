@@ -5,11 +5,11 @@ This is a demo of itertools.groupby
 import itertools
 
 
-def indentation(line):
+def indentation(line: str) -> int:
     return len(line) - len(line.lstrip())
 
 
-def main():
+def main() -> None:
     data = """this is no indent 1
     this is no indent 2
         this is 1 indent 1

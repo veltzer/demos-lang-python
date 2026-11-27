@@ -26,7 +26,7 @@ def digest(filename: str) -> str:
     return md5.hexdigest()
 
 
-def main():
+def main() -> None:
     print("The default way - non identical outputs")
     for x in range(3):
         output_filename = output_template.format(x)

@@ -1,7 +1,7 @@
 """ not_fair.py """
 
 
-def substring(s1, s2):
+def substring(s1: str, s2: str) -> bool:
     return s1 in s2
 
 

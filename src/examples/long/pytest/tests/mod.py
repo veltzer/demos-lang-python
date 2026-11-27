@@ -1,5 +1,5 @@
 """ mod.py """
 
 
-def shared_method():
+def shared_method() -> None:
     pass

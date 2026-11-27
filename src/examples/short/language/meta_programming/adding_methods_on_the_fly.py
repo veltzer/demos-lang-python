@@ -7,14 +7,15 @@ This exercise shows how to:
 
 import pprint
 from types import MethodType
+from typing import Any
 
 
 class Person:
-    def __init__(self, name, surname):
+    def __init__(self, name: str, surname: str) -> None:
         self.name = name
         self.surname = surname
 
-    def print_me(self):
+    def print_me(self) -> None:
         print(f"{self.name} {self.surname}")
 
 
@@ -28,7 +29,7 @@ b.print_me()
 # lets define a function that looks like a method of person...
 
 
-def secret_agent_output(self):
+def secret_agent_output(self: Any) -> None:
     print(self.surname + ",", self.name, self.surname)
 
 
@@ -54,7 +55,7 @@ p.print_me()
 # lets add a method new method to the class
 
 
-def fire_your_gun(self):
+def fire_your_gun(self: Any) -> None:
     print(self.name + " is firing!")
 
 

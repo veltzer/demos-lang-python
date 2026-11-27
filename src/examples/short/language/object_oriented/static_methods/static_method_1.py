@@ -7,18 +7,18 @@ function is really global and not in the class.
 class Book:
     num = 0
 
-    def __init__(self, price):
+    def __init__(self, price: int) -> None:
         self.__price = price
         Book.num += 1
 
-    def printit(self):
+    def printit(self) -> None:
         print("price is", self.__price)
 
-    def set_price(self, newprice):
+    def set_price(self, newprice: int) -> None:
         self.__price = newprice
 
 
-def get_num_books():
+def get_num_books() -> int:
     return Book.num
 
 

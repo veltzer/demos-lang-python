@@ -3,7 +3,7 @@ This example demonstrates the "match" statement in python
 """
 
 
-def check_type(value):
+def check_type(value: float | list[int] | str | dict[str, int]) -> None:
     match value:
         case int():
             print(f"{value} is an integer")

@@ -3,17 +3,18 @@ play_music.py
 """
 
 import os
+from typing import Any
 
 import pygame
 
 
-def play_note(samples, note_name):
+def play_note(samples: Any, note_name: str) -> None:
     """ play a note """
     if note_name in samples:
         samples[note_name].play()
 
 
-def main():
+def main() -> None:
     # Initialize pygame mixer
     pygame.mixer.init()
 

@@ -2,16 +2,18 @@
 This example of how to wrap a dictionary to look like a namespace
 """
 
+from typing import Any
+
 
 class D(dict[str, str | None]):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.two: str | None = None
 
-    def __getattr__(self, name):
+    def __getattr__(self, name: str) -> str | None:
         return self[name]
 
-    def __setattr__(self, name, val):
+    def __setattr__(self, name: str, val: Any) -> None:
         self[name] = val
 
 

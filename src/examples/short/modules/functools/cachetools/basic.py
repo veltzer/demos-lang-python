@@ -10,7 +10,7 @@ from functools import lru_cache
 
 
 @lru_cache(maxsize=1000)
-def my_function(a, b):
+def my_function(a: int, b: int):
     time.sleep(2)
     return a + b
 

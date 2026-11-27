@@ -9,7 +9,7 @@ References:
 import os
 
 
-def get_strict(name: str):
+def get_strict(name: str) -> str | None:
     """
     this function gives you the value of an environment variable and fails
     if it doesnt exist

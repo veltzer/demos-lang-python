@@ -1,30 +1,34 @@
 """ sorted_dict_own_type.py """
 
+from typing import Any
+
 from sortedcontainers import SortedDict
 
 
 class Range:
-    def __init__(self, fr, to):
+    def __init__(self, fr: int, to: int) -> None:
         self.fr = fr
         self.to = to
 
-    def __lt__(self, t):
+    def __lt__(self, t: Any):
         if isinstance(t, int):
             return self.to <= t
         return self.to <= t.fr
 
-    def __eq__(self, t):
+    def __eq__(self, t: object):
         if isinstance(t, int):
             return self.fr <= t < self.to
+        if not isinstance(t, type(self)):
+            return NotImplemented
         return self.fr == t.fr and self.to == t.to
 
-    def __ne__(self, t):
+    def __ne__(self, t: object) -> bool:
         return not self.__eq__(t)
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         return hash(str(self))
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"[{self.fr}-{self.to}]"
 
 

@@ -2,6 +2,8 @@
 A sample application for cmd2
 """
 
+from typing import Any
+
 from cmd2 import Cmd, Cmd2ArgumentParser, with_argparser
 
 argparser = Cmd2ArgumentParser()
@@ -12,7 +14,7 @@ argparser.add_argument("word", nargs="?", help="word to say")
 
 
 class CmdLineApp(Cmd):
-    def __init__(self):
+    def __init__(self) -> None:
         self.multilineCommands = ["orate"]
         self.maxrepeats = 3
 
@@ -27,7 +29,7 @@ class CmdLineApp(Cmd):
         # set_use_arg_list(False)  # noqa: ERA001  teaching: kept in the comment for the reader
 
     @with_argparser(argparser)
-    def do_speak(self, arg, opts):
+    def do_speak(self, arg: Any, opts: Any) -> None:
         """Repeats what you tell me to."""
         arg = "".join(arg)
         if opts.piglatin:

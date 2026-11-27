@@ -14,11 +14,11 @@ import numpy as np
 from pandas import DataFrame
 
 
-def random_word(length):
+def random_word(length: int) -> str:
     return "".join(random.choice(string.ascii_lowercase) for _ in range(length))
 
 
-def print_data(data_frame: DataFrame):
+def print_data(data_frame: DataFrame) -> None:
     print(len(data_frame))
     print(type(data_frame))
 
@@ -26,7 +26,7 @@ def print_data(data_frame: DataFrame):
 large_table_size = 15000000
 
 
-def create_large_table():
+def create_large_table() -> None:
     columns = [
         "A",
         "B",
@@ -39,14 +39,14 @@ def create_large_table():
 random_strings: list[str] = []
 
 
-def create_random_strings():
+def create_random_strings() -> None:
     random_strings[:] = [str(i) for i in range(1000000, 1000000 + large_table_size)]
 
 
 tables: dict[str, DataFrame] = {}
 
 
-def create_string_table():
+def create_string_table() -> None:
     columns = [
         "A",
         "B",
@@ -55,11 +55,11 @@ def create_string_table():
     tables["df"] = DataFrame("", index=random_strings, columns=columns)
 
 
-def create_set_from_strings():
+def create_set_from_strings() -> None:
     _ = set(random_strings)
 
 
-def create_dict_from_strings():
+def create_dict_from_strings() -> None:
     _ = {x: x for x in random_strings}
 
 
@@ -79,7 +79,7 @@ input("press any key...")
 # print("querying about 15mil entries by key")  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
-def more_stuff():
+def more_stuff() -> None:
     size = 15000000
     random_words = [random_word(10) for _ in range(size)]
     df = tables["df"]

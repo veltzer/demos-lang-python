@@ -26,13 +26,14 @@ import os
 import os.path
 import sys
 import time
+from typing import Any
 
 import dialog
 
 FAST_DEMO = True
 
 
-def handle_exit_code(d, code):
+def handle_exit_code(d: Any, code: int) -> int:
     if code in (d.DIALOG_CANCEL, d.DIALOG_ESC):
         if code == d.DIALOG_CANCEL:
             msg = "You chose CANCEL in the last dialog box. Do you want to exit this demo?"
@@ -46,13 +47,13 @@ def handle_exit_code(d, code):
         return 1
 
 
-def show_and_exit(collected):
+def show_and_exit(collected: Any):
     for k, v in collected.items():
         print(f"{k} is [{v}]")
     sys.exit(0)
 
 
-def demo_inputbox(d):
+def demo_inputbox(d: Any):
     while True:
         code, answer = d.inputbox("Whats your name?", init="Snow White")
         if handle_exit_code(d, code):
@@ -60,7 +61,7 @@ def demo_inputbox(d):
     return answer
 
 
-def demo_menu(d):
+def demo_menu(d: Any):
     while True:
         code, tag = d.menu(
             "Whats your favorite day of the week?",
@@ -77,7 +78,7 @@ def demo_menu(d):
     return tag
 
 
-def demo_infobox(d):
+def demo_infobox(d: Any) -> None:
     d.infobox("One moment, please. Just wasting some time here to show you the infobox...")
     if FAST_DEMO:
         time.sleep(0.5)
@@ -85,7 +86,7 @@ def demo_infobox(d):
         time.sleep(3)
 
 
-def demo_gauge(d):
+def demo_gauge(d: Any) -> None:
     d.gauge_start("Progress: 0%", title="Still testing your patience...")
     for i in range(1, 101):
         if i < 50:
@@ -104,7 +105,7 @@ def demo_gauge(d):
     d.gauge_stop()
 
 
-def demo_yesno(d):
+def demo_yesno(d: Any):
     answer = d.yesno("Do you like this demo?")
     if answer == d.DIALOG_OK:
         d.msgbox("Excellent! Press OK to see the source code.")
@@ -113,11 +114,11 @@ def demo_yesno(d):
     return answer
 
 
-def demo_textbox(d):
+def demo_textbox(d: Any) -> None:
     d.textbox(sys.argv[0], width=76)
 
 
-def demo_checklist(d):
+def demo_checklist(d: Any):
     while True:
         (code, tag) = d.checklist(text="What sandwich toppings do you like?",
                                   height=15, width=54, list_height=7,
@@ -133,7 +134,7 @@ def demo_checklist(d):
     return tag
 
 
-def demo_radiolist(d):
+def demo_radiolist(d: Any):
     while True:
         code, tag = d.radiolist(
             "Whats your favorite kind of sandwich?",
@@ -152,7 +153,7 @@ def demo_radiolist(d):
     return tag
 
 
-def demo_calendar(d):
+def demo_calendar(d: Any):
     while True:
         code, date = d.calendar(
             "When do you think Debian sarge will be released?", year=0)
@@ -161,7 +162,7 @@ def demo_calendar(d):
     return date
 
 
-def demo_passwordbox(d):
+def demo_passwordbox(d: Any):
     while True:
         code, password = d.passwordbox(
             "What is your root password, so that I can crack your system right now?")
@@ -170,7 +171,7 @@ def demo_passwordbox(d):
     return password
 
 
-def demo_fselect(d):
+def demo_fselect(d: Any):
     homedir = os.environ["HOME"] + os.sep
     while True:
         (code, path) = d.fselect(homedir, 10, 50,
@@ -184,19 +185,19 @@ def demo_fselect(d):
     return path
 
 
-def demo_tailbox(d, file):
+def demo_tailbox(d: Any, file: str) -> None:
     d.tailbox(
         file, 20, 60, title="You are brave. You deserve the right to rest, now.")
 
 
-def demo_scrollbox(d, collected):
+def demo_scrollbox(d: Any, collected: Any) -> None:
     msg = "Here are your choice...\n"
     for k, v in collected.items():
         msg += f"{k} is [{v}]\n"
     d.scrollbox(msg, height=20, width=75, title="Great Report of the Year")
 
 
-def demo():
+def demo() -> None:
     collected = {}
     d = dialog.Dialog(dialog="dialog")
     d.add_persistent_args(["--backtitle", "pythondialog demo"])
@@ -217,7 +218,7 @@ def demo():
     # show_and_exit(collected)  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
-def main():
+def main() -> None:
     demo()
 
 

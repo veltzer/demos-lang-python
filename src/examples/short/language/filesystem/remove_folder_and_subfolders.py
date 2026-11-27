@@ -11,7 +11,7 @@ import os.path
 import shutil
 
 
-def rmtree_if_exists(folder):
+def rmtree_if_exists(folder: str) -> None:
     if os.path.isdir(folder):
         shutil.rmtree(folder)
 
