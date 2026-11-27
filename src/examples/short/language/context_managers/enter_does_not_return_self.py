@@ -3,11 +3,14 @@ this is an example of a context manager whose __enter__
 does not return self
 """
 
+from typing import IO, Any
+
+
 class FileManager:
     def __init__(self, filename, mode):
         self.filename = filename
         self.mode = mode
-        self.file = None
+        self.file: IO[Any] | None = None
 
     def __enter__(self):
         self.file = open(self.filename, self.mode)

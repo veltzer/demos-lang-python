@@ -15,7 +15,7 @@ class Request:
     tablet_type = "tablet"
 
     def __init__(self, request):
-        self.type = None
+        self.type: str | None = None
         request = request.lower()
         if request == self.mobile_type:
             self.type = self.mobile_type

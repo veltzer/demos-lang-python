@@ -18,9 +18,9 @@ class Date:
         if day < 0 or day > self.days_in_months[month - 1]:
             print("Day must be between 1 and ", self.days_in_months[month - 1])
             return
-        self.day = day
-        self.month = month
-        self.year = year
+        self.day = day  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: before exceptions, a bad date prints and returns
+        self.month = month  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: before exceptions, a bad date prints and returns
+        self.year = year  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: before exceptions, a bad date prints and returns
 
     def __gt__(self, other):
         """ Overloading operator>for dates """

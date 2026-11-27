@@ -18,11 +18,11 @@ constructor for A * without * the "get_instance" method
 as the instance (in A.instance). This can be fixed by moving
 the registration into the constructor function itself.
 """
-from typing import Any
+from typing import Any, ClassVar
 
 
 class A:
-    instance: Any | None = None
+    instance: ClassVar[Any | None] = None
 
     def __init__(self):
         if A.instance is not None:

@@ -6,7 +6,7 @@ This example of how to wrap a dictionary to look like a namespace
 class D(dict):
     def __init__(self):
         super().__init__()
-        self.two = None
+        self.two: str | None = None
 
     def __getattr__(self, name):
         return self[name]

@@ -32,7 +32,7 @@ class SingleLinkedList:
 
     def __init__(self):
         """ constructor """
-        self.first_element = None
+        self.first_element: Node | None = None
 
     def is_empty(self):
         """ is the list empty """

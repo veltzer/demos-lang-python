@@ -6,10 +6,11 @@ This time we protect against concurrent access.
 from __future__ import annotations
 
 import threading
+from typing import ClassVar
 
 
 class A:
-    instance: A | None = None
+    instance: ClassVar[A | None] = None
 
     def __init__(self):
         if A.instance is not None:

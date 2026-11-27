@@ -36,7 +36,7 @@ def secret_agent_output(self):
 # this line does not work!
 # b.printMe=secret_agent_output  # noqa: ERA001  teaching: kept in the comment for the reader
 # this works! turning a function into a method...
-b.print_me = MethodType(secret_agent_output, b)
+b.print_me = MethodType(secret_agent_output, b)  # pyrefly: ignore[method-assign]  teaching: the example replaces a method at run time
 print("Only James is a secret agent...")
 p.print_me()
 b.print_me()

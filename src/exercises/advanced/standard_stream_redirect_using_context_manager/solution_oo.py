@@ -3,6 +3,7 @@ solution_oo
 """
 
 import sys
+from typing import TextIO
 
 
 class RedirectManager:
@@ -10,7 +11,7 @@ class RedirectManager:
     def __init__(self, filename):
         print("in __init__", file=sys.stderr)
         self.filename = filename
-        self.old_output = None
+        self.old_output: TextIO = sys.stdout
 
     def __enter__(self):
         print("in __enter__", file=sys.stderr)

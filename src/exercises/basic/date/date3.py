@@ -40,9 +40,9 @@ class Date:
         if day < 1 or day > days:
             print("Day must be between 1 and ", days)
             return
-        self.day = day
-        self.month = month
-        self.year = year
+        self.day = day  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: before exceptions, a bad date prints and returns
+        self.month = month  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: before exceptions, a bad date prints and returns
+        self.year = year  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: before exceptions, a bad date prints and returns
 
     def __gt__(self, other):
         """ Overloading operator>for dates """

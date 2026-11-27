@@ -9,9 +9,11 @@ Notes:
 
 from __future__ import annotations
 
+from typing import ClassVar
+
 
 class A:
-    instance: A | None = None
+    instance: ClassVar[A | None] = None
 
     def __init__(self):
         if A.instance is not None:

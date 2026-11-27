@@ -12,7 +12,7 @@ from attr import attrib, attrs
 @attrs
 class MyObject:
     def __init__(self):
-        self.another = None
+        self.another: int | None = None
     a = attrib(default=None)  # type: int
     b = attrib(default=None)  # type: int
 

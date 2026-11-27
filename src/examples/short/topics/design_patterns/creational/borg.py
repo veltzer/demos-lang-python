@@ -47,7 +47,7 @@ class YourBorg(Borg):
     def __init__(self, state: str | None = None) -> None:
         super().__init__()
         if state:
-            self.state = state
+            self.state = state  # pyrefly: ignore[possibly-uninitialized-attribute]  teaching: a borg finds the state another instance set
         # initiate the first instance with default state
         elif not hasattr(self, "state"):
             self.state = "Init"

@@ -5,7 +5,7 @@ class ValidString:
     def __init__(self, minlen=0, maxlen=None):
         self.minlen = minlen
         self.maxlen = maxlen
-        self.name = None
+        self.name: str = ""
 
     def __set_name__(self, owner, name):
         self.name = name

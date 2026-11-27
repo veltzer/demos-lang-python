@@ -5,11 +5,12 @@ that hides prints
 
 import os
 import sys
+from typing import TextIO
 
 
 class SuppressPrint:
     def __init__(self):
-        self._original_stdout = None
+        self._original_stdout: TextIO = sys.stdout
     def __enter__(self):
         self._original_stdout = sys.stdout
         sys.stdout = open(os.devnull, 'w')

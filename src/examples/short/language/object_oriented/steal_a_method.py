@@ -55,11 +55,11 @@ b.new_method_3()  # pyrefly: ignore[missing-attribute]  teaching: the example at
 # who about plugging in a method which already exists in the instance?
 # The problem with this is that we still need to pass "self" our selves.
 b2 = Book(60)
-b2.print_me = my_func  # pyrefly: ignore[bad-assignment]  teaching: replacing an existing method on an instance does not bind self
+b2.print_me = my_func  # pyrefly: ignore[bad-assignment, method-assign]  teaching: a function stored over a method does not bind self
 b2.print_me(b2)  # pyrefly: ignore[bad-argument-count]  teaching: self must be passed by hand to a function stored on the instance
 
 # Replacing methods at the class level works...
-Book.print_me = my_func
+Book.print_me = my_func  # pyrefly: ignore[method-assign]  teaching: the example replaces a method at run time
 b.print_me()
 
 # lets see if we can make it a real method
