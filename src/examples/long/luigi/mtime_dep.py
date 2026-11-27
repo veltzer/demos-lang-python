@@ -81,6 +81,6 @@ class CountLines(DepTask):
             f_out.write(str(count))
 
 
-# luigi.run()
+# luigi.run()  # noqa: ERA001  teaching: kept in the comment for the reader
 luigi.run(main_task_cls=CountLines, local_scheduler=True)
-# luigi.run(["--local-scheduler","CountLines"])
+# luigi.run(["--local-scheduler","CountLines"])  # noqa: ERA001  teaching: kept in the comment for the reader

@@ -25,4 +25,4 @@ while True:
     counter += 1
     time.sleep(1)
 
-# os.system("tail /var/log/syslog")
+# os.system("tail /var/log/syslog")  # noqa: ERA001  teaching: kept in the comment for the reader

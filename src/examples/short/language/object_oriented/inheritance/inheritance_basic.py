@@ -38,7 +38,7 @@ class B(A):
         print("B.__init__")
         # this is one way to call the parent constructor
         A.__init__(self, p_a)
-        # super(self.__class__,self).__init__()
+        # super(self.__class__,self).__init__()  # noqa: ERA001  teaching: kept in the comment for the reader
         self.b = p_b
 
     def method_overloaded1(self):

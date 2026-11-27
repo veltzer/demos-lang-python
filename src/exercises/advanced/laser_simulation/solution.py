@@ -30,7 +30,7 @@ def lasers(fname):
         char = room[y][x]
 
         # uncomment to display path:
-        # print(x, y, char)
+        # print(x, y, char)  # noqa: ERA001  teaching: kept in the comment for the reader
 
         passage = {" ": (dx, dy),  # continue straight
                    "\\": (dy, dx),  # flip around dx=dy

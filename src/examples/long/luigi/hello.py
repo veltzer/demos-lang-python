@@ -43,7 +43,7 @@ class CountLines(luigi.Task):
 
 
 # This does not run if you are not running a scheduler
-# luigi.run(["CountLines"])
+# luigi.run(["CountLines"])  # noqa: ERA001  teaching: kept in the comment for the reader
 # This does not run because luigi does not know which task you want to run
-# luigi.run()
+# luigi.run()  # noqa: ERA001  teaching: kept in the comment for the reader
 luigi.run(["--local-scheduler", "CountLines"])

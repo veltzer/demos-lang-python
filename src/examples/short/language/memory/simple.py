@@ -3,12 +3,12 @@
 
 import sys
 
-# big_l = [0,1,2,3,4,5,6,7,8,9, [0] * 10000]
+# big_l = [0,1,2,3,4,5,6,7,8,9, [0] * 10000]  # noqa: ERA001  teaching: kept in the comment for the reader
 big_l = [1] * 10000
 
 print(f"big_l takes up {sys.getsizeof(big_l)} bytes")
 
-# sys.exit(1)
+# sys.exit(1)  # noqa: ERA001  teaching: kept in the comment for the reader
 # lets add up all the elements:
 
 size = 0

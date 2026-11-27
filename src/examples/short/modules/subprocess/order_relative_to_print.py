@@ -22,15 +22,15 @@ How can you solve these issues? Three solutions:
 import subprocess
 
 # the next few lines will cause the output to be consistent
-# import sys
+# import sys  # noqa: ERA001  teaching: kept in the comment for the reader
 # sys.stdout = open(
-#   sys.stdout.fileno(),
-#   mode="w",
-#   buffering=1,
+#   sys.stdout.fileno(),  # noqa: ERA001  teaching: kept in the comment for the reader
+#   mode="w",  # noqa: ERA001  teaching: kept in the comment for the reader
+#   buffering=1,  # noqa: ERA001  teaching: kept in the comment for the reader
 #   encoding=sys.stdout.encoding,
-#   errors=sys.stdout.errors,
-#   newline=sys.stdout.newlines,
-#   closefd=False
-# )
+#   errors=sys.stdout.errors,  # noqa: ERA001  teaching: kept in the comment for the reader
+#   newline=sys.stdout.newlines,  # noqa: ERA001  teaching: kept in the comment for the reader
+#   closefd=False  # noqa: ERA001  teaching: kept in the comment for the reader
+# )  # noqa: ERA001  teaching: kept in the comment for the reader
 print("Hello, World!")
 subprocess.check_call(["echo", "Goodbye, World!"])

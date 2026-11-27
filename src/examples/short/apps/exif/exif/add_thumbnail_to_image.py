@@ -16,7 +16,7 @@ assert not os.path.isfile(target), "target file should not exist"
 with open(original, "rb") as image_file:
     image = Image(image_file)
     image.make = "Python"
-    # image.thumbnail_bytes="foo"
-    # image["Thumbnail"] = "thumbnail data"
+    # image.thumbnail_bytes="foo"  # noqa: ERA001  teaching: kept in the comment for the reader
+    # image["Thumbnail"] = "thumbnail data"  # noqa: ERA001  teaching: kept in the comment for the reader
     with open(target, "wb") as target_stream:
         target_stream.write(image.get_file())

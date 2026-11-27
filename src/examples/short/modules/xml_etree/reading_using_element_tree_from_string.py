@@ -22,7 +22,7 @@ data = """
 file = io.StringIO(data)
 
 # both of these will work
-# mydoc=ET.ElementTree(file=file)
+# mydoc=ET.ElementTree(file=file)  # noqa: ERA001  teaching: kept in the comment for the reader
 mydoc = ET.parse(file)
 for e in mydoc.findall(".//bar"):
     print(e.get("title"))

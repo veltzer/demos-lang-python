@@ -12,10 +12,10 @@ url = "http://github.com"
 r = requests.get(url, timeout=5)
 r.raise_for_status()
 doc = BeautifulSoup(r.text, "html.parser")
-# print(doc.prettify())
+# print(doc.prettify())  # noqa: ERA001  teaching: kept in the comment for the reader
 my_list = doc.find_all(name="h1", attrs={"class": "h0-mktg"})
 assert len(my_list) == 1, "found more than 1 element, please narrow your search"
 my_element = my_list[0]
 assert isinstance(my_element, Tag)
-# print(dir(my_element))
+# print(dir(my_element))  # noqa: ERA001  teaching: kept in the comment for the reader
 print(str(my_element.contents[0]).strip())

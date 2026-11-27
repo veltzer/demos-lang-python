@@ -67,7 +67,7 @@ print(terminal_size1())
 print(terminal_size2())
 print(terminal_size3())
 print(terminal_size4())
-# print(terminal_size5())
+# print(terminal_size5())  # noqa: ERA001  teaching: kept in the comment for the reader
 
 functions = [
     terminal_size1,

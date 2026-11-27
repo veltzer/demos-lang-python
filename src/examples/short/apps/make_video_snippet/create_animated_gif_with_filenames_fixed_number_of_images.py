@@ -63,7 +63,7 @@ def create_animated_gif_from_video(
         ret, frame = cap.read()
         assert ret is not None
         # we need this conversin to RGB for the animated gif to look right
-        # resized_frame = cv2.resize(frame, (snippet_width, snippet_height))
+        # resized_frame = cv2.resize(frame, (snippet_width, snippet_height))  # noqa: ERA001  teaching: kept in the comment for the reader
         resized_frame = resize_image_keep_aspect(frame, snippet_width, snippet_height)
         rgb_frame = cv2.cvtColor(resized_frame, cv2.COLOR_BGR2RGB)
         image_list.append(rgb_frame)

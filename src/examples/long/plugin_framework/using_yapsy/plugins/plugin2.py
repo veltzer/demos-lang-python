@@ -11,7 +11,7 @@ class PluginTwo(yapsy.IPlugin.IPlugin):
         print(f"This is __init__ of {__name__} {self}")
 
     # def activate(self):
-    #     print(f"{__name__} is activated")
+    #     print(f"{__name__} is activated")  # noqa: ERA001  teaching: kept in the comment for the reader
 
     def deactivate(self):
         print(f"{__name__} is deactivated {self}")

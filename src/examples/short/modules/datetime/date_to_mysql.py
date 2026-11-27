@@ -10,7 +10,7 @@ import subprocess
 def date_to_mysql(output: str):
     format_str = "%a %b %d %H:%M:%S %Z %Y"
     return dt.datetime.strptime(output, format_str).astimezone()
-    # print("mysql_str is [{0}]".format(mysql_str))
+    # print("mysql_str is [{0}]".format(mysql_str))  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 def main():

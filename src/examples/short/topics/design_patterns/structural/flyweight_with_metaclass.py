@@ -42,7 +42,7 @@ class FlyweightMeta(type):
 
 class Card2(metaclass=FlyweightMeta):
     def __init__(self, *args, **kwargs):
-        # print("Init {}: {}".format(self.__class__, (args, kwargs)))
+        # print("Init {}: {}".format(self.__class__, (args, kwargs)))  # noqa: ERA001  teaching: kept in the comment for the reader
         pass
 
 

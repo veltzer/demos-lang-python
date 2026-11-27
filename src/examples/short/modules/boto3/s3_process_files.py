@@ -23,7 +23,7 @@ folder = "/"
 s3 = boto3.resource("s3")
 bucket = s3.Bucket(bucket_name)
 # this will give you all objects in the bucket
-# gen = bucket.objects.all()
+# gen = bucket.objects.all()  # noqa: ERA001  teaching: kept in the comment for the reader
 # this will give you only the objects in one folder
 gen = bucket.objects.filter(Prefix=folder)
 file_num = 0
@@ -32,12 +32,12 @@ for object_summary in gen:
     file_num += 1
     if do_count_lines:
         stream = object_summary.get()["Body"]
-        # stream = io.BufferedReader(stream)
-        # stream = io.TextIOWrapper(stream)
+        # stream = io.BufferedReader(stream)  # noqa: ERA001  teaching: kept in the comment for the reader
+        # stream = io.TextIOWrapper(stream)  # noqa: ERA001  teaching: kept in the comment for the reader
         stream = codecs.getreader(encoding=locale.getpreferredencoding())(stream)
         lines = 0
         for _line in tqdm.tqdm(stream):
-            # print(line, end="")
+            # print(line, end="")  # noqa: ERA001  teaching: kept in the comment for the reader
             lines += 1
         print(f"got [{lines}] lines...")
 print(f"got [{file_num}] files...")

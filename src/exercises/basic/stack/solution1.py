@@ -126,8 +126,8 @@ s3 = Stack3()
 simple_test(s3)
 
 
-# s4=Stack4()
-# simple_test(s4)
+# s4=Stack4()  # noqa: ERA001  teaching: kept in the comment for the reader
+# simple_test(s4)  # noqa: ERA001  teaching: kept in the comment for the reader
 
 def stress_test(s):
     num_of_runs = 10000

@@ -75,7 +75,7 @@ def main():
             data = yaml.load(stream)
             my_sum = 0
             for _, y in yield_comments(data):
-                # print(f"[{y}]")
+                # print(f"[{y}]")  # noqa: ERA001  teaching: kept in the comment for the reader
                 to_add = y.split("#")[1]
                 my_sum += int(to_add)
             print(my_sum)

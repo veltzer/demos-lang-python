@@ -54,7 +54,7 @@ class Card:
     # If you uncomment `__init__` and comment-out `__new__` -
     #   Card becomes normal (non-flyweight).
     # def __init__(self, value, suit):
-    #     self.value, self.suit = value, suit
+    #     self.value, self.suit = value, suit  # noqa: ERA001  teaching: kept in the comment for the reader
 
     def __repr__(self):
         return f"<Card: {self.value}{self.suit}>"

@@ -14,11 +14,11 @@ def the_default_function_wrong(t):
 
 
 # def the_default_function(t):
-#    return t
+#    return t  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 # def the_default_function(t):
-#    return t[0], t[1]
+#    return t[0], t[1]  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 def the_default_function(t):

@@ -24,7 +24,7 @@ class RWL:
     def reader_leave(self):
         with self.c:
             self._readersInside -= 1
-            # self.c.notifyAll()
+            # self.c.notifyAll()  # noqa: ERA001  teaching: kept in the comment for the reader
             if self._readersInside == 0:
                 self.c.notify()
 

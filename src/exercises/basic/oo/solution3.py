@@ -48,7 +48,7 @@ def main():
             p = Person(*values)
             id_to_person[p.socialid] = p
             people.append(p)
-    # print(people)
+    # print(people)  # noqa: ERA001  teaching: kept in the comment for the reader
 
     cars = []
     license_to_car = {}

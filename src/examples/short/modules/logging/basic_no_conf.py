@@ -13,7 +13,7 @@ conclusions:
 
 import logging
 
-# logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)  # noqa: ERA001  teaching: kept in the comment for the reader
 logger = logging.getLogger()
 print("warning")
 logger.warning("this is a warning message")

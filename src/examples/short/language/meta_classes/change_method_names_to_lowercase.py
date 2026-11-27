@@ -11,7 +11,7 @@ References:
 
 class MetaClass(type):
     def __new__(cls, name, bases, cls_dict):
-        # super().__new__(cls, name, bases, cls_dict)
+        # super().__new__(cls, name, bases, cls_dict)  # noqa: ERA001  teaching: kept in the comment for the reader
         new_dict = {}
         for k, v in cls_dict.iteritems():
             new_dict[k.lower()] = v

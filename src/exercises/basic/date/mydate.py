@@ -9,7 +9,7 @@ months_name = ["January", "February", "March", "April", "May", "June",
 name_to_days_num = {}
 for i in range(12):
     name_to_days_num[months_name[i]] = days_in_months[i]
-    # print("setting ",months_name[i],"to",days_in_months[i])
+    # print("setting ",months_name[i],"to",days_in_months[i])  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 def get_num_of_days_in_month(month_name):

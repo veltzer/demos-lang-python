@@ -12,8 +12,8 @@ A few notes:
 import sys
 
 try:
-    # os._exit(113)
-    # exit(114)
+    # os._exit(113)  # noqa: ERA001  teaching: kept in the comment for the reader
+    # exit(114)  # noqa: ERA001  teaching: kept in the comment for the reader
     sys.exit(115)
 except SystemExit:
     print("hey,I did not exit")

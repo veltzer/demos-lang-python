@@ -33,7 +33,7 @@ class SearchSpider(scrapy.Spider):
         This method is called whenever you get a response
         """
         self.logger.info("in parse")
-        # self.start_urls.append("https://safety.google/security-privacy/")
+        # self.start_urls.append("https://safety.google/security-privacy/")  # noqa: ERA001  teaching: kept in the comment for the reader
         yield scrapy.Request(url="https://google.com/maps", callback=self.parse)
 
     def closed(self, _reason):

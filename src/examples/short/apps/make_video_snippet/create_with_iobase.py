@@ -85,6 +85,6 @@ if __name__ == "__main__":
         snippet = "data/make_video_snippet/hitler_uses_git_snippet.mp4"
     if os.path.isfile(snippet):
         os.unlink(snippet)
-    # create_video_snippet(video, snippet, 10, 5)
+    # create_video_snippet(video, snippet, 10, 5)  # noqa: ERA001  teaching: kept in the comment for the reader
     with open(video, "rb") as s1, open(snippet, "wb") as s2:
         create_video_snippet_streams(s1, s2, 10, 5)

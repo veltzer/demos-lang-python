@@ -22,7 +22,7 @@ class TaskSerializer(serializers.ModelSerializer):
 
 
 class TaskList(generics.ListCreateAPIView):
-    # queryset = Task.objects.all()
+    # queryset = Task.objects.all()  # noqa: ERA001  teaching: kept in the comment for the reader
     serializer_class = TaskSerializer
 
 

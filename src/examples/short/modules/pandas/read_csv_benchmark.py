@@ -42,7 +42,7 @@ def read_it_with_pandas(input_file: str, separator: str):
         input_file,
         sep=separator,
         header=None,
-        # dtype="str",
+        # dtype="str",  # noqa: ERA001  teaching: kept in the comment for the reader
     )
     return df.shape[0]
 
@@ -54,7 +54,7 @@ def read_it_with_pandas_chunks(input_file: str, separator: str):
         sep=separator,
         chunksize=10000,
         header=None,
-        # dtype="str",
+        # dtype="str",  # noqa: ERA001  teaching: kept in the comment for the reader
     )
     line_count = 0
     for chunk in reader:
@@ -91,8 +91,8 @@ def loop_with_python(_input_file: str, _separator: str):
 
 def main():
     input_file = "/tmp/large.tsv"
-    # size = 1000000
-    # prepare_large_tsv_file(input_file, size)
+    # size = 1000000  # noqa: ERA001  teaching: kept in the comment for the reader
+    # prepare_large_tsv_file(input_file, size)  # noqa: ERA001  teaching: kept in the comment for the reader
     lc1 = read_it_with_python(input_file, "\t")
     lc2 = read_it_with_pandas(input_file, "\t")
     lc3 = read_it_with_pandas_chunks(input_file, "\t")

@@ -15,6 +15,6 @@ pbar.start()
 for _i in range(10):
     # do something
     time.sleep(1)
-    # pbar.update(i+1)
+    # pbar.update(i+1)  # noqa: ERA001  teaching: kept in the comment for the reader
     pbar.update(pbar.currval + 1)
 pbar.finish()

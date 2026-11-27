@@ -17,6 +17,6 @@ with exiftool.ExifToolHelper() as et:
     for d in metadata:
         for k, v in d.items():
             print(k, v)
-    # print(help(et.get_tags))
-    # tags = et.get_tags(filename)
-    # print(tags)
+    # print(help(et.get_tags))  # noqa: ERA001  teaching: kept in the comment for the reader
+    # tags = et.get_tags(filename)  # noqa: ERA001  teaching: kept in the comment for the reader
+    # print(tags)  # noqa: ERA001  teaching: kept in the comment for the reader

@@ -14,7 +14,7 @@ input_filename = sys.argv[1]
 
 presentation = Presentation(input_filename)
 slides = presentation.slides
-# refs = set()
+# refs = set()  # noqa: ERA001  teaching: kept in the comment for the reader
 for number, slide in enumerate(slides):
     print(f"slide {number}")
     dump_json(slide)

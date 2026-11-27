@@ -6,4 +6,4 @@ import pstats
 
 p = pstats.Stats("/tmp/profile_results")
 p.sort_stats("cumulative").print_stats(20)
-# p.strip_dirs().sort_stats(-1).print_stats()
+# p.strip_dirs().sort_stats(-1).print_stats()  # noqa: ERA001  teaching: kept in the comment for the reader

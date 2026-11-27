@@ -16,7 +16,7 @@ if len(sys.argv) != 2:
 image_name = sys.argv[1]
 image = PIL.Image.open(image_name)
 exif_data = image.getexif()
-# print(exif_data)
+# print(exif_data)  # noqa: ERA001  teaching: kept in the comment for the reader
 for k, v in exif_data.items():
     string_tag = None
     if k in PIL.ExifTags.TAGS:
@@ -24,4 +24,4 @@ for k, v in exif_data.items():
     print(f"{string_tag} {k} {v}")
 exif_data = image.info["exif"]
 print(type(exif_data))
-# print(exif_data)
+# print(exif_data)  # noqa: ERA001  teaching: kept in the comment for the reader

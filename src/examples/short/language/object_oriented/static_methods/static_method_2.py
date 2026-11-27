@@ -28,5 +28,5 @@ print(Book.num)
 print(b1.get_num_books())
 print(Book.get_num_books(b1))
 # these will throw an exception since you must pass an instance...
-# print(Book.get_num_books())
-# print(Book.get_num_books(None))
+# print(Book.get_num_books())  # noqa: ERA001  teaching: kept in the comment for the reader
+# print(Book.get_num_books(None))  # noqa: ERA001  teaching: kept in the comment for the reader

@@ -214,7 +214,7 @@ def demo():
     collected["file"] = demo_fselect(d)
     demo_tailbox(d, collected["file"])
     demo_scrollbox(d, collected)
-    # show_and_exit(collected)
+    # show_and_exit(collected)  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 def main():

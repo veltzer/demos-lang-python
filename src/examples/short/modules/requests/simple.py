@@ -11,7 +11,7 @@ import requests
 url = "http://www.google.com"
 r = requests.get(url, timeout=5)
 # this checks if the return status is 200 and is similar to:
-# assert r.status_code == 200
+# assert r.status_code == 200  # noqa: ERA001  teaching: kept in the comment for the reader
 r.raise_for_status()
 print(len(r.content))
-# print(r.content)
+# print(r.content)  # noqa: ERA001  teaching: kept in the comment for the reader

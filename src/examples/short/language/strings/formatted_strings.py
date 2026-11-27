@@ -16,4 +16,4 @@ print(f"The value of pi is approximately {pi:.2f}")
 a = 5
 b = 6
 print(f"{a + b=}")
-# Output: a+b=11
+# Output: a+b=11  # noqa: ERA001  teaching: kept in the comment for the reader

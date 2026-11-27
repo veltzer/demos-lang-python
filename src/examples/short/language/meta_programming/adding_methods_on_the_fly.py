@@ -34,7 +34,7 @@ def secret_agent_output(self):
 
 # lets add this method only to the "b" instance...
 # this line does not work!
-# b.printMe=secret_agent_output
+# b.printMe=secret_agent_output  # noqa: ERA001  teaching: kept in the comment for the reader
 # this works! turning a function into a method...
 b.print_me = MethodType(secret_agent_output, b)
 print("Only James is a secret agent...")
@@ -43,9 +43,9 @@ b.print_me()
 
 # now lets make everyone a secret agent...
 # both of these will work (2nd version is better...)
-# b.__class__.printMe=secret_agent_output
-# Person.printMe=secret_agent_output
-# Person.print_me = instancemethod(secret_agent_output, None, Person)
+# b.__class__.printMe=secret_agent_output  # noqa: ERA001  teaching: kept in the comment for the reader
+# Person.printMe=secret_agent_output  # noqa: ERA001  teaching: kept in the comment for the reader
+# Person.print_me = instancemethod(secret_agent_output, None, Person)  # noqa: ERA001  teaching: kept in the comment for the reader
 print("Now we are both secret agents...")
 b.print_me()
 p.print_me()

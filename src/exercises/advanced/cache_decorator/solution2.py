@@ -38,4 +38,4 @@ if __name__ == "__main__":
 # test "is_prime"
 # for i in range(100):
 #     if is_prime(i):
-#         print(i)
+#         print(i)  # noqa: ERA001  teaching: kept in the comment for the reader

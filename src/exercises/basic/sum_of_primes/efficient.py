@@ -16,9 +16,9 @@ def collect_all_primes(num):
                 break
         else:
             primes_found.append(i)
-            # print(primes_found)
-            # print(len(primes_found))
-            # print(i)
+            # print(primes_found)  # noqa: ERA001  teaching: kept in the comment for the reader
+            # print(len(primes_found))  # noqa: ERA001  teaching: kept in the comment for the reader
+            # print(i)  # noqa: ERA001  teaching: kept in the comment for the reader
     return primes_found
 
 

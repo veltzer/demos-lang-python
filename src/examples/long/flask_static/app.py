@@ -7,7 +7,7 @@ import flask
 
 app = flask.Flask("app")
 app.config["DEBUG"] = True
-# static_folder = app.config["STATIC_FOLDER"]
+# static_folder = app.config["STATIC_FOLDER"]  # noqa: ERA001  teaching: kept in the comment for the reader
 print(f"{app.static_folder=}")
 
 

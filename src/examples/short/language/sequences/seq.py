@@ -18,5 +18,5 @@ myfunc([1, 2, 3])
 myfunc("hello")
 myfunc(range(10)[:5])
 # these will not work
-# print(range(10)[:5])
-# myfunc(range(10)[:5])
+# print(range(10)[:5])  # noqa: ERA001  teaching: kept in the comment for the reader
+# myfunc(range(10)[:5])  # noqa: ERA001  teaching: kept in the comment for the reader

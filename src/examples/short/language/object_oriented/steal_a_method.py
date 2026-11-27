@@ -64,7 +64,7 @@ b.print_me()
 
 # lets see if we can make it a real method
 # TBD
-# print(dir(type(Book.set_price)))
-# print(dir(type(Book.print_me)))
-# Book.more = method(myfunc)
-# print(type(Book.more))
+# print(dir(type(Book.set_price)))  # noqa: ERA001  teaching: kept in the comment for the reader
+# print(dir(type(Book.print_me)))  # noqa: ERA001  teaching: kept in the comment for the reader
+# Book.more = method(myfunc)  # noqa: ERA001  teaching: kept in the comment for the reader
+# print(type(Book.more))  # noqa: ERA001  teaching: kept in the comment for the reader

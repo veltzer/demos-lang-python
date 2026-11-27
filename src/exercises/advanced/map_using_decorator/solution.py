@@ -12,7 +12,7 @@ def add1(f):
 
 def make_a_list(f):
     def inner(*args, **_kw):
-        #    return [f(x) for x in args]
+        #    return [f(x) for x in args]  # noqa: ERA001  teaching: kept in the comment for the reader
         return [f(x) for x in args]
 
     return inner

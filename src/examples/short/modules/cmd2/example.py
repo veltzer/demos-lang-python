@@ -17,14 +17,14 @@ class CmdLineApp(Cmd):
         self.maxrepeats = 3
 
         # Add stuff to settable and shortcutgs before calling base class initializer
-        # self.settable["maxrepeats"] = "max repetitions for speak command"
-        # self.shortcuts.update({"&": "speak"})
+        # self.settable["maxrepeats"] = "max repetitions for speak command"  # noqa: ERA001  teaching: kept in the comment for the reader
+        # self.shortcuts.update({"&": "speak"})  # noqa: ERA001  teaching: kept in the comment for the reader
 
         # Set use_ipython to True to enable the "ipy" command which embeds and interactive IPython shell
         Cmd.__init__(self)
 
         # For option commands, pass a single argument string instead of a list of argument strings to the do_* methods
-        # set_use_arg_list(False)
+        # set_use_arg_list(False)  # noqa: ERA001  teaching: kept in the comment for the reader
 
     @with_argparser(argparser)
     def do_speak(self, arg, opts):

@@ -8,7 +8,7 @@ import fluidsynth
 fs = fluidsynth.Synth()
 
 # Load a SoundFont (you may need to adjust the path)
-# fs.start(driver="alsa")  # or "pulseaudio" depending on your system
+# fs.start(driver="alsa")  # or "pulseaudio" depending on your system  # noqa: ERA001  teaching: kept in the comment for the reader
 fs.start(driver="pulseaudio")  # or "pulseaudio" depending on your system
 sfid = fs.sfload("/usr/share/sounds/sf2/FluidR3_GM.sf2")
 

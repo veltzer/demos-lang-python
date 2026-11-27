@@ -23,11 +23,11 @@ with open("people.csv") as stream:
     for raw_line in stream:
         line = raw_line.rstrip()  # remove the newline at the end
         values = line.split(",")
-        # socialid, name, surname = line.split(",")
-        # p = Person(socialid, name, surname)
+        # socialid, name, surname = line.split(",")  # noqa: ERA001  teaching: kept in the comment for the reader
+        # p = Person(socialid, name, surname)  # noqa: ERA001  teaching: kept in the comment for the reader
         p = Person(*values)
         print(p)
         id_to_person[p.socialid] = p
         people.append(p)
 
-# print(people)
+# print(people)  # noqa: ERA001  teaching: kept in the comment for the reader

@@ -23,7 +23,7 @@ with open(filename) as f:
                 words[word] = 0
             words[word] += 1
 my_list = list(words.items())
-# my_list.sort(key=get_second_item, reverse=True)
+# my_list.sort(key=get_second_item, reverse=True)  # noqa: ERA001  teaching: kept in the comment for the reader
 my_list.sort(key=operator.itemgetter(1), reverse=True)
 print(my_list[:3])
-# print("\n".join(map(operator.itemgetter(0), my_list[:3])))
+# print("\n".join(map(operator.itemgetter(0), my_list[:3])))  # noqa: ERA001  teaching: kept in the comment for the reader

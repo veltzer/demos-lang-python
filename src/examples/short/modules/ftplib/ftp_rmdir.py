@@ -34,7 +34,7 @@ def main():
 
     ftp = ftplib.FTP(p_host)
     ftp.login(user=p_user, passwd=p_pass)
-    # ftp_rmdir(ftp, p_dir, False, set([".ftpquota"]))
+    # ftp_rmdir(ftp, p_dir, False, set([".ftpquota"]))  # noqa: ERA001  teaching: kept in the comment for the reader
     ftp_rmdir(ftp, p_dir, remove_toplevel=False, dont_remove=set())
     ftp.quit()
 

@@ -27,12 +27,12 @@ def main():
         job: dispy.DispyJob = cluster.submit(random.randint(5, 20))
         job.id = i  # optionally associate an ID to job (if needed later)
         jobs.append(job)
-    # cluster.wait() # waits for all scheduled jobs to finish
+    # cluster.wait() # waits for all scheduled jobs to finish  # noqa: ERA001  teaching: kept in the comment for the reader
     for job in jobs:
         host, n = job()  # waits for job to finish and returns results
         print(f"{host} executed job {job.id} at {job.start_time} with {n}")
         # other fields of "job" that may be useful:
-        # print(job.stdout, job.stderr, job.exception, job.ip_addr, job.start_time, job.end_time)
+        # print(job.stdout, job.stderr, job.exception, job.ip_addr, job.start_time, job.end_time)  # noqa: ERA001  teaching: kept in the comment for the reader
     cluster.print_status()
 
 

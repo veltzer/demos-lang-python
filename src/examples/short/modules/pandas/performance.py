@@ -75,8 +75,8 @@ input("press any key...")
 print(f"creating 15mil dict [{timeit.timeit(create_dict_from_strings, number=1)}]")
 input("press any key...")
 
-# print("creating a random array ")
-# print("querying about 15mil entries by key")
+# print("creating a random array ")  # noqa: ERA001  teaching: kept in the comment for the reader
+# print("querying about 15mil entries by key")  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 def more_stuff():

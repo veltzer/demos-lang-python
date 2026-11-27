@@ -32,10 +32,10 @@ def send_email(
     msg["Subject"] = subject
     msg["From"] = fr
     # send the message via our own SMTP server,but dont include the envelope header.
-    # server=smtplib.SMTP()
+    # server=smtplib.SMTP()  # noqa: ERA001  teaching: kept in the comment for the reader
     server = smtplib.SMTP(host=smtp_host, port=smtp_port)
     server.ehlo()
-    # server.connect(host=smtp_host, port=smtp_port)
+    # server.connect(host=smtp_host, port=smtp_port)  # noqa: ERA001  teaching: kept in the comment for the reader
     if debug:
         server.set_debuglevel(1)
     if use_tls:

@@ -17,13 +17,13 @@ with env.begin(write=True) as txn:
     assert v == "world"
 
 # The next code does not work
-# env=lmdb.open("/tmp/file.mdb", subdir=False, max_dbs=2)
+# env=lmdb.open("/tmp/file.mdb", subdir=False, max_dbs=2)  # noqa: ERA001  teaching: kept in the comment for the reader
 # with env.begin(write=True, db="a") as txn:
-#     k=bytes("a_key","utf8")
-#     v=bytes("a_val","utf8")
-#     txn.put(k,v)
+#     k=bytes("a_key","utf8")  # noqa: ERA001  teaching: kept in the comment for the reader
+#     v=bytes("a_val","utf8")  # noqa: ERA001  teaching: kept in the comment for the reader
+#     txn.put(k,v)  # noqa: ERA001  teaching: kept in the comment for the reader
 #
 # with env.begin(write=False, db="a") as txn:
-#     v=txn.get("a_key")
-#     v=str(v,"utf8")
-#     assert v == "a_val"
+#     v=txn.get("a_key")  # noqa: ERA001  teaching: kept in the comment for the reader
+#     v=str(v,"utf8")  # noqa: ERA001  teaching: kept in the comment for the reader
+#     assert v == "a_val"  # noqa: ERA001  teaching: kept in the comment for the reader

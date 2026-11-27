@@ -36,8 +36,8 @@ class Button:
     def get_color(self):
         return self.color
         # if "color" in self.__dict__:
-        #     return self.color
-        # return Button.color
+        #     return self.color  # noqa: ERA001  teaching: kept in the comment for the reader
+        # return Button.color  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 if __name__ == "__main__":

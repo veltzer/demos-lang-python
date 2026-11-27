@@ -13,7 +13,7 @@ http://stackoverflow.com/questions/5466451/how-can-i-print-a-literal-characters-
 
 try:
     # noinspection PyStringFormat
-    # s = """{this will not work} {0}""".format("mark")
+    # s = """{this will not work} {0}""".format("mark")  # noqa: ERA001  teaching: kept in the comment for the reader
     s = """{this will not work} {0}""".format("mark")  # noqa: F524  teaching: shows a format call with a missing argument
     print(s)
 except KeyError as e:

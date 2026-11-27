@@ -36,8 +36,8 @@ class Address(Base):
 
 # Create an engine that stores data in the local directory"s
 # sqlalchemy_example.db file.
-# filename = "/tmp/sqlalchemy_example.db"
-# engine = create_engine("sqlite:///{}".format(filename))
+# filename = "/tmp/sqlalchemy_example.db"  # noqa: ERA001  teaching: kept in the comment for the reader
+# engine = create_engine("sqlite:///{}".format(filename))  # noqa: ERA001  teaching: kept in the comment for the reader
 
 # for the next line to work you need the "pymysql" module installed
 
@@ -51,7 +51,7 @@ my_db = URL(
     query={"read_default_file": os.path.expanduser("~/.my.cnf")},
 )
 engine = create_engine(url=my_db)
-# engine = create_engine("mysql+pymysql://localhost/test?charset=utf8")
+# engine = create_engine("mysql+pymysql://localhost/test?charset=utf8")  # noqa: ERA001  teaching: kept in the comment for the reader
 
 # lets drop all tables in the database, whatever they are:
 meta = sqlalchemy.MetaData()

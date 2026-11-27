@@ -14,17 +14,17 @@ And more...
 class A:
     def __init__(self):
         pass
-        # self.d={}
+        # self.d={}  # noqa: ERA001  teaching: kept in the comment for the reader
 
     def __getattr__(self, name):
         return name[::-1]
         # def my_method(self):
-        #    print("in here with name",name)
-        # return my_method
+        #    print("in here with name",name)  # noqa: ERA001  teaching: kept in the comment for the reader
+        # return my_method  # noqa: ERA001  teaching: kept in the comment for the reader
 
     def __setattr__(self, name, val):
-        # print("ERROR! dont touch this...")
-        # getattr(self,"d").__setitem__("\""+name+"\"",val)
+        # print("ERROR! dont touch this...")  # noqa: ERA001  teaching: kept in the comment for the reader
+        # getattr(self,"d").__setitem__("\""+name+"\"",val)  # noqa: ERA001  teaching: kept in the comment for the reader
         pass
 
 
@@ -33,4 +33,4 @@ print(dir(a))
 print(a.whatIsThis)
 print(a.whatsGoingOn)
 print(a.howManyAttributesDoesThisObjectHave)
-# a.my_private=7
+# a.my_private=7  # noqa: ERA001  teaching: kept in the comment for the reader

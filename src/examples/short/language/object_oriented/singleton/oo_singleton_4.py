@@ -67,7 +67,7 @@ print(B2)
 if B1 is B2:
     print("yes,they are the same instance")
 
-# sys.exit(0)
+# sys.exit(0)  # noqa: ERA001  teaching: kept in the comment for the reader
 
 # now lets measure times
 num = 10000000

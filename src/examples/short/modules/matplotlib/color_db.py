@@ -17,6 +17,6 @@ colors_dbs = [
 ]
 
 for color_db in colors_dbs:
-    # print(dir(color_db))
+    # print(dir(color_db))  # noqa: ERA001  teaching: kept in the comment for the reader
     for name, rgb in color_db.items():
         print(f"{name}: {rgb}")

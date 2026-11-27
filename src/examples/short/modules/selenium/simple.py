@@ -14,13 +14,13 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-# from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.options import Options  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
-# options = Options()
-# options.add_argument("--headless")  # do not really open a window
-# options.add_argument("--disable-gpu")  # Last I checked this was necessary.
-# driver = Chrome(service=Service(ChromeDriverManager().install()), options=options)
+# options = Options()  # noqa: ERA001  teaching: kept in the comment for the reader
+# options.add_argument("--headless")  # do not really open a window  # noqa: ERA001  teaching: kept in the comment for the reader
+# options.add_argument("--disable-gpu")  # Last I checked this was necessary.  # noqa: ERA001  teaching: kept in the comment for the reader
+# driver = Chrome(service=Service(ChromeDriverManager().install()), options=options)  # noqa: ERA001  teaching: kept in the comment for the reader
 driver = Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://www.python.org")
 time.sleep(10)

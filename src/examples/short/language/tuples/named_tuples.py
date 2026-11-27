@@ -24,4 +24,4 @@ print(type(p3))
 print(x, y)
 print(p3.x, p3.y)
 print(Point._make([5, 6]))
-# print(Point._source)
+# print(Point._source)  # noqa: ERA001  teaching: kept in the comment for the reader

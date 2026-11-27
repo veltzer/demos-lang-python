@@ -5,7 +5,7 @@ An example of using errbacks in twisted.
 from twisted.internet import reactor
 from twisted.web.client import Agent
 
-# from twisted.protocols.basic import LineReceiver
+# from twisted.protocols.basic import LineReceiver  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 def my_other_callback(content):

@@ -72,9 +72,9 @@ def chunk_python(data, n):
 def chunk_itertools(data, n):
     i = iter(data)
     while True:
-        # first = next(i)
+        # first = next(i)  # noqa: ERA001  teaching: kept in the comment for the reader
         # second version is faster...
-        # yield itertools.islice(itertools.chain((first,), i), n)
+        # yield itertools.islice(itertools.chain((first,), i), n)  # noqa: ERA001  teaching: kept in the comment for the reader
         yield itertools.chain((next(i),), itertools.islice(i, n - 1))
 
 

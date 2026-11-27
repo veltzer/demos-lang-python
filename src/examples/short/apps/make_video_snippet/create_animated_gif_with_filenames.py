@@ -23,8 +23,8 @@ def create_animated_gif_from_video(
     number_of_frames: int,
 ) -> None:
     cap = cv2.VideoCapture(video_path)
-    # frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    # frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    # frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))  # noqa: ERA001  teaching: kept in the comment for the reader
+    # frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))  # noqa: ERA001  teaching: kept in the comment for the reader
     fps = cap.get(cv2.CAP_PROP_FPS)
     start_frame = int(start_time * fps)
     skip_frames = int(skip_time * fps)
@@ -44,7 +44,7 @@ def create_animated_gif_from_video(
     imageio.mimsave(output_path, image_list, loop=0, duration=1000)
     # with imageio.get_writer(output_path, mode="I") as writer:
     #     for img in image_list:
-    #         writer.append_data(img)
+    #         writer.append_data(img)  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 if __name__ == "__main__":

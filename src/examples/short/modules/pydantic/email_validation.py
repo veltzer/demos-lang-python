@@ -11,7 +11,7 @@ class User(BaseModel):
 # Valid email
 valid_user = User(name="John Doe", email="john@example.com")
 print(valid_user)
-# Output: User(name="John Doe", email=EmailStr("john@example.com"))
+# Output: User(name="John Doe", email=EmailStr("john@example.com"))  # noqa: ERA001  teaching: kept in the comment for the reader
 
 # Invalid email
 try:

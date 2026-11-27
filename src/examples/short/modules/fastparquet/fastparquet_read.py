@@ -7,7 +7,7 @@ References:
 
 from fastparquet import ParquetFile
 
-# pf = ParquetFile("/tmp/file.parquet")
+# pf = ParquetFile("/tmp/file.parquet")  # noqa: ERA001  teaching: kept in the comment for the reader
 pf = ParquetFile("/tmp/file_compressed.parquet")
 df = pf.to_pandas()
 print(df)

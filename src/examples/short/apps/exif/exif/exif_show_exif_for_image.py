@@ -12,6 +12,6 @@ if len(sys.argv) != 2:
 image_name = sys.argv[1]
 with open(image_name, "rb") as image_file:
     image = Image(image_file)
-    # print(image.has_exif)
+    # print(image.has_exif)  # noqa: ERA001  teaching: kept in the comment for the reader
     for field in image.list_all():
         print(field)

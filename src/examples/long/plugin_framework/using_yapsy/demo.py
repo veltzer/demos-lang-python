@@ -27,10 +27,10 @@ for plugin_info in simple_plugin_manager.getAllPlugins():
     module_obj = sys.modules[plugin_info.plugin_object.__module__]
     print(f"var is [{module_obj.var}]")
     # debug starts here
-    # print(dir(sys.modules[plugin_info.plugin_object.__module__]))
-    # print(dir(plugin_info))
-    # print(plugin_info.__class__)
-    # print(plugin_info.__module__)
+    # print(dir(sys.modules[plugin_info.plugin_object.__module__]))  # noqa: ERA001  teaching: kept in the comment for the reader
+    # print(dir(plugin_info))  # noqa: ERA001  teaching: kept in the comment for the reader
+    # print(plugin_info.__class__)  # noqa: ERA001  teaching: kept in the comment for the reader
+    # print(plugin_info.__module__)  # noqa: ERA001  teaching: kept in the comment for the reader
 
 print("activate all the plugins")
 for plugin_info in simple_plugin_manager.getAllPlugins():

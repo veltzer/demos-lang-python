@@ -25,5 +25,5 @@ def incorrect_divide(a, b):
         raise ValueError("b must not be zero")  # noqa: B904  teaching: shows the missing from pitfall
 
 
-# correct_divide(10, 0)
+# correct_divide(10, 0)  # noqa: ERA001  teaching: kept in the comment for the reader
 incorrect_divide(10, 0)

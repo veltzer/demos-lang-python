@@ -11,7 +11,7 @@ def main():
     path = os.path.expanduser("~/.config/google-chrome/Local State")
     with open(path) as file_handle:
         data = json.load(file_handle)
-    # print(data["profile"]["info_cache"].keys())
+    # print(data["profile"]["info_cache"].keys())  # noqa: ERA001  teaching: kept in the comment for the reader
     profiles = {}
     for k, v in data["profile"]["info_cache"].items():
         v["profile"] = k

@@ -15,16 +15,16 @@ logging.root.handlers.clear()
 
 # logger1 configuration
 logger1 = logging.getLogger("name1")
-# logger1.propagate = False
+# logger1.propagate = False  # noqa: ERA001  teaching: kept in the comment for the reader
 file_handler = logging.FileHandler("/tmp/log.txt")
 logger1.addHandler(file_handler)
 logger1.setLevel(logging.WARNING)
 
 # logger2 configuration
 logger2 = logging.getLogger("name2")
-# logger2.propagate = False
+# logger2.propagate = False  # noqa: ERA001  teaching: kept in the comment for the reader
 # while logger2.hasHandlers():
-#     logger2.removeHandler(logger2.handlers[0])
+#     logger2.removeHandler(logger2.handlers[0])  # noqa: ERA001  teaching: kept in the comment for the reader
 handler = logging.handlers.SysLogHandler(address="/dev/log")
 logger2.addHandler(handler)
 logger2.setLevel(logging.DEBUG)

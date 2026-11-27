@@ -56,7 +56,7 @@ def main():
     poller.register(pipe_r, select.EPOLLIN)
 
     print("mail loop staring...")
-    # print("press CTRL+C to see how I catch the signal...")
+    # print("press CTRL+C to see how I catch the signal...")  # noqa: ERA001  teaching: kept in the comment for the reader
     print(f"signal me with [kill -s SIGUSR1 {os.getpid()}]")
     while True:
         events = do_poll(poller)

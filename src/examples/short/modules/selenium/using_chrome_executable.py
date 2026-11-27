@@ -9,7 +9,7 @@ References:
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-# from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.keys import Keys  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 CHROME_PATH = "/usr/bin/google-chrome"
@@ -21,7 +21,7 @@ chrome_options.add_argument(f"--window-size={WINDOW_SIZE}")
 chrome_options.binary_location = CHROME_PATH
 
 driver = webdriver.Chrome(
-    # executable_path=CHROME_PATH,
+    # executable_path=CHROME_PATH,  # noqa: ERA001  teaching: kept in the comment for the reader
     options=chrome_options,
 )
 driver.get("https://www.python.org")

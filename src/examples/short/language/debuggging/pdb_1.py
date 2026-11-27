@@ -7,7 +7,7 @@ as soon as you start the trace...
 import pdb  # noqa: T100  teaching: this file demonstrates the debugger
 
 # This will make you enter debug start right from the start...
-# pdb.set_trace()
+# pdb.set_trace()  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 def calc():

@@ -9,5 +9,5 @@ class MyError(Exception):
 try:
     raise MyError("https://google.com")
 except MyError as e:
-    # print(f"yes, got MyError and url is {e.url}")
+    # print(f"yes, got MyError and url is {e.url}")  # noqa: ERA001  teaching: kept in the comment for the reader
     print(e)

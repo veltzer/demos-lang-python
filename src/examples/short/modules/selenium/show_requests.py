@@ -12,10 +12,10 @@ from seleniumwire import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 options = Options()
-# options.add_argument("--headless")
+# options.add_argument("--headless")  # noqa: ERA001  teaching: kept in the comment for the reader
 options.add_argument("--disable-gpu")
-# dir_user = os.path.expanduser("~/.config/google-chrome/Default")
-# options.add_argument(f"user-data-dir={dir_user}")
+# dir_user = os.path.expanduser("~/.config/google-chrome/Default")  # noqa: ERA001  teaching: kept in the comment for the reader
+# options.add_argument(f"user-data-dir={dir_user}")  # noqa: ERA001  teaching: kept in the comment for the reader
 dir_profile = os.path.expanduser("~/.config/google-chrome/Default")
 options.add_argument(f"profile-directory={dir_profile}")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)

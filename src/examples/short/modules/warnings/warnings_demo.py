@@ -15,18 +15,18 @@ import warnings
 
 def fxn():
     print("in the function")
-    # warnings.warn("deprecated", DeprecationWarning)
-    # warnings.warn("this is a warning", Warning)
+    # warnings.warn("deprecated", DeprecationWarning)  # noqa: ERA001  teaching: kept in the comment for the reader
+    # warnings.warn("this is a warning", Warning)  # noqa: ERA001  teaching: kept in the comment for the reader
     warnings.warn("this is a problem", stacklevel=2)
 
 
 # with warnings.catch_warnings():
-# warnings.simplefilter("ignore")
-# warnings.filterwarnings("error")
+# warnings.simplefilter("ignore")  # noqa: ERA001  teaching: kept in the comment for the reader
+# warnings.filterwarnings("error")  # noqa: ERA001  teaching: kept in the comment for the reader
 warnings.filterwarnings("ignore")
 fxn()
 warnings.filterwarnings("error")
-# warnings.resetwarnings()
+# warnings.resetwarnings()  # noqa: ERA001  teaching: kept in the comment for the reader
 fxn()
-# warnings.warn("this is a problem")
+# warnings.warn("this is a problem")  # noqa: ERA001  teaching: kept in the comment for the reader
 fxn()

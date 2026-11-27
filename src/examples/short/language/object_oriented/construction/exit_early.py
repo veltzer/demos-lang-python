@@ -21,10 +21,10 @@ class Book:
     # noinspection PyReturnFromInit,PyTypeChecker
     def __init__(self, price) -> Book:
         self.__price = price
-        # return None
+        # return None  # noqa: ERA001  teaching: kept in the comment for the reader
         # noinspection PyTypeChecker
         return 7  # noqa: PLE0101  teaching: __init__ must not return a value  # pyrefly: ignore[bad-return]  teaching: __init__ must not return a value
-        # return
+        # return  # noqa: ERA001  teaching: kept in the comment for the reader
 
     def set_price(self, val):
         self.__price = val

@@ -14,6 +14,6 @@ for d in s:
         break
 else:
     # output a "simple" report (just showing the counters...)
-    # print(my_list)
+    # print(my_list)  # noqa: ERA001  teaching: kept in the comment for the reader
     for n, counter in enumerate(my_list):
         print(f"{n} appeared {counter} times in the text")

@@ -46,4 +46,4 @@ try:
     d.index(60)
 except ValueError:
     print("60 is not in d")
-# d[60]
+# d[60]  # noqa: ERA001  teaching: kept in the comment for the reader

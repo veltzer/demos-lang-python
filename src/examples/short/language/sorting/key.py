@@ -13,7 +13,7 @@ def my_tup_reverse(t1, t2):
     if (t1[1], t1[0]) > (t2[1], t2[0]):
         return 1
     # if (t1[1], t1[0]) == (t2[1], t2[0]):
-    #    return 0
+    #    return 0  # noqa: ERA001  teaching: kept in the comment for the reader
     return 0
 
 
@@ -36,10 +36,10 @@ def the_default_function_wrong(t):
 
 
 # def the_default_function(t):
-#    return t
+#    return t  # noqa: ERA001  teaching: kept in the comment for the reader
 
 # def the_default_function(t):
-#    return t[0], t[1]
+#    return t[0], t[1]  # noqa: ERA001  teaching: kept in the comment for the reader
 
 def the_default_function(t):
     return t[0] * 1000 + t[1]
@@ -64,6 +64,6 @@ print("sorted first by the second co-ordinate and then by the first\n", sorted(m
 # These examples no longer work in python3 !!!!
 
 # lets see how reverse works... (no longer works)
-# print(sorted(my_list, cmp=my_reverse))
+# print(sorted(my_list, cmp=my_reverse))  # noqa: ERA001  teaching: kept in the comment for the reader
 # lets see how second tuple co-ordinate sort works... (no longer works)
-# print(sorted(my_list, cmp=my_tup_reverse))
+# print(sorted(my_list, cmp=my_tup_reverse))  # noqa: ERA001  teaching: kept in the comment for the reader

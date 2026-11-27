@@ -31,7 +31,7 @@ def total_size(o, handlers=None, *, verbose=False):
         return chain.from_iterable(d.items())
 
     # def object_handler(o):
-    #     return o.__dict__.keys()
+    #     return o.__dict__.keys()  # noqa: ERA001  teaching: kept in the comment for the reader
 
     def str_handler(s):
         return s
@@ -67,7 +67,7 @@ def total_size(o, handlers=None, *, verbose=False):
 
     return sizeof(o)
 
-# my_list = list(range(1000000))
+# my_list = list(range(1000000))  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 class Person:
@@ -78,12 +78,12 @@ class Person:
         self.age = age
         self.a = [0] * 100
 
-# p = Person("Linus", "Torvalds", 45)
-# print(f"my_list size is [{sys.getsizeof(my_list)}]")
-# print(f"p size is [{sys.getsizeof(p)}]")
-# print(f"my_list size is [{total_size(my_list)}]")
-# print(f"p size is [{total_size(p)}]")
-# print(dir(p))
+# p = Person("Linus", "Torvalds", 45)  # noqa: ERA001  teaching: kept in the comment for the reader
+# print(f"my_list size is [{sys.getsizeof(my_list)}]")  # noqa: ERA001  teaching: kept in the comment for the reader
+# print(f"p size is [{sys.getsizeof(p)}]")  # noqa: ERA001  teaching: kept in the comment for the reader
+# print(f"my_list size is [{total_size(my_list)}]")  # noqa: ERA001  teaching: kept in the comment for the reader
+# print(f"p size is [{total_size(p)}]")  # noqa: ERA001  teaching: kept in the comment for the reader
+# print(dir(p))  # noqa: ERA001  teaching: kept in the comment for the reader
 
 
 large_array = [0,1,2,3,4,5,6,7,8,9, list(range(10000))]

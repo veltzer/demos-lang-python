@@ -14,7 +14,7 @@ class PluginThree(yapsy.IPlugin.IPlugin):
         print(f"{__name__} is activated")
 
     # def deactivate(self):
-    #     print(f"{__name__} is deactivated")
+    #     print(f"{__name__} is deactivated")  # noqa: ERA001  teaching: kept in the comment for the reader
 
     # noinspection PyMethodMayBeStatic
     def do_something(self):

@@ -61,5 +61,5 @@ check_expression("[]")
 check_expression("")
 check_expression("{[()]}")
 
-# import sys
-# check_expression(sys.argv[1])
+# import sys  # noqa: ERA001  teaching: kept in the comment for the reader
+# check_expression(sys.argv[1])  # noqa: ERA001  teaching: kept in the comment for the reader

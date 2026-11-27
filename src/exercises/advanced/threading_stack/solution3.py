@@ -20,7 +20,7 @@ class Stack:
         self.cv.acquire()
         self.data.append(number)
         self.cv.notify_all()
-        # print("size of stack is ", len(self.data))
+        # print("size of stack is ", len(self.data))  # noqa: ERA001  teaching: kept in the comment for the reader
         self.cv.release()
 
     def pop(self):
@@ -35,7 +35,7 @@ class Stack:
             self.cv.wait()
         # print("i"m waking up...")
         number = self.data.pop(len(self.data) - 1)
-        # print("size of stack is ", len(self.data))
+        # print("size of stack is ", len(self.data))  # noqa: ERA001  teaching: kept in the comment for the reader
         self.cv.release()
         return number
 
@@ -51,8 +51,8 @@ class ProduceOrConsume(Thread):
         if self.consume:
             for _i in range(number_of_elements):
                 pass
-                # number = self.stack.pop()
-                # time.sleep(1.0/(self.number+1))
+                # number = self.stack.pop()  # noqa: ERA001  teaching: kept in the comment for the reader
+                # time.sleep(1.0/(self.number+1))  # noqa: ERA001  teaching: kept in the comment for the reader
         else:
             for i in range(number_of_elements):
                 self.stack.push(i)

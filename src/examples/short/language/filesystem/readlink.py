@@ -52,7 +52,7 @@ def main():
     this is a file name which is a symbolic name on most linux
     systems
     """
-    # link = "/tmp/foo"
+    # link = "/tmp/foo"  # noqa: ERA001  teaching: kept in the comment for the reader
     link = "/etc/resolv.conf"
     real_link_target = find_link_target_rec(link)
     assert os.path.exists(real_link_target)

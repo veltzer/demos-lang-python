@@ -32,7 +32,7 @@ def single_runner_simple():
     program_name = os.path.splitext(os.path.basename(sys.argv[0]))[0]
     pid_file = f"/tmp/{program_name}.pid"
     # if os.path.isfile(pid_file):
-    #    os.unlink(pid_file)
+    #    os.unlink(pid_file)  # noqa: ERA001  teaching: kept in the comment for the reader
     try:
         os.open(pid_file, os.O_CREAT | os.O_EXCL)
     except OSError as e:

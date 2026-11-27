@@ -14,7 +14,7 @@ import concurrent.futures
 
 
 def work(n):
-    # raise ValueError("this is an error")
+    # raise ValueError("this is an error")  # noqa: ERA001  teaching: kept in the comment for the reader
     for _ in range(n):
         pass
     return n

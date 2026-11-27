@@ -12,5 +12,5 @@ def min_max_avg(*num_list):
     return min(num_list), max(num_list), sum(num_list) / len(num_list)
 
 
-# print(min_max_avg(6,7,2,3,4))
+# print(min_max_avg(6,7,2,3,4))  # noqa: ERA001  teaching: kept in the comment for the reader
 print(min_max_avg(*range(100000)))

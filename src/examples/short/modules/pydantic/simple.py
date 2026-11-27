@@ -22,7 +22,7 @@ user_data: dict[str, Any] = {
 
 user = User(**user_data)
 print(user)
-# Output: User(name="John Doe", age=30, email="john@example.com", is_admin=False)
+# Output: User(name="John Doe", age=30, email="john@example.com", is_admin=False)  # noqa: ERA001  teaching: kept in the comment for the reader
 
 # Access the fields
 print(user.name)  # Output: John Doe
@@ -33,7 +33,7 @@ print(user.is_admin)  # Output: False
 # Modify the fields
 user.is_admin = True
 print(user)
-# Output: User(name="John Doe", age=30, email="john@example.com", is_admin=True)
+# Output: User(name="John Doe", age=30, email="john@example.com", is_admin=True)  # noqa: ERA001  teaching: kept in the comment for the reader
 
 # Create an instance with validation errors
 try:

@@ -26,7 +26,7 @@ else:
     buf = os.read(fd, buffer_size).decode()
     over = False
     while len(buf) > 0 and not over:
-        # print("got buf [{0}]".format(buf))
+        # print("got buf [{0}]".format(buf))  # noqa: ERA001  teaching: kept in the comment for the reader
         lines = buf.split("\n")
         buf = lines[-1]
         del lines[-1]

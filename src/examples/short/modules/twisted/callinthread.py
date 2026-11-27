@@ -13,7 +13,7 @@ def a_silly_blocking_method(t, stop):
     print(t, "seconds have passed")
     # this will not work as we are running in a separate thread...
     # if stop:
-    #    reactor.stop()
+    #    reactor.stop()  # noqa: ERA001  teaching: kept in the comment for the reader
     # instead we must do:
     if stop:
         reactor.callFromThread(reactor.stop)
