@@ -11,14 +11,14 @@ frozenset(a,b) then you dont actually change the set.
 
 # frozenset does not support "add"
 try:
-    set_a: frozenset = frozenset()
+    set_a: frozenset[str] = frozenset()
     set_a.add("a")  # pyrefly: ignore[missing-attribute]  teaching: frozenset has no add/remove
 except AttributeError:
     print("yes, got AttributeError")
 
 # frozenset does not support "remove"
 try:
-    set_b: frozenset = frozenset()
+    set_b: frozenset[str] = frozenset()
     set_b.remove("a")  # pyrefly: ignore[missing-attribute]  teaching: frozenset has no add/remove
 except AttributeError:
     print("yes, got AttributeError")

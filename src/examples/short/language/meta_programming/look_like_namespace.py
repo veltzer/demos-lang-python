@@ -3,7 +3,7 @@ This example of how to wrap a dictionary to look like a namespace
 """
 
 
-class D(dict):
+class D(dict[str, str | None]):
     def __init__(self):
         super().__init__()
         self.two: str | None = None

@@ -35,7 +35,7 @@ class Card:
     # Could be a simple dict.
     # With WeakValueDictionary garbage collection can reclaim the object
     # when there are no other references to it.
-    pool: ClassVar[weakref.WeakValueDictionary] = weakref.WeakValueDictionary()
+    pool: ClassVar[weakref.WeakValueDictionary[str, Card]] = weakref.WeakValueDictionary()
 
     value: str
     suit: str

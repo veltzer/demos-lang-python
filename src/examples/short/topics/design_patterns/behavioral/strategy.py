@@ -9,7 +9,7 @@ Enables selecting an algorithm at runtime.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 
 class DiscountStrategyValidator:  # Descriptor class for check perform
     @staticmethod
-    def validate(obj: Order, value: Callable) -> bool:
+    def validate(obj: Order, value: Callable[..., Any]) -> bool:
         try:
             if obj.price - value(obj) < 0:
                 raise ValueError(
@@ -31,7 +31,7 @@ class DiscountStrategyValidator:  # Descriptor class for check perform
     def __set_name__(self, owner, name: str) -> None:
         self.private_name = f"_{name}"
 
-    def __set__(self, obj: Order, value: Callable | None = None) -> None:
+    def __set__(self, obj: Order, value: Callable[..., Any] | None = None) -> None:
         if value and self.validate(obj, value):
             setattr(obj, self.private_name, value)
         else:
@@ -44,7 +44,7 @@ class DiscountStrategyValidator:  # Descriptor class for check perform
 class Order:
     discount_strategy = DiscountStrategyValidator()
 
-    def __init__(self, price: float, discount_strategy: Callable | None = None) -> None:
+    def __init__(self, price: float, discount_strategy: Callable[..., Any] | None = None) -> None:
         self.price: float = price
         self.discount_strategy = discount_strategy
 

@@ -17,7 +17,7 @@ def do_something():
     print(f"[{__file__}] running")
 
 
-class Plugin2Class1(dict):
+class Plugin2Class1(dict[str, str]):
     pass
 
 

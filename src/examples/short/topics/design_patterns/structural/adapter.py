@@ -28,7 +28,7 @@ http://python-3-patterns-idioms-test.readthedocs.io/en/latest/ChangeInterface.ht
 Allows the interface of an existing class to be used as another interface.
 """
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -76,7 +76,7 @@ class Adapter:
     dog = Adapter(dog, make_noise=dog.bark)
     """
 
-    def __init__(self, obj: object, **adapted_methods: Callable):
+    def __init__(self, obj: object, **adapted_methods: Callable[..., Any]):
         """We set the adapted methods in the objects dict."""
         self.obj = obj
         self.__dict__.update(adapted_methods)
