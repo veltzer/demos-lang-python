@@ -28,7 +28,7 @@ operators = {"+": add, "-": sub, "*": mul, "/": div}
 
 
 def rpn_calc(expression):
-    stack = []
+    stack: list[float] = []
     print(stack)
     for word in expression.split():
         print(word)

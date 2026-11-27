@@ -22,7 +22,7 @@ class B:
         self.privar = val
 
 
-my_list = [
+my_list: list[object] = [
     5,
     5.5,
     5 + 6j,

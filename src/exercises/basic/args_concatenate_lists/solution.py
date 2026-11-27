@@ -4,14 +4,14 @@ Solution
 
 
 def catenate_lists(*args):
-    r = []
+    r: list[object] = []
     for e in args:
         r.extend(e)
     return r
 
 
 def catenate_lists_2(*args):
-    r = []
+    r: list[object] = []
     for e in args:
         r.extend(e)
     return r

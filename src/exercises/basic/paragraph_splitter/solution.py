@@ -7,7 +7,7 @@ import textwrap
 
 def lines2paragraphs(lines):
     """Group lines into paragraphs as lists of lines."""
-    paragraph = []
+    paragraph: list[str] = []
     for raw_line in lines:
         line = raw_line.strip()
         if line == "":

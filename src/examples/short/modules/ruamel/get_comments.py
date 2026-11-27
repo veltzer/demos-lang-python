@@ -5,12 +5,17 @@ References:
 - https://stackoverflow.com/questions/7255885/save-dump-a-yaml-file-with-comments-in-pyyaml
 """
 
+from typing import TYPE_CHECKING
+
 import ruamel.yaml
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
+if TYPE_CHECKING:
+    from ruamel.yaml.tokens import CommentToken
+
 
 def get_comments_map(self, key):
-    coms = []
+    coms: list[CommentToken] = []
     comments = self.ca.items.get(key)
     if comments is None:
         return coms
@@ -25,7 +30,7 @@ def get_comments_map(self, key):
 
 
 def get_comments_seq(self, idx):
-    coms = []
+    coms: list[CommentToken] = []
     comments = self.ca.items.get(idx)
     if comments is None:
         return coms

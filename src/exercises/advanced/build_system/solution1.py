@@ -24,7 +24,7 @@ def parse_makefile(filename):
     return rules
 
 
-def build_plan(target, rules):
+def build_plan(target: str, rules: dict[str, list[str]]) -> list[str]:
     """Compute order in which things should be built for target.
 
     >>> build_plan("a", {"a": ["b", "c"], "b": ["d"]})
@@ -35,7 +35,7 @@ def build_plan(target, rules):
         # (A real make tool would verify that the file exists.)
         return []
 
-    plan = []
+    plan: list[str] = []
     # Build all dependencies.
     for dep in rules[target]:
         plan += build_plan(dep, rules)

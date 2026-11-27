@@ -9,11 +9,15 @@ import reprlib
 import sys
 from collections import deque
 from itertools import chain
+from typing import TYPE_CHECKING, Any
 
 import psutil
 
+if TYPE_CHECKING:
+    from collections.abc import Callable, Iterable
 
-def total_size(o, handlers=None, *, verbose=False):
+
+def total_size(o, handlers: dict[type, Callable[[Any], Iterable[Any]]] | None = None, *, verbose=False):
     """ Returns the approximate memory footprint an object and all of its contents.
 
     Automatically finds the contents of the following builtin containers and
@@ -36,7 +40,7 @@ def total_size(o, handlers=None, *, verbose=False):
     def str_handler(s):
         return s
 
-    all_handlers = {
+    all_handlers: dict[type, Callable[[Any], Iterable[Any]]] = {
         tuple: iter,
         list: iter,
         deque: iter,

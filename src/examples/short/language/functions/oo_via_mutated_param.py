@@ -8,7 +8,7 @@ on purpose.
 """
 
 
-def op(o, x=None, items=[]):       # the [] is created once, at def time  # noqa: B006  teaching: the shared mutable default is the lesson
+def op(o, x=None, items: list[int | None] = []):       # the [] is created once, at def time  # noqa: B006  teaching: the shared mutable default is the lesson
     if o == "push":
         items.append(x)
         return None

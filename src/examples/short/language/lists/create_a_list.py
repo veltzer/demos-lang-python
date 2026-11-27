@@ -14,7 +14,7 @@ list2 = list()  # noqa: C408  teaching: demonstrating the constructor call
 print(list2)
 
 # empty list explicit
-list3 = []
+list3: list[int] = []
 print(list3)
 
 # from another list
