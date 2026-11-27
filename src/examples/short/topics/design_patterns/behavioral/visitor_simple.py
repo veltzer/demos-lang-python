@@ -3,6 +3,9 @@ A simple implementation of the visitor pattern
 """
 
 
+from typing import override
+
+
 class VisitInterface:
     """
     pure interface to the visit method
@@ -12,16 +15,19 @@ class VisitInterface:
 
 
 class Node(VisitInterface):
+    @override
     def visit(self):
         raise NotImplementedError
 
 
 class A(Node):
+    @override
     def visit(self):
         print("in A")
 
 
 class B(Node):
+    @override
     def visit(self):
         print("in B")
 
@@ -31,6 +37,7 @@ class C(VisitInterface):
         self.a = A()
         self.b = B()
 
+    @override
     def visit(self):
         print("in C")
         self.a.visit()

@@ -32,6 +32,9 @@ Decouples the creation of a complex object and its representation.
 """
 
 
+from typing import override
+
+
 # Abstract Building
 class Building:
     def __init__(self) -> None:
@@ -52,17 +55,21 @@ class Building:
 
 # Concrete Buildings
 class House(Building):
+    @override
     def build_floor(self) -> None:
         self.floor = "One"
 
+    @override
     def build_size(self) -> None:
         self.size = "Big"
 
 
 class Flat(Building):
+    @override
     def build_floor(self) -> None:
         self.floor = "More than One"
 
+    @override
     def build_size(self) -> None:
         self.size = "Small"
 

@@ -25,6 +25,9 @@ Adds behaviour to object without affecting its class.
 """
 
 
+from typing import override
+
+
 class TextTag:
     """Represents a base text tag"""
 
@@ -42,6 +45,7 @@ class BoldWrapper(TextTag):
         super().__init__("")
         self._wrapped = wrapped
 
+    @override
     def render(self) -> str:
         return f"<b>{self._wrapped.render()}</b>"
 
@@ -53,6 +57,7 @@ class ItalicWrapper(TextTag):
         super().__init__("")
         self._wrapped = wrapped
 
+    @override
     def render(self) -> str:
         return f"<i>{self._wrapped.render()}</i>"
 

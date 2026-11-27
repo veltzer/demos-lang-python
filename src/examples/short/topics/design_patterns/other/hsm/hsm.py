@@ -9,6 +9,9 @@ in Python
 """
 
 
+from typing import override
+
+
 class UnsupportedMessageType(BaseException):
     pass
 
@@ -107,11 +110,13 @@ class Unit(HierachicalStateMachine):
 
 
 class Inservice(Unit):
+    @override
     def on_fault_trigger(self):
         self.hsm.next_state("suspect")
         self.hsm.send_diagnostics_request()
         self.hsm.raise_alarm()
 
+    @override
     def on_switchover(self):
         self.hsm.perform_switchover()
         self.hsm.check_mate_status()
@@ -119,22 +124,26 @@ class Inservice(Unit):
 
 
 class Active(Inservice):
+    @override
     def on_fault_trigger(self):
         super().perform_switchover()
         super().on_fault_trigger()
 
+    @override
     def on_switchover(self):
         self.hsm.on_switchover()  # message ignored
         self.hsm.next_state("standby")
 
 
 class Standby(Inservice):
+    @override
     def on_switchover(self):
         super().on_switchover()  # message ignored
         self.hsm.next_state("active")
 
 
 class OutOfService(Unit):
+    @override
     def on_operator_inservice(self):
         self.hsm.on_switchover()  # message ignored
         self.hsm.send_operator_inservice_response()
@@ -142,15 +151,18 @@ class OutOfService(Unit):
 
 
 class Suspect(OutOfService):
+    @override
     def on_diagnostics_failed(self):
         super().send_diagnostics_failure_report()
         super().next_state("failed")
 
+    @override
     def on_diagnostics_passed(self):
         super().send_diagnostics_pass_report()
         super().clear_alarm()  # loss of redundancy alarm
         super().next_state("standby")
 
+    @override
     def on_operator_inservice(self):
         super().abort_diagnostics()
         super().on_operator_inservice()  # message ignored

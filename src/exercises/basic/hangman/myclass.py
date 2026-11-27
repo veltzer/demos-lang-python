@@ -35,6 +35,9 @@ banana: YOU WON!
 """
 
 
+from typing import override
+
+
 class SimpleHangman:
     """
     Simple hangman game playable from the interpreter.
@@ -118,6 +121,7 @@ class Hangman(SimpleHangman):
         # must be defined before we call it.
         SimpleHangman.__init__(self, word)
 
+    @override
     def __repr__(self):
         """Describe current game state."""
         if set(self._word) <= self.open_letters:
@@ -126,6 +130,7 @@ class Hangman(SimpleHangman):
             return f"{self.known_parts()}: GAME OVER"
         return f"{self.known_parts()}: {self.mistakes_allowed} mistakes allowed"
 
+    @override
     def guess(self, letter):
         """Call this to play."""
         # bells and whistles

@@ -7,6 +7,7 @@ on pop on empty stack...
 
 import time
 from threading import RLock, Thread
+from typing import override
 
 number_of_elements = 400
 
@@ -37,6 +38,7 @@ class ProduceOrConsume(Thread):
         self.consume = consume
         self.number = number
 
+    @override
     def run(self):
         if self.consume:
             for _ in range(number_of_elements):

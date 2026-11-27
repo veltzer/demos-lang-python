@@ -16,6 +16,9 @@ without changing its interface.
 """
 
 
+from typing import override
+
+
 class Subject:
     """
     As mentioned in the document, interfaces of both RealSubject and Proxy should
@@ -36,6 +39,7 @@ class RealSubject(Subject):
     good example.
     """
 
+    @override
     def do_the_job(self, user: str) -> None:
         print(f"I am doing the job for {user}")
 
@@ -44,6 +48,7 @@ class Proxy(Subject):
     def __init__(self) -> None:
         self._real_subject = RealSubject()
 
+    @override
     def do_the_job(self, user: str) -> None:
         """
         logging and controlling access are some examples of proxy usages.

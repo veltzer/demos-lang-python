@@ -31,6 +31,7 @@ Provides a way to encapsulate a group of individual factories.
 """
 
 import random
+from typing import override
 
 
 class Pet:
@@ -45,17 +46,21 @@ class Pet:
 
 
 class Dog(Pet):
+    @override
     def speak(self) -> None:
         print("woof")
 
+    @override
     def __str__(self) -> str:
         return f"Dog<{self.name}>"
 
 
 class Cat(Pet):
+    @override
     def speak(self) -> None:
         print("meow")
 
+    @override
     def __str__(self) -> str:
         return f"Cat<{self.name}>"
 

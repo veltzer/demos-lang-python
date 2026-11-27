@@ -7,12 +7,13 @@ import os
 import shutil
 import tempfile
 import unittest
-from typing import ClassVar
+from typing import ClassVar, override
 
 
 class TestGlob(unittest.TestCase):
     fnames: ClassVar = ["foo.txt", "bar.txt", "baz.py"]
 
+    @override
     def setUp(self):
         """Create some files in a temp dir."""
         self.dir = tempfile.mkdtemp()
@@ -23,6 +24,7 @@ class TestGlob(unittest.TestCase):
     def absolute(self, fname):
         return os.path.join(self.dir, fname)
 
+    @override
     def tearDown(self):
         """Delete the temp dir."""
         shutil.rmtree(self.dir)

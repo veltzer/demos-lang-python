@@ -11,6 +11,9 @@ NOTES:
 """
 
 
+from typing import override
+
+
 class A:
     def __init__(self, p_a):
         print("A.__init__")
@@ -41,16 +44,19 @@ class B(A):
         # super(self.__class__,self).__init__()  # noqa: ERA001  teaching: kept in the comment for the reader
         self.b = p_b
 
+    @override
     def method_overloaded1(self):
         """ the best way """
         print("B.method_overloaded1")
         super().method_overloaded1()
 
+    @override
     def method_overloaded2(self):
         """ this is a second way to call the parent method """
         print("B.method_overloaded2")
         super().method_overloaded2()
 
+    @override
     def method_overloaded3(self):
         """
         The old way to call the parent method
@@ -59,6 +65,7 @@ class B(A):
         print("B.method_overloaded3")
         super(self.__class__, self).method_overloaded3()
 
+    @override
     def method_overloaded4(self):
         """ This is going back to the first way """
         print("B.method_overloaded4")

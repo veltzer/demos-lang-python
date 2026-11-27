@@ -3,6 +3,7 @@
 
 
 import unittest
+from typing import override
 
 import Book  # pyrefly: ignore[missing-import]  teaching: sibling module found via the script directory when run by run_all.sh, not on the project search path
 
@@ -10,9 +11,11 @@ import Book  # pyrefly: ignore[missing-import]  teaching: sibling module found v
 class BookTest(unittest.TestCase):
     # tests
 
+    @override
     def setUp(self):
         print("in setUp")
 
+    @override
     def tearDown(self):
         print("in tearDown")
 

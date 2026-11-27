@@ -16,7 +16,7 @@ http://code.activestate.com/recipes/280500-console-built-with-cmd-object/
 
 import cmd
 import os
-from typing import Any
+from typing import Any, override
 
 
 class Console(cmd.Cmd):
@@ -79,6 +79,7 @@ class Console(cmd.Cmd):
         """ return None """
         return
 
+    @override
     def do_help(self, arg):
         """Get help on commands
            "help" or "?" with no arguments prints a list of commands for which help is available
@@ -88,6 +89,7 @@ class Console(cmd.Cmd):
         cmd.Cmd.do_help(self, arg)
 
     # Override methods in Cmd object
+    @override
     def preloop(self):
         """Initialization before prompting user for commands.
            Despite the claims in the Cmd documentation, Cmd.preloop() is not a stub.
@@ -97,6 +99,7 @@ class Console(cmd.Cmd):
         self._locals = {}  # Initialize execution namespace for user
         self._globals = {}
 
+    @override
     def postloop(self):
         """Take care of any unfinished business.
            Despite the claims in the Cmd documentation, Cmd.postloop() is not a stub.
@@ -104,6 +107,7 @@ class Console(cmd.Cmd):
         cmd.Cmd.postloop(self)  # Clean up command completion
         print("Exiting...")
 
+    @override
     def precmd(self, line):
         """ This method is called after the line has been input but before
             it has been interpreted. If you want to modify the input line
@@ -112,6 +116,7 @@ class Console(cmd.Cmd):
         self._hist += [line.strip()]
         return line
 
+    @override
     def postcmd(self, stop, line):
         """If you want to stop the console, return something that evaluates to true.
            If you want to do some post command processing, do it here.
@@ -119,17 +124,20 @@ class Console(cmd.Cmd):
         del line  # not needed here
         return stop
 
+    @override
     def emptyline(self) -> bool:
         """Do nothing on empty input line"""
         print("this is an empty line")
         return False
 
+    @override
     def onecmd(self, line: str) -> bool:
         """The end of file character arrives as the line "EOF" (cmd would look for "do_EOF")."""
         if line == "EOF":
             return bool(self.do_eof(line))
         return super().onecmd(line)
 
+    @override
     def default(self, line: str) -> None:
         """
         Called on an input line when the command prefix is not recognized.

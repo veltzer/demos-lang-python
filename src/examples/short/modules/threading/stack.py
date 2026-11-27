@@ -3,6 +3,7 @@ An example of a stack for multi threaded programming.
 """
 
 import threading
+from typing import override
 
 
 class Stack:
@@ -29,6 +30,7 @@ class Producer(threading.Thread):
         threading.Thread.__init__(self)
         self.stack = stack
 
+    @override
     def run(self):
         for i in range(20):
             self.stack.push(i)
@@ -39,6 +41,7 @@ class Consumer(threading.Thread):
         threading.Thread.__init__(self)
         self.stack = stack
 
+    @override
     def run(self):
         for _ in range(20):
             number = self.stack.pop()

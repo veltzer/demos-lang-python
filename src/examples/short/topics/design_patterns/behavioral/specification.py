@@ -6,6 +6,7 @@ Provides recombination business logic by chaining together using boolean logic.
 """
 
 from abc import abstractmethod
+from typing import override
 
 
 class Specification:
@@ -28,12 +29,15 @@ class CompositeSpecification(Specification):
     def is_satisfied_by(self, candidate: object) -> bool:
         raise NotImplementedError
 
+    @override
     def and_specification(self, candidate):
         return AndSpecification(self, candidate)
 
+    @override
     def or_specification(self, candidate):
         return OrSpecification(self, candidate)
 
+    @override
     def not_specification(self):
         return NotSpecification(self)
 
