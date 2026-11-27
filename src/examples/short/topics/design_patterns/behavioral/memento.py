@@ -64,9 +64,9 @@ class Transactional:
             state = memento(obj)
             try:
                 return self.method(obj, *args, **kwargs)
-            except Exception as e:
+            except Exception:
                 state()
-                raise e
+                raise
 
         return transaction
 

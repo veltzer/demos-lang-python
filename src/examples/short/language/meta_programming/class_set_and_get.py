@@ -17,7 +17,7 @@ class ValidString:
 
     def __set__(self, instance, value):
         if not isinstance(value, str):
-            raise ValueError(f"{self.name} must be a string")
+            raise TypeError(f"{self.name} must be a string")
         if len(value) < self.minlen:
             raise ValueError(f"{self.name} must be at least {self.minlen} characters long")
         if self.maxlen is not None and len(value) > self.maxlen:
@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     try:
         Person("John Doe", 12345)  # Email is not a string
-    except ValueError as e:
+    except TypeError as e:
         print(f"Error: {e}")
 
     # Modifying attributes

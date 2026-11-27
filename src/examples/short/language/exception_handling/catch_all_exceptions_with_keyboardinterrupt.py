@@ -15,6 +15,6 @@ try:
 # this next line catches all exceptions, logs and throws them back...
 except (Exception, KeyboardInterrupt) as e:
     print("in except", e)
-    raise e
+    raise
 finally:
     print("finally is here")

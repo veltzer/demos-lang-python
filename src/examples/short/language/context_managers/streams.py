@@ -18,8 +18,6 @@ def count_lines_in_file_2(filename):
         for _ in stream:
             counter += 1
         return counter
-    except Exception as e:
-        raise e
     finally:
         stream.close()
 

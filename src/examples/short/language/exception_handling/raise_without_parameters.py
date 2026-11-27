@@ -34,7 +34,7 @@ def main():
     try:
         try:
             raise ValueError("hello")
-        except ValueError:
+        except ValueError:  # noqa: TRY203  teaching: a handler that only re-raises, to look at the traceback it leaves
             raise
     except ValueError as e:
         tb = e.__traceback__
@@ -44,8 +44,8 @@ def main():
     try:
         try:
             raise ValueError("hello")
-        except ValueError as e:
-            raise e
+        except ValueError as e:  # noqa: TRY203  teaching: a handler that only re-raises, this time by name
+            raise e  # noqa: TRY201  teaching: "raise e" is compared with the bare "raise" above
     except ValueError as e:
         tb = e.__traceback__
         assert traceback_len(tb) == 1

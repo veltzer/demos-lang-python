@@ -7,7 +7,6 @@ References:
 
 import yaml
 from jsonschema import validate
-from jsonschema.exceptions import ValidationError
 
 schema = """
 type: object
@@ -34,7 +33,5 @@ bad_instance = """
 testing: ["this", "is", "a", "bad", "test"]
 """
 
-try:
-    validate(yaml.load(bad_instance, Loader=yaml.SafeLoader), yaml.load(schema, Loader=yaml.SafeLoader))
-except ValidationError as e:
-    raise e
+# this raises a ValidationError, which is the point of the example
+validate(yaml.load(bad_instance, Loader=yaml.SafeLoader), yaml.load(schema, Loader=yaml.SafeLoader))

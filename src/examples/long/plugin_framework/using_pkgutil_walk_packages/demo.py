@@ -31,18 +31,15 @@ for _importer, modname, _is_package in pkgutil.walk_packages(
         path=[folder],
         prefix=namespace,
 ):
-    try:
-        if modname in done:
-            continue
-        module_obj = importlib.import_module(modname)
-        done.add(modname)
-        print(done)
-        print(f"imported {modname}")
-        for name, t in module_obj.__dict__.items():
-            if isinstance(t, type) and issubclass(t, base.BaseClass):
-                instance = t()
-                print(name)
-                print(t)
-                print(instance)
-    except Exception as e:
-        raise e
+    if modname in done:
+        continue
+    module_obj = importlib.import_module(modname)
+    done.add(modname)
+    print(done)
+    print(f"imported {modname}")
+    for name, t in module_obj.__dict__.items():
+        if isinstance(t, type) and issubclass(t, base.BaseClass):
+            instance = t()
+            print(name)
+            print(t)
+            print(instance)
