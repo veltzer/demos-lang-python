@@ -75,8 +75,8 @@ v2.28 module.
 ## Files
 
 | file             | what it is                                                        |
-|------------------|-------------------------------------------------------------------|
-| `setup_libs.sh`  | installs the two `requests` versions under `./libs/`               |
-| `dual_loader.py` | `load_package(name, dir)` — the isolated-import mechanism          |
+| ---------------- | ----------------------------------------------------------------- |
+| `setup_libs.sh`  | installs the two `requests` versions under `./libs/`              |
+| `dual_loader.py` | `load_package(name, dir)` — the isolated-import mechanism         |
 | `demo.py`        | loads both versions and prints proof they're independent          |
 | `libs/`          | the two installed versions (generated; safe to delete & recreate) |
