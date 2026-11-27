@@ -2,8 +2,14 @@
 This is a basic closure example.
 """
 
+from typing import TYPE_CHECKING
 
-def make_adder(x):
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+
+def make_adder(x: int) -> Callable[[int], int]:
     return lambda y: x + y
 
 

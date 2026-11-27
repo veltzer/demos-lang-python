@@ -1,7 +1,13 @@
 """ pi.py """
 
-from mpmath import mp
+from mpmath import mp, mpf
 
 # set the number of digits precision
 mp.dps = 200
-print(mp.quad(lambda x: mp.exp(-x**2), [-mp.inf, mp.inf]) ** 2)
+
+
+def gaussian(x: mpf) -> mpf:
+    return mp.exp(-x**2)
+
+
+print(mp.quad(gaussian, [-mp.inf, mp.inf]) ** 2)

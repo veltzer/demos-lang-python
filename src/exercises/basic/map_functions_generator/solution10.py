@@ -2,8 +2,14 @@
 Solution10
 """
 
+from typing import TYPE_CHECKING
 
-def apply_funcs(funcs, x):
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+
+def apply_funcs(funcs: list[Callable[[int], int]], x: int):
     return (f(x) for f in funcs)
 
 

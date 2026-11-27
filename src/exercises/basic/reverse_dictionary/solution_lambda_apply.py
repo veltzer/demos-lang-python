@@ -2,8 +2,14 @@
 This solution uses lambda and apply (advanced stuff)
 """
 
+from typing import TYPE_CHECKING
 
-def my_apply(function, seq):
+if TYPE_CHECKING:
+    from collections.abc import Callable, Iterable
+
+
+
+def my_apply(function: Callable[[str], object], seq: Iterable[str]):
     """ apply a function on a sequence """
     for item in seq:
         function(item)

@@ -2,7 +2,12 @@
 minimize.py
 """
 
+from typing import TYPE_CHECKING
+
 from scipy import integrate, optimize
+
+if TYPE_CHECKING:
+    import numpy as np
 
 
 # Function to integrate
@@ -19,5 +24,9 @@ result, error = integrate.quad(f, lower, upper)
 print(result)
 
 # Minimize f(x) = x^2 - 4x + 4
-res = optimize.minimize(lambda x: (x**2 - 4 * x + 4), 0)
+def parabola(x: np.ndarray) -> np.ndarray:
+    return x**2 - 4 * x + 4
+
+
+res = optimize.minimize(parabola, 0)
 print(res.x)

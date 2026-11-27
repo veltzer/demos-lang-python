@@ -2,8 +2,14 @@
 This is a solution with a generator...
 """
 
+from typing import TYPE_CHECKING
 
-def apply_funcs(funcs, x):
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+
+def apply_funcs(funcs: list[Callable[[int], int]], x: int):
     """ a different version with an iteration """
     for f in funcs:
         print(f"in the function, going to yield {f(x)}")

@@ -3,8 +3,14 @@ Naive version of a solution, just construct a list...
 No generators here.
 """
 
+from typing import TYPE_CHECKING
 
-def apply_funcs(funcs, x):
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+
+
+def apply_funcs(funcs: list[Callable[[int], int]], x: int):
     """ a different version with an iteration """
     return [f(x) for f in funcs]
 

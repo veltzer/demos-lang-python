@@ -7,8 +7,14 @@ for pedagogic purposes only. Pythons own "map" is written in C
 and performs much better.
 """
 
+from typing import TYPE_CHECKING
 
-def my_map(f, seq):
+if TYPE_CHECKING:
+    from collections.abc import Callable, Iterable
+
+
+
+def my_map(f: Callable[[int], int], seq: Iterable[int]) -> list[int]:
     return [f(x) for x in seq]
 
 
